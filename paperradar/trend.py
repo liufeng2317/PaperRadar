@@ -5,6 +5,35 @@ from collections import Counter, defaultdict
 from typing import Any
 
 
+GENERIC_KEYWORDS = {
+    "across",
+    "analysis",
+    "approach",
+    "approximation",
+    "based",
+    "benchmarking",
+    "coefficient",
+    "conservative",
+    "data",
+    "dataset",
+    "datasets",
+    "field",
+    "framework",
+    "learning",
+    "method",
+    "model",
+    "models",
+    "network",
+    "networks",
+    "paper",
+    "result",
+    "results",
+    "study",
+    "system",
+    "using",
+}
+
+
 def rank_keywords(papers: list[dict[str, Any]], top_n: int = 30) -> list[dict[str, Any]]:
     counts: Counter[str] = Counter()
     display_names: dict[str, str] = {}
@@ -35,5 +64,10 @@ def rank_keywords(papers: list[dict[str, Any]], top_n: int = 30) -> list[dict[st
 
 
 def normalize_keyword(keyword: str) -> str:
-    return re.sub(r"\s+", " ", keyword.strip().lower())
-
+    key = re.sub(r"\s+", " ", keyword.strip().lower())
+    key = key.strip(" -–—_:;,.()[]{}")
+    if not key or key in GENERIC_KEYWORDS:
+        return ""
+    if re.search(r"\\|[{}^_=]", key):
+        return ""
+    return key

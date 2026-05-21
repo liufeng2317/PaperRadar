@@ -100,7 +100,9 @@ Quality rules:
 - English one-sentence summary: at most 35 words.
 - Chinese one-sentence summary: at most 80 Chinese characters.
 - The 3 summary bullets must be exactly: problem, approach, key result. If a key result is not stated, say what is evaluated or proposed instead of inventing numbers.
-- Keywords must be concept phrases, not formula fragments, variables, LaTeX commands, or generic words. Bad examples: mathcal, mathbb, mathbf, nabla, omega, times, partial, model, data, result.
+- Keywords must correctly describe the paper's core scientific content: target phenomenon, method, dataset/instrument, region/application, or main technical idea.
+- Prefer specific terms that would help a researcher find related work. Single-word keywords are allowed when they are domain-specific, such as InSAR, DAS, seismicity, permafrost, or interferometry.
+- Do not use formula fragments, variables, LaTeX commands, or generic research words as keywords. Bad examples: mathcal, mathbb, mathbf, nabla, omega, times, partial, model, data, method, learning, result.
 - If the paper is only tangentially related to the configured digest topic, still summarize the paper accurately and note that the relevance is tangential.
 
 Required schema:

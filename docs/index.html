@@ -170,8 +170,8 @@
         <span data-lang="en">Date: 2026-05-21</span>
         <span data-lang="zh">论文: 25</span>
         <span data-lang="en">Papers: 25</span>
-        <span data-lang="zh">生成时间: 2026-05-21T13:09:24.476924+00:00</span>
-        <span data-lang="en">Generated: 2026-05-21T13:09:24.476924+00:00</span>
+        <span data-lang="zh">生成时间: 2026-05-21T13:28:44.102508+00:00</span>
+        <span data-lang="en">Generated: 2026-05-21T13:28:44.102508+00:00</span>
       </div>
     </div>
   </header>
@@ -183,15 +183,15 @@
 <article class="paper" data-page-item data-index="1">
   <h3><a href="http://arxiv.org/abs/2605.21437v1">Neural Negative Binomial Regression for Weekly Seismicity Forecasting: Per-Cell Dispersion Estimation and Tail Risk Assessment</a></h3>
   <p class="authors">Alim Igilik · 2026-05-20 · physics.geo-ph, cs.LG, stat.ML</p>
-  <p class="one-line" data-lang="zh"><strong>本文提出一种混合深度学习架构，为每个网格单元估计过度离散参数，以捕捉地震聚集的空间异质性，并相比全局负二项回归模型提升极端事件的风险预测准确性。</strong></p>
-  <p class="one-line" data-lang="en"><strong>This work introduces a hybrid deep learning model that learns per-cell negative binomial dispersion parameters to capture spatial overdispersion in weekly earthquake counts and improve tail-risk forecasting.</strong></p>
-  <div class="keywords" data-lang="zh"><span>空间过度离散</span><span>负二项回归</span><span>地震性预测</span><span>空间嵌入</span><span>尾部风险评估</span></div>
-  <div class="keywords" data-lang="en"><span>spatial overdispersion</span><span>negative binomial regression</span><span>seismicity forecasting</span><span>spatial embeddings</span><span>tail-risk assessment</span></div>
+  <p class="one-line" data-lang="zh"><strong>该研究提出EarthquakeNet神经负二项回归模型，通过对每个网格单元估计过度离散参数，显著提升了周尺度地震计数的尾部风险预测精度。</strong></p>
+  <p class="one-line" data-lang="en"><strong>This paper introduces a neural negative binomial regression model (EarthquakeNet) that estimates per-cell overdispersion for weekly earthquake counts, improving tail risk forecasting and reducing mean pinball deviation relative to a negative binomial GLM base…</strong></p>
+  <div class="keywords" data-lang="zh"><span>负二项回归</span><span>空间嵌入</span><span>地震预测</span><span>USGS地震目录</span><span>过度离散</span></div>
+  <div class="keywords" data-lang="en"><span>negative binomial regression</span><span>spatial embeddings</span><span>seismicity forecasting</span><span>USGS catalog</span><span>overdispersion</span></div>
   <details>
     <summary><span data-lang="zh">展开详细总结</span><span data-lang="en">Show details</span></summary>
-    <div class="summary" data-lang="zh"><ul><li>传统泊松及全局负二项模型假设均一离散程度，忽略周尺度地震计数的空间过度离散。</li><li>提出EarthquakeNet，结合空间嵌入和多层感知机，利用物理驱动特征为每个网格单元学习负二项分布的离散参数。</li><li>在中亚游区2018–2023年对比全局负二项GLM，平均分位偏差降低8.6%，尾部CRPS降低12.5%。</li></ul></div>
-    <div class="summary" data-lang="en"><ul><li>Standard Poisson and global NB models assume uniform dispersion, overlooking spatial overdispersion in weekly earthquake counts.</li><li>Develop EarthquakeNet, a hybrid deep neural network combining spatial embeddings and MLPs on physically motivated features to estimate per-cell NB dispersion.</li><li>Achieves 8.6% lower mean pinball deviation and 12.5% lower tail CRPS compared to a global NB GLM baseline in Central Asia forecasts.</li></ul></div>
-    <div class="summary" data-lang="zh"><p><strong>主要贡献:</strong> 提出一种混合深度学习模型，为负二项分布估计每个网格单元的过度离散参数，实现空间异质化和风险感知的周尺度地震预测。</p><p><strong>方法:</strong> 混合深度神经网络EarthquakeNet，结合空间嵌入和物理驱动特征的多层感知机，用于每个网格单元的负二项回归。</p><p><strong>数据/区域:</strong> 中亚游区（天山及帕米尔），USGS地震目录周度数据（2010–2024）</p><p><strong>相关性:</strong> 通过直接建模空间过度离散性，提高地震危害预测和极端事件警报的准确性，对地球物理风险管理具有重要意义。</p></div><div class="summary" data-lang="en"><p><strong>Contribution:</strong> A hybrid deep-learning architecture that provides per-cell estimation of overdispersion parameters in negative binomial regression for weekly seismicity forecasting.</p><p><strong>Method:</strong> Hybrid deep neural network (EarthquakeNet) combining spatial embeddings and multilayer perceptron on physically motivated features for per-cell negative binomial regression.</p><p><strong>Data/Region:</strong> Central Asia (Tian Shan and Pamir), weekly earthquake counts from USGS catalog (2010–2024)</p><p><strong>Relevance:</strong> Accurate modeling of spatial overdispersion enhances probabilistic seismic hazard forecasts and extreme-event alerting in geophysical risk management.</p></div>
+    <div class="summary" data-lang="zh"><ul><li>现有周尺度地震预测通常假设全局离散度（Poisson或负二项），无法反映空间过度离散特性。</li><li>EarthquakeNet通过空间嵌入和MLP端到端学习每个网格单元的过度离散参数，实现神经负二项回归。</li><li>在中亚（2018–2023年）行走前测评中，相较于NB GLM基线，MPD降低8.6%，尾部CRPS提升12.5%。</li></ul></div>
+    <div class="summary" data-lang="en"><ul><li>Existing weekly seismicity forecasts assume global dispersion with Poisson or negative binomial models, failing to capture spatial overdispersion.</li><li>EarthquakeNet uses spatial embeddings and an MLP to learn per-cell overdispersion parameters in a neural negative binomial regression framework.</li><li>Walk-forward tests on Central Asia data show an 8.6% MPD reduction and 12.5% CRPS improvement in the tail compared to a NB GLM baseline.</li></ul></div>
+    <div class="summary" data-lang="zh"><p><strong>主要贡献:</strong> 提出EarthquakeNet架构，通过空间嵌入和MLP端到端估计每格的过度离散参数，实现无需显式空间协方差的神经负二项回归。</p><p><strong>方法:</strong> 混合深度学习：结合空间嵌入和MLP，以负二项似然函数训练神经网络对每格周地震计数进行回归并估计离散参数。</p><p><strong>数据/区域:</strong> 中亚（天山和帕米尔山系），基于USGS 2010–2024年地震目录，按3°×3°网格周尺度聚合。</p><p><strong>相关性:</strong> 反映地震簇集的空间异质性和尾部风险可提升地震危险性评估精度，为高构造活跃区的应急响应提供更可靠的概率性预警。</p></div><div class="summary" data-lang="en"><p><strong>Contribution:</strong> A hybrid deep learning architecture (EarthquakeNet) that endogenously estimates per-cell overdispersion via spatial embeddings and MLP without explicit spatial covariance for improved probabilistic seismicity forecasting.</p><p><strong>Method:</strong> Neural negative binomial regression trained with a per-cell dispersion MLP and spatial embedding layers on weekly aggregated seismic features.</p><p><strong>Data/Region:</strong> Central Asia (Tian Shan and Pamir systems), USGS earthquake catalog (2010–2024) aggregated on a 3°×3° spatial grid.</p><p><strong>Relevance:</strong> Modeling spatial heterogeneity in seismic clustering and tail risk improves hazard assessment and informs emergency response in tectonically active regions.</p></div>
     <p class="authors"><a href="https://arxiv.org/pdf/2605.21437v1">arXiv PDF</a></p>
   </details>
 </article>
@@ -200,15 +200,15 @@
 <article class="paper" data-page-item data-index="2">
   <h3><a href="http://arxiv.org/abs/2605.21191v1">Beyond Vorticity: An Angular Momentum Perspective on Fluid Flow</a></h3>
   <p class="authors">Ahmed Farooq · 2026-05-20 · physics.flu-dyn, physics.ao-ph, physics.geo-ph</p>
-  <p class="one-line" data-lang="zh"><strong>本文提出了基于角动量密度的流体分析框架，通过显式力矩平衡实现粘性力矩分解，并统一升力、失速、地球物理环流和附加质量力的计算。</strong></p>
-  <p class="one-line" data-lang="en"><strong>This paper develops an angular momentum density framework that balances torque and rotational momentum to provide new decompositions of viscous torque, insights into lift and stall, simplified geophysical circulation, and added-mass calculations.</strong></p>
-  <div class="keywords" data-lang="zh"><span>角动量密度</span><span>粘性力矩分解</span><span>升力产生</span><span>地球物理环流</span><span>rotlet格林函数</span></div>
-  <div class="keywords" data-lang="en"><span>angular momentum density</span><span>viscous torque decomposition</span><span>lift generation</span><span>geophysical circulation</span><span>rotlet Green’s function</span></div>
+  <p class="one-line" data-lang="zh"><strong>本文提出基于角动量密度场的流体输运框架，补充涡度分析，并通过显式力矩和平衡统一升力、附加质量和大尺度环流</strong></p>
+  <p class="one-line" data-lang="en"><strong>This paper develops an angular momentum density-based transport framework for fluid flow that complements vorticity analyses and unifies lift, added mass, and global circulation through explicit torque and momentum balances</strong></p>
+  <div class="keywords" data-lang="zh"><span>角动量</span><span>粘性力矩</span><span>边界层</span><span>水动力冲量</span><span>旋转元</span></div>
+  <div class="keywords" data-lang="en"><span>Angular momentum</span><span>Viscous torque</span><span>Boundary layer</span><span>Hydrodynamic impulse</span><span>Rotlet</span></div>
   <details>
     <summary><span data-lang="zh">展开详细总结</span><span data-lang="en">Show details</span></summary>
-    <div class="summary" data-lang="zh"><ul><li>传统涡量分析侧重局部旋转，缺乏宏观力矩平衡，无法统一升力、附加质量和行星自转效应。</li><li>导出角动量场传输方程并分解粘性力矩，重构流体冲量、升力和循环理论，扩展至地球物理和可压缩流。</li><li>该框架将粘性力矩分为扩散和自旋耗散项，实现升力与附加质量预算的统一，自然吸收行星自转，并在斯托克斯流中识别rotlet格林函数。</li></ul></div>
-    <div class="summary" data-lang="en"><ul><li>Classical vorticity-based analyses lack global torque balances and struggle to unify lift, added mass, and planetary rotation effects.</li><li>Derive and analyze transport equations for the angular momentum density field, decomposing viscous torque and reformulating impulse, lift, and circulation within a torque-based framework.</li><li>The framework provides distinct diffusive and spin torque components, unifies lift and added mass budgets, simplifies inclusion of planetary rotation, and identifies the rotlet as the Green’s function in Stokes flows.</li></ul></div>
-    <div class="summary" data-lang="zh"><p><strong>主要贡献:</strong> 基于角动量密度的力矩分析框架，实现粘性力矩的物理分解，统一升力与附加质量预算，自然吸收行星自转，并在斯托克斯流中识别rotlet格林函数。</p><p><strong>方法:</strong> 通过推导角动量密度场的一般化传输方程，结合粘性力矩分解、边界层标度分析和冲量积分。</p><p><strong>数据/区域:</strong> 未说明</p><p><strong>相关性:</strong> 该框架通过自然吸收行星自转并显式平衡力矩，为地球物理流体动力学的环流分析提供了简化而物理一致的模型。</p></div><div class="summary" data-lang="en"><p><strong>Contribution:</strong> A torque-based angular momentum density framework that decomposes viscous torque, unifies lift and added mass budgets, absorbs planetary rotation, and identifies the rotlet as the Green’s function in Stokes flows.</p><p><strong>Method:</strong> Derivation and analysis of generalized transport equations for the angular momentum density field combined with torque decomposition, boundary-layer scaling, and impulse budget integration.</p><p><strong>Data/Region:</strong> Not specified</p><p><strong>Relevance:</strong> Provides a torque-based formulation that naturally includes planetary rotation, offering explicit torque balances and simplified circulation analysis in geophysical fluid dynamics.</p></div>
+    <div class="summary" data-lang="zh"><ul><li>传统涡度框架仅描述局部旋转，缺乏统一升力、附加质量和环流的角动量视角</li><li>推导角动量密度输运方程，分解粘性力矩，重构水动力冲量，并应用于边界层、升力、附加质量和地球流体动力学</li><li>角动量框架统一环流与非环流力，通过显式力矩平衡解释升力与附加质量，简化行星自转处理，并确定rotlet Green函数</li></ul></div>
+    <div class="summary" data-lang="en"><ul><li>Traditional vorticity frameworks focus on local spin and lack a global angular momentum perspective for lift, added mass, and circulation</li><li>Derive angular momentum density transport equations, decompose viscous torque, reformulate hydrodynamic impulse, and apply to boundary layers, lift, added mass, and geophysical flows</li><li>Angular momentum formalism unifies circulatory and non-circulatory forces, provides explicit torque balances for lift and added mass, simplifies treatment of planetary rotation, and identifies the rotlet Green’s function</li></ul></div>
+    <div class="summary" data-lang="zh"><p><strong>主要贡献:</strong> 提出基于角动量密度场的输运形式，分解粘性力矩，统一升力与附加质量预算，并通过显式力矩平衡解析全球环流</p><p><strong>方法:</strong> 从Navier–Stokes方程推导角动量密度输运方程，分解粘性力矩，解析边界层与冲量，确定Green函数</p><p><strong>数据/区域:</strong> 未说明</p><p><strong>相关性:</strong> 该方法将行星自转纳入轴向角动量守恒，通过显式力矩平衡揭示全球大气和海洋环流的基本机制</p></div><div class="summary" data-lang="en"><p><strong>Contribution:</strong> Introduce a transport formalism based on the angular momentum density field that decomposes viscous torque, unifies lift and added mass budgets, and enables explicit torque-based analysis of global circulation</p><p><strong>Method:</strong> Derivation of angular momentum density transport equations from Navier–Stokes, decomposition of viscous torque, analytical boundary layer and impulse reformulations, and Green’s function identification</p><p><strong>Data/Region:</strong> Not specified</p><p><strong>Relevance:</strong> Applies to geophysical fluid dynamics by absorbing planetary rotation into conserved axial angular momentum, offering explicit torque balances and clearer insight into global circulation</p></div>
     <p class="authors"><a href="https://arxiv.org/pdf/2605.21191v1">arXiv PDF</a></p>
   </details>
 </article>
@@ -217,15 +217,15 @@
 <article class="paper" data-page-item data-index="3">
   <h3><a href="http://arxiv.org/abs/2605.21030v1">A Fixed-Grid Affine-Constrained Multiwavelet Coefficient Method for Buckley--Leverett Shock Capturing</a></h3>
   <p class="authors">Christian Tantardini, Evgueni Dinvay · 2026-05-20 · physics.flu-dyn, physics.geo-ph</p>
-  <p class="one-line" data-lang="zh"><strong>未配置可用 LLM；当前显示规则摘要。</strong></p>
-  <p class="one-line" data-lang="en"><strong>We present a fixed-grid conservative affine-constrained modal/multiwavelet coefficient method for one-dimensional Buckley--Leverett saturation transport.</strong></p>
-  <div class="keywords" data-lang="zh"><span>coefficient</span><span>conservative</span><span>saturation</span><span>affine-constrained</span><span>method</span></div>
-  <div class="keywords" data-lang="en"><span>coefficient</span><span>conservative</span><span>saturation</span><span>affine-constrained</span><span>method</span></div>
+  <p class="one-line" data-lang="zh"><strong>本文提出了一种定网格仿射约束的模态多小波方法，通过不修改单元平均值精确施加注入边界条件并抑制一维Buckley–Leverett饱和度输运过程中的冲击震荡。</strong></p>
+  <p class="one-line" data-lang="en"><strong>The paper presents a fixed-grid, affine-constrained modal multiwavelet method that enforces inflow boundary conditions and controls shock oscillations in one-dimensional Buckley–Leverett saturation transport on uniform meshes.</strong></p>
+  <div class="keywords" data-lang="zh"><span>Buckley–Leverett</span><span>多小波离散</span><span>仿射约束</span><span>冲击捕捉</span><span>Berea岩芯</span></div>
+  <div class="keywords" data-lang="en"><span>Buckley–Leverett</span><span>multiwavelet discretization</span><span>affine constraint</span><span>shock capturing</span><span>Berea-core</span></div>
   <details>
     <summary><span data-lang="zh">展开详细总结</span><span data-lang="en">Show details</span></summary>
-    <div class="summary" data-lang="zh"><ul><li>未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。</li></ul></div>
-    <div class="summary" data-lang="en"><ul><li>We present a fixed-grid conservative affine-constrained modal/multiwavelet coefficient method for one-dimensional Buckley--Leverett saturation transport.</li><li>The saturation is evolved directly in a local orthonormal coefficient basis with a mean/detail structure: the first mode carries the conservative cell average, whereas higher modes carry zero-mean local details.</li><li>The hyperbolic inflow condition is imposed as a linear trace constraint on the coefficient vector and enforced by affine lifting.</li></ul></div>
-    
+    <div class="summary" data-lang="zh"><ul><li>问题: 在固定均匀网格上一维Buckley–Leverett饱和度输运中准确捕捉冲击并施加超bolic入流边界条件的挑战。</li><li>方法: 提出定网格保守模态多小波系数方法，通过仿射约束精确施加入流边界并在细节模式子空间内使用troubled-cell限幅。</li><li>关键结果: 在Berea岩芯注水基准测试中验证，p=2方案精确保留入流值、抑制震荡并以较小质量损失实现优越的精度–成本平衡。</li></ul></div>
+    <div class="summary" data-lang="en"><ul><li>Problem: Capturing entropy shocks and enforcing hyperbolic inflow boundary conditions in one-dimensional Buckley–Leverett saturation transport on fixed uniform grids.</li><li>Approach: Develop a fixed-grid conservative modal multiwavelet coefficient scheme with affine inflow constraints and a subcell troubled-cell limiter applied to zero-mean detail modes.</li><li>Key result: Validated on a Berea-core waterflood benchmark, the p=2 implementation accurately preserved inflow traces, controlled oscillations, and achieved favorable accuracy–cost tradeoffs with minimal mass-balance defects.</li></ul></div>
+    <div class="summary" data-lang="zh"><p><strong>主要贡献:</strong> 提出了一种仿射约束的模态多小波系数格式，该格式在不改变单元均值的情况下精确施加超bolic入流条件，并结合细节模式限幅实现Buckley–Leverett输运冲击控制。</p><p><strong>方法:</strong> 固定网格保守模态/多小波系数离散方法，结合仿射入流边界约束和作用于零均值细节模态的troubled-cell限幅。</p><p><strong>数据/区域:</strong> 采用Corey分数流闭合关系的Berea岩芯注水基准测试</p><p><strong>相关性:</strong> 提供一种保守高阶格式用于模拟多相流在多孔介质中的饱和度冲击，可提升油藏尺度Buckley–Leverett模拟的精度。</p></div><div class="summary" data-lang="en"><p><strong>Contribution:</strong> Introducing an affine-constrained modal multiwavelet coefficient formulation that enforces hyperbolic inflow conditions without altering conservative cell averages and integrates a detail-selective limiter for shock control in Buckley–Leverett transport.</p><p><strong>Method:</strong> Fixed-grid conservative modal/multiwavelet coefficient discretization with affine inflow boundary constraint and troubled-cell limiter applied to zero-mean detail modes.</p><p><strong>Data/Region:</strong> Berea-core waterflood benchmark using Corey fractional-flow closure</p><p><strong>Relevance:</strong> Offers a conservative high-order scheme to model two-phase flow saturation shocks in porous media, improving accuracy of reservoir–scale Buckley–Leverett simulations.</p></div>
     <p class="authors"><a href="https://arxiv.org/pdf/2605.21030v1">arXiv PDF</a></p>
   </details>
 </article>
@@ -234,15 +234,15 @@
 <article class="paper" data-page-item data-index="4">
   <h3><a href="http://arxiv.org/abs/2605.20997v1">Hybrid Machine Learning Model for Forest Height Estimation from TanDEM-X and Landsat Data</a></h3>
   <p class="authors">Islam Mansour, Ronny Haensch, Irena Hajnsek, Konstantinos Papathanassiou · 2026-05-20 · cs.CV, cs.AI, cs.LG, physics.comp-ph</p>
-  <p class="one-line" data-lang="zh"><strong>未配置可用 LLM；当前显示规则摘要。</strong></p>
-  <p class="one-line" data-lang="en"><strong>Integrating machine learning (ML) with physical models (PM) has emerged as a promising way of retrieving geophysical parameters from remote sensing data.</strong></p>
-  <div class="keywords" data-lang="zh"><span>data</span><span>learning</span><span>forest</span><span>height</span><span>tandem-x</span></div>
-  <div class="keywords" data-lang="en"><span>data</span><span>learning</span><span>forest</span><span>height</span><span>tandem-x</span></div>
+  <p class="one-line" data-lang="zh"><strong>本文将Landsat多光谱数据引入混合物理-机器学习模型，通过MLP改进TanDEM-X干涉相干性森林高度估计，在加蓬洛佩国家公园验证中显著降低了RMSE和MAE。</strong></p>
+  <p class="one-line" data-lang="en"><strong>The paper extends a hybrid physical–ML model by incorporating Landsat multispectral data into an MLP to improve TanDEM-X forest height estimates over Gabon’s Lopé National Park, reducing RMSE and MAE when validated against airborne LiDAR.</strong></p>
+  <div class="keywords" data-lang="zh"><span>TanDEM-X</span><span>InSAR相干性</span><span>Landsat-8</span><span>Legendre级数</span><span>森林高度估计</span></div>
+  <div class="keywords" data-lang="en"><span>TanDEM-X</span><span>InSAR coherence</span><span>Landsat-8</span><span>Legendre series</span><span>forest height estimation</span></div>
   <details>
     <summary><span data-lang="zh">展开详细总结</span><span data-lang="en">Show details</span></summary>
-    <div class="summary" data-lang="zh"><ul><li>未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。</li></ul></div>
-    <div class="summary" data-lang="en"><ul><li>Integrating machine learning (ML) with physical models (PM) has emerged as a promising way of retrieving geophysical parameters from remote sensing data.</li><li>In this context, a ML model for estimating forest height from TanDEM-X interferometric coherence measurements has recently been proposed, that constrains the learning process through a PM.</li><li>While the features used for training and inversion where selected to ensure the physical consistency of the solutions, they could not resolve all height / structure and baseline / terrain slope ambiguities in the data.</li></ul></div>
-    
+    <div class="summary" data-lang="zh"><ul><li>问题:先前基于TanDEM-X干涉相干性的混合模型特征空间有限,无法消除高度/结构和基线/坡度歧义,导致估计误差较高。</li><li>方法:在Legendre系数驱动的物理-ML框架中,将四个Landsat多光谱波段作为MLP输入拓展特征,提升结构和地形分辨能力。</li><li>结果:在加蓬洛佩国家公园验证中,扩展模型使RMSE降低13.5%至7.65 m,MAE降低16.6%至5.66 m,R²提升至0.75。</li></ul></div>
+    <div class="summary" data-lang="en"><ul><li>Problem: limited feature space in previous hybrid ML–physical inversion caused height–structure and baseline–slope ambiguities and high estimation errors.</li><li>Approach: extend input features by adding four Landsat spectral bands to an MLP within a Legendre-coefficient-based hybrid interferometric coherence model.</li><li>Key result: Model D reduced RMSE by 13.5% and MAE by 16.6%, achieving RMSE = 7.65 m and R² = 0.75 over Lopé National Park compared to the original hybrid model.</li></ul></div>
+    <div class="summary" data-lang="zh"><p><strong>主要贡献:</strong> 本研究将Landsat多光谱波段融入基于Legendre系数的TanDEM-X干涉相干性混合物理-机器学习反演框架,显著提升了森林高度估计的精度和对不同林冠结构及地形坡度的鲁棒性。</p><p><strong>方法:</strong> 基于MLP的混合模型,通过物理干涉相干性模型约束Legendre级数垂直反射率谱,并将TanDEM-X和Landsat多光谱数据作为MLP输入。</p><p><strong>数据/区域:</strong> 加蓬洛佩国家公园,使用TanDEM-X干涉相干性、Landsat多光谱波段及NASA LVIS机载LiDAR参考数据。</p><p><strong>相关性:</strong> 改进的InSAR森林高度估计可为森林生物量和碳循环监测提供更可靠的遥感数据支持。</p></div><div class="summary" data-lang="en"><p><strong>Contribution:</strong> This study demonstrates that augmenting a Legendre-coefficient-based hybrid interferometric coherence inversion with Landsat multispectral bands significantly enhances forest height estimation accuracy and robustness across varied canopy structures and terrain slopes.</p><p><strong>Method:</strong> MLP-based hybrid model predicting Legendre-series vertical reflectivity profiles constrained by a physical interferometric coherence model, with extended input features from TanDEM-X and Landsat multispectral data.</p><p><strong>Data/Region:</strong> Lopé National Park, Gabon, combining TanDEM-X CoSSC interferometric coherence, Landsat-8 spectral bands, and NASA LVIS airborne LiDAR reference data.</p><p><strong>Relevance:</strong> Improving InSAR-based forest height estimates supports more reliable forest biomass and carbon cycle analyses.</p></div>
     <p class="authors"><a href="https://arxiv.org/pdf/2605.20997v1">arXiv PDF</a></p>
   </details>
 </article>
@@ -251,15 +251,15 @@
 <article class="paper" data-page-item data-index="5">
   <h3><a href="http://arxiv.org/abs/2605.20764v1">HyFrac.fun: A 3D Hydraulic Fracturing Simulator on Cloud</a></h3>
   <p class="authors">Jing Hu, Qian Liu, Jaroon Rungamornrat · 2026-05-20 · cs.CE, physics.geo-ph</p>
-  <p class="one-line" data-lang="zh"><strong>未配置可用 LLM；当前显示规则摘要。</strong></p>
-  <p class="one-line" data-lang="en"><strong>When multiple hydraulic fractures propagate simultaneously from a horizontal wellbore, elastic stress-shadow interactions generate complex non-planar three-dimensional geometries whose effect on subsequent reservoir drainage has infrequently been quantified,…</strong></p>
-  <div class="keywords" data-lang="zh"><span>production</span><span>fracture</span><span>hydraulic</span><span>shadow</span><span>fluid</span></div>
-  <div class="keywords" data-lang="en"><span>production</span><span>fracture</span><span>hydraulic</span><span>shadow</span><span>fluid</span></div>
+  <p class="one-line" data-lang="zh"><strong>HyFrac.fun是一款云原生平台，集成SGBEM–FEM裂缝传播与Darcy稳态生产模拟，可自动化完成三维非平面水力压裂全生命周期仿真，揭示应力阴影相互作用主导长期产能。</strong></p>
+  <p class="one-line" data-lang="en"><strong>HyFrac.fun is a cloud-native platform integrating coupled SGBEM–FEM fracture propagation with steady-state Darcy flow for automated end-to-end simulation of 3D non-planar hydraulic fractures, demonstrating that stress-shadow interactions dominate long-term pr…</strong></p>
+  <div class="keywords" data-lang="zh"><span>水力压裂</span><span>SGBEM-FEM</span><span>应力阴影</span><span>云原生</span><span>Darcy流</span></div>
+  <div class="keywords" data-lang="en"><span>hydraulic fracturing</span><span>SGBEM-FEM</span><span>stress-shadow</span><span>cloud-native</span><span>Darcy flow</span></div>
   <details>
     <summary><span data-lang="zh">展开详细总结</span><span data-lang="en">Show details</span></summary>
-    <div class="summary" data-lang="zh"><ul><li>未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。</li></ul></div>
-    <div class="summary" data-lang="en"><ul><li>When multiple hydraulic fractures propagate simultaneously from a horizontal wellbore, elastic stress-shadow interactions generate complex non-planar three-dimensional geometries whose effect on subsequent reservoir drainage has infrequently been quantified, because the propagation and production solvers have historically been incompatible stand-alone tools.</li><li>This paper presents HyFrac.fun, a cloud-native platform that bridges this gap by exploiting a structural isomorphism between the two SGBEM--FEM governing operator systems.</li><li>The platform enables automated zero-conversion handoff of the evolved 3D fracture mesh directly to the steady-state Darcy production solver for realizing a fully integrated lifecycle simulation of multi-stage non-planar hydraulic fractures.</li></ul></div>
-    
+    <div class="summary" data-lang="zh"><ul><li>问题: 裂缝传播模拟与生产分析工具互不兼容，难以实现三维裂缝全生命周期仿真。</li><li>方法: 构建云原生平台HyFrac.fun，利用SGBEM–FEM算子同构实现裂缝网格与Darcy生产求解器自动交接。</li><li>关键结果: 全生命周期仿真揭示机械与流体双重应力阴影效应，并表明裂缝几何形状而非流体流变主导长期产能。</li></ul></div>
+    <div class="summary" data-lang="en"><ul><li>Problem: standalone fracture propagation and production solvers are incompatible, preventing integrated 3D hydraulic fracture lifecycle analysis.</li><li>Approach: developed HyFrac.fun, a cloud-native platform exploiting SGBEM–FEM operator isomorphism to automate mesh handoff to a steady-state Darcy production solver.</li><li>Key result: lifecycle simulations reveal a double mechanical and fluid pressure shadow effect and show that stress-shadow–controlled fracture geometry, not fluid rheology, dictates long-term production efficiency.</li></ul></div>
+    <div class="summary" data-lang="zh"><p><strong>主要贡献:</strong> 提出了云原生平台HyFrac.fun，通过算子同构实现三维SGBEM–FEM裂缝传播与Darcy生产求解器无缝衔接，可进行全生命周期一体化仿真。</p><p><strong>方法:</strong> 在云原生自动化工作流中将SGBEM–FEM裂缝传播模拟与稳态Darcy流生产求解器通过自动网格交接集成。</p><p><strong>数据/区域:</strong> 未说明</p><p><strong>相关性:</strong> 该平台可量化三维裂缝几何和应力阴影相互作用对储层排水及生产性能的影响，对于水力压裂设计及油气藏管理具有重要意义。</p></div><div class="summary" data-lang="en"><p><strong>Contribution:</strong> Introduced HyFrac.fun, a cloud-native platform that bridges 3D SGBEM–FEM hydraulic fracture propagation and Darcy production solvers via operator isomorphism for seamless end-to-end lifecycle simulations.</p><p><strong>Method:</strong> Coupled SGBEM–FEM fracture propagation with steady-state Darcy flow production solver integrated in a cloud-native automated mesh handoff workflow.</p><p><strong>Data/Region:</strong> Not specified</p><p><strong>Relevance:</strong> Provides an integrated tool to quantify how 3D fracture geometry and stress-shadow interactions affect reservoir drainage and production, aiding hydraulic fracturing design.</p></div>
     <p class="authors"><a href="https://arxiv.org/pdf/2605.20764v1">arXiv PDF</a></p>
   </details>
 </article>
@@ -268,15 +268,15 @@
 <article class="paper" data-page-item data-index="6">
   <h3><a href="http://arxiv.org/abs/2605.20455v1">Benchmarking Cylindrical Blast Wave Theory Against the OSIRIS-REx Sample Return Capsule Reentry</a></h3>
   <p class="authors">Elizabeth A. Silber · 2026-05-19 · physics.ao-ph, astro-ph.EP, physics.class-ph, physics.geo-ph, physics.space-ph</p>
-  <p class="one-line" data-lang="zh"><strong>未配置可用 LLM；当前显示规则摘要。</strong></p>
-  <p class="one-line" data-lang="en"><strong>Weak shock theory based on cylindrical blast waves has been used to interpret meteor infrasound, but it has not been systematically benchmarked against a non-ablating hypersonic source with independently known parameters.</strong></p>
-  <div class="keywords" data-lang="zh"><span>blast</span><span>benchmarking</span><span>cylindrical</span><span>theory</span><span>against</span></div>
-  <div class="keywords" data-lang="en"><span>blast</span><span>benchmarking</span><span>cylindrical</span><span>theory</span><span>against</span></div>
+  <p class="one-line" data-lang="zh"><strong>本研究利用39个次声台网观测OSIRIS-REx样本返回舱再入信号，对比评估六种柱状爆震波爆半径及三种弱冲击转换系数，确定最适用于非消融高超声速体的理论方案。</strong></p>
+  <p class="one-line" data-lang="en"><strong>This study benchmarks six cylindrical blast radius formulations and three weak-shock transition coefficients against infrasound observations from the OSIRIS-REx reentry to identify the most accurate model for non-ablating hypersonic bodies.</strong></p>
+  <div class="keywords" data-lang="zh"><span>柱状爆震波</span><span>爆半径</span><span>弱冲击</span><span>OSIRIS-REx</span></div>
+  <div class="keywords" data-lang="en"><span>infrasound</span><span>cylindrical blast wave</span><span>blast radius</span><span>weak shock</span><span>OSIRIS-REx</span></div>
   <details>
     <summary><span data-lang="zh">展开详细总结</span><span data-lang="en">Show details</span></summary>
-    <div class="summary" data-lang="zh"><ul><li>未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。</li></ul></div>
-    <div class="summary" data-lang="en"><ul><li>Weak shock theory based on cylindrical blast waves has been used to interpret meteor infrasound, but it has not been systematically benchmarked against a non-ablating hypersonic source with independently known parameters.</li><li>The objective of this study is not to propose a new theoretical framework, but to evaluate the operational validity of the existing suite of blast radius formulations against a high-fidelity ground truth dataset.</li><li>The OSIRIS-REx Sample Return Capsule reentry on 24 September 2023 provides such a benchmark because the capsule geometry, trajectory, and infrasound emission points are constrained from mission data and ray tracing, reducing source-side uncertainty associated with ablation.</li></ul></div>
-    
+    <div class="summary" data-lang="zh"><ul><li>弱冲击柱状爆震波理论尚未针对具有已知参数的非消融高超声速源进行系统基准测试。</li><li>利用涵盖39个次声台站的OSIRIS-REx样本返回舱再入观测，结合分层大气传播模型评估六种爆半径公式和三种弱冲击转换系数。</li><li>Sakurai公式的周期预报中位绝对残差为9%，Jones/Plooster为11%，而Mach-直径近似在无消融情况下高估爆半径逾3倍。</li></ul></div>
+    <div class="summary" data-lang="en"><ul><li>Weak shock theory for cylindrical blast waves lacks systematic benchmarking against non-ablating hypersonic sources with known parameters.</li><li>Evaluate six blast radius formulations and three transition coefficients using infrasound data from 39 stations recording the OSIRIS-REx SRC reentry within a stratified atmospheric propagation model.</li><li>The Sakurai formulation yields the lowest median absolute period residual (9%), with Jones/Plooster comparable (11%), while Mach-diameter scaling overestimates blast radius by &gt;3× without ablation.</li></ul></div>
+    <div class="summary" data-lang="zh"><p><strong>主要贡献:</strong> 基于具有地面实测参数的非消融高超声速再入事件，首次系统性地对柱状爆震波爆半径公式和弱冲击转换系数进行基准测试，为信号周期预测建立了性能基准。</p><p><strong>方法:</strong> 基于分层大气传播模型的弱冲击柱状爆震波建模，评估六种爆半径公式和三种弱冲击转换系数，并结合次声观测数据。</p><p><strong>数据/区域:</strong> 覆盖内华达州和犹他州39个台站观测的OSIRIS-REx样本返回舱再入次声数据。</p><p><strong>相关性:</strong> 通过地面实测基准验证柱状爆震波理论，有助于改进高超声速再入及流星的次声信号解译与大气监测。</p></div><div class="summary" data-lang="en"><p><strong>Contribution:</strong> Provides the first systematic benchmarking of cylindrical blast wave radius formulations and weak shock transition coefficients against a non-ablating hypersonic reentry with ground-truth parameters, establishing a performance baseline for signal period prediction.</p><p><strong>Method:</strong> Weak shock cylindrical blast wave modeling with six blast radius formulations and three transition coefficients in a stratified atmospheric propagation model using infrasound data.</p><p><strong>Data/Region:</strong> Infrasound dataset from OSIRIS-REx SRC reentry recorded at 39 stations in Nevada and Utah.</p><p><strong>Relevance:</strong> Ground-truth validation of cylindrical blast wave theory enhances infrasound interpretation for high-speed atmospheric entries, supporting meteor and explosion monitoring.</p></div>
     <p class="authors"><a href="https://arxiv.org/pdf/2605.20455v1">arXiv PDF</a></p>
   </details>
 </article>
@@ -285,15 +285,15 @@
 <article class="paper" data-page-item data-index="7">
   <h3><a href="http://arxiv.org/abs/2605.20132v1">FiLark: a streaming-first software framework for end-to-end exploration, annotation, and algorithm integration in distributed acoustic sensing</a></h3>
   <p class="authors">Jintao Li, Weichang Li, Kai Tong, Xaingyu Guo · 2026-05-19 · physics.geo-ph, cs.LG, eess.SP</p>
-  <p class="one-line" data-lang="zh"><strong>未配置可用 LLM；当前显示规则摘要。</strong></p>
-  <p class="one-line" data-lang="en"><strong>Distributed acoustic sensing (DAS) systems generate continuous, ultra-high-channel-count data streams at rates that exceed the capabilities of conventional batch-oriented analysis frameworks.</strong></p>
-  <div class="keywords" data-lang="zh"><span>data</span><span>processing</span><span>filark</span><span>annotation</span><span>continuous</span></div>
-  <div class="keywords" data-lang="en"><span>data</span><span>processing</span><span>filark</span><span>annotation</span><span>continuous</span></div>
+  <p class="one-line" data-lang="zh"><strong>FiLark是一个Python流式优先框架，可对连续的大通道分布式声学传感数据进行交互式浏览、标注和算法集成，支持常数内存实时可视化并无缝迁移至大规模批处理流程。</strong></p>
+  <p class="one-line" data-lang="en"><strong>FiLark is a Python streaming-first framework for end-to-end interactive exploration, annotation, visualization, and algorithm integration of continuous high-channel-count distributed acoustic sensing data, enabling constant-memory real-time browsing and direc…</strong></p>
+  <div class="keywords" data-lang="zh"><span>分布式声学传感</span><span>流式可视化</span><span>信号处理</span><span>环形缓冲渲染</span><span>交互式标注</span></div>
+  <div class="keywords" data-lang="en"><span>distributed acoustic sensing</span><span>streaming visualization</span><span>signal processing</span><span>ring-buffer rendering</span><span>interactive annotation</span></div>
   <details>
     <summary><span data-lang="zh">展开详细总结</span><span data-lang="en">Show details</span></summary>
-    <div class="summary" data-lang="zh"><ul><li>未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。</li></ul></div>
-    <div class="summary" data-lang="en"><ul><li>Distributed acoustic sensing (DAS) systems generate continuous, ultra-high-channel-count data streams at rates that exceed the capabilities of conventional batch-oriented analysis frameworks.</li><li>As a result, essential tasks such as interactive exploration of long-duration recordings, scalable event annotation, and real-time algorithm-in-the-loop monitoring remain inadequately supported by workflows built around manually selected data segments and offline processing.</li><li>This paper presents FiLark (Fiber Lark), a Python framework that applies a {streaming-first} principle uniformly across data access, signal processing, visualization and monitoring for DAS.</li></ul></div>
-    
+    <div class="summary" data-lang="zh"><ul><li>现有批处理框架无法高效支持连续大通道DAS数据的交互式浏览、标注和实时算法集成。</li><li>FiLark基于统一流式优先架构，提供环形缓冲GPU渲染、集成标注、有状态分块信号处理库和标准化流式监控接口。</li><li>实现对任意长度DAS记录的常数内存实时浏览与标注，并可将交互式配置无缝迁移至大规模批处理流程。</li></ul></div>
+    <div class="summary" data-lang="en"><ul><li>Conventional batch-oriented tools cannot efficiently support interactive browsing, annotation, and real-time algorithm-in-the-loop monitoring of continuous high-channel-count DAS streams due to memory and workflow limitations.</li><li>FiLark applies a unified streaming-first architecture with a ring-buffer OpenGL renderer, integrated annotation interface, stateful chunked signal-processing library, and standardized streaming detector interface in Python.</li><li>Demonstrates constant-memory, real-time interactive browsing and annotation of arbitrarily long DAS recordings and direct reuse of interactive processing configurations in scalable production pipelines.</li></ul></div>
+    <div class="summary" data-lang="zh"><p><strong>主要贡献:</strong> 提出了一个统一流式优先软件框架FiLark，实现了DAS数据的端到端交互式探索、标注、可视化和算法集成，支持常数内存操作并保证工作流可复现。</p><p><strong>方法:</strong> 基于Python的统一流式数据抽象，实现环形缓冲OpenGL渲染、集成标注界面、有状态分块信号处理库和标准化流式监控接口</p><p><strong>数据/区域:</strong> 连续多文件分布式声学传感录波</p><p><strong>相关性:</strong> 该框架为地球物理中DAS应用（如地震事件检测和基础设施监测）提供了关键的可扩展交互式分析工具。</p></div><div class="summary" data-lang="en"><p><strong>Contribution:</strong> A unified streaming-first software framework for end-to-end interactive exploration, annotation, visualization, and algorithm integration of distributed acoustic sensing data, enabling constant-memory operations and seamless workflow reproducibility.</p><p><strong>Method:</strong> Streaming-first data abstraction with ring-buffer OpenGL visualization, integrated annotation interface, stateful chunked signal-processing library, and standardized streaming monitor interface in Python</p><p><strong>Data/Region:</strong> Continuous multi-file distributed acoustic sensing recordings</p><p><strong>Relevance:</strong> Provides scalable, interactive tools critical for DAS-based geophysical applications such as seismic event detection and infrastructure monitoring.</p></div>
     <p class="authors"><a href="https://arxiv.org/pdf/2605.20132v1">arXiv PDF</a></p>
   </details>
 </article>
@@ -302,15 +302,15 @@
 <article class="paper" data-page-item data-index="8">
   <h3><a href="http://arxiv.org/abs/2605.20030v1">Take It or Leave It: Intent-Controlled Partial Optimal Transport</a></h3>
   <p class="authors">Salil Parth Tripathi, Bertrand Chapron, Fabrice Collard, Nicolas Courty, Ronan Fablet · 2026-05-19 · cs.LG, math.OC</p>
-  <p class="one-line" data-lang="zh"><strong>未配置可用 LLM；当前显示规则摘要。</strong></p>
-  <p class="one-line" data-lang="en"><strong>While optimal transport (OT) enforces a rigid constraint by requiring two measures to be matched exactly, partial optimal transport relaxes this requirement by allowing mass to remain unmatched through a global budget, scalar rebate, or uniform rejection rule.</strong></p>
-  <div class="keywords" data-lang="zh"><span>rejection</span><span>transport</span><span>optimal</span><span>pointwise</span><span>information</span></div>
-  <div class="keywords" data-lang="en"><span>rejection</span><span>transport</span><span>optimal</span><span>pointwise</span><span>information</span></div>
+  <p class="one-line" data-lang="zh"><strong>本文提出IC-POT，通过逐点拒绝成本推广偏最优传输，推导其理论性质，并在结构化拒绝任务和地球物理应用中验证了其有效性。</strong></p>
+  <p class="one-line" data-lang="en"><strong>This paper introduces IC-POT, a generalization of partial optimal transport with pointwise rejection costs, and demonstrates its theoretical properties and effectiveness in structured-rejection tasks including geophysical applications.</strong></p>
+  <div class="keywords" data-lang="zh"><span>偏最优传输</span><span>逐点拒绝</span><span>对偶形式</span><span>Kantorovich OT</span><span>卫星海浪谱</span></div>
+  <div class="keywords" data-lang="en"><span>partial optimal transport</span><span>pointwise rejection</span><span>dual formulation</span><span>Kantorovich OT</span><span>satellite ocean-wave spectra</span></div>
   <details>
     <summary><span data-lang="zh">展开详细总结</span><span data-lang="en">Show details</span></summary>
-    <div class="summary" data-lang="zh"><ul><li>未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。</li></ul></div>
-    <div class="summary" data-lang="en"><ul><li>While optimal transport (OT) enforces a rigid constraint by requiring two measures to be matched exactly, partial optimal transport relaxes this requirement by allowing mass to remain unmatched through a global budget, scalar rebate, or uniform rejection rule.</li><li>However, many applications call for more structured, pointwise rejection mechanisms, where the decision to leave mass unmatched depends on side-specific reliability, support geometry, or external information about which components should participate in the comparison.</li><li>We introduce {intent-controlled partial optimal transport} (IC-POT), a targeted generalization of partial transport that replaces the global rejection paradigm with pointwise rejection costs over both measures.</li></ul></div>
-    
+    <div class="summary" data-lang="zh"><ul><li>问题: 传统偏最优传输仅支持全局拒绝，无法基于逐点和侧信息进行结构化匹配决策。</li><li>方法: 提出IC-POT，通过松弛变量引入逐点拒绝成本，推导对偶截断和增广支持等价性，并用平衡Kantorovich方法求解。</li><li>关键结果: 在PU学习、OPDA和卫星海浪谱对比中，IC-POT通过利用侧信息显著优于常数成本偏OT。</li></ul></div>
+    <div class="summary" data-lang="en"><ul><li>Problem: Classical partial optimal transport enforces global rejection rules, lacking capacity for structured, pointwise unmatched decisions based on side-specific information.</li><li>Approach: Introduce a slack-based OT formulation (IC-POT) with pointwise unmatched costs, derive its dual caps and augmented-support equivalence, and implement a balanced Kantorovich solver.</li><li>Key result: IC-POT outperforms constant-cost partial OT in positive-unlabeled learning, open-partial domain adaptation, and satellite ocean-wave spectra comparison by leveraging side information.</li></ul></div>
+    <div class="summary" data-lang="zh"><p><strong>主要贡献:</strong> 主要贡献是提出IC-POT框架，通过逐点拒绝成本扩展偏最优传输，推导其对偶截断和增广支持等价性，并在结构化拒绝场景中验证了其实用价值。</p><p><strong>方法:</strong> 使用松弛变量引入逐点拒绝成本的意图控制偏最优传输(IC-POT)，通过增广支持的平衡Kantorovich OT求解。</p><p><strong>数据/区域:</strong> 来自CFOSAT SWIM和合成孔径雷达的多模态卫星海浪谱</p><p><strong>相关性:</strong> 通过将传感器特性和物理先验编码到OT拒绝策略，实现对同位置卫星海浪测量的更精确比较。</p></div><div class="summary" data-lang="en"><p><strong>Contribution:</strong> The main contribution is the development of IC-POT, a partial optimal transport framework with pointwise rejection costs, its theoretical analysis including dual and augmented-support formulations, and demonstration of its practical benefits in structured-rejection scenarios.</p><p><strong>Method:</strong> Intent-controlled partial optimal transport (IC-POT) using slack variables for pointwise unmatched costs and solved via augmented-support balanced Kantorovich OT.</p><p><strong>Data/Region:</strong> Multi-modal satellite ocean-wave spectra from CFOSAT SWIM and Synthetic Aperture Radar.</p><p><strong>Relevance:</strong> Allows encoding of sensor-specific and physical priors into OT rejection policies, enabling more accurate comparison of co-located satellite ocean-wave measurements.</p></div>
     <p class="authors"><a href="https://arxiv.org/pdf/2605.20030v1">arXiv PDF</a></p>
   </details>
 </article>
@@ -319,15 +319,15 @@
 <article class="paper" data-page-item data-index="9">
   <h3><a href="http://arxiv.org/abs/2605.19951v1">Scalable parallel 3-D TEM inversion via rational approximation of the matrix exponential</a></h3>
   <p class="authors">Ralph-Uwe Börner, Stefan Güttel, Thomas Günther · 2026-05-19 · math.NA, physics.geo-ph</p>
-  <p class="one-line" data-lang="zh"><strong>未配置可用 LLM；当前显示规则摘要。</strong></p>
-  <p class="one-line" data-lang="en"><strong>We present a novel parallel implementation for large-scale three-dimensional electromagnetic inversion based on a Gauss-Newton framework combined with a rational near-best approximation of the matrix exponential for transient simulations.</strong></p>
-  <div class="keywords" data-lang="zh"><span>parallel</span><span>rational</span><span>inversion</span><span>approximation</span><span>matrix</span></div>
-  <div class="keywords" data-lang="en"><span>parallel</span><span>rational</span><span>inversion</span><span>approximation</span><span>matrix</span></div>
+  <p class="one-line" data-lang="zh"><strong>本文提出基于矩阵指数有理近似的并行3D瞬变电磁反演实现，实现了与观测时刻数无关的高效可扩展反演并在合成模型（约70万自由度）上成功验证。</strong></p>
+  <p class="one-line" data-lang="en"><strong>We introduce a parallel Gauss-Newton 3D TEM inversion framework using rational matrix exponential approximations that decouples computational cost from time channels and successfully recovers synthetic conductivity models of ~700k degrees of freedom.</strong></p>
+  <div class="keywords" data-lang="zh"><span>三维瞬变电磁反演</span><span>矩阵指数</span><span>有理近似</span><span>并行直接求解</span><span>Gauss-Newton</span></div>
+  <div class="keywords" data-lang="en"><span>3D TEM inversion</span><span>matrix exponential</span><span>rational approximation</span><span>parallel direct solver</span><span>Gauss-Newton</span></div>
   <details>
     <summary><span data-lang="zh">展开详细总结</span><span data-lang="en">Show details</span></summary>
-    <div class="summary" data-lang="zh"><ul><li>未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。</li></ul></div>
-    <div class="summary" data-lang="en"><ul><li>We present a novel parallel implementation for large-scale three-dimensional electromagnetic inversion based on a Gauss-Newton framework combined with a rational near-best approximation of the matrix exponential for transient simulations.</li><li>The method employs parallel direct solvers for the shifted linear systems arising from the partial fraction representation of the rational approximation and demonstrates efficient parallel execution on a shared-memory architecture using MPI.</li><li>A key property of the approach is that the time dependence is entirely contained in the residuals of the employed rational functions, such that the computation of forward responses and sensitivities becomes effectively independent of the number of desired observation times.</li></ul></div>
-    
+    <div class="summary" data-lang="zh"><ul><li>问题：时间步进的三维瞬变电磁反演计算量大且随采样时刻数增长迅速。</li><li>方法：基于矩阵指数的共享极点有理近似重构正演，结合并行求解多组移位线性系统的Gauss-Newton反演框架。</li><li>关键结果：在共享内存MPI环境下成功恢复约70万自由度的合成电导率模型，且计算成本与观测时刻数无关。</li></ul></div>
+    <div class="summary" data-lang="en"><ul><li>Problem: Time-stepping 3D transient electromagnetic inversion is computationally expensive and scales poorly with the number of time channels.</li><li>Approach: Reformulate the forward problem using a shared-pole rational approximation of the matrix exponential and solve resulting shifted linear systems in parallel within a Gauss-Newton inversion framework.</li><li>Key result: The implementation recovers a synthetic 3D conductivity model (~700k DOF) efficiently on shared-memory MPI and decouples cost from the number of observation times.</li></ul></div>
+    <div class="summary" data-lang="zh"><p><strong>主要贡献:</strong> 提出了一种基于矩阵指数有理近似的并行Gauss-Newton三维瞬变电磁反演算法，实现了与时间通道数无关的计算成本并利用并行直接求解器增强可扩展性。</p><p><strong>方法:</strong> 基于共享极点的矩阵指数有理近似的Gauss-Newton反演，使用MPI并行MUMPS直接求解器，RT0有限元离散和LSQR求解。</p><p><strong>数据/区域:</strong> 约70万自由度的三维合成电导率模型</p><p><strong>相关性:</strong> 通过将计算成本与时间通道数解耦，实现大规模瞬变电磁数据的高效并行反演，有助于解决3D TEM勘探中的计算瓶颈。</p></div><div class="summary" data-lang="en"><p><strong>Contribution:</strong> A parallel Gauss-Newton 3D TEM inversion algorithm using rational matrix exponential approximations that decouples time dependence and leverages parallel direct solvers for scalable large-scale inversion.</p><p><strong>Method:</strong> Gauss-Newton inversion with shared-pole rational approximation of the matrix exponential, parallel MUMPS direct solvers on MPI, finite-element discretization (RT0 elements), and LSQR solver.</p><p><strong>Data/Region:</strong> Synthetic 3-D conductivity model with approximately 700,000 degrees of freedom</p><p><strong>Relevance:</strong> Enables efficient parallel inversion of large-scale transient EM data by decoupling cost from time channels, addressing computational bottlenecks in 3D TEM exploration geophysics.</p></div>
     <p class="authors"><a href="https://arxiv.org/pdf/2605.19951v1">arXiv PDF</a></p>
   </details>
 </article>
@@ -336,15 +336,15 @@
 <article class="paper" data-page-item data-index="10">
   <h3><a href="http://arxiv.org/abs/2605.19903v1">New NanoSIMS Multielement Isotope Data Reveal CO Novae As Key Sources Of 13C-rich Presolar Silicon Carbide Grains</a></h3>
   <p class="authors">Jordi José, Nan Liu, Conel M. O&#x27;D. Alexander, Jianhua Wang · 2026-05-19 · astro-ph.SR, astro-ph.GA, physics.geo-ph</p>
-  <p class="one-line" data-lang="zh"><strong>未配置可用 LLM；当前显示规则摘要。</strong></p>
-  <p class="one-line" data-lang="en"><strong>We present new multielement NanoSIMS isotopic measurements (C, N, Si, Mg-Al, Ti, and Ni) for four putative nova SiC grains and 79 AB SiC grains from the Murchison meteorite to reassess their stellar origins.</strong></p>
-  <div class="keywords" data-lang="zh"><span>grains</span><span>nova</span><span>multielement</span><span>isotope</span><span>novae</span></div>
-  <div class="keywords" data-lang="en"><span>grains</span><span>nova</span><span>multielement</span><span>isotope</span><span>novae</span></div>
+  <p class="one-line" data-lang="zh"><strong>多元素同位素数据与扩展CO新星模型一致，证明0.6–1.0 M⊙低中质量CO新星是无s-过程特征的13C富集SiC前太阳尘粒的主要来源。</strong></p>
+  <p class="one-line" data-lang="en"><strong>Multielement isotope data of presolar SiC grains and comprehensive nova nucleosynthesis models demonstrate that low-to-intermediate-mass CO novae are the primary sources of 13C-rich SiC grains lacking s-process signatures.</strong></p>
+  <div class="keywords" data-lang="zh"><span>前太阳SiC</span><span>NanoSIMS</span><span>CO新星</span><span>水动力模型</span><span>同位素比</span></div>
+  <div class="keywords" data-lang="en"><span>presolar SiC</span><span>NanoSIMS</span><span>CO novae</span><span>hydrodynamic models</span><span>isotope ratios</span></div>
   <details>
     <summary><span data-lang="zh">展开详细总结</span><span data-lang="en">Show details</span></summary>
-    <div class="summary" data-lang="zh"><ul><li>未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。</li></ul></div>
-    <div class="summary" data-lang="en"><ul><li>We present new multielement NanoSIMS isotopic measurements (C, N, Si, Mg-Al, Ti, and Ni) for four putative nova SiC grains and 79 AB SiC grains from the Murchison meteorite to reassess their stellar origins.</li><li>High-resolution imaging and a revised Mg/Al relative sensitivity factor for SiC yield substantially improved 26Al/27Al ratios and the most reliable multielement characterization to date for 13C-rich presolar SiC grains.</li><li>To interpret these data, we computed an expanded suite of hydrodynamic CO, ONe, and recurrent nova models spanning a range of white-dwarf masses and pre-enrichment parameters.</li></ul></div>
-    
+    <div class="summary" data-lang="zh"><ul><li>由于多元素同位素数据和模型局限，13C富集且无s过程特征的SiC前太阳尘粒来源不明</li><li>利用NanoSIMS高分辨成像获取C、N、Si、Mg-Al、Ti、Ni同位素数据，并与扩展的CO、ONe及复发新星水动力模型对比</li><li>0.6–1.0 M⊙ CO新星模型可同时匹配所有同位素系统，表明其是这些尘粒的主要来源</li></ul></div>
+    <div class="summary" data-lang="en"><ul><li>Uncertain stellar origins of 13C-rich presolar SiC grains lacking s-process signatures due to limited multielement isotope data and model constraints</li><li>High-resolution NanoSIMS C, N, Si, Mg-Al, Ti, and Ni isotopic measurements for nova and AB SiC grains compared against expanded CO, ONe, and recurrent nova hydrodynamic models</li><li>Hydrodynamic models of 0.6–1.0 M⊙ CO novae uniquely reproduce all observed isotopic trends, identifying them as the primary sources</li></ul></div>
+    <div class="summary" data-lang="zh"><p><strong>主要贡献:</strong> 本研究通过NanoSIMS多元素同位素分析结合扩展的水动力新星模型，确定了0.6–1.0 M⊙低中质量CO新星是无s过程特征的13C富集SiC前太阳尘粒的主要来源。</p><p><strong>方法:</strong> 采用NanoSIMS高分辨成像测定C、N、Si、Mg-Al、Ti、Ni同位素，并与一维CO、ONe及复发新星水动力模拟对比。</p><p><strong>数据/区域:</strong> 慕氏陨石中4粒疑似新星SiC颗粒和79粒AB型SiC颗粒</p><p><strong>相关性:</strong> 量化CO新星对前太阳尘埃的贡献，有助于完善星际尘埃输入太阳星云的模型，深化对早期太阳系物质的认识。</p></div><div class="summary" data-lang="en"><p><strong>Contribution:</strong> This study provides the first comprehensive multielement isotopic characterization of 13C-rich presolar SiC grains and establishes low-to-intermediate-mass CO novae as their dominant stellar sources.</p><p><strong>Method:</strong> High-resolution NanoSIMS multielement isotope imaging for C, N, Si, Mg-Al, Ti, and Ni combined with one-dimensional hydrodynamic nova simulations (CO, ONe, recurrent).</p><p><strong>Data/Region:</strong> Presolar SiC grains from the Murchison meteorite (4 putative nova and 79 AB grains)</p><p><strong>Relevance:</strong> Quantifying CO nova contributions to presolar dust refines models of interstellar dust input into the solar nebula, impacting our understanding of early solar system materials.</p></div>
     <p class="authors"><a href="https://arxiv.org/pdf/2605.19903v1">arXiv PDF</a></p>
   </details>
 </article>
@@ -353,15 +353,15 @@
 <article class="paper" data-page-item data-index="11">
   <h3><a href="http://arxiv.org/abs/2605.19608v1">Reassessment of Ionospheric Responses to GRB~221009A: Disentangling Instrumental, Illumination and Geophysical Effects</a></h3>
   <p class="authors">Maosheng He, Quanhan Li, Shun-Rong Zhang, Jeffrey M. Forbes, Jiuhou Lei, Libo Liu et al. · 2026-05-19 · physics.space-ph</p>
-  <p class="one-line" data-lang="zh"><strong>未配置可用 LLM；当前显示规则摘要。</strong></p>
-  <p class="one-line" data-lang="en"><strong>Gamma-ray bursts (GRBs) have long been proposed to perturb Earth&#x27;s ionosphere, with occasional reports of disruptions in ultra- and extremely-low-frequency radio signals.</strong></p>
-  <div class="keywords" data-lang="zh"><span>ionospheric</span><span>responses</span><span>reassessment</span><span>instrumental</span><span>illumination</span></div>
-  <div class="keywords" data-lang="en"><span>ionospheric</span><span>responses</span><span>reassessment</span><span>instrumental</span><span>illumination</span></div>
+  <p class="one-line" data-lang="zh"><strong>通过对TEC、卫星电场和赤道电流带多源数据的重分析，驳斥了GRB 221009A对电离层扰动的报道，指出相关异常源自仪器效应、照明几何和太阳风变化。</strong></p>
+  <p class="one-line" data-lang="en"><strong>An independent multi-altitude analysis finds no ionospheric perturbations attributable to GRB 221009A, attributing previously reported electric-field, TEC, and EEJ anomalies to instrumental artifacts, illumination effects, and solar-wind-driven geophysical va…</strong></p>
+  <div class="keywords" data-lang="zh"><span>GRB 221009A</span><span>电离层</span><span>GNSS TEC</span><span>CSES电场</span><span>赤道电流带</span></div>
+  <div class="keywords" data-lang="en"><span>GRB 221009A</span><span>ionosphere</span><span>GNSS TEC</span><span>CSES electric field</span><span>equatorial electrojet</span></div>
   <details>
     <summary><span data-lang="zh">展开详细总结</span><span data-lang="en">Show details</span></summary>
-    <div class="summary" data-lang="zh"><ul><li>未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。</li></ul></div>
-    <div class="summary" data-lang="en"><ul><li>Gamma-ray bursts (GRBs) have long been proposed to perturb Earth&#x27;s ionosphere, with occasional reports of disruptions in ultra- and extremely-low-frequency radio signals.</li><li>The exceptionally bright GRB~221009A was recently claimed to induce multi-altitude ionospheric responses, including perturbations in satellite electric fields, regional total electron content (TEC), and the equatorial electrojet (EEJ).</li><li>These claims have renewed interest in the potential near-Earth impacts of astrophysical transients.</li></ul></div>
-    
+    <div class="summary" data-lang="zh"><ul><li>问题：有研究声称GRB 221009A引发了多高度电离层响应</li><li>方法：利用高通滤波GNSS TEC、CSES卫星电场和地面磁强计EEJ代理数据并结合太阳风参数进行独立复核</li><li>结果：未发现一致的TEC增强，电场和EEJ异常由照明几何或太阳风驱动，与GRB无关</li></ul></div>
+    <div class="summary" data-lang="en"><ul><li>Problem: Reports claimed GRB 221009A induced multi-altitude ionospheric disturbances</li><li>Approach: Independent reassessment using high-pass–filtered global GNSS TEC, CSES satellite electric-field data, and ground magnetometer EEJ proxies alongside solar-wind parameters</li><li>Key result: No coherent TEC enhancement and electric-field or EEJ anomalies coincide with illumination geometry or solar-wind variability, not the GRB</li></ul></div>
+    <div class="summary" data-lang="zh"><p><strong>主要贡献:</strong> 通过多仪器数据的综合分析，明确指出先前报道的GRB电离层效应源自仪器伪差和地球物理背景变化，而非GRB本身，有效终结相关争议。</p><p><strong>方法:</strong> 高通滤波全球GNSS TEC、CSES卫星电场观测、地面磁强计EEJ代理及同步太阳风和地磁数据分析</p><p><strong>数据/区域:</strong> 全球GNSS接收机（45°N–45°S）、CSES卫星数据和赤道地面磁强计观测</p><p><strong>相关性:</strong> 澄清了天体瞬变对地球电离层的实际影响边界，强调在地球空间耦合研究中需排除仪器效应和空间天气背景</p></div><div class="summary" data-lang="en"><p><strong>Contribution:</strong> Provides a definitive multi-instrument evaluation that resolves the controversy by showing reported GRB-induced ionospheric effects stem from instrumental artifacts and natural geophysical variability rather than the burst.</p><p><strong>Method:</strong> High-pass–filtered global GNSS-derived TEC, CSES satellite electric-field measurements, ground magnetometer EEJ proxies, and concurrent solar-wind and geomagnetic data analysis</p><p><strong>Data/Region:</strong> Global GNSS receivers (45°N–45°S), CSES satellite data, equatorial ground magnetometers</p><p><strong>Relevance:</strong> Clarifies the true limits of astrophysical transient impacts on Earth’s ionosphere and underscores the need to account for instrumentation and space-weather background in geospace coupling studies</p></div>
     <p class="authors"><a href="https://arxiv.org/pdf/2605.19608v1">arXiv PDF</a></p>
   </details>
 </article>
@@ -370,15 +370,15 @@
 <article class="paper" data-page-item data-index="12">
   <h3><a href="http://arxiv.org/abs/2605.19507v1">The Astro2Geo Project I. Radio astrometric offsets correlated with Gamma-ray brightness</a></h3>
   <p class="authors">Jeffrey A. Hodgson, Hana Krasna, Aletha de Witt, Pfesesani van Zyl, Janeth Valverde · 2026-05-19 · astro-ph.HE, astro-ph.GA, astro-ph.IM</p>
-  <p class="one-line" data-lang="zh"><strong>未配置可用 LLM；当前显示规则摘要。</strong></p>
-  <p class="one-line" data-lang="en"><strong>Precision geodesy relies on the stability of the International Celestial Reference Frame (ICRF), yet its reference sources, Active Galactic Nuclei (AGN), exhibit changes in source structure that can manifest as apparent shifts in their astrometric positions.</strong></p>
-  <div class="keywords" data-lang="zh"><span>radio</span><span>astrometric</span><span>gamma-ray</span><span>sources</span><span>icrf</span></div>
-  <div class="keywords" data-lang="en"><span>radio</span><span>astrometric</span><span>gamma-ray</span><span>sources</span><span>icrf</span></div>
+  <p class="one-line" data-lang="zh"><strong>本研究发现国际天球参考系活跃星系核在S/X和K波段的射电位置偏移与γ射线流量显著相关，表明喷流物理过程与参考系稳定性之间存在复杂多机制联系。</strong></p>
+  <p class="one-line" data-lang="en"><strong>This study reveals significant correlations between radio astrometric position offsets of ICRF3 AGN at S/X and K bands and their near-in-time Fermi-LAT gamma-ray fluxes, indicating complex multi-mechanism links between jet physics and reference frame stabilit…</strong></p>
+  <div class="keywords" data-lang="zh"><span>AGN天体测量</span><span>VLBI</span><span>Fermi-LAT</span><span>γ射线相关</span><span>ICRF稳定性</span></div>
+  <div class="keywords" data-lang="en"><span>AGN astrometry</span><span>VLBI</span><span>Fermi-LAT</span><span>gamma-ray correlation</span><span>ICRF</span></div>
   <details>
     <summary><span data-lang="zh">展开详细总结</span><span data-lang="en">Show details</span></summary>
-    <div class="summary" data-lang="zh"><ul><li>未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。</li></ul></div>
-    <div class="summary" data-lang="en"><ul><li>Precision geodesy relies on the stability of the International Celestial Reference Frame (ICRF), yet its reference sources, Active Galactic Nuclei (AGN), exhibit changes in source structure that can manifest as apparent shifts in their astrometric positions.</li><li>The high-precision radio measurements used to maintain the ICRF therefore provide a means to investigate the astrophysical mechanisms driving these changes.</li><li>In particular, the observed astrometric variability offers a unique opportunity to link positional shifts in AGN to high-energy astrophysical processes.</li></ul></div>
-    
+    <div class="summary" data-lang="zh"><ul><li>问题: 天球参考系AGN射电结构随时间变化导致位置漂移，其与高能γ射线发射的关系尚不明确。</li><li>方法: 对比57个ICRF3活跃星系核在S/X(2.3/8.4 GHz)和K(24 GHz)波段的VLBI位置偏移与同期Fermi-LATγ射线流量，采用EM修正正交距离回归及时延分析。</li><li>关键结果: 约90%的源在位置偏移与γ射线亮度之间展现显著正负幂律相关，表明多种喷流物理机制共同作用。</li></ul></div>
+    <div class="summary" data-lang="en"><ul><li>Problem: Reference frame AGN exhibit time-variable radio structure causing apparent astrometric position shifts whose connection to high-energy emission is unclear.</li><li>Approach: Correlated VLBI astrometric offsets at 2.3/8.4 GHz and 24 GHz with near-in-time Fermi-LAT γ-ray fluxes for 57 AGN using EM-adapted orthogonal distance regression and time-lag analysis.</li><li>Key result: ~90% of sources show statistically significant positive or negative power-law correlations between radio position offsets and γ-ray brightness, indicating a complex interplay of multiple jet-related mechanisms.</li></ul></div>
+    <div class="summary" data-lang="zh"><p><strong>主要贡献:</strong> 建立了AGN射电天文测量位置偏移与γ射线流量之间的统计相关性，突显了利用天体测量监测研究喷流物理过程及参考系稳定性的潜力。</p><p><strong>方法:</strong> 采用EM修正的正交距离回归将S/X和K波段VLBI天文测量位置偏移与同期Fermi-LATγ射线流量相关，并辅以离散相关函数时延分析。</p><p><strong>数据/区域:</strong> 57个ICRF3活跃星系核的2.3/8.4 GHz和24 GHz IVS及Astro2Geo VLBI数据，与Fermi-LATγ射线光变曲线。</p><p><strong>相关性:</strong> 通过揭示AGN喷流对天球参考系射电位置的影响，本研究为地球测量和地球旋转参数精确测定提供了稳定参考源选择和监测的指导。</p></div><div class="summary" data-lang="en"><p><strong>Contribution:</strong> Establishes statistically significant correlations between multi-frequency VLBI astrometric offsets of AGN and their γ-ray fluxes, highlighting astrometric monitoring as a probe of complex jet physical processes affecting reference frame stability.</p><p><strong>Method:</strong> EM-adjusted orthogonal distance regression of VLBI astrometric offsets at S/X and K bands against near-in-time Fermi-LAT γ-ray fluxes, plus discrete correlation function time-lag analysis.</p><p><strong>Data/Region:</strong> 57 ICRF3 AGN with S/X (2.3/8.4 GHz) and K (24 GHz) VLBI sessions from IVS and Astro2Geo, correlated with Fermi-LAT γ-ray light curves.</p><p><strong>Relevance:</strong> By linking AGN jet-induced astrometric variability to γ-ray emission, this work informs the selection and monitoring of stable reference sources crucial for accurate geodetic measurements and Earth orientation determination.</p></div>
     <p class="authors"><a href="https://arxiv.org/pdf/2605.19507v1">arXiv PDF</a></p>
   </details>
 </article>
@@ -618,36 +618,36 @@
     <aside class="side">
       <h2 data-lang="zh">关键词趋势</h2>
       <h2 data-lang="en">arXiv Trending</h2>
-      <ol class="trend"><li><span>1</span><strong>data</strong><em>2</em></li>
-<li><span>2</span><strong>learning</strong><em>2</em></li>
-<li><span>3</span><strong>fracture</strong><em>2</em></li>
-<li><span>4</span><strong>hydraulic</strong><em>2</em></li>
-<li><span>5</span><strong>across</strong><em>2</em></li>
-<li><span>6</span><strong>field</strong><em>2</em></li>
-<li><span>7</span><strong>spatial overdispersion</strong><em>1</em></li>
-<li><span>8</span><strong>negative binomial regression</strong><em>1</em></li>
-<li><span>9</span><strong>seismicity forecasting</strong><em>1</em></li>
-<li><span>10</span><strong>spatial embeddings</strong><em>1</em></li>
-<li><span>11</span><strong>tail-risk assessment</strong><em>1</em></li>
-<li><span>12</span><strong>angular momentum density</strong><em>1</em></li>
-<li><span>13</span><strong>viscous torque decomposition</strong><em>1</em></li>
-<li><span>14</span><strong>lift generation</strong><em>1</em></li>
-<li><span>15</span><strong>geophysical circulation</strong><em>1</em></li>
-<li><span>16</span><strong>rotlet Green’s function</strong><em>1</em></li>
-<li><span>17</span><strong>coefficient</strong><em>1</em></li>
-<li><span>18</span><strong>conservative</strong><em>1</em></li>
-<li><span>19</span><strong>saturation</strong><em>1</em></li>
-<li><span>20</span><strong>affine-constrained</strong><em>1</em></li>
-<li><span>21</span><strong>method</strong><em>1</em></li>
-<li><span>22</span><strong>forest</strong><em>1</em></li>
-<li><span>23</span><strong>height</strong><em>1</em></li>
-<li><span>24</span><strong>tandem-x</strong><em>1</em></li>
-<li><span>25</span><strong>production</strong><em>1</em></li>
-<li><span>26</span><strong>shadow</strong><em>1</em></li>
-<li><span>27</span><strong>fluid</strong><em>1</em></li>
-<li><span>28</span><strong>blast</strong><em>1</em></li>
-<li><span>29</span><strong>benchmarking</strong><em>1</em></li>
-<li><span>30</span><strong>cylindrical</strong><em>1</em></li></ol>
+      <ol class="trend"><li><span>1</span><strong>negative binomial regression</strong><em>1</em></li>
+<li><span>2</span><strong>spatial embeddings</strong><em>1</em></li>
+<li><span>3</span><strong>seismicity forecasting</strong><em>1</em></li>
+<li><span>4</span><strong>USGS catalog</strong><em>1</em></li>
+<li><span>5</span><strong>overdispersion</strong><em>1</em></li>
+<li><span>6</span><strong>Angular momentum</strong><em>1</em></li>
+<li><span>7</span><strong>Viscous torque</strong><em>1</em></li>
+<li><span>8</span><strong>Boundary layer</strong><em>1</em></li>
+<li><span>9</span><strong>Hydrodynamic impulse</strong><em>1</em></li>
+<li><span>10</span><strong>Rotlet</strong><em>1</em></li>
+<li><span>11</span><strong>Buckley–Leverett</strong><em>1</em></li>
+<li><span>12</span><strong>multiwavelet discretization</strong><em>1</em></li>
+<li><span>13</span><strong>affine constraint</strong><em>1</em></li>
+<li><span>14</span><strong>shock capturing</strong><em>1</em></li>
+<li><span>15</span><strong>Berea-core</strong><em>1</em></li>
+<li><span>16</span><strong>TanDEM-X</strong><em>1</em></li>
+<li><span>17</span><strong>InSAR coherence</strong><em>1</em></li>
+<li><span>18</span><strong>Landsat-8</strong><em>1</em></li>
+<li><span>19</span><strong>Legendre series</strong><em>1</em></li>
+<li><span>20</span><strong>forest height estimation</strong><em>1</em></li>
+<li><span>21</span><strong>hydraulic fracturing</strong><em>1</em></li>
+<li><span>22</span><strong>SGBEM-FEM</strong><em>1</em></li>
+<li><span>23</span><strong>stress-shadow</strong><em>1</em></li>
+<li><span>24</span><strong>cloud-native</strong><em>1</em></li>
+<li><span>25</span><strong>Darcy flow</strong><em>1</em></li>
+<li><span>26</span><strong>infrasound</strong><em>1</em></li>
+<li><span>27</span><strong>cylindrical blast wave</strong><em>1</em></li>
+<li><span>28</span><strong>blast radius</strong><em>1</em></li>
+<li><span>29</span><strong>weak shock</strong><em>1</em></li>
+<li><span>30</span><strong>OSIRIS-REx</strong><em>1</em></li></ol>
     </aside>
   </main>
   <footer>
