@@ -1,6 +1,6 @@
 {
-  "date": "2026-05-21",
-  "generated_at": "2026-05-21T23:21:34.562150+00:00",
+  "date": "2026-05-22",
+  "generated_at": "2026-05-21T23:30:43.518538+00:00",
   "config": {
     "site_title": "PaperRadar",
     "site_description": {
@@ -54,7 +54,7 @@
     "keywords_per_paper": 5,
     "trending_top_n": 30
   },
-  "query": "((cat:physics.geo-ph) OR (all:geophysics) OR (all:seismology) OR (all:geodesy) OR (all:geodynamics) OR (all:geomagnetism)) AND (submittedDate:[20260514 TO *])",
+  "query": "((cat:physics.geo-ph) OR (all:geophysics) OR (all:seismology) OR (all:geodesy) OR (all:geodynamics) OR (all:geomagnetism)) AND (submittedDate:[20260515 TO *])",
   "papers": [
     {
       "paper": {
@@ -75,48 +75,53 @@
         "abs_url": "http://arxiv.org/abs/2605.21437v1",
         "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.21437v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": null,
-        "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.21437v1.md",
+        "markdown_parse_error": null
       },
       "analysis": {
         "schema_version": "paperradar.analysis.v3",
         "input_version": "markdown-clean-v1",
-        "one_sentence_en": "Standard approaches to forecasting the weekly number of earthquakes on a spatial grid rely on the Poisson distribution with a single global dispersion assumption.",
-        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "one_sentence_en": "The paper introduces EarthquakeNet, a neural negative binomial grid model that learns per-cell overdispersion for weekly earthquake counts in Central Asia and yields improved probabilistic tail-risk forecasts versus a negative binomial GLM baseline.",
+        "one_sentence_zh": "该文提出EarthquakeNet神经负二项网格模型，为中亚每个空间格点学习超离散度并预测每周地震计数概率分布，其在尾部风险预警上优于负二项GLM基线。",
         "summary_en": [
-          "Standard approaches to forecasting the weekly number of earthquakes on a spatial grid rely on the Poisson distribution with a single global dispersion assumption.",
-          "We show that this assumption is systematically violated in seismic data from Central Asia (2010-2024), where a likelihood-ratio test with boundary correction strongly rejects the Poisson hypothesis (p < 10^{-179}).",
-          "The main contribution of this work is the EarthquakeNet architecture, which provides an endogenous per-cell estimate of the overdispersion parameter alpha via a neural network (spatial embeddings + MLP), without explicit spatial covariance specification."
+          "problem: Poisson-based weekly gridded seismicity forecasts assume equidispersion, yet earthquake counts show strong overdispersion and non-uniform clustering across space.",
+          "approach: EarthquakeNet replaces a single global negative-binomial dispersion with an endogenous per-cell overdispersion estimated by spatial embeddings plus an MLP using physics-inspired lagged predictors, then evaluates quantile- and distribution-based tail metrics.",
+          "key result: In a walk-forward 2018–2023 evaluation over four systems in Central Asia (2010–2024 USGS catalog), the proposed model reduces mean pinball deviation and improves tail-event calibration, with reported MPD and CRPS gains over the negative-binomial GLM baseline."
         ],
         "summary_zh": [
-          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+          "problem: 用泊松分布的每周格网地震预测通常假设条件等离散，但真实地震计数存在显著过离散且空间聚集强度不均。",
+          "approach: EarthquakeNet将负二项分布从“全局单一超离散度”改为“每个格点内生估计”，用空间嵌入加MLP处理物理启发的滞后特征，并用分位数与分布层面的指标评估尾部风险。",
+          "key result: 在中亚基于USGS 2010–2024数据的2018–2023滚动评测（四个系统）中，模型相对负二项GLM基线在整体误差与尾部事件校准上均有改进，文中给出MPD与尾部CRPS的提升幅度。"
         ],
-        "contribution_en": "",
-        "contribution_zh": "",
-        "method_en": "",
-        "method_zh": "",
-        "data_or_region_en": "",
-        "data_or_region_zh": "",
-        "geophysics_relevance_en": "",
-        "geophysics_relevance_zh": "",
+        "contribution_en": "It formally tests and rejects the Poisson equidispersion assumption for weekly gridded earthquake counts in Central Asia, and proposes EarthquakeNet that learns per-cell negative-binomial dispersion without explicitly modeling spatial covariance, improving probabilistic and tail-risk forecasting relative to a negative-binomial GLM.",
+        "contribution_zh": "文中用似然比检验（带边界校正）形式化地证明中亚周尺度格网地震计数不满足泊松等离散假设，并提出EarthquakeNet：无需显式空间协方差建模而直接为每个格点学习负二项的超离散度，从而在概率与尾部风险预测上优于负二项GLM。",
+        "method_en": "Weekly counts on a 3°×3° spatial grid are modeled with a negative binomial distribution whose per-cell overdispersion parameter is produced by a neural network (spatial embeddings plus an MLP) using lagged, physics-inspired predictors (e.g., seismic energy proxies, seismic gap since last large event, and rolling activity windows); forecasts are assessed with walk-forward validation and quantile/tail distribution scoring.",
+        "method_zh": "将地震周尺度计数离散到3°×3°网格，并用负二项分布建模；每个格点的超离散度由神经网络（空间嵌入+MLP）基于物理启发的滞后特征（如能量代理、距上次大震的间隔、滚动活动窗口等）内生生成；通过滚动走前评测并用分位数与尾部分布评分来评估预测质量。",
+        "data_or_region_en": "Central Asia (Tian Shan and Pamir), USGS earthquake catalog from 2010 to early 2024; analysis focuses on magnitude completeness filtering (Mc estimated ~4.5) and uses weekly gridded targets with magnitude threshold M≥3.0.",
+        "data_or_region_zh": "中亚（天山与帕米尔）地区，使用USGS开放地震目录2010年至2024年初；通过完备度阈值（文中Mc约为4.5）进行筛选，并以M≥3.0为阈值构建每周格网目标。",
+        "geophysics_relevance_en": "This is highly relevant to probabilistic seismicity forecasting because it targets a core statistical issue (overdispersion and spatial heterogeneity) and improves extreme-event calibration for risk-aware alerts in a tectonically complex region.",
+        "geophysics_relevance_zh": "这与概率地震预测高度相关，因为它针对地震统计中的关键问题（过离散与空间异质性），并在构建风险敏感的极端事件预警方面提升了尾部事件的概率校准。",
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "topic": "weekly seismicity forecasting",
+        "audience_level": "specialist",
         "keywords_en": [
-          "forecasting",
-          "spatial",
-          "negative",
-          "binomial",
-          "per-cell"
+          "seismicity",
+          "probabilistic forecasting",
+          "negative binomial regression",
+          "earthquake catalogs",
+          "tail risk"
         ],
         "keywords_zh": [
-          "forecasting",
-          "spatial",
-          "negative",
-          "binomial",
-          "per-cell"
+          "地震活动",
+          "概率预测",
+          "负二项回归",
+          "地震目录",
+          "尾部风险"
         ],
-        "topic": "forecasting",
-        "audience_level": "specialist",
-        "llm_used": false,
-        "source": "abstract"
+        "updated_at": "2026-05-21T16:25:36.502258+00:00",
+        "cache_hit": true
       }
     },
     {
@@ -138,48 +143,52 @@
         "abs_url": "http://arxiv.org/abs/2605.21191v1",
         "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.21191v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": null,
-        "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.21191v1.md",
+        "markdown_parse_error": null
       },
       "analysis": {
         "schema_version": "paperradar.analysis.v3",
         "input_version": "markdown-clean-v1",
-        "one_sentence_en": "While vorticity is the classical tool for analyzing rotational fluid kinematics, it inherently focuses on local, differential spin.",
-        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "one_sentence_en": "This paper proposes an angular-momentum-density framework for fluid flows that derives transport equations with explicit torque balance, revealing new physical decompositions for viscous effects, lift generation, and geophysical circulation.",
+        "one_sentence_zh": "本文提出基于流体角动量密度的框架，推导显式扭矩平衡的输运方程，并揭示黏性效应分解、升力产生机制及地球流体环流的统一物理图像。",
         "summary_en": [
-          "While vorticity is the classical tool for analyzing rotational fluid kinematics, it inherently focuses on local, differential spin.",
-          "This paper introduces a complementary framework based on the angular momentum density field, , deriving generalized transport equations that explicitly balance macroscopic torque and rotational momentum.",
-          "This perspective offers several distinct theoretical advantages over traditional velocity/vorticity formulations."
+          "problem: Vorticity analysis captures only local differential spin and obscures nonlocal torque and several geophysical/viscous mechanisms.",
+          "approach: Formulate a complementary transport theory for angular momentum density and derive its generalized balance laws, including viscous torque decomposition and boundary-layer limits.",
+          "key result: The angular-momentum-density (L) perspective yields explicit torque/flux budgets, explains lift via vorticity as an angular-momentum source, provides a clean separation for hydrodynamic impulse, unifies added-mass and lift, and absorbs planetary rotation into conserved axial angular momentum."
         ],
         "summary_zh": [
-          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+          "problem: 涡量分析主要反映局部的差分自旋，难以清晰呈现扭矩平衡与若干黏性/地球流体机制中的非局部物理。",
+          "approach: 构建角动量密度的输运理论并推导其广义平衡方程，重点给出黏性扭矩分解与边界层极限解释。",
+          "key result: L视角给出显式的扭矩与通量预算，解释升力来自涡量作为角动量源，并将水动力冲量实现更清晰的项分离，同时统一非环流附加质量与环流升力，还将行星自转并入守恒的轴向角动量。"
         ],
-        "contribution_en": "",
-        "contribution_zh": "",
-        "method_en": "",
-        "method_zh": "",
-        "data_or_region_en": "",
-        "data_or_region_zh": "",
-        "geophysics_relevance_en": "",
-        "geophysics_relevance_zh": "",
+        "contribution_en": "A unified angular-momentum-density formulation is derived for incompressible (and later compressible) flows, producing transport and flux-balance laws that reorganize viscous torque, lift generation, hydrodynamic impulse, viscous added-mass, and geophysical circulation in terms of angular-momentum budgets.",
+        "contribution_zh": "本文提出并推导了以角动量密度为核心的流动统一表述，得到输运与通量平衡关系，用角动量预算重新组织黏性扭矩、升力产生、水动力冲量、黏性附加质量以及地球流体环流等关键机制。",
+        "method_en": "Define angular momentum density as position cross velocity and derive a corresponding transport equation by taking r-cross of the Navier–Stokes momentum equation; analyze viscous torque via decomposition into diffusive and local spin-dissipative terms and apply boundary-layer and flux-integral arguments to link vorticity sources to lift and other global quantities (also noting extensions toward compressible flows and Stokes-regime Green’s functions).",
+        "method_zh": "将角动量密度定义为位置向量与速度的叉积，并通过对Navier–Stokes动量方程做r叉积推导得到对应的输运方程；再用“扩散项+局部自旋耗散项”的方式分解黏性扭矩，并结合边界层与通量积分论证，把涡量源与升力等全局量建立联系（同时讨论可压缩推广与Stokes极限下的格林函数性质）。",
+        "data_or_region_en": "Not specified.",
+        "data_or_region_zh": "未说明。",
+        "geophysics_relevance_en": "It is relevant to geophysical fluid dynamics because the framework claims to remove the need for treating planetary rotation as an artificial virtual vorticity term, embedding it into a conserved axial angular momentum budget.",
+        "geophysics_relevance_zh": "与地球流体动力学相关：该框架声称可将行星自转从“虚拟涡量”的人工处理方式中移除，并直接并入守恒的轴向角动量扭矩平衡。",
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "topic": "Angular momentum fluid transport",
+        "audience_level": "specialist",
         "keywords_en": [
+          "angular momentum density",
+          "fluid torque balance",
           "vorticity",
-          "momentum",
-          "angular",
-          "fluid",
-          "rotational"
+          "boundary layers",
+          "geophysical fluid dynamics"
         ],
         "keywords_zh": [
-          "vorticity",
-          "momentum",
-          "angular",
-          "fluid",
-          "rotational"
+          "角动量密度",
+          "流体扭矩平衡",
+          "边界层",
+          "地球流体动力学"
         ],
-        "topic": "vorticity",
-        "audience_level": "specialist",
-        "llm_used": false,
-        "source": "abstract"
+        "updated_at": "2026-05-21T16:25:36.510713+00:00",
+        "cache_hit": true
       }
     },
     {
@@ -201,48 +210,53 @@
         "abs_url": "http://arxiv.org/abs/2605.21030v1",
         "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.21030v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": null,
-        "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.21030v1.md",
+        "markdown_parse_error": null
       },
       "analysis": {
         "schema_version": "paperradar.analysis.v3",
         "input_version": "markdown-clean-v1",
-        "one_sentence_en": "We present a fixed-grid conservative affine-constrained modal/multiwavelet coefficient method for one-dimensional Buckley--Leverett saturation transport.",
-        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "one_sentence_en": "The paper develops a fixed-grid affine-constrained modal/multiwavelet coefficient scheme for 1D Buckley–Leverett saturation shocks, enforcing inflow traces in coefficient space while limiting detail modes to prevent oscillations and preserve conservation.",
+        "one_sentence_zh": "本文提出一种固定网格的仿射约束模态/多小波系数方法，用于一维 Buckley–Leverett 饱和度激波问题，并在系数空间中强制入口边界，同时对细节模态限幅以抑制振荡并保持守恒。",
         "summary_en": [
-          "We present a fixed-grid conservative affine-constrained modal/multiwavelet coefficient method for one-dimensional Buckley--Leverett saturation transport.",
-          "The saturation is evolved directly in a local orthonormal coefficient basis with a mean/detail structure: the first mode carries the conservative cell average, whereas higher modes carry zero-mean local details.",
-          "The hyperbolic inflow condition is imposed as a linear trace constraint on the coefficient vector and enforced by affine lifting."
+          "problem: Accurately capturing Buckley–Leverett shock-driven saturation fronts on a fixed grid while enforcing the hyperbolic inflow boundary condition in a coefficient-based discretization without breaking conservation.",
+          "approach: Evolve saturation directly in a local orthonormal mean/detail modal/multiwavelet coefficient basis using conservative weak-form flux coupling, impose inflow as an affine trace constraint via affine lifting, and apply a troubled-cell limiter to zero-mean detail coefficients.",
+          "key result: Validated on a Berea-core waterflood benchmark against an independent pywaterflood reference, the method reproduces breakthrough curves and saturation profiles, preserves the imposed inflow trace to roundoff accuracy, maintains saturation bounds via mean-preserving detail rescaling, and shows small global mass-balance defects with p=2 best accuracy–cost tradeoff."
         ],
         "summary_zh": [
-          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+          "problem: 在固定网格上准确捕捉 Buckley–Leverett 由激波主导的饱和度前沿，并在基于系数的离散框架中可靠强制双曲入口边界且不破坏守恒。",
+          "approach: 使用局部正交“均值/细节”模态/多小波系数表示饱和度，采用保守弱式界面通量耦合，在系数空间用仿射约束与仿射提升强制入口迹，并对零均值细节系数施加受扰单元限幅。",
+          "key result: 在 Berea-core 水驱基准上与独立 pywaterflood 参考计算对比，该方法能复现突破曲线与饱和度剖面，入口迹保持到舍入误差水平，借助“均值保持的细节重缩放”控制饱和度上下界，并给出较小的累计全局质量守恒偏差；测试的阶次中 p=2 在精度-成本折中最优。"
         ],
-        "contribution_en": "",
-        "contribution_zh": "",
-        "method_en": "",
-        "method_zh": "",
-        "data_or_region_en": "",
-        "data_or_region_zh": "",
-        "geophysics_relevance_en": "",
-        "geophysics_relevance_zh": "",
+        "contribution_en": "A conservative fixed-grid coefficient-space discretization that enforces the hyperbolic inflow trace through an affine constraint on local multiwavelet/modal coefficients (with detail-only boundary reprojection for higher orders) while coupling cells via monotone numerical fluxes and controlling shocks using a detail-mode troubled-cell limiter.",
+        "contribution_zh": "提出一种保守的固定网格系数空间离散方案：通过对局部多小波/模态系数施加仿射约束来在双曲问题中强制入口迹（并在高阶情形仅对入口单元的细节子空间进行边界重投影），同时用单调数值通量保守耦合单元，并通过对细节模态的受扰单元限幅抑制激波振荡。",
+        "method_en": "1D Buckley–Leverett hyperbolic saturation equation discretized in a local orthonormal modal/multiwavelet mean/detail coefficient basis (cell average in the mean mode, zero-mean details in higher modes); conservative weak-form assembly with monotone interface fluxes (e.g., Rusanov); inflow imposed as an affine trace constraint with affine lifting and (for p>1) detail-subspace boundary reprojection that preserves the inflow cell mean; shock oscillations controlled by a troubled-cell limiter acting on modal details; validated with p-order and mesh-refinement studies against a pywaterflood reference.",
+        "method_zh": "将一维 Buckley–Leverett 双曲饱和度方程用局部正交模态/多小波“均值/细节”基表示进行离散（均值模态承载单元平均，较高模态为零均值细节）；采用保守弱式组装并用单调界面数值通量（如 Rusanov）进行单元耦合；将入口通过仿射迹约束并用仿射提升强制实施（p>1 时仅在入口单元的细节子空间做边界重投影以保持入口单元均值不变）；用作用于模态细节的受扰单元限幅控制激波振荡；并通过阶次与网格加密研究与 pywaterflood 参考解验证。",
+        "data_or_region_en": "Berea-core waterflood benchmark (1D core) using the same Corey fractional-flow closure, physical parameters, and pore-volume-injected scaling as an independent pywaterflood reference; inflow boundary uses injected-water saturation with residual oil saturation.",
+        "data_or_region_zh": "Berea-core 水驱基准（1D 核），与独立 pywaterflood 参考计算使用相同 Corey 分数流闭合、物理参数和孔隙体积注入标度；入口边界取注入水饱和度（残余油饱和度给定）。",
+        "geophysics_relevance_en": "Reservoir-flow hyperbolic saturation-shock capturing is tangentially relevant to geophysical transport and front-tracking challenges, but the focus is on petroleum immiscible displacement numerics rather than geophysical field observations.",
+        "geophysics_relevance_zh": "该工作与地球科学中传输方程的激波/前沿捕捉等数值难题存在弱相关，因为研究聚焦于油藏非混相位移的饱和度输运数值实现，而非直接面向地球物理观测或特定地球物理数据。",
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "topic": "Buckley–Leverett shock capturing",
+        "audience_level": "specialist",
         "keywords_en": [
-          "coefficient",
-          "conservative",
-          "saturation",
-          "affine-constrained",
-          "method"
+          "Buckley–Leverett",
+          "multiphase flow",
+          "shock capturing",
+          "multiwavelet",
+          "inflow boundary condition"
         ],
         "keywords_zh": [
-          "coefficient",
-          "conservative",
-          "saturation",
-          "affine-constrained",
-          "method"
+          "Buckley–Leverett",
+          "多相流",
+          "激波捕捉",
+          "多小波",
+          "入口边界条件"
         ],
-        "topic": "coefficient",
-        "audience_level": "specialist",
-        "llm_used": false,
-        "source": "abstract"
+        "updated_at": "2026-05-21T16:25:36.517905+00:00",
+        "cache_hit": true
       }
     },
     {
@@ -268,48 +282,53 @@
         "abs_url": "http://arxiv.org/abs/2605.20997v1",
         "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.20997v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": null,
-        "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.20997v1.md",
+        "markdown_parse_error": null
       },
       "analysis": {
         "schema_version": "paperradar.analysis.v3",
         "input_version": "markdown-clean-v1",
-        "one_sentence_en": "Integrating machine learning (ML) with physical models (PM) has emerged as a promising way of retrieving geophysical parameters from remote sensing data.",
-        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "one_sentence_en": "The paper improves a hybrid physical–machine-learning inversion for TanDEM-X interferometric coherence–based forest height by adding optical Landsat bands, reducing height errors versus airborne LiDAR at the Lopé site.",
+        "one_sentence_zh": "本文通过在TanDEM-X相干度混合物理-机器学习反演中引入Landsat光学波段，提升森林高度反演精度，并在Lopé地区相对机载LiDAR验证误差显著降低。",
         "summary_en": [
-          "Integrating machine learning (ML) with physical models (PM) has emerged as a promising way of retrieving geophysical parameters from remote sensing data.",
-          "In this context, a ML model for estimating forest height from TanDEM-X interferometric coherence measurements has recently been proposed, that constrains the learning process through a PM.",
-          "While the features used for training and inversion where selected to ensure the physical consistency of the solutions, they could not resolve all height / structure and baseline / terrain slope ambiguities in the data."
+          "problem: Existing hybrid TanDEM-X InSAR forest-height inversion cannot fully resolve height/structure and baseline–terrain-slope ambiguities, limiting robustness across forest and terrain variability.",
+          "approach: Extend the feature space of a physics-constrained MLP that predicts Legendre-series vertical reflectivity profiles by incorporating four Landsat spectral bands alongside TanDEM-X interferometric features, then invert using the physical coherence model and validate against LiDAR.",
+          "key result: The extended model (with Landsat bands) achieves lower overall errors than the original hybrid model, reporting a 13.5% RMSE reduction and a 16.6% MAE reduction and improved robustness, especially across difficult coherence/geometry conditions."
         ],
         "summary_zh": [
-          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+          "problem: 现有的TanDEM-X InSAR森林高度混合反演难以完全消除高度/结构与基线-地形坡度相关歧义，导致在不同森林与地形条件下鲁棒性不足。",
+          "approach: 在物理约束的MLP（预测Legendre级数垂直散射反射率剖面）输入中加入四个Landsat光谱波段，利用物理相干度模型进行高度反演，并用LiDAR进行验证。",
+          "key result: 引入Landsat多光谱输入的扩展模型相较原模型总体误差更低，给出RMSE降低13.5%、MAE降低16.6%，并在低相干与复杂几何条件下表现更稳健。"
         ],
-        "contribution_en": "",
-        "contribution_zh": "",
-        "method_en": "",
-        "method_zh": "",
-        "data_or_region_en": "",
-        "data_or_region_zh": "",
-        "geophysics_relevance_en": "",
-        "geophysics_relevance_zh": "",
+        "contribution_en": "It proposes a multimodal extension of a physics-constrained InSAR/ML hybrid framework by adding Landsat spectral bands to better determine the vertical reflectivity profile and resolve remaining ambiguities, demonstrating improved forest-height accuracy validated with LVIS LiDAR.",
+        "contribution_zh": "本文提出了一个多模态扩展：在物理约束的InSAR/ML混合框架中加入Landsat光谱波段，更好估计垂直反射率剖面，从而缓解剩余歧义；并在LVIS机载LiDAR验证中展示了森林高度精度提升。",
+        "method_en": "A multi-layer perceptron predicts coefficients of a Legendre-series vertical reflectivity profile from TanDEM-X interferometric coherence–derived features (volume coherence magnitude, terrain-corrected vertical wavenumber, incidence angle, terrain slope) optionally augmented with four Landsat bands; the predicted profile is then inserted into a physical coherence model to invert forest height.",
+        "method_zh": "使用多层感知机根据TanDEM-X相干度特征（体相干幅度、地形校正垂直波数、入射角、地形坡度），以及加入的四个Landsat光谱波段（扩展版本），预测垂直反射率剖面Legendre级数系数；再将该剖面代入物理相干度模型完成森林高度反演。",
+        "data_or_region_en": "Lopé National Park, Gabon; several TanDEM-X acquisitions over the site; optical Landsat bands derived from the Hansen Global Forest Change v1.7 (circa 2019 cloud-free composite) and reference forest height from NASA LVIS full-waveform LiDAR RH98 (resampled to 20 m).",
+        "data_or_region_zh": "加蓬Lopé国家公园；覆盖该区域的多次TanDEM-X观测；从Hansen Global Forest Change v1.7（约2019年无云合成，必要时回退到2010–2015）提取的Landsat光谱波段；参考森林高度来自NASA LVIS全波形机载LiDAR的RH98指标，并统一重采样到20 m分辨率。",
+        "geophysics_relevance_en": "Accurate forest-height estimation from InSAR coherence supports biomass and forest structure studies, and the paper’s ambiguity reduction improves the practicality of physics-constrained InSAR inversion for complex tropical canopies; relevance is strong though it is remote sensing rather than seismology.",
+        "geophysics_relevance_zh": "更准确的InSAR森林高度反演可用于生物量与森林结构研究，该论文通过多模态输入缓解反演歧义从而提升在热带复杂林冠下的实用性；与当前追踪主题的相关性较强，但属于遥感/生态地球科学而非地球物理地震类。",
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "topic": "Multimodal InSAR forest height",
+        "audience_level": "specialist",
         "keywords_en": [
-          "data",
-          "learning",
-          "forest",
-          "height",
-          "tandem-x"
+          "InSAR",
+          "forest height",
+          "interferometric coherence",
+          "TanDEM-X",
+          "Landsat"
         ],
         "keywords_zh": [
-          "data",
-          "learning",
-          "forest",
-          "height",
-          "tandem-x"
+          "InSAR",
+          "森林高度",
+          "干涉相干度",
+          "TanDEM-X",
+          "Landsat"
         ],
-        "topic": "data",
-        "audience_level": "specialist",
-        "llm_used": false,
-        "source": "abstract"
+        "updated_at": "2026-05-21T16:25:36.526659+00:00",
+        "cache_hit": true
       }
     },
     {
@@ -332,48 +351,53 @@
         "abs_url": "http://arxiv.org/abs/2605.20764v1",
         "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.20764v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": null,
-        "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.20764v1.md",
+        "markdown_parse_error": null
       },
       "analysis": {
         "schema_version": "paperradar.analysis.v3",
         "input_version": "markdown-clean-v1",
-        "one_sentence_en": "When multiple hydraulic fractures propagate simultaneously from a horizontal wellbore, elastic stress-shadow interactions generate complex non-planar three-dimensional geometries whose effect on subsequent reservoir drainage has infrequently been quantified, because the propagation and production solvers have historically been incompatible stand-alone tools.",
-        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "one_sentence_en": "HyFrac.fun is a cloud-native workflow that automatically couples a 3D hydraulic-fracture SGBEM–FEM propagation solver to a steady-state Darcy production solver, enabling lifecycle simulations where stress shadows control both geometry and long-term productivity more than fracturing-fluid rheology.",
+        "one_sentence_zh": "HyFrac.fun 构建了云端工作流，将三维水力压裂传播的SGBEM–FEM求解器与稳态Darcy产能求解器自动无缝耦合，实现全生命周期模拟，并指出应力影效应主导几何形态与长期产能而非流体流变性。",
         "summary_en": [
-          "When multiple hydraulic fractures propagate simultaneously from a horizontal wellbore, elastic stress-shadow interactions generate complex non-planar three-dimensional geometries whose effect on subsequent reservoir drainage has infrequently been quantified, because the propagation and production solvers have historically been incompatible stand-alone tools.",
-          "This paper presents HyFrac.fun, a cloud-native platform that bridges this gap by exploiting a structural isomorphism between the two SGBEM--FEM governing operator systems.",
-          "The platform enables automated zero-conversion handoff of the evolved 3D fracture mesh directly to the steady-state Darcy production solver for realizing a fully integrated lifecycle simulation of multi-stage non-planar hydraulic fractures."
+          "problem: Existing hydraulic-fracture simulators often cannot directly and automatically transfer evolving non-planar 3D fracture meshes from propagation to production solvers, limiting quantification of how stress-shadow-generated 3D geometry affects drainage and long-term output.",
+          "approach: The authors develop HyFrac.fun, a cloud-native SaaS platform that exploits structural operator isomorphism between their SGBEM–FEM fracture propagation and Darcy-based steady-state production formulations to enable zero-conversion handoff of evolved 3D meshes and run integrated lifecycle simulations.",
+          "key result: Lifecycle analyses reveal a “double shadow” where mechanical stress suppresses inner-fracture growth and the resulting pressure shadow reduces drawout rate at small cluster spacing; changing to a shear-thinning power-law fluid leaves trajectories and production rates nearly unchanged at equal injection rates, implying stress-shadow-controlled fracture geometry is the primary driver of long-term efficiency."
         ],
         "summary_zh": [
-          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+          "problem: 现有压裂模拟工具通常难以自动、直接地把传播过程演化的非平面三维裂缝网格交给产能求解器，从而难以定量评估应力影效应生成的三维几何如何影响后续泄放与长期产出。",
+          "approach: 作者提出 HyFrac.fun 云端SaaS平台，利用传播与产能两类求解框架之间的算子结构同构，实现演化三维裂缝网格的零转换交接，并进行全生命周期一体化仿真。",
+          "key result: 生命周期结果显示“双重影子”：力学应力影会抑制内侧裂缝扩展，同时由此产生的流体压力影在小簇间距下降低内侧裂缝的延伸/抽吸速率；将流体改为剪切变稀的幂律后，在相同注入率下裂缝轨迹与产能几乎不变，表明长期效率主要由应力影控制的裂缝几何决定。"
         ],
-        "contribution_en": "",
-        "contribution_zh": "",
-        "method_en": "",
-        "method_zh": "",
-        "data_or_region_en": "",
-        "data_or_region_zh": "",
-        "geophysics_relevance_en": "",
-        "geophysics_relevance_zh": "",
+        "contribution_en": "A cloud-native integrated simulation platform that bridges 3D hydraulic-fracture propagation and steady-state Darcy production by leveraging structural operator isomorphism for automated, zero-conversion mesh handoff, enabling lifecycle “double shadow” physics assessment.",
+        "contribution_zh": "提出一种云端一体化仿真平台：通过利用传播与产能框架的算子结构同构，实现演化三维裂缝网格的自动零转换交接，从而支持全生命周期耦合分析并揭示“双重影子”物理规律。",
+        "method_en": "SGBEM–FEM 3D hydraulic-fracture propagation with adaptive remeshing and Newton-type nonlinear coupling, followed by steady-state Darcy production solved on the propagated fracture geometry; HyFrac.fun orchestrates input generation, cloud job execution, and direct mesh handoff using an operator isomorphism, with server-side rendering for visualization.",
+        "method_zh": "三维水力压裂传播采用SGBEM–FEM（含自适应重网格与牛顿类非线性耦合），并将传播得到的裂缝几何直接用于稳态Darcy产能求解；HyFrac.fun 通过算子同构编排云端任务、自动生成输入并实现裂缝网格的直接交接，结果在服务器端渲染并交互可视化。",
+        "data_or_region_en": "Not specified.",
+        "data_or_region_zh": "未说明。",
+        "geophysics_relevance_en": "For hydraulic fracturing research, this provides an end-to-end way to quantify how multi-stage, non-planar 3D fracture geometry (driven by stress shadows) propagates into reservoir drainage and long-term productivity; it is more about the integrated simulation workflow and physics findings than a new field dataset.",
+        "geophysics_relevance_zh": "对水力压裂研究很有参考价值：它提供端到端的手段量化多级、非平面三维裂缝几何（由应力影主导）如何影响储层泄放与长期产能；重点偏向集成仿真流程与物理结论，而非新的现场数据。",
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "topic": "Cloud lifecycle fracking simulation",
+        "audience_level": "specialist",
         "keywords_en": [
-          "production",
-          "fracture",
-          "hydraulic",
-          "shadow",
-          "fluid"
+          "hydraulic fracturing",
+          "stress shadows",
+          "SGBEM-FEM",
+          "Darcy production",
+          "cloud simulation"
         ],
         "keywords_zh": [
-          "production",
-          "fracture",
-          "hydraulic",
-          "shadow",
-          "fluid"
+          "水力压裂",
+          "应力影效应",
+          "SGBEM-FEM",
+          "Darcy产能",
+          "云端仿真"
         ],
-        "topic": "production",
-        "audience_level": "specialist",
-        "llm_used": false,
-        "source": "abstract"
+        "updated_at": "2026-05-21T16:25:36.542489+00:00",
+        "cache_hit": true
       }
     },
     {
@@ -397,48 +421,53 @@
         "abs_url": "http://arxiv.org/abs/2605.20455v1",
         "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.20455v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": null,
-        "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.20455v1.md",
+        "markdown_parse_error": null
       },
       "analysis": {
         "schema_version": "paperradar.analysis.v3",
         "input_version": "markdown-clean-v1",
-        "one_sentence_en": "Weak shock theory based on cylindrical blast waves has been used to interpret meteor infrasound, but it has not been systematically benchmarked against a non-ablating hypersonic source with independently known parameters.",
-        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "one_sentence_en": "The study benchmarks multiple cylindrical weak-shock blast-radius formulations and transition coefficients using OSIRIS-REx capsule reentry infrasound, finding Sakurai best for non-ablating bodies and showing period is a robust constraint.",
+        "one_sentence_zh": "该研究用OSIRIS-REx返回舱再入的39站甚低频信号基准评估圆柱弱激波爆炸半径公式与转变系数，发现Sakurai最适用于非消融源且周期是稳健约束量。",
         "summary_en": [
-          "Weak shock theory based on cylindrical blast waves has been used to interpret meteor infrasound, but it has not been systematically benchmarked against a non-ablating hypersonic source with independently known parameters.",
-          "The objective of this study is not to propose a new theoretical framework, but to evaluate the operational validity of the existing suite of blast radius formulations against a high-fidelity ground truth dataset.",
-          "The OSIRIS-REx Sample Return Capsule reentry on 24 September 2023 provides such a benchmark because the capsule geometry, trajectory, and infrasound emission points are constrained from mission data and ray tracing, reducing source-side uncertainty associated with ablation."
+          "problem: Weak-shock cylindrical blast-wave theory is used for infrasound from fast bodies, but its operational validity for non-ablating hypersonic sources is not systematically benchmarked.",
+          "approach: Use the OSIRIS-REx Sample Return Capsule reentry (24 Sep 2023) as constrained ground truth, propagate weak-shock theory through a stratified atmosphere, and fit predicted signal period and peak overpressure to 39 infrasound stations.",
+          "key result: Sakurai’s blast-radius formulation performs best for non-ablating bodies; Jones/Plooster can match comparably with an appropriate weak-shock transition coefficient, and the common Mach-diameter approximation overestimates blast radius by >3 without ablation."
         ],
         "summary_zh": [
-          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+          "problem: 圆柱弱激波爆炸理论常用于解释快速天体甚低频，但尚缺乏针对非消融高超声源的系统有效性基准测试。",
+          "approach: 利用OSIRIS-REx返回舱再入（2023-09-24）作为物理约束的“真值”，在分层大气中前向传播弱激波理论，并与39站甚低频观测对比信号周期与峰值超压。",
+          "key result: 对非消融源Sakurai半径公式表现最佳；在选取合适弱激波转变系数后，Jones/Plooster可达到相近效果；而不考虑消融时Mach-diameter近似将爆炸半径高估超过3倍。"
         ],
-        "contribution_en": "",
-        "contribution_zh": "",
-        "method_en": "",
-        "method_zh": "",
-        "data_or_region_en": "",
-        "data_or_region_zh": "",
-        "geophysics_relevance_en": "",
-        "geophysics_relevance_zh": "",
+        "contribution_en": "Provides the first systematic, source-side constrained benchmarking of cylindrical weak-shock blast-radius formulations for a non-ablating hypersonic body using a high-fidelity infrasound dataset, yielding an operational performance baseline for future inverse/interpretation workflows.",
+        "contribution_zh": "首次在源端物理参数被约束的条件下，对非消融高超声目标开展圆柱弱激波爆炸半径公式的系统基准测试，并给出面向未来反演/解释的可操作性能基线。",
+        "method_en": "Forward and (for interpretation) inverse use of cylindrical weak-shock blast-wave theory in a stratified atmospheric propagation model, testing six published blast-radius normalizations and three weak-shock-to-linear transition coefficients against 39-station infrasound observations with ray-traced emission points for the OSIRIS-REx capsule.",
+        "method_zh": "在分层大气传播模型中前向（并用于解释的反演）应用圆柱弱激波爆炸波理论，测试6种已发表爆炸半径归一化与3种弱激波到线性转变系数，并利用射线追踪得到的发射点将预测的周期与峰值超压与39站OSIRIS-REx再入甚低频观测进行对比。",
+        "data_or_region_en": "OSIRIS-REx Sample Return Capsule reentry on 24 September 2023, using infrasound recordings from 39 stations with capsule geometry/trajectory and emission points constrained by mission data and ray tracing; region: Nevada and Utah (implied by station deployment).",
+        "data_or_region_zh": "OSIRIS-REx返回舱再入（2023-09-24），使用39站甚低频观测；返回舱几何/轨迹与发射点由任务数据和射线追踪约束；站点布设地点在内华达州与犹他州（从文中描述推断）。",
+        "geophysics_relevance_en": "This matters for atmospheric infrasound interpretation relevant to nuclear-test monitoring and bolide/reentry characterization, because it supplies a performance baseline and identifies which blast-radius formulation and observable (period) are most reliable for non-ablating hypersonic sources.",
+        "geophysics_relevance_zh": "这对大气甚低频的业务化解释很关键（如核试验监测与火球/再入特征刻画），因为它给出了非消融高超声源的性能基线，并指出哪种爆炸半径公式以及周期观测更可靠。",
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "topic": "Infrasound blast physics",
+        "audience_level": "specialist",
         "keywords_en": [
-          "blast",
-          "benchmarking",
-          "cylindrical",
-          "theory",
-          "against"
+          "infrasound",
+          "cylindrical blast wave",
+          "weak shock",
+          "OSIRIS-REx reentry",
+          "atmospheric propagation"
         ],
         "keywords_zh": [
-          "blast",
-          "benchmarking",
-          "cylindrical",
-          "theory",
-          "against"
+          "甚低频",
+          "圆柱爆炸波",
+          "弱激波",
+          "OSIRIS-REx再入",
+          "大气传播"
         ],
-        "topic": "blast",
-        "audience_level": "specialist",
-        "llm_used": false,
-        "source": "abstract"
+        "updated_at": "2026-05-21T16:25:36.552679+00:00",
+        "cache_hit": true
       }
     },
     {
@@ -463,48 +492,53 @@
         "abs_url": "http://arxiv.org/abs/2605.20132v1",
         "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.20132v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": null,
-        "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.20132v1.md",
+        "markdown_parse_error": null
       },
       "analysis": {
         "schema_version": "paperradar.analysis.v3",
         "input_version": "markdown-clean-v1",
-        "one_sentence_en": "Distributed acoustic sensing (DAS) systems generate continuous, ultra-high-channel-count data streams at rates that exceed the capabilities of conventional batch-oriented analysis frameworks.",
-        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "one_sentence_en": "FiLark is a streaming-first Python framework that unifies DAS continuous data access, interactive GPU rendering, in-stream event annotation, and stateful CPU/GPU processing for seamless exploration-to-production workflows.",
+        "one_sentence_zh": "FiLark 是一个以流式为先的 Python 框架，将 DAS 连续数据访问、交互式 GPU 渲染、流内事件标注以及有状态的 CPU/GPU 处理统一起来，支持从探索到生产的无缝工作流。",
         "summary_en": [
-          "Distributed acoustic sensing (DAS) systems generate continuous, ultra-high-channel-count data streams at rates that exceed the capabilities of conventional batch-oriented analysis frameworks.",
-          "As a result, essential tasks such as interactive exploration of long-duration recordings, scalable event annotation, and real-time algorithm-in-the-loop monitoring remain inadequately supported by workflows built around manually selected data segments and offline processing.",
-          "This paper presents FiLark (Fiber Lark), a Python framework that applies a {streaming-first} principle uniformly across data access, signal processing, visualization and monitoring for DAS."
+          "problem: Existing DAS analysis tools are batch-first, making it hard to interactively browse long continuous recordings and to label events reproducibly while supporting scalable streaming processing and detector integration.",
+          "approach: FiLark treats DAS sources (including multi-file continuous recordings) as a single unified stream, using a constant-memory OpenGL ring-buffer viewer, an integrated in-stream annotation interface, and a stateful chunked CPU/GPU signal-processing library plus a standardized streaming monitor plugin interface.",
+          "key result: The framework provides end-to-end streaming abstractions that keep interactive browsing, in-view labeling, and processing configurations consistent when moved to scalable batch execution, while enabling real-time detector overlays within the same visualization workflow."
         ],
         "summary_zh": [
-          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+          "problem: 现有 DAS 工具多为批处理范式，导致长时连续记录难以高效交互浏览、事件标注难以复现，并且与可扩展的流式处理与探测器集成支持不足。",
+          "approach: FiLark 将多文件连续 DAS 数据作为统一数据流抽象，采用固定内存的 OpenGL 环形缓冲渲染器、流式内集成标注界面，以及具跨块边界连续性的 CPU/GPU（PyTorch）有状态算子与标准化流式监控接口。",
+          "key result: FiLark 通过全栈共享的流式抽象实现探索态交互设置与生产态可扩展批处理的一致性，并可在同一可视化会话中把流式探测结果以叠加事件形式实时呈现。"
         ],
-        "contribution_en": "",
-        "contribution_zh": "",
-        "method_en": "",
-        "method_zh": "",
-        "data_or_region_en": "",
-        "data_or_region_zh": "",
-        "geophysics_relevance_en": "",
-        "geophysics_relevance_zh": "",
+        "contribution_en": "FiLark’s core contribution is a unified streaming-first software architecture for DAS that consistently supports constant-memory interactive visualization, continuous in-stream annotation, stateful chunked CPU/GPU signal processing, and real-time detector/monitor integration within a single coordinate-consistent workflow.",
+        "contribution_zh": "FiLark 的核心贡献在于提出了面向 DAS 的统一“流式优先”软件架构：在固定内存下支持连续交互式可视化、在流内完成事件标注、提供具有跨块边界连续性的 CPU/GPU 有状态信号处理，并能在同一坐标一致的工作流中集成实时探测器/监控结果。",
+        "method_en": "The method is a Python framework built around a streaming abstraction for DAS multi-file continuous sources, combining an OpenGL ring-buffer GPU renderer with an in-stream annotation UI, a CPU/GPU operator library (including PyTorch acceleration) featuring stateful overlap-aware chunk execution, and a standardized streaming monitor/plugin interface that feeds detector events back to the visualization.",
+        "method_zh": "方法是一个基于 DAS 流式抽象的 Python 框架：将多文件连续数据统一为流；配合 OpenGL 环形缓冲 GPU 渲染器与流内标注交互界面；提供带状态的重叠感知分块执行算子库（含 PyTorch GPU 加速）；并通过标准化的流式监控/插件接口把探测器事件回传到可视化层。",
+        "data_or_region_en": "Not specified (framework described generally for continuous DAS sources, including multi-file recordings; examples mention ocean deployments but no specific dataset/region is provided in the excerpt).",
+        "data_or_region_zh": "未说明（文中总体描述面向连续 DAS 数据源与多文件记录的通用框架；示例提到海洋部署，但在摘录中未给出具体数据集或区域）。",
+        "geophysics_relevance_en": "High relevance to DAS workflows because it targets interactive browsing, reproducible event labeling, and streaming detector integration—capabilities that directly address practical bottlenecks in seismology and infrastructure/ocean acoustic monitoring.",
+        "geophysics_relevance_zh": "与 DAS 工作流高度相关，因为它直接面向交互式长时浏览、可复现的事件标注以及流式探测器集成，这些都对应地震学与基础设施/海洋声学监测中的实际瓶颈。",
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "topic": "Streaming-first DAS software",
+        "audience_level": "specialist",
         "keywords_en": [
-          "data",
-          "processing",
-          "filark",
-          "annotation",
-          "continuous"
+          "Distributed acoustic sensing",
+          "Streaming visualization",
+          "In-stream annotation",
+          "OpenGL ring buffer",
+          "Stateful chunked processing"
         ],
         "keywords_zh": [
-          "data",
-          "processing",
-          "filark",
-          "annotation",
-          "continuous"
+          "分布式声学传感",
+          "流式可视化",
+          "流内标注",
+          "OpenGL 环形缓冲",
+          "有状态分块处理"
         ],
-        "topic": "data",
-        "audience_level": "specialist",
-        "llm_used": false,
-        "source": "abstract"
+        "updated_at": "2026-05-21T16:25:36.559425+00:00",
+        "cache_hit": true
       }
     },
     {
@@ -529,48 +563,53 @@
         "abs_url": "http://arxiv.org/abs/2605.20030v1",
         "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.20030v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": null,
-        "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.20030v1.md",
+        "markdown_parse_error": null
       },
       "analysis": {
         "schema_version": "paperradar.analysis.v3",
         "input_version": "markdown-clean-v1",
-        "one_sentence_en": "While optimal transport (OT) enforces a rigid constraint by requiring two measures to be matched exactly, partial optimal transport relaxes this requirement by allowing mass to remain unmatched through a global budget, scalar rebate, or uniform rejection rule.",
-        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "one_sentence_en": "Intent-controlled partial optimal transport replaces global rejection in partial OT with pointwise, side-specific rejection costs to decide locally which mass should be compared or left unmatched.",
+        "one_sentence_zh": "意图控制的部分最优传输用每个样本点、且区分源端/目标端的逐点拒绝成本，替代部分OT中的全局拒绝机制来决定哪些质量可比、哪些应不匹配。",
         "summary_en": [
-          "While optimal transport (OT) enforces a rigid constraint by requiring two measures to be matched exactly, partial optimal transport relaxes this requirement by allowing mass to remain unmatched through a global budget, scalar rebate, or uniform rejection rule.",
-          "However, many applications call for more structured, pointwise rejection mechanisms, where the decision to leave mass unmatched depends on side-specific reliability, support geometry, or external information about which components should participate in the comparison.",
-          "We introduce {intent-controlled partial optimal transport} (IC-POT), a targeted generalization of partial transport that replaces the global rejection paradigm with pointwise rejection costs over both measures."
+          "problem: Classical/partial OT reject mass using global budgets or uniform rules, which cannot represent structured, pointwise rejection driven by side reliability, geometry, or priors.",
+          "approach: Propose intent-controlled partial optimal transport (IC-POT) with slack variables on the original supports and pointwise unmatched costs on both measures, yielding a dual view with local acceptance thresholds and an augmented-support OT solver.",
+          "key result: IC-POT admits an equivalent reduced Lagrangian and dual caps that imply an exact edge-activation sparsity rule, and improves baseline performance on positive-unlabeled learning and open-partial domain adaptation; it is also demonstrated on multimodal satellite ocean-wave spectra where physical/sensor priors define the comparable signal."
         ],
         "summary_zh": [
-          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+          "problem: 传统/部分OT通常用全局预算或统一规则来拒绝质量，难以表达由侧端可靠性、几何或先验驱动的结构化、逐点拒绝决策。",
+          "approach: 提出意图控制的部分最优传输（IC-POT），在原始支持上加入松弛变量，并在源端与目标端用逐点未匹配成本刻画拒绝策略；其对偶解释为局部接受阈值，并可通过扩展支持重写为平衡Kantorovich OT求解。",
+          "key result: IC-POT给出与经典Lagrangian partial transport的等价化简形式与带上界的对偶caps，推出精确的边激活稀疏性规则；在正-无标签学习与开放部分域适应中相对常数成本partial OT的基线管线更有效，并在多模态卫星海洋波谱中用物理/传感器先验定义可比信号。"
         ],
-        "contribution_en": "",
-        "contribution_zh": "",
-        "method_en": "",
-        "method_zh": "",
-        "data_or_region_en": "",
-        "data_or_region_zh": "",
-        "geophysics_relevance_en": "",
-        "geophysics_relevance_zh": "",
+        "contribution_en": "The paper introduces IC-POT, a partial OT generalization where leaving mass unmatched is controlled by pointwise, side-specific rejection costs, providing equivalent reduced/dual formulations with local acceptance thresholds, an exact admissibility sparsity rule, and practical gains in structured reject-need tasks plus a geophysical satellite-wave case.",
+        "contribution_zh": "论文提出IC-POT：将“不匹配就拒绝”的控制从全局/统一规则扩展为源端与目标端的逐点、侧特异拒绝成本；给出等价的化简与对偶刻画（局部接受阈值、对偶上界），并得到精确的可行性稀疏性准则；同时在需要结构化拒绝的任务中提升效果，并给出卫星海洋波谱的地球物理应用示例。",
+        "method_en": "Formulate partial optimal transport with slack variables representing unmatched mass directly on the original supports, then assign pointwise unmatched costs on both measures; solve via a reduced Lagrangian/dual interpretation and an equivalent balanced OT on an augmented support with a dummy point, enabling sparse admissibility.",
+        "method_zh": "在原始支持上用松弛变量显式表示未匹配（拒绝）的质量，并对源端/目标端分别施加逐点未匹配成本；通过化简的拉格朗日/对偶解释，并把问题等价重写为带虚拟点的扩展支持上的平衡OT求解，同时利用由理论给出的稀疏可行性（边激活）规则。",
+        "data_or_region_en": "Geophysical case: multimodal satellite-derived ocean-wave spectra comparing SWIM (CFOSAT) with SAR-derived spectra; learning benchmarks: PU learning and open-partial domain adaptation using side-information-driven reject structures. Not specified: exact datasets and regions beyond these sources.",
+        "data_or_region_zh": "地球物理案例：多模态卫星得到的海洋波浪谱，比较SWIM（CFOSAT）与SAR得到的波浪谱；学习基准：用于正-无标签学习与开放部分域适应的结构化拒绝设置。未说明：具体数据集与研究区域。",
+        "geophysics_relevance_en": "This is relevant because it provides a principled way to decide which parts of co-located, multimodal geophysical measurements should be compared versus rejected, using physical/sensor priors encoded as pointwise rejection costs.",
+        "geophysics_relevance_zh": "该方法对地球物理追踪主题有重要意义：它提供了一个原则化框架，用物理/传感器先验（编码为逐点拒绝成本）来决定哪些多模态、近似同位的观测成分应当可比、哪些应被拒绝；论文的地球物理案例也支持这一点。",
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "topic": "pointwise rejection OT",
+        "audience_level": "specialist",
         "keywords_en": [
-          "rejection",
-          "transport",
-          "optimal",
-          "pointwise",
-          "information"
+          "intent-controlled OT",
+          "partial rejection",
+          "optimal transport",
+          "positive-unlabeled learning",
+          "satellite ocean waves"
         ],
         "keywords_zh": [
-          "rejection",
-          "transport",
-          "optimal",
-          "pointwise",
-          "information"
+          "意图控制OT",
+          "部分拒绝",
+          "最优传输",
+          "正-无标签学习",
+          "卫星海洋波浪"
         ],
-        "topic": "rejection",
-        "audience_level": "specialist",
-        "llm_used": false,
-        "source": "abstract"
+        "updated_at": "2026-05-21T16:25:36.567316+00:00",
+        "cache_hit": true
       }
     },
     {
@@ -593,48 +632,53 @@
         "abs_url": "http://arxiv.org/abs/2605.19951v1",
         "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.19951v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": null,
-        "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.19951v1.md",
+        "markdown_parse_error": null
       },
       "analysis": {
         "schema_version": "paperradar.analysis.v3",
         "input_version": "markdown-clean-v1",
-        "one_sentence_en": "We present a novel parallel implementation for large-scale three-dimensional electromagnetic inversion based on a Gauss-Newton framework combined with a rational near-best approximation of the matrix exponential for transient simulations.",
-        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "one_sentence_en": "The paper presents a scalable parallel 3-D transient electromagnetic (TEM) inversion that replaces time-marching with a rational approximation of a matrix exponential, enabling forward modeling and sensitivities whose cost is largely independent of the number of observation times.",
+        "one_sentence_zh": "该论文提出一种可扩展的三维瞬变电磁(TEM)反演方法，用矩阵指数的有理近似替代时间步进，使正演与灵敏度计算成本基本不随观测时刻数量增加而增长。",
         "summary_en": [
-          "We present a novel parallel implementation for large-scale three-dimensional electromagnetic inversion based on a Gauss-Newton framework combined with a rational near-best approximation of the matrix exponential for transient simulations.",
-          "The method employs parallel direct solvers for the shifted linear systems arising from the partial fraction representation of the rational approximation and demonstrates efficient parallel execution on a shared-memory architecture using MPI.",
-          "A key property of the approach is that the time dependence is entirely contained in the residuals of the employed rational functions, such that the computation of forward responses and sensitivities becomes effectively independent of the number of desired observation times."
+          "problem: Develop a scalable algorithm for large-scale 3-D transient EM inversion whose runtime does not scale strongly with the number of observation times.",
+          "approach: Combine a Gauss-Newton inversion framework with a uniform-in-time rational (near-best) approximation of the matrix exponential, using partial fractions to obtain multiple time-independent shifted linear systems solved in parallel with cached sparse direct factorizations and an implicit parallel Jacobian with LSQR.",
+          "key result: Numerical experiments on a synthetic 3-D conductivity model successfully recover the structure with about 700,000 degrees of freedom and demonstrate efficient shared-memory parallel execution; the paper also identifies memory and shared-memory scalability bottlenecks and outlines directions such as preconditioned iterative solvers and distributed HPC."
         ],
         "summary_zh": [
-          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+          "problem: 构建适用于大规模三维瞬变电磁(TEM)反演的可扩展算法，使运行时间不要显著随观测时刻数量增长。",
+          "approach: 将高斯-牛顿反演框架与统一于时间的矩阵指数有理(近最优)近似结合，通过部分分式将问题转化为多个与时间无关的移位线性方程组，在共享内存环境下并行求解并缓存稀疏直接分解，同时用隐式并行雅可比算子与LSQR求解线性化反问题，并用基于Raviart-Thomas RT0的平滑正则化。",
+          "key result: 在合成三维电导率模型上（约70万自由度）能够成功恢复目标结构，并展示高效共享内存并行；同时指出因需同时存储多组稀疏矩阵分解带来的内存与可扩展性瓶颈，并给出预条件迭代解法和分布式HPC等改进方向。"
         ],
-        "contribution_en": "",
-        "contribution_zh": "",
-        "method_en": "",
-        "method_zh": "",
-        "data_or_region_en": "",
-        "data_or_region_zh": "",
-        "geophysics_relevance_en": "",
-        "geophysics_relevance_zh": "",
+        "contribution_en": "It provides an end-to-end scalable parallel TEM inversion workflow by propagating a rational matrix-exponential reformulation through both forward modeling and Jacobian-based Gauss-Newton updates, including practical parallel linear algebra (cached factorizations, implicit parallel Jacobian, LSQR) and an open-source Julia implementation.",
+        "contribution_zh": "它给出了端到端的可扩展并行TEM反演流程：将矩阵指数的有理近似重写贯穿到正演与高斯-牛顿雅可比计算中，并实现了可用的并行线性代数组件（缓存分解、隐式并行雅可比、LSQR），同时提供Julia开源代码。",
+        "method_en": "Quasi-static 3-D TEM inversion using a Gauss-Newton scheme with smoothness regularization on Raviart-Thomas RT0 elements; transient forward responses and sensitivities are computed via a uniform-in-time rational approximation of the matrix exponential (RKFIT), whose partial-fraction form yields time-independent shifted systems solved in parallel with cached sparse direct solvers; the linearized inverse problem is solved by LSQR using an implicit parallel Jacobian operator.",
+        "method_zh": "采用基于高斯-牛顿框架的三维准静态TEM反演，并用Raviart-Thomas RT0上的平滑正则化；将统一于时间的矩阵指数有理近似（RKFIT）用于计算瞬变正演响应与灵敏度，部分分式分解带来与时间无关的移位方程组，利用并行共享内存求解并缓存稀疏直接求解器的分解；线性化反问题用LSQR结合隐式并行雅可比算子求解。",
+        "data_or_region_en": "Synthetic 3-D test problem with a conductivity model; approximately 700,000 degrees of freedom. No specific real survey region or dataset is described in the excerpt.",
+        "data_or_region_zh": "合成三维电导率模型的数值测试；自由度约70万。摘录中未说明具体真实勘探区域或数据集。",
+        "geophysics_relevance_en": "This is directly relevant to transient EM and 3-D conductivity inversion, offering a computational paradigm that reduces coupling between cost and number of time channels, potentially improving scalability of EM inversion workflows.",
+        "geophysics_relevance_zh": "该工作与瞬变电磁和三维电导率反演直接相关，通过降低计算量与时间通道数量之间的耦合，可能显著提升EM反演流程的可扩展性。",
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "topic": "Parallel TEM inversion",
+        "audience_level": "specialist",
         "keywords_en": [
-          "parallel",
-          "rational",
-          "inversion",
-          "approximation",
-          "matrix"
+          "transient EM",
+          "3-D inversion",
+          "matrix exponential",
+          "rational approximation",
+          "TEM conductivity"
         ],
         "keywords_zh": [
-          "parallel",
-          "rational",
-          "inversion",
-          "approximation",
-          "matrix"
+          "瞬变电磁",
+          "三维反演",
+          "矩阵指数",
+          "有理近似",
+          "TEM电导率"
         ],
-        "topic": "parallel",
-        "audience_level": "specialist",
-        "llm_used": false,
-        "source": "abstract"
+        "updated_at": "2026-05-21T16:25:36.576363+00:00",
+        "cache_hit": true
       }
     },
     {
@@ -659,48 +703,53 @@
         "abs_url": "http://arxiv.org/abs/2605.19903v1",
         "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.19903v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": null,
-        "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.19903v1.md",
+        "markdown_parse_error": null
       },
       "analysis": {
         "schema_version": "paperradar.analysis.v3",
         "input_version": "markdown-clean-v1",
-        "one_sentence_en": "We present new multielement NanoSIMS isotopic measurements (C, N, Si, Mg-Al, Ti, and Ni) for four putative nova SiC grains and 79 AB SiC grains from the Murchison meteorite to reassess their stellar origins.",
-        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "one_sentence_en": "New high-resolution NanoSIMS multielement isotope measurements of Murchison presolar SiC grains show that low- to intermediate-mass CO novae most consistently explain the 13C-rich, s-process–poor grains, whereas ONe and recurrent nova models fail key isotope constraints.",
+        "one_sentence_zh": "新的高分辨率NanoSIMS多元素同位素测量表明，低至中等质量的CO新星最一致地解释富13C且缺乏s过程指纹的陨石前驱SiC晶粒，而ONe和再发新星模型难以同时满足多个同位素约束。",
         "summary_en": [
-          "We present new multielement NanoSIMS isotopic measurements (C, N, Si, Mg-Al, Ti, and Ni) for four putative nova SiC grains and 79 AB SiC grains from the Murchison meteorite to reassess their stellar origins.",
-          "High-resolution imaging and a revised Mg/Al relative sensitivity factor for SiC yield substantially improved 26Al/27Al ratios and the most reliable multielement characterization to date for 13C-rich presolar SiC grains.",
-          "To interpret these data, we computed an expanded suite of hydrodynamic CO, ONe, and recurrent nova models spanning a range of white-dwarf masses and pre-enrichment parameters."
+          "problem: Determine which nova types could produce 13C-rich presolar SiC grains—especially those lacking s-process signatures—using multielement isotope evidence beyond earlier limited element sets.",
+          "approach: Re-measure C, N, Si, Mg-Al, Ti, and Ni isotopes with NanoSIMS for putative nova and AB SiC grains from Murchison, then compare them to an expanded suite of hydrodynamic CO, ONe, and recurrent nova models spanning white-dwarf mass and pre-enrichment parameters.",
+          "key result: Considering C, N, Mg-Al, Si, Ti, and Ni together, CO nova models give the closest self-consistent match (including the 14N/15N–26Al/27Al trend and Si-isotope behavior), while ONe and recurrent nova models fail multiple isotopic constraints; low- to intermediate-mass CO novae (0.6–1.0 Msun) emerge as the most plausible sources for the relevant 13C-rich, s-process–poor grains."
         ],
         "summary_zh": [
-          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+          "problem: 用更全面的多元素同位素证据辨识哪些新星类型能够产生富13C且缺乏s过程指纹的前太阳SiC晶粒。",
+          "approach: 对Murchison样品中疑似新星SiC与AB SiC晶粒开展NanoSIMS多元素同位素再测（C、N、Si、Mg-Al、Ti、Ni），并与覆盖白矮星质量和预富集参数的扩展CO、ONe及再发新星水动力模型进行联合对比。",
+          "key result: 将C、N、Mg-Al、Si、Ti与Ni等体系一起考虑时，CO新星模型给出最接近且自洽的匹配（再现14N/15N–26Al/27Al趋势并解释AB主导的GCE相关Si同位素与疑似新星晶粒的轻微偏移），而ONe与再发新星模型无法同时满足多个同位素约束；因此0.6–1.0 Msun的低至中等质量CO新星最可能是该类富13C且无s过程指纹的SiC尘埃来源。"
         ],
-        "contribution_en": "",
-        "contribution_zh": "",
-        "method_en": "",
-        "method_zh": "",
-        "data_or_region_en": "",
-        "data_or_region_zh": "",
-        "geophysics_relevance_en": "",
-        "geophysics_relevance_zh": "",
+        "contribution_en": "Provides a multielement, NanoSIMS-based isotopic dataset and a model-anchored comparison framework showing that low- to intermediate-mass CO novae best reproduce the joint C–N–Si–Mg-Al–Ti–Ni isotopic signatures of s-process–poor 13C-rich presolar SiC grains.",
+        "contribution_zh": "给出一套基于NanoSIMS多元素同位素的新数据，并建立以模型为锚点的联合对比框架，表明低至中等质量CO新星最能复现实验所观测到的、缺乏s过程指纹的富13C前太阳SiC晶粒在C–N–Si–Mg-Al–Ti–Ni等多同位素体系上的共同特征。",
+        "method_en": "High-resolution NanoSIMS imaging-mode multielement isotopic measurements of C, N, Si, Mg-Al, Ti, and Ni for selected putative nova SiC grains and AB SiC grains from the Murchison meteorite, including improved Mg/Al relative sensitivity for SiC to refine inferred 26Al/27Al; then comparison to an expanded suite of 1D hydrodynamic hydrodynamic nova simulations (SHIVA) for CO, ONe, and recurrent novae spanning white-dwarf masses and pre-enrichment parameters.",
+        "method_zh": "采用高分辨率NanoSIMS成像模式对Murchison陨石中疑似新星与AB SiC晶粒开展C、N、Si、Mg-Al、Ti与Ni的多元素同位素测量；通过修订SiC的Mg/Al相对灵敏度以改进26Al/27Al推断；随后将这些观测结果与扩展的1D水动力新星模拟（SHIVA）进行对比，模拟对象包括CO、ONe与再发新星，并覆盖白矮星质量及预富集参数范围。",
+        "data_or_region_en": "Murchison meteorite presolar SiC grains: 4 putative nova grains and 79 AB SiC grains; no external astronomical region is applicable.",
+        "data_or_region_zh": "Murchison陨石中的前太阳SiC晶粒：4颗疑似新星SiC晶粒和79颗AB SiC晶粒；不涉及特定天区观测。",
+        "geophysics_relevance_en": "Relevance is tangential: this work is astro-cosmochemical (presolar grain nucleosynthesis provenance) rather than a direct geophysical measurement, but it uses isotopic constraints on astrophysical explosions.",
+        "geophysics_relevance_zh": "相关性较弱：该研究属于天体化学/宇宙尘埃成因溯源，而非直接的地球物理观测或地球过程；但它通过同位素约束为恒星爆发的物质来源提供证据。",
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "topic": "Nova origins of SiC",
+        "audience_level": "specialist",
         "keywords_en": [
-          "grains",
-          "nova",
-          "multielement",
-          "isotope",
-          "novae"
+          "presolar SiC",
+          "NanoSIMS",
+          "nova nucleosynthesis",
+          "CO novae",
+          "interstellar dust"
         ],
         "keywords_zh": [
-          "grains",
-          "nova",
-          "multielement",
-          "isotope",
-          "novae"
+          "前太阳SiC",
+          "NanoSIMS",
+          "新星核合成",
+          "CO新星",
+          "星际尘埃"
         ],
-        "topic": "grains",
-        "audience_level": "specialist",
-        "llm_used": false,
-        "source": "abstract"
+        "updated_at": "2026-05-21T16:25:36.585586+00:00",
+        "cache_hit": true
       }
     },
     {
@@ -727,48 +776,53 @@
         "abs_url": "http://arxiv.org/abs/2605.19608v1",
         "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.19608v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": null,
-        "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.19608v1.md",
+        "markdown_parse_error": null
       },
       "analysis": {
         "schema_version": "paperradar.analysis.v3",
         "input_version": "markdown-clean-v1",
-        "one_sentence_en": "Gamma-ray bursts (GRBs) have long been proposed to perturb Earth's ionosphere, with occasional reports of disruptions in ultra- and extremely-low-frequency radio signals.",
-        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "one_sentence_en": "Using expanded multi-altitude GNSS, satellite electric-field, and equatorial electrojet analyses, the authors find no coherent GRB 221009A ionospheric signature and attribute reported anomalies to solar-wind variability and instrumental/illumination effects.",
+        "one_sentence_zh": "通过扩展的多高度GNSS、卫星电场与赤道电喷流(EJ)联合分析，作者未发现GRB 221009A导致的协同电离层信号，并将既报道异常归因于太阳风驱动及仪器/照明几何效应。",
         "summary_en": [
-          "Gamma-ray bursts (GRBs) have long been proposed to perturb Earth's ionosphere, with occasional reports of disruptions in ultra- and extremely-low-frequency radio signals.",
-          "The exceptionally bright GRB~221009A was recently claimed to induce multi-altitude ionospheric responses, including perturbations in satellite electric fields, regional total electron content (TEC), and the equatorial electrojet (EEJ).",
-          "These claims have renewed interest in the potential near-Earth impacts of astrophysical transients."
+          "problem: Whether the extremely bright GRB 221009A caused measurable, burst-like perturbations in Earth’s ionosphere (TEC, satellite electric fields, and EEJ).",
+          "approach: Reassess the claims using expanded GNSS-TEC, full-year CSES electric-field data with illumination/geometry checks, and magnetometer-derived EEJ proxies alongside solar-wind/geomagnetic conditions.",
+          "key result: No burst-like TEC enhancement is found; reported electric-field anomalies recur with illumination geometry each orbit; and EEJ fluctuations occur before the burst and match solar-wind variability—indicating GRB-related effects are not supported."
         ],
         "summary_zh": [
-          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+          "problem: GRB 221009A是否在电离层中产生可测的突发型扰动（TEC、卫星电场与赤道电喷流EEJ）。",
+          "approach: 利用扩展的GNSS TEC数据、CSES电场的全年观测并结合照明/轨道几何分析，以及地面磁强计推得的EEJ代理，同时对照太阳风与地磁条件重新评估。",
+          "key result: 未发现与GRB时间对应的突发型TEC增强；电场异常呈现随每轨照明几何重复的特征；EEJ波动先于爆发现并与太阳风变化一致，表明无法支持GRB引起的电离层效应。"
         ],
-        "contribution_en": "",
-        "contribution_zh": "",
-        "method_en": "",
-        "method_zh": "",
-        "data_or_region_en": "",
-        "data_or_region_zh": "",
-        "geophysics_relevance_en": "",
-        "geophysics_relevance_zh": "",
+        "contribution_en": "The paper resolves a controversy by demonstrating, with a multi-instrument and illumination-aware reassessment, that previously claimed GRB 221009A ionospheric signatures are explainable by natural space-weather variability and instrument/illumination artefacts.",
+        "contribution_zh": "该论文通过多仪器联合再评估并纳入照明几何影响，表明先前关于GRB 221009A的电离层效应说法可由自然空间天气变化与仪器/照明伪影解释，从而澄清了相关争议。",
+        "method_en": "GNSS-derived global TEC from thousands of receivers with elevation and temporal high-pass filtering; CSES satellite electric-field data processed with large-scale-field removal and inspected for orbit-to-orbit recurrence tied to solar zenith angle/illumination transitions; and ground magnetometer-based EEJ proxies normalized to quiet-time distributions, compared against concurrent solar-wind speed and IMF variability.",
+        "method_zh": "对成千接收机的GNSS反演全球TEC进行仰角筛选与时间高通滤波；对CSES卫星电场进行大尺度场分量去除，并检查其是否随轨道重复、与太阳天顶角/照明边界转换相关；同时用地面磁强计构建EEJ代理并以静稳时间分布归一，结合太阳风速度与IMF变动进行对照。",
+        "data_or_region_en": "Global GNSS TEC observations (3,374 receivers, excluding higher latitudes; elevation >30°) plus CSES electric-field measurements at 507 km sun-synchronous orbit and ground magnetometers at Tatuoca (magnetic equator region) and San Juan (near/beyond EEJ belt), focusing on GRB 221009A around 9 Oct 2022; exact region details beyond the global coverage are not the main emphasis.",
+        "data_or_region_zh": "全球GNSS TEC观测（3,374个接收机，剔除高纬；仰角>30°）以及CSES 507 km近太阳同步轨道电场数据，并使用Tatuoca（接近磁赤道）与San Juan（赤道电喷流带附近/外侧）的地面磁强计；重点围绕2022年10月9日GRB 221009A时段（区域细节不作为主要区分点）。",
+        "geophysics_relevance_en": "It directly addresses claimed astrophysical-transient impacts on near-Earth ionospheric observables (TEC, EEJ, and satellite electric fields), but finds the effects are not GRB-driven; relevance is high for controversy resolution and for identifying non-GRB causes.",
+        "geophysics_relevance_zh": "它直接检验了由天文瞬变事件引发的近地电离层效应主张（TEC、EEJ与卫星电场），但结论认为并非由GRB触发；因此对澄清争议与识别非GRB成因具有较高相关性。",
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "topic": "GRB ionosphere reassessment",
+        "audience_level": "specialist",
         "keywords_en": [
-          "ionospheric",
-          "responses",
-          "reassessment",
-          "instrumental",
-          "illumination"
+          "Ionosphere",
+          "Gamma-ray burst",
+          "GNSS TEC",
+          "Equatorial electrojet",
+          "CSES electric field"
         ],
         "keywords_zh": [
-          "ionospheric",
-          "responses",
-          "reassessment",
-          "instrumental",
-          "illumination"
+          "电离层",
+          "伽马射线暴",
+          "GNSS电离层总电子含量TEC",
+          "赤道电喷流EEJ",
+          "CSES电场"
         ],
-        "topic": "ionospheric",
-        "audience_level": "specialist",
-        "llm_used": false,
-        "source": "abstract"
+        "updated_at": "2026-05-21T16:25:36.590652+00:00",
+        "cache_hit": true
       }
     },
     {
@@ -794,48 +848,53 @@
         "abs_url": "http://arxiv.org/abs/2605.19507v1",
         "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.19507v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": null,
-        "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.19507v1.md",
+        "markdown_parse_error": null
       },
       "analysis": {
         "schema_version": "paperradar.analysis.v3",
         "input_version": "markdown-clean-v1",
-        "one_sentence_en": "Precision geodesy relies on the stability of the International Celestial Reference Frame (ICRF), yet its reference sources, Active Galactic Nuclei (AGN), exhibit changes in source structure that can manifest as apparent shifts in their astrometric positions.",
-        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "one_sentence_en": "The Astro2Geo project correlates VLBI radio core position offsets from ICRF3 with nearly contemporaneous Fermi-LAT gamma-ray brightness for 57 AGN and finds widespread, frequency-dependent power-law correlations likely driven by multiple physical mechanisms.",
+        "one_sentence_zh": "Astro2Geo 将射电核心相对ICRF3的位置偏移与费米LAT近时段伽马射线亮度关联，针对57个AGN发现高比例且与频段相关的幂律相关，可能由多种物理机制共同作用。",
         "summary_en": [
-          "Precision geodesy relies on the stability of the International Celestial Reference Frame (ICRF), yet its reference sources, Active Galactic Nuclei (AGN), exhibit changes in source structure that can manifest as apparent shifts in their astrometric positions.",
-          "The high-precision radio measurements used to maintain the ICRF therefore provide a means to investigate the astrophysical mechanisms driving these changes.",
-          "In particular, the observed astrometric variability offers a unique opportunity to link positional shifts in AGN to high-energy astrophysical processes."
+          "problem: Determine whether intrinsic astrometric offsets of ICRF AGN are linked to high-energy (gamma-ray) activity.",
+          "approach: Compute VLBI core position offsets relative to ICRF3 at S/X and K bands and regress them against Fermi-LAT fluxes within ±30 days, including EM-based handling of upper limits and a lag search via zDCF.",
+          "key result: Most sources show statistically significant power-law correlations (~90% of 57), with correlation signs differing by band for the same AGN; no single tested physical scenario explains all cases, and only five sources show tentative (highly caveated) evidence for time delays."
         ],
         "summary_zh": [
-          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+          "problem: 判断ICRF AGN 的本征天体测量偏移是否与高能伽马射线活动有关。",
+          "approach: 计算相对ICRF3的S/X与K波段VLBI核心位置偏移，并与±30天内的费米LAT通量做回归；对上限采用EM处理，并用zDCF搜索潜在时间滞后。",
+          "key result: 在57个样本中约90%呈显著幂律相关，且同一源的相关正负可在两个频段间发生改变；多种物理解释无法给出统一答案，仅5个源出现时间滞后的初步（高度谨慎）证据。"
         ],
-        "contribution_en": "",
-        "contribution_zh": "",
-        "method_en": "",
-        "method_zh": "",
-        "data_or_region_en": "",
-        "data_or_region_zh": "",
-        "geophysics_relevance_en": "",
-        "geophysics_relevance_zh": "",
+        "contribution_en": "It provides a systematic, multi-frequency statistical connection between geodetic VLBI astrometric offsets (ICRF-based) and gamma-ray brightness for a sizeable AGN sample, testing several physical interpretations and performing a cautious lag analysis.",
+        "contribution_zh": "它基于较大规模AGN样本，系统建立了ICRF体系下的VLBI天体测量偏移与伽马射线亮度之间的多频段统计联系，并检验多种物理解释及做了谨慎的时间滞后分析。",
+        "method_en": "Geodetic/astrometric VLBI processing (VieVS, IVS/Geo astrometry analysis) to estimate session-wise RA/Dec corrections for selected ICRF3-SX and K-band sources, convert to angular offsets, then correlate those offsets with Fermi-LAT 30-day cadence fluxes using orthogonal distance regression with an EM treatment for left-censored upper limits; assess time lags using zDCF with Monte Carlo simulations.",
+        "method_zh": "利用地理/天体测量VLBI流程（VieVS，IVS体系分析）对选定源估计相对ICRF3的分时段RA/Dec修正，得到角位置偏移；再将其与费米LAT 30天步长的通量（对左删失上限用EM并结合正交距离回归）做回归关联；最后用zDCF结合蒙特卡洛模拟评估时间滞后。",
+        "data_or_region_en": "92 candidate ICRF AGN were considered; 57 had sufficient overlapping Fermi-LAT coverage for ±30-day comparisons. VLBI S/X offsets used ICRF3-SX at 8.4 GHz plus 2.3 GHz, spanning 24-h IVS sessions from 1980–2024; K-band offsets come from Astro2Geo 24 GHz sessions including VLBA 2002–2008 pilot and ongoing Astro2Geo K-band campaigns (extensions with additional stations since ~2022).",
+        "data_or_region_zh": "考虑了92个候选ICRF AGN，但只有57个与费米LAT在±30天窗口内具有足够重叠数据用于比较。VLBI的S/X偏移基于ICRF3-SX相关参考（8.4 GHz）并结合2.3 GHz，使用1980–2024年间的IVS 24小时会话；K波段偏移来自Astro2Geo在24 GHz的会话，包括2002–2008年的VLBA试点与之后持续进行的Astro2Geo K波段观测（约2022年后加入更多台站）。",
+        "geophysics_relevance_en": "This is astrophysical rather than geophysical: it uses VLBI reference-frame astrometry to study AGN physics, indirectly relevant to precision geodesy via understanding how ICRF source structure changes create apparent position offsets.",
+        "geophysics_relevance_zh": "这主要是天体物理而非地球物理：它利用VLBI参考架构的天体测量数据研究AGN物理过程，但也通过揭示ICRF源结构变化如何造成表观位置偏移，间接服务于高精度测地需求。",
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "topic": "AGN astrometry and gamma-rays",
+        "audience_level": "specialist",
         "keywords_en": [
-          "radio",
-          "astrometric",
-          "gamma-ray",
-          "sources",
-          "icrf"
+          "ICRF",
+          "VLBI astrometry",
+          "gamma-ray AGN",
+          "Fermi-LAT",
+          "blazars"
         ],
         "keywords_zh": [
-          "radio",
-          "astrometric",
-          "gamma-ray",
-          "sources",
-          "icrf"
+          "ICRF",
+          "VLBI天体测量",
+          "伽马射线AGN",
+          "费米LAT",
+          "暴发星系核"
         ],
-        "topic": "radio",
-        "audience_level": "specialist",
-        "llm_used": false,
-        "source": "abstract"
+        "updated_at": "2026-05-21T16:25:36.597000+00:00",
+        "cache_hit": true
       }
     },
     {
@@ -860,48 +919,52 @@
         "abs_url": "http://arxiv.org/abs/2605.19472v1",
         "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.19472v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": null,
-        "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.19472v1.md",
+        "markdown_parse_error": null
       },
       "analysis": {
         "schema_version": "paperradar.analysis.v3",
         "input_version": "markdown-clean-v1",
-        "one_sentence_en": "Sunspots are transient, magnetically intense features that host oscillations linked to magnetohydrodynamic (MHD) waves.",
-        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "one_sentence_en": "Using multi-height Hα observations of a sunspot umbra from GST/BBSO, the authors analyze ~3-minute phase relations to infer slow magnetoacoustic waves consistent with a non-ideal acoustic resonator.",
+        "one_sentence_zh": "作者利用BBSO/GST对太阳斑暗区的多高度Hα观测，分析约3分钟振荡的相位关系，推断慢磁声学波并表明存在非理想声学共振腔。",
         "summary_en": [
-          "Sunspots are transient, magnetically intense features that host oscillations linked to magnetohydrodynamic (MHD) waves.",
-          "These waves may contribute to plasma heating and drive mass flows in the solar wind.",
-          "Beyond their energetic role, they serve as diagnostic tools for probing sunspot structure."
+          "problem: Determine what wave-trapping mechanism produces the dominant ~3-minute umbral oscillations in a sunspot chromosphere.",
+          "approach: Use GST/VIS Hα multi-passband time series (core, wings) plus center-of-mass Hα Doppler velocity, then apply wavelet and cross-wavelet/phase-coherence analyses to compare intensity and velocity phase lags across heights.",
+          "key result: The measured phase patterns indicate slow magnetoacoustic modes appearing as both standing and upward-propagating waves, with umbral waves confined in a non-ideal acoustic resonator."
         ],
         "summary_zh": [
-          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+          "problem: 弄清太阳斑暗区铬层中占主导的约3分钟振荡由何种波动俘获/共振机制产生。",
+          "approach: 采用GST/VIS的Hα多通道（线心与翼）强度时间序列及Hα质心法多普勒速度，结合小波与交叉小波/相干相位分析比较不同高度间强度与速度的相位滞后。",
+          "key result: 观测到的相位特征表明存在慢磁声学模态，既表现为驻波也含向上传播分量，且暗区波动被限制在非理想声学共振腔中。"
         ],
-        "contribution_en": "",
-        "contribution_zh": "",
-        "method_en": "",
-        "method_zh": "",
-        "data_or_region_en": "",
-        "data_or_region_zh": "",
-        "geophysics_relevance_en": "",
-        "geophysics_relevance_zh": "",
+        "contribution_en": "The paper provides observational evidence, via multi-passband Hα intensity–Doppler phase analysis, that the ~3-minute umbral oscillations are governed by slow magnetoacoustic standing/upward components confined by a non-ideal acoustic resonator, supplying measurable wave properties for sunspot seismology.",
+        "contribution_zh": "通过多通道Hα强度-多普勒速度的相位耦合分析，论文给出了观测证据：约3分钟暗区振荡由受限于非理想声学共振腔的慢磁声学驻波与向上传播分量共同主导，并可为太阳斑地震学提供可测波动参数。",
+        "method_en": "High-resolution GST/VIS scanning spectroscopy of Hα (line core and multiple wing offsets) over a sunspot umbra, speckle reconstruction, COM centroid Doppler velocity retrieval, then wavelet analysis for ~3-minute power and cross-wavelet coherence/phase-difference mapping between passbands’ integrated wing intensity and Doppler velocity (including phase lag selection based on 95% significance and coherence thresholds).",
+        "method_zh": "对太阳斑暗区进行GST/VIS高分辨率Hα扫描光谱观测（线心及多个谱翼偏置），进行散斑重建，采用质心（COM）法从Hα谱线轮廓反演多普勒速度；再用小波分析识别~3分钟振荡功率，并通过交叉小波相干与相位差分析生成相位图，比较谱翼积分强度与Hα多普勒速度（并结合95%显著性与相干阈值筛选相位）。",
+        "data_or_region_en": "NOAA AR 12384 sunspot umbra observed at Big Bear Solar Observatory/GST using VIS in Hα on July 14, 2015 (17:36–18:06 UT), with ~19 s chromospheric cadence and speckle reconstruction; study region: GST field covering the umbra within the selected ~70″ VIS FOV.",
+        "data_or_region_zh": "观测对象为Big Bear Solar Observatory/GST的VIS在Hα波段对NOAA AR 12384太阳斑暗区的观测：2015-07-14（17:36–18:06 UT），铬层观测约19 s时间分辨率并进行散斑重建；研究区域为GST视场内被选定的暗区（VIS最大约70″圆形视场内）。",
+        "geophysics_relevance_en": "Relevance is tangential: this is solar physics (sunspot seismology) rather than terrestrial geophysics, but it addresses wave-resonator diagnostics through multi-height oscillation phase measurements.",
+        "geophysics_relevance_zh": "相关性较弱：该研究属于太阳物理（太阳斑地震学），而非地球物理；但其通过多高度振荡相位测量来诊断波动共振腔机制，方法学上具有一定启发。",
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "topic": "Sunspot acoustic resonator",
+        "audience_level": "specialist",
         "keywords_en": [
-          "sunspot",
-          "waves",
-          "wave",
-          "solar",
-          "intensity"
+          "sunspots",
+          "chromosphere",
+          "H-alpha",
+          "slow magnetoacoustic waves",
+          "acoustic resonator"
         ],
         "keywords_zh": [
-          "sunspot",
-          "waves",
-          "wave",
-          "solar",
-          "intensity"
+          "太阳斑",
+          "色球层",
+          "慢磁声学波",
+          "声学共振腔"
         ],
-        "topic": "sunspot",
-        "audience_level": "specialist",
-        "llm_used": false,
-        "source": "abstract"
+        "updated_at": "2026-05-21T16:25:36.606641+00:00",
+        "cache_hit": true
       }
     },
     {
@@ -926,48 +989,53 @@
         "abs_url": "http://arxiv.org/abs/2605.19379v1",
         "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.19379v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": null,
-        "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.19379v1.md",
+        "markdown_parse_error": null
       },
       "analysis": {
         "schema_version": "paperradar.analysis.v3",
         "input_version": "markdown-clean-v1",
-        "one_sentence_en": "Soil hydraulic functions are fundamental to modelling water flow and transport in vadose-zone hydrology and are central to a wide range of hydrological and geoscientific applications.",
-        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "one_sentence_en": "The authors develop a graph-based automated equation discovery framework to infer compact, explicit soil water retention and unsaturated hydraulic conductivity functions from experimental data, outperforming Mualem–van Genuchten on conductivity across 249 soils.",
+        "one_sentence_zh": "作者提出基于图的自动方程发现框架，用实验数据推导简洁可解析的土壤含水率保持与非饱和水力传导函数，并在249个土样上优于Mualem–van Genuchten对导水率的预测。",
         "summary_en": [
-          "Soil hydraulic functions are fundamental to modelling water flow and transport in vadose-zone hydrology and are central to a wide range of hydrological and geoscientific applications.",
-          "Yet in practice, these functions are still predominantly specified through expert-designed empirical formulations, such as the Mualem-van Genuchten (MvG) model.",
-          "Although such models have proved highly influential, their derivation relies on predefined functional assumptions that make it difficult to simultaneously achieve accuracy, compactness, and robustness across diverse soil textures."
+          "problem: Classical soil hydraulic constitutive functions (e.g., Mualem–van Genuchten) rely on predefined forms that trade off accuracy, compactness, and robustness across soil textures.",
+          "approach: Use graph-based symbolic discovery with genetic programming to learn explicit soil water retention functions that are analytically integrable, then derive consistent unsaturated hydraulic conductivity from the discovered retention.",
+          "key result: Across 249 real soil samples from UNSODA, the discovered, differently-structured functions predict unsaturated hydraulic conductivity more accurately than MvG and use fewer free parameters, with fitted parameters correlating with soil physical properties."
         ],
         "summary_zh": [
-          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+          "problem: 传统土壤水力本构函数（如Mualem–van Genuchten）依赖预设函数形式，难以在不同土壤类型间同时兼顾精度、简洁性与稳健性。",
+          "approach: 采用基于图的符号发现与遗传编程，从实验数据自动学习可解析积分的土壤含水率保持函数，并据此推导一致的非饱和水力传导函数。",
+          "key result: 在UNSODA的249个真实土样上，发现的、结构不同于MvG的函数对非饱和导水率的预测更准确且自由参数更少；拟合参数还能与土壤物理性质相关。"
         ],
-        "contribution_en": "",
-        "contribution_zh": "",
-        "method_en": "",
-        "method_zh": "",
-        "data_or_region_en": "",
-        "data_or_region_zh": "",
-        "geophysics_relevance_en": "",
-        "geophysics_relevance_zh": "",
+        "contribution_en": "A graph-based automated discovery pipeline that learns explicit, analytically integrable soil water retention functions and corresponding unsaturated hydraulic conductivity functions directly from experimental measurements, enabling constitutive forms beyond classical Mualem–van Genuchten.",
+        "contribution_zh": "提出一种基于图的自动发现流程，可直接从实验测量中学习显式且可解析积分的土壤保水函数，并推导对应的非饱和水力传导函数，从而获得超越经典Mualem–van Genuchten的本构形式。",
+        "method_en": "Graph-based symbolic equation discovery (directed acyclic graphs with operator/variable nodes and edge features for constants and soil-specific parameters) optimized via genetic programming (generation–evaluation–evolution), selecting analytically integrable candidate retention functions, then using a Mualem-type capillary integral transform to construct relative hydraulic conductivity; parameters are optimized per soil sample (e.g., L-BFGS) during fitting.",
+        "method_zh": "基于图的符号方程发现（用有向无环图表示方程结构，节点对应变量/算子，边特征编码常数与土壤特定参数），通过遗传编程的生成-评估-演化过程搜索候选表达式；优先选择可解析积分的保水函数，再用Mualem型毛细管积分变换推导相对水力传导，并对每个土样进行参数优化（文中提到使用L-BFGS拟合）。",
+        "data_or_region_en": "Retention and unsaturated hydraulic conductivity datasets used originally to develop the Mualem–van Genuchten model (six representative soils), and validation on 249 soil cases selected from the UNSODA database.",
+        "data_or_region_zh": "使用了最初用于Mualem–van Genuchten模型开发的保水曲线与非饱和水力传导数据（6种代表性土壤），并在来自UNSODA数据库中筛选的249个土样上进行验证。",
+        "geophysics_relevance_en": "This is relevant to vadose-zone and unsaturated flow modeling by improving physically consistent constitutive relationships for soil hydraulic functions; relevance is methodological rather than site-specific geophysics.",
+        "geophysics_relevance_zh": "这对非饱和带水文/水分运移建模很重要，因为它能改进土壤水力函数的物理一致本构关系；相关性主要体现在方法层面而非特定地球物理场景。",
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "topic": "soil hydraulic function discovery",
+        "audience_level": "specialist",
         "keywords_en": [
-          "soil",
-          "hydraulic",
-          "functions",
-          "discovery",
-          "empirical"
+          "soil hydraulic functions",
+          "graph-based symbolic regression",
+          "unsaturated hydraulic conductivity",
+          "soil water retention curve",
+          "UNSODA"
         ],
         "keywords_zh": [
-          "soil",
-          "hydraulic",
-          "functions",
-          "discovery",
-          "empirical"
+          "土壤水力函数",
+          "图式符号回归",
+          "非饱和导水率",
+          "土壤含水率保持曲线",
+          "UNSODA"
         ],
-        "topic": "soil",
-        "audience_level": "specialist",
-        "llm_used": false,
-        "source": "abstract"
+        "updated_at": "2026-05-21T16:25:36.614190+00:00",
+        "cache_hit": true
       }
     },
     {
@@ -988,48 +1056,53 @@
         "abs_url": "http://arxiv.org/abs/2605.19118v1",
         "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.19118v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": null,
-        "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.19118v1.md",
+        "markdown_parse_error": null
       },
       "analysis": {
         "schema_version": "paperradar.analysis.v3",
         "input_version": "markdown-clean-v1",
-        "one_sentence_en": "On January 1, 2024, a moment magnitude (Mw) 7.6 earthquake struck the Noto Peninsula, Japan, causing intense ground shaking and triggering a tsunami along the Japan Sea coast.",
-        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "one_sentence_en": "The study acquires and depth-images 2024 Noto Mw7.6 rupture-zone shallow crust using multichannel seismic, iteratively refining a P-wave velocity model with structural-attribute-guided horizon picking and grid tomography.",
+        "one_sentence_zh": "该研究通过多通道地震采集并开展深度成像，利用结构属性引导自动拾取地平面与网格层析反演迭代优化P波速度模型，解析2024年能登Mw7.6断裂带浅部结构。",
         "summary_en": [
-          "On January 1, 2024, a moment magnitude (Mw) 7.6 earthquake struck the Noto Peninsula, Japan, causing intense ground shaking and triggering a tsunami along the Japan Sea coast.",
-          "Preliminary analysis by the Japan Meteorological Agency (JMA) identified a reverse-fault rupture consistent with a northwest-southeast compressional stress regime.",
-          "Aftershock distribution analysis (JMA, 2024) revealed that the causative fault extended approximately 150 km from the western Noto Peninsula to the northeastern offshore area, aligning with the inferred tsunami source region."
+          "problem: High-resolution shallow-crust imaging across the Noto 2024 rupture zone is limited despite known reverse-fault rupture and tsunami source extent.",
+          "approach: Process March 2024 R/V Hakuho-Maru multichannel seismic data with advanced depth imaging—kirchhoff pre-stack depth migration, dip/continuity-attribute horizon autopicking via pencil construction, moveout-group QC, and iterative grid-based tomography plus RMO refinement.",
+          "key result: The workflow produces the first high-resolution 2D depth sections and 3D visualizations of the shallow rupture zone and an optimized velocity model suitable for further fault-geometry and rupture-dynamics studies."
         ],
         "summary_zh": [
-          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+          "problem: 尽管已知能登2024逆冲断裂与海啸源区范围，震源带浅部地壳的高分辨率成像仍不足。",
+          "approach: 对东京大学Hakuho-Maru在2024年3月采集的多通道地震数据进行深度成像流程处理，包括Kirchhoff预叠深度偏移、基于倾角/连续性属性的铅笔(pencil)结构自动拾取地平面、Moveout组质量控制，并结合迭代网格层析反演与RMO精化来优化速度模型。",
+          "key result: 该流程得到首次高分辨率的断裂带浅部2D深度剖面及3D可视化成果，并给出优化后的速度模型以支撑后续断层几何与破裂动力学研究。"
         ],
-        "contribution_en": "",
-        "contribution_zh": "",
-        "method_en": "",
-        "method_zh": "",
-        "data_or_region_en": "",
-        "data_or_region_zh": "",
-        "geophysics_relevance_en": "",
-        "geophysics_relevance_zh": "",
+        "contribution_en": "Provides a detailed, reproducible advanced depth-imaging workflow and the resulting high-resolution depth sections/velocity model for the shallow crust within the 2024 Noto earthquake rupture area.",
+        "contribution_zh": "给出可复现的高级深度成像流程细节，并产出覆盖2024年能登地震断裂带浅部的高分辨率深度剖面与速度模型成果。",
+        "method_en": "Marine multichannel seismic (MCS) reflection processing: deghosting and SRMA demultiple, predictive deconvolution, velocity analysis, stacking and time migration; then advanced depth imaging with Kirchhoff pre-stack depth migration, dip/continuity structural-attribute computation, pencil-based automated horizon picking with moveout-group quality control, and iterative grid-based tomography (including later-stage manual residual moveout refinement) to update the P-wave velocity model and improve migrated gather coherence.",
+        "method_zh": "海洋多通道地震(MCS)反射处理：去鬼影(deghosting)与SRMA去多次波、预测反褶积、速度分析、叠加与时间偏移；随后进行高级深度成像：Kirchhoff预叠深度偏移、计算倾角/连续性结构属性、基于铅笔结构的自动地平面拾取并通过Moveout组质量控制筛选地平面，再结合迭代网格层析反演（后期加入人工精化的残余动校正RMO）更新P波速度模型以提升成像一致性。",
+        "data_or_region_en": "Northeastern offshore of the Noto Peninsula, Sea of Japan; March 2024 R/V Hakuho-Maru multichannel seismic survey with 14 ~45 km 2D profiles.",
+        "data_or_region_zh": "日本海能登半岛东北侧近海；2024年3月R/V Hakuho-Maru多通道地震调查，共14条约45 km的2D剖面。",
+        "geophysics_relevance_en": "Directly relevant to rupture-zone imaging in marine settings, enabling better constraints on shallow fault geometry and tsunamigenic deformation in the Sea of Japan back-arc compression context.",
+        "geophysics_relevance_zh": "与海域震源带成像高度相关，可为海岛弧后弧压缩背景下的断层浅部几何与海啸成因变形提供更可靠约束。",
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "topic": "Noto rupture depth imaging",
+        "audience_level": "specialist",
         "keywords_en": [
-          "rupture",
-          "seismic",
-          "noto",
-          "imaging",
-          "earthquake"
+          "multichannel seismic",
+          "depth imaging",
+          "velocity tomography",
+          "horizon picking",
+          "Noto earthquake"
         ],
         "keywords_zh": [
-          "rupture",
-          "seismic",
-          "noto",
-          "imaging",
-          "earthquake"
+          "多通道地震",
+          "深度成像",
+          "速度层析反演",
+          "地平面拾取",
+          "能登地震"
         ],
-        "topic": "rupture",
-        "audience_level": "specialist",
-        "llm_used": false,
-        "source": "abstract"
+        "updated_at": "2026-05-21T16:25:36.622028+00:00",
+        "cache_hit": true
       }
     },
     {
@@ -1049,48 +1122,53 @@
         "abs_url": "http://arxiv.org/abs/2605.18375v1",
         "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.18375v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": null,
-        "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.18375v1.md",
+        "markdown_parse_error": null
       },
       "analysis": {
         "schema_version": "paperradar.analysis.v3",
         "input_version": "markdown-clean-v1",
-        "one_sentence_en": "Distributed Acoustic Sensing (DAS) converts existing fibre-optic cables into dense seismic arrays at near-zero deployment cost, but measures strain rate rather than particle velocity -- the quantity required by virtually all seismological analysis tools.",
-        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "one_sentence_en": "DANTE uses a physics-informed Fourier Neural Operator to reconstruct particle-velocity waveforms from DAS strain-rate records without co-located seismometers, enforcing DAS kinematics and 1D elastic-wave dynamics for robust denoising and stable conversion.",
+        "one_sentence_zh": "DANTE利用物理约束的傅里叶神经算子，从DAS应变率无协同地震仪记录中重建粒子速度波形，并通过DAS运动学与1D弹性波动力学约束实现稳定降噪与反演。",
         "summary_en": [
-          "Distributed Acoustic Sensing (DAS) converts existing fibre-optic cables into dense seismic arrays at near-zero deployment cost, but measures strain rate rather than particle velocity -- the quantity required by virtually all seismological analysis tools.",
-          "Converting strain rate to particle velocity by numerical integration is ill-posed: the integration constant is undefined and noise accumulates without bound.",
-          "We present DANTE (DAS-to-velocity via physics-informed neural operator for Acoustic-wave recoNstruction in heTErogeneous media), a Fourier Neural Operator (FNO) trained entirely on synthetic data that enforces two physics constraints: (i) the exact kinematic relation between DAS strain rate and the spatial gradient of particle velocity, and (ii) the one-dimensional elastic wave equation."
+          "problem: DAS measures strain rate, making direct strain-rate-to-particle-velocity conversion ill-posed and noise-amplifying without co-located seismometers.",
+          "approach: Train an FNO entirely on synthetic paired data while enforcing exact DAS kinematics (velocity gradient consistency) and a 1D elastic wave equation via physics-informed loss terms for zero-shot field inference.",
+          "key result: On 200 heterogeneous synthetic test wavefields DANTE attains mean SNR 15.3±8.8 dB, Pearson r=0.907, and SSIM=0.976 with ~+15 dB mean SNR gain over stacking, and zero-shot on seven Utah FORGE 2019 events yields kinematic residual 0.0035–0.0054 (about 5× lower than the synthetic baseline)."
         ],
         "summary_zh": [
-          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+          "problem: DAS测量应变率，直接转换到粒子速度在无协同地震仪条件下属于病态问题且会放大噪声。",
+          "approach: 仅用合成配对数据训练FNO，并在损失中强制DAS运动学一致性（速度梯度匹配）与1D弹性波方程，用于无需调参的零样本场数据重建。",
+          "key result: 在200个异质合成测试波场上，DANTE达到平均SNR 15.3±8.8 dB、皮尔逊相关r=0.907、SSIM=0.976，相比堆叠平均提升约+15 dB；对Utah FORGE 2019的7个事件零样本推断，运动学残差为0.0035–0.0054，约为合成基线的1/5。"
         ],
-        "contribution_en": "",
-        "contribution_zh": "",
-        "method_en": "",
-        "method_zh": "",
-        "data_or_region_en": "",
-        "data_or_region_zh": "",
-        "geophysics_relevance_en": "",
-        "geophysics_relevance_zh": "",
+        "contribution_en": "Introduces DANTE, a physics-informed Fourier Neural Operator that resolves the undefined integration constant and suppresses noise in DAS-to-particle-velocity reconstruction by jointly enforcing exact DAS kinematic measurement and 1D elastic-wave dynamics, enabling seismometer-free zero-shot field use.",
+        "contribution_zh": "提出DANTE：通过联合强制DAS运动学测量一致性与1D弹性波动力学约束，解决DAS到粒子速度反演中积分常数不可确定与噪声放大的关键困难，从而实现无需地震仪的零样本场数据重建。",
+        "method_en": "A Fourier Neural Operator maps DAS strain-rate (plus a 1D P-wave velocity profile and positional encodings) to particle velocity over space and time; training uses a composite loss combining data fidelity with a kinematic constraint linking DAS strain rate to the predicted velocity spatial gradient and a dynamic constraint enforcing the 1D elastic-wave relation, then applies zero-shot inference to real DAS after preprocessing.",
+        "method_zh": "采用傅里叶神经算子将DAS应变率（结合1D P波速度剖面与位置编码）映射到时空粒子速度；训练使用数据一致性损失与两类物理约束的加权组合：将DAS应变率与预测速度的空间梯度做运动学一致性，并用1D弹性波关系约束动力学演化，之后对真实DAS数据进行预处理并进行零样本推断。",
+        "data_or_region_en": "Synthetic 1D heterogeneous elastic wavefields (2,000 train / 400 val / 200 test) generated with a staggered-grid finite-difference simulator; real validation uses Utah FORGE 2019 DAS data (well 78-32, P11 interrogator, 1.02 m spacing, 7 microseismic events from S27EVENT; auxiliary Vp model from well logs).",
+        "data_or_region_zh": "合成1D异质弹性波场数据（2,000训练/400验证/200测试），使用错位网格有限差分模拟生成；真实验证采用Utah FORGE 2019 DAS（well 78-32，Silixa Carina P11，1.02 m通道间距，来自S27EVENT的7个微地震事件；辅助Vp模型来自井测/地层信息）。",
+        "geophysics_relevance_en": "Directly relevant to seismology and DAS signal processing because it enables particle-velocity seismograms from DAS without co-located seismometers, improving compatibility with standard waveform analyses and monitoring workflows.",
+        "geophysics_relevance_zh": "与地球物理/地震学与DAS信号处理高度相关：无需协同地震仪即可将DAS反演为粒子速度地震记录，使其更好融入常规波形分析与监测流程。",
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "topic": "DAS-to-velocity reconstruction",
+        "audience_level": "specialist",
         "keywords_en": [
-          "dante",
-          "neural",
-          "operator",
-          "without",
-          "seismometers"
+          "Distributed Acoustic Sensing",
+          "particle velocity",
+          "physics-informed operator",
+          "Fourier Neural Operator",
+          "Utah FORGE"
         ],
         "keywords_zh": [
-          "dante",
-          "neural",
-          "operator",
-          "without",
-          "seismometers"
+          "分布式光纤测振",
+          "粒子速度",
+          "物理约束算子",
+          "傅里叶神经算子",
+          "Utah FORGE"
         ],
-        "topic": "dante",
-        "audience_level": "specialist",
-        "llm_used": false,
-        "source": "abstract"
+        "updated_at": "2026-05-21T16:25:36.626992+00:00",
+        "cache_hit": true
       }
     },
     {
@@ -1117,48 +1195,53 @@
         "abs_url": "http://arxiv.org/abs/2605.17792v1",
         "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.17792v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": null,
-        "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.17792v1.md",
+        "markdown_parse_error": null
       },
       "analysis": {
         "schema_version": "paperradar.analysis.v3",
         "input_version": "markdown-clean-v1",
-        "one_sentence_en": "Calibrating distributed hydrologic models is a critical bottleneck across operational water resources management - streamflow prediction, reservoir operation, drought monitoring, infrastructure design, and flood forecasting all depend on it.",
-        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "one_sentence_en": "The paper benchmarks frontier LLM agents for calibrating the operational CREST hydrologic simulator and shows they fall short of human experts, then proposes HYDROAGENT that closes much of the gap using simulator-in-the-loop RL with feedback rewards from CREST outputs.",
+        "one_sentence_zh": "本文基准测试前沿LLM用于校准业务级CREST水文模型发现仍不及人类专家，并提出HYDROAGENT：通过将CREST仿真反馈用于奖励的在环强化学习显著缩小差距。",
         "summary_en": [
-          "Calibrating distributed hydrologic models is a critical bottleneck across operational water resources management - streamflow prediction, reservoir operation, drought monitoring, infrastructure design, and flood forecasting all depend on it.",
-          "Each basin demands an expert to translate hydrograph signatures into adjustments of a high-dimensional parameter vector, and the resulting workflow does not transfer between watersheds.",
-          "We ask: can frontier large language model (LLM) agents replace the human hydrologic modeler, and if not, what would it take?"
+          "problem: Frontier LLM agents may not reliably perform basin-specific calibration of high-dimensional distributed hydrologic models as humans do.",
+          "approach: Benchmark nine frontier LLM agents on held-out gauges for CREST calibration, then fine-tune a small open model (Qwen3-4B) with supervised fine-tuning plus simulation-grounded RL using online CREST rollouts and Nash–Sutcliffe Efficiency as a verifiable reward.",
+          "key result: Frontier agents achieve up to strong NSE values but do not reach the human-expert reference (except one vendor/model on one gauge), while HYDROAGENT is proposed as a more compute-efficient and physically faithful simulator-in-the-loop recipe that is evaluated on the same setup."
         ],
         "summary_zh": [
-          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+          "problem: 前沿LLM是否能像人类一样完成分流域的分布式水文模型高维参数标定仍不确定且可能难以泛化到不同流域。",
+          "approach: 在CREST业务级模型上对四个保留测站基准测试九种前沿LLM，并用在线CREST仿真结果作为奖励（以NSE为可验证回报）对小型开源模型Qwen3-4B进行SFT+在环强化学习微调。",
+          "key result: 前沿代理能达到较高NSE但总体未达到人类专家基准（仅有一项在一个测站上达到），论文提出HYDROAGENT作为更省计算且更符合物理的仿真反馈校准策略，并在相同设置下进行评估。"
         ],
-        "contribution_en": "",
-        "contribution_zh": "",
-        "method_en": "",
-        "method_zh": "",
-        "data_or_region_en": "",
-        "data_or_region_zh": "",
-        "geophysics_relevance_en": "",
-        "geophysics_relevance_zh": "",
+        "contribution_en": "A systematic benchmark of nine frontier LLM agents on calibration of an operational distributed hydrologic simulator (CREST/EF5) under controlled compute, plus a domain-tuned HYDROAGENT training recipe (SFT + simulation-grounded RL with NSE rewards) intended to narrow the human–LLM calibration gap with better physical fidelity and compute efficiency.",
+        "contribution_zh": "对九种前沿LLM在业务级分布式水文模拟器CREST/EF5的标定任务上进行系统基准测试，并提出HYDROAGENT的领域化训练方案（SFT+基于仿真反馈的强化学习、以NSE作为奖励），用于缩小与人类专家的校准差距，同时提升物理一致性与计算效率。",
+        "method_en": "CREST hydrologic simulator calibration performed through an agent tool interface that proposes 13 bounded physical parameter multipliers, runs EF5 to generate hourly discharge time series, and evaluates multi-criteria diagnostics while using clipped NSE as the RL terminal reward; HYDROAGENT is trained via supervised fine-tuning on expert calibration trajectories followed by Group-Relative Policy Optimization with simulator-in-the-loop rollouts.",
+        "method_zh": "通过带工具接口的智能体进行CREST水文模型校准：智能体给出13个有物理范围约束的参数倍数，调用EF5运行得到小时尺度径流时序，再基于多指标诊断评估，其中强化学习用裁剪后的NSE作为终局奖励；HYDROAGENT先在专家标定轨迹上做监督微调，再用带仿真在环的GRPO进行强化学习。",
+        "data_or_region_en": "United States CONUS stream gauges using operational CREST/EF5 flash-flood forecasting; training uses 10 CONUS gauges and evaluation uses 4 held-out gauges with drainage areas spanning 329–40,792 km², driven by raster precipitation (MRMS gauge-corrected) and daily PET plus CREST control templates.",
+        "data_or_region_zh": "美国CONUS地区流域测站：基于业务级CREST/EF5短临暴洪预报应用；训练用10个测站、评估用4个保留测站，流域面积跨度329–40,792 km²，输入包括栅格化降水（MRMS校正）与日尺度PET，并使用CREST控制文件模板。",
+        "geophysics_relevance_en": "This is relevant to hydrologic model calibration and operational forecasting workflows; however, the core tracked topic is AI-for-physical-science calibration and simulator-grounded RL, so relevance is strong for methodology but not proposing new hydrology theory.",
+        "geophysics_relevance_zh": "这与水文模型校准和业务化预报流程直接相关；但论文核心是AI用于物理科学中的校准与仿真在环强化学习方法，而非提出新的水文学理论，因此对追踪主题的相关性在方法层面很强、在理论创新层面较弱。",
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "topic": "Hydrologic calibration with RL",
+        "audience_level": "specialist",
         "keywords_en": [
-          "frontier",
-          "hydrologic",
-          "across",
-          "agents",
-          "hydroagent"
+          "hydrologic model calibration",
+          "distributed rainfall-runoff",
+          "reinforcement learning",
+          "simulator-in-the-loop",
+          "CREST/EF5"
         ],
         "keywords_zh": [
-          "frontier",
-          "hydrologic",
-          "across",
-          "agents",
-          "hydroagent"
+          "水文模型校准",
+          "分布式降雨径流",
+          "强化学习",
+          "仿真在环",
+          "CREST/EF5"
         ],
-        "topic": "frontier",
-        "audience_level": "specialist",
-        "llm_used": false,
-        "source": "abstract"
+        "updated_at": "2026-05-21T16:25:36.631962+00:00",
+        "cache_hit": true
       }
     },
     {
@@ -1176,50 +1259,55 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.17081v1",
         "abs_url": "http://arxiv.org/abs/2605.17081v1",
-        "local_pdf_path": null,
-        "pdf_download_error": "Could not reach the arXiv API. Check network/proxy settings and try again.",
-        "markdown_path": null,
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.17081v1.pdf",
+        "pdf_download_error": null,
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.17081v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
         "schema_version": "paperradar.analysis.v3",
         "input_version": "markdown-clean-v1",
-        "one_sentence_en": "Slope stability description through mechanical laws has important implication for Earth morphology understanding and risk assessment.",
-        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "one_sentence_en": "This paper models large-scale slope/rock-tilting stability using the Griffith failure criterion with variable rock traction and shows it predicts different maximum escarpment heights than the commonly used Mohr–Coulomb law, especially in tensile and hybrid fracture domains.",
+        "one_sentence_zh": "本文用可变岩体牵引的Griffith破坏准则对大尺度坡体/岩块倾倒稳定性建模，发现其对最大崖壁高度的预测与Mohr–Coulomb准则显著不同，尤其在张性与混合裂隙领域。",
         "summary_en": [
-          "Slope stability description through mechanical laws has important implication for Earth morphology understanding and risk assessment.",
-          "Previous researches have showed that shear, tensile, and hybrid fractures can be observed experimentally and in the field, but their descriptions by a single equation is still an open debate.",
-          "Fracture envelope able to describe contemporaneously these three fracture modes differ signif-icantly from the Mohr-Coulomb law."
+          "problem: Whether using a single conventional failure law (Mohr–Coulomb) is adequate to predict large-scale stability when tensile and hybrid fractures are important.",
+          "approach: Compare maximum relief/escarpment heights from rock-tilting equilibrium calculations using Mohr–Coulomb versus a Griffith criterion with traction fitted to experimental fracture-envelope behavior (Carrara marbles), including variable traction.",
+          "key result: Mohr–Coulomb tends to overestimate maximum escarpment height compared with the modified Griffith criterion, and differences can be comparable to those produced by geological factors such as seismicity, water/pore pressure, and destabilization mode."
         ],
         "summary_zh": [
-          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+          "problem: 当张性与混合裂隙主导时，传统单一破坏准则（Mohr–Coulomb）能否可靠预测大尺度稳定性。",
+          "approach: 在岩块倾倒的力学平衡框架下，分别用Mohr–Coulomb与带可变牵引的Griffith准则计算最大地形起伏/崖壁高度，并用Carrara大理石实验得到的破裂包络来约束牵引。",
+          "key result: 相比改进的Griffith准则，Mohr–Coulomb倾向于高估最大崖壁高度；该差异幅度可与地质过程（如地震活动、水/孔隙压力及失稳方式差异）带来的影响量级相当。"
         ],
-        "contribution_en": "",
-        "contribution_zh": "",
-        "method_en": "",
-        "method_zh": "",
-        "data_or_region_en": "",
-        "data_or_region_zh": "",
-        "geophysics_relevance_en": "",
-        "geophysics_relevance_zh": "",
+        "contribution_en": "The study provides a scale-bridging stability modeling framework that replaces Mohr–Coulomb with a traction-dependent Griffith criterion, quantifies how tensile/hybrid fracture mechanics alters predicted maximum relief, and validates the theoretical setup using Carrara marble fracture-envelope data.",
+        "contribution_zh": "研究提出了跨尺度的稳定性建模框架：用牵引依赖的Griffith准则替代Mohr–Coulomb，定量评估张性/混合裂隙力学对最大地形起伏预测的影响，并以Carrara大理石的破裂包络实验数据支撑理论实现。",
+        "method_en": "Rock-block tilting stability is computed from moment balance, converting fracture mechanics failure criteria (Mohr–Coulomb with friction/cohesion, or Griffith with traction T) into a maximum block height (relief/escarpment) threshold; for Griffith, traction T is not assumed constant but derived as a function fitted from experimental tensile/hybrid fracture envelopes (Ramsey & Chester data for Carrara marbles), and the resulting traction-dependent failure condition is solved numerically.",
+        "method_zh": "基于岩块倾倒的力矩平衡，结合破坏准则将断裂力学参数转换为最大地形起伏/崖壁高度的稳定阈值；其中Mohr–Coulomb采用摩擦与黏聚力，Griffith则不把牵引T当作常数，而是从实验张性/混合裂隙破裂包络拟合得到T(σn,τ等依赖关系)，再对牵引相关的稳定条件进行数值求解。",
+        "data_or_region_en": "Carrara marbles from laboratory fracture experiments (Ramsey & Chester, 2004) used to calibrate variable rock traction; study region is not specified beyond this theoretical case study.",
+        "data_or_region_zh": "用来校准可变岩体牵引的是Carrara大理石的实验室断裂实验数据（Ramsey & Chester, 2004）；文中未具体给出研究区域（除该理论案例外）。",
+        "geophysics_relevance_en": "Relevant to large-scale slope stability and geomorphology because it shows that tensile and hybrid fracture mechanics can materially change predicted maximum relief, impacting hazard assessment beyond what Mohr–Coulomb would suggest; relevance to direct remote sensing/typical geophysics workflows is tangential.",
+        "geophysics_relevance_zh": "对大尺度坡体稳定与地貌演化很有启发，因为研究表明张性与混合裂隙力学会显著改变最大地形起伏预测，从而影响危险性评估；但与遥感/常见地球物理观测反演流程的直接关联较弱，属于间接相关。",
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "topic": "Rock fracture stability",
+        "audience_level": "specialist",
         "keywords_en": [
-          "fractures",
-          "relief",
-          "fracture",
-          "mohr-coulomb",
-          "criterion"
+          "slope stability",
+          "rock tilting",
+          "Griffith criterion",
+          "Mohr-Coulomb",
+          "Carrara marble"
         ],
         "keywords_zh": [
-          "fractures",
-          "relief",
-          "fracture",
-          "mohr-coulomb",
-          "criterion"
+          "坡体稳定",
+          "岩块倾倒",
+          "Griffith准则",
+          "Mohr-Coulomb",
+          "Carrara大理石"
         ],
-        "topic": "fractures",
-        "audience_level": "specialist",
-        "llm_used": false,
-        "source": "abstract"
+        "updated_at": "2026-05-21T16:25:36.638180+00:00",
+        "cache_hit": true
       }
     },
     {
@@ -1244,48 +1332,53 @@
         "abs_url": "http://arxiv.org/abs/2605.16966v1",
         "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.16966v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": null,
-        "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.16966v1.md",
+        "markdown_parse_error": null
       },
       "analysis": {
         "schema_version": "paperradar.analysis.v3",
         "input_version": "markdown-clean-v1",
-        "one_sentence_en": "Solving inverse partial differential equation (PDE) problems is a fundamental topic in scientific research due to its broad significance across a wide range of real-world applications.",
-        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "one_sentence_en": "This survey systematically reviews how AI techniques are used to tackle inverse partial differential equation problems across inverse recovery, inverse design, and PDE control, summarizing key paradigms, challenges, and applications.",
+        "one_sentence_zh": "本文系统综述了人工智能如何用于求解逆偏微分方程问题，包括逆向求解、逆向设计和PDE控制，并总结方法范式、挑战与应用前景。",
         "summary_en": [
-          "Solving inverse partial differential equation (PDE) problems is a fundamental topic in scientific research due to its broad significance across a wide range of real-world applications.",
-          "Inverse PDE problems arise across medical imaging, geophysics, materials science, and aerodynamics, where the goal is to infer hidden causes, design structures, or control physical states.",
-          "In this paper, we provide a comprehensive review of recent advances in solving inverse PDE problems using artificial intelligence (AI)."
+          "problem: Inverse PDE problems are ill-posed and computationally demanding because they require inferring hidden causes or decisions from incomplete, noisy observations under PDE constraints.",
+          "approach: The paper organizes AI-based solutions into three categories (inverse problems, inverse design, control) and reviews representative paradigms such as data-driven mappings, PDE-constrained learning, surrogate approaches, generative modeling, and sequential/control strategies.",
+          "key result: It provides a unified, systematic perspective on AI for inverse PDE problems and identifies open challenges such as physics-informed architectures, limited real-world data, uncertainty quantification, and inverse foundation models."
         ],
         "summary_zh": [
-          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+          "problem: 逆向PDE问题往往不适定且计算成本高，需要在PDE约束下从不完整、含噪观测中推断隐藏原因或决策。",
+          "approach: 论文将AI解法按三类任务（逆向求解、逆向设计、控制）进行归纳，并综述数据驱动映射、PDE约束学习、代理/替代模型、生成式建模以及序列决策/控制等范式。",
+          "key result: 它给出了AI用于逆向PDE问题的统一系统视角，并指出物理约束架构、真实数据稀缺、不确定性量化与逆向基础模型等未解决挑战。"
         ],
-        "contribution_en": "",
-        "contribution_zh": "",
-        "method_en": "",
-        "method_zh": "",
-        "data_or_region_en": "",
-        "data_or_region_zh": "",
-        "geophysics_relevance_en": "",
-        "geophysics_relevance_zh": "",
+        "contribution_en": "A unified taxonomy and comprehensive survey of AI approaches for inverse PDE problems, covering inverse recovery, inverse design, and PDE control, alongside major application areas and future research directions.",
+        "contribution_zh": "提出并梳理了面向逆向PDE问题的统一分类框架，系统综述AI在逆向求解、逆向设计与PDE控制中的关键思路、典型应用及未来研究方向。",
+        "method_en": "Literature survey that structures AI solutions for inverse PDEs into three task classes and reviews methodological paradigms including data-driven inverse mappings, PDE-constrained learning, surrogate/neural-operator style approaches, generative models, and sequential/control-oriented strategies.",
+        "method_zh": "文献综述方法：将逆向PDE的AI解法按三类任务划分，并归纳评述数据驱动逆映射、PDE约束学习、代理/神经算子式方法、生成式模型以及面向序列决策与控制的策略等范式。",
+        "data_or_region_en": "Not specified.",
+        "data_or_region_zh": "未说明。",
+        "geophysics_relevance_en": "Geophysics is explicitly listed as a key application domain (e.g., inferring subsurface properties from seismic responses), but this work is a cross-domain survey rather than a new geophysical algorithm.",
+        "geophysics_relevance_zh": "地球物理被明确作为重要应用领域（如由地震响应推断地下性质），但本文是跨领域综述而非针对地球物理的新增算法。",
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "topic": "AI for inverse PDEs",
+        "audience_level": "specialist",
         "keywords_en": [
-          "inverse",
-          "problems",
-          "across",
-          "design",
-          "control"
+          "inverse problems",
+          "inverse design",
+          "PDE control",
+          "physics-informed AI",
+          "geophysical inversion"
         ],
         "keywords_zh": [
-          "inverse",
-          "problems",
-          "across",
-          "design",
-          "control"
+          "逆问题",
+          "逆向设计",
+          "PDE控制",
+          "物理约束AI",
+          "地球物理反演"
         ],
-        "topic": "inverse",
-        "audience_level": "specialist",
-        "llm_used": false,
-        "source": "abstract"
+        "updated_at": "2026-05-21T16:25:36.645955+00:00",
+        "cache_hit": true
       }
     },
     {
@@ -1309,48 +1402,53 @@
         "abs_url": "http://arxiv.org/abs/2605.16783v1",
         "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.16783v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": null,
-        "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.16783v1.md",
+        "markdown_parse_error": null
       },
       "analysis": {
         "schema_version": "paperradar.analysis.v3",
         "input_version": "markdown-clean-v1",
-        "one_sentence_en": "Artificial intelligence (AI) has been increasingly applied to various geophysical scenarios, yet its practical deployment remains limited by scarce field labels, pronounced synthetic-to-field domain gaps, and insufficient physical consistency under complex and variable field conditions.",
-        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "one_sentence_en": "The paper proposes a progressive pretrain-to-alignment learning workflow that combines field self-supervised pretraining, synthetic supervision, geological-prior refinement, and light target-sample fine-tuning to improve cross-survey relative geologic time estimation from global shelf-edge clinothems.",
+        "one_sentence_zh": "论文提出一种从预训练到对齐的渐进式学习流程，结合野外自监督预训练、合成监督、地质先验约束精炼和轻量目标样本微调，用于提升全球陆架边缘楔体中的跨测线相对地质年代估计。",
         "summary_en": [
-          "Artificial intelligence (AI) has been increasingly applied to various geophysical scenarios, yet its practical deployment remains limited by scarce field labels, pronounced synthetic-to-field domain gaps, and insufficient physical consistency under complex and variable field conditions.",
-          "To address these challenges, we propose a pretrain-to-alignment learning paradigm that systematically integrates self-supervised pretraining, synthetic supervision, prior-driven refinement, and domain-adaptation fine-tuning into a unified progressive learning workflow.",
-          "In this paradigm, geophysical AI models are developed through sequential stages that progressively build field-relevant representations, task-specific mapping capability, field consistency, and target-specific adaptability."
+          "problem: Geophysical AI for relative geologic time estimation struggles with scarce field labels, synthetic-to-field domain gaps, and insufficient physical consistency across surveys.",
+          "approach: Build models via a progressive workflow: self-supervised pretraining on unlabeled field seismic, supervised training on labeled synthetic data, prior-driven refinement using label-independent geological constraints, and lightweight domain-adaptation fine-tuning per target sample.",
+          "key result: On a hybrid benchmark with 3,000 unlabeled field samples and 4,000 labeled synthetic samples from multiple shelf-edge clinothem basins, the paradigm achieves accurate, robust, and well-generalized cross-survey RGT predictions with improved fine-scale stratigraphic/structural detail."
         ],
         "summary_zh": [
-          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+          "problem: 用于相对地质年代估计的地球物理AI面临野外标注稀缺、合成到野外域差距以及跨测线物理一致性不足等问题。",
+          "approach: 采用渐进式流程：用未标注野外地震做自监督预训练；用带标签合成数据做监督学习；通过不依赖标签的地质先验约束进行精炼；再对目标样本进行轻量域适应微调。",
+          "key result: 在包含3,000个未标注野外样本与4,000个带标签合成样本、覆盖多个陆架边缘楔体盆地的混合基准上，该范式在跨测线RGT预测中实现准确、稳健且泛化良好的表现，并提升了细尺度层序与结构细节。"
         ],
-        "contribution_en": "",
-        "contribution_zh": "",
-        "method_en": "",
-        "method_zh": "",
-        "data_or_region_en": "",
-        "data_or_region_zh": "",
-        "geophysics_relevance_en": "",
-        "geophysics_relevance_zh": "",
+        "contribution_en": "Introduces and validates a unified pretrain-to-alignment paradigm that systematically integrates self-supervised representation learning, synthetic supervision, label-independent geological-prior refinement, and sample-level domain adaptation to bridge synthetic-to-field gaps for cross-survey RGT regression.",
+        "contribution_zh": "提出并验证了一个统一的“从预训练到对齐”范式：将自监督表征学习、合成监督、无需标签的地质先验精炼以及样本级域适应系统性地结合起来，用于弥合合成到野外的域差距并提升跨测线RGT回归能力。",
+        "method_en": "Use (1) continued self-supervised pretraining of a seismic foundation transformer via MAE-style masked reconstruction on unlabeled field seismic, (2) supervised RGT regression on labeled synthetic seismic with a constrained derivative-to-integrated vertical RGT output, (3) prior-driven refinement on unlabeled field data using label-independent constraints derived from seismic structural orientations and other regularizers, and (4) lightweight per-target domain-adaptation fine-tuning using objectives from label-independent priors.",
+        "method_zh": "方法包括：(1) 对现成地震基础模型进行基于MAE掩膜重建的自监督续预训练，用未标注野外地震学习楔体相关表征；(2) 在带标签合成地震上做监督RGT回归，采用受约束的“导数场预测+竖向积分”以保证地质合理性；(3) 在未标注野外数据上通过基于地震结构走向等标签无关约束进行先验驱动精炼；(4) 对每个目标样本进行轻量化域适应微调，进一步提升部署可靠性。",
+        "data_or_region_en": "Global shelf-edge clinothem benchmark: 3,000 unlabeled field seismic samples from multiple sedimentary basins (North Sea, Taranaki, Northern Carnarvon, Beaufort–Mackenzie) and 4,000 labeled synthetic seismic samples generated by geological and geophysical forward modeling; cross-survey evaluation across the basins.",
+        "data_or_region_zh": "全球陆架边缘楔体基准：来自多个沉积盆地的3,000个未标注野外地震样本（北海、塔拉纳基、北卡纳文、博福特–马更些），以及通过地质与地球物理正演生成的4,000个带标签合成地震样本；在各盆地间进行跨测线评估。",
+        "geophysics_relevance_en": "This is directly relevant to trustworthy geophysical AI deployment under label scarcity and domain gaps, showcasing how to enforce geologic consistency and cross-survey generalization for stratigraphic time estimation; relevance is methodological and application-specific to RGT.",
+        "geophysics_relevance_zh": "该工作与“标签稀缺与合成/野外域差距下的可靠地球物理AI部署”高度相关，展示了如何通过地质一致性约束提升跨测线泛化与分层时间估计的可信度；但其展示的关键任务是RGT，因此属于方法论与任务定向的直接相关。",
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "topic": "pretrain-to-alignment RGT",
+        "audience_level": "specialist",
         "keywords_en": [
-          "field",
-          "paradigm",
-          "geophysical",
-          "learning",
-          "pretrain-to-alignment"
+          "relative geologic time",
+          "shelf-edge clinothems",
+          "seismic foundation model",
+          "synthetic-to-field domain gap",
+          "geological prior refinement"
         ],
         "keywords_zh": [
-          "field",
-          "paradigm",
-          "geophysical",
-          "learning",
-          "pretrain-to-alignment"
+          "相对地质年代",
+          "陆架边缘楔体",
+          "地震基础模型",
+          "合成到野外域差距",
+          "地质先验精炼"
         ],
-        "topic": "field",
-        "audience_level": "specialist",
-        "llm_used": false,
-        "source": "abstract"
+        "updated_at": "2026-05-21T16:25:36.650678+00:00",
+        "cache_hit": true
       }
     },
     {
@@ -1372,48 +1470,53 @@
         "abs_url": "http://arxiv.org/abs/2605.16717v1",
         "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.16717v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": null,
-        "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.16717v1.md",
+        "markdown_parse_error": null
       },
       "analysis": {
         "schema_version": "paperradar.analysis.v3",
         "input_version": "markdown-clean-v1",
-        "one_sentence_en": "Distributed Acoustic Sensing (DAS) has emerged as a transformative technology for near-surface site characterization.",
-        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "one_sentence_en": "The paper introduces a radial-component predominant-mode inversion that accounts for how DAS records only Rayleigh-wave radial motion, improving Vs profiling versus conventional modal-indexing approaches.",
+        "one_sentence_zh": "本文提出一种径向分量主导模反演框架，考虑DAS只记录瑞利波径向运动的物理特性，从而在Vs反演中优于传统需要手动模态编号的方法。",
         "summary_en": [
-          "Distributed Acoustic Sensing (DAS) has emerged as a transformative technology for near-surface site characterization.",
-          "When a vertical source is activated along the fiber, DAS measures only the in-line (radial) component of Rayleigh-wave motion.",
-          "Dispersion data extracted from radial-component waveforms may differ from those obtained from vertical-component measurements, particularly under complex stratigraphic conditions."
+          "problem: DAS-based Rayleigh-wave dispersion inferred from radial motion can exhibit different modal behavior than vertical-component dispersion, making conventional inversion ambiguous and error-prone.",
+          "approach: Develop a radial-component predominant-mode (RCPM) forward-consistent inversion that selects, for each frequency, the theoretically most participating Rayleigh mode in the radial component and matches dominant radial dispersion trends.",
+          "key result: In synthetic tests and two field DAS datasets, RCPM avoids manual modal indexing, captures correct modal response under complex stratigraphy, and produces Vs profiles consistent with independent borehole/cone-penetration measurements."
         ],
         "summary_zh": [
-          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+          "problem: DAS提取的瑞利波径向分量色散在复杂地层中会与纵向分量的模态行为不同，导致常规反演模态识别困难且易产生偏差。",
+          "approach: 提出径向分量主导模（RCPM）反演，在每个频率上依据径向分量的理论模态参与度选择主导模，并拟合径向主导色散趋势。",
+          "key result: 通过三类合成模型与两套野外DAS数据验证，RCPM无需手动模态编号，能在复杂地层中捕获正确模态响应，并与钻孔/锥贯入试验给出的Vs结果一致。"
         ],
-        "contribution_en": "",
-        "contribution_zh": "",
-        "method_en": "",
-        "method_zh": "",
-        "data_or_region_en": "",
-        "data_or_region_zh": "",
-        "geophysics_relevance_en": "",
-        "geophysics_relevance_zh": "",
+        "contribution_en": "A component-consistent, amplitude-informed predominant-mode inversion framework tailored to DAS radial-component Rayleigh-wave dispersion, explicitly incorporating source-receiver directivity and modal sensitivity to reduce modal-indexing ambiguity and improve Vs recovery.",
+        "contribution_zh": "提出一种面向DAS径向分量瑞利波色散的分量一致、幅度信息主导模反演框架，显式考虑源-接收方向性与径向分量模态敏感性，从而降低模态编号歧义并提升Vs反演可靠性。",
+        "method_en": "Compute theoretical Rayleigh-wave modal shapes and surface amplitudes for vertical and radial components using a transfer/thin-layer style eigenvalue formulation, define the predominant radial mode at each frequency from the product of vertical and radial modal amplitudes for a vertical-source/radial-receiver (V–R) setup, then invert radial-component dispersion targets with global optimization (differential evolution) by matching dominant radial dispersion trajectories.",
+        "method_zh": "采用薄层/特征值求解框架计算分层介质中瑞利波纵向与径向分量的模态形状及自由面幅度；在垂直源-径向接收（V–R）假设下，用纵向与径向模态幅度的乘积定义每个频率的径向主导模；随后用差分进化等全局优化，将RCPM预测的径向主导色散轨迹与DAS径向分量色散目标进行匹配以反演Vs。",
+        "data_or_region_en": "Evaluated with three synthetic layered ground models (monotonic Vs increase, a low-velocity layer, and a high-velocity layer) and two field DAS datasets; field targets are compared against independent invasive measurements including borehole and cone penetration test data.",
+        "data_or_region_zh": "用三种合成地层模型（Vs随深度单调增、含低速层LVL、含高速层HVL）以及两套野外DAS数据评估；野外反演结果与钻孔及锥贯入试验等独立侵入式测量进行对比验证。",
+        "geophysics_relevance_en": "Directly relevant to DAS-based near-surface imaging because it resolves a key physical mismatch: DAS radial-component recording leads to different Rayleigh modal dominance than vertical geophones, affecting Vs inversion.",
+        "geophysics_relevance_zh": "与DAS近地表成像高度相关，因为它解决了关键物理不匹配：DAS只能记录径向分量，导致瑞利波模态优势与传统纵向地震计不同，从而影响Vs反演。",
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "topic": "DAS Rayleigh inversion",
+        "audience_level": "specialist",
         "keywords_en": [
-          "modal",
-          "radial-component",
-          "radial",
-          "dispersion",
-          "profiles"
+          "Distributed Acoustic Sensing",
+          "Rayleigh waves",
+          "predominant mode",
+          "radial component",
+          "shear-wave velocity inversion"
         ],
         "keywords_zh": [
-          "modal",
-          "radial-component",
-          "radial",
-          "dispersion",
-          "profiles"
+          "分布式光纤振动传感",
+          "瑞利波",
+          "主导模态",
+          "径向分量",
+          "剪切波速度反演"
         ],
-        "topic": "modal",
-        "audience_level": "specialist",
-        "llm_used": false,
-        "source": "abstract"
+        "updated_at": "2026-05-21T16:25:36.660687+00:00",
+        "cache_hit": true
       }
     },
     {
@@ -1438,48 +1541,53 @@
         "abs_url": "http://arxiv.org/abs/2605.16711v1",
         "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.16711v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": null,
-        "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.16711v1.md",
+        "markdown_parse_error": null
       },
       "analysis": {
         "schema_version": "paperradar.analysis.v3",
         "input_version": "markdown-clean-v1",
-        "one_sentence_en": "Nearly a century of oil production in the Wilmington Oil Field, Los Angeles Basin, California, has modified the stress state, caused nearly 9 m of ground surface subsidence, and been associated with earthquakes that sheared wells.",
-        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "one_sentence_en": "A 3D coupled multiphase flow–geomechanics model of the Wilmington Oil Field reproduces long-term subsidence and explains historical well-shearing by revising the initial stress regime and identifying which shallow layers were most destabilized by production and injection.",
+        "one_sentence_zh": "本文建立了威尔明顿油田的三维耦合多相流-地应力模型，重现长期地表沉降并通过修正初始应力制度，解释历史井筒剪切的层位失稳机制。",
         "summary_en": [
-          "Nearly a century of oil production in the Wilmington Oil Field, Los Angeles Basin, California, has modified the stress state, caused nearly 9 m of ground surface subsidence, and been associated with earthquakes that sheared wells.",
-          "This offers a unique opportunity to elucidate the processes that govern these phenomena: Since the 1930s, approximately 2.5 billion barrels of oil have been produced, accompanied by water injection volumes roughly an order of magnitude larger.",
-          "Combined with extensive structural and geophysical constraints, this history allows us to interrogate the long-term geomechanical impacts of reservoir operations."
+          "problem: Long-term oil production and water injection in Wilmington caused substantial subsidence and triggered faulting that damaged wells, yet the controlling initial stress state and destabilized fault planes remain uncertain.",
+          "approach: The authors build a calibrated 3D elastoplastic, fault-aware coupled flow–geomechanics model using reservoir pressure history, surface leveling displacements, and detailed production/injection schedules to test stress-regime assumptions and quantify stability changes on faults and bedding planes.",
+          "key result: The best fit to surface deformation is obtained when the sedimentary section starts from low deviatoric stress rather than a critically stressed reverse-faulting regime, with calculated instability changes greatest on shallow sub-horizontal bedding planes (and smaller effects on reservoir faults), consistent with documented well shearing and 1947–1961 seismicity."
         ],
         "summary_zh": [
-          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+          "problem: 威尔明顿油田的长期采油与注水导致显著沉降并引发断层活动/井筒破坏，但初始应力状态与真正失稳的断层或层面尚不清楚。",
+          "approach: 作者构建包含精细断层几何的三维弹塑性耦合流-地应力模型，用已发布的储层压力与地表高程沉降数据校准，并结合逐井的采注排程，检验不同初始应力制度并计算断层与层面稳定性变化。",
+          "key result: 地表形变的最佳拟合表明沉积地层应从低偏应力（非临界受压）初始化，且失稳变化在浅部近水平层理面最强、在储层断层较弱，这与1947–1961年的井筒剪切和地震活动相吻合。"
         ],
-        "contribution_en": "",
-        "contribution_zh": "",
-        "method_en": "",
-        "method_zh": "",
-        "data_or_region_en": "",
-        "data_or_region_zh": "",
-        "geophysics_relevance_en": "",
-        "geophysics_relevance_zh": "",
+        "contribution_en": "Provides a calibrated, elastoplastic 3D coupled flow–geomechanics assessment that reconciles nearly century-scale subsidence with fault-stability evolution, demonstrating that the initially assumed reverse-faulting stress regime is unlikely and identifying shallow sub-horizontal interfaces as key slip candidates.",
+        "contribution_zh": "给出一个可校准的三维弹塑性耦合流-地应力评估，将近百年尺度的沉降与断层稳定性演化统一起来，表明先前认为的逆冲型初始应力制度不太可能，并指出浅部近水平层间界面是主要的滑移失稳候选。",
+        "method_en": "A 3D coupled multiphase flow–geomechanics model with detailed fault surfaces (including faults within and around the field), well-by-well production and injection schedules, elastoplastic constitutive behavior, calibrated to published reservoir pressures and surface leveling (subsidence/rebound) measurements; stability changes are computed for faults and sub-horizontal bedding planes.",
+        "method_zh": "建立包含场内及周边精细断层面的三维多相流-地应力耦合模型，输入逐井生产与注水排程，并采用弹塑性本构；用已发布的储层压力和地表水准沉降/回弹观测进行校准，随后评估断层与浅部近水平层理面的稳定性变化。",
+        "data_or_region_en": "Wilmington Oil Field in the Los Angeles Basin, California, using published reservoir pressure history, historical surface leveling subsidence/rebound measurements, and detailed well-level production and waterflooding schedules (1936–2020 timeframe).",
+        "data_or_region_zh": "美国加州洛杉矶盆地的威尔明顿油田；数据包括已发布的储层压力历史、历史地表水准沉降与回弹观测，以及逐井生产与水驱注入的详细排程（覆盖1936–2020）。",
+        "geophysics_relevance_en": "Directly relevant to induced seismicity and subsurface energy safety because it quantitatively links reservoir operations to stress-state evolution, ground deformation, and which interfaces are most prone to slip under uncertain shallow initial stresses.",
+        "geophysics_relevance_zh": "与诱发地震及地下能源开发安全直接相关：本文定量联系储层作业引起的应力演化、地表形变以及在浅部初始应力不确定条件下最易发生滑移的界面，从而有助于风险机理理解。",
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "topic": "Induced faulting by production",
+        "audience_level": "specialist",
         "keywords_en": [
-          "stress",
-          "state",
-          "field",
+          "stress state",
           "subsidence",
-          "faulting"
+          "fault slip",
+          "coupled flow-geomechanics",
+          "Wilmington Oil Field"
         ],
         "keywords_zh": [
-          "stress",
-          "state",
-          "field",
-          "subsidence",
-          "faulting"
+          "应力状态",
+          "地表沉降",
+          "断层滑移",
+          "耦合流-地应力",
+          "威尔明顿油田"
         ],
-        "topic": "stress",
-        "audience_level": "specialist",
-        "llm_used": false,
-        "source": "abstract"
+        "updated_at": "2026-05-21T16:25:36.668204+00:00",
+        "cache_hit": true
       }
     },
     {
@@ -1512,48 +1620,51 @@
         "abs_url": "http://arxiv.org/abs/2605.16665v1",
         "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.16665v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": null,
-        "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.16665v1.md",
+        "markdown_parse_error": null
       },
       "analysis": {
         "schema_version": "paperradar.analysis.v3",
         "input_version": "markdown-clean-v1",
-        "one_sentence_en": "Continental-scale knowledge of subsurface temperature is limited by the cost and sparsity of borehole measurements, but such information is essential for geothermal resource assessment and for understanding heat transport in the shallow crust.",
-        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "one_sentence_en": "In-Context Earth uses an encoder-only transformer with in-context conditioning on sparse borehole temperatures to predict continental-scale temperature-at-depth fields with calibrated uncertainty and strong cross-continent generalization.",
+        "one_sentence_zh": "In-Context Earth 使用编码器式变压器，把稀疏钻孔温度作为上下文进行条件学习，生成大陆尺度的温度-深度连续场，并给出良好校准的不确定性与跨地区泛化能力。",
         "summary_en": [
-          "Continental-scale knowledge of subsurface temperature is limited by the cost and sparsity of borehole measurements, but such information is essential for geothermal resource assessment and for understanding heat transport in the shallow crust.",
-          "The thermal field reflects the interaction between lithology, crustal structure, radiogenic heat production, and advective fluid flow, sometimes producing sharp anomalies that are smoothed by conventional interpolation or difficult to capture with physical models.",
-          "Here we introduce In-Context Earth, a transformer-based model that uses sparse local borehole observations as geological context to predict continuous temperature-at-depth fields with calibrated uncertainty."
+          "problem: Subsurface temperature mapping is limited by costly, sparse borehole measurements, leading to oversmoothed gradients and unreliable uncertainty in geothermal assessments.",
+          "approach: Introduce In-Context Earth, a transformer that performs in-context learning from a variable set of local borehole observations, predicting binned depth-dependent temperatures as a probabilistic classification task with multiscale spatial encodings and Earth-tailored augmentation.",
+          "key result: On the contiguous US dataset, it achieves 4.7 °C MAE and better resolves sharp geothermal gradients than several baselines, with well-calibrated uncertainty (KS statistic 2.5%); without finetuning it adapts to Alberta, Australia, and the UK using only 20 local observations at inference."
         ],
         "summary_zh": [
-          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+          "problem: 地下温度制图受昂贵且稀疏的钻孔观测限制，传统插值常使温度梯度被抹平且不确定性不可靠，从而影响地热评估。",
+          "approach: 提出 In-Context Earth，采用变压器从若干局部钻孔作为上下文进行条件学习，使用多尺度空间编码与面向地球的数据增强，把温度预测改为分箱的概率分类任务并输出校准不确定性。",
+          "key result: 在相邻美国数据上达到 4.7 °C MAE，且对地热省的尖锐温度梯度刻画更优、置信度校准良好（KS 指标 2.5%）；无需微调即可在推理时仅用每个新区域 20 个局部观测适配到阿尔伯塔、澳大利亚和英国。"
         ],
-        "contribution_en": "",
-        "contribution_zh": "",
-        "method_en": "",
-        "method_zh": "",
-        "data_or_region_en": "",
-        "data_or_region_zh": "",
-        "geophysics_relevance_en": "",
-        "geophysics_relevance_zh": "",
+        "contribution_en": "The paper demonstrates a transformer-based in-context learning framework that turns sparse borehole temperature observations into continuous continental temperature-at-depth predictions with calibrated uncertainty, and shows interpretability evidence that learned representations align with physically meaningful subsurface properties.",
+        "contribution_zh": "论文提出了一种基于变压器的上下文学习框架：把稀疏钻孔温度观测转化为大陆尺度连续温度-深度预测，并给出校准良好的不确定性；同时通过可解释性分析给出证据表明模型内部表征与物理上有意义的地下性质一致。",
+        "method_en": "Train an encoder-only transformer on contiguous US borehole temperature measurements using multiscale spatial encodings and Earth-tailored augmentation that masks absolute lat/lon; at inference, condition on a variable number of nearby borehole context tokens and predict the target temperature distribution across depth-dependent binned intervals to obtain calibrated uncertainty.",
+        "method_zh": "在相邻美国钻孔温度数据上训练编码器式变压器，使用多尺度空间编码，并通过面向地球的数据增强（掩蔽绝对经纬度，仅保留相对位置）；推理时用若干邻近钻孔作为上下文条件，预测目标深度分箱温度的概率分布，从而得到校准的不确定性。",
+        "data_or_region_en": "Contiguous United States borehole temperature compilation (360k temperatures) for training and validation; generalization tests on Alberta (Canada), Australia, and the United Kingdom (using only 20 local observations at inference).",
+        "data_or_region_zh": "训练与验证使用相邻美国的钻孔温度汇编（约 36 万条温度）；并在阿尔伯塔（加拿大）、澳大利亚和英国进行泛化测试（推理时每个区域仅用 20 个局部观测）。",
+        "geophysics_relevance_en": "Directly relevant to geothermal resource assessment and subsurface heat-transport characterization from sparse borehole data; also provides uncertainty-calibrated maps and interpretability linking temperature to subsurface properties, which is valuable for geoscience decision-making.",
+        "geophysics_relevance_zh": "与地热资源评估及利用稀疏钻孔刻画地下热输运过程高度相关；其输出带校准不确定性的温度场，并给出与地下性质相关的可解释性证据，有助于地球科学决策。",
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "topic": "In-context geothermal forecasting",
+        "audience_level": "specialist",
         "keywords_en": [
-          "subsurface",
-          "in-context",
-          "continental-scale",
-          "sparse",
-          "local"
+          "geothermal",
+          "subsurface temperature",
+          "borehole",
+          "in-context learning",
+          "transformer"
         ],
         "keywords_zh": [
-          "subsurface",
-          "in-context",
-          "continental-scale",
-          "sparse",
-          "local"
+          "地下温度",
+          "上下文学习",
+          "变压器"
         ],
-        "topic": "subsurface",
-        "audience_level": "specialist",
-        "llm_used": false,
-        "source": "abstract"
+        "updated_at": "2026-05-21T16:25:36.672577+00:00",
+        "cache_hit": true
       }
     },
     {
@@ -1577,48 +1688,53 @@
         "abs_url": "http://arxiv.org/abs/2605.15752v1",
         "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.15752v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": null,
-        "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.15752v1.md",
+        "markdown_parse_error": null
       },
       "analysis": {
         "schema_version": "paperradar.analysis.v3",
         "input_version": "markdown-clean-v1",
-        "one_sentence_en": "Accurate forecasting of megaelectron-volt (MeV) electrons in the outer Earth's radiation belt, which can pose significant risks to satellites, is essential for risk mitigation and spacecraft operations.",
-        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "one_sentence_en": "The study builds supervised ML and a TimesFM-based time-series foundation adaptation to forecast 1 MeV outer-belt electron flux variations from 6-hour lead using POES/GOES/solar-wind/geomagnetic inputs, achieving strong cross-L performance.",
+        "one_sentence_zh": "该研究构建监督学习及基于 TimesFM 的时间序列基础模型改造，用 POES/GOES/太阳风与地磁数据预测 6 小时前的外辐射带 1 MeV 电子通量变化，效果在多个 L 上较强。",
         "summary_en": [
-          "Accurate forecasting of megaelectron-volt (MeV) electrons in the outer Earth's radiation belt, which can pose significant risks to satellites, is essential for risk mitigation and spacecraft operations.",
-          "We develop a machine-learning-based pipeline for forecasting 1-MeV electron flux variations, focusing first on a 6-hour forecast horizon.",
-          "Using precipitating electrons measured by POES NOAA-15, near 1-MeV electron flux measured by GOES, solar wind measurements near L1, and geomagnetic activity indices as inputs in 2013-2023, we train algorithms including linear regression, 1-D convolutional and long short-term memory neural networks, and Transformer-Encoder to forecast 1-MeV electron flux in McIlwain's L-shells between 2.8 and 6.0 with 0.1 bin resolution."
+          "problem: Need accurate, near-real-time forecasts of 1-MeV electron flux in the Earth's outer radiation belt to mitigate satellite charging and operational risk.",
+          "approach: Train per-L supervised models using POES NOAA-15 precipitating electron fluxes, near-1 MeV GOES flux, upstream solar wind/IMF from L1, and geomagnetic indices, and adapt the pretrained TimesFM via zero-shot and a hybrid residual approach (TimesFM+Cov).",
+          "key result: On Jan–Jun 2024 out-of-sample tests, TimesFM+Cov achieves the best average skill (average R2 ≈ 0.9) across L=2.8–6.0, outperforming other models (average R2 < 0.78) and maintaining >0.9 for L up to 4.7."
         ],
         "summary_zh": [
-          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+          "problem: 需要对地球外辐射带 1 MeV 电子通量进行更准确的近实时预测，以降低卫星充放电等风险。",
+          "approach: 针对每个 L 单独训练监督模型，输入来自 POES NOAA-15 的低能沉降电子、GOES 近 1 MeV 电子通量、L1 处太阳风/IMF 以及地磁指数，并将预训练 TimesFM 用于零样本预测与残差混合方案（TimesFM+Cov）。",
+          "key result: 在 2024 年 1–6 月的样本外测试中，TimesFM+Cov 在 L=2.8–6.0 的平均预测能力最好（平均 R2 约 0.9），明显优于其他模型（平均 R2 < 0.78），且在 L≤4.7 时保持 R2>0.9。"
         ],
-        "contribution_en": "",
-        "contribution_zh": "",
-        "method_en": "",
-        "method_zh": "",
-        "data_or_region_en": "",
-        "data_or_region_zh": "",
-        "geophysics_relevance_en": "",
-        "geophysics_relevance_zh": "",
+        "contribution_en": "Introduces a space-weather forecasting pipeline that adapts a time-series foundation model (TimesFM) for outer radiation belt electron-flux prediction, showing that a hybrid residual-based TimesFM+Cov strategy substantially improves forecast skill versus standard supervised baselines.",
+        "contribution_zh": "提出用于外辐射带电子通量预测的空间天气预报流程，并将时间序列基础模型 TimesFM 进行残差混合改造（TimesFM+Cov）；结果表明其预测能力显著优于常规监督学习基线。",
+        "method_en": "Per-McIlwain L value (2.8–6.0, 0.1 step), supervised regression models are trained on multivariate past sequences of POES NOAA-15 electron fluxes and magnetic local time plus merged near-1 MeV GOES flux, solar wind/IMF from upstream near L1 (OMNI), and geomagnetic indices; TimesFM is evaluated both as a zero-shot forecaster and in a hybrid scheme that applies ridge regression to dynamic covariates and then uses TimesFM inference on residuals (TimesFM+Cov) for 6-hour ahead forecasts.",
+        "method_zh": "针对每个 McIlwain L（2.8–6.0，步长 0.1）分别训练监督回归模型，输入为 POES NOAA-15 的电子通量时间序列及对应的磁地方时，再加上融合的近 1 MeV GOES 电子通量、L1 附近上游太阳风/IMF（OMNI）以及地磁指数；同时评估 TimesFM 的零样本预测能力，以及“对动态协变量先做岭回归、再对残差使用 TimesFM 推断”的混合方案（TimesFM+Cov），用于 6 小时超前预报。",
+        "data_or_region_en": "Outer radiation belt electron forecasting for McIlwain L-shells 2.8–6.0 (0.1 resolution) using POES NOAA-15 (SEM-2/MEPED), merged GOES electron measurements, upstream solar wind/IMF near L1 from OMNI (ACE/Wind sources), and geomagnetic indices (Dst, Kp); trained on 2013–2023 and tested out-of-sample on Jan–Jun 2024.",
+        "data_or_region_zh": "外辐射带预测区域为 McIlwain L-shell 2.8–6.0（0.1 分辨率）；观测数据来自 POES NOAA-15（SEM-2/MEPED）与融合的 GOES 电子测量，太阳风/IMF 来自 L1 附近 OMNI（ACE/Wind 多源）以及地磁指数（Dst、Kp）；训练使用 2013–2023，样本外测试为 2024 年 1–6 月。",
+        "geophysics_relevance_en": "This is directly relevant to space-weather risk mitigation for satellite operations because it forecasts MeV-class outer radiation belt electron fluxes using operationally motivated inputs and a novel foundation-model adaptation.",
+        "geophysics_relevance_zh": "该工作与空间天气预警/风险缓解高度相关，因为它面向卫星运行需求预测 MeV 级外辐射带电子通量，并采用了更贴近业务的输入与基础模型改造思路。",
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "topic": "outer-belt electron forecasting",
+        "audience_level": "specialist",
         "keywords_en": [
-          "timesfm",
-          "forecasting",
-          "electron",
-          "flux",
-          "foundation"
+          "radiation-belt electrons",
+          "MeV forecasting",
+          "space weather",
+          "TimesFM",
+          "POES GOES"
         ],
         "keywords_zh": [
-          "timesfm",
-          "forecasting",
-          "electron",
-          "flux",
-          "foundation"
+          "辐射带电子",
+          "MeV 预报",
+          "空间天气",
+          "TimesFM",
+          "POES GOES"
         ],
-        "topic": "timesfm",
-        "audience_level": "specialist",
-        "llm_used": false,
-        "source": "abstract"
+        "updated_at": "2026-05-21T16:25:36.679639+00:00",
+        "cache_hit": true
       }
     },
     {
@@ -1655,126 +1771,129 @@
         "abs_url": "http://arxiv.org/abs/2605.15549v1",
         "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.15549v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": null,
-        "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.15549v1.md",
+        "markdown_parse_error": null
       },
       "analysis": {
         "schema_version": "paperradar.analysis.v3",
         "input_version": "markdown-clean-v1",
-        "one_sentence_en": "The demand for clean energy is ever increasing, with new nuclear technologies presenting a complementary solution to renewable energies.",
-        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "one_sentence_en": "CTF4Nuclear proposes a common-task benchmark and withheld-test evaluation framework for machine-learning surrogates and sparse-sensor state estimation across multiple nuclear fission and fusion datasets, quantifying current limitations via 12+ metrics.",
+        "one_sentence_zh": "CTF4Nuclear提出面向核裂变与聚变的通用任务基准与隐藏测试集评测框架，用于评估机器学习替代模型和稀疏传感器状态反演，并用多指标揭示现有方法局限。",
         "summary_en": [
-          "The demand for clean energy is ever increasing, with new nuclear technologies presenting a complementary solution to renewable energies.",
-          "However, designing and operating these systems is exceptionally difficult, given the complexity of the physical phenomena that interact to form the system dynamics.",
-          "While high-fidelity simulations help to understand the non-linear, multi-physics interactions within a reactor, they are computationally expensive and rarely suitable for real-time applications."
+          "Problem: Nuclear ML needs fair, reproducible comparisons and real-time-capable surrogate/state-estimation tools despite expensive physics models and sparse/noisy observability constraints.",
+          "Approach: Create an open common task framework with diverse curated fission/fusion datasets and evaluate methods using twelve established metrics plus a new sparse-measurement monitoring paradigm.",
+          "Key result: The benchmark standardizes multi-metric evaluation on hidden test sets and demonstrates method limitations on the included nuclear and nuclear-adjacent systems, without claiming a single best method."
         ],
         "summary_zh": [
-          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+          "问题：核工程场景下，亟需可复现的公平比较与适用于实时的ML替代模型/状态估计，但高保真物理模型昂贵且观测稀疏噪声大。",
+          "方法：构建开放的通用任务框架，汇集多样的核裂变/聚变数据集，并通过十二项既有指标加上仅基于稀疏测量的系统监测新任务范式来评测。",
+          "关键结果：该基准用隐藏测试集与多指标标准化评测，并在所含多种核相关系统上展示了现有方法的不足（未给出唯一通用最优结论）。"
         ],
-        "contribution_en": "",
-        "contribution_zh": "",
-        "method_en": "",
-        "method_zh": "",
-        "data_or_region_en": "",
-        "data_or_region_zh": "",
-        "geophysics_relevance_en": "",
-        "geophysics_relevance_zh": "",
+        "contribution_en": "The paper’s main contribution is introducing CTF4Nuclear, an open common-task framework with a curated, cross-physics benchmark suite and standardized, withheld-test, multi-metric evaluation—including a novel sparse-sensor reconstruction/monitoring task—for ML surrogates and state estimation in nuclear fission and fusion.",
+        "contribution_zh": "论文的主要贡献是提出CTF4Nuclear：一个开放的通用任务框架，包含跨物理过程的精选基准数据集，并通过包含隐藏测试集与多指标的标准化评测（还新增仅基于稀疏传感器的重建/监测任务）来评估核裂变与聚变中的ML替代模型与状态估计。",
+        "method_en": "A common-task benchmark workflow that trains ML models on curated nuclear/fusion datasets and evaluates them on a hidden test set using 12 established spatiotemporal metrics (forecasting, noise robustness, limited data, parametric generalization) plus a sparse-measurement system monitoring task that reconstructs physically unobservable fields from partial sensor readings.",
+        "method_zh": "一种通用任务基准评测流程：在精选的核/聚变数据上训练ML模型，并在隐藏测试集上用12项时空预测相关指标评估（预测、噪声鲁棒性、有限数据、参数泛化），同时加入仅依赖稀疏传感器观测的系统监测任务，用于从部分测量重建不可直接观测的物理场变量。",
+        "data_or_region_en": "Five nuclear/fusion-relevant systems/datasets: Molten Salt Fast Reactor (EVOL geometry; OpenFOAM multi-physics), Heat-Pipe MicroReactor (transient neutronics/thermal response), MHD lead-lithium channel flow (fusion coolant channel), DYNASTY experimental facility modeled with RELAP5 (thermo-hydraulics natural circulation), and TRIGA Mark II research reactor (250 kW multi-physics transients); specific regions are not emphasized.",
+        "data_or_region_zh": "5类核/聚变相关数据集：熔盐快堆（EVOL几何；OpenFOAM多物理）、热管微反应堆（瞬态中子学/热响应）、MHD铅-锂通道流（聚变冷却剂通道）、DYNASTY实验装置（用RELAP5建模的热工水力自然对流）、以及TRIGA Mark II研究反应堆（250 kW多物理瞬态）；文中不强调具体地理区域。",
+        "geophysics_relevance_en": "Tangential relevance: the tracked geophysics theme is not directly addressed, but the work adapts dynamical-systems and sparse-sensor reconstruction benchmarking ideas (previously used in seismology) to nuclear engineering.",
+        "geophysics_relevance_zh": "弱相关：与地球物理追踪主题并非直接对口，但借鉴了动力系统与稀疏传感器重建的基准思想（前期用于地震学），迁移到核工程场景。",
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "topic": "Nuclear ML Benchmarking",
+        "audience_level": "specialist",
         "keywords_en": [
-          "nuclear",
-          "task",
-          "framework",
-          "systems",
-          "system"
+          "nuclear engineering",
+          "surrogate modeling",
+          "state estimation",
+          "sparse sensors",
+          "benchmark framework"
         ],
         "keywords_zh": [
-          "nuclear",
-          "task",
-          "framework",
-          "systems",
-          "system"
+          "核工程",
+          "替代模型",
+          "状态估计",
+          "稀疏传感器",
+          "基准框架"
         ],
-        "topic": "nuclear",
-        "audience_level": "specialist",
-        "llm_used": false,
-        "source": "abstract"
+        "updated_at": "2026-05-21T16:25:36.683381+00:00",
+        "cache_hit": true
       }
     }
   ],
   "trending_keywords": [
     {
-      "keyword": "forecasting",
-      "normalized": "forecasting",
-      "score": 2,
-      "paper_count": 2,
+      "keyword": "Distributed acoustic sensing",
+      "normalized": "distributed acoustic sensing",
+      "score": 3,
+      "paper_count": 3,
       "paper_ids": [
-        "2605.15752v1",
+        "2605.16717v1",
+        "2605.18375v1",
+        "2605.20132v1"
+      ]
+    },
+    {
+      "keyword": "seismicity",
+      "normalized": "seismicity",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
         "2605.21437v1"
       ]
     },
     {
-      "keyword": "fluid",
-      "normalized": "fluid",
-      "score": 2,
-      "paper_count": 2,
+      "keyword": "probabilistic forecasting",
+      "normalized": "probabilistic forecasting",
+      "score": 1,
+      "paper_count": 1,
       "paper_ids": [
-        "2605.20764v1",
+        "2605.21437v1"
+      ]
+    },
+    {
+      "keyword": "negative binomial regression",
+      "normalized": "negative binomial regression",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.21437v1"
+      ]
+    },
+    {
+      "keyword": "earthquake catalogs",
+      "normalized": "earthquake catalogs",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.21437v1"
+      ]
+    },
+    {
+      "keyword": "tail risk",
+      "normalized": "tail risk",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.21437v1"
+      ]
+    },
+    {
+      "keyword": "angular momentum density",
+      "normalized": "angular momentum density",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
         "2605.21191v1"
       ]
     },
     {
-      "keyword": "fracture",
-      "normalized": "fracture",
-      "score": 2,
-      "paper_count": 2,
-      "paper_ids": [
-        "2605.17081v1",
-        "2605.20764v1"
-      ]
-    },
-    {
-      "keyword": "hydraulic",
-      "normalized": "hydraulic",
-      "score": 2,
-      "paper_count": 2,
-      "paper_ids": [
-        "2605.19379v1",
-        "2605.20764v1"
-      ]
-    },
-    {
-      "keyword": "spatial",
-      "normalized": "spatial",
+      "keyword": "fluid torque balance",
+      "normalized": "fluid torque balance",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
-        "2605.21437v1"
-      ]
-    },
-    {
-      "keyword": "negative",
-      "normalized": "negative",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.21437v1"
-      ]
-    },
-    {
-      "keyword": "binomial",
-      "normalized": "binomial",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.21437v1"
-      ]
-    },
-    {
-      "keyword": "per-cell",
-      "normalized": "per-cell",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.21437v1"
+        "2605.21191v1"
       ]
     },
     {
@@ -1787,8 +1906,8 @@
       ]
     },
     {
-      "keyword": "momentum",
-      "normalized": "momentum",
+      "keyword": "boundary layers",
+      "normalized": "boundary layers",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
@@ -1796,8 +1915,8 @@
       ]
     },
     {
-      "keyword": "angular",
-      "normalized": "angular",
+      "keyword": "geophysical fluid dynamics",
+      "normalized": "geophysical fluid dynamics",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
@@ -1805,17 +1924,8 @@
       ]
     },
     {
-      "keyword": "rotational",
-      "normalized": "rotational",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.21191v1"
-      ]
-    },
-    {
-      "keyword": "saturation",
-      "normalized": "saturation",
+      "keyword": "Buckley–Leverett",
+      "normalized": "buckley–leverett",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
@@ -1823,8 +1933,8 @@
       ]
     },
     {
-      "keyword": "affine-constrained",
-      "normalized": "affine-constrained",
+      "keyword": "multiphase flow",
+      "normalized": "multiphase flow",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
@@ -1832,8 +1942,35 @@
       ]
     },
     {
-      "keyword": "forest",
-      "normalized": "forest",
+      "keyword": "shock capturing",
+      "normalized": "shock capturing",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.21030v1"
+      ]
+    },
+    {
+      "keyword": "multiwavelet",
+      "normalized": "multiwavelet",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.21030v1"
+      ]
+    },
+    {
+      "keyword": "inflow boundary condition",
+      "normalized": "inflow boundary condition",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.21030v1"
+      ]
+    },
+    {
+      "keyword": "InSAR",
+      "normalized": "insar",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
@@ -1841,8 +1978,8 @@
       ]
     },
     {
-      "keyword": "height",
-      "normalized": "height",
+      "keyword": "forest height",
+      "normalized": "forest height",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
@@ -1850,7 +1987,16 @@
       ]
     },
     {
-      "keyword": "tandem-x",
+      "keyword": "interferometric coherence",
+      "normalized": "interferometric coherence",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.20997v1"
+      ]
+    },
+    {
+      "keyword": "TanDEM-X",
       "normalized": "tandem-x",
       "score": 1,
       "paper_count": 1,
@@ -1859,8 +2005,17 @@
       ]
     },
     {
-      "keyword": "production",
-      "normalized": "production",
+      "keyword": "Landsat",
+      "normalized": "landsat",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.20997v1"
+      ]
+    },
+    {
+      "keyword": "hydraulic fracturing",
+      "normalized": "hydraulic fracturing",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
@@ -1868,8 +2023,8 @@
       ]
     },
     {
-      "keyword": "shadow",
-      "normalized": "shadow",
+      "keyword": "stress shadows",
+      "normalized": "stress shadows",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
@@ -1877,8 +2032,35 @@
       ]
     },
     {
-      "keyword": "blast",
-      "normalized": "blast",
+      "keyword": "SGBEM-FEM",
+      "normalized": "sgbem-fem",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.20764v1"
+      ]
+    },
+    {
+      "keyword": "Darcy production",
+      "normalized": "darcy production",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.20764v1"
+      ]
+    },
+    {
+      "keyword": "cloud simulation",
+      "normalized": "cloud simulation",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.20764v1"
+      ]
+    },
+    {
+      "keyword": "infrasound",
+      "normalized": "infrasound",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
@@ -1886,8 +2068,8 @@
       ]
     },
     {
-      "keyword": "cylindrical",
-      "normalized": "cylindrical",
+      "keyword": "cylindrical blast wave",
+      "normalized": "cylindrical blast wave",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
@@ -1895,8 +2077,8 @@
       ]
     },
     {
-      "keyword": "theory",
-      "normalized": "theory",
+      "keyword": "weak shock",
+      "normalized": "weak shock",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
@@ -1904,75 +2086,12 @@
       ]
     },
     {
-      "keyword": "against",
-      "normalized": "against",
+      "keyword": "OSIRIS-REx reentry",
+      "normalized": "osiris-rex reentry",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
         "2605.20455v1"
-      ]
-    },
-    {
-      "keyword": "processing",
-      "normalized": "processing",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.20132v1"
-      ]
-    },
-    {
-      "keyword": "filark",
-      "normalized": "filark",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.20132v1"
-      ]
-    },
-    {
-      "keyword": "annotation",
-      "normalized": "annotation",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.20132v1"
-      ]
-    },
-    {
-      "keyword": "continuous",
-      "normalized": "continuous",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.20132v1"
-      ]
-    },
-    {
-      "keyword": "rejection",
-      "normalized": "rejection",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.20030v1"
-      ]
-    },
-    {
-      "keyword": "transport",
-      "normalized": "transport",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.20030v1"
-      ]
-    },
-    {
-      "keyword": "optimal",
-      "normalized": "optimal",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.20030v1"
       ]
     }
   ]

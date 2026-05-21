@@ -119,6 +119,19 @@ bash scripts/server_daily_push.sh
 30 7 * * * cd /path/to/PaperRadar && PAPERRADAR_PYTHON=/path/to/python bash scripts/server_daily_push.sh
 ```
 
+如果服务器没有 `crontab`，可以改用轻量常驻调度脚本：
+
+```bash
+PAPERRADAR_PYTHON=/path/to/python nohup bash scripts/server_daily_loop.sh --run-at 07:30 >> logs/daily/scheduler.nohup.log 2>&1 &
+```
+
+查看或停止它：
+
+```bash
+cat logs/daily/server_daily_scheduler.pid
+kill $(cat logs/daily/server_daily_scheduler.pid)
+```
+
 如果服务器任务是主要更新方式，建议关闭 `.github/workflows/daily.yml` 里的定时 schedule，或者保留为手动触发，避免两个任务同时 push。
 
 ## 常用命令
