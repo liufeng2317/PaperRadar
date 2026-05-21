@@ -75,6 +75,8 @@ def enrich_paper(
         except Exception as exc:
             fallback = _fallback_enrichment(paper, keywords_per_paper, markdown_excerpt=markdown_excerpt)
             fallback["llm_error"] = str(exc)
+            fallback["one_sentence_zh"] = "LLM 调用失败；当前显示规则摘要。"
+            fallback["summary_zh"] = ["LLM 调用失败；当前显示规则摘要。请检查模型名称、API 通道或稍后重试。"]
             return fallback
     return _fallback_enrichment(paper, keywords_per_paper, markdown_excerpt=markdown_excerpt)
 
