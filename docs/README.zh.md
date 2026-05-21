@@ -96,7 +96,34 @@ MINERU_API_BASE=...
 
 提醒：完整的 PDF + MinerU 解析更适合在本地服务器运行，因为那里已经有 MinerU 依赖和密钥。GitHub Actions 可以负责发布 `docs/` 页面，但如果要在 Actions 中跑 MinerU，需要额外配置依赖和密钥。
 
+如果使用 GitHub 托管的 Actions，建议选择以下模式之一：
+
+- metadata/abstract-only：在 `config/default.json` 中设置 `"parse_pdfs": false`。
+- MinerU Cloud 解析：安装 MinerU 可选依赖，并配置所需的 `MINERU_*` secrets 或 variables。
+- 完整本地解析：在自己的机器或 self-hosted runner 上运行 PaperRadar，然后提交/推送生成的 `docs/` 输出。
+
+## 服务器定时运行
+
+如果服务器上已经在 `.env` 中配置好了代理、MinerU 和 LLM 密钥，可以使用：
+
+```bash
+bash scripts/server_daily_push.sh
+```
+
+这个脚本会先拉取 GitHub 最新状态，再运行完整日报流程，然后只提交公开输出目录（`data/daily` 和 `docs`）并 push 到 GitHub。本地缓存和密钥仍然会被 git 忽略。
+日志和当前 PID 文件默认写入 `logs/daily/`。
+
+每天服务器时间 07:30 自动运行的 cron 示例：
+
+```cron
+30 7 * * * cd /path/to/PaperRadar && PAPERRADAR_PYTHON=/path/to/python bash scripts/server_daily_push.sh
+```
+
+如果服务器任务是主要更新方式，建议关闭 `.github/workflows/daily.yml` 里的定时 schedule，或者保留为手动触发，避免两个任务同时 push。
+
 ## 常用命令
+
+当你修改了 LLM 模型、提示词或 API 设置，想基于已有 daily JSON/Markdown 重新生成总结，但不重新抓取 arXiv、不重新解析 PDF 时，使用 `reanalyze`。
 
 ```bash
 python -m paperradar.cli fetch
