@@ -102,6 +102,7 @@ Note: full PDF parsing with MinerU is usually better on a local/server environme
 python -m paperradar.cli fetch
 python -m paperradar.cli run --date 2026-05-21
 python -m paperradar.cli render --input data/daily/2026-05-21.json
+python -m paperradar.cli reanalyze --input data/daily/2026-05-21.json
 python -m paperradar.cli registry --query seismic
 python -m paperradar.cli migrate-storage
 ```
@@ -111,6 +112,7 @@ Wrapper examples:
 ```bash
 bash scripts/run_daily.sh
 bash scripts/run_daily.sh run --limit 3
+bash scripts/run_daily.sh reanalyze --input data/daily/2026-05-21.json
 bash scripts/run_daily.sh registry --query seismic
 bash scripts/run_daily.sh migrate-storage
 ```

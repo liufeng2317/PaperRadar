@@ -1,0 +1,18 @@
+[project]
+name = "paperradar"
+version = "0.1.0"
+description = "Configurable arXiv paper radar with bilingual LLM summaries and keyword trends."
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+mineru = [
+  "loguru",
+  "mineru[all]",
+  "python-dotenv",
+  "requests",
+  "tqdm",
+]
+
+[tool.ruff]
+line-length = 100
