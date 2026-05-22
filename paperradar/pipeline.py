@@ -25,6 +25,10 @@ from paperradar.storage import migrate_legacy_file, paper_markdown_path, paper_m
 from paperradar.trend import rank_keywords
 
 
+class NoNewPapers(RuntimeError):
+    """Raised when the fetched arXiv paper list is unchanged from the latest digest."""
+
+
 def run_pipeline(
     config_path: str = "config/default.json",
     date: dt.date | None = None,
@@ -47,6 +51,14 @@ def run_pipeline(
             sort_order=config.arxiv.sort_order,
         )
     except RuntimeError as exc:
+        registry["last_fetch_error"] = str(exc)
+        registry["last_fetch_failed_at"] = dt.datetime.now(dt.timezone.utc).isoformat()
+        save_registry(registry, config.arxiv.registry_path)
+        if not config.arxiv.allow_cached_fetch_fallback:
+            raise RuntimeError(
+                f"arXiv fetch failed; refusing to publish cached papers as {today.isoformat()}. "
+                "Set arxiv.allow_cached_fetch_fallback=true only for manual cache fallback runs."
+            ) from exc
         papers = load_cached_papers(
             registry=registry,
             data_dir=data_dir,
@@ -55,8 +67,16 @@ def run_pipeline(
         )
         if not papers:
             raise
-        registry["last_fetch_error"] = str(exc)
         registry["last_fetch_fallback_at"] = dt.datetime.now(dt.timezone.utc).isoformat()
+    previous_digest = _latest_daily_digest(data_dir)
+    if previous_digest and _same_paper_ids(previous_digest.get("papers", []), papers):
+        registry["last_no_change_at"] = dt.datetime.now(dt.timezone.utc).isoformat()
+        registry["last_no_change_date"] = today.isoformat()
+        save_registry(registry, config.arxiv.registry_path)
+        raise NoNewPapers(
+            f"No new arXiv papers since {previous_digest.get('date')}; "
+            "leaving the existing published digest unchanged."
+        )
     digest = build_digest(papers, config, today, registry=registry)
     save_registry(registry, config.arxiv.registry_path)
     data_path = Path(data_dir)
@@ -258,15 +278,8 @@ def build_digest(
 
 
 def _papers_from_latest_daily(data_dir: str | Path) -> list[Paper]:
-    daily_dir = Path(data_dir)
-    if not daily_dir.exists():
-        return []
-    daily_files = sorted(daily_dir.glob("*.json"), reverse=True)
-    for path in daily_files:
-        try:
-            digest = json.loads(path.read_text(encoding="utf-8"))
-        except json.JSONDecodeError:
-            continue
+    digest = _latest_daily_digest(data_dir)
+    if digest:
         papers = []
         for item in digest.get("papers", []):
             paper_data = item.get("paper", {})
@@ -276,6 +289,27 @@ def _papers_from_latest_daily(data_dir: str | Path) -> list[Paper]:
         if papers:
             return papers
     return []
+
+
+def _latest_daily_digest(data_dir: str | Path) -> dict[str, Any] | None:
+    daily_dir = Path(data_dir)
+    if not daily_dir.exists():
+        return None
+    daily_files = sorted(daily_dir.glob("*.json"), reverse=True)
+    for path in daily_files:
+        try:
+            digest = json.loads(path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            continue
+        if digest.get("papers"):
+            return digest
+    return None
+
+
+def _same_paper_ids(previous_items: list[dict[str, Any]], papers: list[Paper]) -> bool:
+    previous_ids = [item.get("paper", {}).get("arxiv_id") for item in previous_items]
+    current_ids = [paper.arxiv_id for paper in papers]
+    return bool(previous_ids) and previous_ids == current_ids
 
 
 def _papers_from_registry(registry: dict[str, Any], today: dt.date) -> list[Paper]:

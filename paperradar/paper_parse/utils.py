@@ -40,9 +40,8 @@ def pdf_to_unique_uuid(pdf_path, namespace=uuid.NAMESPACE_OID):
     # Calculate PDF content hash (content being the same will yield the same hash)
     file_hash = calculate_file_hash(pdf_path)
 
-    # Step 2: Convert hash string to UUID (UUIDv5, based on namespace and hash value)
-    # Note: UUIDv5 'name' argument is a bytestring; hash is encoded as UTF-8 before use.
-    unique_uuid = uuid.uuid5(namespace, file_hash)  # removed .encode("utf-8")
+    # Step 2: Convert the stable hash string to a UUIDv5 identifier.
+    unique_uuid = uuid.uuid5(namespace, file_hash)
 
     # Return as standard UUID string (with hyphens)
     return str(unique_uuid)
@@ -188,13 +187,9 @@ def doi2dict(doi: str, max_try=1):
         try:
             response = requests.get(url, CROSSREF_HEADERS)
             response.raise_for_status()
-            # Uncomment the line below to assert the status (for debugging)
-            # assert response.status_code == 200
             data = response.json()
             return data["message"]
         except requests.exceptions.RequestException:
-            # Uncomment below to print debugging output
-            # print(f"[===ERROR===]\n{url}\n{e}\n[===ERROR===]")
             if try_idx < (max_try - 1):
                 time.sleep(0.2)
 
@@ -216,7 +211,7 @@ def doi2html(doi: str, max_try=3):
     for try_idx in range(max_try):
         try:
             response = requests.get(url)
-            response.raise_for_status()  # Check if the request is successful
+            response.raise_for_status()
             return response.text
         except requests.exceptions.RequestException:
             if try_idx < (max_try - 1):
@@ -261,8 +256,6 @@ def doi2cite(doi: str, max_try=1):
             data = response.json()
             return int(data["is-referenced-by-count"])
         except requests.exceptions.RequestException:
-            # Uncomment below to print debugging output
-            # print(f"[===ERROR===]\n{url}\n{e}\n[===ERROR===]")
             if try_idx < (max_try - 1):
                 time.sleep(0.2)
 

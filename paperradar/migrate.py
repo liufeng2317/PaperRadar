@@ -12,6 +12,9 @@ from paperradar.registry import (
     update_pdf_status,
 )
 from paperradar.storage import (
+    legacy_year_markdown_path,
+    legacy_year_mineru_dir,
+    legacy_year_pdf_path,
     migrate_legacy_file,
     paper_markdown_path,
     paper_mineru_dir,
@@ -36,7 +39,15 @@ def migrate_storage(config) -> dict[str, int]:
             config.arxiv.storage_category_policy,
         )
         legacy_pdf = Path(config.arxiv.pdf_dir) / f"{safe_arxiv_id(paper.arxiv_id)}.pdf"
+        legacy_year_pdf = legacy_year_pdf_path(
+            config.arxiv.pdf_dir,
+            paper,
+            config.arxiv.categories,
+            config.arxiv.storage_category_policy,
+        )
         if migrate_legacy_file(legacy_pdf, pdf_path):
+            stats["pdfs"] += 1
+        elif migrate_legacy_file(legacy_year_pdf, pdf_path):
             stats["pdfs"] += 1
         elif _move_first_match(Path(config.arxiv.pdf_dir), f"{safe_arxiv_id(paper.arxiv_id)}.pdf", pdf_path):
             stats["pdfs"] += 1
@@ -49,7 +60,15 @@ def migrate_storage(config) -> dict[str, int]:
             config.arxiv.storage_category_policy,
         )
         legacy_markdown = Path(config.arxiv.markdown_dir) / f"{safe_arxiv_id(paper.arxiv_id)}.md"
+        legacy_year_markdown = legacy_year_markdown_path(
+            config.arxiv.markdown_dir,
+            paper,
+            config.arxiv.categories,
+            config.arxiv.storage_category_policy,
+        )
         if migrate_legacy_file(legacy_markdown, markdown_path):
+            stats["markdown"] += 1
+        elif migrate_legacy_file(legacy_year_markdown, markdown_path):
             stats["markdown"] += 1
         elif _move_first_match(Path(config.arxiv.markdown_dir), f"{safe_arxiv_id(paper.arxiv_id)}.md", markdown_path):
             stats["markdown"] += 1
@@ -61,8 +80,16 @@ def migrate_storage(config) -> dict[str, int]:
             config.arxiv.storage_category_policy,
         )
         legacy_mineru_dir = Path(config.arxiv.mineru_output_dir) / safe_arxiv_id(paper.arxiv_id)
+        legacy_year_mineru_bucket = legacy_year_mineru_dir(
+            config.arxiv.mineru_output_dir,
+            paper,
+            config.arxiv.categories,
+            config.arxiv.storage_category_policy,
+        )
         target_mineru_dir = mineru_bucket / safe_arxiv_id(paper.arxiv_id)
         if _move_path(legacy_mineru_dir, target_mineru_dir):
+            stats["mineru_dirs"] += 1
+        elif _move_path(legacy_year_mineru_bucket / safe_arxiv_id(paper.arxiv_id), target_mineru_dir):
             stats["mineru_dirs"] += 1
         elif _move_first_match(Path(config.arxiv.mineru_output_dir), safe_arxiv_id(paper.arxiv_id), target_mineru_dir):
             stats["mineru_dirs"] += 1
@@ -70,6 +97,8 @@ def migrate_storage(config) -> dict[str, int]:
         legacy_zip = Path(config.arxiv.mineru_output_dir) / f"{safe_arxiv_id(paper.arxiv_id)}.zip"
         target_zip = mineru_bucket / f"{safe_arxiv_id(paper.arxiv_id)}.zip"
         if _move_path(legacy_zip, target_zip):
+            stats["mineru_zips"] += 1
+        elif _move_path(legacy_year_mineru_bucket / f"{safe_arxiv_id(paper.arxiv_id)}.zip", target_zip):
             stats["mineru_zips"] += 1
         elif _move_first_match(Path(config.arxiv.mineru_output_dir), f"{safe_arxiv_id(paper.arxiv_id)}.zip", target_zip):
             stats["mineru_zips"] += 1

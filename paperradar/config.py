@@ -23,6 +23,7 @@ class ArxivConfig:
     sort_order: str
     request_delay_seconds: float
     max_retries: int
+    allow_cached_fetch_fallback: bool
     download_pdfs: bool
     pdf_dir: str
     storage_category_policy: str
@@ -69,6 +70,7 @@ def load_config(path: str | Path = "config/default.json") -> SiteConfig:
             sort_order=str(arxiv.get("sort_order", "descending")),
             request_delay_seconds=float(arxiv.get("request_delay_seconds", 3)),
             max_retries=int(arxiv.get("max_retries", 3)),
+            allow_cached_fetch_fallback=bool(arxiv.get("allow_cached_fetch_fallback", False)),
             download_pdfs=bool(arxiv.get("download_pdfs", False)),
             pdf_dir=str(arxiv.get("pdf_dir", "data/pdfs")),
             storage_category_policy=str(arxiv.get("storage_category_policy", "configured")),
@@ -108,6 +110,7 @@ def to_jsonable(config: SiteConfig) -> dict[str, Any]:
             "sort_order": config.arxiv.sort_order,
             "request_delay_seconds": config.arxiv.request_delay_seconds,
             "max_retries": config.arxiv.max_retries,
+            "allow_cached_fetch_fallback": config.arxiv.allow_cached_fetch_fallback,
             "download_pdfs": config.arxiv.download_pdfs,
             "pdf_dir": config.arxiv.pdf_dir,
             "storage_category_policy": config.arxiv.storage_category_policy,

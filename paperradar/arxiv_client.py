@@ -12,7 +12,7 @@ import xml.etree.ElementTree as ET
 from dataclasses import asdict, dataclass
 from pathlib import Path
 
-from paperradar.storage import migrate_legacy_file, paper_pdf_path, safe_arxiv_id
+from paperradar.storage import legacy_year_pdf_path, migrate_legacy_file, paper_pdf_path, safe_arxiv_id
 
 
 ARXIV_API_URL = "https://export.arxiv.org/api/query"
@@ -116,14 +116,17 @@ def download_pdf(
     retries: int = 2,
     preferred_categories: list[str] | None = None,
     category_policy: str = "configured",
+    storage_date: str | dt.date | None = None,
 ) -> str:
     if not paper.pdf_url:
         raise RuntimeError(f"Paper {paper.arxiv_id} does not include a PDF URL.")
 
     output_dir = Path(pdf_dir)
-    output_path = paper_pdf_path(output_dir, paper, preferred_categories, category_policy)
+    output_path = paper_pdf_path(output_dir, paper, preferred_categories, category_policy, storage_date)
     legacy_path = output_dir / f"{safe_arxiv_id(paper.arxiv_id)}.pdf"
+    legacy_year_path = legacy_year_pdf_path(output_dir, paper, preferred_categories, category_policy)
     migrate_legacy_file(legacy_path, output_path)
+    migrate_legacy_file(legacy_year_path, output_path)
     if output_path.exists() and output_path.stat().st_size > 0:
         return str(output_path)
 

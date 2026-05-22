@@ -8,7 +8,8 @@ from pathlib import Path
 from paperradar.config import load_config
 from paperradar.env import load_dotenv
 from paperradar.migrate import migrate_storage
-from paperradar.pipeline import reanalyze_digest, run_pipeline
+from paperradar.pipeline import NoNewPapers, reanalyze_digest, run_pipeline
+from paperradar.query import build_arxiv_query
 from paperradar.registry import load_registry
 from paperradar.render import write_outputs
 
@@ -60,6 +61,9 @@ def main() -> None:
                 data_dir=args.data_dir,
                 docs_dir=args.docs_dir,
             )
+        except NoNewPapers as exc:
+            print(f"No update: {exc}")
+            return
         except RuntimeError as exc:
             parser.exit(1, f"error: {exc}\n")
         print(f"Rendered {len(digest['papers'])} papers for {digest['date']}")
@@ -67,12 +71,17 @@ def main() -> None:
         from paperradar.arxiv_client import fetch_recent_papers
 
         config = load_config(args.config)
+        fetch_date = _parse_date(args.date)
         try:
             papers = fetch_recent_papers(
-                query=config.arxiv.query,
+                query=build_arxiv_query(config.arxiv, today=fetch_date),
                 max_results=config.arxiv.max_results,
                 lookback_days=config.arxiv.lookback_days,
-                today=_parse_date(args.date),
+                today=fetch_date,
+                polite_delay_seconds=config.arxiv.request_delay_seconds,
+                retries=config.arxiv.max_retries,
+                sort_by=config.arxiv.sort_by,
+                sort_order=config.arxiv.sort_order,
             )
         except RuntimeError as exc:
             parser.exit(1, f"error: {exc}\n")

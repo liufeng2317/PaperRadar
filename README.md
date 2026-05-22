@@ -2,16 +2,16 @@
 
 [中文文档](docs/README.zh.md)
 
-PaperRadar is a configurable arXiv paper radar. It tracks topics you care about, downloads paper metadata and PDFs, optionally parses PDFs with MinerU, summarizes papers with an LLM, ranks keyword trends, and publishes a bilingual static digest through GitHub Pages.
+PaperRadar is a configurable arXiv paper radar. It tracks topics you care about, downloads metadata and PDFs, optionally parses PDFs with MinerU, summarizes papers with an OpenAI-compatible LLM, ranks keyword trends, and publishes a bilingual static digest through GitHub Pages.
 
-The default configuration currently tracks `physics.geo-ph` with geophysics-related topic terms. The project itself is domain-agnostic: change `config/default.json` to monitor other arXiv categories, keywords, authors, or a custom query.
+The default configuration tracks `physics.geo-ph` with geophysics-related terms. The project is domain-agnostic: edit `config/default.json` to monitor other arXiv categories, keywords, authors, or a custom query.
 
 ## Features
 
 - Fetch recent arXiv papers from configured categories, keywords, authors, or raw queries.
 - Cache PDFs locally without re-downloading existing files.
 - Parse PDFs into Markdown with the bundled MinerU integration.
-- Summarize papers in English and Chinese with an OpenAI-compatible LLM.
+- Generate English and Chinese paper summaries with an OpenAI-compatible LLM.
 - Extract per-paper keywords and rank daily trending keywords.
 - Render a static GitHub Pages site from `docs/`.
 - Use an incremental registry so existing PDFs, Markdown, and summaries are skipped.
@@ -22,10 +22,16 @@ The default configuration currently tracks `physics.geo-ph` with geophysics-rela
 python -m paperradar.cli run
 ```
 
-The convenience wrapper uses `python` by default. Set `PAPERRADAR_PYTHON` when you want a specific environment, for example one that has MinerU installed:
+Or use the wrapper script:
 
 ```bash
 bash scripts/run_daily.sh
+```
+
+Use `PAPERRADAR_PYTHON` when you want a specific Python environment, for example one with MinerU installed:
+
+```bash
+PAPERRADAR_PYTHON=/path/to/python bash scripts/run_daily.sh
 ```
 
 Main outputs:
@@ -33,8 +39,9 @@ Main outputs:
 - `data/daily/YYYY-MM-DD.json`: daily digest JSON
 - `docs/index.html`: GitHub Pages HTML page
 - `docs/data/latest.json`: latest public page data
-- `data/pdfs/`, `data/markdown/`, `data/mineru/`: local caches, ignored by git
-- `data/paper_registry.json`: local management registry, ignored by git
+- `data/pdfs/<category>/<YYYYMMDD>/`: cached PDFs grouped by arXiv publication date
+- `data/markdown/<category>/<YYYYMMDD>/`: parsed Markdown grouped by arXiv publication date
+- `data/mineru/<category>/<YYYYMMDD>/`: MinerU outputs grouped by arXiv publication date
 
 ## Configuration
 
@@ -64,7 +71,7 @@ Leave `query` empty to let PaperRadar build a query from the structured fields a
 - `matched`: use a configured category only if the paper metadata contains it.
 - any other value: use the paper's primary arXiv category.
 
-## Secrets And `.env`
+## Environment
 
 Copy `.env.example` to `.env` for local runs:
 
@@ -84,19 +91,35 @@ MINERU_API_KEY=...
 MINERU_API_BASE=...
 ```
 
-Never commit `.env`. It is ignored by git.
-
 ## GitHub Pages
 
 1. Push the repository to GitHub.
 2. In repository settings, enable Pages from branch `main`, folder `/docs`.
-3. Add `LLM_API_KEY` as an Actions secret if you want GitHub Actions to call an LLM.
-4. Add `LLM_BASE_URL` and `LLM_MODEL` as Actions variables when needed.
-5. The workflow `.github/workflows/daily.yml` runs daily and commits updated `data/` and `docs/` outputs.
+3. Run PaperRadar locally or on a server, then commit and push updated `data/daily` and `docs` outputs.
 
-Note: full PDF parsing with MinerU is usually better on a local/server environment where MinerU credentials and dependencies are already configured. GitHub Actions can still publish the generated `docs/` page, but it may need extra setup for MinerU.
+GitHub-hosted Actions can publish the generated page, but full PDF parsing with MinerU is usually better on a local/server environment where MinerU credentials and dependencies are already configured.
 
-## Local Commands
+## Server Automation
+
+For a server that already has proxy, MinerU, and LLM credentials in `.env`, run once and push updates with:
+
+```bash
+bash scripts/server_daily_push.sh
+```
+
+Run every day at 11:20 server time with cron:
+
+```cron
+20 11 * * * cd /path/to/PaperRadar && PAPERRADAR_PYTHON=/path/to/python bash scripts/server_daily_push.sh
+```
+
+If `crontab` is unavailable, use the lightweight scheduler:
+
+```bash
+PAPERRADAR_PYTHON=/path/to/python nohup bash scripts/server_daily_loop.sh --run-at 11:20 >> logs/daily/scheduler.nohup.log 2>&1 &
+```
+
+## Commands
 
 ```bash
 python -m paperradar.cli fetch
@@ -107,30 +130,4 @@ python -m paperradar.cli registry --query seismic
 python -m paperradar.cli migrate-storage
 ```
 
-Wrapper examples:
-
-```bash
-bash scripts/run_daily.sh
-bash scripts/run_daily.sh run --limit 3
-bash scripts/run_daily.sh reanalyze --input data/daily/2026-05-21.json
-bash scripts/run_daily.sh registry --query seismic
-bash scripts/run_daily.sh migrate-storage
-```
-
-## What Should Not Be Uploaded
-
-The repository is configured to ignore local secrets and heavy/generated private caches:
-
-- `.env`
-- `data/pdfs/`
-- `data/mineru/`
-- `data/markdown/`
-- `data/paper_registry.json`
-- `data/quarantine/`
-- `data/smoke/`
-- `docs_smoke/`
-- `logs/`
-- `pkg/`
-- Python/build caches
-
-The public site files under `docs/` are intended to be committed.
+Use `reanalyze` when you changed the LLM model, summary instructions, or API settings and want to recompute summaries from existing daily JSON/Markdown without fetching arXiv or parsing PDFs again.

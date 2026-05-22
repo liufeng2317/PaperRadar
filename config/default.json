@@ -20,6 +20,7 @@
     "sort_order": "descending",
     "request_delay_seconds": 3,
     "max_retries": 3,
+    "allow_cached_fetch_fallback": false,
     "download_pdfs": true,
     "pdf_dir": "data/pdfs",
     "storage_category_policy": "configured",

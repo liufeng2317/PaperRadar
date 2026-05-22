@@ -17,14 +17,15 @@ def paper_bucket(
     paper: PaperLike,
     preferred_categories: list[str] | None = None,
     category_policy: str = "configured",
+    storage_date: str | dt.date | None = None,
 ) -> tuple[str, str]:
     category = storage_category(
         paper.categories,
         preferred_categories=preferred_categories,
         category_policy=category_policy,
     )
-    year = _published_year(paper.published)
-    return category, year
+    day = _storage_day(storage_date) if storage_date else _published_day(paper.published)
+    return category, day
 
 
 def paper_pdf_path(
@@ -32,9 +33,10 @@ def paper_pdf_path(
     paper: PaperLike,
     preferred_categories: list[str] | None = None,
     category_policy: str = "configured",
+    storage_date: str | dt.date | None = None,
 ) -> Path:
-    category, year = paper_bucket(paper, preferred_categories, category_policy)
-    return Path(pdf_dir) / category / year / f"{safe_arxiv_id(paper.arxiv_id)}.pdf"
+    category, day = paper_bucket(paper, preferred_categories, category_policy, storage_date)
+    return Path(pdf_dir) / category / day / f"{safe_arxiv_id(paper.arxiv_id)}.pdf"
 
 
 def paper_markdown_path(
@@ -42,9 +44,10 @@ def paper_markdown_path(
     paper: PaperLike,
     preferred_categories: list[str] | None = None,
     category_policy: str = "configured",
+    storage_date: str | dt.date | None = None,
 ) -> Path:
-    category, year = paper_bucket(paper, preferred_categories, category_policy)
-    return Path(markdown_dir) / category / year / f"{safe_arxiv_id(paper.arxiv_id)}.md"
+    category, day = paper_bucket(paper, preferred_categories, category_policy, storage_date)
+    return Path(markdown_dir) / category / day / f"{safe_arxiv_id(paper.arxiv_id)}.md"
 
 
 def paper_mineru_dir(
@@ -52,8 +55,56 @@ def paper_mineru_dir(
     paper: PaperLike,
     preferred_categories: list[str] | None = None,
     category_policy: str = "configured",
+    storage_date: str | dt.date | None = None,
 ) -> Path:
-    category, year = paper_bucket(paper, preferred_categories, category_policy)
+    category, day = paper_bucket(paper, preferred_categories, category_policy, storage_date)
+    return Path(mineru_output_dir) / category / day
+
+
+def legacy_year_bucket(
+    paper: PaperLike,
+    preferred_categories: list[str] | None = None,
+    category_policy: str = "configured",
+) -> tuple[str, str]:
+    category = storage_category(
+        paper.categories,
+        preferred_categories=preferred_categories,
+        category_policy=category_policy,
+    )
+    try:
+        year = str(dt.datetime.fromisoformat(paper.published.replace("Z", "+00:00")).year)
+    except ValueError:
+        year = "unknown-year"
+    return category, year
+
+
+def legacy_year_pdf_path(
+    pdf_dir: str | Path,
+    paper: PaperLike,
+    preferred_categories: list[str] | None = None,
+    category_policy: str = "configured",
+) -> Path:
+    category, year = legacy_year_bucket(paper, preferred_categories, category_policy)
+    return Path(pdf_dir) / category / year / f"{safe_arxiv_id(paper.arxiv_id)}.pdf"
+
+
+def legacy_year_markdown_path(
+    markdown_dir: str | Path,
+    paper: PaperLike,
+    preferred_categories: list[str] | None = None,
+    category_policy: str = "configured",
+) -> Path:
+    category, year = legacy_year_bucket(paper, preferred_categories, category_policy)
+    return Path(markdown_dir) / category / year / f"{safe_arxiv_id(paper.arxiv_id)}.md"
+
+
+def legacy_year_mineru_dir(
+    mineru_output_dir: str | Path,
+    paper: PaperLike,
+    preferred_categories: list[str] | None = None,
+    category_policy: str = "configured",
+) -> Path:
+    category, year = legacy_year_bucket(paper, preferred_categories, category_policy)
     return Path(mineru_output_dir) / category / year
 
 
@@ -91,8 +142,14 @@ def safe_path_part(value: str) -> str:
     return cleaned.strip("-") or "unknown"
 
 
-def _published_year(published: str) -> str:
+def _storage_day(value: str | dt.date) -> str:
+    if isinstance(value, dt.date):
+        return value.strftime("%Y%m%d")
+    return dt.date.fromisoformat(value[:10]).strftime("%Y%m%d")
+
+
+def _published_day(published: str) -> str:
     try:
-        return str(dt.datetime.fromisoformat(published.replace("Z", "+00:00")).year)
+        return dt.datetime.fromisoformat(published.replace("Z", "+00:00")).strftime("%Y%m%d")
     except ValueError:
-        return "unknown-year"
+        return "unknown-day"

@@ -7,6 +7,8 @@ from pathlib import Path
 from paperradar.arxiv_client import Paper
 from paperradar.config import ArxivConfig
 from paperradar.storage import (
+    legacy_year_markdown_path,
+    legacy_year_mineru_dir,
     migrate_legacy_file,
     paper_markdown_path,
     paper_mineru_dir,
@@ -18,6 +20,7 @@ def parse_pdf_to_markdown(
     pdf_path: str,
     paper: Paper,
     config: ArxivConfig,
+    storage_date: str | None = None,
 ) -> tuple[str | None, str | None]:
     if not pdf_path:
         return None, "PDF path is empty; cannot parse with MinerU."
@@ -27,9 +30,17 @@ def parse_pdf_to_markdown(
         paper,
         config.categories,
         config.storage_category_policy,
+        storage_date,
     )
     legacy_markdown = Path(config.markdown_dir) / f"{safe_arxiv_id(paper.arxiv_id)}.md"
+    legacy_year_markdown = legacy_year_markdown_path(
+        config.markdown_dir,
+        paper,
+        config.categories,
+        config.storage_category_policy,
+    )
     migrate_legacy_file(legacy_markdown, markdown_path)
+    migrate_legacy_file(legacy_year_markdown, markdown_path)
     if markdown_path.exists() and markdown_path.stat().st_size > 0:
         return str(markdown_path), None
 
@@ -42,8 +53,17 @@ def parse_pdf_to_markdown(
         paper,
         config.categories,
         config.storage_category_policy,
+        storage_date,
+    )
+    legacy_year_mineru = legacy_year_mineru_dir(
+        config.mineru_output_dir,
+        paper,
+        config.categories,
+        config.storage_category_policy,
     )
     existing_mineru_markdown = _find_markdown_for_pdf(mineru_dir, pdf_file.stem)
+    if not existing_mineru_markdown:
+        existing_mineru_markdown = _find_markdown_for_pdf(legacy_year_mineru, pdf_file.stem)
     if not existing_mineru_markdown:
         existing_mineru_markdown = _find_markdown_for_pdf(Path(config.mineru_output_dir), pdf_file.stem)
     if existing_mineru_markdown:

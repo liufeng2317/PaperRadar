@@ -58,13 +58,24 @@ def _build_author_query(authors: list[str], match_all: bool) -> str:
 def _build_time_query(config: ArxivConfig, today: dt.date | None) -> str:
     today = today or dt.date.today()
     if config.submitted_after:
-        start = config.submitted_after.replace("-", "")
-        end = config.submitted_before.replace("-", "") if config.submitted_before else "*"
+        start = _date_start(config.submitted_after)
+        end = _date_end(config.submitted_before) if config.submitted_before else _date_end(today)
         return f"submittedDate:[{start} TO {end}]"
     if config.lookback_days > 0:
-        start = (today - dt.timedelta(days=config.lookback_days)).strftime("%Y%m%d")
-        return f"submittedDate:[{start} TO *]"
+        start = _date_start(today - dt.timedelta(days=config.lookback_days))
+        end = _date_end(today)
+        return f"submittedDate:[{start} TO {end}]"
     return ""
+
+
+def _date_start(value: str | dt.date) -> str:
+    date = dt.date.fromisoformat(value) if isinstance(value, str) else value
+    return date.strftime("%Y%m%d0000")
+
+
+def _date_end(value: str | dt.date) -> str:
+    date = dt.date.fromisoformat(value) if isinstance(value, str) else value
+    return date.strftime("%Y%m%d2359")
 
 
 def _field_query(field: str, value: str) -> str:

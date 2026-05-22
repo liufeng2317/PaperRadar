@@ -344,16 +344,15 @@ class PaperProcessor:
         url = f"{self.mineru_api_url}/api/v4/extract-results/batch/{batch_id}"
         num_files = len(list(mineru_task_dict.keys()))
         done_items = 0
-        remain_file_idxes = list(range(num_files))  # 存储待处理的「文件索引」（如0、1、2...）
+        remain_file_idxes = list(range(num_files))
         tbar = TqdmLoggingWrapper(tqdm(total=num_files, desc=f"{batch_id}", ncols=160))
         start_time = time.time()
 
-        # Poll until all files are done/failed or timeout
-        # 循环条件：未完成数<总文件数 + 未超时 + 仍有待处理文件（避免死循环）
+        # Poll until every file reaches a terminal state or the timeout expires.
         while (
             done_items < num_files and (time.time() - start_time) < self.max_download_period and len(remain_file_idxes) > 0
         ):
-            # ✓ FIX: Fetch fresh status from API on each polling iteration
+            # Fetch a fresh batch status on every polling iteration.
             try:
                 res = requests.get(url, headers=self.mineru_header, timeout=10)
             except requests.RequestException as e:
@@ -392,47 +391,42 @@ class PaperProcessor:
                 time.sleep(5)
                 continue
 
-            # 浅拷贝待处理文件索引（避免遍历中修改列表导致错乱）
+            # Iterate over a copy because completed items are removed below.
             traverse_file_idxes = remain_file_idxes.copy()
             files_still_processing = False
 
-            for file_idx in traverse_file_idxes:  # file_idx：原始文件列表的索引（如0代表第一个文件）
-                # 获取当前文件的状态数据
+            for file_idx in traverse_file_idxes:
                 file_data = response_data["extract_result"][file_idx]
                 file_name = file_data["file_name"]
                 file_state = file_data.get("state", "")
 
-                # 情况1：文件状态为「已完成」→ 记录下载URL
-                # 任务状态: done=完成, waiting-file=等待上传, pending=排队中, running=解析中, failed=失败, converting=转换中
+                # Terminal success: record the downloadable result URL.
                 if file_state == "done":
                     mineru_task_dict[file_name]["mineru_result_url"] = file_data.get("full_zip_url", "")
                     done_items += 1
-                    remain_file_idxes.remove(file_idx)  # 按「值」删除待处理的文件索引
+                    remain_file_idxes.remove(file_idx)
                     tbar.update(1)
                     logger.info(f"{file_name} ✓ Processing complete")
 
-                # 情况2：文件有错误信息→视为处理完成（跳过）
+                # Terminal failure: mark as complete so the batch can continue.
                 elif file_state == "failed":
                     err_msg = file_data.get("err_msg", "Unknown error")
                     logger.error(f"{file_name} ✗ Failed: {err_msg}")
                     done_items += 1
-                    remain_file_idxes.remove(file_idx)  # 按「值」删除
+                    remain_file_idxes.remove(file_idx)
                     tbar.update(1)
 
-                # 情况3：文件仍在处理中 → 继续等待
-                # 状态包括: waiting-file, pending, running, converting
+                # Non-terminal states include waiting-file, pending, running, and converting.
                 else:
                     files_still_processing = True
                     if file_state not in ["waiting-file", "pending", "running", "converting"]:
                         logger.debug(f"{file_name} - Unknown state: {file_state}")
 
-            # ✓ FIX: If files are still processing, wait before next poll
-            # If all files are done/failed, loop will exit naturally
+            # Wait before the next poll while any file is still active.
             if files_still_processing and done_items < num_files:
                 time.sleep(5)  # Poll every 5 seconds
 
-        # 循环结束后，处理剩余未完成的文件（超时或一直未done）
-        # Get final status for timeout message
+        # Fetch one final status snapshot for timeout diagnostics.
         try:
             res = requests.get(url, headers=self.mineru_header, timeout=10)
             if res.status_code == 200:
@@ -535,7 +529,7 @@ class PaperProcessor:
                     batch_task_dict[file_path]["mineru_result_path"] = ""
                     status = "failed"
 
-                # update progress bar with filename and status
+                # Update progress bar with the current filename and status.
                 try:
                     tbar.set_postfix(file=os.path.basename(file_path), status=status)
                 except Exception:
@@ -570,15 +564,13 @@ class PaperProcessor:
                         batch_task_dict[file_name]["processed"] = False
                         status = "skipped"
                         continue
-                    # extract the zip file to the original pdf name
+                    # Extract the zip file into a folder named after the original PDF.
                     extract_path = extract_zip_to_named_folder(mineru_result_path, self.mineru_dir)
                     mineru_pdf_name = os.path.basename(glob(os.path.join(extract_path, "*_origin.pdf"))[0]).split(
                         "_origin"
                     )[0]
                     
-                    shutil.copy2(
-                        file_path, os.path.join(extract_path, file_name)
-                    )  # copy original PDF file to minerU directory
+                    shutil.copy2(file_path, os.path.join(extract_path, file_name))
 
                     file_info_dict["file_path"] = os.path.join(extract_path, file_name)
                     origin_pdf_path = os.path.join(extract_path, file_name)
@@ -592,7 +584,7 @@ class PaperProcessor:
                         md_writer, image_writer = FileBasedDataWriter(extract_path), FileBasedDataWriter(image_dir)
                         with open(glob(os.path.join(extract_path, "*_model.json"))[0]) as fr:
                             model_json = json.load(fr)
-                        # LLM update header levels
+                        # Use the LLM-aided path to refine heading levels before markdown export.
                         middle_json = result_to_middle_json(
                             model_json,
                             image_list,
@@ -600,17 +592,17 @@ class PaperProcessor:
                             image_writer,
                             llm_aid=self.llm_aid,
                             llm_aided_config=self.llm_client_config,
-                        )  # model_json to middle_json with llm
+                        )
 
-                        # json to markdown
+                        # Convert MinerU JSON to markdown.
                         make_func = pipeline_union_make if self.mineru_is_pipeline else vlm_union_make
                         markdown_content = make_func(middle_json["pdf_info"], MakeMode.MM_MD, image_dir)
-                        # replace image_paths to relative paths
+                        # Keep image paths relative to the extracted session directory.
                         markdown_content = markdown_content.replace(image_dir, "images")
                         md_writer.write_string(f"{mineru_pdf_name}.md", markdown_content)
                         # TODO: convert markdown to paper components if pdf_type is scholar
                         if pdf_type == "scholar":
-                            # extract metadata: title, DOI, references
+                            # Extract metadata such as title, DOI, and references.
                             pass
                     
                     batch_task_dict[file_name]["processed"] = True
@@ -620,7 +612,7 @@ class PaperProcessor:
                     batch_task_dict[file_name]["processed"] = False
                     status = "failed"
                 finally:
-                    # update progress bar for this file
+                    # Update progress bar for this file.
                     try:
                         tbar.set_postfix(file=os.path.basename(file_path), status=status)
                     except Exception:
@@ -632,7 +624,7 @@ class PaperProcessor:
         for file_name, file_info_dict in batch_task_dict.items():
             file_path = os.path.join(self.pdf_dir, file_name)
             if batch_task_dict[file_name]["processed"]:
-                # rename the folder to a new name
+                # Rename the extracted folder to the canonical PDF stem.
                 mineru_result_path = file_info_dict.get("mineru_result_path", "")
                 zip_base = os.path.basename(mineru_result_path)
                 unzip_name, _ = os.path.splitext(zip_base)
@@ -646,7 +638,7 @@ class PaperProcessor:
                         except OSError as e:
                             logger.warning(f"Failed to rename {old_path} to {new_path}: {e}")
                     else:
-                        # remove the new path and rename the old path
+                        # Replace the stale target folder with the newly extracted one.
                         shutil.rmtree(new_path)
                         try:
                             os.rename(old_path, new_path)
@@ -656,7 +648,7 @@ class PaperProcessor:
                 else:
                     logger.error(f"Source folder {old_path} does not exist, please check if the unzip is successful.")
 
-                # rename the zip file to a new name
+                # Rename the downloaded zip to match the canonical PDF stem.
                 if os.path.exists(mineru_result_path):
                     new_zip_name = file_name.replace('.pdf', '.zip')
                     new_zip_path = os.path.join(self.mineru_dir, new_zip_name)
