@@ -168,10 +168,10 @@
       <div class="meta">
         <span data-lang="zh">日期: 2026-05-22</span>
         <span data-lang="en">Date: 2026-05-22</span>
-        <span data-lang="zh">论文: 25</span>
-        <span data-lang="en">Papers: 25</span>
-        <span data-lang="zh">生成时间: 2026-05-21T23:30:43.518538+00:00</span>
-        <span data-lang="en">Generated: 2026-05-21T23:30:43.518538+00:00</span>
+        <span data-lang="zh">论文: 28</span>
+        <span data-lang="en">Papers: 28</span>
+        <span data-lang="zh">生成时间: 2026-05-22T04:38:16.058993+00:00</span>
+        <span data-lang="en">Generated: 2026-05-22T04:38:16.058993+00:00</span>
       </div>
     </div>
   </header>
@@ -181,6 +181,57 @@
       <h2 data-lang="en">Latest Papers</h2>
       
 <article class="paper" data-page-item data-index="1">
+  <h3><a href="http://arxiv.org/abs/2605.22576v1">C-SWIM: A Coupled Space Weather Impact Model for Satellite Fleet Vulnerability and Economic Loss Under a 1-in-100-Year Solar Energetic Particle Event</a></h3>
+  <p class="authors">D. Bor, E. J. Oughton, R. S. Weigel, R. Yang, T. Clower, M. J. Wiltberger et al. · 2026-05-21 · physics.space-ph</p>
+  <p class="one-line" data-lang="zh"><strong>C-SWIM将极端SEP危害统计、动态地磁屏蔽、辐射剂量输运与星座层级失效概率耦合，估算一次“1-in-100年”事件可能使约100颗美国卫星达到关键失效风险并带来约52亿美元期望资本损失。</strong></p>
+  <p class="one-line" data-lang="en"><strong>C-SWIM couples extreme SEP hazard statistics, dynamic geomagnetic shielding, radiation dose transport, and fleet-level failure probabilities to estimate that a 1-in-100-year event could critically endanger about 100 U.S. satellites and cause roughly $5.2B in…</strong></p>
+  <div class="keywords" data-lang="zh"><span>太阳高能粒子</span><span>地磁截止刚度</span><span>辐射剂量输运</span><span>卫星脆弱性</span><span>经济损失</span></div>
+  <div class="keywords" data-lang="en"><span>solar energetic particles</span><span>geomagnetic cutoff rigidity</span><span>radiation dose transport</span><span>satellite vulnerability</span><span>economic loss</span></div>
+  <details>
+    <summary><span data-lang="zh">展开详细总结</span><span data-lang="en">Show details</span></summary>
+    <div class="summary" data-lang="zh"><ul><li>问题：以严谨的概率框架量化极端太阳高能粒子（SEP）事件对卫星星座的整体脆弱性及其经济损失。</li><li>方法：利用1996–2025观测推导1-in-100年SEP危害参数，采用动态地磁截止刚度建模计算轨道依赖的粒子可达性，进行屏蔽内剂量输运，将剂量转化为单星失效概率，并把部门服务中断映射到宏观经济影响。</li><li>关键结果：在假定辐射加固部件与屏蔽条件下，约10,650颗美国在轨卫星中有约100颗（1.0%）属于关键失效风险；全星座期望资本损失约52亿美元，最坏情形下地球观测能力损失可达95.6%，日经济影响最高约13亿美元。</li></ul></div>
+    <div class="summary" data-lang="en"><ul><li>Problem: Quantify aggregate satellite-fleet vulnerability and economic losses from extreme solar energetic particle (SEP) events for the first time in a rigorous, probabilistic way.</li><li>Approach: Build an integrated pipeline that derives 1-in-100-year SEP hazard parameters from 1996–2025 observations, computes orbit-dependent SEP access using dynamic geomagnetic cutoff rigidity modeling, propagates dose through shielding, converts dose into satellite failure probabilities, and maps sector service disruption to macroeconomic impacts.</li><li>key result: Under assumed radiation-hardened components and shielding, ~100 of ~10,650 U.S. satellites fall into the Critical risk class with expected capital loss of about $5.2B, and worst-case Earth observation capacity loss can reach 95.6% with daily economic impacts up to about $1.3B.</li></ul></div>
+    <div class="summary" data-lang="zh"><p><strong>主要贡献:</strong> 论文的主要贡献是提出并应用端到端耦合框架（C-SWIM），将概率化的极端SEP危害表征、轨道依赖的地磁粒子可达性、穿屏蔽剂量输运、星座失效概率与部门层面的宏观经济损失估算串联起来。</p><p><strong>方法:</strong> 通过对积分质子通量与通量积分做峰值超阈值的极值分析得到1-in-100年SEP事件参数；沿传播得到的卫星轨道用动态地磁截止刚度侵蚀计算粒子可达性，并在轨道分段屏蔽假设下结合机器学习代理实现星座尺度推断；将可达SEP通量与束缚辐射的累积剂量合并得到总剂量分布并在器件抗辐照假设下计算失效概率（以总电离剂量为主），再基于失效场景阈值估算替换成本并将服务中断转化为宏观经济日影响。</p><p><strong>数据/区域:</strong> 研究对象为美国在轨卫星星座约10,650颗，覆盖多种轨道类型；SEP危害基于1996–2025共27.4年的积分质子观测，结合SEPEM v3.2（1996–2017年、5分钟分辨率）与GOES-16太阳与银河质子测量（自2020年后期起），并用GOES-15 SEM对2018–2020年太阳活动极小期的阈值内无超越情况进行支撑。</p><p><strong>相关性:</strong> 这与当前的空间天气风险量化主题高度相关：论文用极端SEP统计与动态地磁截止刚度侵蚀刻画轨道依赖的粒子暴露，并进一步转化为星座脆弱性与经济后果；但其更偏工程应用与影响评估，而非提出新的地球物理机理。</p></div><div class="summary" data-lang="en"><p><strong>Contribution:</strong> The paper’s main contribution is an end-to-end coupled framework (C-SWIM) that links probabilistic extreme SEP hazard characterization to orbit-dependent geomagnetic access, radiation dose transport through shielding, satellite-fleet failure probability, and sectoral macroeconomic loss estimation.</p><p><strong>Method:</strong> 1-in-100-year SEP event parameters are derived via peak-over-threshold extreme-value analysis of integral proton flux and fluence; dynamic geomagnetic cutoff rigidity erosion is modeled along propagated satellite orbits with an orbital-regime-dependent shielding assumption (including use of an ML surrogate for fleet-scale inference); accessible SEP fluence and trapped radiation dose are combined to compute total dose distributions and failure probabilities under device hardness assumptions (total ionizing dose), which are then translated to replacement costs and daily service disruption impacts using scenario thresholds and input-output style macroeconomic mapping.</p><p><strong>Data/Region:</strong> U.S. operational satellite fleet (~10,650 satellites) across multiple orbital regimes; SEP hazard uses 27.4 years of integral proton observations from 1996–2025 combining SEPEM v3.2 (1996–2017, 5-min resolution) and GOES-16 Solar and Galactic Proton measurements (from late 2020 onward), with 2018–2020 solar-cycle-minimum behavior supported by GOES-15 SEM.</p><p><strong>Relevance:</strong> This is directly relevant to space-weather risk quantification: it uses extreme-value SEP statistics and dynamic geomagnetic cutoff rigidity erosion to forecast orbit-dependent particle exposure and translate it into fleet vulnerability and economic consequences; however, it is more application-driven than focused on new geophysical physics.</p></div>
+    <p class="authors"><a href="https://arxiv.org/pdf/2605.22576v1">arXiv PDF</a></p>
+  </details>
+</article>
+
+
+<article class="paper" data-page-item data-index="2">
+  <h3><a href="http://arxiv.org/abs/2605.22042v1">Modelling hydroelastic flexure of arbitrarily shaped ice shelves forced by long ocean waves</a></h3>
+  <p class="authors">T. K. Papathanasiou, L. G. Bennetts, M. H. Meylan · 2026-05-21 · physics.flu-dyn, physics.geo-ph</p>
+  <p class="one-line" data-lang="zh"><strong>论文建立并验证了用于任意形状冰架在长周期海浪激励下的二维水弹性有限元散射模型，并用Dirichlet-to-Neumann边界刻画开阔海域辐射与共振响应。</strong></p>
+  <p class="one-line" data-lang="en"><strong>The paper develops and verifies a two-dimensional hydroelastic finite-element scattering model for wave-forced ice shelf flexure of arbitrary shape, using a Dirichlet-to-Neumann boundary to capture open-ocean radiation and resonant responses.</strong></p>
+  <div class="keywords" data-lang="zh"><span>水弹性</span><span>长周期海浪</span><span>有限元</span><span>Dirichlet-to-Neumann</span></div>
+  <div class="keywords" data-lang="en"><span>ice shelves</span><span>hydroelasticity</span><span>long ocean waves</span><span>finite elements</span><span>Dirichlet-to-Neumann</span></div>
+  <details>
+    <summary><span data-lang="zh">展开详细总结</span><span data-lang="en">Show details</span></summary>
+    <div class="summary" data-lang="zh"><ul><li>problem: 如何高效且准确地模拟与开阔海域耦合的任意形状冰架在海浪作用下的弯曲，从而刻画可能促进断裂与崩解的共振响应。</li><li>approach: 将线性Kirchoff–Love薄板与线性浅水海洋动力耦合，用专门的非一致性水弹性有限元离散，并通过Dirichlet-to-Neumann映射截断远场以表示辐射边界；同时与采用Sommerfeld辐射条件的截断方案进行验证对比。</li><li>key result: 经验证后，该方法用于评估冰架几何形状、入射波方向以及接地比例如何影响挠度，并在宽频范围内识别出共振响应。</li></ul></div>
+    <div class="summary" data-lang="en"><ul><li>problem: How to efficiently and accurately model wave-driven flexure of arbitrarily shaped ice shelves, with open-ocean coupling, to predict resonant stresses relevant to calving.</li><li>approach: A linear Kirchoff–Love plate coupled to linear shallow-water ocean dynamics is solved with a nonconforming hydroelastic finite element scheme, truncating the far field via a Dirichlet-to-Neumann map; results are checked against an alternative Sommerfeld truncation.</li><li>key result: The method reproduces expected behavior under verification and is used to quantify how deflection depends on ice-shelf geometry, incident wave direction, and grounding extent, revealing resonant responses over a broad frequency range.</li></ul></div>
+    <div class="summary" data-lang="zh"><p><strong>主要贡献:</strong> 提出并验证了一种适用于任意平面形状且厚度可变冰架的高效二维水弹性散射计算框架：通过Dirichlet-to-Neumann边界处理开阔海域辐射，从而可进行宽频共振响应研究。</p><p><strong>方法:</strong> 在频域中求解线性化耦合水弹性散射问题：冰架用Kirchoff–Love板弯曲（含自由侧边界条件）描述，并与浅水势流在冰架下方空腔及周围海域的动力学耦合；采用单块式非一致性有限元离散求解；通过Dirichlet-to-Neumann映射截断开阔海域计算域，并用Sommerfeld截断方案进行验证。</p><p><strong>数据/区域:</strong> 未说明（主要是方法建立与参数化研究；摘要节选中未明确指定具体观测数据集或某个南极冰架的具体几何）。</p><p><strong>相关性:</strong> 与冰架动力学的长周期海浪致因机制相关：模型针对波浪—冰架弯曲如何放大应力并促进崩解；但它并非直接基于地震学/仪器观测数据的研究，因此属于机制层面的间接相关。</p></div><div class="summary" data-lang="en"><p><strong>Contribution:</strong> It provides a validated computationally efficient 2D hydroelastic scattering framework for long-wave ice-shelf flexure of arbitrary planform and nonuniform thickness, including open-ocean radiation handled by a Dirichlet-to-Neumann boundary and enabling broad-frequency resonance studies.</p><p><strong>Method:</strong> A linearized coupled hydroelastic model uses Kirchoff–Love plate bending for the ice shelf with lateral free-edge conditions, coupled to linear shallow-water potential flow in the sub-shelf cavity and surrounding ocean; a monolithic nonconforming finite-element discretization solves the frequency-domain scattering problem, while a Dirichlet-to-Neumann map truncates the open-ocean domain, with Sommerfeld truncation used for verification.</p><p><strong>Data/Region:</strong> Not specified (method development and parametric studies; no specific observational dataset or Antarctic shelf geometry is explicitly named in the excerpt).</p><p><strong>Relevance:</strong> Relevant to geophysical ice-shelf dynamics for long-wave forcing: the model targets the wave–ice flexure mechanism that can amplify stresses and promote calving, but it is not directly a seismic/instrumental dataset study.</p></div>
+    <p class="authors"><a href="https://arxiv.org/pdf/2605.22042v1">arXiv PDF</a></p>
+  </details>
+</article>
+
+
+<article class="paper" data-page-item data-index="3">
+  <h3><a href="http://arxiv.org/abs/2605.21790v1">Microwave-Stimulated Serpentinization of Olivine for Geological Hydrogen Production</a></h3>
+  <p class="authors">Ansan Pokharel, Terence Musho · 2026-05-20 · cond-mat.mtrl-sci, physics.ao-ph, physics.geo-ph</p>
+  <p class="one-line" data-lang="zh"><strong>在常压下对水饱和粉碎橄榄石的微波处理实验表明，氢气浓度的上升速度约比常规电热板加热快12倍，提示微波可提升蛇纹石化动力学。</strong></p>
+  <p class="one-line" data-lang="en"><strong>An atmospheric-pressure microwave experiment on water-saturated crushed olivine finds hydrogen concentration rises about 12× faster than with conventional hot-plate heating under similar conditions, suggesting electromagnetically enhanced serpentinization kin…</strong></p>
+  <div class="keywords" data-lang="zh"><span>地质氢</span><span>蛇纹石化</span><span>微波加热</span><span>橄榄石</span><span>反应动力学</span></div>
+  <div class="keywords" data-lang="en"><span>geologic hydrogen</span><span>serpentinization</span><span>microwave heating</span><span>olivine</span><span>reaction kinetics</span></div>
+  <details>
+    <summary><span data-lang="zh">展开详细总结</span><span data-lang="en">Show details</span></summary>
+    <div class="summary" data-lang="zh"><ul><li>problem: 自然蛇纹石化能产生地质氢，但反应动力学通常很慢，难以高效、可控地回收利用。</li><li>approach: 在2.45 GHz条件下对2 g水饱和粉碎橄榄石进行微波蛇纹石化筛查，并设置与微波条件相近的电热板对照，用金属氧化物氢传感器获得随时间变化的响应。</li><li>key result: 微波照射相对常规加热带来约12倍的氢气浓度响应，并观察到表观速率从约2增至约10 ppb s−1，提示需要在更高压力下并结合定标气体/吸收功测量进行验证。</li></ul></div>
+    <div class="summary" data-lang="en"><ul><li>problem: Natural serpentinization generates geologic hydrogen but is kinetically slow and may not be practically recoverable without efficient stimulation.</li><li>approach: Perform a preliminary 2 g, water-saturated, crushed-olivine microwave serpentinization screening at 2.45 GHz with matching hot-plate controls, using a metal-oxide hydrogen sensor for time-resolved trends.</li><li>key result: Microwave irradiation produces a ~12-fold higher hydrogen concentration response and an apparent rate increase (about 2 to 10 ppb s−1) relative to conventional heating, motivating higher-pressure and calibrated gas/energy measurements.</li></ul></div>
+    <div class="summary" data-lang="zh"><p><strong>主要贡献:</strong> 首次给出初步实验证据：对含铁橄榄石的蛇纹石化过程，微波电磁刺激可增强氢气生成；并提出后续定量验证与能量评估的关键测试路径（定标气体分析、吸收功测量、介电表征与升压实验）。</p><p><strong>方法:</strong> 采用2.45 GHz单模微波装置对2 g水饱和粉碎橄榄石进行微波蛇纹石化筛查，并设置与之条件相近的电热板对照及干样对照；用金属氧化物气体传感器监测氢气浓度变化；后续将用定标质谱/气相色谱并结合吸收功与介电性质测量进行完善。</p><p><strong>数据/区域:</strong> 未说明（实验室批处理：1个大气压下约2 g粉碎橄榄石，加入去离子水）。</p><p><strong>相关性:</strong> 与超基性岩石的“受激地质氢”产生直接相关，但由于实验规模较小、在1个大气压下且以未定标的浓度传感响应为主，该结果对现场尺度地球物理意义仍属于较弱关联、需进一步升压定量验证。</p></div><div class="summary" data-lang="en"><p><strong>Contribution:</strong> Provides initial experimental evidence that microwave electromagnetic stimulation can enhance hydrogen evolution during serpentinization of iron-bearing olivine, and outlines key diagnostics needed for quantitative, energy-aware follow-up (calibrated gas analysis, absorbed-power measurement, dielectric characterization, and elevated-pressure testing).</p><p><strong>Method:</strong> Microwave serpentinization screening of a 2 g water-saturated, crushed olivine sample using a 2.45 GHz single-mode microwave reactor with hot-plate controls and additional dry controls; hydrogen concentration monitored with a metal-oxide gas sensor, with proposed follow-on steps including calibrated mass spectrometry/GC and absorbed-power plus dielectric measurements.</p><p><strong>Data/Region:</strong> Not specified (laboratory batch experiment at 1 atm on a ~2 g crushed olivine sample with deionized water).</p><p><strong>Relevance:</strong> This is directly relevant to stimulated geologic hydrogen production from ultramafic rocks, but it is a tangentially developed step toward field-scale geophysics because the study is small, at 1 atm, and uses sensor-based concentration rather than calibrated hydrogen yields.</p></div>
+    <p class="authors"><a href="https://arxiv.org/pdf/2605.21790v1">arXiv PDF</a></p>
+  </details>
+</article>
+
+
+<article class="paper" data-page-item data-index="4">
   <h3><a href="http://arxiv.org/abs/2605.21437v1">Neural Negative Binomial Regression for Weekly Seismicity Forecasting: Per-Cell Dispersion Estimation and Tail Risk Assessment</a></h3>
   <p class="authors">Alim Igilik · 2026-05-20 · physics.geo-ph, cs.LG, stat.ML</p>
   <p class="one-line" data-lang="zh"><strong>该文提出EarthquakeNet神经负二项网格模型，为中亚每个空间格点学习超离散度并预测每周地震计数概率分布，其在尾部风险预警上优于负二项GLM基线。</strong></p>
@@ -197,7 +248,7 @@
 </article>
 
 
-<article class="paper" data-page-item data-index="2">
+<article class="paper" data-page-item data-index="5">
   <h3><a href="http://arxiv.org/abs/2605.21191v1">Beyond Vorticity: An Angular Momentum Perspective on Fluid Flow</a></h3>
   <p class="authors">Ahmed Farooq · 2026-05-20 · physics.flu-dyn, physics.ao-ph, physics.geo-ph</p>
   <p class="one-line" data-lang="zh"><strong>本文提出基于流体角动量密度的框架，推导显式扭矩平衡的输运方程，并揭示黏性效应分解、升力产生机制及地球流体环流的统一物理图像。</strong></p>
@@ -214,7 +265,7 @@
 </article>
 
 
-<article class="paper" data-page-item data-index="3">
+<article class="paper" data-page-item data-index="6">
   <h3><a href="http://arxiv.org/abs/2605.21030v1">A Fixed-Grid Affine-Constrained Multiwavelet Coefficient Method for Buckley--Leverett Shock Capturing</a></h3>
   <p class="authors">Christian Tantardini, Evgueni Dinvay · 2026-05-20 · physics.flu-dyn, physics.geo-ph</p>
   <p class="one-line" data-lang="zh"><strong>本文提出一种固定网格的仿射约束模态/多小波系数方法，用于一维 Buckley–Leverett 饱和度激波问题，并在系数空间中强制入口边界，同时对细节模态限幅以抑制振荡并保持守恒。</strong></p>
@@ -231,7 +282,7 @@
 </article>
 
 
-<article class="paper" data-page-item data-index="4">
+<article class="paper" data-page-item data-index="7">
   <h3><a href="http://arxiv.org/abs/2605.20997v1">Hybrid Machine Learning Model for Forest Height Estimation from TanDEM-X and Landsat Data</a></h3>
   <p class="authors">Islam Mansour, Ronny Haensch, Irena Hajnsek, Konstantinos Papathanassiou · 2026-05-20 · cs.CV, cs.AI, cs.LG, physics.comp-ph</p>
   <p class="one-line" data-lang="zh"><strong>本文通过在TanDEM-X相干度混合物理-机器学习反演中引入Landsat光学波段，提升森林高度反演精度，并在Lopé地区相对机载LiDAR验证误差显著降低。</strong></p>
@@ -248,7 +299,7 @@
 </article>
 
 
-<article class="paper" data-page-item data-index="5">
+<article class="paper" data-page-item data-index="8">
   <h3><a href="http://arxiv.org/abs/2605.20764v1">HyFrac.fun: A 3D Hydraulic Fracturing Simulator on Cloud</a></h3>
   <p class="authors">Jing Hu, Qian Liu, Jaroon Rungamornrat · 2026-05-20 · cs.CE, physics.geo-ph</p>
   <p class="one-line" data-lang="zh"><strong>HyFrac.fun 构建了云端工作流，将三维水力压裂传播的SGBEM–FEM求解器与稳态Darcy产能求解器自动无缝耦合，实现全生命周期模拟，并指出应力影效应主导几何形态与长期产能而非流体流变性。</strong></p>
@@ -265,7 +316,7 @@
 </article>
 
 
-<article class="paper" data-page-item data-index="6">
+<article class="paper" data-page-item data-index="9">
   <h3><a href="http://arxiv.org/abs/2605.20455v1">Benchmarking Cylindrical Blast Wave Theory Against the OSIRIS-REx Sample Return Capsule Reentry</a></h3>
   <p class="authors">Elizabeth A. Silber · 2026-05-19 · physics.ao-ph, astro-ph.EP, physics.class-ph, physics.geo-ph, physics.space-ph</p>
   <p class="one-line" data-lang="zh"><strong>该研究用OSIRIS-REx返回舱再入的39站甚低频信号基准评估圆柱弱激波爆炸半径公式与转变系数，发现Sakurai最适用于非消融源且周期是稳健约束量。</strong></p>
@@ -282,7 +333,7 @@
 </article>
 
 
-<article class="paper" data-page-item data-index="7">
+<article class="paper" data-page-item data-index="10">
   <h3><a href="http://arxiv.org/abs/2605.20132v1">FiLark: a streaming-first software framework for end-to-end exploration, annotation, and algorithm integration in distributed acoustic sensing</a></h3>
   <p class="authors">Jintao Li, Weichang Li, Kai Tong, Xaingyu Guo · 2026-05-19 · physics.geo-ph, cs.LG, eess.SP</p>
   <p class="one-line" data-lang="zh"><strong>FiLark 是一个以流式为先的 Python 框架，将 DAS 连续数据访问、交互式 GPU 渲染、流内事件标注以及有状态的 CPU/GPU 处理统一起来，支持从探索到生产的无缝工作流。</strong></p>
@@ -299,7 +350,7 @@
 </article>
 
 
-<article class="paper" data-page-item data-index="8">
+<article class="paper" data-page-item data-index="11">
   <h3><a href="http://arxiv.org/abs/2605.20030v1">Take It or Leave It: Intent-Controlled Partial Optimal Transport</a></h3>
   <p class="authors">Salil Parth Tripathi, Bertrand Chapron, Fabrice Collard, Nicolas Courty, Ronan Fablet · 2026-05-19 · cs.LG, math.OC</p>
   <p class="one-line" data-lang="zh"><strong>意图控制的部分最优传输用每个样本点、且区分源端/目标端的逐点拒绝成本，替代部分OT中的全局拒绝机制来决定哪些质量可比、哪些应不匹配。</strong></p>
@@ -316,7 +367,7 @@
 </article>
 
 
-<article class="paper" data-page-item data-index="9">
+<article class="paper" data-page-item data-index="12">
   <h3><a href="http://arxiv.org/abs/2605.19951v1">Scalable parallel 3-D TEM inversion via rational approximation of the matrix exponential</a></h3>
   <p class="authors">Ralph-Uwe Börner, Stefan Güttel, Thomas Günther · 2026-05-19 · math.NA, physics.geo-ph</p>
   <p class="one-line" data-lang="zh"><strong>该论文提出一种可扩展的三维瞬变电磁(TEM)反演方法，用矩阵指数的有理近似替代时间步进，使正演与灵敏度计算成本基本不随观测时刻数量增加而增长。</strong></p>
@@ -333,7 +384,7 @@
 </article>
 
 
-<article class="paper" data-page-item data-index="10">
+<article class="paper" data-page-item data-index="13">
   <h3><a href="http://arxiv.org/abs/2605.19903v1">New NanoSIMS Multielement Isotope Data Reveal CO Novae As Key Sources Of 13C-rich Presolar Silicon Carbide Grains</a></h3>
   <p class="authors">Jordi José, Nan Liu, Conel M. O&#x27;D. Alexander, Jianhua Wang · 2026-05-19 · astro-ph.SR, astro-ph.GA, physics.geo-ph</p>
   <p class="one-line" data-lang="zh"><strong>新的高分辨率NanoSIMS多元素同位素测量表明，低至中等质量的CO新星最一致地解释富13C且缺乏s过程指纹的陨石前驱SiC晶粒，而ONe和再发新星模型难以同时满足多个同位素约束。</strong></p>
@@ -350,7 +401,7 @@
 </article>
 
 
-<article class="paper" data-page-item data-index="11">
+<article class="paper" data-page-item data-index="14">
   <h3><a href="http://arxiv.org/abs/2605.19608v1">Reassessment of Ionospheric Responses to GRB~221009A: Disentangling Instrumental, Illumination and Geophysical Effects</a></h3>
   <p class="authors">Maosheng He, Quanhan Li, Shun-Rong Zhang, Jeffrey M. Forbes, Jiuhou Lei, Libo Liu et al. · 2026-05-19 · physics.space-ph</p>
   <p class="one-line" data-lang="zh"><strong>通过扩展的多高度GNSS、卫星电场与赤道电喷流(EJ)联合分析，作者未发现GRB 221009A导致的协同电离层信号，并将既报道异常归因于太阳风驱动及仪器/照明几何效应。</strong></p>
@@ -367,7 +418,7 @@
 </article>
 
 
-<article class="paper" data-page-item data-index="12">
+<article class="paper" data-page-item data-index="15">
   <h3><a href="http://arxiv.org/abs/2605.19507v1">The Astro2Geo Project I. Radio astrometric offsets correlated with Gamma-ray brightness</a></h3>
   <p class="authors">Jeffrey A. Hodgson, Hana Krasna, Aletha de Witt, Pfesesani van Zyl, Janeth Valverde · 2026-05-19 · astro-ph.HE, astro-ph.GA, astro-ph.IM</p>
   <p class="one-line" data-lang="zh"><strong>Astro2Geo 将射电核心相对ICRF3的位置偏移与费米LAT近时段伽马射线亮度关联，针对57个AGN发现高比例且与频段相关的幂律相关，可能由多种物理机制共同作用。</strong></p>
@@ -384,7 +435,7 @@
 </article>
 
 
-<article class="paper" data-page-item data-index="13">
+<article class="paper" data-page-item data-index="16">
   <h3><a href="http://arxiv.org/abs/2605.19472v1">Chromospheric resonator model for sunspot revealed by multi-height observation of umbral wave</a></h3>
   <p class="authors">Kartika Sangal, A. K. Srivastava, Libo Fu, Ding Yuan, Song Feng, Yuandeng Shen · 2026-05-19 · astro-ph.SR</p>
   <p class="one-line" data-lang="zh"><strong>作者利用BBSO/GST对太阳斑暗区的多高度Hα观测，分析约3分钟振荡的相位关系，推断慢磁声学波并表明存在非理想声学共振腔。</strong></p>
@@ -401,7 +452,7 @@
 </article>
 
 
-<article class="paper" data-page-item data-index="14">
+<article class="paper" data-page-item data-index="17">
   <h3><a href="http://arxiv.org/abs/2605.19379v1">Graph-based automated discovery of concise soil hydraulic functions from data: beyond the Mualem - van Genuchten model</a></h3>
   <p class="authors">Hao Xu, Jinshen Sun, Yuntian Chen, Dongxiao Zhang · 2026-05-19 · physics.flu-dyn, cs.SC, physics.geo-ph</p>
   <p class="one-line" data-lang="zh"><strong>作者提出基于图的自动方程发现框架，用实验数据推导简洁可解析的土壤含水率保持与非饱和水力传导函数，并在249个土样上优于Mualem–van Genuchten对导水率的预测。</strong></p>
@@ -418,7 +469,7 @@
 </article>
 
 
-<article class="paper" data-page-item data-index="15">
+<article class="paper" data-page-item data-index="18">
   <h3><a href="http://arxiv.org/abs/2605.19118v1">Seismic Depth Imaging of the 2024 Noto Earthquake (M7.6) Rupture Area</a></h3>
   <p class="authors">Hamzeh Mohammadigheymasi, Jin-Oh Park · 2026-05-18 · physics.geo-ph</p>
   <p class="one-line" data-lang="zh"><strong>该研究通过多通道地震采集并开展深度成像，利用结构属性引导自动拾取地平面与网格层析反演迭代优化P波速度模型，解析2024年能登Mw7.6断裂带浅部结构。</strong></p>
@@ -435,7 +486,7 @@
 </article>
 
 
-<article class="paper" data-page-item data-index="16">
+<article class="paper" data-page-item data-index="19">
   <h3><a href="http://arxiv.org/abs/2605.18375v1">DANTE: Physics-Informed Neural Operator for DAS-to-Velocity Waveform Reconstruction Without Co-located Seismometers</a></h3>
   <p class="authors">Isao Kurosawa · 2026-05-18 · physics.geo-ph</p>
   <p class="one-line" data-lang="zh"><strong>DANTE利用物理约束的傅里叶神经算子，从DAS应变率无协同地震仪记录中重建粒子速度波形，并通过DAS运动学与1D弹性波动力学约束实现稳定降噪与反演。</strong></p>
@@ -452,7 +503,7 @@
 </article>
 
 
-<article class="paper" data-page-item data-index="17">
+<article class="paper" data-page-item data-index="20">
   <h3><a href="http://arxiv.org/abs/2605.17792v1">HydroAgent: Closing the Gap Between Frontier LLMs and Human Experts in Hydrologic Model Calibration via Simulator-Grounded RL</a></h3>
   <p class="authors">Zhi Li, Songkun Yan, Jie Cao, Mofan Zhang, Anjiang Wei, Jinwoong Yoo et al. · 2026-05-18 · cs.LG, physics.geo-ph</p>
   <p class="one-line" data-lang="zh"><strong>本文基准测试前沿LLM用于校准业务级CREST水文模型发现仍不及人类专家，并提出HYDROAGENT：通过将CREST仿真反馈用于奖励的在环强化学习显著缩小差距。</strong></p>
@@ -469,7 +520,7 @@
 </article>
 
 
-<article class="paper" data-page-item data-index="18">
+<article class="paper" data-page-item data-index="21">
   <h3><a href="http://arxiv.org/abs/2605.17081v1">Analyzing the role of tensile and hybrid fractures on the max-imum relief topography</a></h3>
   <p class="authors">Julien Gargani · 2026-05-16 · physics.geo-ph</p>
   <p class="one-line" data-lang="zh"><strong>本文用可变岩体牵引的Griffith破坏准则对大尺度坡体/岩块倾倒稳定性建模，发现其对最大崖壁高度的预测与Mohr–Coulomb准则显著不同，尤其在张性与混合裂隙领域。</strong></p>
@@ -486,7 +537,7 @@
 </article>
 
 
-<article class="paper" data-page-item data-index="19">
+<article class="paper" data-page-item data-index="22">
   <h3><a href="http://arxiv.org/abs/2605.16966v1">Harnessing AI for Inverse Partial Differential Equation Problems: Past, Present, and Prospects</a></h3>
   <p class="authors">Zhentao Tan, Yuze Hao, Boyi Zou, Mingsheng Long, Yi Yang, Gang Bao · 2026-05-16 · cs.AI</p>
   <p class="one-line" data-lang="zh"><strong>本文系统综述了人工智能如何用于求解逆偏微分方程问题，包括逆向求解、逆向设计和PDE控制，并总结方法范式、挑战与应用前景。</strong></p>
@@ -503,7 +554,7 @@
 </article>
 
 
-<article class="paper" data-page-item data-index="20">
+<article class="paper" data-page-item data-index="23">
   <h3><a href="http://arxiv.org/abs/2605.16783v1">Pretrain-to-alignment learning paradigm to improve geophysical AI applicability under scarce field labels and synthetic-to-field gaps: A case study of relative geologic time estimation in global shelf-edge clinothems</a></h3>
   <p class="authors">Hui Gao, Xinming Wu, Jiarun Yang, Zhixiang Gao, Yimin Dou · 2026-05-16 · physics.geo-ph</p>
   <p class="one-line" data-lang="zh"><strong>论文提出一种从预训练到对齐的渐进式学习流程，结合野外自监督预训练、合成监督、地质先验约束精炼和轻量目标样本微调，用于提升全球陆架边缘楔体中的跨测线相对地质年代估计。</strong></p>
@@ -520,7 +571,7 @@
 </article>
 
 
-<article class="paper" data-page-item data-index="21">
+<article class="paper" data-page-item data-index="24">
   <h3><a href="http://arxiv.org/abs/2605.16717v1">Radial-Component Predominant-Mode Inversion of Rayleigh Waves: Application to DAS-based Site Characterization</a></h3>
   <p class="authors">Mrinal Bhaumik, Brady R. Cox · 2026-05-16 · physics.geo-ph, cs.SD</p>
   <p class="one-line" data-lang="zh"><strong>本文提出一种径向分量主导模反演框架，考虑DAS只记录瑞利波径向运动的物理特性，从而在Vs反演中优于传统需要手动模态编号的方法。</strong></p>
@@ -537,7 +588,7 @@
 </article>
 
 
-<article class="paper" data-page-item data-index="22">
+<article class="paper" data-page-item data-index="25">
   <h3><a href="http://arxiv.org/abs/2605.16711v1">Stress state, subsidence, and faulting in the Wilmington Oil Field, California: a multiphase flow-geomechanics modeling assessment (1936-2020)</a></h3>
   <p class="authors">Lluís Saló-Salgado, Josimar A. Silva, Andreas Plesch, Franklin D. Wolfe, John H. Shaw, Ruben Juanes · 2026-05-15 · physics.geo-ph</p>
   <p class="one-line" data-lang="zh"><strong>本文建立了威尔明顿油田的三维耦合多相流-地应力模型，重现长期地表沉降并通过修正初始应力制度，解释历史井筒剪切的层位失稳机制。</strong></p>
@@ -554,7 +605,7 @@
 </article>
 
 
-<article class="paper" data-page-item data-index="23">
+<article class="paper" data-page-item data-index="26">
   <h3><a href="http://arxiv.org/abs/2605.16665v1">In-context learning enables continental-scale subsurface temperature prediction from sparse local observations</a></h3>
   <p class="authors">Daniel O&#x27;Malley, Christopher W. Johnson, Javier E. Santos, Pablo Lara, Sandro Malusà, Bharat Srikishan et al. · 2026-05-15 · cs.LG, physics.geo-ph</p>
   <p class="one-line" data-lang="zh"><strong>In-Context Earth 使用编码器式变压器，把稀疏钻孔温度作为上下文进行条件学习，生成大陆尺度的温度-深度连续场，并给出良好校准的不确定性与跨地区泛化能力。</strong></p>
@@ -571,7 +622,7 @@
 </article>
 
 
-<article class="paper" data-page-item data-index="24">
+<article class="paper" data-page-item data-index="27">
   <h3><a href="http://arxiv.org/abs/2605.15752v1">Forecasting megaelectron-volt electron flux in the Earth&#x27;s outer radiation belt using supervised machine learning algorithms and a timeseries foundation model</a></h3>
   <p class="authors">Rungployphan Kieokaew, Ryad Guezzi, François Ginisty, Hadrien Mariaccia · 2026-05-15 · astro-ph.IM, astro-ph.EP</p>
   <p class="one-line" data-lang="zh"><strong>该研究构建监督学习及基于 TimesFM 的时间序列基础模型改造，用 POES/GOES/太阳风与地磁数据预测 6 小时前的外辐射带 1 MeV 电子通量变化，效果在多个 L 上较强。</strong></p>
@@ -588,7 +639,7 @@
 </article>
 
 
-<article class="paper" data-page-item data-index="25">
+<article class="paper" data-page-item data-index="28">
   <h3><a href="http://arxiv.org/abs/2605.15549v1">CTF4Nuclear: Common Task Framework for Nuclear Fission and Fusion Models</a></h3>
   <p class="authors">Stefano Riva, Carolina Introini, Antonio Cammi, Dean Price, Alexey Yermakov, Yue Zhao et al. · 2026-05-15 · cs.LG, cs.AI, cs.CE</p>
   <p class="one-line" data-lang="zh"><strong>CTF4Nuclear提出面向核裂变与聚变的通用任务基准与隐藏测试集评测框架，用于评估机器学习替代模型和稀疏传感器状态反演，并用多指标揭示现有方法局限。</strong></p>
@@ -619,35 +670,35 @@
       <h2 data-lang="zh">关键词趋势</h2>
       <h2 data-lang="en">arXiv Trending</h2>
       <ol class="trend"><li><span>1</span><strong>Distributed acoustic sensing</strong><em>3</em></li>
-<li><span>2</span><strong>seismicity</strong><em>1</em></li>
-<li><span>3</span><strong>probabilistic forecasting</strong><em>1</em></li>
-<li><span>4</span><strong>negative binomial regression</strong><em>1</em></li>
-<li><span>5</span><strong>earthquake catalogs</strong><em>1</em></li>
-<li><span>6</span><strong>tail risk</strong><em>1</em></li>
-<li><span>7</span><strong>angular momentum density</strong><em>1</em></li>
-<li><span>8</span><strong>fluid torque balance</strong><em>1</em></li>
-<li><span>9</span><strong>vorticity</strong><em>1</em></li>
-<li><span>10</span><strong>boundary layers</strong><em>1</em></li>
-<li><span>11</span><strong>geophysical fluid dynamics</strong><em>1</em></li>
-<li><span>12</span><strong>Buckley–Leverett</strong><em>1</em></li>
-<li><span>13</span><strong>multiphase flow</strong><em>1</em></li>
-<li><span>14</span><strong>shock capturing</strong><em>1</em></li>
-<li><span>15</span><strong>multiwavelet</strong><em>1</em></li>
-<li><span>16</span><strong>inflow boundary condition</strong><em>1</em></li>
-<li><span>17</span><strong>InSAR</strong><em>1</em></li>
-<li><span>18</span><strong>forest height</strong><em>1</em></li>
-<li><span>19</span><strong>interferometric coherence</strong><em>1</em></li>
-<li><span>20</span><strong>TanDEM-X</strong><em>1</em></li>
-<li><span>21</span><strong>Landsat</strong><em>1</em></li>
-<li><span>22</span><strong>hydraulic fracturing</strong><em>1</em></li>
-<li><span>23</span><strong>stress shadows</strong><em>1</em></li>
-<li><span>24</span><strong>SGBEM-FEM</strong><em>1</em></li>
-<li><span>25</span><strong>Darcy production</strong><em>1</em></li>
-<li><span>26</span><strong>cloud simulation</strong><em>1</em></li>
-<li><span>27</span><strong>infrasound</strong><em>1</em></li>
-<li><span>28</span><strong>cylindrical blast wave</strong><em>1</em></li>
-<li><span>29</span><strong>weak shock</strong><em>1</em></li>
-<li><span>30</span><strong>OSIRIS-REx reentry</strong><em>1</em></li></ol>
+<li><span>2</span><strong>solar energetic particles</strong><em>1</em></li>
+<li><span>3</span><strong>geomagnetic cutoff rigidity</strong><em>1</em></li>
+<li><span>4</span><strong>radiation dose transport</strong><em>1</em></li>
+<li><span>5</span><strong>satellite vulnerability</strong><em>1</em></li>
+<li><span>6</span><strong>economic loss</strong><em>1</em></li>
+<li><span>7</span><strong>ice shelves</strong><em>1</em></li>
+<li><span>8</span><strong>hydroelasticity</strong><em>1</em></li>
+<li><span>9</span><strong>long ocean waves</strong><em>1</em></li>
+<li><span>10</span><strong>finite elements</strong><em>1</em></li>
+<li><span>11</span><strong>Dirichlet-to-Neumann</strong><em>1</em></li>
+<li><span>12</span><strong>geologic hydrogen</strong><em>1</em></li>
+<li><span>13</span><strong>serpentinization</strong><em>1</em></li>
+<li><span>14</span><strong>microwave heating</strong><em>1</em></li>
+<li><span>15</span><strong>olivine</strong><em>1</em></li>
+<li><span>16</span><strong>reaction kinetics</strong><em>1</em></li>
+<li><span>17</span><strong>seismicity</strong><em>1</em></li>
+<li><span>18</span><strong>probabilistic forecasting</strong><em>1</em></li>
+<li><span>19</span><strong>negative binomial regression</strong><em>1</em></li>
+<li><span>20</span><strong>earthquake catalogs</strong><em>1</em></li>
+<li><span>21</span><strong>tail risk</strong><em>1</em></li>
+<li><span>22</span><strong>angular momentum density</strong><em>1</em></li>
+<li><span>23</span><strong>fluid torque balance</strong><em>1</em></li>
+<li><span>24</span><strong>vorticity</strong><em>1</em></li>
+<li><span>25</span><strong>boundary layers</strong><em>1</em></li>
+<li><span>26</span><strong>geophysical fluid dynamics</strong><em>1</em></li>
+<li><span>27</span><strong>Buckley–Leverett</strong><em>1</em></li>
+<li><span>28</span><strong>multiphase flow</strong><em>1</em></li>
+<li><span>29</span><strong>shock capturing</strong><em>1</em></li>
+<li><span>30</span><strong>multiwavelet</strong><em>1</em></li></ol>
     </aside>
   </main>
   <footer>

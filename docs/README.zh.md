@@ -113,16 +113,16 @@ bash scripts/server_daily_push.sh
 这个脚本会先拉取 GitHub 最新状态，再运行完整日报流程，然后只提交公开输出目录（`data/daily` 和 `docs`）并 push 到 GitHub。本地缓存和密钥仍然会被 git 忽略。
 日志和当前 PID 文件默认写入 `logs/daily/`。
 
-每天服务器时间 07:30 自动运行的 cron 示例：
+每天服务器时间 11:20 自动运行的 cron 示例：
 
 ```cron
-30 7 * * * cd /path/to/PaperRadar && PAPERRADAR_PYTHON=/path/to/python bash scripts/server_daily_push.sh
+20 11 * * * cd /path/to/PaperRadar && PAPERRADAR_PYTHON=/path/to/python bash scripts/server_daily_push.sh
 ```
 
 如果服务器没有 `crontab`，可以改用轻量常驻调度脚本：
 
 ```bash
-PAPERRADAR_PYTHON=/path/to/python nohup bash scripts/server_daily_loop.sh --run-at 07:30 >> logs/daily/scheduler.nohup.log 2>&1 &
+PAPERRADAR_PYTHON=/path/to/python nohup bash scripts/server_daily_loop.sh --run-at 11:20 >> logs/daily/scheduler.nohup.log 2>&1 &
 ```
 
 查看或停止它：

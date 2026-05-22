@@ -1,6 +1,6 @@
 {
   "date": "2026-05-22",
-  "generated_at": "2026-05-21T23:30:43.518538+00:00",
+  "generated_at": "2026-05-22T04:38:16.058993+00:00",
   "config": {
     "site_title": "PaperRadar",
     "site_description": {
@@ -34,6 +34,7 @@
       "sort_order": "descending",
       "request_delay_seconds": 3.0,
       "max_retries": 3,
+      "allow_cached_fetch_fallback": false,
       "download_pdfs": true,
       "pdf_dir": "data/pdfs",
       "storage_category_policy": "configured",
@@ -54,8 +55,211 @@
     "keywords_per_paper": 5,
     "trending_top_n": 30
   },
-  "query": "((cat:physics.geo-ph) OR (all:geophysics) OR (all:seismology) OR (all:geodesy) OR (all:geodynamics) OR (all:geomagnetism)) AND (submittedDate:[20260515 TO *])",
+  "query": "((cat:physics.geo-ph) OR (all:geophysics) OR (all:seismology) OR (all:geodesy) OR (all:geodynamics) OR (all:geomagnetism)) AND (submittedDate:[202605150000 TO 202605222359])",
   "papers": [
+    {
+      "paper": {
+        "arxiv_id": "2605.22576v1",
+        "title": "C-SWIM: A Coupled Space Weather Impact Model for Satellite Fleet Vulnerability and Economic Loss Under a 1-in-100-Year Solar Energetic Particle Event",
+        "authors": [
+          "D. Bor",
+          "E. J. Oughton",
+          "R. S. Weigel",
+          "R. Yang",
+          "T. Clower",
+          "M. J. Wiltberger",
+          "R. Linares"
+        ],
+        "abstract": "Modern economies depend critically on satellite infrastructure, yet the aggregate economic consequences of extreme solar energetic particle (SEP) events have not been rigorously assessed. This study develops an integrated framework linking SEP hazard characterization, dynamic geomagnetic cutoff rigidity modeling, radiation dose transport, and fleet-wide failure probability estimation to macroeconomic impact analysis. Using extreme-value analysis of 160 SEP events over 27.4 years (1996-2025), failure probability is estimated for ~10,650 US operational satellites under orbital regime-dependent shielding assumptions. The assessment reveals that ~100 satellites (1.0%) are at Critical risk, concentrated in high-altitude low Earth orbit and highly elliptical orbit, while medium Earth orbit and geosynchronous orbit satellites fall in the Negligible class (P_fail < 10^-9) under the assumed radiation-hardened components and shielding. The expected capital loss across the ~$254B fleet totals ~$5.2B. Three failure scenarios, expanding from Critical satellites only (P_fail > 10^-2), to Critical and Elevated (P_fail > 10^-3), and to all satellites with non-negligible risk (P_fail > 10^-6), yield daily economic impacts of ~$70M, ~$270M, and ~$1.3B, respectively. Earth observation suffers up to 95.6% capacity loss in the worst case, while military services experience 16.1-20.4% disruption across scenarios. Results are first-order estimates: hardware failure counts are conservative because only total ionizing dose is modeled, and daily economic impacts represent upper bounds because operator response and recovery are not included.",
+        "published": "2026-05-21T14:51:34Z",
+        "updated": "2026-05-21T14:51:34Z",
+        "categories": [
+          "physics.space-ph"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2605.22576v1",
+        "abs_url": "http://arxiv.org/abs/2605.22576v1",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.22576v1.pdf",
+        "pdf_download_error": null,
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.22576v1.md",
+        "markdown_parse_error": null
+      },
+      "analysis": {
+        "schema_version": "paperradar.analysis.v3",
+        "input_version": "markdown-clean-v1",
+        "one_sentence_en": "C-SWIM couples extreme SEP hazard statistics, dynamic geomagnetic shielding, radiation dose transport, and fleet-level failure probabilities to estimate that a 1-in-100-year event could critically endanger about 100 U.S. satellites and cause roughly $5.2B in expected capital loss.",
+        "one_sentence_zh": "C-SWIM将极端SEP危害统计、动态地磁屏蔽、辐射剂量输运与星座层级失效概率耦合，估算一次“1-in-100年”事件可能使约100颗美国卫星达到关键失效风险并带来约52亿美元期望资本损失。",
+        "summary_en": [
+          "Problem: Quantify aggregate satellite-fleet vulnerability and economic losses from extreme solar energetic particle (SEP) events for the first time in a rigorous, probabilistic way.",
+          "Approach: Build an integrated pipeline that derives 1-in-100-year SEP hazard parameters from 1996–2025 observations, computes orbit-dependent SEP access using dynamic geomagnetic cutoff rigidity modeling, propagates dose through shielding, converts dose into satellite failure probabilities, and maps sector service disruption to macroeconomic impacts.",
+          "key result: Under assumed radiation-hardened components and shielding, ~100 of ~10,650 U.S. satellites fall into the Critical risk class with expected capital loss of about $5.2B, and worst-case Earth observation capacity loss can reach 95.6% with daily economic impacts up to about $1.3B."
+        ],
+        "summary_zh": [
+          "问题：以严谨的概率框架量化极端太阳高能粒子（SEP）事件对卫星星座的整体脆弱性及其经济损失。",
+          "方法：利用1996–2025观测推导1-in-100年SEP危害参数，采用动态地磁截止刚度建模计算轨道依赖的粒子可达性，进行屏蔽内剂量输运，将剂量转化为单星失效概率，并把部门服务中断映射到宏观经济影响。",
+          "关键结果：在假定辐射加固部件与屏蔽条件下，约10,650颗美国在轨卫星中有约100颗（1.0%）属于关键失效风险；全星座期望资本损失约52亿美元，最坏情形下地球观测能力损失可达95.6%，日经济影响最高约13亿美元。"
+        ],
+        "contribution_en": "The paper’s main contribution is an end-to-end coupled framework (C-SWIM) that links probabilistic extreme SEP hazard characterization to orbit-dependent geomagnetic access, radiation dose transport through shielding, satellite-fleet failure probability, and sectoral macroeconomic loss estimation.",
+        "contribution_zh": "论文的主要贡献是提出并应用端到端耦合框架（C-SWIM），将概率化的极端SEP危害表征、轨道依赖的地磁粒子可达性、穿屏蔽剂量输运、星座失效概率与部门层面的宏观经济损失估算串联起来。",
+        "method_en": "1-in-100-year SEP event parameters are derived via peak-over-threshold extreme-value analysis of integral proton flux and fluence; dynamic geomagnetic cutoff rigidity erosion is modeled along propagated satellite orbits with an orbital-regime-dependent shielding assumption (including use of an ML surrogate for fleet-scale inference); accessible SEP fluence and trapped radiation dose are combined to compute total dose distributions and failure probabilities under device hardness assumptions (total ionizing dose), which are then translated to replacement costs and daily service disruption impacts using scenario thresholds and input-output style macroeconomic mapping.",
+        "method_zh": "通过对积分质子通量与通量积分做峰值超阈值的极值分析得到1-in-100年SEP事件参数；沿传播得到的卫星轨道用动态地磁截止刚度侵蚀计算粒子可达性，并在轨道分段屏蔽假设下结合机器学习代理实现星座尺度推断；将可达SEP通量与束缚辐射的累积剂量合并得到总剂量分布并在器件抗辐照假设下计算失效概率（以总电离剂量为主），再基于失效场景阈值估算替换成本并将服务中断转化为宏观经济日影响。",
+        "data_or_region_en": "U.S. operational satellite fleet (~10,650 satellites) across multiple orbital regimes; SEP hazard uses 27.4 years of integral proton observations from 1996–2025 combining SEPEM v3.2 (1996–2017, 5-min resolution) and GOES-16 Solar and Galactic Proton measurements (from late 2020 onward), with 2018–2020 solar-cycle-minimum behavior supported by GOES-15 SEM.",
+        "data_or_region_zh": "研究对象为美国在轨卫星星座约10,650颗，覆盖多种轨道类型；SEP危害基于1996–2025共27.4年的积分质子观测，结合SEPEM v3.2（1996–2017年、5分钟分辨率）与GOES-16太阳与银河质子测量（自2020年后期起），并用GOES-15 SEM对2018–2020年太阳活动极小期的阈值内无超越情况进行支撑。",
+        "geophysics_relevance_en": "This is directly relevant to space-weather risk quantification: it uses extreme-value SEP statistics and dynamic geomagnetic cutoff rigidity erosion to forecast orbit-dependent particle exposure and translate it into fleet vulnerability and economic consequences; however, it is more application-driven than focused on new geophysical physics.",
+        "geophysics_relevance_zh": "这与当前的空间天气风险量化主题高度相关：论文用极端SEP统计与动态地磁截止刚度侵蚀刻画轨道依赖的粒子暴露，并进一步转化为星座脆弱性与经济后果；但其更偏工程应用与影响评估，而非提出新的地球物理机理。",
+        "keywords_en": [
+          "solar energetic particles",
+          "geomagnetic cutoff rigidity",
+          "radiation dose transport",
+          "satellite vulnerability",
+          "economic loss"
+        ],
+        "keywords_zh": [
+          "太阳高能粒子",
+          "地磁截止刚度",
+          "辐射剂量输运",
+          "卫星脆弱性",
+          "经济损失"
+        ],
+        "topic": "SEP risk quantification",
+        "audience_level": "specialist",
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano"
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2605.22042v1",
+        "title": "Modelling hydroelastic flexure of arbitrarily shaped ice shelves forced by long ocean waves",
+        "authors": [
+          "T. K. Papathanasiou",
+          "L. G. Bennetts",
+          "M. H. Meylan"
+        ],
+        "abstract": "Flexure of Antarctic ice shelves under excitation from long ocean waves induces mechanical ice shelf stresses that amplify fractures and, hence, contribute to calving events. Here, a solution method is developed for a hydroelastic mathematical model of wave-induced ice shelf flexure, based on the conventional theory of a Kirchoff-Love plate floating on shallow water under linearised conditions, but allowing wave forcing of ice shelves with variations in both horizontal dimensions, and where the ice shelves are of arbitrary shape, including non-uniform thickness. The method uses finite elements specifically designed for the high-order hydroelastic system, and a Dirichlet-to-Neumann map to bound the computational domain in the open ocean. Following verification, the method is used to conduct novel studies on how the ice-shelf deflection is affected by the ice shelf shape, the incident wave direction and the proportion of the shelf that is grounded. The efficiency of the method allows the studies to be conducted over a broad frequency range, such that resonant responses are identified.",
+        "published": "2026-05-21T06:30:25Z",
+        "updated": "2026-05-21T06:30:25Z",
+        "categories": [
+          "physics.flu-dyn",
+          "physics.geo-ph"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2605.22042v1",
+        "abs_url": "http://arxiv.org/abs/2605.22042v1",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.22042v1.pdf",
+        "pdf_download_error": null,
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.22042v1.md",
+        "markdown_parse_error": null
+      },
+      "analysis": {
+        "schema_version": "paperradar.analysis.v3",
+        "input_version": "markdown-clean-v1",
+        "one_sentence_en": "The paper develops and verifies a two-dimensional hydroelastic finite-element scattering model for wave-forced ice shelf flexure of arbitrary shape, using a Dirichlet-to-Neumann boundary to capture open-ocean radiation and resonant responses.",
+        "one_sentence_zh": "论文建立并验证了用于任意形状冰架在长周期海浪激励下的二维水弹性有限元散射模型，并用Dirichlet-to-Neumann边界刻画开阔海域辐射与共振响应。",
+        "summary_en": [
+          "problem: How to efficiently and accurately model wave-driven flexure of arbitrarily shaped ice shelves, with open-ocean coupling, to predict resonant stresses relevant to calving.",
+          "approach: A linear Kirchoff–Love plate coupled to linear shallow-water ocean dynamics is solved with a nonconforming hydroelastic finite element scheme, truncating the far field via a Dirichlet-to-Neumann map; results are checked against an alternative Sommerfeld truncation.",
+          "key result: The method reproduces expected behavior under verification and is used to quantify how deflection depends on ice-shelf geometry, incident wave direction, and grounding extent, revealing resonant responses over a broad frequency range."
+        ],
+        "summary_zh": [
+          "problem: 如何高效且准确地模拟与开阔海域耦合的任意形状冰架在海浪作用下的弯曲，从而刻画可能促进断裂与崩解的共振响应。",
+          "approach: 将线性Kirchoff–Love薄板与线性浅水海洋动力耦合，用专门的非一致性水弹性有限元离散，并通过Dirichlet-to-Neumann映射截断远场以表示辐射边界；同时与采用Sommerfeld辐射条件的截断方案进行验证对比。",
+          "key result: 经验证后，该方法用于评估冰架几何形状、入射波方向以及接地比例如何影响挠度，并在宽频范围内识别出共振响应。"
+        ],
+        "contribution_en": "It provides a validated computationally efficient 2D hydroelastic scattering framework for long-wave ice-shelf flexure of arbitrary planform and nonuniform thickness, including open-ocean radiation handled by a Dirichlet-to-Neumann boundary and enabling broad-frequency resonance studies.",
+        "contribution_zh": "提出并验证了一种适用于任意平面形状且厚度可变冰架的高效二维水弹性散射计算框架：通过Dirichlet-to-Neumann边界处理开阔海域辐射，从而可进行宽频共振响应研究。",
+        "method_en": "A linearized coupled hydroelastic model uses Kirchoff–Love plate bending for the ice shelf with lateral free-edge conditions, coupled to linear shallow-water potential flow in the sub-shelf cavity and surrounding ocean; a monolithic nonconforming finite-element discretization solves the frequency-domain scattering problem, while a Dirichlet-to-Neumann map truncates the open-ocean domain, with Sommerfeld truncation used for verification.",
+        "method_zh": "在频域中求解线性化耦合水弹性散射问题：冰架用Kirchoff–Love板弯曲（含自由侧边界条件）描述，并与浅水势流在冰架下方空腔及周围海域的动力学耦合；采用单块式非一致性有限元离散求解；通过Dirichlet-to-Neumann映射截断开阔海域计算域，并用Sommerfeld截断方案进行验证。",
+        "data_or_region_en": "Not specified (method development and parametric studies; no specific observational dataset or Antarctic shelf geometry is explicitly named in the excerpt).",
+        "data_or_region_zh": "未说明（主要是方法建立与参数化研究；摘要节选中未明确指定具体观测数据集或某个南极冰架的具体几何）。",
+        "geophysics_relevance_en": "Relevant to geophysical ice-shelf dynamics for long-wave forcing: the model targets the wave–ice flexure mechanism that can amplify stresses and promote calving, but it is not directly a seismic/instrumental dataset study.",
+        "geophysics_relevance_zh": "与冰架动力学的长周期海浪致因机制相关：模型针对波浪—冰架弯曲如何放大应力并促进崩解；但它并非直接基于地震学/仪器观测数据的研究，因此属于机制层面的间接相关。",
+        "keywords_en": [
+          "ice shelves",
+          "hydroelasticity",
+          "long ocean waves",
+          "finite elements",
+          "Dirichlet-to-Neumann"
+        ],
+        "keywords_zh": [
+          "水弹性",
+          "长周期海浪",
+          "有限元",
+          "Dirichlet-to-Neumann"
+        ],
+        "topic": "Ice-shelf wave flexure",
+        "audience_level": "specialist",
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano"
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2605.21790v1",
+        "title": "Microwave-Stimulated Serpentinization of Olivine for Geological Hydrogen Production",
+        "authors": [
+          "Ansan Pokharel",
+          "Terence Musho"
+        ],
+        "abstract": "Serpentinization of ultramafic rocks is a naturally occurring mineralogical process that can generate molecular hydrogen through the oxidation of ferrous iron during water-rock reaction. Although the resource potential is large, the natural reaction is kinetically limited, and practical hydrogen recovery requires methods that can accelerate conversion without imposing an energy penalty that exceeds the value of the hydrogen produced. This short communication reports a preliminary atmospheric-pressure microwave serpentinization experiment using a water-saturated 2 g crushed olivine sample. Microwave irradiation produced a rapid increase in measured hydrogen concentration compared with conventional hot-plate heating under otherwise similar conditions. The preliminary experiment showed approximately a 12-fold increase in hydrogen concentration and an apparent rate increase from about 2 ppb s$^{-1}$ for conventional heating to about 10 ppb s$^{-1}$ during microwave exposure. These results suggest that electromagnetic stimulation can enhance serpentinization kinetics, likely through rapid volumetric heating, selective coupling to iron-bearing phases, and localized thermal gradients. The result provides an initial experimental basis for evaluating microwave stimulation as a route to accelerated geologic hydrogen production and motivates follow-on measurements using calibrated gas analysis, absorbed-power measurements, dielectric characterization, and elevated-pressure testing.",
+        "published": "2026-05-20T22:32:34Z",
+        "updated": "2026-05-20T22:32:34Z",
+        "categories": [
+          "cond-mat.mtrl-sci",
+          "physics.ao-ph",
+          "physics.geo-ph"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2605.21790v1",
+        "abs_url": "http://arxiv.org/abs/2605.21790v1",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.21790v1.pdf",
+        "pdf_download_error": null,
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.21790v1.md",
+        "markdown_parse_error": null
+      },
+      "analysis": {
+        "schema_version": "paperradar.analysis.v3",
+        "input_version": "markdown-clean-v1",
+        "one_sentence_en": "An atmospheric-pressure microwave experiment on water-saturated crushed olivine finds hydrogen concentration rises about 12× faster than with conventional hot-plate heating under similar conditions, suggesting electromagnetically enhanced serpentinization kinetics.",
+        "one_sentence_zh": "在常压下对水饱和粉碎橄榄石的微波处理实验表明，氢气浓度的上升速度约比常规电热板加热快12倍，提示微波可提升蛇纹石化动力学。",
+        "summary_en": [
+          "problem: Natural serpentinization generates geologic hydrogen but is kinetically slow and may not be practically recoverable without efficient stimulation.",
+          "approach: Perform a preliminary 2 g, water-saturated, crushed-olivine microwave serpentinization screening at 2.45 GHz with matching hot-plate controls, using a metal-oxide hydrogen sensor for time-resolved trends.",
+          "key result: Microwave irradiation produces a ~12-fold higher hydrogen concentration response and an apparent rate increase (about 2 to 10 ppb s−1) relative to conventional heating, motivating higher-pressure and calibrated gas/energy measurements."
+        ],
+        "summary_zh": [
+          "problem: 自然蛇纹石化能产生地质氢，但反应动力学通常很慢，难以高效、可控地回收利用。",
+          "approach: 在2.45 GHz条件下对2 g水饱和粉碎橄榄石进行微波蛇纹石化筛查，并设置与微波条件相近的电热板对照，用金属氧化物氢传感器获得随时间变化的响应。",
+          "key result: 微波照射相对常规加热带来约12倍的氢气浓度响应，并观察到表观速率从约2增至约10 ppb s−1，提示需要在更高压力下并结合定标气体/吸收功测量进行验证。"
+        ],
+        "contribution_en": "Provides initial experimental evidence that microwave electromagnetic stimulation can enhance hydrogen evolution during serpentinization of iron-bearing olivine, and outlines key diagnostics needed for quantitative, energy-aware follow-up (calibrated gas analysis, absorbed-power measurement, dielectric characterization, and elevated-pressure testing).",
+        "contribution_zh": "首次给出初步实验证据：对含铁橄榄石的蛇纹石化过程，微波电磁刺激可增强氢气生成；并提出后续定量验证与能量评估的关键测试路径（定标气体分析、吸收功测量、介电表征与升压实验）。",
+        "method_en": "Microwave serpentinization screening of a 2 g water-saturated, crushed olivine sample using a 2.45 GHz single-mode microwave reactor with hot-plate controls and additional dry controls; hydrogen concentration monitored with a metal-oxide gas sensor, with proposed follow-on steps including calibrated mass spectrometry/GC and absorbed-power plus dielectric measurements.",
+        "method_zh": "采用2.45 GHz单模微波装置对2 g水饱和粉碎橄榄石进行微波蛇纹石化筛查，并设置与之条件相近的电热板对照及干样对照；用金属氧化物气体传感器监测氢气浓度变化；后续将用定标质谱/气相色谱并结合吸收功与介电性质测量进行完善。",
+        "data_or_region_en": "Not specified (laboratory batch experiment at 1 atm on a ~2 g crushed olivine sample with deionized water).",
+        "data_or_region_zh": "未说明（实验室批处理：1个大气压下约2 g粉碎橄榄石，加入去离子水）。",
+        "geophysics_relevance_en": "This is directly relevant to stimulated geologic hydrogen production from ultramafic rocks, but it is a tangentially developed step toward field-scale geophysics because the study is small, at 1 atm, and uses sensor-based concentration rather than calibrated hydrogen yields.",
+        "geophysics_relevance_zh": "与超基性岩石的“受激地质氢”产生直接相关，但由于实验规模较小、在1个大气压下且以未定标的浓度传感响应为主，该结果对现场尺度地球物理意义仍属于较弱关联、需进一步升压定量验证。",
+        "keywords_en": [
+          "geologic hydrogen",
+          "serpentinization",
+          "microwave heating",
+          "olivine",
+          "reaction kinetics"
+        ],
+        "keywords_zh": [
+          "地质氢",
+          "蛇纹石化",
+          "微波加热",
+          "橄榄石",
+          "反应动力学"
+        ],
+        "topic": "Microwave-enhanced serpentinization",
+        "audience_level": "specialist",
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano"
+      }
+    },
     {
       "paper": {
         "arxiv_id": "2605.21437v1",
@@ -120,7 +324,7 @@
           "地震目录",
           "尾部风险"
         ],
-        "updated_at": "2026-05-21T16:25:36.502258+00:00",
+        "updated_at": "2026-05-22T00:35:35.625155+00:00",
         "cache_hit": true
       }
     },
@@ -187,7 +391,7 @@
           "边界层",
           "地球流体动力学"
         ],
-        "updated_at": "2026-05-21T16:25:36.510713+00:00",
+        "updated_at": "2026-05-22T00:35:35.633086+00:00",
         "cache_hit": true
       }
     },
@@ -255,7 +459,7 @@
           "多小波",
           "入口边界条件"
         ],
-        "updated_at": "2026-05-21T16:25:36.517905+00:00",
+        "updated_at": "2026-05-22T00:35:35.640627+00:00",
         "cache_hit": true
       }
     },
@@ -327,7 +531,7 @@
           "TanDEM-X",
           "Landsat"
         ],
-        "updated_at": "2026-05-21T16:25:36.526659+00:00",
+        "updated_at": "2026-05-21T23:30:43.365485+00:00",
         "cache_hit": true
       }
     },
@@ -396,7 +600,7 @@
           "Darcy产能",
           "云端仿真"
         ],
-        "updated_at": "2026-05-21T16:25:36.542489+00:00",
+        "updated_at": "2026-05-21T23:30:43.373898+00:00",
         "cache_hit": true
       }
     },
@@ -466,7 +670,7 @@
           "OSIRIS-REx再入",
           "大气传播"
         ],
-        "updated_at": "2026-05-21T16:25:36.552679+00:00",
+        "updated_at": "2026-05-21T23:30:43.383878+00:00",
         "cache_hit": true
       }
     },
@@ -537,7 +741,7 @@
           "OpenGL 环形缓冲",
           "有状态分块处理"
         ],
-        "updated_at": "2026-05-21T16:25:36.559425+00:00",
+        "updated_at": "2026-05-21T23:30:43.393024+00:00",
         "cache_hit": true
       }
     },
@@ -608,7 +812,7 @@
           "正-无标签学习",
           "卫星海洋波浪"
         ],
-        "updated_at": "2026-05-21T16:25:36.567316+00:00",
+        "updated_at": "2026-05-21T23:30:43.402419+00:00",
         "cache_hit": true
       }
     },
@@ -677,7 +881,7 @@
           "有理近似",
           "TEM电导率"
         ],
-        "updated_at": "2026-05-21T16:25:36.576363+00:00",
+        "updated_at": "2026-05-21T23:30:43.410749+00:00",
         "cache_hit": true
       }
     },
@@ -748,7 +952,7 @@
           "CO新星",
           "星际尘埃"
         ],
-        "updated_at": "2026-05-21T16:25:36.585586+00:00",
+        "updated_at": "2026-05-21T23:30:43.419466+00:00",
         "cache_hit": true
       }
     },
@@ -821,7 +1025,7 @@
           "赤道电喷流EEJ",
           "CSES电场"
         ],
-        "updated_at": "2026-05-21T16:25:36.590652+00:00",
+        "updated_at": "2026-05-21T23:30:43.424738+00:00",
         "cache_hit": true
       }
     },
@@ -893,7 +1097,7 @@
           "费米LAT",
           "暴发星系核"
         ],
-        "updated_at": "2026-05-21T16:25:36.597000+00:00",
+        "updated_at": "2026-05-21T23:30:43.431747+00:00",
         "cache_hit": true
       }
     },
@@ -963,7 +1167,7 @@
           "慢磁声学波",
           "声学共振腔"
         ],
-        "updated_at": "2026-05-21T16:25:36.606641+00:00",
+        "updated_at": "2026-05-21T23:30:43.437188+00:00",
         "cache_hit": true
       }
     },
@@ -1034,7 +1238,7 @@
           "土壤含水率保持曲线",
           "UNSODA"
         ],
-        "updated_at": "2026-05-21T16:25:36.614190+00:00",
+        "updated_at": "2026-05-21T23:30:43.444246+00:00",
         "cache_hit": true
       }
     },
@@ -1101,7 +1305,7 @@
           "地平面拾取",
           "能登地震"
         ],
-        "updated_at": "2026-05-21T16:25:36.622028+00:00",
+        "updated_at": "2026-05-21T23:30:43.455245+00:00",
         "cache_hit": true
       }
     },
@@ -1167,7 +1371,7 @@
           "傅里叶神经算子",
           "Utah FORGE"
         ],
-        "updated_at": "2026-05-21T16:25:36.626992+00:00",
+        "updated_at": "2026-05-21T23:30:43.460796+00:00",
         "cache_hit": true
       }
     },
@@ -1240,7 +1444,7 @@
           "仿真在环",
           "CREST/EF5"
         ],
-        "updated_at": "2026-05-21T16:25:36.631962+00:00",
+        "updated_at": "2026-05-21T23:30:43.465647+00:00",
         "cache_hit": true
       }
     },
@@ -1306,7 +1510,7 @@
           "Mohr-Coulomb",
           "Carrara大理石"
         ],
-        "updated_at": "2026-05-21T16:25:36.638180+00:00",
+        "updated_at": "2026-05-21T23:30:43.472370+00:00",
         "cache_hit": true
       }
     },
@@ -1377,7 +1581,7 @@
           "物理约束AI",
           "地球物理反演"
         ],
-        "updated_at": "2026-05-21T16:25:36.645955+00:00",
+        "updated_at": "2026-05-21T23:30:43.480629+00:00",
         "cache_hit": true
       }
     },
@@ -1447,7 +1651,7 @@
           "合成到野外域差距",
           "地质先验精炼"
         ],
-        "updated_at": "2026-05-21T16:25:36.650678+00:00",
+        "updated_at": "2026-05-21T23:30:43.485576+00:00",
         "cache_hit": true
       }
     },
@@ -1515,7 +1719,7 @@
           "径向分量",
           "剪切波速度反演"
         ],
-        "updated_at": "2026-05-21T16:25:36.660687+00:00",
+        "updated_at": "2026-05-21T23:30:43.493246+00:00",
         "cache_hit": true
       }
     },
@@ -1586,7 +1790,7 @@
           "耦合流-地应力",
           "威尔明顿油田"
         ],
-        "updated_at": "2026-05-21T16:25:36.668204+00:00",
+        "updated_at": "2026-05-21T23:30:43.500486+00:00",
         "cache_hit": true
       }
     },
@@ -1663,7 +1867,7 @@
           "上下文学习",
           "变压器"
         ],
-        "updated_at": "2026-05-21T16:25:36.672577+00:00",
+        "updated_at": "2026-05-21T23:30:43.504874+00:00",
         "cache_hit": true
       }
     },
@@ -1733,7 +1937,7 @@
           "TimesFM",
           "POES GOES"
         ],
-        "updated_at": "2026-05-21T16:25:36.679639+00:00",
+        "updated_at": "2026-05-21T23:30:43.514856+00:00",
         "cache_hit": true
       }
     },
@@ -1816,7 +2020,7 @@
           "稀疏传感器",
           "基准框架"
         ],
-        "updated_at": "2026-05-21T16:25:36.683381+00:00",
+        "updated_at": "2026-05-21T23:30:43.518517+00:00",
         "cache_hit": true
       }
     }
@@ -1831,6 +2035,141 @@
         "2605.16717v1",
         "2605.18375v1",
         "2605.20132v1"
+      ]
+    },
+    {
+      "keyword": "solar energetic particles",
+      "normalized": "solar energetic particles",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.22576v1"
+      ]
+    },
+    {
+      "keyword": "geomagnetic cutoff rigidity",
+      "normalized": "geomagnetic cutoff rigidity",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.22576v1"
+      ]
+    },
+    {
+      "keyword": "radiation dose transport",
+      "normalized": "radiation dose transport",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.22576v1"
+      ]
+    },
+    {
+      "keyword": "satellite vulnerability",
+      "normalized": "satellite vulnerability",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.22576v1"
+      ]
+    },
+    {
+      "keyword": "economic loss",
+      "normalized": "economic loss",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.22576v1"
+      ]
+    },
+    {
+      "keyword": "ice shelves",
+      "normalized": "ice shelves",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.22042v1"
+      ]
+    },
+    {
+      "keyword": "hydroelasticity",
+      "normalized": "hydroelasticity",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.22042v1"
+      ]
+    },
+    {
+      "keyword": "long ocean waves",
+      "normalized": "long ocean waves",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.22042v1"
+      ]
+    },
+    {
+      "keyword": "finite elements",
+      "normalized": "finite elements",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.22042v1"
+      ]
+    },
+    {
+      "keyword": "Dirichlet-to-Neumann",
+      "normalized": "dirichlet-to-neumann",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.22042v1"
+      ]
+    },
+    {
+      "keyword": "geologic hydrogen",
+      "normalized": "geologic hydrogen",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.21790v1"
+      ]
+    },
+    {
+      "keyword": "serpentinization",
+      "normalized": "serpentinization",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.21790v1"
+      ]
+    },
+    {
+      "keyword": "microwave heating",
+      "normalized": "microwave heating",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.21790v1"
+      ]
+    },
+    {
+      "keyword": "olivine",
+      "normalized": "olivine",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.21790v1"
+      ]
+    },
+    {
+      "keyword": "reaction kinetics",
+      "normalized": "reaction kinetics",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.21790v1"
       ]
     },
     {
@@ -1957,141 +2296,6 @@
       "paper_count": 1,
       "paper_ids": [
         "2605.21030v1"
-      ]
-    },
-    {
-      "keyword": "inflow boundary condition",
-      "normalized": "inflow boundary condition",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.21030v1"
-      ]
-    },
-    {
-      "keyword": "InSAR",
-      "normalized": "insar",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.20997v1"
-      ]
-    },
-    {
-      "keyword": "forest height",
-      "normalized": "forest height",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.20997v1"
-      ]
-    },
-    {
-      "keyword": "interferometric coherence",
-      "normalized": "interferometric coherence",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.20997v1"
-      ]
-    },
-    {
-      "keyword": "TanDEM-X",
-      "normalized": "tandem-x",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.20997v1"
-      ]
-    },
-    {
-      "keyword": "Landsat",
-      "normalized": "landsat",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.20997v1"
-      ]
-    },
-    {
-      "keyword": "hydraulic fracturing",
-      "normalized": "hydraulic fracturing",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.20764v1"
-      ]
-    },
-    {
-      "keyword": "stress shadows",
-      "normalized": "stress shadows",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.20764v1"
-      ]
-    },
-    {
-      "keyword": "SGBEM-FEM",
-      "normalized": "sgbem-fem",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.20764v1"
-      ]
-    },
-    {
-      "keyword": "Darcy production",
-      "normalized": "darcy production",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.20764v1"
-      ]
-    },
-    {
-      "keyword": "cloud simulation",
-      "normalized": "cloud simulation",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.20764v1"
-      ]
-    },
-    {
-      "keyword": "infrasound",
-      "normalized": "infrasound",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.20455v1"
-      ]
-    },
-    {
-      "keyword": "cylindrical blast wave",
-      "normalized": "cylindrical blast wave",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.20455v1"
-      ]
-    },
-    {
-      "keyword": "weak shock",
-      "normalized": "weak shock",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.20455v1"
-      ]
-    },
-    {
-      "keyword": "OSIRIS-REx reentry",
-      "normalized": "osiris-rex reentry",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.20455v1"
       ]
     }
   ]
