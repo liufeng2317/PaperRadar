@@ -40,29 +40,14 @@ def _source_digest(digest: dict[str, Any], source: str) -> dict[str, Any]:
 
 
 def render_html(digest: dict[str, Any]) -> str:
-    papers = digest["papers"]
-    trending = digest["trending_keywords"]
-    generated_at = digest["generated_at"]
-    date = digest["date"]
-    title = digest["config"]["site_title"]
-    description_en = digest["config"]["site_description"]["en"]
-    description_zh = digest["config"]["site_description"]["zh"]
-    scope_zh, scope_en = _render_scope_text(digest["config"])
-    source_counts = _source_counts(papers)
-    source_tabs = _render_source_tabs(source_counts)
-    source_panels = _render_source_panels(papers)
-    trend_items = "\n".join(
-        f"<li><span>{i + 1}</span><strong>{_e(item['keyword'])}</strong><em>{item['score']}</em></li>"
-        for i, item in enumerate(trending)
-    )
-    return f"""<!doctype html>
+    return """<!doctype html>
 <html lang="zh-CN" data-lang="zh">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{_e(title)} | {date}</title>
+  <title>PaperRadar</title>
   <style>
-    :root {{
+    :root {
       color-scheme: light;
       --ink: #18212f;
       --muted: #667085;
@@ -71,28 +56,26 @@ def render_html(digest: dict[str, Any]) -> str:
       --panel: #ffffff;
       --accent: #0f766e;
       --accent-2: #8b5cf6;
-    }}
-    * {{ box-sizing: border-box; }}
-    body {{
+      --danger: #b42318;
+    }
+    * { box-sizing: border-box; }
+    body {
       margin: 0;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--ink);
       background: var(--bg);
       line-height: 1.55;
-    }}
-    header {{
-      border-bottom: 1px solid var(--line);
-      background: var(--panel);
-    }}
-    .wrap {{ width: min(1120px, calc(100% - 32px)); margin: 0 auto; }}
-    .hero {{ padding: 36px 0 28px; display: grid; gap: 18px; }}
-    .topbar {{ display: flex; justify-content: space-between; gap: 16px; align-items: start; }}
-    h1 {{ margin: 0; font-size: clamp(2rem, 5vw, 4.5rem); line-height: 1; letter-spacing: 0; }}
-    .lede {{ max-width: 860px; margin: 0; color: var(--muted); font-size: 1.05rem; }}
-    .scope {{ max-width: 860px; margin: -6px 0 0; color: var(--ink); font-size: .96rem; }}
-    .scope strong {{ color: var(--accent); }}
-    .meta {{ display: flex; flex-wrap: wrap; gap: 10px; color: var(--muted); font-size: .92rem; }}
-    .lang-toggle {{
+    }
+    header { border-bottom: 1px solid var(--line); background: var(--panel); }
+    .wrap { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+    .hero { padding: 36px 0 28px; display: grid; gap: 18px; }
+    .topbar { display: flex; justify-content: space-between; gap: 16px; align-items: start; }
+    h1 { margin: 0; font-size: clamp(2rem, 5vw, 4.5rem); line-height: 1; letter-spacing: 0; }
+    .lede { max-width: 860px; margin: 0; color: var(--muted); font-size: 1.05rem; }
+    .scope { max-width: 860px; margin: -6px 0 0; color: var(--ink); font-size: .96rem; }
+    .scope strong { color: var(--accent); }
+    .meta { display: flex; flex-wrap: wrap; gap: 10px; color: var(--muted); font-size: .92rem; }
+    .lang-toggle {
       display: inline-flex;
       gap: 2px;
       padding: 3px;
@@ -100,8 +83,8 @@ def render_html(digest: dict[str, Any]) -> str:
       border-radius: 8px;
       background: var(--bg);
       flex: 0 0 auto;
-    }}
-    .lang-toggle button {{
+    }
+    .lang-toggle button {
       min-width: 54px;
       border: 0;
       border-radius: 6px;
@@ -111,25 +94,20 @@ def render_html(digest: dict[str, Any]) -> str:
       font: inherit;
       font-size: .9rem;
       cursor: pointer;
-    }}
-    .lang-toggle button[aria-pressed="true"] {{
+    }
+    .lang-toggle button[aria-pressed="true"] {
       background: var(--panel);
       color: var(--ink);
       box-shadow: 0 1px 2px rgb(16 24 40 / .12);
-    }}
-    html[data-lang="zh"] [data-lang="en"] {{ display: none; }}
-    html[data-lang="en"] [data-lang="zh"] {{ display: none; }}
-    main {{ padding: 28px 0 48px; }}
-    .grid {{ display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 24px; align-items: start; }}
-    section {{ min-width: 0; }}
-    h2 {{ margin: 0 0 14px; font-size: 1.2rem; }}
-    .source-tabs {{
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 8px;
-      margin: 0 0 18px;
-    }}
-    .source-tabs button {{
+    }
+    html[data-lang="zh"] [data-lang="en"] { display: none; }
+    html[data-lang="en"] [data-lang="zh"] { display: none; }
+    main { padding: 28px 0 48px; }
+    .grid { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 24px; align-items: start; }
+    section { min-width: 0; }
+    h2 { margin: 0 0 14px; font-size: 1.2rem; }
+    .source-tabs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin: 0 0 18px; }
+    .source-tabs button {
       border: 1px solid var(--line);
       border-radius: 8px;
       padding: 11px 12px;
@@ -139,21 +117,22 @@ def render_html(digest: dict[str, Any]) -> str:
       font-weight: 700;
       cursor: pointer;
       text-align: left;
-    }}
-    .source-tabs button[aria-selected="true"] {{
+    }
+    .source-tabs button[aria-selected="true"] {
       border-color: color-mix(in srgb, var(--accent) 55%, var(--line));
       box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 35%, transparent);
-    }}
-    .source-tabs small {{ display: block; margin-top: 2px; color: var(--muted); font-weight: 500; }}
-    .source-panel[hidden] {{ display: none; }}
-    .empty-source {{
+    }
+    .source-tabs small { display: block; margin-top: 2px; color: var(--muted); font-weight: 500; }
+    .source-panel[hidden] { display: none; }
+    .empty-source, .load-error {
       background: var(--panel);
       border: 1px solid var(--line);
       border-radius: 8px;
       padding: 20px;
       color: var(--muted);
-    }}
-    .source-badge {{
+    }
+    .load-error { color: var(--danger); border-color: color-mix(in srgb, var(--danger) 30%, var(--line)); }
+    .source-badge {
       display: inline-flex;
       align-items: center;
       border-radius: 999px;
@@ -164,68 +143,38 @@ def render_html(digest: dict[str, Any]) -> str:
       background: #f5f3ff;
       font-size: .78rem;
       font-weight: 700;
-    }}
-    .paper {{
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 18px;
-      margin-bottom: 14px;
-    }}
-    .paper h3 {{ margin: 0 0 8px; font-size: 1.05rem; line-height: 1.35; }}
-    .paper h3 a {{ color: var(--ink); text-decoration: none; }}
-    .paper h3 a:hover {{ color: var(--accent); }}
-    .authors {{ margin: 0 0 10px; color: var(--muted); font-size: .9rem; }}
-    .summary {{ display: grid; gap: 8px; margin: 12px 0; }}
-    .summary p {{ margin: 0; }}
-    .one-line {{ margin: 12px 0; font-size: .98rem; }}
-    .one-line strong {{ font-weight: 650; }}
-    details {{
-      margin-top: 14px;
-      border-top: 1px solid var(--line);
-      padding-top: 12px;
-    }}
-    summary {{
-      width: fit-content;
-      color: var(--accent);
-      cursor: pointer;
-      font-weight: 650;
-      font-size: .92rem;
-    }}
-    .paper.is-hidden {{ display: none; }}
-    .keywords {{ display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }}
-    .keywords span {{
+    }
+    .paper { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 18px; margin-bottom: 14px; }
+    .paper h3 { margin: 0 0 8px; font-size: 1.05rem; line-height: 1.35; }
+    .paper h3 a { color: var(--ink); text-decoration: none; }
+    .paper h3 a:hover { color: var(--accent); }
+    .authors { margin: 0 0 10px; color: var(--muted); font-size: .9rem; }
+    .summary { display: grid; gap: 8px; margin: 12px 0; }
+    .summary p { margin: 0; }
+    .summary ul { margin: 0; padding-left: 1.1rem; }
+    .one-line { margin: 12px 0; font-size: .98rem; }
+    .one-line strong { font-weight: 650; }
+    details { margin-top: 14px; border-top: 1px solid var(--line); padding-top: 12px; }
+    summary { width: fit-content; color: var(--accent); cursor: pointer; font-weight: 650; font-size: .92rem; }
+    .paper.is-hidden { display: none; }
+    .keywords { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    .keywords span {
       border: 1px solid color-mix(in srgb, var(--accent) 35%, var(--line));
       color: var(--accent);
       border-radius: 999px;
       padding: 3px 9px;
       font-size: .84rem;
       background: #effaf8;
-    }}
-    .side {{
-      position: sticky;
-      top: 16px;
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      padding: 16px;
-    }}
-    .trend {{ list-style: none; margin: 0; padding: 0; display: grid; gap: 9px; }}
-    .trend li {{ display: grid; grid-template-columns: 28px 1fr auto; gap: 8px; align-items: center; }}
-    .trend span {{ color: var(--muted); font-variant-numeric: tabular-nums; }}
-    .trend strong {{ min-width: 0; overflow-wrap: anywhere; font-size: .94rem; }}
-    .trend em {{ color: var(--accent-2); font-style: normal; font-weight: 700; }}
-    .pagination {{
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      align-items: center;
-      margin-top: 18px;
-      color: var(--muted);
-      font-size: .92rem;
-    }}
-    .page-buttons {{ display: flex; gap: 8px; }}
-    .pagination button {{
+    }
+    .side { position: sticky; top: 16px; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 16px; }
+    .trend { list-style: none; margin: 0; padding: 0; display: grid; gap: 9px; }
+    .trend li { display: grid; grid-template-columns: 28px 1fr auto; gap: 8px; align-items: center; }
+    .trend span { color: var(--muted); font-variant-numeric: tabular-nums; }
+    .trend strong { min-width: 0; overflow-wrap: anywhere; font-size: .94rem; }
+    .trend em { color: var(--accent-2); font-style: normal; font-weight: 700; }
+    .pagination { display: flex; justify-content: space-between; gap: 12px; align-items: center; margin-top: 18px; color: var(--muted); font-size: .92rem; }
+    .page-buttons { display: flex; gap: 8px; }
+    .pagination button {
       border: 1px solid var(--line);
       border-radius: 7px;
       padding: 7px 11px;
@@ -233,44 +182,41 @@ def render_html(digest: dict[str, Any]) -> str:
       color: var(--ink);
       font: inherit;
       cursor: pointer;
-    }}
-    .pagination button:disabled {{
-      color: var(--muted);
-      cursor: not-allowed;
-      opacity: .55;
-    }}
-    .pagination.is-hidden {{ display: none; }}
-    footer {{ color: var(--muted); padding: 24px 0; border-top: 1px solid var(--line); }}
-    @media (max-width: 860px) {{
-      .grid {{ grid-template-columns: 1fr; }}
-      .side {{ position: static; }}
-      .topbar {{ display: grid; }}
-      .lang-toggle {{ justify-self: start; }}
-      .pagination {{ align-items: stretch; flex-direction: column; }}
-    }}
+    }
+    .pagination button:disabled { color: var(--muted); cursor: not-allowed; opacity: .55; }
+    .pagination.is-hidden { display: none; }
+    footer { color: var(--muted); padding: 24px 0; border-top: 1px solid var(--line); }
+    @media (max-width: 860px) {
+      .grid { grid-template-columns: 1fr; }
+      .side { position: static; }
+      .topbar { display: grid; }
+      .lang-toggle { justify-self: start; }
+      .pagination { align-items: stretch; flex-direction: column; }
+      .source-tabs { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="wrap hero">
       <div class="topbar">
-        <h1>{_e(title)}</h1>
+        <h1 id="site-title">PaperRadar</h1>
         <div class="lang-toggle" role="group" aria-label="Language">
           <button type="button" data-set-lang="zh" aria-pressed="true">中文</button>
           <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
         </div>
       </div>
-      <p class="lede" data-lang="zh">{_e(description_zh)}</p>
-      <p class="lede" data-lang="en">{_e(description_en)}</p>
-      <p class="scope" data-lang="zh">{scope_zh}</p>
-      <p class="scope" data-lang="en">{scope_en}</p>
+      <p class="lede" data-lang="zh" id="description-zh">正在加载最新预印本数据...</p>
+      <p class="lede" data-lang="en" id="description-en">Loading latest preprint data...</p>
+      <p class="scope" data-lang="zh" id="scope-zh"></p>
+      <p class="scope" data-lang="en" id="scope-en"></p>
       <div class="meta">
-        <span data-lang="zh">日期: {_e(date)}</span>
-        <span data-lang="en">Date: {_e(date)}</span>
-        <span data-lang="zh">论文: {len(papers)}</span>
-        <span data-lang="en">Papers: {len(papers)}</span>
-        <span data-lang="zh">生成时间: {_e(generated_at)}</span>
-        <span data-lang="en">Generated: {_e(generated_at)}</span>
+        <span data-lang="zh" id="date-zh">日期: --</span>
+        <span data-lang="en" id="date-en">Date: --</span>
+        <span data-lang="zh" id="paper-count-zh">论文: --</span>
+        <span data-lang="en" id="paper-count-en">Papers: --</span>
+        <span data-lang="zh" id="generated-zh">生成时间: --</span>
+        <span data-lang="en" id="generated-en">Generated: --</span>
       </div>
     </div>
   </header>
@@ -278,13 +224,17 @@ def render_html(digest: dict[str, Any]) -> str:
     <section>
       <h2 data-lang="zh">来源视图</h2>
       <h2 data-lang="en">Source Views</h2>
-      {source_tabs}
-      {source_panels}
+      <div class="source-tabs" role="tablist" aria-label="Preprint source">
+        <button type="button" role="tab" data-source-tab="arxiv" aria-selected="true">PaperRadar-Arxiv<small data-count="arxiv">0 papers</small></button>
+        <button type="button" role="tab" data-source-tab="eartharxiv" aria-selected="false">PaperRadar-EarthArxiv<small data-count="eartharxiv">0 papers</small></button>
+      </div>
+      <div class="source-panel" data-source-panel="arxiv" role="tabpanel"><h2>PaperRadar-Arxiv</h2><div data-paper-list="arxiv" class="empty-source">Loading...</div></div>
+      <div class="source-panel" data-source-panel="eartharxiv" role="tabpanel" hidden><h2>PaperRadar-EarthArxiv</h2><div data-paper-list="eartharxiv" class="empty-source">Loading...</div></div>
     </section>
     <aside class="side">
       <h2 data-lang="zh">关键词趋势</h2>
       <h2 data-lang="en">Keyword Trends</h2>
-      <ol class="trend">{trend_items}</ol>
+      <ol class="trend" id="trend-list"></ol>
     </aside>
   </main>
   <footer>
@@ -292,81 +242,274 @@ def render_html(digest: dict[str, Any]) -> str:
     <div class="wrap" data-lang="en">Built by PaperRadar from preprint metadata and LLM summaries.</div>
   </footer>
   <script>
-    (() => {{
+    const PAGE_SIZE = __PAGE_SIZE__;
+    const SOURCES = ["arxiv", "eartharxiv"];
+    const SOURCE_FILES = {
+      arxiv: "data/latest.arxiv.json",
+      eartharxiv: "data/latest.eartharxiv.json"
+    };
+
+    const pageState = new Map(SOURCES.map((source) => [source, 1]));
+    const digests = new Map();
+
+    const escapeHtml = (value) => String(value ?? "").replace(/[&<>"']/g, (char) => ({
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#39;"
+    }[char]));
+
+    const compactSentence = (value, maxChars = 260) => {
+      const text = String(value ?? "").replace(/\\s+/g, " ").trim();
+      return text.length <= maxChars ? text : `${text.slice(0, maxChars - 1).trim()}...`;
+    };
+
+    const sourceLabel = (source) => source === "eartharxiv" ? "EarthArXiv" : "arXiv";
+    const classificationLabel = (source) => source === "eartharxiv" ? "Subjects" : "Categories";
+
+    const renderSummaryBlock = (summary) => {
+      const items = Array.isArray(summary) ? summary : summary ? [summary] : [];
+      const body = items.filter(Boolean).map((item) => `<li>${escapeHtml(item)}</li>`).join("");
+      return body ? `<ul>${body}</ul>` : "";
+    };
+
+    const renderAnalysisDetails = (analysis = {}) => {
+      const rows = [
+        ["主要贡献", "Contribution", analysis.contribution_zh, analysis.contribution_en],
+        ["方法", "Method", analysis.method_zh, analysis.method_en],
+        ["数据/区域", "Data/region", analysis.data_or_region_zh, analysis.data_or_region_en],
+        ["相关性", "Relevance", analysis.geophysics_relevance_zh, analysis.geophysics_relevance_en]
+      ];
+      return rows.map(([labelZh, labelEn, valueZh, valueEn]) => {
+        if (!valueZh && !valueEn) return "";
+        return `<p data-lang="zh"><strong>${labelZh}:</strong> ${escapeHtml(valueZh || valueEn || "")}</p>`
+          + `<p data-lang="en"><strong>${labelEn}:</strong> ${escapeHtml(valueEn || valueZh || "")}</p>`;
+      }).join("");
+    };
+
+    const renderPdfStatus = (paper = {}) => {
+      const links = [];
+      if (paper.pdf_url) links.push(`<a href="${escapeHtml(paper.pdf_url)}">arXiv PDF</a>`);
+      if (paper.abs_url) links.push(`<a href="${escapeHtml(paper.abs_url)}">Abstract</a>`);
+      return links.length ? `<p class="authors">${links.join(" · ")}</p>` : "";
+    };
+
+    const renderKeywords = (keywords = []) => keywords.map((keyword) => `<span>${escapeHtml(keyword)}</span>`).join("");
+
+    const renderPaperCard = (item, index) => {
+      const paper = item.paper || {};
+      const analysis = item.analysis || {};
+      const source = paper.source || "arxiv";
+      const authors = Array.isArray(paper.authors) ? paper.authors : [];
+      let authorText = authors.slice(0, 6).join(", ");
+      if (authors.length > 6) authorText += " et al.";
+      const categories = Array.isArray(paper.categories) ? paper.categories.join(", ") : "";
+      const keywordsZh = renderKeywords(analysis.keywords_zh || analysis.keywords_en || []);
+      const keywordsEn = renderKeywords(analysis.keywords_en || analysis.keywords_zh || []);
+      return `
+        <article class="paper" data-page-item data-index="${index + 1}">
+          <h3><a href="${escapeHtml(paper.abs_url || paper.pdf_url || "#")}">${escapeHtml(paper.title || "Untitled")}</a></h3>
+          <p class="authors"><span class="source-badge">${sourceLabel(source)}</span>${escapeHtml(authorText)} · ${escapeHtml(String(paper.published || "").slice(0, 10))} · ${classificationLabel(source)}: ${escapeHtml(categories)}</p>
+          <p class="one-line" data-lang="zh"><strong>${escapeHtml(compactSentence(analysis.one_sentence_zh || analysis.one_sentence_en || ""))}</strong></p>
+          <p class="one-line" data-lang="en"><strong>${escapeHtml(compactSentence(analysis.one_sentence_en || analysis.one_sentence_zh || ""))}</strong></p>
+          <div class="keywords" data-lang="zh">${keywordsZh}</div>
+          <div class="keywords" data-lang="en">${keywordsEn}</div>
+          <details>
+            <summary><span data-lang="zh">展开详细总结</span><span data-lang="en">Show details</span></summary>
+            <div class="summary" data-lang="zh">${renderSummaryBlock(analysis.summary_zh || analysis.summary_en)}</div>
+            <div class="summary" data-lang="en">${renderSummaryBlock(analysis.summary_en || analysis.summary_zh)}</div>
+            ${renderAnalysisDetails(analysis)}
+            ${renderPdfStatus(paper)}
+          </details>
+        </article>`;
+    };
+
+    const renderPagination = () => `
+      <nav class="pagination" data-pagination aria-label="Paper pages">
+        <span data-lang="zh" data-page-info-zh></span>
+        <span data-lang="en" data-page-info-en></span>
+        <div class="page-buttons">
+          <button type="button" data-page-prev data-lang="zh">上一页</button>
+          <button type="button" data-page-prev data-lang="en">Previous</button>
+          <button type="button" data-page-next data-lang="zh">下一页</button>
+          <button type="button" data-page-next data-lang="en">Next</button>
+        </div>
+      </nav>`;
+
+    const emptySource = () => `
+      <div class="empty-source">
+        <span data-lang="zh">当前还没有这个来源的论文。下一次自动更新发现新内容后会显示在这里。</span>
+        <span data-lang="en">No papers from this source yet. New items will appear here after an automated update finds them.</span>
+      </div>`;
+
+    const renderSourcePanel = (source) => {
+      const digest = digests.get(source);
+      const papers = digest?.papers || [];
+      const container = document.querySelector(`[data-paper-list="${source}"]`);
+      const panel = document.querySelector(`[data-source-panel="${source}"]`);
+      const count = document.querySelector(`[data-count="${source}"]`);
+      if (count) count.textContent = `${papers.length} papers`;
+      if (!container || !panel) return;
+      container.classList.remove("empty-source", "load-error");
+      container.innerHTML = papers.length ? papers.map(renderPaperCard).join("") + renderPagination() : emptySource();
+      attachPagination(panel);
+      renderPanelPage(panel);
+    };
+
+    const renderTrends = (source) => {
+      const digest = digests.get(source) || digests.get("arxiv") || digests.get("eartharxiv");
+      const trends = digest?.trending_keywords || [];
+      const list = document.getElementById("trend-list");
+      if (!list) return;
+      list.innerHTML = trends.map((item, index) => `
+        <li><span>${index + 1}</span><strong>${escapeHtml(item.keyword || "")}</strong><em>${escapeHtml(item.score ?? "")}</em></li>
+      `).join("");
+    };
+
+    const renderHeader = () => {
+      const primary = digests.get("arxiv") || digests.get("eartharxiv");
+      if (!primary) return;
+      const config = primary.config || {};
+      const descriptions = config.site_description || {};
+      document.title = `${config.site_title || "PaperRadar"} | ${primary.date || ""}`;
+      document.getElementById("site-title").textContent = config.site_title || "PaperRadar";
+      document.getElementById("description-zh").textContent = descriptions.zh || "追踪预印本动态，包含双语摘要与关键词趋势。";
+      document.getElementById("description-en").textContent = descriptions.en || "Recent preprints with bilingual notes and keyword trends.";
+      const allPapers = SOURCES.reduce((total, source) => total + ((digests.get(source)?.papers || []).length), 0);
+      document.getElementById("date-zh").textContent = `日期: ${primary.date || "--"}`;
+      document.getElementById("date-en").textContent = `Date: ${primary.date || "--"}`;
+      document.getElementById("paper-count-zh").textContent = `论文: ${allPapers}`;
+      document.getElementById("paper-count-en").textContent = `Papers: ${allPapers}`;
+      document.getElementById("generated-zh").textContent = `生成时间: ${primary.generated_at || "--"}`;
+      document.getElementById("generated-en").textContent = `Generated: ${primary.generated_at || "--"}`;
+      const [scopeZh, scopeEn] = renderScope(config);
+      document.getElementById("scope-zh").innerHTML = scopeZh;
+      document.getElementById("scope-en").innerHTML = scopeEn;
+    };
+
+    const renderScope = (config = {}) => {
+      const arxiv = config.arxiv || {};
+      const earth = config.eartharxiv || {};
+      const arxivCategories = (arxiv.categories || []).join(", ") || "all configured categories";
+      const arxivTerms = [...(arxiv.extra_terms || []), ...(arxiv.keywords || [])].filter(Boolean);
+      let arxivZh = arxiv.query ? `arXiv query: <strong>${escapeHtml(arxiv.query)}</strong>` : `arXiv categories: <strong>${escapeHtml(arxivCategories)}</strong>`;
+      let arxivEn = arxivZh;
+      if (!arxiv.query && arxivTerms.length) {
+        const terms = arxivTerms.slice(0, 8).join(", ") + (arxivTerms.length > 8 ? " ..." : "");
+        arxivZh += `; 主题词: ${escapeHtml(terms)}`;
+        arxivEn += `; topic terms: ${escapeHtml(terms)}`;
+      }
+      const partsZh = [arxivZh];
+      const partsEn = [arxivEn];
+      if (earth.enabled) {
+        const subjects = (earth.subjects || []).join(", ") || "all configured subjects";
+        let earthPart = `EarthArXiv subjects: <strong>${escapeHtml(subjects)}</strong>`;
+        if ((earth.keywords || []).length) earthPart += `; keywords: ${escapeHtml(earth.keywords.slice(0, 8).join(", "))}`;
+        partsZh.push(earthPart);
+        partsEn.push(earthPart);
+      }
+      return [`当前追踪范围: ${partsZh.join(" | ")}`, `Current scope: ${partsEn.join(" | ")}`];
+    };
+
+    const attachPagination = (panel) => {
+      panel.querySelectorAll("[data-page-prev]").forEach((button) => {
+        button.onclick = () => {
+          const source = panel.dataset.sourcePanel;
+          pageState.set(source, Math.max(1, (pageState.get(source) || 1) - 1));
+          renderPanelPage(panel);
+        };
+      });
+      panel.querySelectorAll("[data-page-next]").forEach((button) => {
+        button.onclick = () => {
+          const source = panel.dataset.sourcePanel;
+          pageState.set(source, (pageState.get(source) || 1) + 1);
+          renderPanelPage(panel);
+        };
+      });
+    };
+
+    const renderPanelPage = (panel) => {
+      const source = panel.dataset.sourcePanel;
+      const papers = Array.from(panel.querySelectorAll("[data-page-item]"));
+      const totalPages = Math.max(1, Math.ceil(papers.length / PAGE_SIZE));
+      const currentPage = Math.min(pageState.get(source) || 1, totalPages);
+      pageState.set(source, currentPage);
+      papers.forEach((paper, index) => {
+        const paperPage = Math.floor(index / PAGE_SIZE) + 1;
+        paper.classList.toggle("is-hidden", paperPage !== currentPage);
+      });
+      const pagination = panel.querySelector("[data-pagination]");
+      const infoZh = panel.querySelector("[data-page-info-zh]");
+      const infoEn = panel.querySelector("[data-page-info-en]");
+      if (infoZh) infoZh.textContent = `第 ${currentPage} / ${totalPages} 页，每页最多 ${PAGE_SIZE} 篇`;
+      if (infoEn) infoEn.textContent = `Page ${currentPage} of ${totalPages}, up to ${PAGE_SIZE} papers per page`;
+      panel.querySelectorAll("[data-page-prev]").forEach((button) => button.disabled = currentPage <= 1);
+      panel.querySelectorAll("[data-page-next]").forEach((button) => button.disabled = currentPage >= totalPages);
+      if (pagination) pagination.classList.toggle("is-hidden", totalPages <= 1 || papers.length === 0);
+    };
+
+    const activate = (source) => {
+      document.querySelectorAll("[data-source-tab]").forEach((tab) => {
+        tab.setAttribute("aria-selected", String(tab.dataset.sourceTab === source));
+      });
+      document.querySelectorAll("[data-source-panel]").forEach((panel) => {
+        const active = panel.dataset.sourcePanel === source;
+        panel.hidden = !active;
+        if (active) renderPanelPage(panel);
+      });
+      renderTrends(source);
+      localStorage.setItem("paperradar.source", source);
+    };
+
+    const setLanguage = (lang) => {
       const root = document.documentElement;
-      const buttons = Array.from(document.querySelectorAll("[data-set-lang]"));
-      const setLanguage = (lang) => {{
-        root.dataset.lang = lang;
-        root.lang = lang === "zh" ? "zh-CN" : "en";
-        localStorage.setItem("paperradar.lang", lang);
-        buttons.forEach((button) => {{
-          button.setAttribute("aria-pressed", String(button.dataset.setLang === lang));
-        }});
-      }};
-      buttons.forEach((button) => {{
-        button.addEventListener("click", () => setLanguage(button.dataset.setLang));
-      }});
-      const saved = localStorage.getItem("paperradar.lang");
-      setLanguage(saved === "en" ? "en" : "zh");
-    }})();
-    (() => {{
-      const pageSize = {PAPERS_PER_PAGE};
-      const tabs = Array.from(document.querySelectorAll("[data-source-tab]"));
-      const panels = Array.from(document.querySelectorAll("[data-source-panel]"));
-      const state = new Map(panels.map((panel) => [panel.dataset.sourcePanel, 1]));
+      root.dataset.lang = lang;
+      root.lang = lang === "zh" ? "zh-CN" : "en";
+      localStorage.setItem("paperradar.lang", lang);
+      document.querySelectorAll("[data-set-lang]").forEach((button) => {
+        button.setAttribute("aria-pressed", String(button.dataset.setLang === lang));
+      });
+    };
 
-      const renderPanel = (panel) => {{
-        const source = panel.dataset.sourcePanel;
-        const papers = Array.from(panel.querySelectorAll("[data-page-item]"));
-        const totalPages = Math.max(1, Math.ceil(papers.length / pageSize));
-        const currentPage = Math.min(state.get(source) || 1, totalPages);
-        state.set(source, currentPage);
-        papers.forEach((paper, index) => {{
-          const paperPage = Math.floor(index / pageSize) + 1;
-          paper.classList.toggle("is-hidden", paperPage !== currentPage);
-        }});
-        const pagination = panel.querySelector("[data-pagination]");
-        const infoZh = panel.querySelector("[data-page-info-zh]");
-        const infoEn = panel.querySelector("[data-page-info-en]");
-        if (infoZh) infoZh.textContent = `第 ${{currentPage}} / ${{totalPages}} 页，每页最多 ${{pageSize}} 篇`;
-        if (infoEn) infoEn.textContent = `Page ${{currentPage}} of ${{totalPages}}, up to ${{pageSize}} papers per page`;
-        panel.querySelectorAll("[data-page-prev]").forEach((button) => button.disabled = currentPage <= 1);
-        panel.querySelectorAll("[data-page-next]").forEach((button) => button.disabled = currentPage >= totalPages);
-        if (pagination) pagination.classList.toggle("is-hidden", totalPages <= 1 || papers.length === 0);
-      }};
+    const loadDigest = async (source) => {
+      const response = await fetch(SOURCE_FILES[source], { cache: "no-store" });
+      if (!response.ok) throw new Error(`${source} ${response.status}`);
+      return response.json();
+    };
 
-      const activate = (source) => {{
-        tabs.forEach((tab) => tab.setAttribute("aria-selected", String(tab.dataset.sourceTab === source)));
-        panels.forEach((panel) => {{
-          const active = panel.dataset.sourcePanel === source;
-          panel.hidden = !active;
-          if (active) renderPanel(panel);
-        }});
-        localStorage.setItem("paperradar.source", source);
-      }};
+    const showLoadError = (source, error) => {
+      const container = document.querySelector(`[data-paper-list="${source}"]`);
+      if (!container) return;
+      container.className = "load-error";
+      container.textContent = `Failed to load ${SOURCE_FILES[source]}: ${error.message}`;
+    };
 
-      panels.forEach((panel) => {{
-        panel.querySelectorAll("[data-page-prev]").forEach((button) => button.addEventListener("click", () => {{
-          const source = panel.dataset.sourcePanel;
-          state.set(source, Math.max(1, (state.get(source) || 1) - 1));
-          renderPanel(panel);
-        }}));
-        panel.querySelectorAll("[data-page-next]").forEach((button) => button.addEventListener("click", () => {{
-          const source = panel.dataset.sourcePanel;
-          state.set(source, (state.get(source) || 1) + 1);
-          renderPanel(panel);
-        }}));
-      }});
-      tabs.forEach((tab) => tab.addEventListener("click", () => activate(tab.dataset.sourceTab)));
+    document.querySelectorAll("[data-set-lang]").forEach((button) => {
+      button.addEventListener("click", () => setLanguage(button.dataset.setLang));
+    });
+    document.querySelectorAll("[data-source-tab]").forEach((tab) => {
+      tab.addEventListener("click", () => activate(tab.dataset.sourceTab));
+    });
+    setLanguage(localStorage.getItem("paperradar.lang") === "en" ? "en" : "zh");
+
+    (async () => {
+      await Promise.all(SOURCES.map(async (source) => {
+        try {
+          digests.set(source, await loadDigest(source));
+        } catch (error) {
+          showLoadError(source, error);
+        }
+      }));
+      renderHeader();
+      SOURCES.forEach(renderSourcePanel);
       const saved = localStorage.getItem("paperradar.source");
-      activate(saved && panels.some((panel) => panel.dataset.sourcePanel === saved) ? saved : "arxiv");
-    }})();
+      activate(SOURCES.includes(saved) ? saved : "arxiv");
+    })();
   </script>
 </body>
 </html>
-"""
-
-
+""".replace("__PAGE_SIZE__", str(PAPERS_PER_PAGE))
 
 def _source_counts(papers: list[dict[str, Any]]) -> dict[str, int]:
     counts = {"arxiv": 0, "eartharxiv": 0}
