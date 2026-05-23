@@ -107,16 +107,16 @@ For a server that already has proxy, MinerU, and LLM credentials in `.env`, run 
 bash scripts/server_daily_push.sh
 ```
 
-Run every day at 11:20 server time with cron:
+Run every 8 hours, anchored at 11:20 server time, with cron:
 
 ```cron
-20 11 * * * cd /path/to/PaperRadar && PAPERRADAR_PYTHON=/path/to/python bash scripts/server_daily_push.sh
+20 3,11,19 * * * cd /path/to/PaperRadar && PAPERRADAR_PYTHON=/path/to/python bash scripts/server_daily_push.sh
 ```
 
 If `crontab` is unavailable, use the lightweight scheduler:
 
 ```bash
-PAPERRADAR_PYTHON=/path/to/python nohup bash scripts/server_daily_loop.sh --run-at 11:20 >> logs/daily/scheduler.nohup.log 2>&1 &
+PAPERRADAR_PYTHON=/path/to/python nohup bash scripts/server_daily_loop.sh --run-at 11:20 --interval-hours 8 >> logs/daily/scheduler.nohup.log 2>&1 &
 ```
 
 ## Commands

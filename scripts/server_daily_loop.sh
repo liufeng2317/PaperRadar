@@ -5,6 +5,7 @@ ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT_DIR"
 
 RUN_AT="${PAPERRADAR_RUN_AT:-11:20}"
+INTERVAL_HOURS="${PAPERRADAR_INTERVAL_HOURS:-8}"
 LOG_DIR="${PAPERRADAR_LOG_DIR:-logs/daily}"
 SCHEDULER_PID_FILE="${PAPERRADAR_SCHEDULER_PID_FILE:-$LOG_DIR/server_daily_scheduler.pid}"
 SCHEDULER_LOCK_FILE="${PAPERRADAR_SCHEDULER_LOCK_FILE:-/tmp/paperradar_server_daily_scheduler.lock}"
@@ -16,19 +17,22 @@ SLEEP_PID=""
 
 usage() {
   cat <<'EOF'
-Usage: scripts/server_daily_loop.sh [--run-at HH:MM] [--run-now] [--dry-run]
+Usage: scripts/server_daily_loop.sh [--run-at HH:MM] [--interval-hours HOURS] [--run-now] [--dry-run]
 
-Runs a lightweight foreground scheduler that launches server_daily_push.sh once
-per day at the configured local server time. Use this when cron is unavailable.
+Runs a lightweight foreground scheduler that launches server_daily_push.sh on a
+repeating interval anchored at the configured local server time. Use this when
+cron is unavailable.
 
 Options:
-  --run-at HH:MM  Daily local time to run PaperRadar. Default: 11:20
+  --run-at HH:MM          Anchor local time for the schedule. Default: 11:20
+  --interval-hours HOURS  Run interval in hours. Default: 8
   --run-now       Run server_daily_push.sh once immediately after startup.
   --dry-run       Pass --dry-run to server_daily_push.sh when the schedule fires or --run-now is used.
   -h, --help      Show this help message.
 
 Environment:
   PAPERRADAR_RUN_AT              Same as --run-at.
+  PAPERRADAR_INTERVAL_HOURS      Same as --interval-hours.
   PAPERRADAR_RUN_ON_START        Set to 1 to run once immediately after startup.
   PAPERRADAR_PYTHON              Passed through to server_daily_push.sh.
   PAPERRADAR_CONFIG              Passed through to server_daily_push.sh.
@@ -41,6 +45,10 @@ while [[ $# -gt 0 ]]; do
   case "$1" in
     --run-at)
       RUN_AT="${2:?Missing value for --run-at}"
+      shift 2
+      ;;
+    --interval-hours)
+      INTERVAL_HOURS="${2:?Missing value for --interval-hours}"
       shift 2
       ;;
     --run-now)
@@ -106,11 +114,12 @@ run_daily_job() {
 }
 
 seconds_until_next_run() {
-  python - "$RUN_AT" <<'PY'
+  python - "$RUN_AT" "$INTERVAL_HOURS" <<'PY'
 import datetime as dt
 import sys
 
 run_at = sys.argv[1]
+interval_raw = sys.argv[2]
 try:
     hour_s, minute_s = run_at.split(":", 1)
     hour, minute = int(hour_s), int(minute_s)
@@ -118,12 +127,21 @@ try:
         raise ValueError
 except ValueError:
     raise SystemExit(f"Invalid run time: {run_at!r}; expected HH:MM")
+try:
+    interval_hours = float(interval_raw)
+    if interval_hours <= 0:
+        raise ValueError
+except ValueError:
+    raise SystemExit(f"Invalid interval hours: {interval_raw!r}; expected a positive number")
 
 now = dt.datetime.now()
-target = now.replace(hour=hour, minute=minute, second=0, microsecond=0)
-if target <= now:
-    target += dt.timedelta(days=1)
-print(max(1, int((target - now).total_seconds())))
+anchor = now.replace(hour=hour, minute=minute, second=0, microsecond=0)
+interval = dt.timedelta(hours=interval_hours)
+while anchor > now:
+    anchor -= interval
+while anchor <= now:
+    anchor += interval
+print(max(1, int((anchor - now).total_seconds())))
 PY
 }
 
@@ -136,7 +154,7 @@ run_scheduler() {
   log "============================================================"
   log "PaperRadar scheduler started"
   log "server=$(hostname 2>/dev/null || printf unknown) user=${USER:-unknown} pid=$RUN_PID parent_shell_pid=$$ ppid=$PPID"
-  log "root=$ROOT_DIR run_at=$RUN_AT run_on_start=$RUN_ON_START dry_run=$DRY_RUN"
+  log "root=$ROOT_DIR run_at=$RUN_AT interval_hours=$INTERVAL_HOURS run_on_start=$RUN_ON_START dry_run=$DRY_RUN"
   log "scheduler_log=$SCHEDULER_LOG_FILE scheduler_pid_file=$SCHEDULER_PID_FILE"
   log "scheduler_lock_file=$SCHEDULER_LOCK_FILE"
   log "============================================================"
@@ -155,8 +173,8 @@ run_scheduler() {
     wait "$SLEEP_PID"
     SLEEP_PID=""
 
-    log "daily run triggered"
-    run_daily_job "daily"
+    log "scheduled run triggered"
+    run_daily_job "scheduled"
   done
 }
 
