@@ -1,0 +1,1980 @@
+{
+  "date": "2026-05-21",
+  "generated_at": "2026-05-21T23:21:34.562150+00:00",
+  "config": {
+    "site_title": "PaperRadar",
+    "site_description": {
+      "en": "Daily arXiv papers from configured topics, summarized with bilingual notes and keyword trends.",
+      "zh": "每日追踪自定义 arXiv 主题论文，包含双语摘要与关键词趋势。"
+    },
+    "arxiv": {
+      "query": "",
+      "categories": [
+        "physics.geo-ph"
+      ],
+      "extra_terms": [
+        "geophysics",
+        "seismology",
+        "geodesy",
+        "geodynamics",
+        "geomagnetism"
+      ],
+      "keywords": [],
+      "keyword_fields": [
+        "title",
+        "abstract"
+      ],
+      "authors": [],
+      "match_all_authors": false,
+      "submitted_after": "",
+      "submitted_before": "",
+      "max_results": 100,
+      "lookback_days": 7,
+      "sort_by": "submittedDate",
+      "sort_order": "descending",
+      "request_delay_seconds": 3.0,
+      "max_retries": 3,
+      "download_pdfs": true,
+      "pdf_dir": "data/pdfs",
+      "storage_category_policy": "configured",
+      "registry_path": "data/paper_registry.json",
+      "parse_pdfs": true,
+      "markdown_dir": "data/markdown",
+      "mineru_output_dir": "data/mineru",
+      "mineru_poll_timeout": 300,
+      "mineru_model_version": "vlm",
+      "mineru_language": "en",
+      "mineru_ocr": false,
+      "mineru_llm_aid": false
+    },
+    "languages": [
+      "en",
+      "zh"
+    ],
+    "keywords_per_paper": 5,
+    "trending_top_n": 30
+  },
+  "query": "((cat:physics.geo-ph) OR (all:geophysics) OR (all:seismology) OR (all:geodesy) OR (all:geodynamics) OR (all:geomagnetism)) AND (submittedDate:[20260514 TO *])",
+  "papers": [
+    {
+      "paper": {
+        "arxiv_id": "2605.21437v1",
+        "title": "Neural Negative Binomial Regression for Weekly Seismicity Forecasting: Per-Cell Dispersion Estimation and Tail Risk Assessment",
+        "authors": [
+          "Alim Igilik"
+        ],
+        "abstract": "Standard approaches to forecasting the weekly number of earthquakes on a spatial grid rely on the Poisson distribution with a single global dispersion assumption. We show that this assumption is systematically violated in seismic data from Central Asia (2010-2024), where a likelihood-ratio test with boundary correction strongly rejects the Poisson hypothesis (p < 10^{-179}). The main contribution of this work is the EarthquakeNet architecture, which provides an endogenous per-cell estimate of the overdispersion parameter alpha via a neural network (spatial embeddings + MLP), without explicit spatial covariance specification. In contrast to existing negative binomial regression approaches in seismological forecasting, which typically assume a single global alpha, the proposed per-cell formulation allows the model to identify spatial heterogeneity in seismic clustering and to construct probabilistic risk-aware alerts via quantiles of the predicted distribution. A walk-forward evaluation (2018-2023) over four systems shows an 8.6 percent reduction in mean pinball deviation (MPD) relative to a negative binomial GLM baseline. The strongest improvements are observed in the tail regime (Y >= 5), where the continuous ranked probability score (CRPS) of the proposed model is 12.5 percent lower than that of the baseline, indicating improved calibration in extreme-event forecasting.",
+        "published": "2026-05-20T17:27:27Z",
+        "updated": "2026-05-20T17:27:27Z",
+        "categories": [
+          "physics.geo-ph",
+          "cs.LG",
+          "stat.ML"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2605.21437v1",
+        "abs_url": "http://arxiv.org/abs/2605.21437v1",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.21437v1.pdf",
+        "pdf_download_error": null,
+        "markdown_path": null,
+        "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
+      },
+      "analysis": {
+        "schema_version": "paperradar.analysis.v3",
+        "input_version": "markdown-clean-v1",
+        "one_sentence_en": "Standard approaches to forecasting the weekly number of earthquakes on a spatial grid rely on the Poisson distribution with a single global dispersion assumption.",
+        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "summary_en": [
+          "Standard approaches to forecasting the weekly number of earthquakes on a spatial grid rely on the Poisson distribution with a single global dispersion assumption.",
+          "We show that this assumption is systematically violated in seismic data from Central Asia (2010-2024), where a likelihood-ratio test with boundary correction strongly rejects the Poisson hypothesis (p < 10^{-179}).",
+          "The main contribution of this work is the EarthquakeNet architecture, which provides an endogenous per-cell estimate of the overdispersion parameter alpha via a neural network (spatial embeddings + MLP), without explicit spatial covariance specification."
+        ],
+        "summary_zh": [
+          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+        ],
+        "contribution_en": "",
+        "contribution_zh": "",
+        "method_en": "",
+        "method_zh": "",
+        "data_or_region_en": "",
+        "data_or_region_zh": "",
+        "geophysics_relevance_en": "",
+        "geophysics_relevance_zh": "",
+        "keywords_en": [
+          "forecasting",
+          "spatial",
+          "negative",
+          "binomial",
+          "per-cell"
+        ],
+        "keywords_zh": [
+          "forecasting",
+          "spatial",
+          "negative",
+          "binomial",
+          "per-cell"
+        ],
+        "topic": "forecasting",
+        "audience_level": "specialist",
+        "llm_used": false,
+        "source": "abstract"
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2605.21191v1",
+        "title": "Beyond Vorticity: An Angular Momentum Perspective on Fluid Flow",
+        "authors": [
+          "Ahmed Farooq"
+        ],
+        "abstract": "While vorticity is the classical tool for analyzing rotational fluid kinematics, it inherently focuses on local, differential spin. This paper introduces a complementary framework based on the angular momentum density field, $\\mathbf{L} = \\mathbf{r} \\times \\mathbf{u}$, deriving generalized transport equations that explicitly balance macroscopic torque and rotational momentum. This $\\mathbf{L}$ perspective offers several distinct theoretical advantages over traditional velocity/vorticity formulations. Specifically, this approach: (i) provides a novel decomposition of the viscous torque into a diffusive component and a local spin dissipative term; (ii) shows the mechanism by which lift is generated in viscous boundary layers by vorticity acting as a source of angular momentum; it also explains stall (iii) reformulates the hydrodynamic impulse to yield a remarkably clean separation of terms into dilatational, volumetric, and rotational flux components; The $\\mathbf{L}$ formalism provides the kinematic closure necessary to unify non-circulatory added mass and circulatory lift within a single, dimensionally consistent budget. (iv) enables the direct calculation of the viscous added mass force, accounting for the inertial resistance of boundary layers and separated wakes; (v) simplifies geophysical fluid dynamics by absorbing the planet's rotation, traditionally treated as an artificial virtual vorticity term which directly gets absorbed into the conserved axial angular momentum $m$, revealing the fundamental physics of global circulation through explicit torque balances; (vi) identifies the rotlet as a fundamental Green's function for the $\\mathbf{L}$ transport equation in the Stokes regime; and (vii) demonstrates that both oblique shocks and vortex sheets act as singular sources of $\\mathbf{L}$ that turn the macroscopic flow.",
+        "published": "2026-05-20T13:54:38Z",
+        "updated": "2026-05-20T13:54:38Z",
+        "categories": [
+          "physics.flu-dyn",
+          "physics.ao-ph",
+          "physics.geo-ph"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2605.21191v1",
+        "abs_url": "http://arxiv.org/abs/2605.21191v1",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.21191v1.pdf",
+        "pdf_download_error": null,
+        "markdown_path": null,
+        "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
+      },
+      "analysis": {
+        "schema_version": "paperradar.analysis.v3",
+        "input_version": "markdown-clean-v1",
+        "one_sentence_en": "While vorticity is the classical tool for analyzing rotational fluid kinematics, it inherently focuses on local, differential spin.",
+        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "summary_en": [
+          "While vorticity is the classical tool for analyzing rotational fluid kinematics, it inherently focuses on local, differential spin.",
+          "This paper introduces a complementary framework based on the angular momentum density field, , deriving generalized transport equations that explicitly balance macroscopic torque and rotational momentum.",
+          "This perspective offers several distinct theoretical advantages over traditional velocity/vorticity formulations."
+        ],
+        "summary_zh": [
+          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+        ],
+        "contribution_en": "",
+        "contribution_zh": "",
+        "method_en": "",
+        "method_zh": "",
+        "data_or_region_en": "",
+        "data_or_region_zh": "",
+        "geophysics_relevance_en": "",
+        "geophysics_relevance_zh": "",
+        "keywords_en": [
+          "vorticity",
+          "momentum",
+          "angular",
+          "fluid",
+          "rotational"
+        ],
+        "keywords_zh": [
+          "vorticity",
+          "momentum",
+          "angular",
+          "fluid",
+          "rotational"
+        ],
+        "topic": "vorticity",
+        "audience_level": "specialist",
+        "llm_used": false,
+        "source": "abstract"
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2605.21030v1",
+        "title": "A Fixed-Grid Affine-Constrained Multiwavelet Coefficient Method for Buckley--Leverett Shock Capturing",
+        "authors": [
+          "Christian Tantardini",
+          "Evgueni Dinvay"
+        ],
+        "abstract": "We present a fixed-grid conservative affine-constrained modal/multiwavelet coefficient method for one-dimensional Buckley--Leverett saturation transport. The saturation is evolved directly in a local orthonormal coefficient basis with a mean/detail structure: the first mode carries the conservative cell average, whereas higher modes carry zero-mean local details. The hyperbolic inflow condition is imposed as a linear trace constraint on the coefficient vector and enforced by affine lifting. For $(p>1)$, the boundary reprojection is applied in the detail subspace of the inflow cell, so that the prescribed trace is restored without modifying the conservative cell-average update. The transport operator is discretized in conservative weak form with monotone numerical fluxes, and shock-induced oscillations are controlled by a troubled-cell limiter acting on modal details. The method is validated on a Berea-core waterflood benchmark against an independent \\texttt{pywaterflood} reference solution using the same Corey fractional-flow closure, physical parameters, and pore-volume-injected scaling. The affine-constrained coefficient solver reproduces the reference breakthrough curve and saturation profiles, preserves the imposed inflow trace to roundoff accuracy, controls saturation bounds through mean-preserving detail rescaling, and gives small accumulated global mass-balance defects. Mesh-refinement, flux-comparison, and modal-order studies show that $(p=2)$, corresponding to a piecewise-linear local representation, provides the most favorable accuracy--cost compromise among the tested orders for this shock-dominated benchmark.",
+        "published": "2026-05-20T11:05:15Z",
+        "updated": "2026-05-20T11:05:15Z",
+        "categories": [
+          "physics.flu-dyn",
+          "physics.geo-ph"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2605.21030v1",
+        "abs_url": "http://arxiv.org/abs/2605.21030v1",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.21030v1.pdf",
+        "pdf_download_error": null,
+        "markdown_path": null,
+        "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
+      },
+      "analysis": {
+        "schema_version": "paperradar.analysis.v3",
+        "input_version": "markdown-clean-v1",
+        "one_sentence_en": "We present a fixed-grid conservative affine-constrained modal/multiwavelet coefficient method for one-dimensional Buckley--Leverett saturation transport.",
+        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "summary_en": [
+          "We present a fixed-grid conservative affine-constrained modal/multiwavelet coefficient method for one-dimensional Buckley--Leverett saturation transport.",
+          "The saturation is evolved directly in a local orthonormal coefficient basis with a mean/detail structure: the first mode carries the conservative cell average, whereas higher modes carry zero-mean local details.",
+          "The hyperbolic inflow condition is imposed as a linear trace constraint on the coefficient vector and enforced by affine lifting."
+        ],
+        "summary_zh": [
+          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+        ],
+        "contribution_en": "",
+        "contribution_zh": "",
+        "method_en": "",
+        "method_zh": "",
+        "data_or_region_en": "",
+        "data_or_region_zh": "",
+        "geophysics_relevance_en": "",
+        "geophysics_relevance_zh": "",
+        "keywords_en": [
+          "coefficient",
+          "conservative",
+          "saturation",
+          "affine-constrained",
+          "method"
+        ],
+        "keywords_zh": [
+          "coefficient",
+          "conservative",
+          "saturation",
+          "affine-constrained",
+          "method"
+        ],
+        "topic": "coefficient",
+        "audience_level": "specialist",
+        "llm_used": false,
+        "source": "abstract"
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2605.20997v1",
+        "title": "Hybrid Machine Learning Model for Forest Height Estimation from TanDEM-X and Landsat Data",
+        "authors": [
+          "Islam Mansour",
+          "Ronny Haensch",
+          "Irena Hajnsek",
+          "Konstantinos Papathanassiou"
+        ],
+        "abstract": "Integrating machine learning (ML) with physical models (PM) has emerged as a promising way of retrieving geophysical parameters from remote sensing data. In this context, a ML model for estimating forest height from TanDEM-X interferometric coherence measurements has recently been proposed, that constrains the learning process through a PM. While the features used for training and inversion where selected to ensure the physical consistency of the solutions, they could not resolve all height / structure and baseline / terrain slope ambiguities in the data. To improve this, the extension of the feature space with optical Landsat data is proposed able to provide complementary information on forest type or structure. The extended model is applied and validated on several TanDEM-X acquisitions over the Gabonese Lopé national park site and assessed against airborne LiDAR measurements. Results show a 13.5% reduction in RMSE and a 16.6% reduction in MAE compared to the original hybrid model, confirming the added value of multispectral inputs.",
+        "published": "2026-05-20T10:37:27Z",
+        "updated": "2026-05-20T10:37:27Z",
+        "categories": [
+          "cs.CV",
+          "cs.AI",
+          "cs.LG",
+          "physics.comp-ph"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2605.20997v1",
+        "abs_url": "http://arxiv.org/abs/2605.20997v1",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.20997v1.pdf",
+        "pdf_download_error": null,
+        "markdown_path": null,
+        "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
+      },
+      "analysis": {
+        "schema_version": "paperradar.analysis.v3",
+        "input_version": "markdown-clean-v1",
+        "one_sentence_en": "Integrating machine learning (ML) with physical models (PM) has emerged as a promising way of retrieving geophysical parameters from remote sensing data.",
+        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "summary_en": [
+          "Integrating machine learning (ML) with physical models (PM) has emerged as a promising way of retrieving geophysical parameters from remote sensing data.",
+          "In this context, a ML model for estimating forest height from TanDEM-X interferometric coherence measurements has recently been proposed, that constrains the learning process through a PM.",
+          "While the features used for training and inversion where selected to ensure the physical consistency of the solutions, they could not resolve all height / structure and baseline / terrain slope ambiguities in the data."
+        ],
+        "summary_zh": [
+          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+        ],
+        "contribution_en": "",
+        "contribution_zh": "",
+        "method_en": "",
+        "method_zh": "",
+        "data_or_region_en": "",
+        "data_or_region_zh": "",
+        "geophysics_relevance_en": "",
+        "geophysics_relevance_zh": "",
+        "keywords_en": [
+          "data",
+          "learning",
+          "forest",
+          "height",
+          "tandem-x"
+        ],
+        "keywords_zh": [
+          "data",
+          "learning",
+          "forest",
+          "height",
+          "tandem-x"
+        ],
+        "topic": "data",
+        "audience_level": "specialist",
+        "llm_used": false,
+        "source": "abstract"
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2605.20764v1",
+        "title": "HyFrac.fun: A 3D Hydraulic Fracturing Simulator on Cloud",
+        "authors": [
+          "Jing Hu",
+          "Qian Liu",
+          "Jaroon Rungamornrat"
+        ],
+        "abstract": "When multiple hydraulic fractures propagate simultaneously from a horizontal wellbore, elastic stress-shadow interactions generate complex non-planar three-dimensional geometries whose effect on subsequent reservoir drainage has infrequently been quantified, because the propagation and production solvers have historically been incompatible stand-alone tools. This paper presents HyFrac.fun, a cloud-native platform that bridges this gap by exploiting a structural isomorphism between the two SGBEM--FEM governing operator systems. The platform enables automated zero-conversion handoff of the evolved 3D fracture mesh directly to the steady-state Darcy production solver for realizing a fully integrated lifecycle simulation of multi-stage non-planar hydraulic fractures. The lifecycle analysis reveals a double shadow phenomenon: the mechanical stress shadow that suppresses inner-fracture growth during stimulation mirrors a fluid pressure shadow that reduces the inner fracture's drawout rate at small cluster spacing. Critically, switching to a shear-thinning power-law fracturing fluid leaves the fracture trajectories and production rates almost unchanged, demonstrating that stress-shadow-controlled fracture geometry instead of fluid rheology is the primary determinant of long-term production efficiency at equal injection rates. These physics findings are accessible from integrated fracture propagation and production simulations.",
+        "published": "2026-05-20T06:07:05Z",
+        "updated": "2026-05-20T06:07:05Z",
+        "categories": [
+          "cs.CE",
+          "physics.geo-ph"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2605.20764v1",
+        "abs_url": "http://arxiv.org/abs/2605.20764v1",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.20764v1.pdf",
+        "pdf_download_error": null,
+        "markdown_path": null,
+        "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
+      },
+      "analysis": {
+        "schema_version": "paperradar.analysis.v3",
+        "input_version": "markdown-clean-v1",
+        "one_sentence_en": "When multiple hydraulic fractures propagate simultaneously from a horizontal wellbore, elastic stress-shadow interactions generate complex non-planar three-dimensional geometries whose effect on subsequent reservoir drainage has infrequently been quantified, because the propagation and production solvers have historically been incompatible stand-alone tools.",
+        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "summary_en": [
+          "When multiple hydraulic fractures propagate simultaneously from a horizontal wellbore, elastic stress-shadow interactions generate complex non-planar three-dimensional geometries whose effect on subsequent reservoir drainage has infrequently been quantified, because the propagation and production solvers have historically been incompatible stand-alone tools.",
+          "This paper presents HyFrac.fun, a cloud-native platform that bridges this gap by exploiting a structural isomorphism between the two SGBEM--FEM governing operator systems.",
+          "The platform enables automated zero-conversion handoff of the evolved 3D fracture mesh directly to the steady-state Darcy production solver for realizing a fully integrated lifecycle simulation of multi-stage non-planar hydraulic fractures."
+        ],
+        "summary_zh": [
+          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+        ],
+        "contribution_en": "",
+        "contribution_zh": "",
+        "method_en": "",
+        "method_zh": "",
+        "data_or_region_en": "",
+        "data_or_region_zh": "",
+        "geophysics_relevance_en": "",
+        "geophysics_relevance_zh": "",
+        "keywords_en": [
+          "production",
+          "fracture",
+          "hydraulic",
+          "shadow",
+          "fluid"
+        ],
+        "keywords_zh": [
+          "production",
+          "fracture",
+          "hydraulic",
+          "shadow",
+          "fluid"
+        ],
+        "topic": "production",
+        "audience_level": "specialist",
+        "llm_used": false,
+        "source": "abstract"
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2605.20455v1",
+        "title": "Benchmarking Cylindrical Blast Wave Theory Against the OSIRIS-REx Sample Return Capsule Reentry",
+        "authors": [
+          "Elizabeth A. Silber"
+        ],
+        "abstract": "Weak shock theory based on cylindrical blast waves has been used to interpret meteor infrasound, but it has not been systematically benchmarked against a non-ablating hypersonic source with independently known parameters. The objective of this study is not to propose a new theoretical framework, but to evaluate the operational validity of the existing suite of blast radius formulations against a high-fidelity ground truth dataset. The OSIRIS-REx Sample Return Capsule reentry on 24 September 2023 provides such a benchmark because the capsule geometry, trajectory, and infrasound emission points are constrained from mission data and ray tracing, reducing source-side uncertainty associated with ablation. Using observations from 39 infrasound stations, this benchmarking study evaluates six published blast radius (R_0) formulations and three weak-shock transition coefficients (C) within a stratified atmospheric propagation model to predict signal period and peak overpressure. The benchmarking identifies the Sakurai formulation as the best-performing formulation for non-ablating bodies, with the Jones/Plooster formulation performing comparably when a physically appropriate C is adopted. Sakurai and Jones/Plooster yield linear-period median absolute percentage residuals of 9% and 11%, respectively. The period predictions show only weak sensitivity to C at these propagation distances. The Mach-diameter approximation commonly used in meteor studies overestimates R_0 by more than a factor of 3 in the absence of ablation. These results establish a performance baseline for applying cylindrical blast wave theory to non-ablating hypersonic bodies and demonstrate that the signal period is a robust observable for constraining R_0.",
+        "published": "2026-05-19T20:07:09Z",
+        "updated": "2026-05-19T20:07:09Z",
+        "categories": [
+          "physics.ao-ph",
+          "astro-ph.EP",
+          "physics.class-ph",
+          "physics.geo-ph",
+          "physics.space-ph"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2605.20455v1",
+        "abs_url": "http://arxiv.org/abs/2605.20455v1",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.20455v1.pdf",
+        "pdf_download_error": null,
+        "markdown_path": null,
+        "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
+      },
+      "analysis": {
+        "schema_version": "paperradar.analysis.v3",
+        "input_version": "markdown-clean-v1",
+        "one_sentence_en": "Weak shock theory based on cylindrical blast waves has been used to interpret meteor infrasound, but it has not been systematically benchmarked against a non-ablating hypersonic source with independently known parameters.",
+        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "summary_en": [
+          "Weak shock theory based on cylindrical blast waves has been used to interpret meteor infrasound, but it has not been systematically benchmarked against a non-ablating hypersonic source with independently known parameters.",
+          "The objective of this study is not to propose a new theoretical framework, but to evaluate the operational validity of the existing suite of blast radius formulations against a high-fidelity ground truth dataset.",
+          "The OSIRIS-REx Sample Return Capsule reentry on 24 September 2023 provides such a benchmark because the capsule geometry, trajectory, and infrasound emission points are constrained from mission data and ray tracing, reducing source-side uncertainty associated with ablation."
+        ],
+        "summary_zh": [
+          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+        ],
+        "contribution_en": "",
+        "contribution_zh": "",
+        "method_en": "",
+        "method_zh": "",
+        "data_or_region_en": "",
+        "data_or_region_zh": "",
+        "geophysics_relevance_en": "",
+        "geophysics_relevance_zh": "",
+        "keywords_en": [
+          "blast",
+          "benchmarking",
+          "cylindrical",
+          "theory",
+          "against"
+        ],
+        "keywords_zh": [
+          "blast",
+          "benchmarking",
+          "cylindrical",
+          "theory",
+          "against"
+        ],
+        "topic": "blast",
+        "audience_level": "specialist",
+        "llm_used": false,
+        "source": "abstract"
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2605.20132v1",
+        "title": "FiLark: a streaming-first software framework for end-to-end exploration, annotation, and algorithm integration in distributed acoustic sensing",
+        "authors": [
+          "Jintao Li",
+          "Weichang Li",
+          "Kai Tong",
+          "Xaingyu Guo"
+        ],
+        "abstract": "Distributed acoustic sensing (DAS) systems generate continuous, ultra-high-channel-count data streams at rates that exceed the capabilities of conventional batch-oriented analysis frameworks. As a result, essential tasks such as interactive exploration of long-duration recordings, scalable event annotation, and real-time algorithm-in-the-loop monitoring remain inadequately supported by workflows built around manually selected data segments and offline processing. This paper presents FiLark (Fiber Lark), a Python framework that applies a \\emph{streaming-first} principle uniformly across data access, signal processing, visualization and monitoring for DAS. Instead of operating on manually selected data segments, FiLark presents any DAS sources-including continuous multi-file recordings-as a unified stream and builds all system components around that abstraction. An OpenGL-based ring-buffer renderer enables interactive browsing and visualization of arbitrarily long recordings with constant memory usage. An integrated annotation interface supports event labeling directly within continuous data streams, facilitating the creation of reproducible machine-learning-ready labeled datasets without offline preprocessing. The signal processing library includes temporal, spatial, spectral, and decomposition-based operators, with both CPU implementations and GPU-accelerated variants via PyTorch, alongside stateful chunked execution that preserves processing continuity and application semantics across segment boundaries. A standardized monitor interface further integrates streaming detectors and learning-based models into the visualization workflow. By sharing a common streaming abstraction across all layers, FiLark allows processing configurations and workflows developed interactively to transfer directly to scalable production pipelines without modification.",
+        "published": "2026-05-19T17:17:02Z",
+        "updated": "2026-05-19T17:17:02Z",
+        "categories": [
+          "physics.geo-ph",
+          "cs.LG",
+          "eess.SP"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2605.20132v1",
+        "abs_url": "http://arxiv.org/abs/2605.20132v1",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.20132v1.pdf",
+        "pdf_download_error": null,
+        "markdown_path": null,
+        "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
+      },
+      "analysis": {
+        "schema_version": "paperradar.analysis.v3",
+        "input_version": "markdown-clean-v1",
+        "one_sentence_en": "Distributed acoustic sensing (DAS) systems generate continuous, ultra-high-channel-count data streams at rates that exceed the capabilities of conventional batch-oriented analysis frameworks.",
+        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "summary_en": [
+          "Distributed acoustic sensing (DAS) systems generate continuous, ultra-high-channel-count data streams at rates that exceed the capabilities of conventional batch-oriented analysis frameworks.",
+          "As a result, essential tasks such as interactive exploration of long-duration recordings, scalable event annotation, and real-time algorithm-in-the-loop monitoring remain inadequately supported by workflows built around manually selected data segments and offline processing.",
+          "This paper presents FiLark (Fiber Lark), a Python framework that applies a {streaming-first} principle uniformly across data access, signal processing, visualization and monitoring for DAS."
+        ],
+        "summary_zh": [
+          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+        ],
+        "contribution_en": "",
+        "contribution_zh": "",
+        "method_en": "",
+        "method_zh": "",
+        "data_or_region_en": "",
+        "data_or_region_zh": "",
+        "geophysics_relevance_en": "",
+        "geophysics_relevance_zh": "",
+        "keywords_en": [
+          "data",
+          "processing",
+          "filark",
+          "annotation",
+          "continuous"
+        ],
+        "keywords_zh": [
+          "data",
+          "processing",
+          "filark",
+          "annotation",
+          "continuous"
+        ],
+        "topic": "data",
+        "audience_level": "specialist",
+        "llm_used": false,
+        "source": "abstract"
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2605.20030v1",
+        "title": "Take It or Leave It: Intent-Controlled Partial Optimal Transport",
+        "authors": [
+          "Salil Parth Tripathi",
+          "Bertrand Chapron",
+          "Fabrice Collard",
+          "Nicolas Courty",
+          "Ronan Fablet"
+        ],
+        "abstract": "While optimal transport (OT) enforces a rigid constraint by requiring two measures to be matched exactly, partial optimal transport relaxes this requirement by allowing mass to remain unmatched through a global budget, scalar rebate, or uniform rejection rule. However, many applications call for more structured, pointwise rejection mechanisms, where the decision to leave mass unmatched depends on side-specific reliability, support geometry, or external information about which components should participate in the comparison. We introduce \\emph{intent-controlled partial optimal transport} (IC-POT), a targeted generalization of partial transport that replaces the global rejection paradigm with pointwise rejection costs over both measures. We show that the resulting optimization problem admits a dual interpretation in terms of local acceptance thresholds and can be solved by recasting it as a balanced Kantorovich OT problem on an augmented support. Beyond theoretical analysis, we demonstrate the practical relevance of IC-POT in settings where rejection is driven by side information. In positive-unlabeled learning and open-partial domain adaptation, incorporating pointwise rejection rules that encode statistical structure improves fixed baseline pipelines. Finally, we motivate the use of IC-POT with a geophysical practical case: multi-modal satellite ocean measurements, for which physical and sensors priors naturally inform the rejection mechanism and define the retrieved comparable signal information.",
+        "published": "2026-05-19T15:52:59Z",
+        "updated": "2026-05-19T15:52:59Z",
+        "categories": [
+          "cs.LG",
+          "math.OC"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2605.20030v1",
+        "abs_url": "http://arxiv.org/abs/2605.20030v1",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.20030v1.pdf",
+        "pdf_download_error": null,
+        "markdown_path": null,
+        "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
+      },
+      "analysis": {
+        "schema_version": "paperradar.analysis.v3",
+        "input_version": "markdown-clean-v1",
+        "one_sentence_en": "While optimal transport (OT) enforces a rigid constraint by requiring two measures to be matched exactly, partial optimal transport relaxes this requirement by allowing mass to remain unmatched through a global budget, scalar rebate, or uniform rejection rule.",
+        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "summary_en": [
+          "While optimal transport (OT) enforces a rigid constraint by requiring two measures to be matched exactly, partial optimal transport relaxes this requirement by allowing mass to remain unmatched through a global budget, scalar rebate, or uniform rejection rule.",
+          "However, many applications call for more structured, pointwise rejection mechanisms, where the decision to leave mass unmatched depends on side-specific reliability, support geometry, or external information about which components should participate in the comparison.",
+          "We introduce {intent-controlled partial optimal transport} (IC-POT), a targeted generalization of partial transport that replaces the global rejection paradigm with pointwise rejection costs over both measures."
+        ],
+        "summary_zh": [
+          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+        ],
+        "contribution_en": "",
+        "contribution_zh": "",
+        "method_en": "",
+        "method_zh": "",
+        "data_or_region_en": "",
+        "data_or_region_zh": "",
+        "geophysics_relevance_en": "",
+        "geophysics_relevance_zh": "",
+        "keywords_en": [
+          "rejection",
+          "transport",
+          "optimal",
+          "pointwise",
+          "information"
+        ],
+        "keywords_zh": [
+          "rejection",
+          "transport",
+          "optimal",
+          "pointwise",
+          "information"
+        ],
+        "topic": "rejection",
+        "audience_level": "specialist",
+        "llm_used": false,
+        "source": "abstract"
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2605.19951v1",
+        "title": "Scalable parallel 3-D TEM inversion via rational approximation of the matrix exponential",
+        "authors": [
+          "Ralph-Uwe Börner",
+          "Stefan Güttel",
+          "Thomas Günther"
+        ],
+        "abstract": "We present a novel parallel implementation for large-scale three-dimensional electromagnetic inversion based on a Gauss-Newton framework combined with a rational near-best approximation of the matrix exponential for transient simulations. The method employs parallel direct solvers for the shifted linear systems arising from the partial fraction representation of the rational approximation and demonstrates efficient parallel execution on a shared-memory architecture using MPI. A key property of the approach is that the time dependence is entirely contained in the residuals of the employed rational functions, such that the computation of forward responses and sensitivities becomes effectively independent of the number of desired observation times. Model regularization is done with smoothness constraints, formulated with Raviart-Thomas elements. The linearized inverse problems are solved using LSQR, using an implicit parallel Jacobian operator. Numerical experiments demonstrate the successful recovery of a synthetic 3-D conductivity structure with approximately 700,000 degrees of freedom. The study further discusses computational bottlenecks related to memory consumption and shared-memory scalability arising from the simultaneous storage of multiple sparse matrix factorizations. Possible improvements based on preconditioned iterative solvers and distributed high-performance computing architectures are outlined. The implementation in the Julia programming language is released as open-source software to support reproducible research and further development by the geophysical inversion community.",
+        "published": "2026-05-19T15:05:03Z",
+        "updated": "2026-05-19T15:05:03Z",
+        "categories": [
+          "math.NA",
+          "physics.geo-ph"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2605.19951v1",
+        "abs_url": "http://arxiv.org/abs/2605.19951v1",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.19951v1.pdf",
+        "pdf_download_error": null,
+        "markdown_path": null,
+        "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
+      },
+      "analysis": {
+        "schema_version": "paperradar.analysis.v3",
+        "input_version": "markdown-clean-v1",
+        "one_sentence_en": "We present a novel parallel implementation for large-scale three-dimensional electromagnetic inversion based on a Gauss-Newton framework combined with a rational near-best approximation of the matrix exponential for transient simulations.",
+        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "summary_en": [
+          "We present a novel parallel implementation for large-scale three-dimensional electromagnetic inversion based on a Gauss-Newton framework combined with a rational near-best approximation of the matrix exponential for transient simulations.",
+          "The method employs parallel direct solvers for the shifted linear systems arising from the partial fraction representation of the rational approximation and demonstrates efficient parallel execution on a shared-memory architecture using MPI.",
+          "A key property of the approach is that the time dependence is entirely contained in the residuals of the employed rational functions, such that the computation of forward responses and sensitivities becomes effectively independent of the number of desired observation times."
+        ],
+        "summary_zh": [
+          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+        ],
+        "contribution_en": "",
+        "contribution_zh": "",
+        "method_en": "",
+        "method_zh": "",
+        "data_or_region_en": "",
+        "data_or_region_zh": "",
+        "geophysics_relevance_en": "",
+        "geophysics_relevance_zh": "",
+        "keywords_en": [
+          "parallel",
+          "rational",
+          "inversion",
+          "approximation",
+          "matrix"
+        ],
+        "keywords_zh": [
+          "parallel",
+          "rational",
+          "inversion",
+          "approximation",
+          "matrix"
+        ],
+        "topic": "parallel",
+        "audience_level": "specialist",
+        "llm_used": false,
+        "source": "abstract"
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2605.19903v1",
+        "title": "New NanoSIMS Multielement Isotope Data Reveal CO Novae As Key Sources Of 13C-rich Presolar Silicon Carbide Grains",
+        "authors": [
+          "Jordi José",
+          "Nan Liu",
+          "Conel M. O'D. Alexander",
+          "Jianhua Wang"
+        ],
+        "abstract": "We present new multielement NanoSIMS isotopic measurements (C, N, Si, Mg-Al, Ti, and Ni) for four putative nova SiC grains and 79 AB SiC grains from the Murchison meteorite to reassess their stellar origins. High-resolution imaging and a revised Mg/Al relative sensitivity factor for SiC yield substantially improved 26Al/27Al ratios and the most reliable multielement characterization to date for 13C-rich presolar SiC grains. To interpret these data, we computed an expanded suite of hydrodynamic CO, ONe, and recurrent nova models spanning a range of white-dwarf masses and pre-enrichment parameters. When all isotopic systems are considered together (C, N, Mg-Al, Si, Ti, and Ni), the CO nova models provide the closest and most self-consistent match to both the putative nova grains and the subset of AB grains lacking s-process signatures. CO novae of low- to intermediate-mass naturally reproduce the observed 14N/15N-26Al/27Al trend, the Si isotope compositions of AB grains which dominantly reflect Galactic chemical evolution (GCE), and the mild Si isotope shifts in putative nova grains relative to the GCE trend defined by AB grains. In contrast, ONe and recurrent nova models fail multiple isotopic constraints simultaneously. These results demonstrate that low- to intermediate-mass CO novae (0.6-1.0 Msun) are the most plausible stellar sources of 13C-rich SiC dust lacking s-process signatures (1-2\\% of all presolar SiC), and they establish a multielement, model-anchored framework for quantifying nova contributions to the dust reservoir in the interstellar medium.",
+        "published": "2026-05-19T14:33:23Z",
+        "updated": "2026-05-19T14:33:23Z",
+        "categories": [
+          "astro-ph.SR",
+          "astro-ph.GA",
+          "physics.geo-ph"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2605.19903v1",
+        "abs_url": "http://arxiv.org/abs/2605.19903v1",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.19903v1.pdf",
+        "pdf_download_error": null,
+        "markdown_path": null,
+        "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
+      },
+      "analysis": {
+        "schema_version": "paperradar.analysis.v3",
+        "input_version": "markdown-clean-v1",
+        "one_sentence_en": "We present new multielement NanoSIMS isotopic measurements (C, N, Si, Mg-Al, Ti, and Ni) for four putative nova SiC grains and 79 AB SiC grains from the Murchison meteorite to reassess their stellar origins.",
+        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "summary_en": [
+          "We present new multielement NanoSIMS isotopic measurements (C, N, Si, Mg-Al, Ti, and Ni) for four putative nova SiC grains and 79 AB SiC grains from the Murchison meteorite to reassess their stellar origins.",
+          "High-resolution imaging and a revised Mg/Al relative sensitivity factor for SiC yield substantially improved 26Al/27Al ratios and the most reliable multielement characterization to date for 13C-rich presolar SiC grains.",
+          "To interpret these data, we computed an expanded suite of hydrodynamic CO, ONe, and recurrent nova models spanning a range of white-dwarf masses and pre-enrichment parameters."
+        ],
+        "summary_zh": [
+          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+        ],
+        "contribution_en": "",
+        "contribution_zh": "",
+        "method_en": "",
+        "method_zh": "",
+        "data_or_region_en": "",
+        "data_or_region_zh": "",
+        "geophysics_relevance_en": "",
+        "geophysics_relevance_zh": "",
+        "keywords_en": [
+          "grains",
+          "nova",
+          "multielement",
+          "isotope",
+          "novae"
+        ],
+        "keywords_zh": [
+          "grains",
+          "nova",
+          "multielement",
+          "isotope",
+          "novae"
+        ],
+        "topic": "grains",
+        "audience_level": "specialist",
+        "llm_used": false,
+        "source": "abstract"
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2605.19608v1",
+        "title": "Reassessment of Ionospheric Responses to GRB~221009A: Disentangling Instrumental, Illumination and Geophysical Effects",
+        "authors": [
+          "Maosheng He",
+          "Quanhan Li",
+          "Shun-Rong Zhang",
+          "Jeffrey M. Forbes",
+          "Jiuhou Lei",
+          "Libo Liu",
+          "Jiankui Shi",
+          "Chi Wang"
+        ],
+        "abstract": "Gamma-ray bursts (GRBs) have long been proposed to perturb Earth's ionosphere, with occasional reports of disruptions in ultra- and extremely-low-frequency radio signals. The exceptionally bright GRB~221009A was recently claimed to induce multi-altitude ionospheric responses, including perturbations in satellite electric fields, regional total electron content (TEC), and the equatorial electrojet (EEJ). These claims have renewed interest in the potential near-Earth impacts of astrophysical transients. Here we perform an independent reassessment using expanded datasets spanning multiple altitudes. We find no coherent, burst-like TEC enhancement, show that the reported electric-field anomalies recur under specific illumination conditions each orbit, and demonstrate that the EEJ fluctuations preceded the burst and coincide with solar-wind variability. Together, these results indicate that the reported GRB-induced ionospheric responses are fully attributable to other natural geophysical processes and instrumental artefacts, thereby resolving a high-profile controversy and clarifying the true limits of GRBs'ionospheric effects.",
+        "published": "2026-05-19T09:47:49Z",
+        "updated": "2026-05-19T09:47:49Z",
+        "categories": [
+          "physics.space-ph"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2605.19608v1",
+        "abs_url": "http://arxiv.org/abs/2605.19608v1",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.19608v1.pdf",
+        "pdf_download_error": null,
+        "markdown_path": null,
+        "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
+      },
+      "analysis": {
+        "schema_version": "paperradar.analysis.v3",
+        "input_version": "markdown-clean-v1",
+        "one_sentence_en": "Gamma-ray bursts (GRBs) have long been proposed to perturb Earth's ionosphere, with occasional reports of disruptions in ultra- and extremely-low-frequency radio signals.",
+        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "summary_en": [
+          "Gamma-ray bursts (GRBs) have long been proposed to perturb Earth's ionosphere, with occasional reports of disruptions in ultra- and extremely-low-frequency radio signals.",
+          "The exceptionally bright GRB~221009A was recently claimed to induce multi-altitude ionospheric responses, including perturbations in satellite electric fields, regional total electron content (TEC), and the equatorial electrojet (EEJ).",
+          "These claims have renewed interest in the potential near-Earth impacts of astrophysical transients."
+        ],
+        "summary_zh": [
+          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+        ],
+        "contribution_en": "",
+        "contribution_zh": "",
+        "method_en": "",
+        "method_zh": "",
+        "data_or_region_en": "",
+        "data_or_region_zh": "",
+        "geophysics_relevance_en": "",
+        "geophysics_relevance_zh": "",
+        "keywords_en": [
+          "ionospheric",
+          "responses",
+          "reassessment",
+          "instrumental",
+          "illumination"
+        ],
+        "keywords_zh": [
+          "ionospheric",
+          "responses",
+          "reassessment",
+          "instrumental",
+          "illumination"
+        ],
+        "topic": "ionospheric",
+        "audience_level": "specialist",
+        "llm_used": false,
+        "source": "abstract"
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2605.19507v1",
+        "title": "The Astro2Geo Project I. Radio astrometric offsets correlated with Gamma-ray brightness",
+        "authors": [
+          "Jeffrey A. Hodgson",
+          "Hana Krasna",
+          "Aletha de Witt",
+          "Pfesesani van Zyl",
+          "Janeth Valverde"
+        ],
+        "abstract": "Precision geodesy relies on the stability of the International Celestial Reference Frame (ICRF), yet its reference sources, Active Galactic Nuclei (AGN), exhibit changes in source structure that can manifest as apparent shifts in their astrometric positions. The high-precision radio measurements used to maintain the ICRF therefore provide a means to investigate the astrophysical mechanisms driving these changes. In particular, the observed astrometric variability offers a unique opportunity to link positional shifts in AGN to high-energy astrophysical processes. We investigated the relationship between the astrometric positions of ICRF AGN and their Gamma-ray emission. We measured the positional offsets of radio cores relative to the ICRF3 at both S/X and K bands and compared them to Fermi-LAT Gamma-ray fluxes within +/-30 days. Out of 92 radio sources, we identified 57 that had enough overlapping data. We find a high incidence of statistically significant (p<0.05) power-law correlations, with ~90% of sources exhibiting this behaviour. The nature of this correlation is complex: we observe both positive and negative correlations, and the sign of the correlation can differ between the two frequency bands for the same source. To explain the correlations, we tested variable Gamma-ray emission locations, changes in nuclear opacity, and variations in jet position angle. Our analysis reveals no single explanation and suggests a complex interplay of multiple physical mechanisms. A search for time lags between the radio position offsets and Gamma-ray fluxes revealed tentative - and highly caveated - evidence for a time-delay in only five sources. A statistical comparison with the OCARS catalogue shows that, although our sample is biased towards optically brighter sources with better-constrained astrometric solutions, it remains representative of the broader AGN population in terms of redshift.",
+        "published": "2026-05-19T08:06:55Z",
+        "updated": "2026-05-19T08:06:55Z",
+        "categories": [
+          "astro-ph.HE",
+          "astro-ph.GA",
+          "astro-ph.IM"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2605.19507v1",
+        "abs_url": "http://arxiv.org/abs/2605.19507v1",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.19507v1.pdf",
+        "pdf_download_error": null,
+        "markdown_path": null,
+        "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
+      },
+      "analysis": {
+        "schema_version": "paperradar.analysis.v3",
+        "input_version": "markdown-clean-v1",
+        "one_sentence_en": "Precision geodesy relies on the stability of the International Celestial Reference Frame (ICRF), yet its reference sources, Active Galactic Nuclei (AGN), exhibit changes in source structure that can manifest as apparent shifts in their astrometric positions.",
+        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "summary_en": [
+          "Precision geodesy relies on the stability of the International Celestial Reference Frame (ICRF), yet its reference sources, Active Galactic Nuclei (AGN), exhibit changes in source structure that can manifest as apparent shifts in their astrometric positions.",
+          "The high-precision radio measurements used to maintain the ICRF therefore provide a means to investigate the astrophysical mechanisms driving these changes.",
+          "In particular, the observed astrometric variability offers a unique opportunity to link positional shifts in AGN to high-energy astrophysical processes."
+        ],
+        "summary_zh": [
+          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+        ],
+        "contribution_en": "",
+        "contribution_zh": "",
+        "method_en": "",
+        "method_zh": "",
+        "data_or_region_en": "",
+        "data_or_region_zh": "",
+        "geophysics_relevance_en": "",
+        "geophysics_relevance_zh": "",
+        "keywords_en": [
+          "radio",
+          "astrometric",
+          "gamma-ray",
+          "sources",
+          "icrf"
+        ],
+        "keywords_zh": [
+          "radio",
+          "astrometric",
+          "gamma-ray",
+          "sources",
+          "icrf"
+        ],
+        "topic": "radio",
+        "audience_level": "specialist",
+        "llm_used": false,
+        "source": "abstract"
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2605.19472v1",
+        "title": "Chromospheric resonator model for sunspot revealed by multi-height observation of umbral wave",
+        "authors": [
+          "Kartika Sangal",
+          "A. K. Srivastava",
+          "Libo Fu",
+          "Ding Yuan",
+          "Song Feng",
+          "Yuandeng Shen"
+        ],
+        "abstract": "Sunspots are transient, magnetically intense features that host oscillations linked to magnetohydrodynamic (MHD) waves. These waves may contribute to plasma heating and drive mass flows in the solar wind. Beyond their energetic role, they serve as diagnostic tools for probing sunspot structure. In this study, we investigated chromospheric wave propagation in a sunspot using high-resolution, multi-wavelength observations from the Goode Solar Telescope at Big Bear Solar Observatory. Spectral analysis shows that the intensity at H$α$ line core and its wings exhibited oscillatory signal at about 3 min. We performed a cross-wavelet analysis to examine the phase relationship between the wing-integrated and line-core intensity oscillations of the H$α$ line and the centroid-derived H$α$ Doppler velocity. We also analyze the phase relationships between intensity pairs from different passband combinations of the H$α$ line. The results indicate the presence of slow magnetoacoustic modes manifesting standing waves along with upward propagating waves. The observed phase patterns suggest that umbral waves are confined within a non-ideal acoustic resonator, providing measurable wave properties that could serve as input for sunspot seismology and refine models of sunspot atmospheric structure.",
+        "published": "2026-05-19T07:23:44Z",
+        "updated": "2026-05-19T07:23:44Z",
+        "categories": [
+          "astro-ph.SR"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2605.19472v1",
+        "abs_url": "http://arxiv.org/abs/2605.19472v1",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.19472v1.pdf",
+        "pdf_download_error": null,
+        "markdown_path": null,
+        "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
+      },
+      "analysis": {
+        "schema_version": "paperradar.analysis.v3",
+        "input_version": "markdown-clean-v1",
+        "one_sentence_en": "Sunspots are transient, magnetically intense features that host oscillations linked to magnetohydrodynamic (MHD) waves.",
+        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "summary_en": [
+          "Sunspots are transient, magnetically intense features that host oscillations linked to magnetohydrodynamic (MHD) waves.",
+          "These waves may contribute to plasma heating and drive mass flows in the solar wind.",
+          "Beyond their energetic role, they serve as diagnostic tools for probing sunspot structure."
+        ],
+        "summary_zh": [
+          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+        ],
+        "contribution_en": "",
+        "contribution_zh": "",
+        "method_en": "",
+        "method_zh": "",
+        "data_or_region_en": "",
+        "data_or_region_zh": "",
+        "geophysics_relevance_en": "",
+        "geophysics_relevance_zh": "",
+        "keywords_en": [
+          "sunspot",
+          "waves",
+          "wave",
+          "solar",
+          "intensity"
+        ],
+        "keywords_zh": [
+          "sunspot",
+          "waves",
+          "wave",
+          "solar",
+          "intensity"
+        ],
+        "topic": "sunspot",
+        "audience_level": "specialist",
+        "llm_used": false,
+        "source": "abstract"
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2605.19379v1",
+        "title": "Graph-based automated discovery of concise soil hydraulic functions from data: beyond the Mualem - van Genuchten model",
+        "authors": [
+          "Hao Xu",
+          "Jinshen Sun",
+          "Yuntian Chen",
+          "Dongxiao Zhang"
+        ],
+        "abstract": "Soil hydraulic functions are fundamental to modelling water flow and transport in vadose-zone hydrology and are central to a wide range of hydrological and geoscientific applications. Yet in practice, these functions are still predominantly specified through expert-designed empirical formulations, such as the Mualem-van Genuchten (MvG) model. Although such models have proved highly influential, their derivation relies on predefined functional assumptions that make it difficult to simultaneously achieve accuracy, compactness, and robustness across diverse soil textures. Here we present a graph-based automated model discovery framework for discovering explicit soil hydraulic functions directly from experimental data. Applied to the original datasets used in the development of the MvG model, the method identifies a concise soil water retention function and its associated unsaturated hydraulic conductivity function whose mathematical structure differs fundamentally from classical empirical forms. Across 249 real soil samples spanning diverse textural classes, the discovered functions achieve more accurate predictions of unsaturated hydraulic conductivity than the MvG model. The fitted parameters also exhibit correlations with soil physical properties. This work demonstrates that data-driven model discovery can move beyond traditional empirical derivation and provide a promising route for developing accurate and explicit constitutive models.",
+        "published": "2026-05-19T05:25:53Z",
+        "updated": "2026-05-19T05:25:53Z",
+        "categories": [
+          "physics.flu-dyn",
+          "cs.SC",
+          "physics.geo-ph"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2605.19379v1",
+        "abs_url": "http://arxiv.org/abs/2605.19379v1",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.19379v1.pdf",
+        "pdf_download_error": null,
+        "markdown_path": null,
+        "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
+      },
+      "analysis": {
+        "schema_version": "paperradar.analysis.v3",
+        "input_version": "markdown-clean-v1",
+        "one_sentence_en": "Soil hydraulic functions are fundamental to modelling water flow and transport in vadose-zone hydrology and are central to a wide range of hydrological and geoscientific applications.",
+        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "summary_en": [
+          "Soil hydraulic functions are fundamental to modelling water flow and transport in vadose-zone hydrology and are central to a wide range of hydrological and geoscientific applications.",
+          "Yet in practice, these functions are still predominantly specified through expert-designed empirical formulations, such as the Mualem-van Genuchten (MvG) model.",
+          "Although such models have proved highly influential, their derivation relies on predefined functional assumptions that make it difficult to simultaneously achieve accuracy, compactness, and robustness across diverse soil textures."
+        ],
+        "summary_zh": [
+          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+        ],
+        "contribution_en": "",
+        "contribution_zh": "",
+        "method_en": "",
+        "method_zh": "",
+        "data_or_region_en": "",
+        "data_or_region_zh": "",
+        "geophysics_relevance_en": "",
+        "geophysics_relevance_zh": "",
+        "keywords_en": [
+          "soil",
+          "hydraulic",
+          "functions",
+          "discovery",
+          "empirical"
+        ],
+        "keywords_zh": [
+          "soil",
+          "hydraulic",
+          "functions",
+          "discovery",
+          "empirical"
+        ],
+        "topic": "soil",
+        "audience_level": "specialist",
+        "llm_used": false,
+        "source": "abstract"
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2605.19118v1",
+        "title": "Seismic Depth Imaging of the 2024 Noto Earthquake (M7.6) Rupture Area",
+        "authors": [
+          "Hamzeh Mohammadigheymasi",
+          "Jin-Oh Park"
+        ],
+        "abstract": "On January 1, 2024, a moment magnitude (Mw) 7.6 earthquake struck the Noto Peninsula, Japan, causing intense ground shaking and triggering a tsunami along the Japan Sea coast. Preliminary analysis by the Japan Meteorological Agency (JMA) identified a reverse-fault rupture consistent with a northwest-southeast compressional stress regime. Aftershock distribution analysis (JMA, 2024) revealed that the causative fault extended approximately 150 km from the western Noto Peninsula to the northeastern offshore area, aligning with the inferred tsunami source region. While the rupture mechanism and impacts have been studied, high-resolution seismic imaging of the shallow crustal structure within the rupture zone remains limited. To address this gap, the Atmosphere and Ocean Research Institute (AORI) at the University of Tokyo conducted a multichannel seismic (MCS) reflection survey aboard the R/V Hakuho-Maru in March 2024, collecting high-quality MCS data along 14 profiles (approx. 45 km each). The data were processed using an advanced depth imaging workflow incorporating grid-based tomography refined by automated continuity attributes to enhance reflection coherency. Structural attributes (dip and continuity) were extracted from migrated sections and used for automated horizon picking via seismic pencil construction. The P-wave velocity model was iteratively refined using grid-based tomography to optimize horizon alignment and minimize residual moveout (RMO) in migrated common image gathers. The resulting 2D seismic sections and 3D visualizations provide the first high-resolution images of the shallow rupture zone associated with the 2024 Noto earthquake. This dataset offers a critical foundation for ongoing research into fault geometry, rupture dynamics, and the broader seismotectonic framework of the region.",
+        "published": "2026-05-18T21:10:58Z",
+        "updated": "2026-05-18T21:10:58Z",
+        "categories": [
+          "physics.geo-ph"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2605.19118v1",
+        "abs_url": "http://arxiv.org/abs/2605.19118v1",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.19118v1.pdf",
+        "pdf_download_error": null,
+        "markdown_path": null,
+        "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
+      },
+      "analysis": {
+        "schema_version": "paperradar.analysis.v3",
+        "input_version": "markdown-clean-v1",
+        "one_sentence_en": "On January 1, 2024, a moment magnitude (Mw) 7.6 earthquake struck the Noto Peninsula, Japan, causing intense ground shaking and triggering a tsunami along the Japan Sea coast.",
+        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "summary_en": [
+          "On January 1, 2024, a moment magnitude (Mw) 7.6 earthquake struck the Noto Peninsula, Japan, causing intense ground shaking and triggering a tsunami along the Japan Sea coast.",
+          "Preliminary analysis by the Japan Meteorological Agency (JMA) identified a reverse-fault rupture consistent with a northwest-southeast compressional stress regime.",
+          "Aftershock distribution analysis (JMA, 2024) revealed that the causative fault extended approximately 150 km from the western Noto Peninsula to the northeastern offshore area, aligning with the inferred tsunami source region."
+        ],
+        "summary_zh": [
+          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+        ],
+        "contribution_en": "",
+        "contribution_zh": "",
+        "method_en": "",
+        "method_zh": "",
+        "data_or_region_en": "",
+        "data_or_region_zh": "",
+        "geophysics_relevance_en": "",
+        "geophysics_relevance_zh": "",
+        "keywords_en": [
+          "rupture",
+          "seismic",
+          "noto",
+          "imaging",
+          "earthquake"
+        ],
+        "keywords_zh": [
+          "rupture",
+          "seismic",
+          "noto",
+          "imaging",
+          "earthquake"
+        ],
+        "topic": "rupture",
+        "audience_level": "specialist",
+        "llm_used": false,
+        "source": "abstract"
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2605.18375v1",
+        "title": "DANTE: Physics-Informed Neural Operator for DAS-to-Velocity Waveform Reconstruction Without Co-located Seismometers",
+        "authors": [
+          "Isao Kurosawa"
+        ],
+        "abstract": "Distributed Acoustic Sensing (DAS) converts existing fibre-optic cables into dense seismic arrays at near-zero deployment cost, but measures strain rate rather than particle velocity -- the quantity required by virtually all seismological analysis tools. Converting strain rate to particle velocity by numerical integration is ill-posed: the integration constant is undefined and noise accumulates without bound. We present DANTE (DAS-to-velocity via physics-informed neural operator for Acoustic-wave recoNstruction in heTErogeneous media), a Fourier Neural Operator (FNO) trained entirely on synthetic data that enforces two physics constraints: (i) the exact kinematic relation between DAS strain rate and the spatial gradient of particle velocity, and (ii) the one-dimensional elastic wave equation. These constraints resolve the undetermined integration constant and suppress noise without requiring co-located seismometers. On a test set of 200 heterogeneous synthetic wavefields, DANTE achieves a mean output SNR of $15.3 \\pm 8.8$ dB, Pearson correlation $r = 0.907$, and SSIM $= 0.976$, corresponding to a mean SNR improvement of approximately $+15$ dB over the best conventional baseline (trace stacking, $n = 10$, $0.02 \\pm 0.06$ dB), and up to $+28.8$ dB on the most challenging samples. Zero-shot inference on seven real microseismic events from the Utah FORGE 2019 DAS dataset yields a kinematic residual of 0.003--0.005, five times lower than the synthetic test baseline, confirming generalisation to real field data with no fine-tuning and no seismometers.",
+        "published": "2026-05-18T13:22:12Z",
+        "updated": "2026-05-18T13:22:12Z",
+        "categories": [
+          "physics.geo-ph"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2605.18375v1",
+        "abs_url": "http://arxiv.org/abs/2605.18375v1",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.18375v1.pdf",
+        "pdf_download_error": null,
+        "markdown_path": null,
+        "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
+      },
+      "analysis": {
+        "schema_version": "paperradar.analysis.v3",
+        "input_version": "markdown-clean-v1",
+        "one_sentence_en": "Distributed Acoustic Sensing (DAS) converts existing fibre-optic cables into dense seismic arrays at near-zero deployment cost, but measures strain rate rather than particle velocity -- the quantity required by virtually all seismological analysis tools.",
+        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "summary_en": [
+          "Distributed Acoustic Sensing (DAS) converts existing fibre-optic cables into dense seismic arrays at near-zero deployment cost, but measures strain rate rather than particle velocity -- the quantity required by virtually all seismological analysis tools.",
+          "Converting strain rate to particle velocity by numerical integration is ill-posed: the integration constant is undefined and noise accumulates without bound.",
+          "We present DANTE (DAS-to-velocity via physics-informed neural operator for Acoustic-wave recoNstruction in heTErogeneous media), a Fourier Neural Operator (FNO) trained entirely on synthetic data that enforces two physics constraints: (i) the exact kinematic relation between DAS strain rate and the spatial gradient of particle velocity, and (ii) the one-dimensional elastic wave equation."
+        ],
+        "summary_zh": [
+          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+        ],
+        "contribution_en": "",
+        "contribution_zh": "",
+        "method_en": "",
+        "method_zh": "",
+        "data_or_region_en": "",
+        "data_or_region_zh": "",
+        "geophysics_relevance_en": "",
+        "geophysics_relevance_zh": "",
+        "keywords_en": [
+          "dante",
+          "neural",
+          "operator",
+          "without",
+          "seismometers"
+        ],
+        "keywords_zh": [
+          "dante",
+          "neural",
+          "operator",
+          "without",
+          "seismometers"
+        ],
+        "topic": "dante",
+        "audience_level": "specialist",
+        "llm_used": false,
+        "source": "abstract"
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2605.17792v1",
+        "title": "HydroAgent: Closing the Gap Between Frontier LLMs and Human Experts in Hydrologic Model Calibration via Simulator-Grounded RL",
+        "authors": [
+          "Zhi Li",
+          "Songkun Yan",
+          "Jie Cao",
+          "Mofan Zhang",
+          "Anjiang Wei",
+          "Jinwoong Yoo",
+          "Yang Hong"
+        ],
+        "abstract": "Calibrating distributed hydrologic models is a critical bottleneck across operational water resources management - streamflow prediction, reservoir operation, drought monitoring, infrastructure design, and flood forecasting all depend on it. Each basin demands an expert to translate hydrograph signatures into adjustments of a high-dimensional parameter vector, and the resulting workflow does not transfer between watersheds. We ask: can frontier large language model (LLM) agents replace the human hydrologic modeler, and if not, what would it take? We benchmark nine frontier LLM agents - Claude Opus 4.6/4.7, Sonnet 4.6, GPT-5/5.4/5.4-pro, and Gemini 2.5-pro/3.1-pro/3-flash - on the operational CREST distributed hydrologic model used by the U.S. National Weather Service for flash-flood forecasting. Best-of-twenty-rounds Nash-Sutcliffe Efficiency (NSE) across four held-out gauges spanning 329-40,792 km2 ranges from -0.16 (GPT-5.4) to 0.75 (Sonnet 4.6); the ceiling reproduces across all three vendors and capability tiers, with the strongest models concentrating in the 0.65-0.75 band, and no model reaches the human-expert reference except Opus-4.7 on one gauge. We argue this gap is not a parameter-count problem but a domain-grounding problem. We then propose HYDROAGENT, fine-tuning open-weight Qwen3-4B with supervised fine-tuning on 2,576 expert calibration trajectories and Group-Relative Policy Optimization using NSE as a verifiable reward from online CREST simulations - reinforcement learning with simulation feedback (RLSF). For Earth system science, a small domain-tuned policy with simulator-in-the-loop RL is a more compute-efficient and physically faithful path than scaling generic frontier models, and the multi-modal richness of Earth data - remote sensing, in-situ time series, and forecaster narrative - makes domain agents a leveraged direction for AI in physical science.",
+        "published": "2026-05-18T03:17:38Z",
+        "updated": "2026-05-18T03:17:38Z",
+        "categories": [
+          "cs.LG",
+          "physics.geo-ph"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2605.17792v1",
+        "abs_url": "http://arxiv.org/abs/2605.17792v1",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.17792v1.pdf",
+        "pdf_download_error": null,
+        "markdown_path": null,
+        "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
+      },
+      "analysis": {
+        "schema_version": "paperradar.analysis.v3",
+        "input_version": "markdown-clean-v1",
+        "one_sentence_en": "Calibrating distributed hydrologic models is a critical bottleneck across operational water resources management - streamflow prediction, reservoir operation, drought monitoring, infrastructure design, and flood forecasting all depend on it.",
+        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "summary_en": [
+          "Calibrating distributed hydrologic models is a critical bottleneck across operational water resources management - streamflow prediction, reservoir operation, drought monitoring, infrastructure design, and flood forecasting all depend on it.",
+          "Each basin demands an expert to translate hydrograph signatures into adjustments of a high-dimensional parameter vector, and the resulting workflow does not transfer between watersheds.",
+          "We ask: can frontier large language model (LLM) agents replace the human hydrologic modeler, and if not, what would it take?"
+        ],
+        "summary_zh": [
+          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+        ],
+        "contribution_en": "",
+        "contribution_zh": "",
+        "method_en": "",
+        "method_zh": "",
+        "data_or_region_en": "",
+        "data_or_region_zh": "",
+        "geophysics_relevance_en": "",
+        "geophysics_relevance_zh": "",
+        "keywords_en": [
+          "frontier",
+          "hydrologic",
+          "across",
+          "agents",
+          "hydroagent"
+        ],
+        "keywords_zh": [
+          "frontier",
+          "hydrologic",
+          "across",
+          "agents",
+          "hydroagent"
+        ],
+        "topic": "frontier",
+        "audience_level": "specialist",
+        "llm_used": false,
+        "source": "abstract"
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2605.17081v1",
+        "title": "Analyzing the role of tensile and hybrid fractures on the max-imum relief topography",
+        "authors": [
+          "Julien Gargani"
+        ],
+        "abstract": "Slope stability description through mechanical laws has important implication for Earth morphology understanding and risk assessment. Previous researches have showed that shear, tensile, and hybrid fractures can be observed experimentally and in the field, but their descriptions by a single equation is still an open debate. Fracture envelope able to describe contemporaneously these three fracture modes differ signif-icantly from the Mohr-Coulomb law. Despite the need to apply such a law at all scales, from the laboratory to the mountain range, the fracture criterion that characterizes all types of fractures is rarely used in geotechnical engineering and geological investiga-tions. In order to analyze the stability thresholds of large-scale relief, the current work examines the effects of considering the Griffith criterion with a variable rock traction instead of the Mohr-Coulomb law using a modelling approach. The difference esti-mated on maximum relief using these two different rupture criterions could be of the same order than the one caused by geological phenomena, such as with or without seismic activity, or from the one caused by the destabilization processes (tilting vs. landslide). When compared to the modified Griffith criterion, the Mohr-Coulomb law tends to overestimate the maximum escarpment height. The results are examined in relation to the Carrara marbles, which serve as a case study for the theoretical frame-work.",
+        "published": "2026-05-16T16:57:20Z",
+        "updated": "2026-05-16T16:57:20Z",
+        "categories": [
+          "physics.geo-ph"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2605.17081v1",
+        "abs_url": "http://arxiv.org/abs/2605.17081v1",
+        "local_pdf_path": null,
+        "pdf_download_error": "Could not reach the arXiv API. Check network/proxy settings and try again.",
+        "markdown_path": null,
+        "markdown_parse_error": null
+      },
+      "analysis": {
+        "schema_version": "paperradar.analysis.v3",
+        "input_version": "markdown-clean-v1",
+        "one_sentence_en": "Slope stability description through mechanical laws has important implication for Earth morphology understanding and risk assessment.",
+        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "summary_en": [
+          "Slope stability description through mechanical laws has important implication for Earth morphology understanding and risk assessment.",
+          "Previous researches have showed that shear, tensile, and hybrid fractures can be observed experimentally and in the field, but their descriptions by a single equation is still an open debate.",
+          "Fracture envelope able to describe contemporaneously these three fracture modes differ signif-icantly from the Mohr-Coulomb law."
+        ],
+        "summary_zh": [
+          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+        ],
+        "contribution_en": "",
+        "contribution_zh": "",
+        "method_en": "",
+        "method_zh": "",
+        "data_or_region_en": "",
+        "data_or_region_zh": "",
+        "geophysics_relevance_en": "",
+        "geophysics_relevance_zh": "",
+        "keywords_en": [
+          "fractures",
+          "relief",
+          "fracture",
+          "mohr-coulomb",
+          "criterion"
+        ],
+        "keywords_zh": [
+          "fractures",
+          "relief",
+          "fracture",
+          "mohr-coulomb",
+          "criterion"
+        ],
+        "topic": "fractures",
+        "audience_level": "specialist",
+        "llm_used": false,
+        "source": "abstract"
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2605.16966v1",
+        "title": "Harnessing AI for Inverse Partial Differential Equation Problems: Past, Present, and Prospects",
+        "authors": [
+          "Zhentao Tan",
+          "Yuze Hao",
+          "Boyi Zou",
+          "Mingsheng Long",
+          "Yi Yang",
+          "Gang Bao"
+        ],
+        "abstract": "Solving inverse partial differential equation (PDE) problems is a fundamental topic in scientific research due to its broad significance across a wide range of real-world applications. Inverse PDE problems arise across medical imaging, geophysics, materials science, and aerodynamics, where the goal is to infer hidden causes, design structures, or control physical states. In this paper, we provide a comprehensive review of recent advances in solving inverse PDE problems using artificial intelligence (AI). We first introduce the basic formulation, key challenges, and traditional numerical foundations of inverse PDE problems, and then organize it into three major categories: inverse problems, inverse design, and control problems. For each category, we further present a methodological paradigms, and review representative state-of-the-art approaches from recent years. We then summarize representative applications across scientific and industrial domains, including mechanical systems, aerodynamic problems, thermal systems, full-waveform inversion, system identification, and medical imaging. Finally, we discuss open challenges and future prospects, such as physics-informed architectures, limited real-world data, uncertainty quantification, and inverse foundation models. This survey aims to provide the first unified and systematic perspective on AI for inverse PDE problems, demonstrating how modern learning-based methods are reshaping inverse problems, inverse design, and control problems in PDE-governed systems.",
+        "published": "2026-05-16T12:41:36Z",
+        "updated": "2026-05-16T12:41:36Z",
+        "categories": [
+          "cs.AI"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2605.16966v1",
+        "abs_url": "http://arxiv.org/abs/2605.16966v1",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.16966v1.pdf",
+        "pdf_download_error": null,
+        "markdown_path": null,
+        "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
+      },
+      "analysis": {
+        "schema_version": "paperradar.analysis.v3",
+        "input_version": "markdown-clean-v1",
+        "one_sentence_en": "Solving inverse partial differential equation (PDE) problems is a fundamental topic in scientific research due to its broad significance across a wide range of real-world applications.",
+        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "summary_en": [
+          "Solving inverse partial differential equation (PDE) problems is a fundamental topic in scientific research due to its broad significance across a wide range of real-world applications.",
+          "Inverse PDE problems arise across medical imaging, geophysics, materials science, and aerodynamics, where the goal is to infer hidden causes, design structures, or control physical states.",
+          "In this paper, we provide a comprehensive review of recent advances in solving inverse PDE problems using artificial intelligence (AI)."
+        ],
+        "summary_zh": [
+          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+        ],
+        "contribution_en": "",
+        "contribution_zh": "",
+        "method_en": "",
+        "method_zh": "",
+        "data_or_region_en": "",
+        "data_or_region_zh": "",
+        "geophysics_relevance_en": "",
+        "geophysics_relevance_zh": "",
+        "keywords_en": [
+          "inverse",
+          "problems",
+          "across",
+          "design",
+          "control"
+        ],
+        "keywords_zh": [
+          "inverse",
+          "problems",
+          "across",
+          "design",
+          "control"
+        ],
+        "topic": "inverse",
+        "audience_level": "specialist",
+        "llm_used": false,
+        "source": "abstract"
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2605.16783v1",
+        "title": "Pretrain-to-alignment learning paradigm to improve geophysical AI applicability under scarce field labels and synthetic-to-field gaps: A case study of relative geologic time estimation in global shelf-edge clinothems",
+        "authors": [
+          "Hui Gao",
+          "Xinming Wu",
+          "Jiarun Yang",
+          "Zhixiang Gao",
+          "Yimin Dou"
+        ],
+        "abstract": "Artificial intelligence (AI) has been increasingly applied to various geophysical scenarios, yet its practical deployment remains limited by scarce field labels, pronounced synthetic-to-field domain gaps, and insufficient physical consistency under complex and variable field conditions. To address these challenges, we propose a pretrain-to-alignment learning paradigm that systematically integrates self-supervised pretraining, synthetic supervision, prior-driven refinement, and domain-adaptation fine-tuning into a unified progressive learning workflow. In this paradigm, geophysical AI models are developed through sequential stages that progressively build field-relevant representations, task-specific mapping capability, field consistency, and target-specific adaptability. We validate this paradigm using cross-survey relative geologic time (RGT) estimation in global shelf-edge clinothems as a representative case study. Results from 3,000 field datasets spanning multiple sedimentary basins demonstrate that the proposed paradigm achieves accurate, robust, and well-generalized performance across diverse field surveys, while significantly improving fine-scale stratigraphic and structural details. More broadly, this study provides a practical methodological reference for a broader range of geophysical AI tasks, such as interpretation, regression, and inversion problems.",
+        "published": "2026-05-16T03:34:51Z",
+        "updated": "2026-05-16T03:34:51Z",
+        "categories": [
+          "physics.geo-ph"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2605.16783v1",
+        "abs_url": "http://arxiv.org/abs/2605.16783v1",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.16783v1.pdf",
+        "pdf_download_error": null,
+        "markdown_path": null,
+        "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
+      },
+      "analysis": {
+        "schema_version": "paperradar.analysis.v3",
+        "input_version": "markdown-clean-v1",
+        "one_sentence_en": "Artificial intelligence (AI) has been increasingly applied to various geophysical scenarios, yet its practical deployment remains limited by scarce field labels, pronounced synthetic-to-field domain gaps, and insufficient physical consistency under complex and variable field conditions.",
+        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "summary_en": [
+          "Artificial intelligence (AI) has been increasingly applied to various geophysical scenarios, yet its practical deployment remains limited by scarce field labels, pronounced synthetic-to-field domain gaps, and insufficient physical consistency under complex and variable field conditions.",
+          "To address these challenges, we propose a pretrain-to-alignment learning paradigm that systematically integrates self-supervised pretraining, synthetic supervision, prior-driven refinement, and domain-adaptation fine-tuning into a unified progressive learning workflow.",
+          "In this paradigm, geophysical AI models are developed through sequential stages that progressively build field-relevant representations, task-specific mapping capability, field consistency, and target-specific adaptability."
+        ],
+        "summary_zh": [
+          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+        ],
+        "contribution_en": "",
+        "contribution_zh": "",
+        "method_en": "",
+        "method_zh": "",
+        "data_or_region_en": "",
+        "data_or_region_zh": "",
+        "geophysics_relevance_en": "",
+        "geophysics_relevance_zh": "",
+        "keywords_en": [
+          "field",
+          "paradigm",
+          "geophysical",
+          "learning",
+          "pretrain-to-alignment"
+        ],
+        "keywords_zh": [
+          "field",
+          "paradigm",
+          "geophysical",
+          "learning",
+          "pretrain-to-alignment"
+        ],
+        "topic": "field",
+        "audience_level": "specialist",
+        "llm_used": false,
+        "source": "abstract"
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2605.16717v1",
+        "title": "Radial-Component Predominant-Mode Inversion of Rayleigh Waves: Application to DAS-based Site Characterization",
+        "authors": [
+          "Mrinal Bhaumik",
+          "Brady R. Cox"
+        ],
+        "abstract": "Distributed Acoustic Sensing (DAS) has emerged as a transformative technology for near-surface site characterization. When a vertical source is activated along the fiber, DAS measures only the in-line (radial) component of Rayleigh-wave motion. Dispersion data extracted from radial-component waveforms may differ from those obtained from vertical-component measurements, particularly under complex stratigraphic conditions. Hence, a component-consistent forward problem is desired when inverting radial-component DAS dispersion data to retrieve accurate shear wave velocity (Vs) profiles. This study presents a radial-component predominant-mode (RCPM) inversion framework designed for DAS-based surface-wave analysis that explicitly accounts for source-receiver directivity and modal sensitivity of the Rayleigh-wave radial component. The proposed approach matches measured dominant radial dispersion trends with the theoretical mode exhibiting the maximum modal participation. As a result, the RCPM framework eliminates the need for explicit modal indexing, provides a component-consistent interpretation of radial-component dispersion data, and substantially reduces reliance on subjective analyst-driven modal interpretations. The RCPM approach is systematically evaluated using three synthetic ground models and two field DAS datasets. The synthetic results demonstrate that modal energy distribution differs significantly between vertical and radial components in the presence of strong velocity contrasts and velocity reversals, and that conventional inversion approaches may misinterpret modal behavior, resulting in less accurate Vs profiles. In contrast, the RCPM method consistently captures the correct modal response and yields reliable Vs profiles. Application to two field DAS datasets further demonstrates good agreement between the inverted Vs profiles and independent invasive borehole measurements.",
+        "published": "2026-05-16T00:04:03Z",
+        "updated": "2026-05-16T00:04:03Z",
+        "categories": [
+          "physics.geo-ph",
+          "cs.SD"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2605.16717v1",
+        "abs_url": "http://arxiv.org/abs/2605.16717v1",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.16717v1.pdf",
+        "pdf_download_error": null,
+        "markdown_path": null,
+        "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
+      },
+      "analysis": {
+        "schema_version": "paperradar.analysis.v3",
+        "input_version": "markdown-clean-v1",
+        "one_sentence_en": "Distributed Acoustic Sensing (DAS) has emerged as a transformative technology for near-surface site characterization.",
+        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "summary_en": [
+          "Distributed Acoustic Sensing (DAS) has emerged as a transformative technology for near-surface site characterization.",
+          "When a vertical source is activated along the fiber, DAS measures only the in-line (radial) component of Rayleigh-wave motion.",
+          "Dispersion data extracted from radial-component waveforms may differ from those obtained from vertical-component measurements, particularly under complex stratigraphic conditions."
+        ],
+        "summary_zh": [
+          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+        ],
+        "contribution_en": "",
+        "contribution_zh": "",
+        "method_en": "",
+        "method_zh": "",
+        "data_or_region_en": "",
+        "data_or_region_zh": "",
+        "geophysics_relevance_en": "",
+        "geophysics_relevance_zh": "",
+        "keywords_en": [
+          "modal",
+          "radial-component",
+          "radial",
+          "dispersion",
+          "profiles"
+        ],
+        "keywords_zh": [
+          "modal",
+          "radial-component",
+          "radial",
+          "dispersion",
+          "profiles"
+        ],
+        "topic": "modal",
+        "audience_level": "specialist",
+        "llm_used": false,
+        "source": "abstract"
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2605.16711v1",
+        "title": "Stress state, subsidence, and faulting in the Wilmington Oil Field, California: a multiphase flow-geomechanics modeling assessment (1936-2020)",
+        "authors": [
+          "Lluís Saló-Salgado",
+          "Josimar A. Silva",
+          "Andreas Plesch",
+          "Franklin D. Wolfe",
+          "John H. Shaw",
+          "Ruben Juanes"
+        ],
+        "abstract": "Nearly a century of oil production in the Wilmington Oil Field, Los Angeles Basin, California, has modified the stress state, caused nearly 9 m of ground surface subsidence, and been associated with earthquakes that sheared wells. This offers a unique opportunity to elucidate the processes that govern these phenomena: Since the 1930s, approximately 2.5 billion barrels of oil have been produced, accompanied by water injection volumes roughly an order of magnitude larger. Combined with extensive structural and geophysical constraints, this history allows us to interrogate the long-term geomechanical impacts of reservoir operations. Here, we assess (i) how the initial stress state, typically uncertain in the shallow crust ($<5$ km depth), influences subsidence and uplift, and (ii) how production and injection operations affect fault stability. Our numerical model, calibrated with published measurements of reservoir pressures and surface displacements, incorporates a detailed representation of fault surfaces within and around the field, well-level production and injection schedules, and an elastoplastic constitutive framework. Model results show that the previously assumed stress regime in the field (reverse faulting) needs to be reassessed$\\unicode{x2014}$the best match to the ground deformation data is achieved when the sedimentary section is initialized with low deviatoric stress (i.e., not critically stressed). This suggests significant variation in the stress state with depth, including a likely change in the stress regime. DCFF values suggest minor destabilization on reservoir faults and larger changes on sub-horizontal bedding planes; both could explain the faulting that led to sheared wells and seismicity between 1947 and 1961.",
+        "published": "2026-05-15T23:48:13Z",
+        "updated": "2026-05-15T23:48:13Z",
+        "categories": [
+          "physics.geo-ph"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2605.16711v1",
+        "abs_url": "http://arxiv.org/abs/2605.16711v1",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.16711v1.pdf",
+        "pdf_download_error": null,
+        "markdown_path": null,
+        "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
+      },
+      "analysis": {
+        "schema_version": "paperradar.analysis.v3",
+        "input_version": "markdown-clean-v1",
+        "one_sentence_en": "Nearly a century of oil production in the Wilmington Oil Field, Los Angeles Basin, California, has modified the stress state, caused nearly 9 m of ground surface subsidence, and been associated with earthquakes that sheared wells.",
+        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "summary_en": [
+          "Nearly a century of oil production in the Wilmington Oil Field, Los Angeles Basin, California, has modified the stress state, caused nearly 9 m of ground surface subsidence, and been associated with earthquakes that sheared wells.",
+          "This offers a unique opportunity to elucidate the processes that govern these phenomena: Since the 1930s, approximately 2.5 billion barrels of oil have been produced, accompanied by water injection volumes roughly an order of magnitude larger.",
+          "Combined with extensive structural and geophysical constraints, this history allows us to interrogate the long-term geomechanical impacts of reservoir operations."
+        ],
+        "summary_zh": [
+          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+        ],
+        "contribution_en": "",
+        "contribution_zh": "",
+        "method_en": "",
+        "method_zh": "",
+        "data_or_region_en": "",
+        "data_or_region_zh": "",
+        "geophysics_relevance_en": "",
+        "geophysics_relevance_zh": "",
+        "keywords_en": [
+          "stress",
+          "state",
+          "field",
+          "subsidence",
+          "faulting"
+        ],
+        "keywords_zh": [
+          "stress",
+          "state",
+          "field",
+          "subsidence",
+          "faulting"
+        ],
+        "topic": "stress",
+        "audience_level": "specialist",
+        "llm_used": false,
+        "source": "abstract"
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2605.16665v1",
+        "title": "In-context learning enables continental-scale subsurface temperature prediction from sparse local observations",
+        "authors": [
+          "Daniel O'Malley",
+          "Christopher W. Johnson",
+          "Javier E. Santos",
+          "Pablo Lara",
+          "Sandro Malusà",
+          "Bharat Srikishan",
+          "John Kath",
+          "Arnab Mazumder",
+          "Mohamed Mehana",
+          "David Coblentz",
+          "Nathan DeBardeleben",
+          "Earl Lawrence",
+          "Hari Viswanathan"
+        ],
+        "abstract": "Continental-scale knowledge of subsurface temperature is limited by the cost and sparsity of borehole measurements, but such information is essential for geothermal resource assessment and for understanding heat transport in the shallow crust. The thermal field reflects the interaction between lithology, crustal structure, radiogenic heat production, and advective fluid flow, sometimes producing sharp anomalies that are smoothed by conventional interpolation or difficult to capture with physical models. Here we introduce In-Context Earth, a transformer-based model that uses sparse local borehole observations as geological context to predict continuous temperature-at-depth fields with calibrated uncertainty. In the contiguous United States, the model achieves a mean absolute error of 4.7 °C, outperforming the physics-informed Stanford Thermal Model, a model based on AlphaEarth embeddings, the multimodal Transparent Earth model, and universal kriging, while resolving sharper thermal gradients in geothermal provinces. Its uncertainty estimates are well calibrated, with a Kolmogorov-Smirnov statistic of 2.5%. Without finetuning, the model adapts to Alberta, Australia, and the United Kingdom (UK) using only 20 local observations at inference time, maintaining high accuracy in geologically distinct test regions with a mean absolute error of 2.2 °C in Alberta, 6.2 °C in Australia, and 5.4 °C in the UK. Interpretability analyses show that the model learns internal representations of subsurface properties it never observes during training, including seismic velocities, geochemistry, and crustal structure, and uses these representations in physically consistent ways. More broadly, this work shows that in-context learning can use sparse borehole observations for continental-scale subsurface characterization, without requiring dense measurements or region-specific retraining.",
+        "published": "2026-05-15T22:03:34Z",
+        "updated": "2026-05-15T22:03:34Z",
+        "categories": [
+          "cs.LG",
+          "physics.geo-ph"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2605.16665v1",
+        "abs_url": "http://arxiv.org/abs/2605.16665v1",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.16665v1.pdf",
+        "pdf_download_error": null,
+        "markdown_path": null,
+        "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
+      },
+      "analysis": {
+        "schema_version": "paperradar.analysis.v3",
+        "input_version": "markdown-clean-v1",
+        "one_sentence_en": "Continental-scale knowledge of subsurface temperature is limited by the cost and sparsity of borehole measurements, but such information is essential for geothermal resource assessment and for understanding heat transport in the shallow crust.",
+        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "summary_en": [
+          "Continental-scale knowledge of subsurface temperature is limited by the cost and sparsity of borehole measurements, but such information is essential for geothermal resource assessment and for understanding heat transport in the shallow crust.",
+          "The thermal field reflects the interaction between lithology, crustal structure, radiogenic heat production, and advective fluid flow, sometimes producing sharp anomalies that are smoothed by conventional interpolation or difficult to capture with physical models.",
+          "Here we introduce In-Context Earth, a transformer-based model that uses sparse local borehole observations as geological context to predict continuous temperature-at-depth fields with calibrated uncertainty."
+        ],
+        "summary_zh": [
+          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+        ],
+        "contribution_en": "",
+        "contribution_zh": "",
+        "method_en": "",
+        "method_zh": "",
+        "data_or_region_en": "",
+        "data_or_region_zh": "",
+        "geophysics_relevance_en": "",
+        "geophysics_relevance_zh": "",
+        "keywords_en": [
+          "subsurface",
+          "in-context",
+          "continental-scale",
+          "sparse",
+          "local"
+        ],
+        "keywords_zh": [
+          "subsurface",
+          "in-context",
+          "continental-scale",
+          "sparse",
+          "local"
+        ],
+        "topic": "subsurface",
+        "audience_level": "specialist",
+        "llm_used": false,
+        "source": "abstract"
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2605.15752v1",
+        "title": "Forecasting megaelectron-volt electron flux in the Earth's outer radiation belt using supervised machine learning algorithms and a timeseries foundation model",
+        "authors": [
+          "Rungployphan Kieokaew",
+          "Ryad Guezzi",
+          "François Ginisty",
+          "Hadrien Mariaccia"
+        ],
+        "abstract": "Accurate forecasting of megaelectron-volt (MeV) electrons in the outer Earth's radiation belt, which can pose significant risks to satellites, is essential for risk mitigation and spacecraft operations. We develop a machine-learning-based pipeline for forecasting 1-MeV electron flux variations, focusing first on a 6-hour forecast horizon. Using precipitating electrons measured by POES NOAA-15, near 1-MeV electron flux measured by GOES, solar wind measurements near L1, and geomagnetic activity indices as inputs in 2013-2023, we train algorithms including linear regression, 1-D convolutional and long short-term memory neural networks, and Transformer-Encoder to forecast 1-MeV electron flux in McIlwain's L-shells between 2.8 and 6.0 with 0.1 bin resolution. Particularly, we exploit the timeseries foundation model TimesFM for (1) a zero-shot prediction and (2) a hybrid application involving the ridge regression on the past dynamic covariates combined with the TimesFM inference on the residuals. Using data from January-June 2024 as an out-of-sample test, we find that the hybrid application of TimesFM, named TimesFM+Cov, yields the best results with an average R2 of 0.9 across L-shells, compared to an average R2 under 0.78 for all other models. The R2 of TimesFM+Cov remains above 0.9 for L-shells between 2.8 and 4.7 and drops to 0.77 at L=6.0, indicating improvements of 12% at the lowest L-shell and 48% at the highest L-shell compared to our second-best models. Our work offers an alternative perspective on how a pretrained foundation model could be adapted for space weather forecasting.",
+        "published": "2026-05-15T09:13:02Z",
+        "updated": "2026-05-15T09:13:02Z",
+        "categories": [
+          "astro-ph.IM",
+          "astro-ph.EP"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2605.15752v1",
+        "abs_url": "http://arxiv.org/abs/2605.15752v1",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.15752v1.pdf",
+        "pdf_download_error": null,
+        "markdown_path": null,
+        "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
+      },
+      "analysis": {
+        "schema_version": "paperradar.analysis.v3",
+        "input_version": "markdown-clean-v1",
+        "one_sentence_en": "Accurate forecasting of megaelectron-volt (MeV) electrons in the outer Earth's radiation belt, which can pose significant risks to satellites, is essential for risk mitigation and spacecraft operations.",
+        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "summary_en": [
+          "Accurate forecasting of megaelectron-volt (MeV) electrons in the outer Earth's radiation belt, which can pose significant risks to satellites, is essential for risk mitigation and spacecraft operations.",
+          "We develop a machine-learning-based pipeline for forecasting 1-MeV electron flux variations, focusing first on a 6-hour forecast horizon.",
+          "Using precipitating electrons measured by POES NOAA-15, near 1-MeV electron flux measured by GOES, solar wind measurements near L1, and geomagnetic activity indices as inputs in 2013-2023, we train algorithms including linear regression, 1-D convolutional and long short-term memory neural networks, and Transformer-Encoder to forecast 1-MeV electron flux in McIlwain's L-shells between 2.8 and 6.0 with 0.1 bin resolution."
+        ],
+        "summary_zh": [
+          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+        ],
+        "contribution_en": "",
+        "contribution_zh": "",
+        "method_en": "",
+        "method_zh": "",
+        "data_or_region_en": "",
+        "data_or_region_zh": "",
+        "geophysics_relevance_en": "",
+        "geophysics_relevance_zh": "",
+        "keywords_en": [
+          "timesfm",
+          "forecasting",
+          "electron",
+          "flux",
+          "foundation"
+        ],
+        "keywords_zh": [
+          "timesfm",
+          "forecasting",
+          "electron",
+          "flux",
+          "foundation"
+        ],
+        "topic": "timesfm",
+        "audience_level": "specialist",
+        "llm_used": false,
+        "source": "abstract"
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2605.15549v1",
+        "title": "CTF4Nuclear: Common Task Framework for Nuclear Fission and Fusion Models",
+        "authors": [
+          "Stefano Riva",
+          "Carolina Introini",
+          "Antonio Cammi",
+          "Dean Price",
+          "Alexey Yermakov",
+          "Yue Zhao",
+          "Philippe M. Wyder",
+          "Judah Goldfeder",
+          "Jan Williams",
+          "Amy Sara Rude",
+          "Matteo Tomasetto",
+          "Joe Germany",
+          "Joseph Bakarji",
+          "Georg Maierhofer",
+          "Miles Cranmer",
+          "J. Nathan Kutz"
+        ],
+        "abstract": "The demand for clean energy is ever increasing, with new nuclear technologies presenting a complementary solution to renewable energies. However, designing and operating these systems is exceptionally difficult, given the complexity of the physical phenomena that interact to form the system dynamics. While high-fidelity simulations help to understand the non-linear, multi-physics interactions within a reactor, they are computationally expensive and rarely suitable for real-time applications. Furthermore, model-based approaches are inherently sensitive to simplifying assumptions required to derive their governing equations and parameters, leading to inevitable discrepancies with real-world measurements. In contrast, Machine Learning (ML) methods have the potential to generate reliable surrogate models which may be able to quickly predict the system's behaviour. However, the number of data-driven methods that can potentially be used for this task is large and diverse. In a safety-critical setting such as nuclear engineering, a fair comparison of different ML methods, and a clear understanding of their advantages and limitations, is of paramount importance. To address this, we introduce a Common Task Framework (CTF) for ML in nuclear engineering, building upon previous efforts in dynamical systems and seismology. This CTF considers a curated set of datasets from different nuclear and nuclear-adjacent systems. The CTF evaluates the performance of a method on 12 established metrics, alongside a new paradigm focused on system monitoring from sparse measurements only. We illustrate the framework by benchmarking standard ML baselines against these datasets, revealing current method limitations. Our vision is to replace ad hoc comparisons with standardized evaluations on hidden test sets, raising the bar for rigour and reproducibility in scientific ML for the nuclear industry.",
+        "published": "2026-05-15T02:42:26Z",
+        "updated": "2026-05-15T02:42:26Z",
+        "categories": [
+          "cs.LG",
+          "cs.AI",
+          "cs.CE"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2605.15549v1",
+        "abs_url": "http://arxiv.org/abs/2605.15549v1",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.15549v1.pdf",
+        "pdf_download_error": null,
+        "markdown_path": null,
+        "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
+      },
+      "analysis": {
+        "schema_version": "paperradar.analysis.v3",
+        "input_version": "markdown-clean-v1",
+        "one_sentence_en": "The demand for clean energy is ever increasing, with new nuclear technologies presenting a complementary solution to renewable energies.",
+        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "summary_en": [
+          "The demand for clean energy is ever increasing, with new nuclear technologies presenting a complementary solution to renewable energies.",
+          "However, designing and operating these systems is exceptionally difficult, given the complexity of the physical phenomena that interact to form the system dynamics.",
+          "While high-fidelity simulations help to understand the non-linear, multi-physics interactions within a reactor, they are computationally expensive and rarely suitable for real-time applications."
+        ],
+        "summary_zh": [
+          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+        ],
+        "contribution_en": "",
+        "contribution_zh": "",
+        "method_en": "",
+        "method_zh": "",
+        "data_or_region_en": "",
+        "data_or_region_zh": "",
+        "geophysics_relevance_en": "",
+        "geophysics_relevance_zh": "",
+        "keywords_en": [
+          "nuclear",
+          "task",
+          "framework",
+          "systems",
+          "system"
+        ],
+        "keywords_zh": [
+          "nuclear",
+          "task",
+          "framework",
+          "systems",
+          "system"
+        ],
+        "topic": "nuclear",
+        "audience_level": "specialist",
+        "llm_used": false,
+        "source": "abstract"
+      }
+    }
+  ],
+  "trending_keywords": [
+    {
+      "keyword": "forecasting",
+      "normalized": "forecasting",
+      "score": 2,
+      "paper_count": 2,
+      "paper_ids": [
+        "2605.15752v1",
+        "2605.21437v1"
+      ]
+    },
+    {
+      "keyword": "fluid",
+      "normalized": "fluid",
+      "score": 2,
+      "paper_count": 2,
+      "paper_ids": [
+        "2605.20764v1",
+        "2605.21191v1"
+      ]
+    },
+    {
+      "keyword": "fracture",
+      "normalized": "fracture",
+      "score": 2,
+      "paper_count": 2,
+      "paper_ids": [
+        "2605.17081v1",
+        "2605.20764v1"
+      ]
+    },
+    {
+      "keyword": "hydraulic",
+      "normalized": "hydraulic",
+      "score": 2,
+      "paper_count": 2,
+      "paper_ids": [
+        "2605.19379v1",
+        "2605.20764v1"
+      ]
+    },
+    {
+      "keyword": "spatial",
+      "normalized": "spatial",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.21437v1"
+      ]
+    },
+    {
+      "keyword": "negative",
+      "normalized": "negative",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.21437v1"
+      ]
+    },
+    {
+      "keyword": "binomial",
+      "normalized": "binomial",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.21437v1"
+      ]
+    },
+    {
+      "keyword": "per-cell",
+      "normalized": "per-cell",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.21437v1"
+      ]
+    },
+    {
+      "keyword": "vorticity",
+      "normalized": "vorticity",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.21191v1"
+      ]
+    },
+    {
+      "keyword": "momentum",
+      "normalized": "momentum",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.21191v1"
+      ]
+    },
+    {
+      "keyword": "angular",
+      "normalized": "angular",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.21191v1"
+      ]
+    },
+    {
+      "keyword": "rotational",
+      "normalized": "rotational",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.21191v1"
+      ]
+    },
+    {
+      "keyword": "saturation",
+      "normalized": "saturation",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.21030v1"
+      ]
+    },
+    {
+      "keyword": "affine-constrained",
+      "normalized": "affine-constrained",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.21030v1"
+      ]
+    },
+    {
+      "keyword": "forest",
+      "normalized": "forest",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.20997v1"
+      ]
+    },
+    {
+      "keyword": "height",
+      "normalized": "height",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.20997v1"
+      ]
+    },
+    {
+      "keyword": "tandem-x",
+      "normalized": "tandem-x",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.20997v1"
+      ]
+    },
+    {
+      "keyword": "production",
+      "normalized": "production",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.20764v1"
+      ]
+    },
+    {
+      "keyword": "shadow",
+      "normalized": "shadow",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.20764v1"
+      ]
+    },
+    {
+      "keyword": "blast",
+      "normalized": "blast",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.20455v1"
+      ]
+    },
+    {
+      "keyword": "cylindrical",
+      "normalized": "cylindrical",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.20455v1"
+      ]
+    },
+    {
+      "keyword": "theory",
+      "normalized": "theory",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.20455v1"
+      ]
+    },
+    {
+      "keyword": "against",
+      "normalized": "against",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.20455v1"
+      ]
+    },
+    {
+      "keyword": "processing",
+      "normalized": "processing",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.20132v1"
+      ]
+    },
+    {
+      "keyword": "filark",
+      "normalized": "filark",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.20132v1"
+      ]
+    },
+    {
+      "keyword": "annotation",
+      "normalized": "annotation",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.20132v1"
+      ]
+    },
+    {
+      "keyword": "continuous",
+      "normalized": "continuous",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.20132v1"
+      ]
+    },
+    {
+      "keyword": "rejection",
+      "normalized": "rejection",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.20030v1"
+      ]
+    },
+    {
+      "keyword": "transport",
+      "normalized": "transport",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.20030v1"
+      ]
+    },
+    {
+      "keyword": "optimal",
+      "normalized": "optimal",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.20030v1"
+      ]
+    }
+  ],
+  "source": "arxiv"
+}

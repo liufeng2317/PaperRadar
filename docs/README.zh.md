@@ -37,8 +37,9 @@ PAPERRADAR_PYTHON=/path/to/python bash scripts/run_daily.sh
 
 主要输出：
 
-- `data/daily/YYYY-MM-DD.json`：每日结果 JSON
+- `data/daily/<source>/YYYY-MM-DD.json`：按来源拆分的每日结果 JSON
 - `docs/index.html`：GitHub Pages 页面
+- `data/daily/public/YYYY-MM-DD.json`：聚合后的公开每日结果 JSON
 - `docs/data/latest.json`：页面使用的最新公开数据
 - `data/pdfs/<source>/<category>/<YYYYMMDD>/`：按来源和预印本发布日期分组的 PDF 缓存
 - `data/markdown/<source>/<category>/<YYYYMMDD>/`：按来源和预印本发布日期分组的 Markdown
@@ -167,9 +168,9 @@ PAPERRADAR_PYTHON=/path/to/python nohup bash scripts/server_daily_loop.sh --run-
 ```bash
 python -m paperradar.cli fetch
 python -m paperradar.cli run --date 2026-05-21
-python -m paperradar.cli render --input data/daily/2026-05-21.json
+python -m paperradar.cli render --input data/daily/public/2026-05-21.json
 python -m paperradar.cli aggregate-local --lookback-days 60
-python -m paperradar.cli reanalyze --input data/daily/2026-05-21.json
+python -m paperradar.cli reanalyze --input data/daily/public/2026-05-21.json
 python -m paperradar.cli registry --query seismic
 python -m paperradar.cli email --input docs/data/latest.json --latest-published-day --dry-run
 python -m paperradar.cli migrate-storage

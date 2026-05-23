@@ -37,8 +37,9 @@ PAPERRADAR_PYTHON=/path/to/python bash scripts/run_daily.sh
 
 Main outputs:
 
-- `data/daily/YYYY-MM-DD.json`: daily digest JSON
+- `data/daily/<source>/YYYY-MM-DD.json`: source-specific daily digest JSON
 - `docs/index.html`: GitHub Pages HTML page
+- `data/daily/public/YYYY-MM-DD.json`: aggregated public daily digest JSON
 - `docs/data/latest.json`: latest public page data
 - `data/pdfs/<source>/<category>/<YYYYMMDD>/`: cached PDFs grouped by source and preprint publication date
 - `data/markdown/<source>/<category>/<YYYYMMDD>/`: parsed Markdown grouped by source and preprint publication date
@@ -167,9 +168,9 @@ PAPERRADAR_PYTHON=/path/to/python nohup bash scripts/server_daily_loop.sh --run-
 ```bash
 python -m paperradar.cli fetch
 python -m paperradar.cli run --date 2026-05-21
-python -m paperradar.cli render --input data/daily/2026-05-21.json
+python -m paperradar.cli render --input data/daily/public/2026-05-21.json
 python -m paperradar.cli aggregate-local --lookback-days 60
-python -m paperradar.cli reanalyze --input data/daily/2026-05-21.json
+python -m paperradar.cli reanalyze --input data/daily/public/2026-05-21.json
 python -m paperradar.cli registry --query seismic
 python -m paperradar.cli email --input docs/data/latest.json --latest-published-day --dry-run
 python -m paperradar.cli migrate-storage

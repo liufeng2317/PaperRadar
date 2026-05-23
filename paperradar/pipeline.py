@@ -22,7 +22,7 @@ from paperradar.registry import (
     update_pdf_status,
 )
 from paperradar.render import write_outputs
-from paperradar.storage import migrate_legacy_file, paper_markdown_path, paper_mineru_dir, paper_pdf_path
+from paperradar.storage import migrate_legacy_file, paper_markdown_path, paper_mineru_dir, paper_pdf_path, safe_path_part
 from paperradar.trend import rank_keywords
 
 
@@ -94,11 +94,7 @@ def run_pipeline(
         )
     digest = build_digest(papers, config, today, registry=registry)
     save_registry(registry, config.arxiv.registry_path)
-    data_path = Path(data_dir)
-    data_path.mkdir(parents=True, exist_ok=True)
-    (data_path / f"{today.isoformat()}.json").write_text(
-        json.dumps(digest, ensure_ascii=False, indent=2), encoding="utf-8"
-    )
+    write_source_digests(digest, data_dir=data_dir)
     write_outputs(digest, docs_dir=docs_dir)
     return digest
 
@@ -116,7 +112,7 @@ def aggregate_local_digests(
     cutoff = today - dt.timedelta(days=window_days)
     papers_by_id: dict[str, dict[str, Any]] = {}
 
-    for path in sorted(Path(data_dir).glob("*.json")):
+    for path in _iter_daily_json_files(data_dir):
         try:
             digest = json.loads(path.read_text(encoding="utf-8"))
         except (json.JSONDecodeError, OSError):
@@ -154,13 +150,47 @@ def aggregate_local_digests(
         "trending_keywords": rank_keywords(papers, top_n=config.trending_top_n),
         "source": "local_daily_aggregate",
     }
-    data_path = Path(data_dir)
-    data_path.mkdir(parents=True, exist_ok=True)
-    (data_path / f"{today.isoformat()}.json").write_text(
-        json.dumps(digest, ensure_ascii=False, indent=2), encoding="utf-8"
-    )
+    write_source_digests(digest, data_dir=data_dir)
     write_outputs(digest, docs_dir=docs_dir)
     return digest
+
+
+def write_source_digests(digest: dict[str, Any], data_dir: str | Path = "data/daily") -> None:
+    for source, papers in _group_papers_by_source(digest.get("papers", [])).items():
+        source_digest = dict(digest)
+        source_digest["papers"] = papers
+        source_digest["trending_keywords"] = rank_keywords(papers, top_n=digest.get("config", {}).get("trending_top_n", 30))
+        source_digest["source"] = source
+        _write_digest_json(source_digest, Path(data_dir) / safe_path_part(source), digest["date"])
+
+
+def write_public_digest(digest: dict[str, Any], data_dir: str | Path = "data/daily") -> None:
+    _write_digest_json(digest, Path(data_dir) / "public", digest["date"])
+
+
+def _write_digest_json(digest: dict[str, Any], output_dir: Path, date: str) -> None:
+    output_dir.mkdir(parents=True, exist_ok=True)
+    (output_dir / f"{date}.json").write_text(
+        json.dumps(digest, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
+
+
+def _group_papers_by_source(items: list[dict[str, Any]]) -> dict[str, list[dict[str, Any]]]:
+    grouped: dict[str, list[dict[str, Any]]] = {}
+    for item in items:
+        source = item.get("paper", {}).get("source") or "arxiv"
+        grouped.setdefault(source, []).append(item)
+    return grouped
+
+
+def _iter_daily_json_files(data_dir: str | Path):
+    root = Path(data_dir)
+    if not root.exists():
+        return []
+    return sorted(
+        path for path in root.glob("**/*.json")
+        if path.parent.name != "public" and path.name != "latest.json"
+    )
 
 
 def _refresh_local_paths(item: dict[str, Any], config: SiteConfig) -> dict[str, Any]:
@@ -405,7 +435,7 @@ def _latest_daily_digest(data_dir: str | Path) -> dict[str, Any] | None:
     daily_dir = Path(data_dir)
     if not daily_dir.exists():
         return None
-    daily_files = sorted(daily_dir.glob("*.json"), reverse=True)
+    daily_files = sorted(_iter_daily_json_files(daily_dir), reverse=True)
     for path in daily_files:
         try:
             digest = json.loads(path.read_text(encoding="utf-8"))

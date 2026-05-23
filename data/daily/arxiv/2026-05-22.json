@@ -1,11 +1,11 @@
 {
-  "date": "2026-05-23",
-  "generated_at": "2026-05-23T09:27:20.271532+00:00",
+  "date": "2026-05-22",
+  "generated_at": "2026-05-22T04:38:16.058993+00:00",
   "config": {
     "site_title": "PaperRadar",
     "site_description": {
-      "en": "Recent preprints from configured arXiv and EarthArXiv topics, summarized with bilingual notes and keyword trends.",
-      "zh": "追踪自定义 arXiv 与 EarthArXiv 主题预印本，包含双语摘要与关键词趋势。"
+      "en": "Daily arXiv papers from configured topics, summarized with bilingual notes and keyword trends.",
+      "zh": "每日追踪自定义 arXiv 主题论文，包含双语摘要与关键词趋势。"
     },
     "arxiv": {
       "query": "",
@@ -48,33 +48,14 @@
       "mineru_ocr": false,
       "mineru_llm_aid": false
     },
-    "eartharxiv": {
-      "enabled": true,
-      "base_url": "https://eartharxiv.org/api/oai/",
-      "max_results": 25,
-      "lookback_days": 7,
-      "subjects": [
-        "Geophysics and Seismology",
-        "Hydrology",
-        "Geomorphology",
-        "Glaciology",
-        "Climate",
-        "Oceanography"
-      ],
-      "keywords": [],
-      "request_delay_seconds": 3.0,
-      "max_retries": 3,
-      "disable_proxy": true
-    },
     "languages": [
       "en",
       "zh"
     ],
     "keywords_per_paper": 5,
-    "trending_top_n": 30,
-    "public_lookback_days": 60
+    "trending_top_n": 30
   },
-  "query": "((cat:physics.geo-ph) OR (all:geophysics) OR (all:seismology) OR (all:geodesy) OR (all:geodynamics) OR (all:geomagnetism)) AND (submittedDate:[202605160000 TO 202605232359])",
+  "query": "((cat:physics.geo-ph) OR (all:geophysics) OR (all:seismology) OR (all:geodesy) OR (all:geodynamics) OR (all:geomagnetism)) AND (submittedDate:[202605150000 TO 202605222359])",
   "papers": [
     {
       "paper": {
@@ -97,9 +78,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.22576v1",
         "abs_url": "http://arxiv.org/abs/2605.22576v1",
-        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260521/2605.22576v1.pdf",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.22576v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260521/2605.22576v1.md",
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.22576v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -125,11 +106,6 @@
         "data_or_region_zh": "研究对象为美国在轨卫星星座约10,650颗，覆盖多种轨道类型；SEP危害基于1996–2025共27.4年的积分质子观测，结合SEPEM v3.2（1996–2017年、5分钟分辨率）与GOES-16太阳与银河质子测量（自2020年后期起），并用GOES-15 SEM对2018–2020年太阳活动极小期的阈值内无超越情况进行支撑。",
         "geophysics_relevance_en": "This is directly relevant to space-weather risk quantification: it uses extreme-value SEP statistics and dynamic geomagnetic cutoff rigidity erosion to forecast orbit-dependent particle exposure and translate it into fleet vulnerability and economic consequences; however, it is more application-driven than focused on new geophysical physics.",
         "geophysics_relevance_zh": "这与当前的空间天气风险量化主题高度相关：论文用极端SEP统计与动态地磁截止刚度侵蚀刻画轨道依赖的粒子暴露，并进一步转化为星座脆弱性与经济后果；但其更偏工程应用与影响评估，而非提出新的地球物理机理。",
-        "llm_used": true,
-        "source": "markdown",
-        "model": "gpt-5.4-nano",
-        "topic": "SEP risk quantification",
-        "audience_level": "specialist",
         "keywords_en": [
           "solar energetic particles",
           "geomagnetic cutoff rigidity",
@@ -144,8 +120,11 @@
           "卫星脆弱性",
           "经济损失"
         ],
-        "updated_at": "2026-05-22T04:36:36.795270+00:00",
-        "cache_hit": true
+        "topic": "SEP risk quantification",
+        "audience_level": "specialist",
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano"
       }
     },
     {
@@ -166,9 +145,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.22042v1",
         "abs_url": "http://arxiv.org/abs/2605.22042v1",
-        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260521/2605.22042v1.pdf",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.22042v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260521/2605.22042v1.md",
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.22042v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -194,11 +173,6 @@
         "data_or_region_zh": "未说明（主要是方法建立与参数化研究；摘要节选中未明确指定具体观测数据集或某个南极冰架的具体几何）。",
         "geophysics_relevance_en": "Relevant to geophysical ice-shelf dynamics for long-wave forcing: the model targets the wave–ice flexure mechanism that can amplify stresses and promote calving, but it is not directly a seismic/instrumental dataset study.",
         "geophysics_relevance_zh": "与冰架动力学的长周期海浪致因机制相关：模型针对波浪—冰架弯曲如何放大应力并促进崩解；但它并非直接基于地震学/仪器观测数据的研究，因此属于机制层面的间接相关。",
-        "llm_used": true,
-        "source": "markdown",
-        "model": "gpt-5.4-nano",
-        "topic": "Ice-shelf wave flexure",
-        "audience_level": "specialist",
         "keywords_en": [
           "ice shelves",
           "hydroelasticity",
@@ -212,8 +186,11 @@
           "有限元",
           "Dirichlet-to-Neumann"
         ],
-        "updated_at": "2026-05-22T04:37:46.808844+00:00",
-        "cache_hit": true
+        "topic": "Ice-shelf wave flexure",
+        "audience_level": "specialist",
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano"
       }
     },
     {
@@ -234,9 +211,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.21790v1",
         "abs_url": "http://arxiv.org/abs/2605.21790v1",
-        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260520/2605.21790v1.pdf",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.21790v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260520/2605.21790v1.md",
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.21790v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -262,11 +239,6 @@
         "data_or_region_zh": "未说明（实验室批处理：1个大气压下约2 g粉碎橄榄石，加入去离子水）。",
         "geophysics_relevance_en": "This is directly relevant to stimulated geologic hydrogen production from ultramafic rocks, but it is a tangentially developed step toward field-scale geophysics because the study is small, at 1 atm, and uses sensor-based concentration rather than calibrated hydrogen yields.",
         "geophysics_relevance_zh": "与超基性岩石的“受激地质氢”产生直接相关，但由于实验规模较小、在1个大气压下且以未定标的浓度传感响应为主，该结果对现场尺度地球物理意义仍属于较弱关联、需进一步升压定量验证。",
-        "llm_used": true,
-        "source": "markdown",
-        "model": "gpt-5.4-nano",
-        "topic": "Microwave-enhanced serpentinization",
-        "audience_level": "specialist",
         "keywords_en": [
           "geologic hydrogen",
           "serpentinization",
@@ -281,8 +253,11 @@
           "橄榄石",
           "反应动力学"
         ],
-        "updated_at": "2026-05-22T04:38:15.945032+00:00",
-        "cache_hit": true
+        "topic": "Microwave-enhanced serpentinization",
+        "audience_level": "specialist",
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano"
       }
     },
     {
@@ -302,9 +277,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.21437v1",
         "abs_url": "http://arxiv.org/abs/2605.21437v1",
-        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260520/2605.21437v1.pdf",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.21437v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260520/2605.21437v1.md",
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.21437v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -349,7 +324,7 @@
           "地震目录",
           "尾部风险"
         ],
-        "updated_at": "2026-05-22T04:38:15.950221+00:00",
+        "updated_at": "2026-05-22T00:35:35.625155+00:00",
         "cache_hit": true
       }
     },
@@ -370,9 +345,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.21191v1",
         "abs_url": "http://arxiv.org/abs/2605.21191v1",
-        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260520/2605.21191v1.pdf",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.21191v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260520/2605.21191v1.md",
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.21191v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -416,7 +391,7 @@
           "边界层",
           "地球流体动力学"
         ],
-        "updated_at": "2026-05-22T04:38:15.955962+00:00",
+        "updated_at": "2026-05-22T00:35:35.633086+00:00",
         "cache_hit": true
       }
     },
@@ -437,9 +412,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.21030v1",
         "abs_url": "http://arxiv.org/abs/2605.21030v1",
-        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260520/2605.21030v1.pdf",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.21030v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260520/2605.21030v1.md",
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.21030v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -484,7 +459,7 @@
           "多小波",
           "入口边界条件"
         ],
-        "updated_at": "2026-05-22T04:38:15.959816+00:00",
+        "updated_at": "2026-05-22T00:35:35.640627+00:00",
         "cache_hit": true
       }
     },
@@ -509,9 +484,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.20997v1",
         "abs_url": "http://arxiv.org/abs/2605.20997v1",
-        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260520/2605.20997v1.pdf",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.20997v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260520/2605.20997v1.md",
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.20997v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -556,7 +531,7 @@
           "TanDEM-X",
           "Landsat"
         ],
-        "updated_at": "2026-05-22T04:38:15.962313+00:00",
+        "updated_at": "2026-05-21T23:30:43.365485+00:00",
         "cache_hit": true
       }
     },
@@ -578,9 +553,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.20764v1",
         "abs_url": "http://arxiv.org/abs/2605.20764v1",
-        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260520/2605.20764v1.pdf",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.20764v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260520/2605.20764v1.md",
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.20764v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -625,7 +600,7 @@
           "Darcy产能",
           "云端仿真"
         ],
-        "updated_at": "2026-05-22T04:38:15.967699+00:00",
+        "updated_at": "2026-05-21T23:30:43.373898+00:00",
         "cache_hit": true
       }
     },
@@ -648,9 +623,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.20455v1",
         "abs_url": "http://arxiv.org/abs/2605.20455v1",
-        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260519/2605.20455v1.pdf",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.20455v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260519/2605.20455v1.md",
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.20455v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -695,7 +670,7 @@
           "OSIRIS-REx再入",
           "大气传播"
         ],
-        "updated_at": "2026-05-22T04:38:15.974638+00:00",
+        "updated_at": "2026-05-21T23:30:43.383878+00:00",
         "cache_hit": true
       }
     },
@@ -719,9 +694,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.20132v1",
         "abs_url": "http://arxiv.org/abs/2605.20132v1",
-        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260519/2605.20132v1.pdf",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.20132v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260519/2605.20132v1.md",
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.20132v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -766,7 +741,7 @@
           "OpenGL 环形缓冲",
           "有状态分块处理"
         ],
-        "updated_at": "2026-05-22T04:38:15.979211+00:00",
+        "updated_at": "2026-05-21T23:30:43.393024+00:00",
         "cache_hit": true
       }
     },
@@ -790,9 +765,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.20030v1",
         "abs_url": "http://arxiv.org/abs/2605.20030v1",
-        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260519/2605.20030v1.pdf",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.20030v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260519/2605.20030v1.md",
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.20030v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -837,7 +812,7 @@
           "正-无标签学习",
           "卫星海洋波浪"
         ],
-        "updated_at": "2026-05-22T04:38:15.986235+00:00",
+        "updated_at": "2026-05-21T23:30:43.402419+00:00",
         "cache_hit": true
       }
     },
@@ -859,9 +834,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.19951v1",
         "abs_url": "http://arxiv.org/abs/2605.19951v1",
-        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260519/2605.19951v1.pdf",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.19951v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260519/2605.19951v1.md",
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.19951v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -906,7 +881,7 @@
           "有理近似",
           "TEM电导率"
         ],
-        "updated_at": "2026-05-22T04:38:15.990243+00:00",
+        "updated_at": "2026-05-21T23:30:43.410749+00:00",
         "cache_hit": true
       }
     },
@@ -930,9 +905,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.19903v1",
         "abs_url": "http://arxiv.org/abs/2605.19903v1",
-        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260519/2605.19903v1.pdf",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.19903v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260519/2605.19903v1.md",
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.19903v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -977,7 +952,7 @@
           "CO新星",
           "星际尘埃"
         ],
-        "updated_at": "2026-05-22T04:38:15.998744+00:00",
+        "updated_at": "2026-05-21T23:30:43.419466+00:00",
         "cache_hit": true
       }
     },
@@ -1003,9 +978,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.19608v1",
         "abs_url": "http://arxiv.org/abs/2605.19608v1",
-        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260519/2605.19608v1.pdf",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.19608v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260519/2605.19608v1.md",
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.19608v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -1050,7 +1025,7 @@
           "赤道电喷流EEJ",
           "CSES电场"
         ],
-        "updated_at": "2026-05-22T04:38:16.000730+00:00",
+        "updated_at": "2026-05-21T23:30:43.424738+00:00",
         "cache_hit": true
       }
     },
@@ -1075,9 +1050,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.19507v1",
         "abs_url": "http://arxiv.org/abs/2605.19507v1",
-        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260519/2605.19507v1.pdf",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.19507v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260519/2605.19507v1.md",
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.19507v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -1122,7 +1097,7 @@
           "费米LAT",
           "暴发星系核"
         ],
-        "updated_at": "2026-05-22T04:38:16.004124+00:00",
+        "updated_at": "2026-05-21T23:30:43.431747+00:00",
         "cache_hit": true
       }
     },
@@ -1146,9 +1121,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.19472v1",
         "abs_url": "http://arxiv.org/abs/2605.19472v1",
-        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260519/2605.19472v1.pdf",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.19472v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260519/2605.19472v1.md",
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.19472v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -1192,7 +1167,7 @@
           "慢磁声学波",
           "声学共振腔"
         ],
-        "updated_at": "2026-05-22T04:38:16.009551+00:00",
+        "updated_at": "2026-05-21T23:30:43.437188+00:00",
         "cache_hit": true
       }
     },
@@ -1216,9 +1191,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.19379v1",
         "abs_url": "http://arxiv.org/abs/2605.19379v1",
-        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260519/2605.19379v1.pdf",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.19379v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260519/2605.19379v1.md",
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.19379v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -1263,7 +1238,7 @@
           "土壤含水率保持曲线",
           "UNSODA"
         ],
-        "updated_at": "2026-05-22T04:38:16.014437+00:00",
+        "updated_at": "2026-05-21T23:30:43.444246+00:00",
         "cache_hit": true
       }
     },
@@ -1283,9 +1258,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.19118v1",
         "abs_url": "http://arxiv.org/abs/2605.19118v1",
-        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260518/2605.19118v1.pdf",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.19118v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260518/2605.19118v1.md",
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.19118v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -1330,7 +1305,7 @@
           "地平面拾取",
           "能登地震"
         ],
-        "updated_at": "2026-05-22T04:38:16.018636+00:00",
+        "updated_at": "2026-05-21T23:30:43.455245+00:00",
         "cache_hit": true
       }
     },
@@ -1349,9 +1324,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.18375v1",
         "abs_url": "http://arxiv.org/abs/2605.18375v1",
-        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260518/2605.18375v1.pdf",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.18375v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260518/2605.18375v1.md",
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.18375v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -1396,7 +1371,7 @@
           "傅里叶神经算子",
           "Utah FORGE"
         ],
-        "updated_at": "2026-05-22T04:38:16.022000+00:00",
+        "updated_at": "2026-05-21T23:30:43.460796+00:00",
         "cache_hit": true
       }
     },
@@ -1422,9 +1397,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.17792v1",
         "abs_url": "http://arxiv.org/abs/2605.17792v1",
-        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260518/2605.17792v1.pdf",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.17792v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260518/2605.17792v1.md",
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.17792v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -1469,7 +1444,7 @@
           "仿真在环",
           "CREST/EF5"
         ],
-        "updated_at": "2026-05-22T04:38:16.024850+00:00",
+        "updated_at": "2026-05-21T23:30:43.465647+00:00",
         "cache_hit": true
       }
     },
@@ -1488,9 +1463,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.17081v1",
         "abs_url": "http://arxiv.org/abs/2605.17081v1",
-        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260516/2605.17081v1.pdf",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.17081v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260516/2605.17081v1.md",
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.17081v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -1535,7 +1510,7 @@
           "Mohr-Coulomb",
           "Carrara大理石"
         ],
-        "updated_at": "2026-05-22T04:38:16.028202+00:00",
+        "updated_at": "2026-05-21T23:30:43.472370+00:00",
         "cache_hit": true
       }
     },
@@ -1559,9 +1534,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.16966v1",
         "abs_url": "http://arxiv.org/abs/2605.16966v1",
-        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260516/2605.16966v1.pdf",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.16966v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260516/2605.16966v1.md",
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.16966v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -1606,7 +1581,7 @@
           "物理约束AI",
           "地球物理反演"
         ],
-        "updated_at": "2026-05-22T04:38:16.033933+00:00",
+        "updated_at": "2026-05-21T23:30:43.480629+00:00",
         "cache_hit": true
       }
     },
@@ -1629,9 +1604,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.16783v1",
         "abs_url": "http://arxiv.org/abs/2605.16783v1",
-        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260516/2605.16783v1.pdf",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.16783v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260516/2605.16783v1.md",
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.16783v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -1676,7 +1651,7 @@
           "合成到野外域差距",
           "地质先验精炼"
         ],
-        "updated_at": "2026-05-22T04:38:16.036680+00:00",
+        "updated_at": "2026-05-21T23:30:43.485576+00:00",
         "cache_hit": true
       }
     },
@@ -1697,9 +1672,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.16717v1",
         "abs_url": "http://arxiv.org/abs/2605.16717v1",
-        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260516/2605.16717v1.pdf",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.16717v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260516/2605.16717v1.md",
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.16717v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -1744,7 +1719,7 @@
           "径向分量",
           "剪切波速度反演"
         ],
-        "updated_at": "2026-05-22T04:38:16.042168+00:00",
+        "updated_at": "2026-05-21T23:30:43.493246+00:00",
         "cache_hit": true
       }
     },
@@ -1768,9 +1743,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.16711v1",
         "abs_url": "http://arxiv.org/abs/2605.16711v1",
-        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260515/2605.16711v1.pdf",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.16711v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260515/2605.16711v1.md",
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.16711v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -1847,9 +1822,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.16665v1",
         "abs_url": "http://arxiv.org/abs/2605.16665v1",
-        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260515/2605.16665v1.pdf",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.16665v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260515/2605.16665v1.md",
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.16665v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -1915,9 +1890,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.15752v1",
         "abs_url": "http://arxiv.org/abs/2605.15752v1",
-        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260515/2605.15752v1.pdf",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.15752v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260515/2605.15752v1.md",
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.15752v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -1998,9 +1973,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.15549v1",
         "abs_url": "http://arxiv.org/abs/2605.15549v1",
-        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260515/2605.15549v1.pdf",
+        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.15549v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260515/2605.15549v1.md",
+        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.15549v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -2324,5 +2299,5 @@
       ]
     }
   ],
-  "source": "local_daily_aggregate"
+  "source": "arxiv"
 }

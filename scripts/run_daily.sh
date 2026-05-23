@@ -32,7 +32,7 @@ Options:
 Examples:
   scripts/run_daily.sh
   scripts/run_daily.sh run --limit 3
-  scripts/run_daily.sh reanalyze --input data/daily/2026-05-21.json
+  scripts/run_daily.sh reanalyze --input data/daily/public/2026-05-21.json
   scripts/run_daily.sh registry --query seismic
   scripts/run_daily.sh migrate-storage
 EOF
