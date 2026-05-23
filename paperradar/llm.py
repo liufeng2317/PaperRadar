@@ -93,7 +93,7 @@ def _enrich_with_llm(
     ).rstrip("/")
     model = _first_env("LLM_MODEL", "OPENAI_MODEL", "PJLAB_API_CHAT_MODEL", default="gpt-4o-mini")
     prompt = f"""
-Return strict JSON for this arXiv paper for a concise research digest. Base the answer primarily on the parsed PDF Markdown excerpt when it is available; otherwise use the abstract. Avoid copying long text verbatim.
+Return strict JSON for this preprint for a concise research digest. Base the answer primarily on the parsed PDF Markdown excerpt when it is available; otherwise use the abstract. Avoid copying long text verbatim.
 
 Quality rules:
 - Write for a scientific reader who wants to quickly decide whether to open the paper.
@@ -141,7 +141,7 @@ Markdown excerpt from parsed PDF, if available:
         "messages": [
             {
                 "role": "system",
-                "content": "You summarize arXiv research accurately for a concise bilingual scientific digest.",
+                "content": "You summarize preprint research accurately for a concise bilingual scientific digest.",
             },
             {"role": "user", "content": prompt},
         ],

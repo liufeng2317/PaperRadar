@@ -2,13 +2,14 @@
 
 [中文文档](docs/README.zh.md)
 
-PaperRadar is a configurable arXiv paper radar. It tracks topics you care about, downloads metadata and PDFs, optionally parses PDFs with MinerU, summarizes papers with an OpenAI-compatible LLM, ranks keyword trends, and publishes a bilingual static digest through GitHub Pages.
+PaperRadar is a configurable preprint radar for arXiv and EarthArXiv. It tracks topics you care about, downloads metadata and PDFs, optionally parses PDFs with MinerU, summarizes papers with an OpenAI-compatible LLM, ranks keyword trends, and publishes a bilingual static digest through GitHub Pages.
 
 The default configuration tracks `physics.geo-ph` with geophysics-related terms. The project is domain-agnostic: edit `config/default.json` to monitor other arXiv categories, keywords, authors, or a custom query.
 
 ## Features
 
 - Fetch recent arXiv papers from configured categories, keywords, authors, or raw queries.
+- Fetch EarthArXiv preprints through the official OAI-PMH metadata feed.
 - Cache PDFs locally without re-downloading existing files.
 - Parse PDFs into Markdown with the bundled MinerU integration.
 - Generate English and Chinese paper summaries with an OpenAI-compatible LLM.
@@ -39,9 +40,9 @@ Main outputs:
 - `data/daily/YYYY-MM-DD.json`: daily digest JSON
 - `docs/index.html`: GitHub Pages HTML page
 - `docs/data/latest.json`: latest public page data
-- `data/pdfs/<category>/<YYYYMMDD>/`: cached PDFs grouped by arXiv publication date
-- `data/markdown/<category>/<YYYYMMDD>/`: parsed Markdown grouped by arXiv publication date
-- `data/mineru/<category>/<YYYYMMDD>/`: MinerU outputs grouped by arXiv publication date
+- `data/pdfs/<category>/<YYYYMMDD>/`: cached PDFs grouped by preprint publication date
+- `data/markdown/<category>/<YYYYMMDD>/`: parsed Markdown grouped by preprint publication date
+- `data/mineru/<category>/<YYYYMMDD>/`: MinerU outputs grouped by preprint publication date
 
 ## Configuration
 
@@ -55,7 +56,7 @@ Edit `config/default.json`:
     "keywords": [],
     "authors": [],
     "max_results": 100,
-    "lookback_days": 60,
+    "lookback_days": 7,
     "download_pdfs": true,
     "parse_pdfs": true,
     "storage_category_policy": "configured"
@@ -65,7 +66,7 @@ Edit `config/default.json`:
 
 Leave `query` empty to let PaperRadar build a query from the structured fields above. Set `query` only when you want to fully override the generated arXiv query.
 
-`lookback_days` controls the rolling public digest window. The default `60` keeps roughly two months of matching papers on the generated site.
+`lookback_days` controls the incremental fetch window. `public_lookback_days` controls the generated page window; the default public window is `60`, roughly two months of locally known matching papers.
 
 `storage_category_policy` controls local cache folders:
 
@@ -117,8 +118,8 @@ GitHub-hosted Actions can publish the generated page, but full PDF parsing with 
 PaperRadar can send a compact Chinese email after an automated update. The email is designed as a notification, not a full copy of the website:
 
 - It is sent only when new papers are found.
-- It includes only the newly discovered papers from the latest arXiv publication date.
-- It includes each paper's title, arXiv ID, authors, one-sentence Chinese summary, keywords, and arXiv link.
+- It includes only the newly discovered papers from the latest preprint publication date.
+- It includes each paper's title, preprint ID, authors, one-sentence Chinese summary, keywords, and repository link.
 - If an 8-hour check finds no new papers, no email is sent.
 - If email delivery fails, the failure is logged and the scheduler continues.
 

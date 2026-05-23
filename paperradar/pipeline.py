@@ -7,6 +7,7 @@ from typing import Any
 
 from paperradar.arxiv_client import Paper, download_pdf, fetch_recent_papers
 from paperradar.config import SiteConfig, load_config, to_jsonable
+from paperradar.eartharxiv_client import fetch_eartharxiv_papers
 from paperradar.llm import enrich_paper
 from paperradar.pdf_parse import parse_pdf_to_markdown, read_markdown_excerpt
 from paperradar.query import build_arxiv_query
@@ -50,6 +51,19 @@ def run_pipeline(
             sort_by=config.arxiv.sort_by,
             sort_order=config.arxiv.sort_order,
         )
+        if config.eartharxiv.enabled:
+            eartharxiv_papers = fetch_eartharxiv_papers(
+                base_url=config.eartharxiv.base_url,
+                max_results=config.eartharxiv.max_results,
+                lookback_days=config.eartharxiv.lookback_days,
+                today=today,
+                subjects=config.eartharxiv.subjects,
+                keywords=config.eartharxiv.keywords,
+                polite_delay_seconds=config.eartharxiv.request_delay_seconds,
+                retries=config.eartharxiv.max_retries,
+                disable_proxy=config.eartharxiv.disable_proxy,
+            )
+            papers = _merge_papers(papers + eartharxiv_papers)
     except RuntimeError as exc:
         registry["last_fetch_error"] = str(exc)
         registry["last_fetch_failed_at"] = dt.datetime.now(dt.timezone.utc).isoformat()
@@ -70,7 +84,7 @@ def run_pipeline(
             raise
         registry["last_fetch_fallback_at"] = dt.datetime.now(dt.timezone.utc).isoformat()
     previous_digest = _latest_daily_digest(data_dir)
-    if previous_digest and _same_paper_ids(previous_digest.get("papers", []), papers):
+    if previous_digest and _contains_all_paper_ids(previous_digest.get("papers", []), papers):
         registry["last_no_change_at"] = dt.datetime.now(dt.timezone.utc).isoformat()
         registry["last_no_change_date"] = today.isoformat()
         save_registry(registry, config.arxiv.registry_path)
@@ -98,7 +112,7 @@ def aggregate_local_digests(
 ) -> dict[str, Any]:
     config = load_config(config_path)
     today = date or dt.date.today()
-    window_days = config.arxiv.lookback_days if lookback_days is None else lookback_days
+    window_days = config.public_lookback_days if lookback_days is None else lookback_days
     cutoff = today - dt.timedelta(days=window_days)
     papers_by_id: dict[str, dict[str, Any]] = {}
 
@@ -218,6 +232,13 @@ def reanalyze_digest(
     target_path.write_text(json.dumps(digest, ensure_ascii=False, indent=2), encoding="utf-8")
     write_outputs(digest, docs_dir=docs_dir)
     return digest
+
+
+def _merge_papers(papers: list[Paper]) -> list[Paper]:
+    by_id: dict[str, Paper] = {}
+    for paper in papers:
+        by_id[paper.arxiv_id] = paper
+    return sorted(by_id.values(), key=lambda paper: paper.published, reverse=True)
 
 
 def load_cached_papers(

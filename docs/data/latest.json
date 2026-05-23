@@ -1,11 +1,11 @@
 {
   "date": "2026-05-23",
-  "generated_at": "2026-05-23T08:57:33.642991+00:00",
+  "generated_at": "2026-05-23T09:19:03.504727+00:00",
   "config": {
     "site_title": "PaperRadar",
     "site_description": {
-      "en": "Daily arXiv papers from configured topics, summarized with bilingual notes and keyword trends.",
-      "zh": "每日追踪自定义 arXiv 主题论文，包含双语摘要与关键词趋势。"
+      "en": "Recent preprints from configured arXiv and EarthArXiv topics, summarized with bilingual notes and keyword trends.",
+      "zh": "追踪自定义 arXiv 与 EarthArXiv 主题预印本，包含双语摘要与关键词趋势。"
     },
     "arxiv": {
       "query": "",
@@ -29,7 +29,7 @@
       "submitted_after": "",
       "submitted_before": "",
       "max_results": 100,
-      "lookback_days": 60,
+      "lookback_days": 7,
       "sort_by": "submittedDate",
       "sort_order": "descending",
       "request_delay_seconds": 3.0,
@@ -48,14 +48,33 @@
       "mineru_ocr": false,
       "mineru_llm_aid": false
     },
+    "eartharxiv": {
+      "enabled": true,
+      "base_url": "https://eartharxiv.org/api/oai/",
+      "max_results": 25,
+      "lookback_days": 7,
+      "subjects": [
+        "Geophysics and Seismology",
+        "Hydrology",
+        "Geomorphology",
+        "Glaciology",
+        "Climate",
+        "Oceanography"
+      ],
+      "keywords": [],
+      "request_delay_seconds": 3.0,
+      "max_retries": 3,
+      "disable_proxy": true
+    },
     "languages": [
       "en",
       "zh"
     ],
     "keywords_per_paper": 5,
-    "trending_top_n": 30
+    "trending_top_n": 30,
+    "public_lookback_days": 60
   },
-  "query": "((cat:physics.geo-ph) OR (all:geophysics) OR (all:seismology) OR (all:geodesy) OR (all:geodynamics) OR (all:geomagnetism)) AND (submittedDate:[202603240000 TO 202605232359])",
+  "query": "((cat:physics.geo-ph) OR (all:geophysics) OR (all:seismology) OR (all:geodesy) OR (all:geodynamics) OR (all:geomagnetism)) AND (submittedDate:[202605160000 TO 202605232359])",
   "papers": [
     {
       "paper": {

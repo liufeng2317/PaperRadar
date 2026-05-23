@@ -11,6 +11,7 @@ from paperradar.emailer import digest_from_file, filter_digest_for_email, render
 from paperradar.migrate import migrate_storage
 from paperradar.pipeline import NoNewPapers, aggregate_local_digests, reanalyze_digest, run_pipeline
 from paperradar.query import build_arxiv_query
+from paperradar.eartharxiv_client import fetch_eartharxiv_papers
 from paperradar.registry import load_registry
 from paperradar.render import write_outputs
 
@@ -106,6 +107,20 @@ def main() -> None:
                 sort_by=config.arxiv.sort_by,
                 sort_order=config.arxiv.sort_order,
             )
+            if config.eartharxiv.enabled:
+                papers.extend(
+                    fetch_eartharxiv_papers(
+                        base_url=config.eartharxiv.base_url,
+                        max_results=config.eartharxiv.max_results,
+                        lookback_days=config.eartharxiv.lookback_days,
+                        today=fetch_date,
+                        subjects=config.eartharxiv.subjects,
+                        keywords=config.eartharxiv.keywords,
+                        polite_delay_seconds=config.eartharxiv.request_delay_seconds,
+                        retries=config.eartharxiv.max_retries,
+                        disable_proxy=config.eartharxiv.disable_proxy,
+                    )
+                )
         except RuntimeError as exc:
             parser.exit(1, f"error: {exc}\n")
         print(json.dumps([paper.to_dict() for paper in papers], ensure_ascii=False, indent=2))

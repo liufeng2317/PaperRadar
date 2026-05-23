@@ -30,6 +30,9 @@ class Paper:
     categories: list[str]
     pdf_url: str
     abs_url: str
+    source: str = "arxiv"
+    source_id: str = ""
+    doi: str = ""
 
     def to_dict(self) -> dict:
         return asdict(self)
@@ -132,7 +135,10 @@ def download_pdf(
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     payload = _read_arxiv_url(
-        paper.pdf_url, polite_delay_seconds=polite_delay_seconds, retries=retries
+        paper.pdf_url,
+        polite_delay_seconds=polite_delay_seconds,
+        retries=retries,
+        disable_proxy=(paper.source == "eartharxiv"),
     )
     if not payload.startswith(b"%PDF"):
         raise RuntimeError(f"Downloaded content for {paper.arxiv_id} does not look like a PDF.")
@@ -140,18 +146,19 @@ def download_pdf(
     return str(output_path)
 
 
-def _read_arxiv_url(url: str, polite_delay_seconds: float, retries: int) -> bytes:
+def _read_arxiv_url(url: str, polite_delay_seconds: float, retries: int, disable_proxy: bool = False) -> bytes:
     request = urllib.request.Request(
         url,
         headers={"User-Agent": "PaperRadar/0.1 (daily research digest; contact: repository owner)"},
     )
+    opener = urllib.request.build_opener(urllib.request.ProxyHandler({})) if disable_proxy else urllib.request.build_opener()
     for attempt in range(retries + 1):
         if attempt == 0:
             time.sleep(max(0.0, polite_delay_seconds))
         else:
             time.sleep((10.0 * attempt) + random.uniform(0, 2))
         try:
-            with urllib.request.urlopen(request, timeout=30) as response:
+            with opener.open(request, timeout=30) as response:
                 return response.read()
         except HTTPError as exc:
             if exc.code == 429 and attempt < retries:

@@ -143,7 +143,14 @@ run_once() {
   git fetch "$REMOTE" "$BRANCH"
   git pull --rebase --autostash "$REMOTE" "$BRANCH"
 
-  bash scripts/run_daily.sh run --config "$CONFIG_PATH" --python "$PYTHON_BIN"
+  run_output="$(bash scripts/run_daily.sh run --config "$CONFIG_PATH" --python "$PYTHON_BIN")"
+  printf '%s
+' "$run_output"
+  if [[ "$run_output" == Rendered* ]]; then
+    bash scripts/run_daily.sh aggregate-local --config "$CONFIG_PATH" --python "$PYTHON_BIN"
+  else
+    log "no new fetched papers; skipping local aggregation"
+  fi
 
   git add data/daily docs
 

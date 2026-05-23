@@ -121,7 +121,7 @@ def render_text_email(digest: dict[str, Any], site_url: str = "") -> str:
         lines.extend(
             [
                 f"{index}. {paper.get('title', '')}",
-                f"   arXiv: {paper.get('arxiv_id', '')} | {paper.get('published', '')[:10]} | {authors}",
+                f"   ID: {paper.get('arxiv_id', '')} | {paper.get('published', '')[:10]} | {authors}",
                 f"   一句话：{analysis.get('one_sentence_zh') or analysis.get('one_sentence_en') or ''}",
                 f"   关键词：{'、'.join(keywords[:5])}",
                 f"   链接：{paper.get('abs_url', '')}",
@@ -161,7 +161,7 @@ def render_html_email(digest: dict[str, Any], site_url: str = "") -> str:
             f"""
             <li style=\"margin:0 0 18px 0;\">
               <p style=\"margin:0 0 6px 0;\"><strong>{index}. {title}</strong></p>
-              <p style=\"margin:0 0 6px 0;color:#555;\">arXiv: {arxiv_id} | {published} | {html.escape(authors)}</p>
+              <p style=\"margin:0 0 6px 0;color:#555;\">ID: {arxiv_id} | {published} | {html.escape(authors)}</p>
               <p style=\"margin:0 0 6px 0;\">{html.escape(str(sentence))}</p>
               <p style=\"margin:0 0 6px 0;color:#555;\">关键词：{html.escape(keyword_text)}</p>
               <p style=\"margin:0;\"><a href=\"{abs_url}\">摘要</a> · <a href=\"{pdf_url}\">PDF</a></p>
@@ -191,7 +191,7 @@ def digest_from_file(path: str | Path) -> dict[str, Any]:
 def _subject(digest: dict[str, Any]) -> str:
     day = digest.get("email_published_day") or digest.get("date", "")
     count = len(digest.get("papers", []))
-    return f"[PaperRadar] {day} arXiv 新论文：{count} 篇"
+    return f"[PaperRadar] {day} 预印本新论文：{count} 篇"
 
 
 def _email_title(digest: dict[str, Any]) -> str:

@@ -134,7 +134,7 @@ def migrate_legacy_file(legacy_path: Path, target_path: Path) -> bool:
 
 
 def safe_arxiv_id(arxiv_id: str) -> str:
-    return arxiv_id.replace("/", "_")
+    return safe_path_part(arxiv_id.replace("/", "_"))
 
 
 def safe_path_part(value: str) -> str:

@@ -228,13 +228,13 @@ def render_html(digest: dict[str, Any]) -> str:
     </section>
     <aside class="side">
       <h2 data-lang="zh">关键词趋势</h2>
-      <h2 data-lang="en">arXiv Trending</h2>
+      <h2 data-lang="en">Keyword Trends</h2>
       <ol class="trend">{trend_items}</ol>
     </aside>
   </main>
   <footer>
-    <div class="wrap" data-lang="zh">由 PaperRadar 基于 arXiv 元数据与 LLM 总结生成。</div>
-    <div class="wrap" data-lang="en">Built by PaperRadar from arXiv metadata and LLM summaries.</div>
+    <div class="wrap" data-lang="zh">由 PaperRadar 基于预印本元数据与 LLM 总结生成。</div>
+    <div class="wrap" data-lang="en">Built by PaperRadar from preprint metadata and LLM summaries.</div>
   </footer>
   <script>
     (() => {{
@@ -344,7 +344,7 @@ def _render_scope_text(arxiv_config: dict[str, Any]) -> tuple[str, str]:
             f'Current scope: <strong>{_e(query)}</strong>',
         )
 
-    category_text = ", ".join(str(category) for category in categories) or "all configured arXiv"
+    category_text = ", ".join(str(category) for category in categories) or "all configured sources"
     term_values = [str(term) for term in [*extra_terms, *keywords] if term]
     if term_values:
         terms = ", ".join(term_values[:8])
@@ -406,17 +406,17 @@ def _render_pdf_status(paper: dict[str, Any]) -> str:
     if pdf_url:
         return (
             '<p class="authors">'
-            f'<a href="{_e(pdf_url)}">arXiv PDF</a>'
+            f'<a href="{_e(pdf_url)}">PDF</a>'
             '</p>'
         )
     if error:
         return (
             '<p class="authors" data-lang="zh">PDF 下载待处理: '
             f"{_e(error)} · "
-            f'<a href="{_e(pdf_url)}">arXiv PDF</a></p>'
+            f'<a href="{_e(pdf_url)}">PDF</a></p>'
             '<p class="authors" data-lang="en">PDF download pending: '
             f"{_e(error)} · "
-            f'<a href="{_e(pdf_url)}">arXiv PDF</a></p>'
+            f'<a href="{_e(pdf_url)}">PDF</a></p>'
         )
     return ""
 

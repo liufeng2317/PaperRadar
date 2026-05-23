@@ -39,18 +39,34 @@ class ArxivConfig:
 
 
 @dataclass(frozen=True)
+class EarthArxivConfig:
+    enabled: bool
+    base_url: str
+    max_results: int
+    lookback_days: int
+    subjects: list[str]
+    keywords: list[str]
+    request_delay_seconds: float
+    max_retries: int
+    disable_proxy: bool
+
+
+@dataclass(frozen=True)
 class SiteConfig:
     site_title: str
     site_description: dict[str, str]
     arxiv: ArxivConfig
+    eartharxiv: EarthArxivConfig
     languages: list[str]
     keywords_per_paper: int
     trending_top_n: int
+    public_lookback_days: int
 
 
 def load_config(path: str | Path = "config/default.json") -> SiteConfig:
     raw = json.loads(Path(path).read_text(encoding="utf-8"))
     arxiv = raw["arxiv"]
+    eartharxiv = raw.get("eartharxiv", {})
     return SiteConfig(
         site_title=raw["site_title"],
         site_description=raw["site_description"],
@@ -84,9 +100,21 @@ def load_config(path: str | Path = "config/default.json") -> SiteConfig:
             mineru_ocr=bool(arxiv.get("mineru_ocr", False)),
             mineru_llm_aid=bool(arxiv.get("mineru_llm_aid", False)),
         ),
+        eartharxiv=EarthArxivConfig(
+            enabled=bool(eartharxiv.get("enabled", False)),
+            base_url=str(eartharxiv.get("base_url", "https://eartharxiv.org/api/oai/")),
+            max_results=int(eartharxiv.get("max_results", 25)),
+            lookback_days=int(eartharxiv.get("lookback_days", arxiv.get("lookback_days", 60))),
+            subjects=list(eartharxiv.get("subjects", [])),
+            keywords=list(eartharxiv.get("keywords", [])),
+            request_delay_seconds=float(eartharxiv.get("request_delay_seconds", arxiv.get("request_delay_seconds", 3))),
+            max_retries=int(eartharxiv.get("max_retries", arxiv.get("max_retries", 3))),
+            disable_proxy=bool(eartharxiv.get("disable_proxy", True)),
+        ),
         languages=list(raw.get("languages", ["en", "zh"])),
         keywords_per_paper=int(raw.get("keywords_per_paper", 5)),
         trending_top_n=int(raw.get("trending_top_n", 30)),
+        public_lookback_days=int(raw.get("public_lookback_days", raw.get("arxiv", {}).get("lookback_days", 60))),
     )
 
 
@@ -124,7 +152,19 @@ def to_jsonable(config: SiteConfig) -> dict[str, Any]:
             "mineru_ocr": config.arxiv.mineru_ocr,
             "mineru_llm_aid": config.arxiv.mineru_llm_aid,
         },
+        "eartharxiv": {
+            "enabled": config.eartharxiv.enabled,
+            "base_url": config.eartharxiv.base_url,
+            "max_results": config.eartharxiv.max_results,
+            "lookback_days": config.eartharxiv.lookback_days,
+            "subjects": config.eartharxiv.subjects,
+            "keywords": config.eartharxiv.keywords,
+            "request_delay_seconds": config.eartharxiv.request_delay_seconds,
+            "max_retries": config.eartharxiv.max_retries,
+            "disable_proxy": config.eartharxiv.disable_proxy,
+        },
         "languages": config.languages,
         "keywords_per_paper": config.keywords_per_paper,
         "trending_top_n": config.trending_top_n,
+        "public_lookback_days": config.public_lookback_days,
     }
