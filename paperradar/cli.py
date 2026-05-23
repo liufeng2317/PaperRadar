@@ -7,7 +7,7 @@ from pathlib import Path
 
 from paperradar.config import load_config
 from paperradar.env import load_dotenv
-from paperradar.emailer import digest_from_file, render_text_email, send_digest_email
+from paperradar.emailer import digest_from_file, filter_digest_for_email, render_text_email, send_digest_email
 from paperradar.migrate import migrate_storage
 from paperradar.pipeline import NoNewPapers, reanalyze_digest, run_pipeline
 from paperradar.query import build_arxiv_query
@@ -48,6 +48,8 @@ def main() -> None:
     email = subparsers.add_parser("email", help="Send a Chinese digest email from an existing digest JSON file.")
     email.add_argument("--input", default="docs/data/latest.json")
     email.add_argument("--dry-run", action="store_true", help="Print the email body without sending.")
+    email.add_argument("--since", help="Previous digest JSON. When set, only papers not present there are included.")
+    email.add_argument("--latest-published-day", action="store_true", help="Only include papers from the latest arXiv published day after filtering.")
 
     registry = subparsers.add_parser("registry", help="Show or search the local paper registry.")
     registry.add_argument("--config", default="config/default.json")
@@ -107,6 +109,16 @@ def main() -> None:
         print(f"Reanalyzed {len(digest['papers'])} papers into {target}")
     elif args.command == "email":
         digest = digest_from_file(args.input)
+        previous_digest = digest_from_file(args.since) if args.since else None
+        digest = filter_digest_for_email(
+            digest,
+            previous_digest,
+            new_only=bool(args.since),
+            latest_published_day=args.latest_published_day,
+        )
+        if not digest.get("papers"):
+            print("email skipped: no new matching papers")
+            return
         if args.dry_run:
             print(render_text_email(digest))
         else:

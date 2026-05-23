@@ -74,11 +74,32 @@ def send_digest_email(digest: dict[str, Any], settings: EmailSettings | None = N
     return f"email sent to {', '.join(settings.recipients)}"
 
 
+def filter_digest_for_email(
+    digest: dict[str, Any],
+    previous_digest: dict[str, Any] | None = None,
+    *,
+    new_only: bool = False,
+    latest_published_day: bool = False,
+) -> dict[str, Any]:
+    filtered = dict(digest)
+    papers = list(digest.get("papers", []))
+    if new_only and previous_digest:
+        previous_ids = {_paper_id(item) for item in previous_digest.get("papers", [])}
+        papers = [item for item in papers if _paper_id(item) not in previous_ids]
+    if latest_published_day and papers:
+        latest_day = max(_published_day(item) for item in papers)
+        papers = [item for item in papers if _published_day(item) == latest_day]
+        filtered["email_published_day"] = latest_day
+    filtered["papers"] = papers
+    filtered["trending_keywords"] = _rank_keywords_from_papers(papers)
+    return filtered
+
+
 def render_text_email(digest: dict[str, Any], site_url: str = "") -> str:
     papers = digest.get("papers", [])
     lines = [
-        f"PaperRadar 中文日报 - {digest.get('date', '')}",
-        f"论文数量：{len(papers)}",
+        _email_title(digest),
+        f"新增论文数量：{len(papers)}",
     ]
     if site_url:
         lines.append(f"网页：{site_url}")
@@ -112,7 +133,7 @@ def render_text_email(digest: dict[str, Any], site_url: str = "") -> str:
 
 def render_html_email(digest: dict[str, Any], site_url: str = "") -> str:
     papers = digest.get("papers", [])
-    date = html.escape(str(digest.get("date", "")))
+    title = html.escape(_email_title(digest))
     trend_html = ""
     trend_items = _trend_items_zh(digest)[:15]
     if trend_items:
@@ -151,8 +172,8 @@ def render_html_email(digest: dict[str, Any], site_url: str = "") -> str:
     return f"""<!doctype html>
 <html>
   <body style=\"font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.55;color:#111;\">
-    <h2 style=\"margin-bottom:4px;\">PaperRadar 中文日报 - {date}</h2>
-    <p style=\"margin-top:0;color:#555;\">共 {len(papers)} 篇论文</p>
+    <h2 style=\"margin-bottom:4px;\">{title}</h2>
+    <p style=\"margin-top:0;color:#555;\">新增 {len(papers)} 篇论文</p>
     {site_html}
     {trend_html}
     <ol style=\"padding-left:22px;\">{''.join(paper_blocks)}</ol>
@@ -168,9 +189,33 @@ def digest_from_file(path: str | Path) -> dict[str, Any]:
 
 
 def _subject(digest: dict[str, Any]) -> str:
-    date = digest.get("date", "")
+    day = digest.get("email_published_day") or digest.get("date", "")
     count = len(digest.get("papers", []))
-    return f"[PaperRadar] {date} arXiv 中文更新：{count} 篇"
+    return f"[PaperRadar] {day} arXiv 新论文：{count} 篇"
+
+
+def _email_title(digest: dict[str, Any]) -> str:
+    day = digest.get("email_published_day") or digest.get("date", "")
+    return f"PaperRadar 中文新论文 - {day}"
+
+
+def _paper_id(item: dict[str, Any]) -> str:
+    return str(item.get("paper", {}).get("arxiv_id", ""))
+
+
+def _published_day(item: dict[str, Any]) -> str:
+    return str(item.get("paper", {}).get("published", ""))[:10]
+
+
+def _rank_keywords_from_papers(papers: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    counter: Counter[str] = Counter()
+    for item in papers:
+        analysis = item.get("analysis", {})
+        for keyword in analysis.get("keywords_zh") or []:
+            text = str(keyword).strip()
+            if text:
+                counter[text] += 1
+    return [{"keyword_zh": keyword, "score": count} for keyword, count in counter.most_common()]
 
 
 def _trend_items_zh(digest: dict[str, Any]) -> list[str]:

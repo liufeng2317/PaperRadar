@@ -12,6 +12,7 @@ LOG_DIR="${PAPERRADAR_LOG_DIR:-logs/daily}"
 COMMIT_PREFIX="${PAPERRADAR_COMMIT_PREFIX:-Update PaperRadar digest}"
 DRY_RUN="${PAPERRADAR_DRY_RUN:-0}"
 DRY_RUN_SLEEP_SECONDS="${PAPERRADAR_DRY_RUN_SLEEP_SECONDS:-0}"
+PREVIOUS_DIGEST_FILE=""
 
 usage() {
   cat <<'EOF'
@@ -108,6 +109,15 @@ run_once() {
   trap cleanup_pid_file EXIT
   log_startup_info
 
+  PREVIOUS_DIGEST_FILE="$LOG_DIR/latest_before_${RUN_PID}.json"
+  if [[ -f docs/data/latest.json ]]; then
+    cp docs/data/latest.json "$PREVIOUS_DIGEST_FILE"
+    log "previous_digest_snapshot=$PREVIOUS_DIGEST_FILE"
+  else
+    PREVIOUS_DIGEST_FILE=""
+    log "previous_digest_snapshot=none"
+  fi
+
   if [[ -f .env ]]; then
     log ".env found; local secrets will be loaded by PaperRadar"
   else
@@ -120,7 +130,7 @@ run_once() {
     log "dry-run: would run: bash scripts/run_daily.sh run --config $CONFIG_PATH --python $PYTHON_BIN"
     log "dry-run: would run: git add data/daily docs"
     log "dry-run: would commit changed public outputs and push to $REMOTE/$BRANCH"
-    log "dry-run: would send digest email if PAPERRADAR_EMAIL_ENABLED=1"
+    log "dry-run: would send digest email only for new papers from the latest arXiv published day"
     if [[ "$DRY_RUN_SLEEP_SECONDS" != "0" ]]; then
       log "dry-run: sleeping for $DRY_RUN_SLEEP_SECONDS seconds to test lock behavior"
       sleep "$DRY_RUN_SLEEP_SECONDS"
@@ -143,11 +153,19 @@ run_once() {
     git commit -m "$COMMIT_PREFIX $(date +%F)"
     git push "$REMOTE" "HEAD:$BRANCH"
     log "changes pushed to $REMOTE/$BRANCH"
-    if "$PYTHON_BIN" -m paperradar.cli email --input docs/data/latest.json; then
+    email_args=(--input docs/data/latest.json --latest-published-day)
+    if [[ -n "$PREVIOUS_DIGEST_FILE" && -f "$PREVIOUS_DIGEST_FILE" ]]; then
+      email_args+=(--since "$PREVIOUS_DIGEST_FILE")
+    fi
+    if "$PYTHON_BIN" -m paperradar.cli email "${email_args[@]}"; then
       log "digest email step completed"
     else
       log "warning: digest email step failed; continuing"
     fi
+  fi
+
+  if [[ -n "$PREVIOUS_DIGEST_FILE" ]]; then
+    rm -f "$PREVIOUS_DIGEST_FILE"
   fi
 
   log "PaperRadar server job finished"

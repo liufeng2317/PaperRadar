@@ -112,12 +112,12 @@ GitHub-hosted Actions can publish the generated page, but full PDF parsing with 
 
 ## Email Digest
 
-Set `PAPERRADAR_EMAIL_ENABLED=1` and SMTP variables in `.env` to send a Chinese digest email after a new public digest is committed and pushed. The email step is skipped when there are no public digest changes, and a send failure is logged without stopping the scheduler.
+Set `PAPERRADAR_EMAIL_ENABLED=1` and SMTP variables in `.env` to send a compact Chinese email only when newly discovered papers are published. The server compares the previous and current digest, sends only new arXiv IDs from the latest arXiv published day, and logs send failures without stopping the scheduler.
 
 Preview the email body without sending:
 
 ```bash
-python -m paperradar.cli email --input docs/data/latest.json --dry-run
+python -m paperradar.cli email --input docs/data/latest.json --latest-published-day --dry-run
 ```
 
 ## Server Automation
@@ -148,7 +148,7 @@ python -m paperradar.cli run --date 2026-05-21
 python -m paperradar.cli render --input data/daily/2026-05-21.json
 python -m paperradar.cli reanalyze --input data/daily/2026-05-21.json
 python -m paperradar.cli registry --query seismic
-python -m paperradar.cli email --input docs/data/latest.json --dry-run
+python -m paperradar.cli email --input docs/data/latest.json --latest-published-day --dry-run
 python -m paperradar.cli migrate-storage
 ```
 
