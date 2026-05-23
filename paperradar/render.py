@@ -28,7 +28,9 @@ def render_html(digest: dict[str, Any]) -> str:
     description_en = digest["config"]["site_description"]["en"]
     description_zh = digest["config"]["site_description"]["zh"]
     scope_zh, scope_en = _render_scope_text(digest["config"].get("arxiv", {}))
-    paper_cards = "\n".join(_render_paper_card(item, index) for index, item in enumerate(papers))
+    source_counts = _source_counts(papers)
+    source_tabs = _render_source_tabs(source_counts)
+    source_panels = _render_source_panels(papers)
     trend_items = "\n".join(
         f"<li><span>{i + 1}</span><strong>{_e(item['keyword'])}</strong><em>{item['score']}</em></li>"
         for i, item in enumerate(trending)
@@ -101,6 +103,48 @@ def render_html(digest: dict[str, Any]) -> str:
     .grid {{ display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 24px; align-items: start; }}
     section {{ min-width: 0; }}
     h2 {{ margin: 0 0 14px; font-size: 1.2rem; }}
+    .source-tabs {{
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      margin: 0 0 18px;
+    }}
+    .source-tabs button {{
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 11px 12px;
+      background: var(--panel);
+      color: var(--ink);
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: left;
+    }}
+    .source-tabs button[aria-selected="true"] {{
+      border-color: color-mix(in srgb, var(--accent) 55%, var(--line));
+      box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 35%, transparent);
+    }}
+    .source-tabs small {{ display: block; margin-top: 2px; color: var(--muted); font-weight: 500; }}
+    .source-panel[hidden] {{ display: none; }}
+    .empty-source {{
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 20px;
+      color: var(--muted);
+    }}
+    .source-badge {{
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 2px 8px;
+      margin-right: 8px;
+      border: 1px solid color-mix(in srgb, var(--accent-2) 38%, var(--line));
+      color: var(--accent-2);
+      background: #f5f3ff;
+      font-size: .78rem;
+      font-weight: 700;
+    }}
     .paper {{
       background: var(--panel);
       border: 1px solid var(--line);
@@ -212,19 +256,10 @@ def render_html(digest: dict[str, Any]) -> str:
   </header>
   <main class="wrap grid">
     <section>
-      <h2 data-lang="zh">最新论文</h2>
-      <h2 data-lang="en">Latest Papers</h2>
-      {paper_cards}
-      <nav class="pagination" id="pagination" aria-label="Paper pages">
-        <span data-lang="zh" id="page-info-zh"></span>
-        <span data-lang="en" id="page-info-en"></span>
-        <div class="page-buttons">
-          <button type="button" id="prev-page" data-lang="zh">上一页</button>
-          <button type="button" id="prev-page-en" data-lang="en">Previous</button>
-          <button type="button" id="next-page" data-lang="zh">下一页</button>
-          <button type="button" id="next-page-en" data-lang="en">Next</button>
-        </div>
-      </nav>
+      <h2 data-lang="zh">来源视图</h2>
+      <h2 data-lang="en">Source Views</h2>
+      {source_tabs}
+      {source_panels}
     </section>
     <aside class="side">
       <h2 data-lang="zh">关键词趋势</h2>
@@ -256,48 +291,134 @@ def render_html(digest: dict[str, Any]) -> str:
     }})();
     (() => {{
       const pageSize = {PAPERS_PER_PAGE};
-      const papers = Array.from(document.querySelectorAll("[data-page-item]"));
-      const totalPages = Math.max(1, Math.ceil(papers.length / pageSize));
-      const pagination = document.getElementById("pagination");
-      const infoZh = document.getElementById("page-info-zh");
-      const infoEn = document.getElementById("page-info-en");
-      const prevButtons = [document.getElementById("prev-page"), document.getElementById("prev-page-en")];
-      const nextButtons = [document.getElementById("next-page"), document.getElementById("next-page-en")];
-      let page = 1;
-      const renderPage = () => {{
+      const tabs = Array.from(document.querySelectorAll("[data-source-tab]"));
+      const panels = Array.from(document.querySelectorAll("[data-source-panel]"));
+      const state = new Map(panels.map((panel) => [panel.dataset.sourcePanel, 1]));
+
+      const renderPanel = (panel) => {{
+        const source = panel.dataset.sourcePanel;
+        const papers = Array.from(panel.querySelectorAll("[data-page-item]"));
+        const totalPages = Math.max(1, Math.ceil(papers.length / pageSize));
+        const currentPage = Math.min(state.get(source) || 1, totalPages);
+        state.set(source, currentPage);
         papers.forEach((paper, index) => {{
           const paperPage = Math.floor(index / pageSize) + 1;
-          paper.classList.toggle("is-hidden", paperPage !== page);
+          paper.classList.toggle("is-hidden", paperPage !== currentPage);
         }});
-        if (infoZh) infoZh.textContent = `第 ${{page}} / ${{totalPages}} 页，每页最多 ${{pageSize}} 篇`;
-        if (infoEn) infoEn.textContent = `Page ${{page}} of ${{totalPages}}, up to ${{pageSize}} papers per page`;
-        prevButtons.forEach((button) => {{
-          if (button) button.disabled = page <= 1;
-        }});
-        nextButtons.forEach((button) => {{
-          if (button) button.disabled = page >= totalPages;
-        }});
-        if (pagination) pagination.classList.toggle("is-hidden", totalPages <= 1);
+        const pagination = panel.querySelector("[data-pagination]");
+        const infoZh = panel.querySelector("[data-page-info-zh]");
+        const infoEn = panel.querySelector("[data-page-info-en]");
+        if (infoZh) infoZh.textContent = `第 ${{currentPage}} / ${{totalPages}} 页，每页最多 ${{pageSize}} 篇`;
+        if (infoEn) infoEn.textContent = `Page ${{currentPage}} of ${{totalPages}}, up to ${{pageSize}} papers per page`;
+        panel.querySelectorAll("[data-page-prev]").forEach((button) => button.disabled = currentPage <= 1);
+        panel.querySelectorAll("[data-page-next]").forEach((button) => button.disabled = currentPage >= totalPages);
+        if (pagination) pagination.classList.toggle("is-hidden", totalPages <= 1 || papers.length === 0);
       }};
-      prevButtons.forEach((button) => {{
-        if (button) button.addEventListener("click", () => {{
-          page = Math.max(1, page - 1);
-          renderPage();
+
+      const activate = (source) => {{
+        tabs.forEach((tab) => tab.setAttribute("aria-selected", String(tab.dataset.sourceTab === source)));
+        panels.forEach((panel) => {{
+          const active = panel.dataset.sourcePanel === source;
+          panel.hidden = !active;
+          if (active) renderPanel(panel);
         }});
+        localStorage.setItem("paperradar.source", source);
+      }};
+
+      panels.forEach((panel) => {{
+        panel.querySelectorAll("[data-page-prev]").forEach((button) => button.addEventListener("click", () => {{
+          const source = panel.dataset.sourcePanel;
+          state.set(source, Math.max(1, (state.get(source) || 1) - 1));
+          renderPanel(panel);
+        }}));
+        panel.querySelectorAll("[data-page-next]").forEach((button) => button.addEventListener("click", () => {{
+          const source = panel.dataset.sourcePanel;
+          state.set(source, (state.get(source) || 1) + 1);
+          renderPanel(panel);
+        }}));
       }});
-      nextButtons.forEach((button) => {{
-        if (button) button.addEventListener("click", () => {{
-          page = Math.min(totalPages, page + 1);
-          renderPage();
-        }});
-      }});
-      renderPage();
+      tabs.forEach((tab) => tab.addEventListener("click", () => activate(tab.dataset.sourceTab)));
+      const saved = localStorage.getItem("paperradar.source");
+      activate(saved && panels.some((panel) => panel.dataset.sourcePanel === saved) ? saved : "arxiv");
     }})();
   </script>
 </body>
 </html>
 """
 
+
+
+def _source_counts(papers: list[dict[str, Any]]) -> dict[str, int]:
+    counts = {"arxiv": 0, "eartharxiv": 0}
+    for item in papers:
+        source = item.get("paper", {}).get("source") or "arxiv"
+        counts[source] = counts.get(source, 0) + 1
+    return counts
+
+
+def _source_label(source: str) -> str:
+    return "EarthArXiv" if source == "eartharxiv" else "arXiv"
+
+
+def _source_title(source: str) -> str:
+    if source == "eartharxiv":
+        return "PaperRadar-EarthArxiv"
+    return "PaperRadar-Arxiv"
+
+
+def _render_source_tabs(counts: dict[str, int]) -> str:
+    buttons = []
+    for source in ["arxiv", "eartharxiv"]:
+        selected = "true" if source == "arxiv" else "false"
+        label = _source_title(source)
+        count = counts.get(source, 0)
+        buttons.append(
+            f'<button type="button" role="tab" data-source-tab="{source}" aria-selected="{selected}">'
+            f'{_e(label)}<small>{count} papers</small></button>'
+        )
+    return '<div class="source-tabs" role="tablist" aria-label="Preprint source">' + "".join(buttons) + "</div>"
+
+
+def _render_source_panels(papers: list[dict[str, Any]]) -> str:
+    grouped = {"arxiv": [], "eartharxiv": []}
+    for item in papers:
+        source = item.get("paper", {}).get("source") or "arxiv"
+        grouped.setdefault(source, []).append(item)
+    panels = []
+    for source in ["arxiv", "eartharxiv"]:
+        items = grouped.get(source, [])
+        cards = "\n".join(_render_paper_card(item, index) for index, item in enumerate(items))
+        hidden = "" if source == "arxiv" else " hidden"
+        if not items:
+            cards = (
+                '<div class="empty-source">'
+                '<span data-lang="zh">当前还没有这个来源的论文。下一次自动更新发现新内容后会显示在这里。</span>'
+                '<span data-lang="en">No papers from this source yet. New items will appear here after an automated update finds them.</span>'
+                '</div>'
+            )
+        panels.append(
+            f'<div class="source-panel" data-source-panel="{source}" role="tabpanel"{hidden}>'
+            f'<h2>{_e(_source_title(source))}</h2>'
+            f'{cards}'
+            f'{_render_pagination()}'
+            '</div>'
+        )
+    return "\n".join(panels)
+
+
+def _render_pagination() -> str:
+    return """
+      <nav class="pagination" data-pagination aria-label="Paper pages">
+        <span data-lang="zh" data-page-info-zh></span>
+        <span data-lang="en" data-page-info-en></span>
+        <div class="page-buttons">
+          <button type="button" data-page-prev data-lang="zh">上一页</button>
+          <button type="button" data-page-prev data-lang="en">Previous</button>
+          <button type="button" data-page-next data-lang="zh">下一页</button>
+          <button type="button" data-page-next data-lang="en">Next</button>
+        </div>
+      </nav>
+    """
 
 def _render_paper_card(item: dict[str, Any], index: int) -> str:
     paper = item["paper"]
@@ -308,6 +429,8 @@ def _render_paper_card(item: dict[str, Any], index: int) -> str:
     keywords_en = "".join(f"<span>{_e(keyword)}</span>" for keyword in analysis.get("keywords_en", []))
     keywords_zh = "".join(f"<span>{_e(keyword)}</span>" for keyword in analysis.get("keywords_zh", []))
     pdf_status = _render_pdf_status(paper)
+    source = paper.get("source") or "arxiv"
+    source_badge = f'<span class="source-badge">{_e(_source_label(source))}</span>'
     one_sentence_zh = _compact_sentence(analysis.get("one_sentence_zh") or "")
     one_sentence_en = _compact_sentence(analysis.get("one_sentence_en") or "")
     summary_zh = _render_summary_block(analysis.get("summary_zh"))
@@ -316,7 +439,7 @@ def _render_paper_card(item: dict[str, Any], index: int) -> str:
     return f"""
 <article class="paper" data-page-item data-index="{index + 1}">
   <h3><a href="{_e(paper['abs_url'])}">{_e(paper['title'])}</a></h3>
-  <p class="authors">{_e(authors)} · {_e(paper['published'][:10])} · {_e(', '.join(paper['categories']))}</p>
+  <p class="authors">{source_badge}{_e(authors)} · {_e(paper['published'][:10])} · {_e(', '.join(paper['categories']))}</p>
   <p class="one-line" data-lang="zh"><strong>{_e(one_sentence_zh)}</strong></p>
   <p class="one-line" data-lang="en"><strong>{_e(one_sentence_en)}</strong></p>
   <div class="keywords" data-lang="zh">{keywords_zh or keywords_en}</div>
