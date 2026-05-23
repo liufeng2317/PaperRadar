@@ -1,6 +1,6 @@
 {
   "date": "2026-05-23",
-  "generated_at": "2026-05-23T11:01:26.961954+00:00",
+  "generated_at": "2026-05-23T11:37:52.217881+00:00",
   "config": {
     "site_title": "PaperRadar",
     "site_description": {
@@ -97,6 +97,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.22576v1",
         "abs_url": "http://arxiv.org/abs/2605.22576v1",
+        "source": "arxiv",
+        "source_id": "",
+        "doi": "",
         "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260521/2605.22576v1.pdf",
         "pdf_download_error": null,
         "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260521/2605.22576v1.md",
@@ -144,7 +147,7 @@
           "卫星脆弱性",
           "经济损失"
         ],
-        "updated_at": "2026-05-22T04:36:36.795270+00:00",
+        "updated_at": "2026-05-23T06:51:44.834060+00:00",
         "cache_hit": true
       }
     },
@@ -166,6 +169,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.22042v1",
         "abs_url": "http://arxiv.org/abs/2605.22042v1",
+        "source": "arxiv",
+        "source_id": "",
+        "doi": "",
         "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260521/2605.22042v1.pdf",
         "pdf_download_error": null,
         "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260521/2605.22042v1.md",
@@ -212,7 +218,7 @@
           "有限元",
           "Dirichlet-to-Neumann"
         ],
-        "updated_at": "2026-05-22T04:37:46.808844+00:00",
+        "updated_at": "2026-05-23T06:51:44.840328+00:00",
         "cache_hit": true
       }
     },
@@ -234,6 +240,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.21790v1",
         "abs_url": "http://arxiv.org/abs/2605.21790v1",
+        "source": "arxiv",
+        "source_id": "",
+        "doi": "",
         "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260520/2605.21790v1.pdf",
         "pdf_download_error": null,
         "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260520/2605.21790v1.md",
@@ -281,7 +290,7 @@
           "橄榄石",
           "反应动力学"
         ],
-        "updated_at": "2026-05-22T04:38:15.945032+00:00",
+        "updated_at": "2026-05-23T06:51:44.851145+00:00",
         "cache_hit": true
       }
     },
@@ -302,6 +311,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.21437v1",
         "abs_url": "http://arxiv.org/abs/2605.21437v1",
+        "source": "arxiv",
+        "source_id": "",
+        "doi": "",
         "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260520/2605.21437v1.pdf",
         "pdf_download_error": null,
         "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260520/2605.21437v1.md",
@@ -349,7 +361,7 @@
           "地震目录",
           "尾部风险"
         ],
-        "updated_at": "2026-05-22T04:38:15.950221+00:00",
+        "updated_at": "2026-05-23T06:51:44.864291+00:00",
         "cache_hit": true
       }
     },
@@ -370,6 +382,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.21191v1",
         "abs_url": "http://arxiv.org/abs/2605.21191v1",
+        "source": "arxiv",
+        "source_id": "",
+        "doi": "",
         "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260520/2605.21191v1.pdf",
         "pdf_download_error": null,
         "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260520/2605.21191v1.md",
@@ -416,7 +431,7 @@
           "边界层",
           "地球流体动力学"
         ],
-        "updated_at": "2026-05-22T04:38:15.955962+00:00",
+        "updated_at": "2026-05-23T06:51:44.873859+00:00",
         "cache_hit": true
       }
     },
@@ -437,6 +452,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.21030v1",
         "abs_url": "http://arxiv.org/abs/2605.21030v1",
+        "source": "arxiv",
+        "source_id": "",
+        "doi": "",
         "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260520/2605.21030v1.pdf",
         "pdf_download_error": null,
         "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260520/2605.21030v1.md",
@@ -484,7 +502,7 @@
           "多小波",
           "入口边界条件"
         ],
-        "updated_at": "2026-05-22T04:38:15.959816+00:00",
+        "updated_at": "2026-05-23T06:51:44.881918+00:00",
         "cache_hit": true
       }
     },
@@ -509,6 +527,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.20997v1",
         "abs_url": "http://arxiv.org/abs/2605.20997v1",
+        "source": "arxiv",
+        "source_id": "",
+        "doi": "",
         "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260520/2605.20997v1.pdf",
         "pdf_download_error": null,
         "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260520/2605.20997v1.md",
@@ -556,7 +577,7 @@
           "TanDEM-X",
           "Landsat"
         ],
-        "updated_at": "2026-05-22T04:38:15.962313+00:00",
+        "updated_at": "2026-05-23T06:51:44.887282+00:00",
         "cache_hit": true
       }
     },
@@ -578,6 +599,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.20764v1",
         "abs_url": "http://arxiv.org/abs/2605.20764v1",
+        "source": "arxiv",
+        "source_id": "",
+        "doi": "",
         "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260520/2605.20764v1.pdf",
         "pdf_download_error": null,
         "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260520/2605.20764v1.md",
@@ -625,7 +649,7 @@
           "Darcy产能",
           "云端仿真"
         ],
-        "updated_at": "2026-05-22T04:38:15.967699+00:00",
+        "updated_at": "2026-05-23T06:51:44.896524+00:00",
         "cache_hit": true
       }
     },
@@ -648,6 +672,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.20455v1",
         "abs_url": "http://arxiv.org/abs/2605.20455v1",
+        "source": "arxiv",
+        "source_id": "",
+        "doi": "",
         "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260519/2605.20455v1.pdf",
         "pdf_download_error": null,
         "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260519/2605.20455v1.md",
@@ -695,7 +722,7 @@
           "OSIRIS-REx再入",
           "大气传播"
         ],
-        "updated_at": "2026-05-22T04:38:15.974638+00:00",
+        "updated_at": "2026-05-23T06:51:44.912837+00:00",
         "cache_hit": true
       }
     },
@@ -719,6 +746,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.20132v1",
         "abs_url": "http://arxiv.org/abs/2605.20132v1",
+        "source": "arxiv",
+        "source_id": "",
+        "doi": "",
         "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260519/2605.20132v1.pdf",
         "pdf_download_error": null,
         "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260519/2605.20132v1.md",
@@ -766,7 +796,7 @@
           "OpenGL 环形缓冲",
           "有状态分块处理"
         ],
-        "updated_at": "2026-05-22T04:38:15.979211+00:00",
+        "updated_at": "2026-05-23T06:51:44.920185+00:00",
         "cache_hit": true
       }
     },
@@ -790,6 +820,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.20030v1",
         "abs_url": "http://arxiv.org/abs/2605.20030v1",
+        "source": "arxiv",
+        "source_id": "",
+        "doi": "",
         "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260519/2605.20030v1.pdf",
         "pdf_download_error": null,
         "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260519/2605.20030v1.md",
@@ -837,7 +870,7 @@
           "正-无标签学习",
           "卫星海洋波浪"
         ],
-        "updated_at": "2026-05-22T04:38:15.986235+00:00",
+        "updated_at": "2026-05-23T06:51:44.927159+00:00",
         "cache_hit": true
       }
     },
@@ -859,6 +892,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.19951v1",
         "abs_url": "http://arxiv.org/abs/2605.19951v1",
+        "source": "arxiv",
+        "source_id": "",
+        "doi": "",
         "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260519/2605.19951v1.pdf",
         "pdf_download_error": null,
         "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260519/2605.19951v1.md",
@@ -906,7 +942,7 @@
           "有理近似",
           "TEM电导率"
         ],
-        "updated_at": "2026-05-22T04:38:15.990243+00:00",
+        "updated_at": "2026-05-23T06:51:44.937032+00:00",
         "cache_hit": true
       }
     },
@@ -930,6 +966,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.19903v1",
         "abs_url": "http://arxiv.org/abs/2605.19903v1",
+        "source": "arxiv",
+        "source_id": "",
+        "doi": "",
         "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260519/2605.19903v1.pdf",
         "pdf_download_error": null,
         "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260519/2605.19903v1.md",
@@ -977,7 +1016,7 @@
           "CO新星",
           "星际尘埃"
         ],
-        "updated_at": "2026-05-22T04:38:15.998744+00:00",
+        "updated_at": "2026-05-23T06:51:44.947083+00:00",
         "cache_hit": true
       }
     },
@@ -1003,6 +1042,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.19608v1",
         "abs_url": "http://arxiv.org/abs/2605.19608v1",
+        "source": "arxiv",
+        "source_id": "",
+        "doi": "",
         "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260519/2605.19608v1.pdf",
         "pdf_download_error": null,
         "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260519/2605.19608v1.md",
@@ -1050,7 +1092,7 @@
           "赤道电喷流EEJ",
           "CSES电场"
         ],
-        "updated_at": "2026-05-22T04:38:16.000730+00:00",
+        "updated_at": "2026-05-23T06:51:44.953028+00:00",
         "cache_hit": true
       }
     },
@@ -1075,6 +1117,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.19507v1",
         "abs_url": "http://arxiv.org/abs/2605.19507v1",
+        "source": "arxiv",
+        "source_id": "",
+        "doi": "",
         "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260519/2605.19507v1.pdf",
         "pdf_download_error": null,
         "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260519/2605.19507v1.md",
@@ -1122,7 +1167,7 @@
           "费米LAT",
           "暴发星系核"
         ],
-        "updated_at": "2026-05-22T04:38:16.004124+00:00",
+        "updated_at": "2026-05-23T06:51:44.961454+00:00",
         "cache_hit": true
       }
     },
@@ -1146,6 +1191,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.19472v1",
         "abs_url": "http://arxiv.org/abs/2605.19472v1",
+        "source": "arxiv",
+        "source_id": "",
+        "doi": "",
         "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260519/2605.19472v1.pdf",
         "pdf_download_error": null,
         "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260519/2605.19472v1.md",
@@ -1192,7 +1240,7 @@
           "慢磁声学波",
           "声学共振腔"
         ],
-        "updated_at": "2026-05-22T04:38:16.009551+00:00",
+        "updated_at": "2026-05-23T06:51:44.967509+00:00",
         "cache_hit": true
       }
     },
@@ -1216,6 +1264,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.19379v1",
         "abs_url": "http://arxiv.org/abs/2605.19379v1",
+        "source": "arxiv",
+        "source_id": "",
+        "doi": "",
         "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260519/2605.19379v1.pdf",
         "pdf_download_error": null,
         "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260519/2605.19379v1.md",
@@ -1263,7 +1314,7 @@
           "土壤含水率保持曲线",
           "UNSODA"
         ],
-        "updated_at": "2026-05-22T04:38:16.014437+00:00",
+        "updated_at": "2026-05-23T06:51:44.975635+00:00",
         "cache_hit": true
       }
     },
@@ -1283,6 +1334,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.19118v1",
         "abs_url": "http://arxiv.org/abs/2605.19118v1",
+        "source": "arxiv",
+        "source_id": "",
+        "doi": "",
         "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260518/2605.19118v1.pdf",
         "pdf_download_error": null,
         "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260518/2605.19118v1.md",
@@ -1330,7 +1384,7 @@
           "地平面拾取",
           "能登地震"
         ],
-        "updated_at": "2026-05-22T04:38:16.018636+00:00",
+        "updated_at": "2026-05-23T06:51:44.992357+00:00",
         "cache_hit": true
       }
     },
@@ -1349,6 +1403,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.18375v1",
         "abs_url": "http://arxiv.org/abs/2605.18375v1",
+        "source": "arxiv",
+        "source_id": "",
+        "doi": "",
         "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260518/2605.18375v1.pdf",
         "pdf_download_error": null,
         "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260518/2605.18375v1.md",
@@ -1396,7 +1453,7 @@
           "傅里叶神经算子",
           "Utah FORGE"
         ],
-        "updated_at": "2026-05-22T04:38:16.022000+00:00",
+        "updated_at": "2026-05-23T06:51:44.998188+00:00",
         "cache_hit": true
       }
     },
@@ -1422,6 +1479,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.17792v1",
         "abs_url": "http://arxiv.org/abs/2605.17792v1",
+        "source": "arxiv",
+        "source_id": "",
+        "doi": "",
         "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260518/2605.17792v1.pdf",
         "pdf_download_error": null,
         "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260518/2605.17792v1.md",
@@ -1469,7 +1529,7 @@
           "仿真在环",
           "CREST/EF5"
         ],
-        "updated_at": "2026-05-22T04:38:16.024850+00:00",
+        "updated_at": "2026-05-23T06:51:45.005555+00:00",
         "cache_hit": true
       }
     },
@@ -1488,6 +1548,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.17081v1",
         "abs_url": "http://arxiv.org/abs/2605.17081v1",
+        "source": "arxiv",
+        "source_id": "",
+        "doi": "",
         "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260516/2605.17081v1.pdf",
         "pdf_download_error": null,
         "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260516/2605.17081v1.md",
@@ -1535,7 +1598,7 @@
           "Mohr-Coulomb",
           "Carrara大理石"
         ],
-        "updated_at": "2026-05-22T04:38:16.028202+00:00",
+        "updated_at": "2026-05-23T06:51:45.017333+00:00",
         "cache_hit": true
       }
     },
@@ -1559,6 +1622,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.16966v1",
         "abs_url": "http://arxiv.org/abs/2605.16966v1",
+        "source": "arxiv",
+        "source_id": "",
+        "doi": "",
         "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260516/2605.16966v1.pdf",
         "pdf_download_error": null,
         "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260516/2605.16966v1.md",
@@ -1606,7 +1672,7 @@
           "物理约束AI",
           "地球物理反演"
         ],
-        "updated_at": "2026-05-22T04:38:16.033933+00:00",
+        "updated_at": "2026-05-23T06:51:45.026149+00:00",
         "cache_hit": true
       }
     },
@@ -1629,6 +1695,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.16783v1",
         "abs_url": "http://arxiv.org/abs/2605.16783v1",
+        "source": "arxiv",
+        "source_id": "",
+        "doi": "",
         "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260516/2605.16783v1.pdf",
         "pdf_download_error": null,
         "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260516/2605.16783v1.md",
@@ -1676,7 +1745,7 @@
           "合成到野外域差距",
           "地质先验精炼"
         ],
-        "updated_at": "2026-05-22T04:38:16.036680+00:00",
+        "updated_at": "2026-05-23T06:51:45.034941+00:00",
         "cache_hit": true
       }
     },
@@ -1697,6 +1766,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.16717v1",
         "abs_url": "http://arxiv.org/abs/2605.16717v1",
+        "source": "arxiv",
+        "source_id": "",
+        "doi": "",
         "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260516/2605.16717v1.pdf",
         "pdf_download_error": null,
         "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260516/2605.16717v1.md",
@@ -1744,308 +1816,7 @@
           "径向分量",
           "剪切波速度反演"
         ],
-        "updated_at": "2026-05-22T04:38:16.042168+00:00",
-        "cache_hit": true
-      }
-    },
-    {
-      "paper": {
-        "arxiv_id": "2605.16711v1",
-        "title": "Stress state, subsidence, and faulting in the Wilmington Oil Field, California: a multiphase flow-geomechanics modeling assessment (1936-2020)",
-        "authors": [
-          "Lluís Saló-Salgado",
-          "Josimar A. Silva",
-          "Andreas Plesch",
-          "Franklin D. Wolfe",
-          "John H. Shaw",
-          "Ruben Juanes"
-        ],
-        "abstract": "Nearly a century of oil production in the Wilmington Oil Field, Los Angeles Basin, California, has modified the stress state, caused nearly 9 m of ground surface subsidence, and been associated with earthquakes that sheared wells. This offers a unique opportunity to elucidate the processes that govern these phenomena: Since the 1930s, approximately 2.5 billion barrels of oil have been produced, accompanied by water injection volumes roughly an order of magnitude larger. Combined with extensive structural and geophysical constraints, this history allows us to interrogate the long-term geomechanical impacts of reservoir operations. Here, we assess (i) how the initial stress state, typically uncertain in the shallow crust ($<5$ km depth), influences subsidence and uplift, and (ii) how production and injection operations affect fault stability. Our numerical model, calibrated with published measurements of reservoir pressures and surface displacements, incorporates a detailed representation of fault surfaces within and around the field, well-level production and injection schedules, and an elastoplastic constitutive framework. Model results show that the previously assumed stress regime in the field (reverse faulting) needs to be reassessed$\\unicode{x2014}$the best match to the ground deformation data is achieved when the sedimentary section is initialized with low deviatoric stress (i.e., not critically stressed). This suggests significant variation in the stress state with depth, including a likely change in the stress regime. DCFF values suggest minor destabilization on reservoir faults and larger changes on sub-horizontal bedding planes; both could explain the faulting that led to sheared wells and seismicity between 1947 and 1961.",
-        "published": "2026-05-15T23:48:13Z",
-        "updated": "2026-05-15T23:48:13Z",
-        "categories": [
-          "physics.geo-ph"
-        ],
-        "pdf_url": "https://arxiv.org/pdf/2605.16711v1",
-        "abs_url": "http://arxiv.org/abs/2605.16711v1",
-        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260515/2605.16711v1.pdf",
-        "pdf_download_error": null,
-        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260515/2605.16711v1.md",
-        "markdown_parse_error": null
-      },
-      "analysis": {
-        "schema_version": "paperradar.analysis.v3",
-        "input_version": "markdown-clean-v1",
-        "one_sentence_en": "A 3D coupled multiphase flow–geomechanics model of the Wilmington Oil Field reproduces long-term subsidence and explains historical well-shearing by revising the initial stress regime and identifying which shallow layers were most destabilized by production and injection.",
-        "one_sentence_zh": "本文建立了威尔明顿油田的三维耦合多相流-地应力模型，重现长期地表沉降并通过修正初始应力制度，解释历史井筒剪切的层位失稳机制。",
-        "summary_en": [
-          "problem: Long-term oil production and water injection in Wilmington caused substantial subsidence and triggered faulting that damaged wells, yet the controlling initial stress state and destabilized fault planes remain uncertain.",
-          "approach: The authors build a calibrated 3D elastoplastic, fault-aware coupled flow–geomechanics model using reservoir pressure history, surface leveling displacements, and detailed production/injection schedules to test stress-regime assumptions and quantify stability changes on faults and bedding planes.",
-          "key result: The best fit to surface deformation is obtained when the sedimentary section starts from low deviatoric stress rather than a critically stressed reverse-faulting regime, with calculated instability changes greatest on shallow sub-horizontal bedding planes (and smaller effects on reservoir faults), consistent with documented well shearing and 1947–1961 seismicity."
-        ],
-        "summary_zh": [
-          "problem: 威尔明顿油田的长期采油与注水导致显著沉降并引发断层活动/井筒破坏，但初始应力状态与真正失稳的断层或层面尚不清楚。",
-          "approach: 作者构建包含精细断层几何的三维弹塑性耦合流-地应力模型，用已发布的储层压力与地表高程沉降数据校准，并结合逐井的采注排程，检验不同初始应力制度并计算断层与层面稳定性变化。",
-          "key result: 地表形变的最佳拟合表明沉积地层应从低偏应力（非临界受压）初始化，且失稳变化在浅部近水平层理面最强、在储层断层较弱，这与1947–1961年的井筒剪切和地震活动相吻合。"
-        ],
-        "contribution_en": "Provides a calibrated, elastoplastic 3D coupled flow–geomechanics assessment that reconciles nearly century-scale subsidence with fault-stability evolution, demonstrating that the initially assumed reverse-faulting stress regime is unlikely and identifying shallow sub-horizontal interfaces as key slip candidates.",
-        "contribution_zh": "给出一个可校准的三维弹塑性耦合流-地应力评估，将近百年尺度的沉降与断层稳定性演化统一起来，表明先前认为的逆冲型初始应力制度不太可能，并指出浅部近水平层间界面是主要的滑移失稳候选。",
-        "method_en": "A 3D coupled multiphase flow–geomechanics model with detailed fault surfaces (including faults within and around the field), well-by-well production and injection schedules, elastoplastic constitutive behavior, calibrated to published reservoir pressures and surface leveling (subsidence/rebound) measurements; stability changes are computed for faults and sub-horizontal bedding planes.",
-        "method_zh": "建立包含场内及周边精细断层面的三维多相流-地应力耦合模型，输入逐井生产与注水排程，并采用弹塑性本构；用已发布的储层压力和地表水准沉降/回弹观测进行校准，随后评估断层与浅部近水平层理面的稳定性变化。",
-        "data_or_region_en": "Wilmington Oil Field in the Los Angeles Basin, California, using published reservoir pressure history, historical surface leveling subsidence/rebound measurements, and detailed well-level production and waterflooding schedules (1936–2020 timeframe).",
-        "data_or_region_zh": "美国加州洛杉矶盆地的威尔明顿油田；数据包括已发布的储层压力历史、历史地表水准沉降与回弹观测，以及逐井生产与水驱注入的详细排程（覆盖1936–2020）。",
-        "geophysics_relevance_en": "Directly relevant to induced seismicity and subsurface energy safety because it quantitatively links reservoir operations to stress-state evolution, ground deformation, and which interfaces are most prone to slip under uncertain shallow initial stresses.",
-        "geophysics_relevance_zh": "与诱发地震及地下能源开发安全直接相关：本文定量联系储层作业引起的应力演化、地表形变以及在浅部初始应力不确定条件下最易发生滑移的界面，从而有助于风险机理理解。",
-        "llm_used": true,
-        "source": "markdown",
-        "model": "gpt-5.4-nano",
-        "topic": "Induced faulting by production",
-        "audience_level": "specialist",
-        "keywords_en": [
-          "stress state",
-          "subsidence",
-          "fault slip",
-          "coupled flow-geomechanics",
-          "Wilmington Oil Field"
-        ],
-        "keywords_zh": [
-          "应力状态",
-          "地表沉降",
-          "断层滑移",
-          "耦合流-地应力",
-          "威尔明顿油田"
-        ],
-        "updated_at": "2026-05-21T23:30:43.500486+00:00",
-        "cache_hit": true
-      }
-    },
-    {
-      "paper": {
-        "arxiv_id": "2605.16665v1",
-        "title": "In-context learning enables continental-scale subsurface temperature prediction from sparse local observations",
-        "authors": [
-          "Daniel O'Malley",
-          "Christopher W. Johnson",
-          "Javier E. Santos",
-          "Pablo Lara",
-          "Sandro Malusà",
-          "Bharat Srikishan",
-          "John Kath",
-          "Arnab Mazumder",
-          "Mohamed Mehana",
-          "David Coblentz",
-          "Nathan DeBardeleben",
-          "Earl Lawrence",
-          "Hari Viswanathan"
-        ],
-        "abstract": "Continental-scale knowledge of subsurface temperature is limited by the cost and sparsity of borehole measurements, but such information is essential for geothermal resource assessment and for understanding heat transport in the shallow crust. The thermal field reflects the interaction between lithology, crustal structure, radiogenic heat production, and advective fluid flow, sometimes producing sharp anomalies that are smoothed by conventional interpolation or difficult to capture with physical models. Here we introduce In-Context Earth, a transformer-based model that uses sparse local borehole observations as geological context to predict continuous temperature-at-depth fields with calibrated uncertainty. In the contiguous United States, the model achieves a mean absolute error of 4.7 °C, outperforming the physics-informed Stanford Thermal Model, a model based on AlphaEarth embeddings, the multimodal Transparent Earth model, and universal kriging, while resolving sharper thermal gradients in geothermal provinces. Its uncertainty estimates are well calibrated, with a Kolmogorov-Smirnov statistic of 2.5%. Without finetuning, the model adapts to Alberta, Australia, and the United Kingdom (UK) using only 20 local observations at inference time, maintaining high accuracy in geologically distinct test regions with a mean absolute error of 2.2 °C in Alberta, 6.2 °C in Australia, and 5.4 °C in the UK. Interpretability analyses show that the model learns internal representations of subsurface properties it never observes during training, including seismic velocities, geochemistry, and crustal structure, and uses these representations in physically consistent ways. More broadly, this work shows that in-context learning can use sparse borehole observations for continental-scale subsurface characterization, without requiring dense measurements or region-specific retraining.",
-        "published": "2026-05-15T22:03:34Z",
-        "updated": "2026-05-15T22:03:34Z",
-        "categories": [
-          "cs.LG",
-          "physics.geo-ph"
-        ],
-        "pdf_url": "https://arxiv.org/pdf/2605.16665v1",
-        "abs_url": "http://arxiv.org/abs/2605.16665v1",
-        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260515/2605.16665v1.pdf",
-        "pdf_download_error": null,
-        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260515/2605.16665v1.md",
-        "markdown_parse_error": null
-      },
-      "analysis": {
-        "schema_version": "paperradar.analysis.v3",
-        "input_version": "markdown-clean-v1",
-        "one_sentence_en": "In-Context Earth uses an encoder-only transformer with in-context conditioning on sparse borehole temperatures to predict continental-scale temperature-at-depth fields with calibrated uncertainty and strong cross-continent generalization.",
-        "one_sentence_zh": "In-Context Earth 使用编码器式变压器，把稀疏钻孔温度作为上下文进行条件学习，生成大陆尺度的温度-深度连续场，并给出良好校准的不确定性与跨地区泛化能力。",
-        "summary_en": [
-          "problem: Subsurface temperature mapping is limited by costly, sparse borehole measurements, leading to oversmoothed gradients and unreliable uncertainty in geothermal assessments.",
-          "approach: Introduce In-Context Earth, a transformer that performs in-context learning from a variable set of local borehole observations, predicting binned depth-dependent temperatures as a probabilistic classification task with multiscale spatial encodings and Earth-tailored augmentation.",
-          "key result: On the contiguous US dataset, it achieves 4.7 °C MAE and better resolves sharp geothermal gradients than several baselines, with well-calibrated uncertainty (KS statistic 2.5%); without finetuning it adapts to Alberta, Australia, and the UK using only 20 local observations at inference."
-        ],
-        "summary_zh": [
-          "problem: 地下温度制图受昂贵且稀疏的钻孔观测限制，传统插值常使温度梯度被抹平且不确定性不可靠，从而影响地热评估。",
-          "approach: 提出 In-Context Earth，采用变压器从若干局部钻孔作为上下文进行条件学习，使用多尺度空间编码与面向地球的数据增强，把温度预测改为分箱的概率分类任务并输出校准不确定性。",
-          "key result: 在相邻美国数据上达到 4.7 °C MAE，且对地热省的尖锐温度梯度刻画更优、置信度校准良好（KS 指标 2.5%）；无需微调即可在推理时仅用每个新区域 20 个局部观测适配到阿尔伯塔、澳大利亚和英国。"
-        ],
-        "contribution_en": "The paper demonstrates a transformer-based in-context learning framework that turns sparse borehole temperature observations into continuous continental temperature-at-depth predictions with calibrated uncertainty, and shows interpretability evidence that learned representations align with physically meaningful subsurface properties.",
-        "contribution_zh": "论文提出了一种基于变压器的上下文学习框架：把稀疏钻孔温度观测转化为大陆尺度连续温度-深度预测，并给出校准良好的不确定性；同时通过可解释性分析给出证据表明模型内部表征与物理上有意义的地下性质一致。",
-        "method_en": "Train an encoder-only transformer on contiguous US borehole temperature measurements using multiscale spatial encodings and Earth-tailored augmentation that masks absolute lat/lon; at inference, condition on a variable number of nearby borehole context tokens and predict the target temperature distribution across depth-dependent binned intervals to obtain calibrated uncertainty.",
-        "method_zh": "在相邻美国钻孔温度数据上训练编码器式变压器，使用多尺度空间编码，并通过面向地球的数据增强（掩蔽绝对经纬度，仅保留相对位置）；推理时用若干邻近钻孔作为上下文条件，预测目标深度分箱温度的概率分布，从而得到校准的不确定性。",
-        "data_or_region_en": "Contiguous United States borehole temperature compilation (360k temperatures) for training and validation; generalization tests on Alberta (Canada), Australia, and the United Kingdom (using only 20 local observations at inference).",
-        "data_or_region_zh": "训练与验证使用相邻美国的钻孔温度汇编（约 36 万条温度）；并在阿尔伯塔（加拿大）、澳大利亚和英国进行泛化测试（推理时每个区域仅用 20 个局部观测）。",
-        "geophysics_relevance_en": "Directly relevant to geothermal resource assessment and subsurface heat-transport characterization from sparse borehole data; also provides uncertainty-calibrated maps and interpretability linking temperature to subsurface properties, which is valuable for geoscience decision-making.",
-        "geophysics_relevance_zh": "与地热资源评估及利用稀疏钻孔刻画地下热输运过程高度相关；其输出带校准不确定性的温度场，并给出与地下性质相关的可解释性证据，有助于地球科学决策。",
-        "llm_used": true,
-        "source": "markdown",
-        "model": "gpt-5.4-nano",
-        "topic": "In-context geothermal forecasting",
-        "audience_level": "specialist",
-        "keywords_en": [
-          "geothermal",
-          "subsurface temperature",
-          "borehole",
-          "in-context learning",
-          "transformer"
-        ],
-        "keywords_zh": [
-          "地下温度",
-          "上下文学习",
-          "变压器"
-        ],
-        "updated_at": "2026-05-21T23:30:43.504874+00:00",
-        "cache_hit": true
-      }
-    },
-    {
-      "paper": {
-        "arxiv_id": "2605.15752v1",
-        "title": "Forecasting megaelectron-volt electron flux in the Earth's outer radiation belt using supervised machine learning algorithms and a timeseries foundation model",
-        "authors": [
-          "Rungployphan Kieokaew",
-          "Ryad Guezzi",
-          "François Ginisty",
-          "Hadrien Mariaccia"
-        ],
-        "abstract": "Accurate forecasting of megaelectron-volt (MeV) electrons in the outer Earth's radiation belt, which can pose significant risks to satellites, is essential for risk mitigation and spacecraft operations. We develop a machine-learning-based pipeline for forecasting 1-MeV electron flux variations, focusing first on a 6-hour forecast horizon. Using precipitating electrons measured by POES NOAA-15, near 1-MeV electron flux measured by GOES, solar wind measurements near L1, and geomagnetic activity indices as inputs in 2013-2023, we train algorithms including linear regression, 1-D convolutional and long short-term memory neural networks, and Transformer-Encoder to forecast 1-MeV electron flux in McIlwain's L-shells between 2.8 and 6.0 with 0.1 bin resolution. Particularly, we exploit the timeseries foundation model TimesFM for (1) a zero-shot prediction and (2) a hybrid application involving the ridge regression on the past dynamic covariates combined with the TimesFM inference on the residuals. Using data from January-June 2024 as an out-of-sample test, we find that the hybrid application of TimesFM, named TimesFM+Cov, yields the best results with an average R2 of 0.9 across L-shells, compared to an average R2 under 0.78 for all other models. The R2 of TimesFM+Cov remains above 0.9 for L-shells between 2.8 and 4.7 and drops to 0.77 at L=6.0, indicating improvements of 12% at the lowest L-shell and 48% at the highest L-shell compared to our second-best models. Our work offers an alternative perspective on how a pretrained foundation model could be adapted for space weather forecasting.",
-        "published": "2026-05-15T09:13:02Z",
-        "updated": "2026-05-15T09:13:02Z",
-        "categories": [
-          "astro-ph.IM",
-          "astro-ph.EP"
-        ],
-        "pdf_url": "https://arxiv.org/pdf/2605.15752v1",
-        "abs_url": "http://arxiv.org/abs/2605.15752v1",
-        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260515/2605.15752v1.pdf",
-        "pdf_download_error": null,
-        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260515/2605.15752v1.md",
-        "markdown_parse_error": null
-      },
-      "analysis": {
-        "schema_version": "paperradar.analysis.v3",
-        "input_version": "markdown-clean-v1",
-        "one_sentence_en": "The study builds supervised ML and a TimesFM-based time-series foundation adaptation to forecast 1 MeV outer-belt electron flux variations from 6-hour lead using POES/GOES/solar-wind/geomagnetic inputs, achieving strong cross-L performance.",
-        "one_sentence_zh": "该研究构建监督学习及基于 TimesFM 的时间序列基础模型改造，用 POES/GOES/太阳风与地磁数据预测 6 小时前的外辐射带 1 MeV 电子通量变化，效果在多个 L 上较强。",
-        "summary_en": [
-          "problem: Need accurate, near-real-time forecasts of 1-MeV electron flux in the Earth's outer radiation belt to mitigate satellite charging and operational risk.",
-          "approach: Train per-L supervised models using POES NOAA-15 precipitating electron fluxes, near-1 MeV GOES flux, upstream solar wind/IMF from L1, and geomagnetic indices, and adapt the pretrained TimesFM via zero-shot and a hybrid residual approach (TimesFM+Cov).",
-          "key result: On Jan–Jun 2024 out-of-sample tests, TimesFM+Cov achieves the best average skill (average R2 ≈ 0.9) across L=2.8–6.0, outperforming other models (average R2 < 0.78) and maintaining >0.9 for L up to 4.7."
-        ],
-        "summary_zh": [
-          "problem: 需要对地球外辐射带 1 MeV 电子通量进行更准确的近实时预测，以降低卫星充放电等风险。",
-          "approach: 针对每个 L 单独训练监督模型，输入来自 POES NOAA-15 的低能沉降电子、GOES 近 1 MeV 电子通量、L1 处太阳风/IMF 以及地磁指数，并将预训练 TimesFM 用于零样本预测与残差混合方案（TimesFM+Cov）。",
-          "key result: 在 2024 年 1–6 月的样本外测试中，TimesFM+Cov 在 L=2.8–6.0 的平均预测能力最好（平均 R2 约 0.9），明显优于其他模型（平均 R2 < 0.78），且在 L≤4.7 时保持 R2>0.9。"
-        ],
-        "contribution_en": "Introduces a space-weather forecasting pipeline that adapts a time-series foundation model (TimesFM) for outer radiation belt electron-flux prediction, showing that a hybrid residual-based TimesFM+Cov strategy substantially improves forecast skill versus standard supervised baselines.",
-        "contribution_zh": "提出用于外辐射带电子通量预测的空间天气预报流程，并将时间序列基础模型 TimesFM 进行残差混合改造（TimesFM+Cov）；结果表明其预测能力显著优于常规监督学习基线。",
-        "method_en": "Per-McIlwain L value (2.8–6.0, 0.1 step), supervised regression models are trained on multivariate past sequences of POES NOAA-15 electron fluxes and magnetic local time plus merged near-1 MeV GOES flux, solar wind/IMF from upstream near L1 (OMNI), and geomagnetic indices; TimesFM is evaluated both as a zero-shot forecaster and in a hybrid scheme that applies ridge regression to dynamic covariates and then uses TimesFM inference on residuals (TimesFM+Cov) for 6-hour ahead forecasts.",
-        "method_zh": "针对每个 McIlwain L（2.8–6.0，步长 0.1）分别训练监督回归模型，输入为 POES NOAA-15 的电子通量时间序列及对应的磁地方时，再加上融合的近 1 MeV GOES 电子通量、L1 附近上游太阳风/IMF（OMNI）以及地磁指数；同时评估 TimesFM 的零样本预测能力，以及“对动态协变量先做岭回归、再对残差使用 TimesFM 推断”的混合方案（TimesFM+Cov），用于 6 小时超前预报。",
-        "data_or_region_en": "Outer radiation belt electron forecasting for McIlwain L-shells 2.8–6.0 (0.1 resolution) using POES NOAA-15 (SEM-2/MEPED), merged GOES electron measurements, upstream solar wind/IMF near L1 from OMNI (ACE/Wind sources), and geomagnetic indices (Dst, Kp); trained on 2013–2023 and tested out-of-sample on Jan–Jun 2024.",
-        "data_or_region_zh": "外辐射带预测区域为 McIlwain L-shell 2.8–6.0（0.1 分辨率）；观测数据来自 POES NOAA-15（SEM-2/MEPED）与融合的 GOES 电子测量，太阳风/IMF 来自 L1 附近 OMNI（ACE/Wind 多源）以及地磁指数（Dst、Kp）；训练使用 2013–2023，样本外测试为 2024 年 1–6 月。",
-        "geophysics_relevance_en": "This is directly relevant to space-weather risk mitigation for satellite operations because it forecasts MeV-class outer radiation belt electron fluxes using operationally motivated inputs and a novel foundation-model adaptation.",
-        "geophysics_relevance_zh": "该工作与空间天气预警/风险缓解高度相关，因为它面向卫星运行需求预测 MeV 级外辐射带电子通量，并采用了更贴近业务的输入与基础模型改造思路。",
-        "llm_used": true,
-        "source": "markdown",
-        "model": "gpt-5.4-nano",
-        "topic": "outer-belt electron forecasting",
-        "audience_level": "specialist",
-        "keywords_en": [
-          "radiation-belt electrons",
-          "MeV forecasting",
-          "space weather",
-          "TimesFM",
-          "POES GOES"
-        ],
-        "keywords_zh": [
-          "辐射带电子",
-          "MeV 预报",
-          "空间天气",
-          "TimesFM",
-          "POES GOES"
-        ],
-        "updated_at": "2026-05-21T23:30:43.514856+00:00",
-        "cache_hit": true
-      }
-    },
-    {
-      "paper": {
-        "arxiv_id": "2605.15549v1",
-        "title": "CTF4Nuclear: Common Task Framework for Nuclear Fission and Fusion Models",
-        "authors": [
-          "Stefano Riva",
-          "Carolina Introini",
-          "Antonio Cammi",
-          "Dean Price",
-          "Alexey Yermakov",
-          "Yue Zhao",
-          "Philippe M. Wyder",
-          "Judah Goldfeder",
-          "Jan Williams",
-          "Amy Sara Rude",
-          "Matteo Tomasetto",
-          "Joe Germany",
-          "Joseph Bakarji",
-          "Georg Maierhofer",
-          "Miles Cranmer",
-          "J. Nathan Kutz"
-        ],
-        "abstract": "The demand for clean energy is ever increasing, with new nuclear technologies presenting a complementary solution to renewable energies. However, designing and operating these systems is exceptionally difficult, given the complexity of the physical phenomena that interact to form the system dynamics. While high-fidelity simulations help to understand the non-linear, multi-physics interactions within a reactor, they are computationally expensive and rarely suitable for real-time applications. Furthermore, model-based approaches are inherently sensitive to simplifying assumptions required to derive their governing equations and parameters, leading to inevitable discrepancies with real-world measurements. In contrast, Machine Learning (ML) methods have the potential to generate reliable surrogate models which may be able to quickly predict the system's behaviour. However, the number of data-driven methods that can potentially be used for this task is large and diverse. In a safety-critical setting such as nuclear engineering, a fair comparison of different ML methods, and a clear understanding of their advantages and limitations, is of paramount importance. To address this, we introduce a Common Task Framework (CTF) for ML in nuclear engineering, building upon previous efforts in dynamical systems and seismology. This CTF considers a curated set of datasets from different nuclear and nuclear-adjacent systems. The CTF evaluates the performance of a method on 12 established metrics, alongside a new paradigm focused on system monitoring from sparse measurements only. We illustrate the framework by benchmarking standard ML baselines against these datasets, revealing current method limitations. Our vision is to replace ad hoc comparisons with standardized evaluations on hidden test sets, raising the bar for rigour and reproducibility in scientific ML for the nuclear industry.",
-        "published": "2026-05-15T02:42:26Z",
-        "updated": "2026-05-15T02:42:26Z",
-        "categories": [
-          "cs.LG",
-          "cs.AI",
-          "cs.CE"
-        ],
-        "pdf_url": "https://arxiv.org/pdf/2605.15549v1",
-        "abs_url": "http://arxiv.org/abs/2605.15549v1",
-        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260515/2605.15549v1.pdf",
-        "pdf_download_error": null,
-        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260515/2605.15549v1.md",
-        "markdown_parse_error": null
-      },
-      "analysis": {
-        "schema_version": "paperradar.analysis.v3",
-        "input_version": "markdown-clean-v1",
-        "one_sentence_en": "CTF4Nuclear proposes a common-task benchmark and withheld-test evaluation framework for machine-learning surrogates and sparse-sensor state estimation across multiple nuclear fission and fusion datasets, quantifying current limitations via 12+ metrics.",
-        "one_sentence_zh": "CTF4Nuclear提出面向核裂变与聚变的通用任务基准与隐藏测试集评测框架，用于评估机器学习替代模型和稀疏传感器状态反演，并用多指标揭示现有方法局限。",
-        "summary_en": [
-          "Problem: Nuclear ML needs fair, reproducible comparisons and real-time-capable surrogate/state-estimation tools despite expensive physics models and sparse/noisy observability constraints.",
-          "Approach: Create an open common task framework with diverse curated fission/fusion datasets and evaluate methods using twelve established metrics plus a new sparse-measurement monitoring paradigm.",
-          "Key result: The benchmark standardizes multi-metric evaluation on hidden test sets and demonstrates method limitations on the included nuclear and nuclear-adjacent systems, without claiming a single best method."
-        ],
-        "summary_zh": [
-          "问题：核工程场景下，亟需可复现的公平比较与适用于实时的ML替代模型/状态估计，但高保真物理模型昂贵且观测稀疏噪声大。",
-          "方法：构建开放的通用任务框架，汇集多样的核裂变/聚变数据集，并通过十二项既有指标加上仅基于稀疏测量的系统监测新任务范式来评测。",
-          "关键结果：该基准用隐藏测试集与多指标标准化评测，并在所含多种核相关系统上展示了现有方法的不足（未给出唯一通用最优结论）。"
-        ],
-        "contribution_en": "The paper’s main contribution is introducing CTF4Nuclear, an open common-task framework with a curated, cross-physics benchmark suite and standardized, withheld-test, multi-metric evaluation—including a novel sparse-sensor reconstruction/monitoring task—for ML surrogates and state estimation in nuclear fission and fusion.",
-        "contribution_zh": "论文的主要贡献是提出CTF4Nuclear：一个开放的通用任务框架，包含跨物理过程的精选基准数据集，并通过包含隐藏测试集与多指标的标准化评测（还新增仅基于稀疏传感器的重建/监测任务）来评估核裂变与聚变中的ML替代模型与状态估计。",
-        "method_en": "A common-task benchmark workflow that trains ML models on curated nuclear/fusion datasets and evaluates them on a hidden test set using 12 established spatiotemporal metrics (forecasting, noise robustness, limited data, parametric generalization) plus a sparse-measurement system monitoring task that reconstructs physically unobservable fields from partial sensor readings.",
-        "method_zh": "一种通用任务基准评测流程：在精选的核/聚变数据上训练ML模型，并在隐藏测试集上用12项时空预测相关指标评估（预测、噪声鲁棒性、有限数据、参数泛化），同时加入仅依赖稀疏传感器观测的系统监测任务，用于从部分测量重建不可直接观测的物理场变量。",
-        "data_or_region_en": "Five nuclear/fusion-relevant systems/datasets: Molten Salt Fast Reactor (EVOL geometry; OpenFOAM multi-physics), Heat-Pipe MicroReactor (transient neutronics/thermal response), MHD lead-lithium channel flow (fusion coolant channel), DYNASTY experimental facility modeled with RELAP5 (thermo-hydraulics natural circulation), and TRIGA Mark II research reactor (250 kW multi-physics transients); specific regions are not emphasized.",
-        "data_or_region_zh": "5类核/聚变相关数据集：熔盐快堆（EVOL几何；OpenFOAM多物理）、热管微反应堆（瞬态中子学/热响应）、MHD铅-锂通道流（聚变冷却剂通道）、DYNASTY实验装置（用RELAP5建模的热工水力自然对流）、以及TRIGA Mark II研究反应堆（250 kW多物理瞬态）；文中不强调具体地理区域。",
-        "geophysics_relevance_en": "Tangential relevance: the tracked geophysics theme is not directly addressed, but the work adapts dynamical-systems and sparse-sensor reconstruction benchmarking ideas (previously used in seismology) to nuclear engineering.",
-        "geophysics_relevance_zh": "弱相关：与地球物理追踪主题并非直接对口，但借鉴了动力系统与稀疏传感器重建的基准思想（前期用于地震学），迁移到核工程场景。",
-        "llm_used": true,
-        "source": "markdown",
-        "model": "gpt-5.4-nano",
-        "topic": "Nuclear ML Benchmarking",
-        "audience_level": "specialist",
-        "keywords_en": [
-          "nuclear engineering",
-          "surrogate modeling",
-          "state estimation",
-          "sparse sensors",
-          "benchmark framework"
-        ],
-        "keywords_zh": [
-          "核工程",
-          "替代模型",
-          "状态估计",
-          "稀疏传感器",
-          "基准框架"
-        ],
-        "updated_at": "2026-05-21T23:30:43.518517+00:00",
+        "updated_at": "2026-05-23T06:51:45.044230+00:00",
         "cache_hit": true
       }
     }
