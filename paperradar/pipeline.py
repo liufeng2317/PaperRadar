@@ -446,6 +446,13 @@ def _latest_daily_digest(data_dir: str | Path) -> dict[str, Any] | None:
     return None
 
 
+def _contains_all_paper_ids(previous_items: list[dict[str, Any]], papers: list[Paper]) -> bool:
+    previous_ids = {item.get("paper", {}).get("arxiv_id") for item in previous_items}
+    current_ids = {paper.arxiv_id for paper in papers}
+    current_ids.discard(None)
+    return bool(current_ids) and current_ids.issubset(previous_ids)
+
+
 def _same_paper_ids(previous_items: list[dict[str, Any]], papers: list[Paper]) -> bool:
     previous_ids = [item.get("paper", {}).get("arxiv_id") for item in previous_items]
     current_ids = [paper.arxiv_id for paper in papers]

@@ -103,6 +103,7 @@ def parse_pdf_to_markdown(
         else:
             return None, f"MinerU markdown not found for {pdf_file.name}"
 
+    markdown_path.parent.mkdir(parents=True, exist_ok=True)
     shutil.copy2(mineru_markdown, markdown_path)
     return str(markdown_path), None
 

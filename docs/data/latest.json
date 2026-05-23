@@ -1,6 +1,6 @@
 {
   "date": "2026-05-23",
-  "generated_at": "2026-05-23T10:45:54.451749+00:00",
+  "generated_at": "2026-05-23T11:01:26.961954+00:00",
   "config": {
     "site_title": "PaperRadar",
     "site_description": {
@@ -2047,6 +2047,81 @@
         ],
         "updated_at": "2026-05-21T23:30:43.518517+00:00",
         "cache_hit": true
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "eartharxiv-12760",
+        "title": "Upper Crustal Control on Nearshore Subduction Mechanics in Cascadia",
+        "authors": [
+          "Ashraf, Asif",
+          "Hooft, Emilie",
+          "Toomey, Douglas"
+        ],
+        "abstract": "Along-strike upper plate heterogeneity is widely observed at subduction margins, but its direct influence on slab geometry and interseismic deformation remains debated. Here, we investigate the effect of upper-crustal geological segmentation on nearshore subduction mechanics at the Cascadia margin. Using a high-resolution, shore-crossing 3-D seismic tomography model from central to southern Oregon, we image sharp along-strike contrasts in upper-crustal velocity associated with distinct accreted terranes. We show that the subducting slab is systematically deeper beneath the coherent, high-velocity Siletz terrane and shallower beneath low-velocity faulted Siletz and Franciscan terranes. Numerical simulations constrained by the tomographic velocities demonstrate that upper-plate density and rigidity contrasts alone reproduce the observed variation in slab depth and, when combined with viscoelastic deformation, explain the magnitude and pattern of coastal uplift. These findings establish that the along-strike changes in upper-crustal backstop, despite being ignored in geodetic locking models, are a primary mechanical filter that organizes subduction zone architecture and regulates the accumulation of megathrust related strain.",
+        "published": "2026-04-24T14:32:00Z",
+        "updated": "2026-04-24T14:32:47Z",
+        "categories": [
+          "Geology",
+          "Geophysics and Seismology",
+          "Tectonics and Structure",
+          "Geophysics",
+          "Subduction Zone",
+          "Cascadia",
+          "Seismic Tomography"
+        ],
+        "pdf_url": "https://eartharxiv.org/repository/object/12760/download/22664/",
+        "abs_url": "https://eartharxiv.org/repository/view/12760/",
+        "source": "eartharxiv",
+        "source_id": "12760",
+        "doi": "10.31223/X58J59",
+        "local_pdf_path": "data/pdfs/eartharxiv/Geology/20260424/eartharxiv-12760.pdf",
+        "pdf_download_error": null,
+        "markdown_path": "data/markdown/eartharxiv/Geology/20260424/eartharxiv-12760.md",
+        "markdown_parse_error": null
+      },
+      "analysis": {
+        "schema_version": "paperradar.analysis.v3",
+        "input_version": "markdown-clean-v1",
+        "one_sentence_en": "In Cascadia, high-resolution shore-crossing 3-D seismic tomography shows that upper-crust terrane segmentation controls slab geometry and, with density/rigidity contrasts plus viscoelastic effects, explains along-shore coastal uplift patterns.",
+        "one_sentence_zh": "在卡斯卡迪亚，沿岸穿海的高分辨3D地震层析成像表明上地壳地体分段控制俯冲板几何，并结合密度/刚度差异与黏弹性效应解释了沿岸海拔抬升格局。",
+        "summary_en": [
+          "problem: Along-strike heterogeneity in the upper plate is observed at subduction margins, but its direct control on slab geometry and interseismic coastal deformation is debated.",
+          "approach: Build a high-resolution 3-D shore-crossing P-wave velocity model for central–southern Oregon, then convert tomographic velocities to density/elastic moduli to run density/rigidity- and viscoelastic-constrained numerical simulations linking upper-crust structure to slab topography and uplift.",
+          "key result: The slab is deeper beneath coherent high-velocity Siletz and shallower beneath low-velocity faulted Siletz and Franciscan terranes, and simulations constrained by tomography reproduce the observed variation in slab depth and the magnitude/pattern of coastal uplift when viscoelastic deformation is included."
+        ],
+        "summary_zh": [
+          "problem: 板块上覆地壳的沿走向非均一性在俯冲带常见，但它如何直接影响俯冲板几何与同震间海岸形变仍存在争议。",
+          "approach: 构建中南俄勒冈沿岸穿海的高分辨3D P波地震层析速度模型，并将层析速度转换为密度/弹性模量，用数值模拟（结合密度与刚度差异以及黏弹性）把上地壳结构与俯冲板地形和海岸抬升联系起来。",
+          "key result: 俯冲板在相干的高速度Siletz地体下更深、在低速度且断层发育的Siletz与Franciscan地体下更浅；在用层析约束后，纯密度/刚度差异及再叠加黏弹性可解释俯冲板深度变化以及海岸抬升的幅度与空间格局。"
+        ],
+        "contribution_en": "Provides direct structure-to-mechanics evidence for Cascadia by linking along-strike upper-crust terrane velocity contrasts from shore-crossing 3-D seismic tomography to systematic slab bending differences and to coastal uplift, with simulations showing density/rigidity contrasts (and viscoelastic deformation) as primary mechanical drivers.",
+        "contribution_zh": "通过沿岸穿海的高分辨3D地震层析速度对比，将卡斯卡迪亚上地壳地体结构直接与俯冲板弯曲差异及海岸抬升建立联系；数值模拟表明密度/刚度差异（并需黏弹性变形）是主导机制。",
+        "method_en": "Joint inversion of active-source P and PmP arrivals from a shore-crossing 3-D P-wave tomography model; derive along-strike velocity contrasts, convert velocities to density and elastic moduli, and run simulations coupling slab flexure (1-D finite-difference) with a viscoelastic kinematic framework to reproduce slab depth and coastal uplift patterns.",
+        "method_zh": "对主动源P波与PmP到时进行联合反演，建立沿岸穿海的3D P波层析速度模型；提取沿走向速度对比，并将速度转换为密度与弹性模量，结合1D有限差分板片挠曲与黏弹性运动学框架进行数值模拟，以再现俯冲板深度与海岸抬升格局。",
+        "data_or_region_en": "central to southern Oregon along the Cascadia margin (about 42°–44°N), using a high-resolution shore-crossing 3-D seismic tomography model built from offshore/onshore active-source seismic observations (P and PmP) from dense station/shot coverage; study focuses on Siletz, Franciscan, and Klamath accreted terranes.",
+        "data_or_region_zh": "卡斯卡迪亚海沟边界的中南俄勒冈（约42°–44°N），使用高分辨沿岸穿海的3D层析地震模型：来自海上与陆上主动源观测（P与PmP）及密集台站/炮点覆盖；重点讨论Siletz、Franciscan与Klamath三类增生地体。",
+        "geophysics_relevance_en": "High relevance to tracking subduction-mechanics segmentation because it directly demonstrates how along-strike upper-crust backstop rigidity/density heterogeneity organizes slab geometry and regulates megathrust strain accumulation and coastal uplift patterns.",
+        "geophysics_relevance_zh": "与追踪的俯冲动力学分段主题高度相关，因为研究直接证明上地壳后挡块的沿走向刚度/密度非均一性如何组织俯冲板几何，并调控与巨推断层相关的应变积累及沿岸抬升格局。",
+        "keywords_en": [
+          "Cascadia",
+          "subduction mechanics",
+          "3D seismic tomography",
+          "upper-crust terranes",
+          "coastal uplift"
+        ],
+        "keywords_zh": [
+          "卡斯卡迪亚",
+          "俯冲动力学",
+          "3D地震层析成像",
+          "上地壳地体",
+          "海岸抬升"
+        ],
+        "topic": "Subduction segmentation",
+        "audience_level": "specialist",
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano"
       }
     }
   ],
