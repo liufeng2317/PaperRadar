@@ -40,7 +40,8 @@ Main outputs:
 - `data/daily/<source>/YYYY-MM-DD.json`: source-specific daily digest JSON
 - `docs/index.html`: GitHub Pages HTML page
 - `data/daily/public/YYYY-MM-DD.json`: aggregated public daily digest JSON
-- `docs/data/latest.json`: latest public page data
+- `docs/data/latest.json`: latest aggregated public page data
+- `docs/data/latest.arxiv.json` and `docs/data/latest.eartharxiv.json`: latest source-specific public data
 - `data/pdfs/<source>/<category>/<YYYYMMDD>/`: cached PDFs grouped by source and preprint publication date
 - `data/markdown/<source>/<category>/<YYYYMMDD>/`: parsed Markdown grouped by source and preprint publication date
 - `data/mineru/<source>/<category>/<YYYYMMDD>/`: MinerU outputs grouped by source and preprint publication date

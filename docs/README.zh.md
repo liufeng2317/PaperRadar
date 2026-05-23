@@ -40,7 +40,8 @@ PAPERRADAR_PYTHON=/path/to/python bash scripts/run_daily.sh
 - `data/daily/<source>/YYYY-MM-DD.json`：按来源拆分的每日结果 JSON
 - `docs/index.html`：GitHub Pages 页面
 - `data/daily/public/YYYY-MM-DD.json`：聚合后的公开每日结果 JSON
-- `docs/data/latest.json`：页面使用的最新公开数据
+- `docs/data/latest.json`：页面使用的最新聚合公开数据
+- `docs/data/latest.arxiv.json` 与 `docs/data/latest.eartharxiv.json`：按来源拆分的最新公开数据
 - `data/pdfs/<source>/<category>/<YYYYMMDD>/`：按来源和预印本发布日期分组的 PDF 缓存
 - `data/markdown/<source>/<category>/<YYYYMMDD>/`：按来源和预印本发布日期分组的 Markdown
 - `data/mineru/<source>/<category>/<YYYYMMDD>/`：按来源和预印本发布日期分组的 MinerU 输出

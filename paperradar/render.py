@@ -5,6 +5,8 @@ import json
 from pathlib import Path
 from typing import Any
 
+from paperradar.trend import rank_keywords
+
 
 PAPERS_PER_PAGE = 25
 
@@ -13,10 +15,28 @@ def write_outputs(digest: dict[str, Any], docs_dir: str | Path = "docs") -> None
     docs_path = Path(docs_dir)
     data_path = docs_path / "data"
     data_path.mkdir(parents=True, exist_ok=True)
-    (data_path / "latest.json").write_text(
-        json.dumps(digest, ensure_ascii=False, indent=2), encoding="utf-8"
-    )
+    _write_json(data_path / "latest.json", digest)
+    for source in ["arxiv", "eartharxiv"]:
+        _write_json(data_path / f"latest.{source}.json", _source_digest(digest, source))
     (docs_path / "index.html").write_text(render_html(digest), encoding="utf-8")
+
+
+def _write_json(path: Path, payload: dict[str, Any]) -> None:
+    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def _source_digest(digest: dict[str, Any], source: str) -> dict[str, Any]:
+    papers = [
+        item for item in digest.get("papers", [])
+        if (item.get("paper", {}).get("source") or "arxiv") == source
+    ]
+    source_digest = dict(digest)
+    source_digest["papers"] = papers
+    source_digest["trending_keywords"] = rank_keywords(
+        papers, top_n=digest.get("config", {}).get("trending_top_n", 30)
+    )
+    source_digest["source"] = source
+    return source_digest
 
 
 def render_html(digest: dict[str, Any]) -> str:
