@@ -17,3 +17,4 @@ data/smoke/
 docs_smoke/
 pkg/
 /logs/
+scripts/tests/runtime/

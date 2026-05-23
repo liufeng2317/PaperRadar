@@ -17,7 +17,7 @@
   <img alt="Pages" src="https://img.shields.io/badge/Publish-GitHub%20Pages-111827?style=flat-square&logo=github">
 </p>
 
-PaperRadar is a lightweight preprint intelligence pipeline. It watches the research topics you care about, downloads metadata and PDFs, parses papers into Markdown with MinerU, asks an OpenAI-compatible LLM for bilingual summaries, ranks keyword trends, and publishes a clean static digest through GitHub Pages.
+PaperRadar is a lightweight preprint intelligence pipeline. It watches the research topics you care about, always fetches metadata and abstracts, can optionally download PDFs, can optionally parse PDFs into Markdown with MinerU, asks an OpenAI-compatible LLM for bilingual summaries, ranks keyword trends, and publishes a clean static digest through GitHub Pages.
 
 The default setup tracks geophysics-related work across `arXiv` and `EarthArXiv`, but the project is source-aware and domain-agnostic: change `config/default.json` to follow other arXiv categories, EarthArXiv subjects, keywords, authors, or custom queries.
 
@@ -36,8 +36,8 @@ Research updates should feel like a radar screen, not a pile of tabs. PaperRadar
 | Layer | Output |
 | --- | --- |
 | Discovery | arXiv API plus EarthArXiv OAI-PMH metadata feed |
-| Storage | Source-aware PDF, Markdown, MinerU, and daily JSON caches |
-| Understanding | English and Chinese LLM summaries from parsed Markdown when available |
+| Storage | Source-aware daily JSON, optional PDF cache, optional Markdown/MinerU cache |
+| Understanding | English and Chinese LLM summaries from parsed Markdown when available, otherwise from abstracts |
 | Trends | Per-paper keywords plus ranked keyword trends |
 | Publishing | `docs/index.html` loads `docs/data/latest.*.json` at runtime |
 | Automation | Server loop, git push, optional Chinese email digest |
@@ -47,21 +47,28 @@ Research updates should feel like a radar screen, not a pile of tabs. PaperRadar
 ```text
 arXiv categories / custom query      EarthArXiv subjects
               │                       │
-              └──────── fetch metadata ┘
-                          │
-                    download PDFs
-                          │
-                   MinerU PDF parse
-                          │
-                 Markdown cleaned for LLM
-                          │
-          bilingual summaries + keyword trends
-                          │
-        data/daily/<source>/YYYY-MM-DD.json
-                          │
-              docs/data/latest.*.json
-                          │
-                  GitHub Pages UI
+              └──────── fetch metadata + abstracts ────────┐
+                                      │                    │
+                                      │                    ├─ if download_pdfs=false
+                                      │                    │      skip local PDF archive
+                                      │                    │
+                                      ├─ if download_pdfs=true
+                                      │  save PDFs under data/pdfs/
+                                      │
+                                      ├─ if parse_pdfs=true and PDF exists
+                                      │      MinerU parse -> Markdown under data/markdown/
+                                      │
+                                      └─ LLM input
+                                             ├─ Markdown when available
+                                             └─ abstract fallback otherwise
+                                                   │
+                                      bilingual summaries + keyword trends
+                                                   │
+                               data/daily/<source>/YYYY-MM-DD.json
+                                                   │
+                                     docs/data/latest.*.json
+                                                   │
+                                           GitHub Pages UI
 ```
 
 ## Quick Start
@@ -82,10 +89,16 @@ Use the Python environment that contains MinerU dependencies:
 PAPERRADAR_PYTHON=/path/to/python bash scripts/run_daily.sh
 ```
 
-For the current server setup, the working environment is typically:
+For a dedicated server environment, point `PAPERRADAR_PYTHON` to the Python executable that has the required dependencies:
 
 ```bash
-PAPERRADAR_PYTHON=/liufeng1afs/software/miniconda3/envs/inversionagent/bin/python bash scripts/run_daily.sh
+PAPERRADAR_PYTHON=/path/to/conda/env/bin/python bash scripts/run_daily.sh
+```
+
+Use the lightweight mode when MinerU is not installed. This mode still fetches metadata and abstracts, downloads PDFs when enabled, and calls the LLM, but summaries are generated from abstracts instead of parsed Markdown:
+
+```bash
+bash scripts/run_daily.sh --config config/light.json
 ```
 
 ## Configuration
@@ -119,6 +132,9 @@ Notes:
 - `arxiv.categories` are arXiv taxonomy values such as `physics.geo-ph`.
 - `eartharxiv.subjects` are EarthArXiv subjects such as `Geophysics and Seismology`.
 - `lookback_days` controls fetch windows; `public_lookback_days` controls the public page window.
+- `arxiv.download_pdfs=false` skips local PDF archiving while keeping metadata, abstracts, links, LLM summaries, trends, and the web page.
+- `arxiv.parse_pdfs=false` skips MinerU and summarizes from abstracts.
+- `config/light.json` is the ready-to-use no-MinerU profile: PDF download remains enabled, PDF parsing is disabled.
 
 ## Outputs
 
@@ -156,6 +172,7 @@ LLM_MODEL=gpt-4o-mini
 HTTP_PROXY=http://user:password@host:port
 HTTPS_PROXY=http://user:password@host:port
 
+# Optional, only required when arxiv.parse_pdfs=true
 MINERU_API_KEY=...
 MINERU_API_BASE=...
 ```
@@ -182,7 +199,7 @@ SMTP_PASSWORD=your-smtp-app-password
 3. Run PaperRadar on your server or local machine.
 4. Commit and push `data/daily` plus `docs/data` updates.
 
-MinerU parsing is usually better on a machine where MinerU credentials and dependencies are already configured. GitHub-hosted Actions can publish the static page, but full PDF parsing is better kept on your own server.
+MinerU parsing is optional. Without MinerU, use `config/light.json` to publish an abstract-based digest. Full PDF parsing is usually better on a machine where MinerU credentials and dependencies are already configured. GitHub-hosted Actions can publish the static page, but full PDF parsing is better kept on your own server.
 
 ## Automation
 
@@ -226,6 +243,7 @@ python -m paperradar.cli email --input docs/data/latest.json --latest-published-
 ```bash
 python -m paperradar.cli fetch
 python -m paperradar.cli run --date 2026-05-23
+bash scripts/run_daily.sh --config config/light.json
 python -m paperradar.cli aggregate-local --lookback-days 60
 python -m paperradar.cli reanalyze --input data/daily/public/2026-05-23.json
 python -m paperradar.cli registry --query seismic

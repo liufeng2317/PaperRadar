@@ -12,7 +12,7 @@ import fitz
 import requests
 from typing import List
 
-CROSSREF_HEADERS = {"mailto": "rosalinagibboneyreg98@gmail.com"}
+CROSSREF_HEADERS = {"mailto": os.getenv("CROSSREF_MAILTO", "")}
 
 
 def pdf_to_unique_uuid(pdf_path, namespace=uuid.NAMESPACE_OID):

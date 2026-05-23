@@ -1,8 +1,6 @@
-# Author: Feng Liu
-# Affiliation: Shanghai Jiao Tong University
-# Contact: Liufeng2317@sjtu.edu.cn
-# Citation requested: If you use this codebase or derivative workflows,
-# please cite/acknowledge the original author in publications and releases.
+# Adapted MinerU paper parsing utilities for PaperRadar.
+# Original upstream logic was copied into this repository to avoid requiring
+# external project imports at runtime.
 
 """
 This file is adapted from the original implementation by Jiong Wang (PJLAB).

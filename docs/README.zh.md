@@ -17,7 +17,7 @@
   <img alt="Pages" src="https://img.shields.io/badge/Publish-GitHub%20Pages-111827?style=flat-square&logo=github">
 </p>
 
-PaperRadar 是一个轻量级预印本情报流水线。它会追踪你关心的研究主题，获取元数据和 PDF，用 MinerU 将论文解析成 Markdown，再调用 OpenAI-compatible LLM 生成中英文总结、提取关键词趋势，并通过 GitHub Pages 发布为静态网页。
+PaperRadar 是一个轻量级预印本情报流水线。它会追踪你关心的研究主题，始终获取元数据和摘要，可选地下载 PDF，可选地用 MinerU 将 PDF 解析成 Markdown，再调用 OpenAI-compatible LLM 生成中英文总结、提取关键词趋势，并通过 GitHub Pages 发布为静态网页。
 
 当前默认配置偏向地球物理相关内容，同时支持 arXiv 和 EarthArXiv。项目本身是通用的：修改 `config/default.json` 后，可以追踪其它 arXiv 分类、EarthArXiv subjects、关键词、作者或自定义查询。
 
@@ -36,8 +36,8 @@ PaperRadar 是一个轻量级预印本情报流水线。它会追踪你关心的
 | 层级 | 产物 |
 | --- | --- |
 | 发现 | arXiv API 与 EarthArXiv OAI-PMH 元数据接口 |
-| 存储 | 按来源组织的 PDF、Markdown、MinerU 与 daily JSON 缓存 |
-| 理解 | 基于 Markdown 的中英文 LLM 总结 |
+| 存储 | 按来源组织的 daily JSON、可选 PDF 缓存、可选 Markdown/MinerU 缓存 |
+| 理解 | 优先基于 Markdown 的中英文 LLM 总结；没有 MinerU 时基于摘要总结 |
 | 趋势 | 单篇关键词与整体关键词排行 |
 | 发布 | `docs/index.html` 运行时加载 `docs/data/latest.*.json` |
 | 自动化 | 服务器循环、git push、可选中文邮件提醒 |
@@ -47,21 +47,28 @@ PaperRadar 是一个轻量级预印本情报流水线。它会追踪你关心的
 ```text
 arXiv categories / custom query      EarthArXiv subjects
               │                       │
-              └──────── 获取元数据 ───────┘
-                          │
-                       下载 PDF
-                          │
-                    MinerU 解析 PDF
-                          │
-                    Markdown 清洗给 LLM
-                          │
-                双语总结 + 关键词趋势
-                          │
-        data/daily/<source>/YYYY-MM-DD.json
-                          │
-              docs/data/latest.*.json
-                          │
-                  GitHub Pages 页面
+              └────── 获取元数据 + 摘要 ──────────────┐
+                                      │              │
+                                      │              ├─ 如果 download_pdfs=false
+                                      │              │      跳过本地 PDF 归档
+                                      │              │
+                                      ├─ 如果 download_pdfs=true
+                                      │      PDF 保存到 data/pdfs/
+                                      │
+                                      ├─ 如果 parse_pdfs=true 且 PDF 存在
+                                      │      MinerU 解析 -> Markdown 保存到 data/markdown/
+                                      │
+                                      └─ LLM 输入
+                                             ├─ 优先使用 Markdown
+                                             └─ 没有 Markdown 时使用摘要
+                                                   │
+                                           双语总结 + 关键词趋势
+                                                   │
+                               data/daily/<source>/YYYY-MM-DD.json
+                                                   │
+                                     docs/data/latest.*.json
+                                                   │
+                                          GitHub Pages 页面
 ```
 
 ## 快速开始
@@ -82,10 +89,16 @@ bash scripts/run_daily.sh
 PAPERRADAR_PYTHON=/path/to/python bash scripts/run_daily.sh
 ```
 
-当前服务器环境通常是：
+在服务器环境中，将 `PAPERRADAR_PYTHON` 指向已经安装依赖的 Python 可执行文件：
 
 ```bash
-PAPERRADAR_PYTHON=/liufeng1afs/software/miniconda3/envs/inversionagent/bin/python bash scripts/run_daily.sh
+PAPERRADAR_PYTHON=/path/to/conda/env/bin/python bash scripts/run_daily.sh
+```
+
+如果没有安装 MinerU，可以使用轻量模式。该模式仍会获取元数据和摘要、按配置下载 PDF 并调用 LLM，但总结输入会从解析后的 Markdown 降级为论文摘要：
+
+```bash
+bash scripts/run_daily.sh --config config/light.json
 ```
 
 ## 配置
@@ -119,6 +132,9 @@ PAPERRADAR_PYTHON=/liufeng1afs/software/miniconda3/envs/inversionagent/bin/pytho
 - `arxiv.categories` 是 arXiv 分类，例如 `physics.geo-ph`；
 - `eartharxiv.subjects` 是 EarthArXiv 的 subject，例如 `Geophysics and Seismology`；
 - `lookback_days` 控制抓取窗口，`public_lookback_days` 控制公开页面展示窗口。
+- `arxiv.download_pdfs=false` 会跳过本地 PDF 归档，但仍保留元数据、摘要、链接、LLM 总结、关键词趋势和网页展示。
+- `arxiv.parse_pdfs=false` 会跳过 MinerU，并直接基于摘要总结。
+- `config/light.json` 是开箱即用的无 MinerU 配置：保留 PDF 下载，关闭 PDF 解析。
 
 ## 输出结构
 
@@ -156,6 +172,7 @@ LLM_MODEL=gpt-4o-mini
 HTTP_PROXY=http://user:password@host:port
 HTTPS_PROXY=http://user:password@host:port
 
+# 可选，仅在 arxiv.parse_pdfs=true 时需要
 MINERU_API_KEY=...
 MINERU_API_BASE=...
 ```
@@ -182,7 +199,7 @@ SMTP_PASSWORD=your-smtp-app-password
 3. 在服务器或本地运行 PaperRadar。
 4. 提交并推送 `data/daily` 与 `docs/data` 更新。
 
-GitHub Actions 可以发布静态页面，但完整 PDF + MinerU 解析更适合在已经配置好 MinerU 密钥和依赖的服务器上运行。
+MinerU 解析是可选能力。没有 MinerU 时，可以使用 `config/light.json` 发布基于摘要的 digest。完整 PDF + MinerU 解析更适合在已经配置好 MinerU 密钥和依赖的服务器上运行；GitHub Actions 更适合负责静态页面发布。
 
 ## 自动化运行
 
@@ -226,6 +243,7 @@ python -m paperradar.cli email --input docs/data/latest.json --latest-published-
 ```bash
 python -m paperradar.cli fetch
 python -m paperradar.cli run --date 2026-05-23
+bash scripts/run_daily.sh --config config/light.json
 python -m paperradar.cli aggregate-local --lookback-days 60
 python -m paperradar.cli reanalyze --input data/daily/public/2026-05-23.json
 python -m paperradar.cli registry --query seismic

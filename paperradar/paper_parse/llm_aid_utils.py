@@ -1,8 +1,4 @@
-# Author: Feng Liu
-# Affiliation: Shanghai Jiao Tong University
-# Contact: Liufeng2317@sjtu.edu.cn
-# Citation requested: If you use this codebase or derivative workflows,
-# please cite/acknowledge the original author in publications and releases.
+# MinerU LLM-aided Markdown post-processing utilities for PaperRadar.
 
 import json
 import os

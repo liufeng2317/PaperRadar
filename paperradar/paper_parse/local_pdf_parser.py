@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
-# Author: Feng Liu
-# Affiliation: Shanghai Jiao Tong University
-# Contact: Liufeng2317@sjtu.edu.cn
-# Citation requested: If you use this codebase or derivative workflows,
-# please cite/acknowledge the original author in publications and releases.
+# Local MinerU parsing helper for PaperRadar.
 
 """
 Streamlined local PDF parsing pipeline for MinerU.
