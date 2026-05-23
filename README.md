@@ -1,7 +1,7 @@
 # PaperRadar
 
 <p align="center">
-  <strong>Turn arXiv and EarthArXiv into a bilingual research radar.</strong>
+  <strong>Track, summarize, and publish preprint intelligence from arXiv and EarthArXiv.</strong>
 </p>
 
 <p align="center">

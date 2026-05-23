@@ -1,7 +1,7 @@
 # PaperRadar
 
 <p align="center">
-  <strong>把 arXiv 与 EarthArXiv 变成你的双语科研雷达。</strong>
+  <strong>追踪、总结并发布来自 arXiv 与 EarthArXiv 的预印本情报。</strong>
 </p>
 
 <p align="center">
