@@ -20,13 +20,13 @@ def paper_bucket(
     category_policy: str = "configured",
     storage_date: str | dt.date | None = None,
 ) -> tuple[str, str, str]:
+    source = storage_source(paper)
     category = storage_category(
         paper.categories,
-        preferred_categories=preferred_categories,
+        preferred_categories=_preferred_categories_for_source(source, preferred_categories),
         category_policy=category_policy,
     )
     day = _storage_day(storage_date) if storage_date else _published_day(paper.published)
-    source = storage_source(paper)
     return source, category, day
 
 
@@ -71,7 +71,7 @@ def legacy_year_bucket(
     source = storage_source(paper)
     category = storage_category(
         paper.categories,
-        preferred_categories=preferred_categories,
+        preferred_categories=_preferred_categories_for_source(source, preferred_categories),
         category_policy=category_policy,
     )
     try:
@@ -113,6 +113,12 @@ def legacy_year_mineru_dir(
 
 def storage_source(paper: PaperLike) -> str:
     return safe_path_part(getattr(paper, "source", "arxiv") or "arxiv")
+
+
+def _preferred_categories_for_source(source: str, preferred_categories: list[str] | None) -> list[str]:
+    if source != "arxiv":
+        return []
+    return preferred_categories or []
 
 
 def storage_category(

@@ -42,9 +42,9 @@ PAPERRADAR_PYTHON=/path/to/python bash scripts/run_daily.sh
 - `data/daily/public/YYYY-MM-DD.json`：聚合后的公开每日结果 JSON
 - `docs/data/latest.json`：页面使用的最新聚合公开数据
 - `docs/data/latest.arxiv.json` 与 `docs/data/latest.eartharxiv.json`：按来源拆分的最新公开数据
-- `data/pdfs/<source>/<category>/<YYYYMMDD>/`：按来源和预印本发布日期分组的 PDF 缓存
-- `data/markdown/<source>/<category>/<YYYYMMDD>/`：按来源和预印本发布日期分组的 Markdown
-- `data/mineru/<source>/<category>/<YYYYMMDD>/`：按来源和预印本发布日期分组的 MinerU 输出
+- `data/pdfs/<source>/<category-or-subject>/<YYYYMMDD>/`：按来源和预印本发布日期分组的 PDF 缓存
+- `data/markdown/<source>/<category-or-subject>/<YYYYMMDD>/`：按来源和预印本发布日期分组的 Markdown
+- `data/mineru/<source>/<category-or-subject>/<YYYYMMDD>/`：按来源和预印本发布日期分组的 MinerU 输出
 
 ## 配置
 
@@ -70,7 +70,7 @@ PAPERRADAR_PYTHON=/path/to/python bash scripts/run_daily.sh
 
 `lookback_days` 控制增量抓取窗口。`public_lookback_days` 控制公开页面窗口；默认公开窗口是 `60`，会展示本地已知的约两个月内匹配论文。
 
-`storage_category_policy` 控制本地缓存目录：
+`storage_category_policy` 控制 arXiv 的本地缓存目录。EarthArXiv 目录使用记录自身的 subjects，例如 `Geophysics and Seismology`：
 
 - `configured`：只要配置了 `categories`，就使用第一个配置分类作为目录。
 - `matched`：只有当论文 metadata 中包含配置分类时，才使用配置分类目录。

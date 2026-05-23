@@ -42,9 +42,9 @@ Main outputs:
 - `data/daily/public/YYYY-MM-DD.json`: aggregated public daily digest JSON
 - `docs/data/latest.json`: latest aggregated public page data
 - `docs/data/latest.arxiv.json` and `docs/data/latest.eartharxiv.json`: latest source-specific public data
-- `data/pdfs/<source>/<category>/<YYYYMMDD>/`: cached PDFs grouped by source and preprint publication date
-- `data/markdown/<source>/<category>/<YYYYMMDD>/`: parsed Markdown grouped by source and preprint publication date
-- `data/mineru/<source>/<category>/<YYYYMMDD>/`: MinerU outputs grouped by source and preprint publication date
+- `data/pdfs/<source>/<category-or-subject>/<YYYYMMDD>/`: cached PDFs grouped by source and preprint publication date
+- `data/markdown/<source>/<category-or-subject>/<YYYYMMDD>/`: parsed Markdown grouped by source and preprint publication date
+- `data/mineru/<source>/<category-or-subject>/<YYYYMMDD>/`: MinerU outputs grouped by source and preprint publication date
 
 ## Configuration
 
@@ -70,7 +70,7 @@ Leave `query` empty to let PaperRadar build a query from the structured fields a
 
 `lookback_days` controls the incremental fetch window. `public_lookback_days` controls the generated page window; the default public window is `60`, roughly two months of locally known matching papers.
 
-`storage_category_policy` controls local cache folders:
+`storage_category_policy` controls arXiv local cache folders. EarthArXiv folders use the record subjects, for example `Geophysics and Seismology`:
 
 - `configured`: use the first configured category folder when `categories` is non-empty.
 - `matched`: use a configured category only if the paper metadata contains it.

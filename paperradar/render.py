@@ -47,7 +47,7 @@ def render_html(digest: dict[str, Any]) -> str:
     title = digest["config"]["site_title"]
     description_en = digest["config"]["site_description"]["en"]
     description_zh = digest["config"]["site_description"]["zh"]
-    scope_zh, scope_en = _render_scope_text(digest["config"].get("arxiv", {}))
+    scope_zh, scope_en = _render_scope_text(digest["config"])
     source_counts = _source_counts(papers)
     source_tabs = _render_source_tabs(source_counts)
     source_panels = _render_source_panels(papers)
@@ -459,7 +459,7 @@ def _render_paper_card(item: dict[str, Any], index: int) -> str:
     return f"""
 <article class="paper" data-page-item data-index="{index + 1}">
   <h3><a href="{_e(paper['abs_url'])}">{_e(paper['title'])}</a></h3>
-  <p class="authors">{source_badge}{_e(authors)} · {_e(paper['published'][:10])} · {_e(', '.join(paper['categories']))}</p>
+  <p class="authors">{source_badge}{_e(authors)} · {_e(paper['published'][:10])} · {_e(_classification_label(source))}: {_e(', '.join(paper['categories']))}</p>
   <p class="one-line" data-lang="zh"><strong>{_e(one_sentence_zh)}</strong></p>
   <p class="one-line" data-lang="en"><strong>{_e(one_sentence_en)}</strong></p>
   <div class="keywords" data-lang="zh">{keywords_zh or keywords_en}</div>
@@ -475,31 +475,53 @@ def _render_paper_card(item: dict[str, Any], index: int) -> str:
 """
 
 
-def _render_scope_text(arxiv_config: dict[str, Any]) -> tuple[str, str]:
-    categories = arxiv_config.get("categories") or []
-    extra_terms = arxiv_config.get("extra_terms") or []
-    keywords = arxiv_config.get("keywords") or []
+def _classification_label(source: str) -> str:
+    return "Subjects" if source == "eartharxiv" else "Categories"
+
+
+def _render_scope_text(config: dict[str, Any]) -> tuple[str, str]:
+    arxiv_config = config.get("arxiv", {})
+    eartharxiv_config = config.get("eartharxiv", {})
     query = arxiv_config.get("query") or ""
+    arxiv_categories = arxiv_config.get("categories") or []
+    arxiv_terms = [
+        str(term)
+        for term in [*(arxiv_config.get("extra_terms") or []), *(arxiv_config.get("keywords") or [])]
+        if term
+    ]
+    earth_subjects = eartharxiv_config.get("subjects") or []
+    earth_keywords = [str(term) for term in eartharxiv_config.get("keywords") or [] if term]
 
     if query:
-        return (
-            f'当前追踪范围: <strong>{_e(query)}</strong>',
-            f'Current scope: <strong>{_e(query)}</strong>',
-        )
+        arxiv_part_zh = f'arXiv query: <strong>{_e(query)}</strong>'
+        arxiv_part_en = f'arXiv query: <strong>{_e(query)}</strong>'
+    else:
+        arxiv_category_text = ", ".join(str(category) for category in arxiv_categories) or "all configured categories"
+        arxiv_part_zh = f'arXiv categories: <strong>{_e(arxiv_category_text)}</strong>'
+        arxiv_part_en = f'arXiv categories: <strong>{_e(arxiv_category_text)}</strong>'
+        if arxiv_terms:
+            terms = ", ".join(arxiv_terms[:8])
+            suffix = " ..." if len(arxiv_terms) > 8 else ""
+            arxiv_part_zh += f'; 主题词: {_e(terms)}{suffix}'
+            arxiv_part_en += f'; topic terms: {_e(terms)}{suffix}'
 
-    category_text = ", ".join(str(category) for category in categories) or "all configured sources"
-    term_values = [str(term) for term in [*extra_terms, *keywords] if term]
-    if term_values:
-        terms = ", ".join(term_values[:8])
-        suffix = " ..." if len(term_values) > 8 else ""
-        return (
-            f'当前追踪范围: <strong>{_e(category_text)}</strong>; 主题词: {_e(terms)}{suffix}',
-            f'Current scope: <strong>{_e(category_text)}</strong>; topic terms: {_e(terms)}{suffix}',
-        )
+    parts_zh = [arxiv_part_zh]
+    parts_en = [arxiv_part_en]
+    if eartharxiv_config.get("enabled"):
+        subject_text = ", ".join(str(subject) for subject in earth_subjects) or "all configured subjects"
+        earth_part_zh = f'EarthArXiv subjects: <strong>{_e(subject_text)}</strong>'
+        earth_part_en = f'EarthArXiv subjects: <strong>{_e(subject_text)}</strong>'
+        if earth_keywords:
+            terms = ", ".join(earth_keywords[:8])
+            suffix = " ..." if len(earth_keywords) > 8 else ""
+            earth_part_zh += f'; 关键词: {_e(terms)}{suffix}'
+            earth_part_en += f'; keywords: {_e(terms)}{suffix}'
+        parts_zh.append(earth_part_zh)
+        parts_en.append(earth_part_en)
 
     return (
-        f'当前追踪范围: <strong>{_e(category_text)}</strong>',
-        f'Current scope: <strong>{_e(category_text)}</strong>',
+        '当前追踪范围: ' + ' | '.join(parts_zh),
+        'Current scope: ' + ' | '.join(parts_en),
     )
 
 

@@ -81,6 +81,14 @@ def enrich_paper(
     return _fallback_enrichment(paper, keywords_per_paper, markdown_excerpt=markdown_excerpt)
 
 
+
+def _source_label(source: str) -> str:
+    return "EarthArXiv" if source == "eartharxiv" else "arXiv"
+
+
+def _classification_label(source: str) -> str:
+    return "Subjects" if source == "eartharxiv" else "Categories"
+
 def _enrich_with_llm(
     paper: Paper,
     keywords_per_paper: int,
@@ -129,7 +137,8 @@ Required schema:
 
 Title: {paper.title}
 Authors: {", ".join(paper.authors)}
-Categories: {", ".join(paper.categories)}
+Source: {_source_label(paper.source)}
+{_classification_label(paper.source)}: {", ".join(paper.categories)}
 Abstract: {paper.abstract}
 Markdown excerpt from parsed PDF, if available:
 {markdown_excerpt or "(not available; use the abstract)"}
