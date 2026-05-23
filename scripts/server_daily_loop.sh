@@ -85,6 +85,26 @@ shutdown() {
   exit 0
 }
 
+
+run_daily_job() {
+  local label="$1"
+  local status
+  set +e
+  if [[ "$DRY_RUN" == "1" ]]; then
+    bash scripts/server_daily_push.sh --dry-run
+  else
+    bash scripts/server_daily_push.sh
+  fi
+  status=$?
+  set -e
+  if [[ "$status" == "0" ]]; then
+    log "$label run completed"
+  else
+    log "$label run failed with status=$status; scheduler will continue"
+  fi
+  return 0
+}
+
 seconds_until_next_run() {
   python - "$RUN_AT" <<'PY'
 import datetime as dt
@@ -123,12 +143,7 @@ run_scheduler() {
 
   if [[ "$RUN_ON_START" == "1" ]]; then
     log "startup run triggered"
-    if [[ "$DRY_RUN" == "1" ]]; then
-      bash scripts/server_daily_push.sh --dry-run
-    else
-      bash scripts/server_daily_push.sh
-    fi
-    log "startup run completed"
+    run_daily_job "startup"
   fi
 
   while true; do
@@ -141,12 +156,7 @@ run_scheduler() {
     SLEEP_PID=""
 
     log "daily run triggered"
-    if [[ "$DRY_RUN" == "1" ]]; then
-      bash scripts/server_daily_push.sh --dry-run
-    else
-      bash scripts/server_daily_push.sh
-    fi
-    log "daily run completed"
+    run_daily_job "daily"
   done
 }
 

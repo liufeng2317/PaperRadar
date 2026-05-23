@@ -57,7 +57,8 @@ def run_pipeline(
         if not config.arxiv.allow_cached_fetch_fallback:
             raise RuntimeError(
                 f"arXiv fetch failed; refusing to publish cached papers as {today.isoformat()}. "
-                "Set arxiv.allow_cached_fetch_fallback=true only for manual cache fallback runs."
+                "Set arxiv.allow_cached_fetch_fallback=true only for manual cache fallback runs. "
+                f"Fetch error: {exc}"
             ) from exc
         papers = load_cached_papers(
             registry=registry,

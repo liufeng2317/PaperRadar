@@ -49,7 +49,7 @@ def main() -> None:
     registry.add_argument("--query", help="Search title, arXiv id, topic, or keywords.")
     registry.add_argument("--limit", type=int, default=20)
 
-    migrate = subparsers.add_parser("migrate-storage", help="Reorganize local data into category/year folders.")
+    migrate = subparsers.add_parser("migrate-storage", help="Reorganize local data into category/publication-day folders.")
     migrate.add_argument("--config", default="config/default.json")
 
     args = parser.parse_args()
