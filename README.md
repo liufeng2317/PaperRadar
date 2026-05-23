@@ -112,7 +112,26 @@ GitHub-hosted Actions can publish the generated page, but full PDF parsing with 
 
 ## Email Digest
 
-Set `PAPERRADAR_EMAIL_ENABLED=1` and SMTP variables in `.env` to send a compact Chinese email only when newly discovered papers are published. The server compares the previous and current digest, sends only new arXiv IDs from the latest arXiv published day, and logs send failures without stopping the scheduler.
+PaperRadar can send a compact Chinese email after an automated update. The email is designed as a notification, not a full copy of the website:
+
+- It is sent only when new papers are found.
+- It includes only the newly discovered papers from the latest arXiv publication date.
+- It includes each paper's title, arXiv ID, authors, one-sentence Chinese summary, keywords, and arXiv link.
+- If an 8-hour check finds no new papers, no email is sent.
+- If email delivery fails, the failure is logged and the scheduler continues.
+
+Enable it in `.env` with your own SMTP account:
+
+```bash
+PAPERRADAR_EMAIL_ENABLED=1
+PAPERRADAR_EMAIL_TO=your-email@example.com
+PAPERRADAR_EMAIL_FROM=PaperRadar <your-email@example.com>
+SMTP_HOST=smtp.qq.com
+SMTP_PORT=587
+SMTP_SECURITY=starttls
+SMTP_USER=your-email@example.com
+SMTP_PASSWORD=your-smtp-app-password
+```
 
 Preview the email body without sending:
 
