@@ -491,6 +491,7 @@ class PaperProcessor:
                 last_err = None
                 for attempt in range(1, num_tries + 1):
                     try:
+                        os.makedirs(os.path.dirname(final_path), exist_ok=True)
                         with requests.get(mineru_url, stream=True, timeout=timeout, verify=True) as r:
                             r.raise_for_status()
                             # write to temp file
