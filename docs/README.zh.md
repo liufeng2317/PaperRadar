@@ -1,21 +1,68 @@
 # PaperRadar
 
-[English](../README.md)
+<p align="center">
+  <strong>把 arXiv 与 EarthArXiv 变成你的双语科研雷达。</strong>
+</p>
 
-PaperRadar 是一个可配置的预印本雷达，支持 arXiv 和 EarthArXiv。它可以追踪你关心的主题，获取论文元数据和 PDF，可选地用 MinerU 解析 PDF，再用 OpenAI-compatible LLM 生成中英文总结、提取关键词趋势，并通过 GitHub Pages 发布静态日报页面。
+<p align="center">
+  <a href="../README.md">English</a> ·
+  <a href="index.html">GitHub Pages 页面</a> ·
+  <a href="../config/default.json">配置文件</a>
+</p>
 
-当前默认配置追踪 `physics.geo-ph`，并带有 geophysics 相关主题词。但项目本身是通用的：你可以修改 `config/default.json` 来追踪其它 arXiv 分类、关键词、作者，或者自定义查询语句。
+<p align="center">
+  <img alt="Python" src="https://img.shields.io/badge/Python-3.10%2B-3776AB?style=flat-square&logo=python&logoColor=white">
+  <img alt="Sources" src="https://img.shields.io/badge/Sources-arXiv%20%7C%20EarthArXiv-0f766e?style=flat-square">
+  <img alt="LLM" src="https://img.shields.io/badge/LLM-OpenAI--compatible-8b5cf6?style=flat-square">
+  <img alt="Pages" src="https://img.shields.io/badge/Publish-GitHub%20Pages-111827?style=flat-square&logo=github">
+</p>
 
-## 功能
+PaperRadar 是一个轻量级预印本情报流水线。它会追踪你关心的研究主题，获取元数据和 PDF，用 MinerU 将论文解析成 Markdown，再调用 OpenAI-compatible LLM 生成中英文总结、提取关键词趋势，并通过 GitHub Pages 发布为静态网页。
 
-- 按 arXiv 分类、关键词、作者或自定义 query 获取近期论文。
-- 通过官方 OAI-PMH 元数据接口获取 EarthArXiv 预印本。
-- 本地缓存 PDF，已存在的 PDF 不会重复下载。
-- 使用内置 MinerU 集成将 PDF 解析为 Markdown。
-- 使用 OpenAI-compatible LLM 生成中英文论文总结。
-- 为每篇论文提取关键词，并统计每日 trending keywords。
-- 从 `docs/` 生成可直接用于 GitHub Pages 的静态页面。
-- 使用 registry 增量管理，已有 PDF、Markdown、LLM 总结都会自动跳过。
+当前默认配置偏向地球物理相关内容，同时支持 arXiv 和 EarthArXiv。项目本身是通用的：修改 `config/default.json` 后，可以追踪其它 arXiv 分类、EarthArXiv subjects、关键词、作者或自定义查询。
+
+## 为什么需要它
+
+科研动态不应该散落在一堆标签页里。PaperRadar 的目标是把每日预印本变成一个可检索、可发布、可持续更新的研究雷达：
+
+- 及时发现新的预印本，而不是被信息流淹没；
+- 在本地保留 PDF、Markdown、LLM 总结和公开 JSON；
+- 不需要后端服务，也能发布双语网页；
+- 正确区分 arXiv categories 和 EarthArXiv subjects；
+- 增量运行，已有 PDF、Markdown、总结都会自动复用。
+
+## 你会得到什么
+
+| 层级 | 产物 |
+| --- | --- |
+| 发现 | arXiv API 与 EarthArXiv OAI-PMH 元数据接口 |
+| 存储 | 按来源组织的 PDF、Markdown、MinerU 与 daily JSON 缓存 |
+| 理解 | 基于 Markdown 的中英文 LLM 总结 |
+| 趋势 | 单篇关键词与整体关键词排行 |
+| 发布 | `docs/index.html` 运行时加载 `docs/data/latest.*.json` |
+| 自动化 | 服务器循环、git push、可选中文邮件提醒 |
+
+## 数据流
+
+```text
+arXiv categories / custom query      EarthArXiv subjects
+              │                       │
+              └──────── 获取元数据 ───────┘
+                          │
+                       下载 PDF
+                          │
+                    MinerU 解析 PDF
+                          │
+                    Markdown 清洗给 LLM
+                          │
+                双语总结 + 关键词趋势
+                          │
+        data/daily/<source>/YYYY-MM-DD.json
+                          │
+              docs/data/latest.*.json
+                          │
+                  GitHub Pages 页面
+```
 
 ## 快速开始
 
@@ -23,62 +70,77 @@ PaperRadar 是一个可配置的预印本雷达，支持 arXiv 和 EarthArXiv。
 python -m paperradar.cli run
 ```
 
-也可以使用封装脚本：
+或使用封装脚本：
 
 ```bash
 bash scripts/run_daily.sh
 ```
 
-如果需要指定带 MinerU 依赖的 Python 环境，可以设置 `PAPERRADAR_PYTHON`：
+建议使用包含 MinerU 依赖的 Python 环境：
 
 ```bash
 PAPERRADAR_PYTHON=/path/to/python bash scripts/run_daily.sh
 ```
 
-主要输出：
+当前服务器环境通常是：
 
-- `data/daily/<source>/YYYY-MM-DD.json`：按来源拆分的每日结果 JSON
-- `docs/index.html`：GitHub Pages 页面
-- `data/daily/public/YYYY-MM-DD.json`：聚合后的公开每日结果 JSON
-- `docs/data/latest.json`：页面使用的最新聚合公开数据
-- `docs/data/latest.arxiv.json` 与 `docs/data/latest.eartharxiv.json`：按来源拆分的最新公开数据
-- `data/pdfs/<source>/<category-or-subject>/<YYYYMMDD>/`：按来源和预印本发布日期分组的 PDF 缓存
-- `data/markdown/<source>/<category-or-subject>/<YYYYMMDD>/`：按来源和预印本发布日期分组的 Markdown
-- `data/mineru/<source>/<category-or-subject>/<YYYYMMDD>/`：按来源和预印本发布日期分组的 MinerU 输出
+```bash
+PAPERRADAR_PYTHON=/liufeng1afs/software/miniconda3/envs/inversionagent/bin/python bash scripts/run_daily.sh
+```
 
 ## 配置
 
-修改 `config/default.json`：
+修改 `config/default.json`。
 
 ```json
 {
   "arxiv": {
     "categories": ["physics.geo-ph"],
     "extra_terms": ["geophysics", "seismology", "geodesy", "geodynamics", "geomagnetism"],
-    "keywords": [],
-    "authors": [],
     "max_results": 100,
     "lookback_days": 7,
     "download_pdfs": true,
-    "parse_pdfs": true,
-    "storage_category_policy": "configured"
-  }
+    "parse_pdfs": true
+  },
+  "eartharxiv": {
+    "enabled": true,
+    "subjects": ["Geophysics and Seismology", "Hydrology", "Glaciology"],
+    "lookback_days": 7,
+    "max_results": 25
+  },
+  "public_lookback_days": 60
 }
 ```
 
-如果 `query` 为空，PaperRadar 会根据上面的结构化字段自动拼接 arXiv 查询。只有在你想完全接管 arXiv 查询语句时，才需要设置 `query`。
+说明：
 
-`lookback_days` 控制增量抓取窗口。`public_lookback_days` 控制公开页面窗口；默认公开窗口是 `60`，会展示本地已知的约两个月内匹配论文。
+- `arxiv.query` 留空时，PaperRadar 会根据结构化字段自动拼接查询；
+- 只有想完全接管 arXiv 查询语句时，才需要设置 `arxiv.query`；
+- `arxiv.categories` 是 arXiv 分类，例如 `physics.geo-ph`；
+- `eartharxiv.subjects` 是 EarthArXiv 的 subject，例如 `Geophysics and Seismology`；
+- `lookback_days` 控制抓取窗口，`public_lookback_days` 控制公开页面展示窗口。
 
-`storage_category_policy` 控制 arXiv 的本地缓存目录。EarthArXiv 目录使用记录自身的 subjects，例如 `Geophysics and Seismology`：
+## 输出结构
 
-- `configured`：只要配置了 `categories`，就使用第一个配置分类作为目录。
-- `matched`：只有当论文 metadata 中包含配置分类时，才使用配置分类目录。
-- 其它值：使用论文 metadata 中的 primary arXiv category。
+```text
+docs/index.html                                  静态页面壳
+docs/data/latest.json                            聚合公开数据
+docs/data/latest.arxiv.json                      arXiv 数据
+docs/data/latest.eartharxiv.json                 EarthArXiv 数据
+
+data/daily/<source>/YYYY-MM-DD.json              按来源拆分的 daily digest
+data/daily/public/YYYY-MM-DD.json                聚合 daily digest
+
+data/pdfs/<source>/<category-or-subject>/<day>/  PDF 缓存
+data/markdown/<source>/<category-or-subject>/<day>/ Markdown 缓存
+data/mineru/<source>/<category-or-subject>/<day>/   MinerU 原始输出
+```
+
+`docs/index.html` 不再写死具体论文内容，而是在浏览器中加载 `docs/data/` 下的 JSON；更新 JSON 后，网页内容就会随之更新。
 
 ## 环境变量
 
-本地运行时复制 `.env.example`：
+从示例创建本地 `.env`：
 
 ```bash
 cp .env.example .env
@@ -90,47 +152,22 @@ cp .env.example .env
 LLM_API_KEY=...
 LLM_BASE_URL=https://api.openai.com/v1
 LLM_MODEL=gpt-4o-mini
+
 HTTP_PROXY=http://user:password@host:port
 HTTPS_PROXY=http://user:password@host:port
+
 MINERU_API_KEY=...
 MINERU_API_BASE=...
-
-# 可选：在成功更新公开日报后发送中文邮件。
-PAPERRADAR_EMAIL_ENABLED=0
-PAPERRADAR_EMAIL_TO=your-email@example.com
-PAPERRADAR_EMAIL_FROM=PaperRadar <your-smtp-user@example.com>
-PAPERRADAR_SITE_URL=https://your-user.github.io/PaperRadar/
-SMTP_HOST=smtp.example.com
-SMTP_PORT=587
-SMTP_SECURITY=starttls
-SMTP_USER=your-smtp-user@example.com
-SMTP_PASSWORD=your-smtp-password-or-app-password
 ```
 
-## GitHub Pages
-
-1. 将仓库 push 到 GitHub。
-2. 在仓库设置中启用 Pages，来源选择 `main` 分支的 `/docs` 目录。
-3. 在本地或服务器运行 PaperRadar，然后提交并推送更新后的 `data/daily` 和 `docs` 输出。
-
-GitHub-hosted Actions 可以发布生成后的页面，但完整 PDF + MinerU 解析更适合在已有 MinerU 依赖和密钥的本地/服务器环境中运行。
-
-## 邮件日报
-
-PaperRadar 可以在自动更新后发送一封精简中文邮件。邮件用于提醒你有新论文，不会把网页里的全部内容都塞进邮箱：
-
-- 只有发现新论文时才发送。
-- 只发送新增论文中最新 预印本发布日期那一天的内容。
-- 每篇论文包含标题、预印本 ID、作者、一句话中文总结、关键词和 仓储链接。
-- 如果某次 8 小时检查没有新论文，就不会发送邮件。
-- 如果邮件发送失败，只会记录到日志，不会中断后续自动更新。
-
-在 `.env` 中配置自己的 SMTP 账号即可启用：
+可选邮件提醒：
 
 ```bash
 PAPERRADAR_EMAIL_ENABLED=1
 PAPERRADAR_EMAIL_TO=your-email@example.com
 PAPERRADAR_EMAIL_FROM=PaperRadar <your-email@example.com>
+PAPERRADAR_SITE_URL=https://your-user.github.io/PaperRadar/
+
 SMTP_HOST=smtp.qq.com
 SMTP_PORT=587
 SMTP_SECURITY=starttls
@@ -138,45 +175,72 @@ SMTP_USER=your-email@example.com
 SMTP_PASSWORD=your-smtp-app-password
 ```
 
-可以先预览邮件正文，不实际发送：
+## GitHub Pages
 
-```bash
-python -m paperradar.cli email --input docs/data/latest.json --latest-published-day --dry-run
-```
+1. 将仓库推送到 GitHub。
+2. 在仓库设置中启用 Pages，来源选择 `main` 分支的 `/docs` 目录。
+3. 在服务器或本地运行 PaperRadar。
+4. 提交并推送 `data/daily` 与 `docs/data` 更新。
 
-## 服务器自动更新
+GitHub Actions 可以发布静态页面，但完整 PDF + MinerU 解析更适合在已经配置好 MinerU 密钥和依赖的服务器上运行。
 
-如果服务器已经在 `.env` 中配置好了代理、MinerU 和 LLM 密钥，可以运行一次并推送更新：
+## 自动化运行
+
+运行一次并自动推送：
 
 ```bash
 bash scripts/server_daily_push.sh
 ```
 
-每 8 小时运行一次，并以服务器时间 11:20 为锚点的 cron 示例：
+以服务器时间 11:20 为锚点，每 8 小时运行一次：
+
+```bash
+PAPERRADAR_PYTHON=/path/to/python nohup bash scripts/server_daily_loop.sh --run-at 11:20 --interval-hours 8 >> logs/daily/scheduler.nohup.log 2>&1 &
+```
+
+cron 等价写法：
 
 ```cron
 20 3,11,19 * * * cd /path/to/PaperRadar && PAPERRADAR_PYTHON=/path/to/python bash scripts/server_daily_push.sh
 ```
 
-如果服务器没有 `crontab`，可以改用轻量常驻调度脚本：
+日志位于 `logs/daily/`。
+
+## 邮件日报
+
+邮件日报保持简洁，只作为“有新论文”的提醒：
+
+- 只有发现新论文时才发送；
+- 只包含新增论文中最新预印本发布日期那一天的内容；
+- 包含中文一句话总结、关键词、论文 ID、作者和网页链接；
+- 邮件失败只记录日志，不中断后续调度。
+
+发送前预览：
 
 ```bash
-PAPERRADAR_PYTHON=/path/to/python nohup bash scripts/server_daily_loop.sh --run-at 11:20 --interval-hours 8 >> logs/daily/scheduler.nohup.log 2>&1 &
+python -m paperradar.cli email --input docs/data/latest.json --latest-published-day --dry-run
 ```
 
 ## 常用命令
 
 ```bash
 python -m paperradar.cli fetch
-python -m paperradar.cli run --date 2026-05-21
-python -m paperradar.cli render --input data/daily/public/2026-05-21.json
+python -m paperradar.cli run --date 2026-05-23
 python -m paperradar.cli aggregate-local --lookback-days 60
-python -m paperradar.cli reanalyze --input data/daily/public/2026-05-21.json
+python -m paperradar.cli reanalyze --input data/daily/public/2026-05-23.json
 python -m paperradar.cli registry --query seismic
 python -m paperradar.cli email --input docs/data/latest.json --latest-published-day --dry-run
 python -m paperradar.cli migrate-storage
 ```
 
-当你修改了 LLM 模型、提示词或 API 设置，想基于已有 daily JSON/Markdown 重新生成总结，但不重新抓取 arXiv、不重新解析 PDF 时，使用 `reanalyze`。
+当你修改模型、提示词或 API 设置，希望基于已有 JSON/Markdown 重新生成总结时，用 `reanalyze`。
 
-如果只想用本地已有的 daily JSON 重新生成公开页面，使用 `aggregate-local`。它不会抓取 arXiv，不会下载 PDF，不会解析 PDF，也不会调用 LLM。
+当你只想基于本地 daily JSON 重新生成公开 JSON 和页面时，用 `aggregate-local`。它不会抓取元数据、下载 PDF、解析 PDF 或调用 LLM。
+
+## 当前基础数据
+
+仓库当前已经包含一份面向地球科学/地球物理配置的公开基础数据：
+
+- arXiv: `physics.geo-ph` 与相关主题词；
+- EarthArXiv: `Geophysics and Seismology`、`Hydrology`、`Glaciology`、`Climate`、`Oceanography` 等 subjects；
+- 公开页面窗口：60 天。

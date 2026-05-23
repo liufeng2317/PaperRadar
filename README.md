@@ -1,21 +1,68 @@
 # PaperRadar
 
-[中文文档](docs/README.zh.md)
+<p align="center">
+  <strong>Turn arXiv and EarthArXiv into a bilingual research radar.</strong>
+</p>
 
-PaperRadar is a configurable preprint radar for arXiv and EarthArXiv. It tracks topics you care about, downloads metadata and PDFs, optionally parses PDFs with MinerU, summarizes papers with an OpenAI-compatible LLM, ranks keyword trends, and publishes a bilingual static digest through GitHub Pages.
+<p align="center">
+  <a href="docs/README.zh.md">中文文档</a> ·
+  <a href="docs/index.html">GitHub Pages site</a> ·
+  <a href="config/default.json">Configuration</a>
+</p>
 
-The default configuration tracks `physics.geo-ph` with geophysics-related terms. The project is domain-agnostic: edit `config/default.json` to monitor other arXiv categories, keywords, authors, or a custom query.
+<p align="center">
+  <img alt="Python" src="https://img.shields.io/badge/Python-3.10%2B-3776AB?style=flat-square&logo=python&logoColor=white">
+  <img alt="Sources" src="https://img.shields.io/badge/Sources-arXiv%20%7C%20EarthArXiv-0f766e?style=flat-square">
+  <img alt="LLM" src="https://img.shields.io/badge/LLM-OpenAI--compatible-8b5cf6?style=flat-square">
+  <img alt="Pages" src="https://img.shields.io/badge/Publish-GitHub%20Pages-111827?style=flat-square&logo=github">
+</p>
 
-## Features
+PaperRadar is a lightweight preprint intelligence pipeline. It watches the research topics you care about, downloads metadata and PDFs, parses papers into Markdown with MinerU, asks an OpenAI-compatible LLM for bilingual summaries, ranks keyword trends, and publishes a clean static digest through GitHub Pages.
 
-- Fetch recent arXiv papers from configured categories, keywords, authors, or raw queries.
-- Fetch EarthArXiv preprints through the official OAI-PMH metadata feed.
-- Cache PDFs locally without re-downloading existing files.
-- Parse PDFs into Markdown with the bundled MinerU integration.
-- Generate English and Chinese paper summaries with an OpenAI-compatible LLM.
-- Extract per-paper keywords and rank daily trending keywords.
-- Render a static GitHub Pages site from `docs/`.
-- Use an incremental registry so existing PDFs, Markdown, and summaries are skipped.
+The default setup tracks geophysics-related work across `arXiv` and `EarthArXiv`, but the project is source-aware and domain-agnostic: change `config/default.json` to follow other arXiv categories, EarthArXiv subjects, keywords, authors, or custom queries.
+
+## Why It Exists
+
+Research updates should feel like a radar screen, not a pile of tabs. PaperRadar is designed for:
+
+- catching new preprints before they disappear into the feed;
+- keeping PDFs, parsed Markdown, LLM summaries, and public JSON in a reproducible local archive;
+- publishing a bilingual web digest without running a backend server;
+- supporting both arXiv categories and EarthArXiv subjects without mixing their taxonomies;
+- running incrementally so existing PDFs, Markdown, and summaries are reused.
+
+## What You Get
+
+| Layer | Output |
+| --- | --- |
+| Discovery | arXiv API plus EarthArXiv OAI-PMH metadata feed |
+| Storage | Source-aware PDF, Markdown, MinerU, and daily JSON caches |
+| Understanding | English and Chinese LLM summaries from parsed Markdown when available |
+| Trends | Per-paper keywords plus ranked keyword trends |
+| Publishing | `docs/index.html` loads `docs/data/latest.*.json` at runtime |
+| Automation | Server loop, git push, optional Chinese email digest |
+
+## Data Flow
+
+```text
+arXiv categories / custom query      EarthArXiv subjects
+              │                       │
+              └──────── fetch metadata ┘
+                          │
+                    download PDFs
+                          │
+                   MinerU PDF parse
+                          │
+                 Markdown cleaned for LLM
+                          │
+          bilingual summaries + keyword trends
+                          │
+        data/daily/<source>/YYYY-MM-DD.json
+                          │
+              docs/data/latest.*.json
+                          │
+                  GitHub Pages UI
+```
 
 ## Quick Start
 
@@ -29,56 +76,71 @@ Or use the wrapper script:
 bash scripts/run_daily.sh
 ```
 
-Use `PAPERRADAR_PYTHON` when you want a specific Python environment, for example one with MinerU installed:
+Use the Python environment that contains MinerU dependencies:
 
 ```bash
 PAPERRADAR_PYTHON=/path/to/python bash scripts/run_daily.sh
 ```
 
-Main outputs:
+For the current server setup, the working environment is typically:
 
-- `data/daily/<source>/YYYY-MM-DD.json`: source-specific daily digest JSON
-- `docs/index.html`: GitHub Pages HTML page
-- `data/daily/public/YYYY-MM-DD.json`: aggregated public daily digest JSON
-- `docs/data/latest.json`: latest aggregated public page data
-- `docs/data/latest.arxiv.json` and `docs/data/latest.eartharxiv.json`: latest source-specific public data
-- `data/pdfs/<source>/<category-or-subject>/<YYYYMMDD>/`: cached PDFs grouped by source and preprint publication date
-- `data/markdown/<source>/<category-or-subject>/<YYYYMMDD>/`: parsed Markdown grouped by source and preprint publication date
-- `data/mineru/<source>/<category-or-subject>/<YYYYMMDD>/`: MinerU outputs grouped by source and preprint publication date
+```bash
+PAPERRADAR_PYTHON=/liufeng1afs/software/miniconda3/envs/inversionagent/bin/python bash scripts/run_daily.sh
+```
 
 ## Configuration
 
-Edit `config/default.json`:
+Edit `config/default.json`.
 
 ```json
 {
   "arxiv": {
     "categories": ["physics.geo-ph"],
     "extra_terms": ["geophysics", "seismology", "geodesy", "geodynamics", "geomagnetism"],
-    "keywords": [],
-    "authors": [],
     "max_results": 100,
     "lookback_days": 7,
     "download_pdfs": true,
-    "parse_pdfs": true,
-    "storage_category_policy": "configured"
-  }
+    "parse_pdfs": true
+  },
+  "eartharxiv": {
+    "enabled": true,
+    "subjects": ["Geophysics and Seismology", "Hydrology", "Glaciology"],
+    "lookback_days": 7,
+    "max_results": 25
+  },
+  "public_lookback_days": 60
 }
 ```
 
-Leave `query` empty to let PaperRadar build a query from the structured fields above. Set `query` only when you want to fully override the generated arXiv query.
+Notes:
 
-`lookback_days` controls the incremental fetch window. `public_lookback_days` controls the generated page window; the default public window is `60`, roughly two months of locally known matching papers.
+- Leave `arxiv.query` empty to let PaperRadar build a query from structured fields.
+- Set `arxiv.query` only when you want to fully override the generated arXiv query.
+- `arxiv.categories` are arXiv taxonomy values such as `physics.geo-ph`.
+- `eartharxiv.subjects` are EarthArXiv subjects such as `Geophysics and Seismology`.
+- `lookback_days` controls fetch windows; `public_lookback_days` controls the public page window.
 
-`storage_category_policy` controls arXiv local cache folders. EarthArXiv folders use the record subjects, for example `Geophysics and Seismology`:
+## Outputs
 
-- `configured`: use the first configured category folder when `categories` is non-empty.
-- `matched`: use a configured category only if the paper metadata contains it.
-- any other value: use the paper's primary arXiv category.
+```text
+docs/index.html                                  static UI shell
+docs/data/latest.json                            aggregated public data
+docs/data/latest.arxiv.json                      arXiv-only public data
+docs/data/latest.eartharxiv.json                 EarthArXiv-only public data
+
+data/daily/<source>/YYYY-MM-DD.json              source-specific daily digests
+data/daily/public/YYYY-MM-DD.json                aggregated public daily digests
+
+data/pdfs/<source>/<category-or-subject>/<day>/  cached PDFs
+data/markdown/<source>/<category-or-subject>/<day>/ parsed Markdown
+data/mineru/<source>/<category-or-subject>/<day>/   MinerU raw outputs
+```
+
+`docs/index.html` does not bake paper content into HTML. It loads the JSON files in `docs/data/`, so the page updates when the JSON updates.
 
 ## Environment
 
-Copy `.env.example` to `.env` for local runs:
+Create a local `.env` from the example:
 
 ```bash
 cp .env.example .env
@@ -90,47 +152,22 @@ Common variables:
 LLM_API_KEY=...
 LLM_BASE_URL=https://api.openai.com/v1
 LLM_MODEL=gpt-4o-mini
+
 HTTP_PROXY=http://user:password@host:port
 HTTPS_PROXY=http://user:password@host:port
+
 MINERU_API_KEY=...
 MINERU_API_BASE=...
-
-# Optional email delivery after successful digest updates.
-PAPERRADAR_EMAIL_ENABLED=0
-PAPERRADAR_EMAIL_TO=your-email@example.com
-PAPERRADAR_EMAIL_FROM=PaperRadar <your-smtp-user@example.com>
-PAPERRADAR_SITE_URL=https://your-user.github.io/PaperRadar/
-SMTP_HOST=smtp.example.com
-SMTP_PORT=587
-SMTP_SECURITY=starttls
-SMTP_USER=your-smtp-user@example.com
-SMTP_PASSWORD=your-smtp-password-or-app-password
 ```
 
-## GitHub Pages
-
-1. Push the repository to GitHub.
-2. In repository settings, enable Pages from branch `main`, folder `/docs`.
-3. Run PaperRadar locally or on a server, then commit and push updated `data/daily` and `docs` outputs.
-
-GitHub-hosted Actions can publish the generated page, but full PDF parsing with MinerU is usually better on a local/server environment where MinerU credentials and dependencies are already configured.
-
-## Email Digest
-
-PaperRadar can send a compact Chinese email after an automated update. The email is designed as a notification, not a full copy of the website:
-
-- It is sent only when new papers are found.
-- It includes only the newly discovered papers from the latest preprint publication date.
-- It includes each paper's title, preprint ID, authors, one-sentence Chinese summary, keywords, and repository link.
-- If an 8-hour check finds no new papers, no email is sent.
-- If email delivery fails, the failure is logged and the scheduler continues.
-
-Enable it in `.env` with your own SMTP account:
+Optional email delivery:
 
 ```bash
 PAPERRADAR_EMAIL_ENABLED=1
 PAPERRADAR_EMAIL_TO=your-email@example.com
 PAPERRADAR_EMAIL_FROM=PaperRadar <your-email@example.com>
+PAPERRADAR_SITE_URL=https://your-user.github.io/PaperRadar/
+
 SMTP_HOST=smtp.qq.com
 SMTP_PORT=587
 SMTP_SECURITY=starttls
@@ -138,45 +175,72 @@ SMTP_USER=your-email@example.com
 SMTP_PASSWORD=your-smtp-app-password
 ```
 
-Preview the email body without sending:
+## GitHub Pages
 
-```bash
-python -m paperradar.cli email --input docs/data/latest.json --latest-published-day --dry-run
-```
+1. Push the repository to GitHub.
+2. Enable Pages from branch `main`, folder `/docs`.
+3. Run PaperRadar on your server or local machine.
+4. Commit and push `data/daily` plus `docs/data` updates.
 
-## Server Automation
+MinerU parsing is usually better on a machine where MinerU credentials and dependencies are already configured. GitHub-hosted Actions can publish the static page, but full PDF parsing is better kept on your own server.
 
-For a server that already has proxy, MinerU, and LLM credentials in `.env`, run once and push updates with:
+## Automation
+
+Run once and push updates:
 
 ```bash
 bash scripts/server_daily_push.sh
 ```
 
-Run every 8 hours, anchored at 11:20 server time, with cron:
-
-```cron
-20 3,11,19 * * * cd /path/to/PaperRadar && PAPERRADAR_PYTHON=/path/to/python bash scripts/server_daily_push.sh
-```
-
-If `crontab` is unavailable, use the lightweight scheduler:
+Run every 8 hours anchored at 11:20 server time:
 
 ```bash
 PAPERRADAR_PYTHON=/path/to/python nohup bash scripts/server_daily_loop.sh --run-at 11:20 --interval-hours 8 >> logs/daily/scheduler.nohup.log 2>&1 &
 ```
 
-## Commands
+Cron equivalent:
+
+```cron
+20 3,11,19 * * * cd /path/to/PaperRadar && PAPERRADAR_PYTHON=/path/to/python bash scripts/server_daily_push.sh
+```
+
+Logs are written under `logs/daily/`.
+
+## Email Digest
+
+The email digest is intentionally compact:
+
+- sent only when new papers are found;
+- includes only newly discovered papers from the latest preprint publication date;
+- uses Chinese summaries, keywords, paper IDs, authors, and the site link;
+- logs failures without stopping the scheduler.
+
+Preview before sending:
+
+```bash
+python -m paperradar.cli email --input docs/data/latest.json --latest-published-day --dry-run
+```
+
+## Useful Commands
 
 ```bash
 python -m paperradar.cli fetch
-python -m paperradar.cli run --date 2026-05-21
-python -m paperradar.cli render --input data/daily/public/2026-05-21.json
+python -m paperradar.cli run --date 2026-05-23
 python -m paperradar.cli aggregate-local --lookback-days 60
-python -m paperradar.cli reanalyze --input data/daily/public/2026-05-21.json
+python -m paperradar.cli reanalyze --input data/daily/public/2026-05-23.json
 python -m paperradar.cli registry --query seismic
 python -m paperradar.cli email --input docs/data/latest.json --latest-published-day --dry-run
 python -m paperradar.cli migrate-storage
 ```
 
-Use `reanalyze` when you changed the LLM model, summary instructions, or API settings and want to recompute summaries from existing daily JSON/Markdown without fetching arXiv or parsing PDFs again.
+Use `reanalyze` when you changed the model, prompt, or API settings and want to recompute summaries from existing JSON/Markdown.
 
-Use `aggregate-local` to rebuild the public page from existing local daily JSON files only. It does not fetch arXiv, download PDFs, parse PDFs, or call the LLM.
+Use `aggregate-local` when you only want to rebuild the public JSON and page from local daily digests. It does not fetch metadata, download PDFs, parse PDFs, or call the LLM.
+
+## Current Baseline
+
+The repository currently carries a public baseline for the configured geophysics-oriented setup:
+
+- arXiv: `physics.geo-ph` plus related topic terms;
+- EarthArXiv: configured Earth science subjects such as `Geophysics and Seismology`, `Hydrology`, `Glaciology`, `Climate`, and `Oceanography`;
+- public page window: 60 days.
