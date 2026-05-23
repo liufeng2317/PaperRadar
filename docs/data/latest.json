@@ -1,6 +1,6 @@
 {
   "date": "2026-05-23",
-  "generated_at": "2026-05-23T09:19:03.504727+00:00",
+  "generated_at": "2026-05-23T09:23:49.744052+00:00",
   "config": {
     "site_title": "PaperRadar",
     "site_description": {
@@ -97,9 +97,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.22576v1",
         "abs_url": "http://arxiv.org/abs/2605.22576v1",
-        "local_pdf_path": "data/pdfs/physics.geo-ph/20260521/2605.22576v1.pdf",
+        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260521/2605.22576v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/physics.geo-ph/20260521/2605.22576v1.md",
+        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260521/2605.22576v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -166,9 +166,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.22042v1",
         "abs_url": "http://arxiv.org/abs/2605.22042v1",
-        "local_pdf_path": "data/pdfs/physics.geo-ph/20260521/2605.22042v1.pdf",
+        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260521/2605.22042v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/physics.geo-ph/20260521/2605.22042v1.md",
+        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260521/2605.22042v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -234,9 +234,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.21790v1",
         "abs_url": "http://arxiv.org/abs/2605.21790v1",
-        "local_pdf_path": "data/pdfs/physics.geo-ph/20260520/2605.21790v1.pdf",
+        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260520/2605.21790v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/physics.geo-ph/20260520/2605.21790v1.md",
+        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260520/2605.21790v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -302,9 +302,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.21437v1",
         "abs_url": "http://arxiv.org/abs/2605.21437v1",
-        "local_pdf_path": "data/pdfs/physics.geo-ph/20260520/2605.21437v1.pdf",
+        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260520/2605.21437v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/physics.geo-ph/20260520/2605.21437v1.md",
+        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260520/2605.21437v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -370,9 +370,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.21191v1",
         "abs_url": "http://arxiv.org/abs/2605.21191v1",
-        "local_pdf_path": "data/pdfs/physics.geo-ph/20260520/2605.21191v1.pdf",
+        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260520/2605.21191v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/physics.geo-ph/20260520/2605.21191v1.md",
+        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260520/2605.21191v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -437,9 +437,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.21030v1",
         "abs_url": "http://arxiv.org/abs/2605.21030v1",
-        "local_pdf_path": "data/pdfs/physics.geo-ph/20260520/2605.21030v1.pdf",
+        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260520/2605.21030v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/physics.geo-ph/20260520/2605.21030v1.md",
+        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260520/2605.21030v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -509,9 +509,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.20997v1",
         "abs_url": "http://arxiv.org/abs/2605.20997v1",
-        "local_pdf_path": "data/pdfs/physics.geo-ph/20260520/2605.20997v1.pdf",
+        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260520/2605.20997v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/physics.geo-ph/20260520/2605.20997v1.md",
+        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260520/2605.20997v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -578,9 +578,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.20764v1",
         "abs_url": "http://arxiv.org/abs/2605.20764v1",
-        "local_pdf_path": "data/pdfs/physics.geo-ph/20260520/2605.20764v1.pdf",
+        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260520/2605.20764v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/physics.geo-ph/20260520/2605.20764v1.md",
+        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260520/2605.20764v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -648,9 +648,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.20455v1",
         "abs_url": "http://arxiv.org/abs/2605.20455v1",
-        "local_pdf_path": "data/pdfs/physics.geo-ph/20260519/2605.20455v1.pdf",
+        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260519/2605.20455v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/physics.geo-ph/20260519/2605.20455v1.md",
+        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260519/2605.20455v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -719,9 +719,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.20132v1",
         "abs_url": "http://arxiv.org/abs/2605.20132v1",
-        "local_pdf_path": "data/pdfs/physics.geo-ph/20260519/2605.20132v1.pdf",
+        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260519/2605.20132v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/physics.geo-ph/20260519/2605.20132v1.md",
+        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260519/2605.20132v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -790,9 +790,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.20030v1",
         "abs_url": "http://arxiv.org/abs/2605.20030v1",
-        "local_pdf_path": "data/pdfs/physics.geo-ph/20260519/2605.20030v1.pdf",
+        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260519/2605.20030v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/physics.geo-ph/20260519/2605.20030v1.md",
+        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260519/2605.20030v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -859,9 +859,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.19951v1",
         "abs_url": "http://arxiv.org/abs/2605.19951v1",
-        "local_pdf_path": "data/pdfs/physics.geo-ph/20260519/2605.19951v1.pdf",
+        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260519/2605.19951v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/physics.geo-ph/20260519/2605.19951v1.md",
+        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260519/2605.19951v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -930,9 +930,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.19903v1",
         "abs_url": "http://arxiv.org/abs/2605.19903v1",
-        "local_pdf_path": "data/pdfs/physics.geo-ph/20260519/2605.19903v1.pdf",
+        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260519/2605.19903v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/physics.geo-ph/20260519/2605.19903v1.md",
+        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260519/2605.19903v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -1003,9 +1003,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.19608v1",
         "abs_url": "http://arxiv.org/abs/2605.19608v1",
-        "local_pdf_path": "data/pdfs/physics.geo-ph/20260519/2605.19608v1.pdf",
+        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260519/2605.19608v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/physics.geo-ph/20260519/2605.19608v1.md",
+        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260519/2605.19608v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -1075,9 +1075,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.19507v1",
         "abs_url": "http://arxiv.org/abs/2605.19507v1",
-        "local_pdf_path": "data/pdfs/physics.geo-ph/20260519/2605.19507v1.pdf",
+        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260519/2605.19507v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/physics.geo-ph/20260519/2605.19507v1.md",
+        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260519/2605.19507v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -1146,9 +1146,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.19472v1",
         "abs_url": "http://arxiv.org/abs/2605.19472v1",
-        "local_pdf_path": "data/pdfs/physics.geo-ph/20260519/2605.19472v1.pdf",
+        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260519/2605.19472v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/physics.geo-ph/20260519/2605.19472v1.md",
+        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260519/2605.19472v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -1216,9 +1216,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.19379v1",
         "abs_url": "http://arxiv.org/abs/2605.19379v1",
-        "local_pdf_path": "data/pdfs/physics.geo-ph/20260519/2605.19379v1.pdf",
+        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260519/2605.19379v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/physics.geo-ph/20260519/2605.19379v1.md",
+        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260519/2605.19379v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -1283,9 +1283,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.19118v1",
         "abs_url": "http://arxiv.org/abs/2605.19118v1",
-        "local_pdf_path": "data/pdfs/physics.geo-ph/20260518/2605.19118v1.pdf",
+        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260518/2605.19118v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/physics.geo-ph/20260518/2605.19118v1.md",
+        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260518/2605.19118v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -1349,9 +1349,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.18375v1",
         "abs_url": "http://arxiv.org/abs/2605.18375v1",
-        "local_pdf_path": "data/pdfs/physics.geo-ph/20260518/2605.18375v1.pdf",
+        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260518/2605.18375v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/physics.geo-ph/20260518/2605.18375v1.md",
+        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260518/2605.18375v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -1422,9 +1422,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.17792v1",
         "abs_url": "http://arxiv.org/abs/2605.17792v1",
-        "local_pdf_path": "data/pdfs/physics.geo-ph/20260518/2605.17792v1.pdf",
+        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260518/2605.17792v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/physics.geo-ph/20260518/2605.17792v1.md",
+        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260518/2605.17792v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -1488,9 +1488,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.17081v1",
         "abs_url": "http://arxiv.org/abs/2605.17081v1",
-        "local_pdf_path": "data/pdfs/physics.geo-ph/20260516/2605.17081v1.pdf",
+        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260516/2605.17081v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/physics.geo-ph/20260516/2605.17081v1.md",
+        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260516/2605.17081v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -1559,9 +1559,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.16966v1",
         "abs_url": "http://arxiv.org/abs/2605.16966v1",
-        "local_pdf_path": "data/pdfs/physics.geo-ph/20260516/2605.16966v1.pdf",
+        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260516/2605.16966v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/physics.geo-ph/20260516/2605.16966v1.md",
+        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260516/2605.16966v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -1629,9 +1629,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.16783v1",
         "abs_url": "http://arxiv.org/abs/2605.16783v1",
-        "local_pdf_path": "data/pdfs/physics.geo-ph/20260516/2605.16783v1.pdf",
+        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260516/2605.16783v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/physics.geo-ph/20260516/2605.16783v1.md",
+        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260516/2605.16783v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -1697,9 +1697,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.16717v1",
         "abs_url": "http://arxiv.org/abs/2605.16717v1",
-        "local_pdf_path": "data/pdfs/physics.geo-ph/20260516/2605.16717v1.pdf",
+        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260516/2605.16717v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/physics.geo-ph/20260516/2605.16717v1.md",
+        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260516/2605.16717v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -1768,9 +1768,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.16711v1",
         "abs_url": "http://arxiv.org/abs/2605.16711v1",
-        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.16711v1.pdf",
+        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260515/2605.16711v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.16711v1.md",
+        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260515/2605.16711v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -1847,9 +1847,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.16665v1",
         "abs_url": "http://arxiv.org/abs/2605.16665v1",
-        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.16665v1.pdf",
+        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260515/2605.16665v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.16665v1.md",
+        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260515/2605.16665v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -1915,9 +1915,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.15752v1",
         "abs_url": "http://arxiv.org/abs/2605.15752v1",
-        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.15752v1.pdf",
+        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260515/2605.15752v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.15752v1.md",
+        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260515/2605.15752v1.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -1998,9 +1998,9 @@
         ],
         "pdf_url": "https://arxiv.org/pdf/2605.15549v1",
         "abs_url": "http://arxiv.org/abs/2605.15549v1",
-        "local_pdf_path": "data/pdfs/physics.geo-ph/2026/2605.15549v1.pdf",
+        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260515/2605.15549v1.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/physics.geo-ph/2026/2605.15549v1.md",
+        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260515/2605.15549v1.md",
         "markdown_parse_error": null
       },
       "analysis": {

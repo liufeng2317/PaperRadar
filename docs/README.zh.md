@@ -40,9 +40,9 @@ PAPERRADAR_PYTHON=/path/to/python bash scripts/run_daily.sh
 - `data/daily/YYYY-MM-DD.json`：每日结果 JSON
 - `docs/index.html`：GitHub Pages 页面
 - `docs/data/latest.json`：页面使用的最新公开数据
-- `data/pdfs/<category>/<YYYYMMDD>/`：按 arXiv 论文发布日期分组的 PDF 缓存
-- `data/markdown/<category>/<YYYYMMDD>/`：按 arXiv 论文发布日期分组的 Markdown
-- `data/mineru/<category>/<YYYYMMDD>/`：按 arXiv 论文发布日期分组的 MinerU 输出
+- `data/pdfs/<source>/<category>/<YYYYMMDD>/`：按来源和预印本发布日期分组的 PDF 缓存
+- `data/markdown/<source>/<category>/<YYYYMMDD>/`：按来源和预印本发布日期分组的 Markdown
+- `data/mineru/<source>/<category>/<YYYYMMDD>/`：按来源和预印本发布日期分组的 MinerU 输出
 
 ## 配置
 

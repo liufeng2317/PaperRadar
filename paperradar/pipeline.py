@@ -22,7 +22,7 @@ from paperradar.registry import (
     update_pdf_status,
 )
 from paperradar.render import write_outputs
-from paperradar.storage import migrate_legacy_file, paper_markdown_path, paper_mineru_dir
+from paperradar.storage import migrate_legacy_file, paper_markdown_path, paper_mineru_dir, paper_pdf_path
 from paperradar.trend import rank_keywords
 
 
@@ -135,6 +135,7 @@ def aggregate_local_digests(
                 continue
             if published_date < cutoff:
                 continue
+            item = _refresh_local_paths(item, config)
             previous = papers_by_id.get(arxiv_id)
             if previous is None or _item_updated_at(item) >= _item_updated_at(previous):
                 papers_by_id[arxiv_id] = item
@@ -160,6 +161,30 @@ def aggregate_local_digests(
     )
     write_outputs(digest, docs_dir=docs_dir)
     return digest
+
+
+def _refresh_local_paths(item: dict[str, Any], config: SiteConfig) -> dict[str, Any]:
+    paper = _paper_from_dict(item.get("paper", {}))
+    if not paper:
+        return item
+    refreshed = {"paper": dict(item.get("paper", {})), "analysis": item.get("analysis", {})}
+    pdf_path = paper_pdf_path(
+        config.arxiv.pdf_dir,
+        paper,
+        config.arxiv.categories,
+        config.arxiv.storage_category_policy,
+    )
+    markdown_path = paper_markdown_path(
+        config.arxiv.markdown_dir,
+        paper,
+        config.arxiv.categories,
+        config.arxiv.storage_category_policy,
+    )
+    refreshed["paper"]["local_pdf_path"] = str(pdf_path) if pdf_path.exists() else item.get("paper", {}).get("local_pdf_path")
+    refreshed["paper"]["markdown_path"] = str(markdown_path) if markdown_path.exists() else item.get("paper", {}).get("markdown_path")
+    refreshed["paper"]["pdf_download_error"] = item.get("paper", {}).get("pdf_download_error")
+    refreshed["paper"]["markdown_parse_error"] = item.get("paper", {}).get("markdown_parse_error")
+    return refreshed
 
 
 def _item_updated_at(item: dict[str, Any]) -> str:

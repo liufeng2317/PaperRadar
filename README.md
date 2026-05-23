@@ -40,9 +40,9 @@ Main outputs:
 - `data/daily/YYYY-MM-DD.json`: daily digest JSON
 - `docs/index.html`: GitHub Pages HTML page
 - `docs/data/latest.json`: latest public page data
-- `data/pdfs/<category>/<YYYYMMDD>/`: cached PDFs grouped by preprint publication date
-- `data/markdown/<category>/<YYYYMMDD>/`: parsed Markdown grouped by preprint publication date
-- `data/mineru/<category>/<YYYYMMDD>/`: MinerU outputs grouped by preprint publication date
+- `data/pdfs/<source>/<category>/<YYYYMMDD>/`: cached PDFs grouped by source and preprint publication date
+- `data/markdown/<source>/<category>/<YYYYMMDD>/`: parsed Markdown grouped by source and preprint publication date
+- `data/mineru/<source>/<category>/<YYYYMMDD>/`: MinerU outputs grouped by source and preprint publication date
 
 ## Configuration
 

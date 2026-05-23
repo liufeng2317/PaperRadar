@@ -11,6 +11,7 @@ class PaperLike(Protocol):
     arxiv_id: str
     published: str
     categories: list[str]
+    source: str
 
 
 def paper_bucket(
@@ -18,14 +19,15 @@ def paper_bucket(
     preferred_categories: list[str] | None = None,
     category_policy: str = "configured",
     storage_date: str | dt.date | None = None,
-) -> tuple[str, str]:
+) -> tuple[str, str, str]:
     category = storage_category(
         paper.categories,
         preferred_categories=preferred_categories,
         category_policy=category_policy,
     )
     day = _storage_day(storage_date) if storage_date else _published_day(paper.published)
-    return category, day
+    source = storage_source(paper)
+    return source, category, day
 
 
 def paper_pdf_path(
@@ -35,8 +37,8 @@ def paper_pdf_path(
     category_policy: str = "configured",
     storage_date: str | dt.date | None = None,
 ) -> Path:
-    category, day = paper_bucket(paper, preferred_categories, category_policy, storage_date)
-    return Path(pdf_dir) / category / day / f"{safe_arxiv_id(paper.arxiv_id)}.pdf"
+    source, category, day = paper_bucket(paper, preferred_categories, category_policy, storage_date)
+    return Path(pdf_dir) / source / category / day / f"{safe_arxiv_id(paper.arxiv_id)}.pdf"
 
 
 def paper_markdown_path(
@@ -46,8 +48,8 @@ def paper_markdown_path(
     category_policy: str = "configured",
     storage_date: str | dt.date | None = None,
 ) -> Path:
-    category, day = paper_bucket(paper, preferred_categories, category_policy, storage_date)
-    return Path(markdown_dir) / category / day / f"{safe_arxiv_id(paper.arxiv_id)}.md"
+    source, category, day = paper_bucket(paper, preferred_categories, category_policy, storage_date)
+    return Path(markdown_dir) / source / category / day / f"{safe_arxiv_id(paper.arxiv_id)}.md"
 
 
 def paper_mineru_dir(
@@ -57,8 +59,8 @@ def paper_mineru_dir(
     category_policy: str = "configured",
     storage_date: str | dt.date | None = None,
 ) -> Path:
-    category, day = paper_bucket(paper, preferred_categories, category_policy, storage_date)
-    return Path(mineru_output_dir) / category / day
+    source, category, day = paper_bucket(paper, preferred_categories, category_policy, storage_date)
+    return Path(mineru_output_dir) / source / category / day
 
 
 def legacy_year_bucket(
@@ -66,6 +68,7 @@ def legacy_year_bucket(
     preferred_categories: list[str] | None = None,
     category_policy: str = "configured",
 ) -> tuple[str, str]:
+    source = storage_source(paper)
     category = storage_category(
         paper.categories,
         preferred_categories=preferred_categories,
@@ -106,6 +109,10 @@ def legacy_year_mineru_dir(
 ) -> Path:
     category, year = legacy_year_bucket(paper, preferred_categories, category_policy)
     return Path(mineru_output_dir) / category / year
+
+
+def storage_source(paper: PaperLike) -> str:
+    return safe_path_part(getattr(paper, "source", "arxiv") or "arxiv")
 
 
 def storage_category(
