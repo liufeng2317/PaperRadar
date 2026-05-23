@@ -120,6 +120,7 @@ run_once() {
     log "dry-run: would run: bash scripts/run_daily.sh run --config $CONFIG_PATH --python $PYTHON_BIN"
     log "dry-run: would run: git add data/daily docs"
     log "dry-run: would commit changed public outputs and push to $REMOTE/$BRANCH"
+    log "dry-run: would send digest email if PAPERRADAR_EMAIL_ENABLED=1"
     if [[ "$DRY_RUN_SLEEP_SECONDS" != "0" ]]; then
       log "dry-run: sleeping for $DRY_RUN_SLEEP_SECONDS seconds to test lock behavior"
       sleep "$DRY_RUN_SLEEP_SECONDS"
@@ -142,6 +143,11 @@ run_once() {
     git commit -m "$COMMIT_PREFIX $(date +%F)"
     git push "$REMOTE" "HEAD:$BRANCH"
     log "changes pushed to $REMOTE/$BRANCH"
+    if "$PYTHON_BIN" -m paperradar.cli email --input docs/data/latest.json; then
+      log "digest email step completed"
+    else
+      log "warning: digest email step failed; continuing"
+    fi
   fi
 
   log "PaperRadar server job finished"

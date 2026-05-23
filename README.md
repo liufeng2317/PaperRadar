@@ -89,6 +89,17 @@ HTTP_PROXY=http://user:password@host:port
 HTTPS_PROXY=http://user:password@host:port
 MINERU_API_KEY=...
 MINERU_API_BASE=...
+
+# Optional email delivery after successful digest updates.
+PAPERRADAR_EMAIL_ENABLED=0
+PAPERRADAR_EMAIL_TO=your-email@example.com
+PAPERRADAR_EMAIL_FROM=PaperRadar <your-smtp-user@example.com>
+PAPERRADAR_SITE_URL=https://your-user.github.io/PaperRadar/
+SMTP_HOST=smtp.example.com
+SMTP_PORT=587
+SMTP_SECURITY=starttls
+SMTP_USER=your-smtp-user@example.com
+SMTP_PASSWORD=your-smtp-password-or-app-password
 ```
 
 ## GitHub Pages
@@ -98,6 +109,16 @@ MINERU_API_BASE=...
 3. Run PaperRadar locally or on a server, then commit and push updated `data/daily` and `docs` outputs.
 
 GitHub-hosted Actions can publish the generated page, but full PDF parsing with MinerU is usually better on a local/server environment where MinerU credentials and dependencies are already configured.
+
+## Email Digest
+
+Set `PAPERRADAR_EMAIL_ENABLED=1` and SMTP variables in `.env` to send a Chinese digest email after a new public digest is committed and pushed. The email step is skipped when there are no public digest changes, and a send failure is logged without stopping the scheduler.
+
+Preview the email body without sending:
+
+```bash
+python -m paperradar.cli email --input docs/data/latest.json --dry-run
+```
 
 ## Server Automation
 
@@ -127,6 +148,7 @@ python -m paperradar.cli run --date 2026-05-21
 python -m paperradar.cli render --input data/daily/2026-05-21.json
 python -m paperradar.cli reanalyze --input data/daily/2026-05-21.json
 python -m paperradar.cli registry --query seismic
+python -m paperradar.cli email --input docs/data/latest.json --dry-run
 python -m paperradar.cli migrate-storage
 ```
 

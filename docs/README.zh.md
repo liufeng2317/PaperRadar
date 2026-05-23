@@ -89,6 +89,17 @@ HTTP_PROXY=http://user:password@host:port
 HTTPS_PROXY=http://user:password@host:port
 MINERU_API_KEY=...
 MINERU_API_BASE=...
+
+# 可选：在成功更新公开日报后发送中文邮件。
+PAPERRADAR_EMAIL_ENABLED=0
+PAPERRADAR_EMAIL_TO=your-email@example.com
+PAPERRADAR_EMAIL_FROM=PaperRadar <your-smtp-user@example.com>
+PAPERRADAR_SITE_URL=https://your-user.github.io/PaperRadar/
+SMTP_HOST=smtp.example.com
+SMTP_PORT=587
+SMTP_SECURITY=starttls
+SMTP_USER=your-smtp-user@example.com
+SMTP_PASSWORD=your-smtp-password-or-app-password
 ```
 
 ## GitHub Pages
@@ -98,6 +109,16 @@ MINERU_API_BASE=...
 3. 在本地或服务器运行 PaperRadar，然后提交并推送更新后的 `data/daily` 和 `docs` 输出。
 
 GitHub-hosted Actions 可以发布生成后的页面，但完整 PDF + MinerU 解析更适合在已有 MinerU 依赖和密钥的本地/服务器环境中运行。
+
+## 邮件日报
+
+在 `.env` 中设置 `PAPERRADAR_EMAIL_ENABLED=1` 和 SMTP 变量后，每次成功提交并推送新的公开日报时，服务器脚本会自动发送一封中文邮件。没有公开内容变化时不会发送；邮件发送失败只会写入日志，不会中断常驻调度器。
+
+可以先预览邮件正文：
+
+```bash
+python -m paperradar.cli email --input docs/data/latest.json --dry-run
+```
 
 ## 服务器自动更新
 
@@ -127,6 +148,7 @@ python -m paperradar.cli run --date 2026-05-21
 python -m paperradar.cli render --input data/daily/2026-05-21.json
 python -m paperradar.cli reanalyze --input data/daily/2026-05-21.json
 python -m paperradar.cli registry --query seismic
+python -m paperradar.cli email --input docs/data/latest.json --dry-run
 python -m paperradar.cli migrate-storage
 ```
 
