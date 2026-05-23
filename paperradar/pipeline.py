@@ -89,6 +89,69 @@ def run_pipeline(
     return digest
 
 
+def aggregate_local_digests(
+    config_path: str = "config/default.json",
+    date: dt.date | None = None,
+    data_dir: str | Path = "data/daily",
+    docs_dir: str | Path = "docs",
+    lookback_days: int | None = None,
+) -> dict[str, Any]:
+    config = load_config(config_path)
+    today = date or dt.date.today()
+    window_days = config.arxiv.lookback_days if lookback_days is None else lookback_days
+    cutoff = today - dt.timedelta(days=window_days)
+    papers_by_id: dict[str, dict[str, Any]] = {}
+
+    for path in sorted(Path(data_dir).glob("*.json")):
+        try:
+            digest = json.loads(path.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            continue
+        for item in digest.get("papers", []):
+            paper = item.get("paper", {})
+            arxiv_id = paper.get("arxiv_id")
+            published = paper.get("published", "")
+            if not arxiv_id or not published:
+                continue
+            try:
+                published_date = dt.datetime.fromisoformat(
+                    published.replace("Z", "+00:00")
+                ).date()
+            except ValueError:
+                continue
+            if published_date < cutoff:
+                continue
+            previous = papers_by_id.get(arxiv_id)
+            if previous is None or _item_updated_at(item) >= _item_updated_at(previous):
+                papers_by_id[arxiv_id] = item
+
+    papers = sorted(
+        papers_by_id.values(),
+        key=lambda item: item.get("paper", {}).get("published", ""),
+        reverse=True,
+    )
+    digest = {
+        "date": today.isoformat(),
+        "generated_at": dt.datetime.now(dt.timezone.utc).isoformat(),
+        "config": to_jsonable(config),
+        "query": build_arxiv_query(config.arxiv, today=today),
+        "papers": papers,
+        "trending_keywords": rank_keywords(papers, top_n=config.trending_top_n),
+        "source": "local_daily_aggregate",
+    }
+    data_path = Path(data_dir)
+    data_path.mkdir(parents=True, exist_ok=True)
+    (data_path / f"{today.isoformat()}.json").write_text(
+        json.dumps(digest, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
+    write_outputs(digest, docs_dir=docs_dir)
+    return digest
+
+
+def _item_updated_at(item: dict[str, Any]) -> str:
+    return str(item.get("analysis", {}).get("updated_at") or item.get("paper", {}).get("updated", ""))
+
+
 def reanalyze_digest(
     input_path: str | Path,
     config_path: str = "config/default.json",

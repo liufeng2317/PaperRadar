@@ -167,6 +167,7 @@ PAPERRADAR_PYTHON=/path/to/python nohup bash scripts/server_daily_loop.sh --run-
 python -m paperradar.cli fetch
 python -m paperradar.cli run --date 2026-05-21
 python -m paperradar.cli render --input data/daily/2026-05-21.json
+python -m paperradar.cli aggregate-local --lookback-days 60
 python -m paperradar.cli reanalyze --input data/daily/2026-05-21.json
 python -m paperradar.cli registry --query seismic
 python -m paperradar.cli email --input docs/data/latest.json --latest-published-day --dry-run
@@ -174,3 +175,5 @@ python -m paperradar.cli migrate-storage
 ```
 
 当你修改了 LLM 模型、提示词或 API 设置，想基于已有 daily JSON/Markdown 重新生成总结，但不重新抓取 arXiv、不重新解析 PDF 时，使用 `reanalyze`。
+
+如果只想用本地已有的 daily JSON 重新生成公开页面，使用 `aggregate-local`。它不会抓取 arXiv，不会下载 PDF，不会解析 PDF，也不会调用 LLM。

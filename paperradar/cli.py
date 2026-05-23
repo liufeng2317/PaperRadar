@@ -9,7 +9,7 @@ from paperradar.config import load_config
 from paperradar.env import load_dotenv
 from paperradar.emailer import digest_from_file, filter_digest_for_email, render_text_email, send_digest_email
 from paperradar.migrate import migrate_storage
-from paperradar.pipeline import NoNewPapers, reanalyze_digest, run_pipeline
+from paperradar.pipeline import NoNewPapers, aggregate_local_digests, reanalyze_digest, run_pipeline
 from paperradar.query import build_arxiv_query
 from paperradar.registry import load_registry
 from paperradar.render import write_outputs
@@ -30,6 +30,13 @@ def main() -> None:
     fetch = subparsers.add_parser("fetch", help="Fetch and print recent arXiv papers without rendering.")
     fetch.add_argument("--config", default="config/default.json")
     fetch.add_argument("--date", help="Fetch date in YYYY-MM-DD format. Defaults to today.")
+
+    aggregate = subparsers.add_parser("aggregate-local", help="Rebuild docs from local daily JSON files without fetching or reprocessing papers.")
+    aggregate.add_argument("--config", default="config/default.json")
+    aggregate.add_argument("--date", help="Digest date in YYYY-MM-DD format. Defaults to today.")
+    aggregate.add_argument("--data-dir", default="data/daily")
+    aggregate.add_argument("--docs-dir", default="docs")
+    aggregate.add_argument("--lookback-days", type=int, help="Override the configured local aggregation window.")
 
     render = subparsers.add_parser("render", help="Render docs from an existing digest JSON file.")
     render.add_argument("--input", required=True)
@@ -74,6 +81,15 @@ def main() -> None:
         except RuntimeError as exc:
             parser.exit(1, f"error: {exc}\n")
         print(f"Rendered {len(digest['papers'])} papers for {digest['date']}")
+    elif args.command == "aggregate-local":
+        digest = aggregate_local_digests(
+            config_path=args.config,
+            date=_parse_date(args.date),
+            data_dir=args.data_dir,
+            docs_dir=args.docs_dir,
+            lookback_days=args.lookback_days,
+        )
+        print(f"Aggregated {len(digest['papers'])} local papers for {digest['date']}")
     elif args.command == "fetch":
         from paperradar.arxiv_client import fetch_recent_papers
 

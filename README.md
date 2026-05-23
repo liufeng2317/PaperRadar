@@ -167,6 +167,7 @@ PAPERRADAR_PYTHON=/path/to/python nohup bash scripts/server_daily_loop.sh --run-
 python -m paperradar.cli fetch
 python -m paperradar.cli run --date 2026-05-21
 python -m paperradar.cli render --input data/daily/2026-05-21.json
+python -m paperradar.cli aggregate-local --lookback-days 60
 python -m paperradar.cli reanalyze --input data/daily/2026-05-21.json
 python -m paperradar.cli registry --query seismic
 python -m paperradar.cli email --input docs/data/latest.json --latest-published-day --dry-run
@@ -174,3 +175,5 @@ python -m paperradar.cli migrate-storage
 ```
 
 Use `reanalyze` when you changed the LLM model, summary instructions, or API settings and want to recompute summaries from existing daily JSON/Markdown without fetching arXiv or parsing PDFs again.
+
+Use `aggregate-local` to rebuild the public page from existing local daily JSON files only. It does not fetch arXiv, download PDFs, parse PDFs, or call the LLM.
