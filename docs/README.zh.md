@@ -55,7 +55,7 @@ PAPERRADAR_PYTHON=/path/to/python bash scripts/run_daily.sh
     "keywords": [],
     "authors": [],
     "max_results": 100,
-    "lookback_days": 7,
+    "lookback_days": 60,
     "download_pdfs": true,
     "parse_pdfs": true,
     "storage_category_policy": "configured"
@@ -64,6 +64,8 @@ PAPERRADAR_PYTHON=/path/to/python bash scripts/run_daily.sh
 ```
 
 如果 `query` 为空，PaperRadar 会根据上面的结构化字段自动拼接 arXiv 查询。只有在你想完全接管 arXiv 查询语句时，才需要设置 `query`。
+
+`lookback_days` 控制公开页面的滚动时间窗口。默认值 `60` 会在生成页面中保留大约两个月内匹配到的论文。
 
 `storage_category_policy` 控制本地缓存目录：
 

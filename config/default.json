@@ -15,7 +15,7 @@
     "submitted_after": "",
     "submitted_before": "",
     "max_results": 100,
-    "lookback_days": 7,
+    "lookback_days": 60,
     "sort_by": "submittedDate",
     "sort_order": "descending",
     "request_delay_seconds": 3,

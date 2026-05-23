@@ -55,7 +55,7 @@ Edit `config/default.json`:
     "keywords": [],
     "authors": [],
     "max_results": 100,
-    "lookback_days": 7,
+    "lookback_days": 60,
     "download_pdfs": true,
     "parse_pdfs": true,
     "storage_category_policy": "configured"
@@ -64,6 +64,8 @@ Edit `config/default.json`:
 ```
 
 Leave `query` empty to let PaperRadar build a query from the structured fields above. Set `query` only when you want to fully override the generated arXiv query.
+
+`lookback_days` controls the rolling public digest window. The default `60` keeps roughly two months of matching papers on the generated site.
 
 `storage_category_policy` controls local cache folders:
 
