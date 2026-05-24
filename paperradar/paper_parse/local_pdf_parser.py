@@ -25,7 +25,16 @@ import sys
 from datetime import datetime
 from pathlib import Path
 from typing import List
-from dotenv import load_dotenv
+try:
+    from dotenv import load_dotenv as _python_dotenv_load
+except ModuleNotFoundError:
+    from paperradar.env import load_dotenv as _simple_load_dotenv
+
+    def load_dotenv(dotenv_path=None, override=False, **_kwargs):
+        _simple_load_dotenv(dotenv_path or ".env", override=override)
+else:
+    def load_dotenv(dotenv_path=None, override=False, **kwargs):
+        return _python_dotenv_load(dotenv_path=dotenv_path, override=override, **kwargs)
 from loguru import logger
 # Import PaperProcessor
 from .paper_processor import PaperProcessor
