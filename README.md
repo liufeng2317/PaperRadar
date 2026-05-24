@@ -200,3 +200,8 @@ This repository currently includes a public geoscience-oriented baseline:
 - arXiv: `physics.geo-ph` plus related topic terms.
 - EarthArXiv: subjects such as `Geophysics and Seismology`, `Hydrology`, `Glaciology`, `Climate`, and `Oceanography`.
 - Public page window: 60 days.
+
+## Acknowledgements
+
+PaperRadar was developed with assistance from OpenAI Codex for code implementation, refactoring, documentation, and workflow automation.
+

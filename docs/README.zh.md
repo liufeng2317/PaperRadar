@@ -200,3 +200,8 @@ python -m paperradar.cli email --input docs/data/latest.json --latest-published-
 - arXiv: `physics.geo-ph` 与相关主题词。
 - EarthArXiv: `Geophysics and Seismology`、`Hydrology`、`Glaciology`、`Climate`、`Oceanography` 等 subjects。
 - 公开页面窗口：60 天。
+
+## 致谢
+
+PaperRadar 的部分代码实现、重构、文档整理和自动化流程搭建由 OpenAI Codex 辅助完成。
+
