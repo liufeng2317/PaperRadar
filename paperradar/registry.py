@@ -110,6 +110,7 @@ def update_analysis_status(entry: dict[str, Any], analysis: dict[str, Any]) -> N
         "geophysics_relevance_en": analysis.get("geophysics_relevance_en", ""),
         "geophysics_relevance_zh": analysis.get("geophysics_relevance_zh", ""),
         "llm_used": analysis.get("llm_used"),
+        "llm_error": analysis.get("llm_error", ""),
         "source": analysis.get("source"),
         "model": analysis.get("model", ""),
         "topic": analysis.get("topic"),
@@ -127,6 +128,8 @@ def cached_analysis(entry: dict[str, Any], source: str) -> dict[str, Any] | None
     if analysis.get("input_version") != ANALYSIS_INPUT_VERSION:
         return None
     if analysis.get("source") != source:
+        return None
+    if analysis.get("llm_used") is not True:
         return None
     if not analysis.get("one_sentence_en") or not analysis.get("one_sentence_zh"):
         return None

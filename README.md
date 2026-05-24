@@ -228,6 +228,7 @@ Logs are written under `logs/daily/`.
 The email digest is intentionally compact:
 
 - sent only when new papers are found;
+- compares the pre-run and post-run digests, so repeated 8-hour checks do not resend old papers;
 - includes only newly discovered papers from the latest preprint publication date;
 - uses Chinese summaries, keywords, paper IDs, authors, and the site link;
 - logs failures without stopping the scheduler.
@@ -247,6 +248,7 @@ bash scripts/run_daily.sh --config config/light.json
 python -m paperradar.cli aggregate-local --lookback-days 60
 python -m paperradar.cli reanalyze --input data/daily/public/2026-05-23.json
 python -m paperradar.cli registry --query seismic
+python -m paperradar.cli failures --input docs/data/latest.json
 python -m paperradar.cli email --input docs/data/latest.json --latest-published-day --dry-run
 python -m paperradar.cli migrate-storage
 ```
@@ -254,6 +256,8 @@ python -m paperradar.cli migrate-storage
 Use `reanalyze` when you changed the model, prompt, or API settings and want to recompute summaries from existing JSON/Markdown.
 
 Use `aggregate-local` when you only want to rebuild the public JSON and page from local daily digests. It does not fetch metadata, download PDFs, parse PDFs, or call the LLM.
+
+Use `failures` or `bash scripts/health_check.sh` to inspect local processing issues. The server loop writes `data/status/latest_failures.json`, which is intentionally ignored by git.
 
 ## Current Baseline
 

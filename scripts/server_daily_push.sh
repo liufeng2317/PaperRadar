@@ -128,12 +128,16 @@ run_once() {
     log "dry-run: would run: git fetch $REMOTE $BRANCH"
     log "dry-run: would run: git pull --rebase --autostash $REMOTE $BRANCH"
     log "dry-run: would run: bash scripts/run_daily.sh run --config $CONFIG_PATH --python $PYTHON_BIN"
+    log "dry-run: would refresh local failure report in data/status/latest_failures.json"
     log "dry-run: would run: git add data/daily docs"
     log "dry-run: would commit changed public outputs and push to $REMOTE/$BRANCH"
-    log "dry-run: would send digest email only for new papers from the latest arXiv published day"
+    log "dry-run: would send digest email only for newly discovered papers from the latest preprint publication day"
     if [[ "$DRY_RUN_SLEEP_SECONDS" != "0" ]]; then
       log "dry-run: sleeping for $DRY_RUN_SLEEP_SECONDS seconds to test lock behavior"
       sleep "$DRY_RUN_SLEEP_SECONDS"
+    fi
+    if [[ -n "$PREVIOUS_DIGEST_FILE" ]]; then
+      rm -f "$PREVIOUS_DIGEST_FILE"
     fi
     log "PaperRadar server dry-run finished"
     log "pid_file_removed=true"
@@ -150,6 +154,14 @@ run_once() {
     bash scripts/run_daily.sh aggregate-local --config "$CONFIG_PATH" --python "$PYTHON_BIN"
   else
     log "no new fetched papers; skipping local aggregation"
+  fi
+
+  if [[ -f docs/data/latest.json ]]; then
+    if "$PYTHON_BIN" -m paperradar.cli failures --input docs/data/latest.json --output data/status/latest_failures.json; then
+      log "local failure report refreshed: data/status/latest_failures.json"
+    else
+      log "warning: local failure report refresh failed; continuing"
+    fi
   fi
 
   git add data/daily docs

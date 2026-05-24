@@ -77,6 +77,25 @@ for path in paths:
     if fallback:
         print("[WARN] fallback ids: {}".format(", ".join(fallback[:10])))'
 
+printf '\nFailure Report\n'
+failure_report="data/status/latest_failures.json"
+if [[ -f "$failure_report" ]]; then
+  if ! python -c 'import json, sys
+from pathlib import Path
+path = Path("data/status/latest_failures.json")
+data = json.loads(path.read_text(encoding="utf-8"))
+failure_count = int(data.get("failure_count") or 0)
+print("[OK] {}: digest_date={} papers={} failures={} by_stage={}".format(path, data.get("digest_date"), data.get("paper_count"), failure_count, data.get("by_stage", {})))
+for item in data.get("failures", [])[:10]:
+    print("[WARN] {stage} {source}:{paper_id} {error}".format(**item))
+sys.exit(1 if failure_count else 0)'
+  then
+    STATUS=1
+  fi
+else
+  info "no local failure report yet: $failure_report"
+fi
+
 printf '\nLogs\n'
 latest_log="$(ls -1t "$LOG_DIR"/server_daily_*.log 2>/dev/null | head -n 1)"
 if [[ -n "$latest_log" ]]; then

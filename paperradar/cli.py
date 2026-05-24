@@ -14,6 +14,7 @@ from paperradar.query import build_arxiv_query
 from paperradar.eartharxiv_client import fetch_eartharxiv_papers
 from paperradar.registry import load_registry
 from paperradar.render import write_outputs
+from paperradar.status import write_failure_report
 
 
 def main() -> None:
@@ -57,7 +58,11 @@ def main() -> None:
     email.add_argument("--input", default="docs/data/latest.json")
     email.add_argument("--dry-run", action="store_true", help="Print the email body without sending.")
     email.add_argument("--since", help="Previous digest JSON. When set, only papers not present there are included.")
-    email.add_argument("--latest-published-day", action="store_true", help="Only include papers from the latest arXiv published day after filtering.")
+    email.add_argument("--latest-published-day", action="store_true", help="Only include papers from the latest preprint publication day after filtering.")
+
+    failures = subparsers.add_parser("failures", help="Write a local processing failure report from a digest JSON file.")
+    failures.add_argument("--input", default="docs/data/latest.json")
+    failures.add_argument("--output", default="data/status/latest_failures.json")
 
     registry = subparsers.add_parser("registry", help="Show or search the local paper registry.")
     registry.add_argument("--config", default="config/default.json")
@@ -157,6 +162,11 @@ def main() -> None:
                 print(send_digest_email(digest))
             except RuntimeError as exc:
                 parser.exit(1, f"error: {exc}\n")
+    elif args.command == "failures":
+        report = write_failure_report(args.input, args.output)
+        print(
+            f"Wrote {report['failure_count']} failures from {report['paper_count']} papers to {args.output}"
+        )
     elif args.command == "registry":
         config = load_config(args.config)
         registry_data = load_registry(config.arxiv.registry_path)

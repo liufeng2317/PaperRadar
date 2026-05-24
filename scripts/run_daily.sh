@@ -15,6 +15,7 @@ Commands:
   run              Run the full daily pipeline. Default.
   fetch            Fetch arXiv metadata only.
   registry         Show local paper registry.
+  failures         Write a local processing failure report.
   migrate-storage  Reorganize local cache into category/year folders.
   render           Render docs from an existing daily JSON.
   reanalyze        Rerun LLM summaries from an existing daily JSON.
@@ -27,7 +28,8 @@ Options:
   --data-dir PATH         Daily JSON output directory for run.
   --docs-dir PATH         Docs output directory for run/render.
   --query TEXT            Query for registry search.
-  --input PATH            Input JSON for render/reanalyze.
+  --input PATH            Input JSON for render/reanalyze/failures.
+  --output PATH           Output JSON for failures.
 
 Examples:
   scripts/run_daily.sh
@@ -45,6 +47,7 @@ query_arg=""
 input_arg=""
 data_dir_arg=""
 docs_dir_arg=""
+output_arg=""
 
 if [[ $# -gt 0 && "$1" != --* ]]; then
   command="$1"
@@ -83,6 +86,10 @@ while [[ $# -gt 0 ]]; do
       ;;
     --input)
       input_arg="${2:?Missing value for --input}"
+      shift 2
+      ;;
+    --output)
+      output_arg="${2:?Missing value for --output}"
       shift 2
       ;;
     -h|--help)
@@ -142,6 +149,17 @@ case "$command" in
       args+=(--date "$date_arg")
     fi
     echo "[PaperRadar] python=$PYTHON_BIN config=$run_config command=fetch" >&2
+    "$PYTHON_BIN" -m paperradar.cli "${args[@]}"
+    ;;
+  failures)
+    args=(failures)
+    if [[ -n "$input_arg" ]]; then
+      args+=(--input "$input_arg")
+    fi
+    if [[ -n "$output_arg" ]]; then
+      args+=(--output "$output_arg")
+    fi
+    echo "[PaperRadar] python=$PYTHON_BIN command=failures" >&2
     "$PYTHON_BIN" -m paperradar.cli "${args[@]}"
     ;;
   registry)
