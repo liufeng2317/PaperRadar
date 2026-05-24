@@ -1,31 +1,25 @@
-name: Daily PaperRadar Digest
+name: Rebuild PaperRadar Pages Data
 
 on:
-  schedule:
-    - cron: "20 22 * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  update:
+  rebuild:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - name: Build digest
-        env:
-          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
-          LLM_BASE_URL: ${{ vars.LLM_BASE_URL }}
-          LLM_MODEL: ${{ vars.LLM_MODEL }}
-        run: python -m paperradar.cli run
-      - name: Commit updated digest
+      - name: Rebuild public JSON and page from committed daily digests
+        run: python -m paperradar.cli aggregate-local
+      - name: Commit rebuilt page data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data docs
-          git diff --cached --quiet || git commit -m "Update PaperRadar digest"
+          git add docs/data docs/index.html data/daily/public
+          git diff --cached --quiet || git commit -m "Rebuild PaperRadar page data"
           git push

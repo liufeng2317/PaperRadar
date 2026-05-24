@@ -1,6 +1,6 @@
 {
   "date": "2026-05-24",
-  "generated_at": "2026-05-23T19:27:51.447692+00:00",
+  "generated_at": "2026-05-24T01:58:44.761341+00:00",
   "config": {
     "site_title": "PaperRadar",
     "site_description": {
@@ -1364,6 +1364,266 @@
         ],
         "updated_at": "2026-05-23T11:32:11.324866+00:00",
         "cache_hit": true
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "eartharxiv-13062",
+        "title": "Metabarcoding supports regional ocean acidification monitoring and identifies novel bioindicators in the Southern California Bight",
+        "authors": [
+          "Bandy. Ashton Margaret",
+          "Frieder, Christina",
+          "Theroux, Susanna",
+          "Gold, Zachary",
+          "McAllister, Sean M.",
+          "Mackey, Katherine R. M.",
+          "McLaughlin, Karen",
+          "Pineda, Nataly",
+          "Brock, Melissa",
+          "Sutula, Martha",
+          "Martiny. Adam C"
+        ],
+        "abstract": "The impacts of ocean acidification (OA) on marine communities are a growing concern for coastal upwelling ecosystems, such as the Southern California Bight (Bight). Successful management of coastal resources in the face of OA requires accurate assessment tools to understand the status and trends of OA impacts on biological communities. Current methods often rely on the condition of individual organisms (e.g., shell dissolution) and are resource- and labor-intensive. As a result, they are difficult to scale to population-level effects or to impacts on the community as a whole, which limits impact assessments and hinders implementation by coastal resource managers. DNA-based monitoring methods can address these gaps, and represent a scalable and cost-effective complement to traditional OA biomonitoring efforts. We applied a DNA metabarcoding approach to analyze mesozooplankton (>200 µm) samples in the Bight to investigate novel OA biomonitoring approaches and target organisms. We sequenced the mitochondrial cytochrome c oxidase subunit 1 (CO1) gene and analyzed mesozooplankton community composition across 20 locations and four seasons. We found communities largely structured by seasonal gradients and dominated by copepods and krill. A subset of taxa corresponded strongly to carbonate chemistry variability; taxa in the Order Cheilostomatida (encrusting bryozoans), along with the copepod species Clausocalanus furcatus and Oncaea scottodicarloi corresponded to high aragonite saturation state values. In contrast, other species like Calanus pacificus (calanoid copepod) and Euphausia pacifica (krill) corresponded with low aragonite saturation state. We also investigated the ubiquity and relative abundance of routine target organisms (pteropods and larval crabs) versus alternative targets. Pteropods were rare and only found in the wintertime, while other larval stages of benthic calcifiers were more relatively abundant and ubiquitous. Our findings highlight the utility of DNA-based methods to guide OA biomonitoring and lay the groundwork for future research on OA indicators in this region.",
+        "published": "2026-05-16T21:48:00Z",
+        "updated": "2026-05-16T21:48:05Z",
+        "categories": [
+          "Oceanography and Atmospheric Sciences and Meteorology",
+          "Metabarcoding",
+          "bioindicators",
+          "indicators",
+          "marine monitoring",
+          "marine management",
+          "ocean acidification",
+          "calcifiers",
+          "pteropods",
+          "eDNA",
+          "climate change",
+          "COI",
+          "CO1",
+          "biomonitoring",
+          "regional monitoring"
+        ],
+        "pdf_url": "https://eartharxiv.org/repository/object/13062/download/23146/",
+        "abs_url": "https://eartharxiv.org/repository/view/13062/",
+        "source": "eartharxiv",
+        "source_id": "13062",
+        "doi": "10.31223/X5CN24",
+        "local_pdf_path": "data/pdfs/eartharxiv/Oceanography-and-Atmospheric-Sciences-and-Meteorology/20260516/eartharxiv-13062.pdf",
+        "pdf_download_error": null,
+        "markdown_path": "data/markdown/eartharxiv/Oceanography-and-Atmospheric-Sciences-and-Meteorology/20260516/eartharxiv-13062.md",
+        "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
+      },
+      "analysis": {
+        "schema_version": "paperradar.analysis.v3",
+        "input_version": "markdown-clean-v1",
+        "one_sentence_en": "This study uses mitochondrial CO1 eDNA metabarcoding of mesozooplankton collected across four seasons in the Southern California Bight to link specific taxa with aragonite saturation state and propose OA bioindicators.",
+        "one_sentence_zh": "该研究在南加州湾跨四季采集中层浮游动物eDNA，通过CO1代谢组测序将特定类群与文石饱和度关联，并提出海洋酸化生物指示物。",
+        "summary_en": [
+          "problem: Ocean acidification monitoring needs scalable biological indicators beyond labor-intensive organism condition assays.",
+          "approach: Apply DNA metabarcoding of mesozooplankton (>200 µm) using mitochondrial CO1 gene sequencing across 20 sites and four seasons, relating taxa to carbonate chemistry.",
+          "key result: Mesoszooplankton communities were mainly structured by seasonal gradients, and several taxa showed strong associations with aragonite saturation state while pteropods were rare and only detected in winter."
+        ],
+        "summary_zh": [
+          "problem: 海洋酸化生物监测亟需可扩展的指标，替代费时费力的个体病态/损伤评估。",
+          "approach: 对南加州湾20个站点四季采集的>200 µm中层浮游动物进行CO1线粒体基因DNA代谢组测序，并分析其与碳酸盐化学的对应关系。",
+          "key result: 群落组成主要受季节梯度驱动；部分类群与文石饱和度显著相关，而腹足类（翼足类）极少且仅在冬季出现。"
+        ],
+        "contribution_en": "Provides a regional case study demonstrating that CO1-based eDNA metabarcoding can identify carbonate-chemistry-associated taxa and assess candidate OA bioindicators (including evaluating pteropods and larval calcifiers) in the Southern California Bight.",
+        "contribution_zh": "通过南加州湾的区域案例研究表明，基于CO1的eDNA代谢组测序可用于识别与碳酸盐化学相关的类群，并评估候选海洋酸化生物指示物（包括对翼足类与钙化幼体的适用性）。",
+        "method_en": "Quarterly field sampling with 200-µm bongo nets for mesozooplankton across 20 sites and four seasons; preservation for DNA; CO1 mitochondrial gene metabarcoding to infer community composition; carbonate chemistry characterized from CTD profiles supported by bottle measurements (pH, total alkalinity) and used to compute aragonite saturation state for correlations with taxa abundance.",
+        "method_zh": "使用200 µm双环bongo网在20个站点跨四季开展季度采样并保存DNA；进行CO1线粒体基因代谢组测序以推断中层浮游动物群落组成；结合pH与总碱度瓶样对CTD碳酸盐参数进行表征并计算文石饱和度，再与类群丰度做关联分析。",
+        "data_or_region_en": "Southern California Bight shelf waters; 80 mesozooplankton samples from 20 locations in spring 2019, summer 2019, fall 2019, and winter 2020 as part of the Bight Regional Monitoring Program (Bight RMP).",
+        "data_or_region_zh": "南加州湾近海陆架海域；来自20个站点的80份中层浮游动物样品，覆盖2019年春/夏/秋与2020年冬季（Bight RMP框架内采集）。",
+        "geophysics_relevance_en": "Relevant to geochemistry–ecosystem coupling for ocean acidification: it proposes practical eDNA-based biological indicators linked to aragonite saturation state, supporting scalable monitoring of OA impacts in a coastal upwelling system.",
+        "geophysics_relevance_zh": "与海洋酸化的地球化学—生态效应密切相关：研究提出了与文石饱和度相关、可扩展的eDNA生物指示思路，用于支持近岸上升流系统中OA影响的规模化监测。",
+        "keywords_en": [
+          "ocean acidification",
+          "eDNA metabarcoding",
+          "COI",
+          "Southern California Bight",
+          "aragonite saturation"
+        ],
+        "keywords_zh": [
+          "海洋酸化",
+          "eDNA代谢组测序",
+          "COI",
+          "南加州湾",
+          "文石饱和度"
+        ],
+        "topic": "OA eDNA bioindicators",
+        "audience_level": "specialist",
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano"
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "eartharxiv-13061",
+        "title": "Identification of Stress-Resilient Maize Progenies under Drought and Low Nitrogen in West Africa Using Genotype × Environment Analysis and Multi-Trait Selection Indices",
+        "authors": [
+          "Talabi, Abidemi",
+          "Adejumobi, Idris Ishola",
+          "Mengesha, Wende",
+          "Meseka, Silvestro",
+          "Badu-Apraku, Baffour",
+          "Fakorede, M.A.B",
+          "Derera, John"
+        ],
+        "abstract": "Maize productivity in West Africa is severely constrained by recurrent drought and low soil nitrogen availability, which results in strong environmental heterogeneity and complex genotype × environment interactions (G×E). Identifying breeding materials that combine productivity, stress resilience, and stability therefore requires analytical approaches that integrate multi-trait and multi-environment information. In this study, 250 full-sib maize progenies generated using a North Carolina Design I mating scheme were evaluated under managed drought and low-nitrogen conditions across multiple environments in Nigeria to identify superior crosses for population improvement. Linear mixed models were used to estimate variance components and obtain best linear unbiased predictions (BLUPs) for genotypic performance. Principal component analysis revealed that grain yield, flowering dates, and plant architecture contributed differentially to phenotypic variation, highlighting the multidimensional nature of stress adaptation. Selection of superior progenies was conducted using four complementary approaches including grain yield BLUPs, multi-trait genotype–ideotype distance index (MGIDI), multi-trait stability index (MTSI), and Rank-Sum index integrating genotype rankings across methods. BLUP-based selection produced the highest mean grain yield (2.86 t ha⁻¹), followed by the Rank-Sum index (2.84 t ha⁻¹), MTSI (2.81 t ha⁻¹), and MGIDI (2.80 t ha⁻¹), compared with the overall reference population mean of 2.74 t ha⁻¹. Twenty-one out of 63 progenies selected using 25% selection intensity were consistently identified across multiple selection strategies, indicating robust performance of the progenies across productivity and stability criteria. The integration of G×E analysis with complementary multi-trait selection approaches provides a practical framework for identifying superior progenies for advancement within drought- and nitrogen-tolerant maize populations and for the development of climate-resilient cultivars adapted to stress-prone environments in West Africa.",
+        "published": "2026-05-16T21:47:00Z",
+        "updated": "2026-05-16T21:47:41Z",
+        "categories": [
+          "Agriculture",
+          "climate resilience",
+          "drought stress",
+          "low-nitrogen stress",
+          "MGIDI",
+          "MTSI",
+          "maize breeding."
+        ],
+        "pdf_url": "https://eartharxiv.org/repository/object/13061/download/23145/",
+        "abs_url": "https://eartharxiv.org/repository/view/13061/",
+        "source": "eartharxiv",
+        "source_id": "13061",
+        "doi": "10.31223/X5HF6T",
+        "local_pdf_path": "data/pdfs/eartharxiv/Agriculture/20260516/eartharxiv-13061.pdf",
+        "pdf_download_error": null,
+        "markdown_path": "data/markdown/eartharxiv/Agriculture/20260516/eartharxiv-13061.md",
+        "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
+      },
+      "analysis": {
+        "schema_version": "paperradar.analysis.v3",
+        "input_version": "markdown-clean-v1",
+        "one_sentence_en": "This West Africa maize study evaluated 250 full-sib progenies under managed drought and low nitrogen across multiple Nigerian environments and used mixed-model G×E with BLUP and complementary multi-trait indices to select stress-resilient, stable crosses.",
+        "one_sentence_zh": "该研究在尼日利亚多环境下评估250个玉米全同胞系，结合混合模型G×E、BLUP与多性状指数（MGIDI/MTSI/秩和）筛选出兼具抗旱和低氮稳产的优良家系。",
+        "summary_en": [
+          "problem: Drought and low soil nitrogen create strong genotype × environment effects in West African maize, making it hard to identify progenies that balance yield, resilience, and stability.",
+          "approach: The authors fit linear mixed models to estimate variance components and BLUPs for genotypic performance across managed drought and low-nitrogen trials, then rank progenies using BLUP, MGIDI, MTSI, and a Rank-Sum integration of rankings.",
+          "key result: BLUP-based selection gave the highest mean grain yield (2.86 t/ha), and 21 of 63 progenies selected at 25% intensity were consistently recovered across multiple strategies, indicating robust performance under both productivity and stability criteria."
+        ],
+        "summary_zh": [
+          "problem: 西非玉米的干旱与土壤低氮导致强烈的基因型×环境互作，使得同时兼顾产量、抗逆性与稳定性的亲本/家系筛选困难。",
+          "approach: 研究者用线性混合模型估计方差成分并获得跨多环境的基因型BLUP，再用BLUP、MGIDI、MTSI以及将各方法排名整合的秩和（Rank-Sum）对家系进行综合排序。",
+          "key result: 基于BLUP的筛选获得最高平均籽粒产量（2.86 t/ha），且在25%筛选强度下，63个入选中有21个家系在多种策略中被一致识别，显示在生产力与稳定性指标上具有稳健表现。"
+        ],
+        "contribution_en": "The paper provides a practical breeding-selection framework that integrates mixed-model genotype × stress × environment analysis with complementary multi-trait selection indices (MGIDI, MTSI) and an aggregated rank approach to improve identification of drought- and low-nitrogen-resilient maize progenies.",
+        "contribution_zh": "论文提出了一套可操作的育种筛选流程：将混合模型的基因型×压力×环境分析与互补的多性状选择指数（MGIDI、MTSI）以及跨方法的排名整合结合起来，用于更可靠地识别抗旱且耐低氮的玉米优良后代表型/家系。",
+        "method_en": "Field multi-environment trials in Nigeria for 250 North Carolina Design I full-sib maize progenies were analyzed with linear mixed models (REML) to estimate genetic variance components and derive BLUPs; principal component analysis explored trait relationships; superior progenies were selected using BLUP grain-yield predictions plus MGIDI, MTSI, and a Rank-Sum of rankings across the indices.",
+        "method_zh": "在尼日利亚开展多环境田间试验，使用北卡罗来纳设计I获得的250个玉米全同胞家系；采用线性混合模型（REML）估计遗传方差成分并获得基因型BLUP；用主成分分析考察性状关系；再通过籽粒产量BLUP结合MGIDI、MTSI以及各指数排名的秩和（Rank-Sum）进行优良家系筛选。",
+        "data_or_region_en": "Nigeria; five environments spanning managed drought trials at Ikenne, Kadawa, and Ile-Ife and low-nitrogen trials at Mokwa and Ile-Ife, evaluated across multiple seasons under a North Carolina Design I mating scheme with 250 full-sib progenies.",
+        "data_or_region_zh": "尼日利亚；在5个环境中进行评估：旱作压力在Ikenne、Kadawa、Ile-Ife（含灌溉管理旱作与自然干旱形成）；低氮压力在Mokwa与Ile-Ife；配合北卡罗来纳设计I构建的250个全同胞家系，并跨多个季节开展试验。",
+        "geophysics_relevance_en": "Tangential: the study is agricultural breeding for drought/low-nitrogen resilience and does not address geophysical instrumentation or inference, though it uses a genotype × environment statistical framework relevant conceptually to stability analysis.",
+        "geophysics_relevance_zh": "弱相关：该研究属于农业育种（抗旱/耐低氮）而非地球物理观测或反演，但其“基因型×环境互作/稳定性评估”的统计框架在概念上可能与稳定性分析方法有启发。",
+        "keywords_en": [
+          "maize breeding",
+          "drought stress",
+          "low nitrogen",
+          "genotype-by-environment",
+          "MGIDI"
+        ],
+        "keywords_zh": [
+          "玉米育种",
+          "干旱胁迫",
+          "基因型×环境互作",
+          "MGIDI"
+        ],
+        "topic": "Maize G×E selection",
+        "audience_level": "specialist",
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano"
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "eartharxiv-13060",
+        "title": "CryoSentinel: A Multimodal Foundation-Model Segmenter for Glacial Lakes in High Mountain Asia from Sentinel-1 SAR, Sentinel-2 Optical, and Copernicus DEM Imagery",
+        "authors": [
+          "Abdrash, Abzal"
+        ],
+        "abstract": "Glacial-lake outburst floods (GLOFs) are the dominant climate-driven hazard in High Mountain Asia, and reliable lake-extent segmentation is the prerequisite for every downstream early-warning workflow. We present CryoSentinel, a multimodal foundation-model semantic segmenter built on the IBM/ESA TerraMind 1.0 Large encoder (1.1 B parameters) with a UperNet decoder, fine-tuned on 5,614 co-registered chips spanning the Tien Shan, Zhetysu Alatau, and Ile Alatau ranges of Central Asia. The model jointly ingests Sentinel-1 GRD SAR (VV, VH), Sentinel-2 L2A optical (12 bands), and Copernicus DEM 30 m elevation at 10 m / pixel and is trained under a 17-km-buffered spatial-block-split protocol that rules out lake-level leakage. On the validation split it attains an IoU of 0.9557 at threshold 0.5 with flip-only test-time augmentation, a +4.27 percentage-point improvement over the most directly comparable prior result (Adhikari and Regmi, 2025; arXiv:2512.24117; Sentinel-1-only, IoU 0.9130). On a held-out spatial test split it reports IoU 0.8918; an independent MNDWI cross-check reveals that 7 of the 665 test chips are Kumar-polygon mislabels rather than model failures, and dropping these raises the label-corrected test IoU to 0.9082. We document the eleven configuration corrections that lifted our finetune from 0.825 to 0.9557 IoU, the spatial-block-split protocol, and the label-noise audit procedure in full so the result is reproducible end-to-end. Code (Apache 2.0), pretrained weights, and the 42,237-chip dataset (ODC-By 1.0) are publicly released and assigned permanent DOIs.",
+        "published": "2026-05-16T20:28:00Z",
+        "updated": "2026-05-16T20:28:44Z",
+        "categories": [
+          "Artificial Intelligence and Robotics",
+          "Environmental Monitoring",
+          "Geomorphology",
+          "Glaciology",
+          "Hydrology",
+          "glacial lakes",
+          "GLOF",
+          "glacial lake outburst flood",
+          "semantic segmentation",
+          "foundation model",
+          "TerraMind",
+          "multimodal Earth observation",
+          "Sentinel-1",
+          "Sentinel-2",
+          "Copernicus DEM",
+          "High Mountain Asia",
+          "Tien Shan",
+          "Zhetysu Alatau",
+          "Ile Alatau",
+          "Central Asia",
+          "hazard monitoring",
+          "Kazakhstan",
+          "climate risk",
+          "deep learning",
+          "remote sensing"
+        ],
+        "pdf_url": "https://eartharxiv.org/repository/object/13060/download/23141/",
+        "abs_url": "https://eartharxiv.org/repository/view/13060/",
+        "source": "eartharxiv",
+        "source_id": "13060",
+        "doi": "10.31223/X5N47B",
+        "local_pdf_path": "data/pdfs/eartharxiv/Artificial-Intelligence-and-Robotics/20260516/eartharxiv-13060.pdf",
+        "pdf_download_error": null,
+        "markdown_path": "data/markdown/eartharxiv/Artificial-Intelligence-and-Robotics/20260516/eartharxiv-13060.md",
+        "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
+      },
+      "analysis": {
+        "schema_version": "paperradar.analysis.v3",
+        "input_version": "markdown-clean-v1",
+        "one_sentence_en": "CryoSentinel fine-tunes the TerraMind-1.0 large foundation model to segment glacial-lake extents in High Mountain Asia using co-registered Sentinel-1 SAR, Sentinel-2 optical, and Copernicus DEM, achieving strong IoU with leakage-free spatial splits.",
+        "one_sentence_zh": "CryoSentinel 利用 TerraMind-1.0 大模型融合 Sentinel-1 SAR、Sentinel-2 光学与 Copernicus DEM，对中亚高山冰川湖进行泄漏规避的时空分割，验证集IoU达0.9557。",
+        "summary_en": [
+          "Problem: Reliable glacial-lake extent segmentation is a prerequisite for downstream GLOF early-warning but remains difficult to generalize across High Mountain Asia with noisy labels.",
+          "Approach: Fine-tune a TerraMind-1.0 large encoder with a UperNet decoder using co-registered Sentinel-1 (VV/VH), Sentinel-2 (12 bands), and Copernicus DEM, trained with a deterministic spatial-block split and an MNDWI-based label-noise audit.",
+          "Key result: On a held-out spatial test split CryoSentinel reaches test IoU 0.8918 (thr=0.5), and after correcting 7 Kumar-polygon mislabels via MNDWI the label-corrected IoU increases to 0.9082."
+        ],
+        "summary_zh": [
+          "问题：可靠的冰川湖范围分割是GLOF预警链路的基础，但在高山地区跨区域泛化且监督标签可能噪声很难解决。",
+          "方法：用 TerraMind-1.0 大模型编码器+UperNet 解码器，融合配准的 Sentinel-1（VV/VH）、Sentinel-2（12波段）和 Copernicus DEM；采用确定性的空间区块划分，并用 MNDWI 进行标签噪声审计。",
+          "关键结果：在泄漏规避的空间测试集上，thr=0.5 时测试 IoU 为 0.8918；经 MNDWI 识别并纠正 7 处 Kumar 多边形误标后，标签校正 IoU 提升至 0.9082。"
+        ],
+        "contribution_en": "The paper introduces CryoSentinel, a multimodal foundation-model (TerraMind-1.0) segmentation system for glacial lakes in High Mountain Asia, with a leakage-free spatial-block splitting protocol and a label-noise audit that improves and validates performance end-to-end.",
+        "contribution_zh": "本文提出 CryoSentinel：用于中亚高山冰川湖分割的多模态基础模型（TerraMind-1.0）方案，并给出泄漏规避的空间区块划分协议与标签噪声审计流程，从而实现可复现的性能改进与验证。",
+        "method_en": "Fine-tune TerraMind-1.0 large encoder with a UperNet decoder for semantic segmentation on 10 m chips using stacked Sentinel-1 GRD (VV/VH), Sentinel-2 L2A (selected 12 bands), and Copernicus DEM; train under a deterministic 17 km buffered spatial-block split and use MNDWI cross-check to audit label noise; evaluate with flip-only test-time augmentation and (for checkpoint selection) threshold tuning on validation.",
+        "method_zh": "使用 UperNet 解码器微调 TerraMind-1.0 大模型编码器，在 10 m 分辨率切片上进行语义分割；输入为叠加的 Sentinel-1 GRD（VV/VH）、Sentinel-2 L2A（选取12波段）和 Copernicus DEM；训练时采用确定性的约17 km带缓冲空间区块划分，并用 MNDWI 交叉校验进行标签噪声审计；评估使用翻转式TTA，并在验证集上调参确定阈值。",
+        "data_or_region_en": "High Mountain Asia study across Central Asia sub-regions: Tien Shan (full), Zhetysu Alatau, and Ile Alatau, using co-registered Sentinel-1/2 and 30 m Copernicus DEM chips labeled from the Kumar & Vijay (PANGAEA) 2016/2022 glacial-lake inventory; training dataset has 5,614 chips in the main finetuning stage and 42,237 chips released overall (ODC-By 1.0).",
+        "data_or_region_zh": "研究区域为中亚高山地带：Tien Shan（全域）、Zhetysu Alatau 与 Ile Alatau；使用配准的 Sentinel-1/2 与 30 m Copernicus DEM 切片，标签来自 Kumar & Vijay（PANGAEA）的2016/2022 冰川湖清单；主要微调阶段使用 5,614 张切片，公开的训练数据集总计 42,237 张（ODC-By 1.0）。",
+        "geophysics_relevance_en": "It directly supports GLOF hazard monitoring by enabling automated, leakage-free glacial-lake extent mapping upstream of early-warning workflows; relevance is strong within cryosphere hazard applications.",
+        "geophysics_relevance_zh": "它直接服务于 GLOF 风险监测，通过为早期预警链路提供自动化、可泛化且规避数据泄漏的冰川湖范围制图；与当前追踪主题相关性很强，属于典型冰冻圈灾害应用。",
+        "keywords_en": [
+          "glacial-lake segmentation",
+          "GLOF",
+          "multimodal foundation model",
+          "Sentinel-1 SAR",
+          "High Mountain Asia"
+        ],
+        "keywords_zh": [
+          "冰川湖分割",
+          "GLOF",
+          "多模态基础模型",
+          "Sentinel-1 SAR",
+          "中亚高山"
+        ],
+        "topic": "Glacial lake segmentation",
+        "audience_level": "specialist",
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano"
       }
     }
   ],

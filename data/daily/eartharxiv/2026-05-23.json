@@ -1,6 +1,6 @@
 {
   "date": "2026-05-23",
-  "generated_at": "2026-05-23T23:16:21.442566+00:00",
+  "generated_at": "2026-05-24T01:57:53.909187+00:00",
   "config": {
     "site_title": "PaperRadar",
     "site_description": {
@@ -117,48 +117,51 @@
         "doi": "10.31223/X5H774",
         "local_pdf_path": "data/pdfs/eartharxiv/Atmospheric-Sciences/20260522/eartharxiv-13142.pdf",
         "pdf_download_error": null,
-        "markdown_path": null,
+        "markdown_path": "data/markdown/eartharxiv/Atmospheric-Sciences/20260522/eartharxiv-13142.md",
         "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
       },
       "analysis": {
         "schema_version": "paperradar.analysis.v3",
         "input_version": "markdown-clean-v1",
-        "one_sentence_en": "The European Alps exhibit a complex geomorphology and undergo the influences of different climate regimes, resulting in high spatial variability of climatic variables and their changes.",
-        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "one_sentence_en": "Using the EEAR-Clim daily station dataset and EOF-plus k-means clustering with a cross-variable regionalization strategy, the study identifies five European-Alps sub-regions and quantifies heterogeneous warming and changing precipitation extremes from 1961–2020.",
+        "one_sentence_zh": "利用EEAR-Clim日尺度站点数据与EOF+k-means并采用跨变量区域化策略，研究识别欧洲阿尔卑斯五个气候子区，并刻画1961–2020年非均一升温与降水极端变化。",
         "summary_en": [
-          "The European Alps exhibit a complex geomorphology and undergo the influences of different climate regimes, resulting in high spatial variability of climatic variables and their changes.",
-          "To provide a detailed analysis of climate regions and climatic changes occurring at a sub-regional scale during the 1961-2020 period, we exploited an updated regionalization of the European Alps that benefits from EEAR-Clim, a new observational daily dataset permitting a robust analysis of local-scale climate features.",
-          "The regionalization of the European Alps identifies five sub-regions exhibiting distinct climate features: North-West, North-East, South-West, Central-South, South \\& South-East (S\\&SE)."
+          "problem: Alpine climate change shows strong spatial heterogeneity, requiring a robust sub-regional classification that resolves local temperature, precipitation, and trends.",
+          "approach: The authors build an updated five-sub-region common regionalization using EEAR-Clim daily station precipitation and air temperature (EOF/PCA to extract spatial modes, k-means clustering, then overlap-based cross-variable assignment with correlation checks).",
+          "key result: The Alps are partitioned into NW, NE, SW, Central-South, and South&South-East, with fastest warming in NE, SW and S&SE, S&SE drying in spring–summer, and significant increases in very extreme rainfall frequency—especially in southern Alps."
         ],
         "summary_zh": [
-          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+          "problem: 阿尔卑斯地区的气候变化空间差异显著，需要能分辨局地温度、降水及其趋势的可靠子区域划分。",
+          "approach: 利用EEAR-Clim日尺度站点的降水与气温数据，通过EOF/PCA提取空间模态、k-means聚类，并结合基于重叠聚类与相关性校验的跨变量分配来构建五个共同子区区域化。",
+          "key result: 最终得到NW、NE、SW、中央-南部以及南部&东南部五个子区；其中NE、SW和S&SE升温最快，S&SE在春季和夏季出现相对其他区域更明显的变干，且南部阿尔卑斯的“极端强降水”频次自1961年起显著增加。"
         ],
-        "contribution_en": "",
-        "contribution_zh": "",
-        "method_en": "",
-        "method_zh": "",
-        "data_or_region_en": "",
-        "data_or_region_zh": "",
-        "geophysics_relevance_en": "",
-        "geophysics_relevance_zh": "",
+        "contribution_en": "Provides an updated, station-based five-sub-region common regionalization of the European Alps using daily temperature and precipitation, enabling consistent sub-regional climatology and trend assessments (means and extremes) for 1961–2020.",
+        "contribution_zh": "基于日尺度站点温度与降水数据，提出欧洲阿尔卑斯更新的五子区共同区域化方案，并据此对1961–2020年的子区域气候态与趋势（均值与极端）进行一致评估。",
+        "method_en": "Daily station precipitation and air temperature from EEAR-Clim are standardized, then spatial variability modes are extracted via EOF/PCA (with a gap-tolerant variant); the leading EOF matrices are clustered with k-means to get variable-specific clusters, which are merged into common sub-regions by overlapping cluster correspondence and a Spearman-correlation-based assignment for stations not in overlaps, with climatology/trend maps used to finalize a small residual.",
+        "method_zh": "使用EEAR-Clim的日尺度站点降水与气温数据并进行标准化；通过可处理缺测的EOF/PCA提取空间变率模态，再对前导EOF载荷矩阵进行k-means聚类得到各变量的分区；随后用聚类重叠关系构建共同子区，并对不属于重叠的站点使用Spearman相关系数（与候选子区聚类平均）进行归类，少量无法明确的站点再结合既有气候态/趋势图进行最终划分。",
+        "data_or_region_en": "Extended European Alpine Region (EEAR), bounded by 3°E–18°E and 43°N–49°N; observational input from EEAR-Clim daily homogenized and quality-checked station records, using EEAR-Clim-60 for 1961–2020 trends and EEAR-Clim-30 for 1991–2020 regionalization.",
+        "data_or_region_zh": "研究区域为扩展欧洲阿尔卑斯地区（EEAR，3°E–18°E，43°N–49°N）；观测数据来自EEAR-Clim日尺度、已均一化且经质量控制的站点记录，趋势分析使用EEAR-Clim-60（1961–2020），区域化使用EEAR-Clim-30（1991–2020）。",
+        "geophysics_relevance_en": "This is atmospheric/climate regionalization rather than a direct geophysics method, but it is relevant to geohazard and cryosphere risk assessments in mountains by identifying where temperature, precipitation, and extreme rainfall are changing most.",
+        "geophysics_relevance_zh": "这项工作属于大气/气候区域化而非直接的地球物理反演方法，但对山区灾害与冰冻圈风险评估有帮助，因为它定位了温度、降水与极端强降水变化最显著的区域。",
         "keywords_en": [
-          "alps",
-          "climate",
-          "european",
-          "sub-regions",
-          "precipitation"
+          "Alpine climate",
+          "regionalization",
+          "EOF",
+          "k-means clustering",
+          "extreme precipitation"
         ],
         "keywords_zh": [
-          "alps",
-          "climate",
-          "european",
-          "sub-regions",
-          "precipitation"
+          "阿尔卑斯气候",
+          "区域化",
+          "EOF",
+          "k-means聚类",
+          "极端降水"
         ],
-        "topic": "alps",
+        "topic": "Alpine climate regionalization",
         "audience_level": "specialist",
-        "llm_used": false,
-        "source": "abstract"
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano"
       }
     },
     {
@@ -192,48 +195,51 @@
         "doi": "10.31223/X5RR3Z",
         "local_pdf_path": "data/pdfs/eartharxiv/Atmospheric-Sciences/20260522/eartharxiv-13141.pdf",
         "pdf_download_error": null,
-        "markdown_path": null,
+        "markdown_path": "data/markdown/eartharxiv/Atmospheric-Sciences/20260522/eartharxiv-13141.md",
         "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
       },
       "analysis": {
         "schema_version": "paperradar.analysis.v3",
         "input_version": "markdown-clean-v1",
-        "one_sentence_en": "Deforestation in the Amazon basin degrades not only the cleared land but also the hydrological function of adjacent intact forest.",
-        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "one_sentence_en": "Using 10 years of SMAP soil-moisture observations and 30 m forest-loss maps, the study shows Amazon intact-forest dries progressively faster near deforestation edges over tens of kilometers, implying large restoration patches are required.",
+        "one_sentence_zh": "利用10年SMAP土壤湿度与30米森林砍伐数据，研究发现亚马逊原始森林在砍伐边缘附近会在数十公里尺度上持续更快变干，修复需更大尺度补丁。",
         "summary_en": [
-          "Deforestation in the Amazon basin degrades not only the cleared land but also the hydrological function of adjacent intact forest.",
-          "Here we combine 10 years of SMAP Level 4 root-zone soil moisture (9 km, 2015 to 2024) with Hansen Global Forest Change data (30 m) to quantify how proximity to deforestation edges affects soil moisture persistence in intact forest across the Amazon basin.",
-          "We classify 32,011 intact forest cells into six distance bins ranging from edge-adjacent (0 to 9 km) to deep interior (greater than 144 km) and compute post-wet-season dry-down rates and e-folding residence times for each bin."
+          "problem: Deforestation is known to create microclimate edge effects, but observational evidence for how far edge degradation propagates into neighboring intact forest hydrology is missing.",
+          "approach: Combine 10-year SMAP Level-4 root-zone soil moisture with Hansen forest-change loss-year products, compute distance-to-substantial-clearing for intact pixels, and quantify dry-down rates and e-folding residence times across distance and clearing-size bins.",
+          "key result: Soil-moisture persistence declines monotonically with proximity to substantial clearings—near-edge forest (0–9 km from ≥1 km² clearings) dries about eight times faster than deep interior (>144 km), with a restoration-relevant penetration depth on the order of 36–72 km and degradation that saturates near the severe regime; nearest clearing size independently strengthens the effect and shows a threshold around ~10 km²."
         ],
         "summary_zh": [
-          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+          "problem: 虽已知砍伐会带来微气候边界效应，但缺少对这种水文功能退化向相邻原始林内部“传播多远”的跨尺度观测证据。",
+          "approach: 将10年SMAP地表根际土壤湿度与Hansen森林损失年份数据结合，计算原始林像元到“实质性砍伐斑块”的距离，并在不同距离区间及砍伐斑块面积区间上比较干燥回落速率与e折返滞留时间。",
+          "key result: 原始林的土壤湿度持续性随接近砍伐清除区而单调下降——距离≥1 km²清除区0–9 km内的森林比距离>144 km处快约8倍变干；边界效应对修复的“穿透深度”约在36–72 km量级，且在更大清除面积后效应趋于饱和；最近清除区大小可独立增强效应，并在约~10 km²处出现阈值。"
         ],
-        "contribution_en": "",
-        "contribution_zh": "",
-        "method_en": "",
-        "method_zh": "",
-        "data_or_region_en": "",
-        "data_or_region_zh": "",
-        "geophysics_relevance_en": "",
-        "geophysics_relevance_zh": "",
+        "contribution_en": "Provides basin-scale observational quantification of how deforestation-edge proximity reduces Amazon intact-forest root-zone soil-moisture persistence, including both a distance-decay gradient over tens of kilometers and a restoration-relevant minimum viable patch size scale.",
+        "contribution_zh": "基于流域尺度观测，定量刻画亚马逊原始林根际土壤湿度持续性如何随砍伐边缘距离而降低，并给出随距离衰减的“数十公里”尺度效应与与之对应的最小可行修复斑块尺度启示。",
+        "method_en": "Use SMAP Level-4 monthly root-zone soil moisture (9 km; 2015–2024) and Hansen Global Forest Change (30 m; tree cover and loss year) to build a cleared-vs-intact forest mask; filter substantial clearing patches via connected-component labeling after downsampling; compute Euclidean distance from each intact pixel to the nearest substantial clearing; aggregate to the SMAP grid; bin intact forest cells by distance to edges and separately by nearest clearing area; estimate post-wet-season dry-down trends using linear regression slopes and e-folding residence times from exponential decay fits; test differences with ANOVA, pairwise Welch t-tests, and Spearman correlations.",
+        "method_zh": "用SMAP Level-4逐月根际土壤湿度（9 km，2015–2024）与Hansen全球森林变化数据（30 m：树冠覆盖与损失年份）构建已清除/仍完好森林掩膜；通过连通域标记并先降采样后再筛选以得到“实质性砍伐斑块”；计算完好林像元到最近实质性清除区的欧氏距离；汇总到SMAP网格；按距离分箱并另按最近清除斑块面积分箱；采用湿季后（3–8月）土壤湿度的线性回归斜率与指数衰减拟合得到的e折返滞留时间表征干燥回落；用ANOVA、Welch两样本t检验与Spearman相关检验差异。",
+        "data_or_region_en": "Amazon Basin region (core Amazon and the deforestation arc); SMAP L4 v7 root-zone soil moisture at 9 km (2015–2024) and Hansen GFC v1.11 treecover2000/lossyear tiles covering ~0–20°S and 70–50°W (four 10°×10° tiles).",
+        "data_or_region_zh": "研究区域为亚马逊流域（核心亚马逊及南部和东部的砍伐弧带）；数据包括SMAP L4 v7根际土壤湿度9 km（2015–2024）以及Hansen GFC v1.11的treecover2000/lossyear分块，覆盖约0–20°S、70–50°W的四个10°×10°瓦片。",
+        "geophysics_relevance_en": "Soil-moisture persistence controls evapotranspiration and moisture recycling that link land degradation to basin-scale atmospheric processes; this makes the basin-wide edge-propagation scale directly relevant to hydrology–climate coupling, though it is an ecological restoration design application rather than a traditional geophysical instrument study.",
+        "geophysics_relevance_zh": "土壤湿度持续性影响蒸散与水分回收，并把土地退化与流域尺度大气过程联系起来，因此“边界效应传播尺度”的结论直接与水文-气候耦合相关；但其主要目标偏向生态修复设计，而非传统地球物理仪器观测研究。",
         "keywords_en": [
-          "forest",
-          "than",
-          "deforestation",
-          "edge",
-          "moisture"
+          "soil moisture persistence",
+          "deforestation edge effects",
+          "SMAP",
+          "Hansen",
+          "Amazon Basin"
         ],
         "keywords_zh": [
-          "forest",
-          "than",
-          "deforestation",
-          "edge",
-          "moisture"
+          "土壤湿度持续性",
+          "森林砍伐边缘效应",
+          "SMAP",
+          "Hansen",
+          "亚马逊流域"
         ],
-        "topic": "forest",
+        "topic": "deforestation hydrology edge-effects",
         "audience_level": "specialist",
-        "llm_used": false,
-        "source": "abstract"
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano"
       }
     },
     {
@@ -266,48 +272,50 @@
         "doi": "10.31223/X5WJ4H",
         "local_pdf_path": "data/pdfs/eartharxiv/Atmospheric-Sciences/20260522/eartharxiv-13139.pdf",
         "pdf_download_error": null,
-        "markdown_path": null,
+        "markdown_path": "data/markdown/eartharxiv/Atmospheric-Sciences/20260522/eartharxiv-13139.md",
         "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
       },
       "analysis": {
         "schema_version": "paperradar.analysis.v3",
         "input_version": "markdown-clean-v1",
-        "one_sentence_en": "Modeling studies predict that biological aerosol, specifically pollen acting as giant cloud condensation nuclei (GCCN), can modify precipitation character by initiating collision-coalescence and warm rain in shallow cloud (Steiner et al., 2015; Wozniak et al., 2018; Paukert et al., 2025).",
-        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "one_sentence_en": "Using Islamabad’s paper mulberry tree-removal natural experiment, the study finds biological giant CCN (pollen) is associated with fewer light-rain days while heavy rain remains unchanged, supporting the giant-CCN warm-rain mechanism.",
+        "one_sentence_zh": "利用伊斯兰堡桑树移除的自然实验，研究发现花粉型巨型CCN与小雨日减少相关，而大雨几乎不变，从而支持巨型CCN促暖雨机理。",
         "summary_en": [
-          "Modeling studies predict that biological aerosol, specifically pollen acting as giant cloud condensation nuclei (GCCN), can modify precipitation character by initiating collision-coalescence and warm rain in shallow cloud (Steiner et al., 2015; Wozniak et al., 2018; Paukert et al., 2025).",
-          "No observational study has tested this prediction.",
-          "We exploit a natural experiment, the removal of ~29,000 paper mulberry (Broussonetia papyrifera) trees from Islamabad, Pakistan, whose pollen (30,000–50,000 grains/m³, 3–4× the modeled effect threshold) dominated the March aerosol budget, to provide the first observational evidence that biological GCCN control the rainfall intensity distribution."
+          "Problem: Whether biological giant cloud condensation nuclei from urban pollen causally alter precipitation intensity characteristics lacks direct observational evidence.",
+          "Approach: Treat Islamabad’s paper mulberry removal as a natural experiment and discriminate four competing mechanisms using pollen season records and daily precipitation intensity partitioning with a nearby control city.",
+          "key result: Pollen correlates with light rain days (0.2–5 mm) but not with heavy rain, total precipitation, or mean intensity, and the pattern occurs only during the March pollen season and only in Islamabad, consistent with the giant-CCN loss hypothesis."
         ],
         "summary_zh": [
-          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+          "问题：城市花粉等生物巨型CCN是否会因果性地改变降水强度分布，缺乏直接观测证据。",
+          "方法：把伊斯兰堡桑树（杨刺树）移除视为自然实验，通过花粉季节记录与日尺度降水强度分档，并结合邻近对照城市检验四种候选机制。",
+          "关键结果：花粉与小雨日（0.2–5 mm）显著相关，但与大雨日、总降水和平均降雨强度不相关；该效应仅出现在3月花粉季且只在伊斯兰堡出现，支持巨型CCN损失假说。"
         ],
-        "contribution_en": "",
-        "contribution_zh": "",
-        "method_en": "",
-        "method_zh": "",
-        "data_or_region_en": "",
-        "data_or_region_zh": "",
-        "geophysics_relevance_en": "",
-        "geophysics_relevance_zh": "",
+        "contribution_en": "Provides the first observational validation that modeled bioaerosol (pollen) as giant CCN can control precipitation intensity partitioning in an urban setting, using a tree-removal natural experiment and intensity-based mechanism discrimination.",
+        "contribution_zh": "首次提供观测层面的证据，表明花粉作为巨型CCN可在城市环境中控制降水强度分档；研究结合树木移除自然实验与基于强度分布的机制区分方法。",
+        "method_en": "Natural experiment design: compare Islamabad before/after a large paper mulberry pollen-source reduction using a 23-year pollen record (PMD) and 43-year daily precipitation (CHIRPS), partition precipitation into intensity classes (light vs heavy), and test competing mechanisms using year-to-year pollen variability and a spatial control city (Rawalpindi) under similar synoptic forcing.",
+        "method_zh": "自然实验框架：利用伊斯兰堡花粉源（桑树）大规模移除事件前后，对比23年花粉记录（PMD）与43年日降水（CHIRPS）；将降水按强度分档（小雨与大雨）并用花粉年际波动进行机制检验，同时采用邻近对照城市（拉瓦尔品第、同等天气形势）控制区域背景。",
+        "data_or_region_en": "Islamabad, Pakistan (paper mulberry removal natural experiment) with Rawalpindi as a nearby control; pollen from Pakistan Meteorological Department (2003–2025) and daily precipitation from CHIRPS (1981–2023).",
+        "data_or_region_zh": "巴基斯坦伊斯兰堡（纸桑树移除自然实验），以邻近的拉瓦尔品第作对照；花粉来自巴基斯坦气象部门（2003–2025），日降水来自CHIRPS（1981–2023）。",
+        "geophysics_relevance_en": "Directly relevant to aerosol–cloud–precipitation interactions, offering observational support for giant CCN (bioaerosol pollen) affecting warm-rain precipitation intensity distribution; relevance to tracked work is strong (urban aerosol–precipitation mechanism attribution).",
+        "geophysics_relevance_zh": "与气溶胶-云-降水相互作用高度相关，给出花粉等巨型CCN影响暖雨降水强度分布的观测支持；对当前追踪主题的相关性强（城市气溶胶到降水机制归因）。",
         "keywords_en": [
+          "bioaerosol",
+          "giant CCN",
+          "urban rainfall",
           "pollen",
-          "first",
-          "urban",
-          "observational",
-          "giant"
+          "intensity partitioning"
         ],
         "keywords_zh": [
-          "pollen",
-          "first",
-          "urban",
-          "observational",
-          "giant"
+          "生物气溶胶",
+          "巨型CCN",
+          "城市降雨",
+          "强度分档"
         ],
-        "topic": "pollen",
+        "topic": "Urban bioaerosol precipitation",
         "audience_level": "specialist",
-        "llm_used": false,
-        "source": "abstract"
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano"
       }
     },
     {
@@ -341,48 +349,51 @@
         "doi": "10.31223/X5519Q",
         "local_pdf_path": "data/pdfs/eartharxiv/Atmospheric-Sciences/20260522/eartharxiv-13125.pdf",
         "pdf_download_error": null,
-        "markdown_path": null,
+        "markdown_path": "data/markdown/eartharxiv/Atmospheric-Sciences/20260522/eartharxiv-13125.md",
         "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
       },
       "analysis": {
         "schema_version": "paperradar.analysis.v3",
         "input_version": "markdown-clean-v1",
-        "one_sentence_en": "Seasonal predictability over the North Atlantic-European (NAE) sector is strongly modulated by the background climate state, particularly in early winter.",
-        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "one_sentence_en": "The study uses a neural network (NN4CAST) to show that October sea-surface temperature can nonlinearly and state-dependently predict early-winter North Atlantic pressure patterns, matching or exceeding SEAS5 and revealing ENSO teleconnection shifts.",
+        "one_sentence_zh": "研究用NN4CAST神经网络表明，10月海温能以非线性且随气候背景变化的方式预测早冬北大西洋海平面气压，并与SEAS5相当甚至在部分区域更优且揭示ENSO遥相关机制的年代差异。",
         "summary_en": [
-          "Seasonal predictability over the North Atlantic-European (NAE) sector is strongly modulated by the background climate state, particularly in early winter.",
-          "In this season, different ENSO teleconnections have been reported before and after the 1990s.",
-          "However, these studies rely on linear analysis, and the reasons for this lack of stationarity and its implications for seasonal forecasting have not yet been fully assessed."
+          "problem: Early-winter ENSO teleconnections over the North Atlantic–Europe sector are known to be non-stationary, but their nonlinear state dependence and implications for seasonal predictability remain unclear.",
+          "approach: Apply NN4CAST to forecast November–December sea-level pressure anomalies from October SST anomalies, benchmark against the dynamical SEAS5 system, and use explainable analyses to link learned skill to Rossby wave source and wave-train mechanisms in distinct time windows.",
+          "key result: NN4CAST attains skill comparable to SEAS5 and detects regime-dependent predictability—NAO-centre skill improves in the 1970–1990s (especially near Iceland) while the East Atlantic pattern improves in 1990–2020s—consistent with changes in Rossby wave sources over Southeast Asia and a southward shift of the North Atlantic jet."
         ],
         "summary_zh": [
-          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+          "problem: 人们已知早冬北大西洋-欧洲区域的ENSO遥相关具有非平稳性，但其非线性状态依赖及对季节预测意义尚不清楚。",
+          "approach: 用NN4CAST以10月SST异常预测11–12月海平面气压异常，和动力系统SEAS5做技能对标，并结合可解释分析把提升的可预测性与罗斯贝波源及波列传播机制在不同年代窗口联系起来。",
+          "key result: NN4CAST在整体上与SEAS5相当，且识别出年代依赖的可预测性：NAO型（尤其靠近冰岛）在1970–1990年代更易预测，而东大西洋型在1990–2020年代更易预测，这与东南亚罗斯贝波源增强以及北大西洋急流向南偏移相一致。"
         ],
-        "contribution_en": "",
-        "contribution_zh": "",
-        "method_en": "",
-        "method_zh": "",
-        "data_or_region_en": "",
-        "data_or_region_zh": "",
-        "geophysics_relevance_en": "",
-        "geophysics_relevance_zh": "",
+        "contribution_en": "Demonstrates that a nonlinear, explainable deep-learning predictor using only single-month October SST can recover state-dependent early-winter teleconnection skill in the North Atlantic–Europe sector, and links the detected non-stationarity to physically interpretable Rossby wave source and jet-stream changes.",
+        "contribution_zh": "表明仅利用单月10月海温异常的可解释深度学习框架能够再现北大西洋-欧洲区域早冬遥相关的状态依赖预测技能，并将检测到的非平稳性与可物理解释的罗斯贝波源与急流位置变化联系起来。",
+        "method_en": "NN4CAST deep neural network for deterministic forecasting of November–December sea-level pressure anomalies from October sea-surface temperature anomaly fields; benchmarked against ECMWF SEAS5 dynamical seasonal forecasts; uses EOF-based mode decomposition and explainable regression diagnostics involving Rossby wave source and wave activity flux to interpret state-dependent teleconnection mechanisms.",
+        "method_zh": "使用NN4CAST深度神经网络，以10月海表温度异常场作为输入，确定性预测11–12月海平面气压异常；并与ECMWF的SEAS5动力季节预测对标；通过EOF分解提取主导模态，并用涉及罗斯贝波源与波活动通量的可解释回归诊断来解释状态依赖的遥相关机制。",
+        "data_or_region_en": "North Atlantic–Europe (NAE) sector, focusing on early winter (November–December) sea-level pressure; predictors are October SST anomalies; hindcast period 1981–2019, with additional regime windows including 1970–1995 and 1996–2019; comparisons include ECMWF SEAS5.",
+        "data_or_region_zh": "北大西洋-欧洲（NAE）区域，关注早冬（11–12月）海平面气压；预测因子为10月海表温度异常；评估/回测期为1981–2019，并用1970–1995与1996–2019等年代窗口分析；与ECMWF SEAS5进行对比。",
+        "geophysics_relevance_en": "This matters for seasonal climate predictability because it provides nonlinear, state-dependent evidence that ENSO teleconnection pathways and Rossby-wave forcing change over time, improving understanding of when and where SST precursors are reliable.",
+        "geophysics_relevance_zh": "这对季节气候可预测性很重要，因为研究提供了非线性、状态依赖的证据：ENSO遥相关通路与罗斯贝波强迫会随时间改变，从而帮助理解SST先兆何时以及在哪里更可靠。",
         "keywords_en": [
-          "teleconnections",
-          "north",
-          "over",
-          "atlantic",
-          "climate"
+          "ENSO teleconnections",
+          "seasonal forecasting",
+          "SST predictors",
+          "NN4CAST",
+          "North Atlantic Oscillation"
         ],
         "keywords_zh": [
-          "teleconnections",
-          "north",
-          "over",
-          "atlantic",
-          "climate"
+          "ENSO遥相关",
+          "季节预测",
+          "海温先兆",
+          "NN4CAST",
+          "北大西洋涛动"
         ],
-        "topic": "teleconnections",
+        "topic": "State-dependent SST teleconnections",
         "audience_level": "specialist",
-        "llm_used": false,
-        "source": "abstract"
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano"
       }
     },
     {
@@ -414,48 +425,51 @@
         "doi": "10.31223/X5DF5H",
         "local_pdf_path": "data/pdfs/eartharxiv/Physical-Sciences-and-Mathematics/20260522/eartharxiv-13129.pdf",
         "pdf_download_error": null,
-        "markdown_path": null,
+        "markdown_path": "data/markdown/eartharxiv/Physical-Sciences-and-Mathematics/20260522/eartharxiv-13129.md",
         "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
       },
       "analysis": {
         "schema_version": "paperradar.analysis.v3",
         "input_version": "markdown-clean-v1",
-        "one_sentence_en": "We analyze North Atlantic Tropical Cyclone (TC) activity using the Columbia HAZard (CHAZ) model to downscale 12 models from CMIP6 under the SSP1-2.6 and SSP5-8.5 scenarios --- those with the least and greatest anthropogenic forcing respectively.",
-        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "one_sentence_en": "Using a CHAZ statistical-dynamical downscaling of 12 CMIP6 models, the study projects persistent North Atlantic tropical cyclone risk contrasts: more landfalls along the U.S. Southeast and fewer over the Gulf/Texas under both SSP1-2.6 and SSP5-8.5.",
+        "one_sentence_zh": "利用CHAZ对12个CMIP6模型进行统计-动力学下尺度，该研究预测北大西洋热带气旋风险在美国东南沿海增加、在墨西哥湾/德州减少，并且两种SSP情景下该对比基本持续。",
         "summary_en": [
-          "We analyze North Atlantic Tropical Cyclone (TC) activity using the Columbia HAZard (CHAZ) model to downscale 12 models from CMIP6 under the SSP1-2.6 and SSP5-8.5 scenarios --- those with the least and greatest anthropogenic forcing respectively.",
-          "TC frequency increases along the Southeastern U.S.",
-          "and declines along the Gulf under both SSPs."
+          "problem: How will regional North Atlantic tropical cyclone (TC) landfall hazard change under low versus high greenhouse forcing, and is it driven by global mean warming or warming patterns?",
+          "approach: Downscale CMIP6 HIST, SSP1-2.6, and SSP5-8.5 with the Columbia HAZard (CHAZ) model to generate large synthetic TC catalogs, then compute gate-based landfall frequencies/return periods and relate changes to basin-scale environmental drivers.",
+          "key result: TC landfall risk shows a persistent opposite regional response—Southeast U.S. increases and Texas/Gulf decreases in frequency and return periods evolve accordingly—driven primarily by El Niño–like tropical Pacific shifts that affect Atlantic potential intensity and vertical wind shear."
         ],
         "summary_zh": [
-          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+          "problem: 北大西洋热带气旋在低/高温室气体情景下的区域落地危害将如何变化，变化主要由全球平均变暖还是由变暖空间格局驱动？",
+          "approach: 用CHAZ对12个CMIP6模型在HIST、SSP1-2.6和SSP5-8.5下进行下尺度生成大量合成TC样本，按沿海“闸门”计算落地频率与回归期，并将差异联系到流域尺度环境因子。",
+          "key result: 两种SSP下美国东南沿海落地风险持续上升、墨西哥湾/德州持续下降，且其变化主要受类似厄尔尼诺的热带太平洋背景态转变影响，从而改变大西洋潜在强度与垂直风切变。"
         ],
-        "contribution_en": "",
-        "contribution_zh": "",
-        "method_en": "",
-        "method_zh": "",
-        "data_or_region_en": "",
-        "data_or_region_zh": "",
-        "geophysics_relevance_en": "",
-        "geophysics_relevance_zh": "",
+        "contribution_en": "Provides a probabilistic, regionally resolved projection of North Atlantic TC landfall hazard using CHAZ-based downscaling across low and high CMIP6 forcing, showing that regional risk contrasts can persist and depend more on the spatial pattern of SST warming (linked to Pacific teleconnections) than on global mean warming.",
+        "contribution_zh": "基于CHAZ的下尺度概率评估，给出低与高排放情景下北大西洋TC落地危害的区域化预测；结果表明区域风险对比可长期保持，并且更依赖SST变暖的空间格局（与太平洋遥相关相关），而非仅由全球平均变暖决定。",
+        "method_en": "Statistical-dynamical downscaling with the CHAZ model: TCGI-based storm genesis with bias-corrected CMIP6 predictors (anchored to ERA5 1981–2010), beta/advection + stochastic track evolution, intensity regression with stochastic errors, then gate-based identification of landfalls from synthetic tracks and computation of exceedance frequencies/return periods; changes assessed with a multi-model delta and significance testing via a two-sided t-test on model means.",
+        "method_zh": "采用CHAZ统计-动力学下尺度：用TCGI驱动的风暴生成（将CMIP6环境预测变量做基于ERA5 1981–2010的偏差校正），beta/平流并叠加随机成分的路径演化，以及带随机误差的强度回归；再通过合成路径与沿海“闸门”相交识别落地，并计算风速阈值的超越频率/回归期；用多模型增量（delta）评估变化，并对模型均值做双侧t检验检验显著性。",
+        "data_or_region_en": "North Atlantic basin (0–55°N, 100–20°W) using 12 CMIP6 model simulations; downscaling covers 1951–2014 historical plus 2015–2100 SSP1-2.6 and SSP5-8.5, focusing hazard along seven U.S. Atlantic/Gulf coastline landfall gates (including Texas and Southeast).",
+        "data_or_region_zh": "北大西洋海盆（0–55°N，100–20°W）；使用12个CMIP6模型输出进行下尺度，覆盖1951–2014历史期以及2015–2100的SSP1-2.6与SSP5-8.5，并重点分析美国大西洋/墨西哥湾沿岸七个落地“闸门”（含德州与东南沿海）。",
+        "geophysics_relevance_en": "For climate-risk and hazard attribution, the paper is highly relevant because it links projected regional TC landfall risk to specific large-scale ocean–atmosphere drivers and highlights sensitivity to the tropical Pacific warming pattern rather than global mean SST alone.",
+        "geophysics_relevance_zh": "就气候风险与成因归因而言，该论文高度相关：它把区域TC落地风险的预测与特定大尺度海气驱动联系起来，并指出对热带太平洋变暖空间格局的敏感性，而不只是对全球平均SST的响应。",
         "keywords_en": [
-          "atlantic",
-          "tropical",
-          "north",
-          "scenarios",
-          "under"
+          "tropical cyclone risk",
+          "CHAZ downscaling",
+          "CMIP6 SSP126/SSP585",
+          "North Atlantic landfall",
+          "El Niño-like Pacific forcing"
         ],
         "keywords_zh": [
-          "atlantic",
-          "tropical",
-          "north",
-          "scenarios",
-          "under"
+          "热带气旋风险",
+          "CHAZ下尺度",
+          "CMIP6 SSP126/SSP585",
+          "北大西洋落地",
+          "类厄尔尼诺太平洋强迫"
         ],
-        "topic": "atlantic",
+        "topic": "Regional TC landfall risk",
         "audience_level": "specialist",
-        "llm_used": false,
-        "source": "abstract"
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano"
       }
     },
     {
@@ -481,48 +495,50 @@
         "doi": "10.31223/X5XF55",
         "local_pdf_path": "data/pdfs/eartharxiv/Planetary-Hydrology/20260521/eartharxiv-13116.pdf",
         "pdf_download_error": null,
-        "markdown_path": null,
+        "markdown_path": "data/markdown/eartharxiv/Planetary-Hydrology/20260521/eartharxiv-13116.md",
         "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
       },
       "analysis": {
         "schema_version": "paperradar.analysis.v3",
         "input_version": "markdown-clean-v1",
-        "one_sentence_en": "This method article presents a local refinement framework for a national-scale, machine learning-based groundwater model that predicts typical summer and winter water table depth at 10 × 10 m resolution at national scale of Denmark.",
-        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "one_sentence_en": "The paper proposes a local retraining workflow that injects new seasonal groundwater observations into an existing Denmark-wide 10 m machine-learning model to improve local water-table predictions while retaining national consistency.",
+        "one_sentence_zh": "该文提出一种局地再训练流程，将新增季节性地下水观测并入丹麦尺度10米机器学习水位模型，以提升局地预测精度并保持全国尺度一致性。",
         "summary_en": [
-          "This method article presents a local refinement framework for a national-scale, machine learning-based groundwater model that predicts typical summer and winter water table depth at 10 × 10 m resolution at national scale of Denmark.",
-          "While the existing baseline model provides high-resolution national coverage and is suitable for screening purposes, its accuracy remains insufficient for local groundwater management applications.",
-          "The proposed method integrates new groundwater observations into the existing training dataset and retrains the baseline model to enhance local fidelity while preserving large-scale consistency."
+          "problem: National-scale 10 m groundwater water-table models lack accuracy for local groundwater management despite broad spatial coverage.",
+          "approach: Combine new summer/winter groundwater observations with the original training set and retrain the baseline machine-learning model using controlled weighting or augmentation of the new points, then validate via cross-validation.",
+          "key result: Cross-validation on a 212 km² synthetic test area shows consistent reductions in mean error, mean absolute error, and root mean squared error versus the baseline, especially when newly added observations are given higher training weight."
         ],
         "summary_zh": [
-          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+          "problem: 尽管具有全国尺度高精度覆盖，现有10米地下水水位模型对局地地下水管理仍不够准确。",
+          "approach: 将新增夏季/冬季地下水观测与原训练集合并，并通过对新增点的加权或数据增强策略对基线机器学习模型进行再训练，再用交叉验证评估改进效果。",
+          "key result: 在212 km²的合成测试区域中，四折交叉验证表明相较基线模型，平均误差、平均绝对误差和均方根误差均一致降低，且当对新增观测给予更高权重时改善更明显。"
         ],
-        "contribution_en": "",
-        "contribution_zh": "",
-        "method_en": "",
-        "method_zh": "",
-        "data_or_region_en": "",
-        "data_or_region_zh": "",
-        "geophysics_relevance_en": "",
-        "geophysics_relevance_zh": "",
+        "contribution_en": "A practical, parameter-controlled framework for locally refining a national-scale machine-learning groundwater model by retraining with user-curated seasonal observations, producing improved local accuracy and uncertainty outputs while preserving baseline behavior elsewhere.",
+        "contribution_zh": "提出一种可操作的框架：通过将用户整理的季节性观测并入并对国家尺度机器学习地下水模型进行再训练，实现局地精度与不确定性改进，同时尽量保持其他区域的基线行为。",
+        "method_en": "Retrain the existing LightGBM-style machine-learning groundwater model at 10×10 m using extracted covariates for user-supplied well locations, augment or up-weight the new summer/winter observations in the training set, generate typical summer and winter water-table depth maps plus q10/q90 uncertainty bounds, and evaluate with 4-fold cross-validation focused on the new observations.",
+        "method_zh": "基于用户提供的井点提取协变量栅格，采用新增夏季/冬季观测对原训练集进行加权或数据增强，并对10×10 m机器学习模型进行再训练，输出典型夏/冬水位深度以及q10/q90不确定性边界；用四折交叉验证（重点验证新增观测）进行评价。",
+        "data_or_region_en": "Denmark national baseline model refined within a ~212 km² case study area near the city of Sunds in Jutland, demonstrated using 100 synthetic summer/winter groundwater observations; the national training period spans 1991–2025.",
+        "data_or_region_zh": "在丹麦日德兰半岛Sunds市附近的约212 km²案例区内演示局地改进；使用100个合成的夏/冬地下水观测进行验证，基线模型训练数据覆盖1991–2025年。",
+        "geophysics_relevance_en": "Relevant to groundwater hydrology decision support, but not to geophysical remote-sensing tracking; it is primarily a data-assimilation-like workflow for supervised groundwater modeling rather than a geophysical inverse problem.",
+        "geophysics_relevance_zh": "与地下水水文的应用决策支持相关，但与遥感地球物理跟踪的核心主题较弱；更像是用于监督式地下水建模的观测融合/再训练流程，而非传统地球物理反演问题。",
         "keywords_en": [
-          "local",
           "groundwater",
-          "baseline",
-          "national",
-          "while"
+          "water table depth",
+          "machine learning",
+          "LightGBM",
+          "Denmark"
         ],
         "keywords_zh": [
-          "local",
-          "groundwater",
-          "baseline",
-          "national",
-          "while"
+          "地下水",
+          "地下水位深度",
+          "机器学习",
+          "LightGBM"
         ],
-        "topic": "local",
+        "topic": "Local groundwater model refinement",
         "audience_level": "specialist",
-        "llm_used": false,
-        "source": "abstract"
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano"
       }
     },
     {
@@ -553,48 +569,51 @@
         "doi": "10.31223/X5278G",
         "local_pdf_path": "data/pdfs/eartharxiv/Earth-Sciences/20260520/eartharxiv-13119.pdf",
         "pdf_download_error": null,
-        "markdown_path": null,
+        "markdown_path": "data/markdown/eartharxiv/Earth-Sciences/20260521/eartharxiv-13119.md",
         "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
       },
       "analysis": {
         "schema_version": "paperradar.analysis.v3",
         "input_version": "markdown-clean-v1",
-        "one_sentence_en": "The Mw 7.7 Myanmar earthquake of 28 March 2025 ruptured the Sagaing Fault system over ~450 km and exhibited complex rupture behavior, including intermittent supershear propagation and backward-migrating high-frequency (HF) P-wave radiation.",
-        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "one_sentence_en": "Using multi-frequency teleseismic P-wave back-projection and comparison to near-field motions for the 2025 Mw 7.7 Myanmar event, the authors show backward-migrating high-frequency P-wave stopping-phase signals governed by fault geometry.",
+        "one_sentence_zh": "基于多频远场P波反投影并对比近场记录，该研究表明2025年缅甸Mw7.7地震的向后迁移高频P波“停止相”与断层几何控制的破裂减速终止有关。",
         "summary_en": [
-          "The Mw 7.7 Myanmar earthquake of 28 March 2025 ruptured the Sagaing Fault system over ~450 km and exhibited complex rupture behavior, including intermittent supershear propagation and backward-migrating high-frequency (HF) P-wave radiation.",
-          "We image the rupture evolution using multi-frequency teleseismic P-wave back-projection (BP) (0.05–0.5, 0.1–1.0, and 0.3–2.0 Hz) and compare the results with near-fault strong-motion data recorded at Nay Pyi Taw (NPT).",
-          "Our BP results reveal two key features: (1) two distinct episodes of backward-migrating HF radiation initiated at the Sagaing–Meiktila and Meiktila–NPT fault junctions, with apparent migration speeds of 6.0–6.5 km/s, and (2) a pronounced HF radiator concentrated on a short splay-fault branch adjacent to the NPT segment."
+          "Problem: What physical source mechanism produces observed backward-migrating high-frequency P-wave radiation during the 2025 Mw 7.7 Myanmar earthquake?",
+          "Approach: Perform multi-frequency teleseismic P-wave back-projection (0.05–0.5, 0.1–1.0, 0.3–2.0 Hz) with LQT component rotation, cross-correlation-based station selection, and compare radiation sites to a P-wave slip model and Nay Pyi Taw strong-motion displacements.",
+          "Key result: Two backward-migrating high-frequency P-wave episodes originate at Sagaing–Meiktila and Meiktila–NPT junctions, plus an enhanced radiator on an NPT-adjacent splay fault branch, consistent with stopping-phase radiation linked to rupture arrest at fault bends/branching."
         ],
         "summary_zh": [
-          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+          "问题：2025年缅甸Mw 7.7地震中观测到的向后迁移高频P波究竟对应怎样的破裂物理机制？",
+          "方法：对不同频带（0.05–0.5、0.1–1.0、0.3–2.0 Hz）进行基于LQT分量旋转的远场P波反投影，采用互相关一致性筛选台站，并将辐射成像与P波滑移模型及内比都（Nay Pyi Taw, NPT）近场强震位移对比。",
+          "关键结果：向后迁移高频P波出现两次主要事件，起自Sagaing–Meiktila与Meiktila–NPT断层连接处；同时在靠近NPT的短分支（splay fault）上存在更强辐射，并与断层弯折/分叉诱发的停止相（停止阶段）有关。"
         ],
-        "contribution_en": "",
-        "contribution_zh": "",
-        "method_en": "",
-        "method_zh": "",
-        "data_or_region_en": "",
-        "data_or_region_zh": "",
-        "geophysics_relevance_en": "",
-        "geophysics_relevance_zh": "",
+        "contribution_en": "The paper provides an earthquake-specific physical interpretation of backward-migrating high-frequency P-wave radiation by linking back-projected radiation episodes to segment junctions and branching features, and validating the interpretation with near-field evidence of a stopping phase.",
+        "contribution_zh": "该文针对具体地震给出了对向后迁移高频P波辐射的物理解释：通过反投影结果将辐射事件定位到分段连接与分叉几何，并用NPT近场位移中停止相的证据支持该解释。",
+        "method_en": "Multi-frequency teleseismic P-wave back-projection using LQT component rotation on three-component waveforms, with cross-correlation-based selection and lag-time corrections per frequency band; radiation power maps are then compared to a P-wave slip model (from prior PDTI work) and to Nay Pyi Taw near-fault strong-motion displacement pulses to identify a stopping phase.",
+        "method_zh": "将三分量远场波形旋转到LQT坐标并进行多频P波反投影；通过互相关一致性筛选台站、按频带进行到时扰动的滞后修正来堆叠成像辐射功率分布；再与既有P波滑移模型（PDTI获得）以及NPT近场强震位移中的脉冲特征对比，以识别停止相。",
+        "data_or_region_en": "Rupture region along the Sagaing Fault system, Myanmar (~450 km rupture; segments Sagaing, Meiktila, Nay Pyi Taw, Pyu, plus an NPT-adjacent splay branch); teleseismic P-wave recordings from EarthScope and near-fault strong motion/displacement at Nay Pyi Taw (NPT).",
+        "data_or_region_zh": "缅甸萨加因断层系统的破裂区（约450 km，包含Sagaing、Meiktila、Nay Pyi Taw、Pyu等分段及靠近NPT的短分支）；数据包括EarthScope的远场P波记录，以及Nay Pyi Taw（NPT）的近场强震位移。",
+        "geophysics_relevance_en": "This directly advances understanding of how fault geometry and rupture arrest can generate backward-migrating high-frequency stopping-phase radiation, which is important for interpreting complex rupture kinematics from seismic waveforms.",
+        "geophysics_relevance_zh": "这项工作直接说明了断层几何与破裂停止如何产生向后迁移的高频停止相辐射，对从地震波形解释复杂破裂运动学具有重要意义。",
         "keywords_en": [
-          "fault",
-          "backward-migrating",
-          "p-wave",
-          "radiation",
-          "rupture"
+          "back-projection",
+          "backward-migrating radiation",
+          "stopping phase",
+          "fault geometry",
+          "teleseismic P-waves"
         ],
         "keywords_zh": [
-          "fault",
-          "backward-migrating",
-          "p-wave",
-          "radiation",
-          "rupture"
+          "反投影",
+          "向后迁移辐射",
+          "停止相",
+          "断层几何",
+          "远场P波"
         ],
-        "topic": "fault",
+        "topic": "Fault geometry stopping phase",
         "audience_level": "specialist",
-        "llm_used": false,
-        "source": "abstract"
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano"
       }
     },
     {
@@ -626,48 +645,51 @@
         "doi": "10.31223/X55X9P",
         "local_pdf_path": "data/pdfs/eartharxiv/Physical-Sciences-and-Mathematics/20260520/eartharxiv-13097.pdf",
         "pdf_download_error": null,
-        "markdown_path": null,
+        "markdown_path": "data/markdown/eartharxiv/Physical-Sciences-and-Mathematics/20260520/eartharxiv-13097.md",
         "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
       },
       "analysis": {
         "schema_version": "paperradar.analysis.v3",
         "input_version": "markdown-clean-v1",
-        "one_sentence_en": "Climate change constitutes a compound existential risk for Pakistan — a nation responsible for less than one percent of global greenhouse-gas emissions yet consistently ranked among the ten most climate-vulnerable states on earth (Germanwatch, 2021).",
-        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "one_sentence_en": "A PIEAS community survey across Pakistan (N=1,149) finds very high climate-change awareness and identifies rainfall disruption as the top perceived impact, informing preference and feasibility discussions for stratospheric aerosol injection as a supplementary measure.",
+        "one_sentence_zh": "PIEAS对巴基斯坦开展的社区调查(N=1,149)显示高水平气候变化认知，认为降雨格局紊乱影响最突出，并用于讨论平流层气溶胶注入作为补充干预的可行性。",
         "summary_en": [
-          "Climate change constitutes a compound existential risk for Pakistan — a nation responsible for less than one percent of global greenhouse-gas emissions yet consistently ranked among the ten most climate-vulnerable states on earth (Germanwatch, 2021).",
-          "Escalating heatwaves, intensifying monsoon floods, accelerating glacial retreat, chronic smog, and advancing desertification are not future projections for Pakistan: they are present, documented, and accumulating realities that claim lives, destroy crops, and destabilise livelihoods year after year.",
-          "To assess community-level perceptions, lived impacts, and policy priorities, the PIEAS SAI Research Initiative administered a bilingual (English / Roman Urdu) structured survey instrument from 1 to 16 May 2026."
+          "problem: Pakistan faces severe climate-vulnerability, but community-perceived impacts and policy priorities—especially regarding solar geoengineering supplements like SAI—are insufficiently documented.",
+          "approach: The PIEAS SAI Research Initiative ran a bilingual structured web survey (1–16 May 2026) with mixed-methods Likert and open-text items plus secondary-evidence triangulation for underrepresented regions.",
+          "key result: Most general-public respondents rated their climate awareness as Critical/Serious, and rainfall-pattern disruption ranked highest among perceived impacts; government-priority preferences favored afforestation/ecosystem restoration."
         ],
         "summary_zh": [
-          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+          "problem: 巴基斯坦气候风险很高，但在平流层气溶胶注入(SAI)等“补充型”太阳辐射地球工程议题上，社区对影响与政策优先级的认知与偏好证据不足。",
+          "approach: PIEAS在2026年5月1日至16日开展双语网络结构化问卷，结合Likert量表与开放文本，并对样本稀缺地区进行二手证据三角验证。",
+          "key result: 大多数公众将自身气候认知评为严重/关键，认为降雨格局紊乱是最主要的感知影响；政府优先项偏向造林与生态修复。"
         ],
-        "contribution_en": "",
-        "contribution_zh": "",
-        "method_en": "",
-        "method_zh": "",
-        "data_or_region_en": "",
-        "data_or_region_zh": "",
-        "geophysics_relevance_en": "",
-        "geophysics_relevance_zh": "",
+        "contribution_en": "Provides a nationwide, community-level characterization of perceived climate impacts, self-reported damages, and policy preferences in Pakistan, explicitly situating the evidence within a feasibility-oriented context for SAI as a non-replacement supplementary intervention.",
+        "contribution_zh": "给出了巴基斯坦社区层面的气候认知、感知影响、自报损失与政策偏好全貌，并将这些证据置于以可行性为导向的SAI讨论框架中，强调其作为补充而非替代减排路径。",
+        "method_en": "Bilingual (English/Roman Urdu) web-hosted structured survey with separate general-public and professional modules, using Likert-scale impact ranking and open-text narratives, plus secondary-data triangulation for underrepresented regions.",
+        "method_zh": "通过双语(英文/罗马乌尔都语)线上结构化问卷开展研究，设置公众与专业人员模块，使用Likert量表进行影响排序并结合开放文本叙述；对样本稀缺地区引入二手数据进行三角验证。",
+        "data_or_region_en": "Pakistan; bilingual web survey conducted 1–16 May 2026 across seven administrative regions (Punjab, Khyber Pakhtunkhwa, Islamabad Capital Territory, Sindh, Azad Jammu and Kashmir, Gilgit-Baltistan, Balochistan), N=1,149 with secondary evidence from agencies/literature for underrepresented regions.",
+        "data_or_region_zh": "巴基斯坦；2026年5月1日至16日覆盖七个行政区域的双语线上问卷（旁遮普、开伯尔-普赫图赫瓦、伊斯兰堡首都辖区、信德、阿扎德查谟和克什米尔、吉尔吉特-巴尔蒂斯坦、俾路支斯坦），有效样本N=1,149；对样本稀缺地区补充机构与文献的二手证据。",
+        "geophysics_relevance_en": "Relevance is tangential: the paper is mainly climate-societal perception and governance research, but it includes an explicit SAI feasibility context that could inform geoengineering governance discussions rather than providing geophysical measurements or models.",
+        "geophysics_relevance_zh": "相关性较弱：论文主要是气候社会认知与治理研究，并非地球物理观测或模型；但其对SAI可行性与治理讨论提供了社会证据背景。",
         "keywords_en": [
-          "survey",
-          "climate",
-          "pakistan",
-          "mean",
-          "change"
+          "climate perception",
+          "SAI",
+          "stratospheric aerosol injection",
+          "Pakistan",
+          "climate policy priorities"
         ],
         "keywords_zh": [
-          "survey",
-          "climate",
-          "pakistan",
-          "mean",
-          "change"
+          "气候认知",
+          "SAI",
+          "平流层气溶胶注入",
+          "巴基斯坦",
+          "气候政策优先级"
         ],
-        "topic": "survey",
+        "topic": "Climate perception survey",
         "audience_level": "specialist",
-        "llm_used": false,
-        "source": "abstract"
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano"
       }
     },
     {
@@ -700,48 +722,51 @@
         "doi": "10.31223/X5FF4F",
         "local_pdf_path": "data/pdfs/eartharxiv/Glaciology/20260520/eartharxiv-13106.pdf",
         "pdf_download_error": null,
-        "markdown_path": null,
+        "markdown_path": "data/markdown/eartharxiv/Glaciology/20260520/eartharxiv-13106.md",
         "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
       },
       "analysis": {
         "schema_version": "paperradar.analysis.v3",
         "input_version": "markdown-clean-v1",
-        "one_sentence_en": "Quantifying the input mass from snow accumulation on rapidly changing glaciers is critical to establishing baseline states and predicting responses to climate change.",
-        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "one_sentence_en": "Using airborne radar sounding calibrated by snow density measurements and combined with Landsat and Sentinel imagery, the study estimates winter snow water equivalent and input mass for seven St. Elias Mountains glaciers in 2018, 2021, and 2023.",
+        "one_sentence_zh": "研究结合机载雷达测冰/雪、现场雪密度标定以及Landsat与Sentinel影像，估算了2018、2021和2023年育康山脉7座冰川的冬季雪水当量与增冰输入质量。",
         "summary_en": [
-          "Quantifying the input mass from snow accumulation on rapidly changing glaciers is critical to establishing baseline states and predicting responses to climate change.",
-          "Some of the largest glaciers in the world are located in the St.",
-          "Elias Mountains in Southeast Alaska and Southwest Yukon; however, the input mass to these glaciers is poorly constrained."
+          "problem: Winter snow accumulation mass input to major St. Elias Mountains glaciers is poorly constrained, limiting baseline and climate-response assessments.",
+          "approach: The authors derive glacier-average winter SWE from airborne FMCW radar stratigraphy calibrated with in situ snow density, constrain accumulation to elevations above the equilibrium line, and aggregate within elevation bins using Landsat-derived snowline/ELA and Sentinel-1 melt context.",
+          "key result: Along-track SWE for winter accumulation spans 0–3 m (2018), 0.2–3.4 m (2021), and 1.1–3.3 m (2023), with inferred mean seasonal snow density 438 ± 22 kg m−3 (real permittivity 1.86 ± 0.12) and higher accumulation on maritime glaciers than more inland ones."
         ],
         "summary_zh": [
-          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+          "problem: 育康山脉多座大型冰川的冬季积雪增冰输入质量约束不足，影响基线状态与气候响应评估。",
+          "approach: 作者利用经现场雪密度标定的FMCW机载雷达反射层位反演冬季雪水当量（SWE），仅统计高于平衡线高程的积累，并结合Landsat确定积雪线/ELA、用Sentinel-1辅助理解融化对穿透与分层解释的影响后按高程分带汇总。",
+          "key result: 冬季沿航向SWE范围为2018年0–3 m、2021年0.2–3.4 m、2023年1.1–3.3 m；Seward与Kaskawulsh的季节平均雪密度为438 ± 22 kg m−3（对应实介电常数1.86 ± 0.12），且海洋性冰川的积累显著高于更内陆的冰川。"
         ],
-        "contribution_en": "",
-        "contribution_zh": "",
-        "method_en": "",
-        "method_zh": "",
-        "data_or_region_en": "",
-        "data_or_region_zh": "",
-        "geophysics_relevance_en": "",
-        "geophysics_relevance_zh": "",
+        "contribution_en": "Provides a multi-source workflow to convert airborne FMCW radar stratigraphy into glacier-average winter SWE and maximum input mass for multiple St. Elias Mountains glaciers, validated via crossovers and comparisons to surface GPR and snow cores, and characterizes maritime-to-inland accumulation contrasts.",
+        "contribution_zh": "提出一套将经雪密度标定的FMCW机载雷达分层结果转化为育康山脉多座冰川冬季雪水当量与最大输入质量的多源流程，并通过雷达轨迹交叉一致性以及与地表GPR/雪芯的对比进行验证，同时揭示海洋性到内陆的积累差异。",
+        "method_en": "Airborne FMCW radar sounding (Operation IceBridge 2018/2021; separate 2023 Cessna 206 acquisition) interpreted with a radar analysis utility to pick the last summer snow surface; snow depth converted to SWE using in situ snow density to set radar wave speed/real permittivity; accumulation aggregated above Landsat-derived equilibrium line altitude using elevation bins/hypsometry from RGI; verification via radar crossover analysis, radar–surface GPR comparisons, and proximity comparisons to snow cores; Sentinel-1 reflectivity analyzed to assess melt effects on radar penetration and stratigraphy.",
+        "method_zh": "使用FMCW机载雷达探测（2018/2021来自NASA Operation IceBridge；2023为另一机型Cessna 206采集），结合开源雷达分析工具人工拾取“上一个夏季雪面”反射界面；通过现场雪密度估计雷达波速/实介电常数，将雪深换算为SWE；用Landsat反演的平衡线高程限制统计范围，并基于RGI高程分带与面积加权汇总高于ELA的积累；通过雷达交叉一致性、与地表耦合GPR的对比以及与邻近雪芯的对比进行验证；同时分析Sentinel-1反射率以评估融化对雷达穿透与分层解释的影响。",
+        "data_or_region_en": "St. Elias Mountains, Southeast Alaska and Southwest Yukon: seven glaciers (Bering, Hubbard, Kaskawulsh, Logan, Seward, Walsh, Yahtse); airborne radar campaigns in 2018, 2021, and 2023 plus snow density/core sites on Seward (2018/2023) and Kaskawulsh (2018) and surface-coupled GPR on Seward (2023); Landsat 8/9 and Sentinel-1 for equilibrium line/snowline and melt context.",
+        "data_or_region_zh": "育康山脉（美国阿拉斯加东南部与加拿大西南育空）：研究7座冰川（Bering、Hubbard、Kaskawulsh、Logan、Seward、Walsh、Yahtse）；机载雷达于2018、2021、2023年开展，并在Seward（2018/2023）与Kaskawulsh（2018）布设雪密度/取芯点；2023年在Seward采集地表耦合GPR；使用Landsat 8/9与Sentinel-1用于确定平衡线/积雪线并提供融化背景信息。",
+        "geophysics_relevance_en": "Strong relevance to glacier cryosphere mass-balance tracking because it delivers quantitative winter SWE and mass input estimates from radar sounding, a key step toward monitoring baseline states under climate change.",
+        "geophysics_relevance_zh": "与当前追踪的冰川圈层/质量平衡监测高度相关，因为它把雷达探测转化为冬季SWE与质量输入的定量估计，是刻画气候变化下基线状态的重要步骤。",
         "keywords_en": [
-          "glaciers",
-          "snow",
-          "mass",
-          "accumulation",
-          "measurements"
+          "snow water equivalent",
+          "airborne radar sounding",
+          "FMCW radar",
+          "grounding snow density",
+          "St. Elias Mountains"
         ],
         "keywords_zh": [
-          "glaciers",
-          "snow",
-          "mass",
-          "accumulation",
-          "measurements"
+          "雪水当量",
+          "机载雷达探测",
+          "FMCW雷达",
+          "雪密度标定",
+          "育康山脉"
         ],
-        "topic": "glaciers",
+        "topic": "Glacier SWE radar",
         "audience_level": "specialist",
-        "llm_used": false,
-        "source": "abstract"
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano"
       }
     },
     {
@@ -776,48 +801,51 @@
         "doi": "10.31223/X5TR1T",
         "local_pdf_path": "data/pdfs/eartharxiv/Oceanography-and-Atmospheric-Sciences-and-Meteorology/20260520/eartharxiv-13085.pdf",
         "pdf_download_error": null,
-        "markdown_path": null,
+        "markdown_path": "data/markdown/eartharxiv/Oceanography-and-Atmospheric-Sciences-and-Meteorology/20260520/eartharxiv-13085.md",
         "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
       },
       "analysis": {
         "schema_version": "paperradar.analysis.v3",
         "input_version": "markdown-clean-v1",
-        "one_sentence_en": "Coastal regions are complex environments.",
-        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "one_sentence_en": "The study builds a quality-controlled record of near-shore coastal water temperatures from 95 NOAA CO-OPS stations across US coasts and quantifies seasonality, extremes, and long-term warming trends through 2023.",
+        "one_sentence_zh": "该研究基于NOAA CO-OPS的95个沿美国海岸站点构建近岸海水温度质控数据集，并分析季节性、极端阈值与1990年代至2023年的长期变暖趋势。",
         "summary_en": [
-          "Coastal regions are complex environments.",
-          "They lie at the confluence of physical oceanic, atmospheric, and land-based processes, and continue to undergo significant change due to both natural and human-driven factors.",
-          "Although it is well known that ocean sea surface temperatures (SSTs) have increased over the past several decades, extending these trends and patterns to coastal waters is nontrivial."
+          "problem: Extending known open-ocean SST warming patterns to highly variable near-shore coastal waters is difficult due to sparse, station-level observations.",
+          "approach: Use a newly quality-controlled NOAA CO-OPS coastal water-temperature dataset from 95 monitoring stations to compute seasonal cycle metrics, daily distributions and percentile-based extremes, and station-specific linear trends, with additional comparisons to OISST and marine heatwave statistics.",
+          "key result: Most stations show warming from the mid-1990s to 2023, with statistically significant trends at 56/95 stations (~0.5 °C per decade on average), stronger seasonal cycles on the US East Coast and Great Lakes, and strong station-to-station variability in extreme thresholds."
         ],
         "summary_zh": [
-          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+          "problem: 将已知的海表温度增暖格局外推到高度受局地影响的近岸海水温度并不容易，因为相关长期原位观测不足。",
+          "approach: 利用NOAA CO-OPS新质控的近岸水温数据（95个站点）计算季节循环指标、基于日分布的极端分位阈值，以及各站的线性趋势，并结合与OISST及关键地区的海洋热浪频次评估进行补充。",
+          "key result: 1990年代中期至2023年间多数站点呈现增暖（56/95站点趋势显著，平均约0.5 ℃/十年）；东海岸与五大湖季节性更强，而极端阈值在站点与湾区/外海之间存在显著差异。"
         ],
-        "contribution_en": "",
-        "contribution_zh": "",
-        "method_en": "",
-        "method_zh": "",
-        "data_or_region_en": "",
-        "data_or_region_zh": "",
-        "geophysics_relevance_en": "",
-        "geophysics_relevance_zh": "",
+        "contribution_en": "Provides a baseline, quality-controlled long-term near-shore coastal water temperature dataset and station-wise statistics (seasonality, daily extremes, and trends) for planning and assessment of coastal thermal change and extremes.",
+        "contribution_zh": "构建并提供长期近岸海水温度的质控基线数据集，给出站点级季节性、日分布极端阈值与增温趋势统计，用于支持沿海热变化与极端事件的评估与规划。",
+        "method_en": "Quality-controlled daily mean water temperature time series from NOAA CO-OPS stations are analyzed to compute daily/montly climatologies and seasonality lags via correlations with station air temperature, estimate daily extremes using KDE-based empirical distributions (90/95/99 percentiles), and derive station-specific long-term warming using linear trends on monthly anomalies with attention to serial correlation and seasonality (ARIMA-based handling).",
+        "method_zh": "基于NOAA CO-OPS站点的质控日均水温序列，先计算逐日/逐月气候态并与气温进行相关分析以确定相位滞后；再用核密度估计的经验分布估计日极端阈值（90/95/99分位）；最后在考虑序列相关与季节性的前提下，对月异常进行站点特异的线性增温趋势估计（采用ARIMA框架处理）。",
+        "data_or_region_en": "NOAA CO-OPS water level monitoring stations along US coasts; 95 stations with daily mean water temperatures spanning at least ~20 years (mid-1990s to 2023), covering US East Coast, Gulf, West Coast, Great Lakes, Alaska, and islands.",
+        "data_or_region_zh": "美国沿海NOAA CO-OPS水位监测站；95个站点的日均水温序列覆盖约20年以上（约1990年代中期至2023年），覆盖美国东海岸、墨西哥湾、南/西海岸、五大湖、阿拉斯加以及岛屿地区。",
+        "geophysics_relevance_en": "This matters for coastal hazard and marine-heatwave-related climate impacts because near-shore warming, seasonality shifts, and extreme-temperature thresholds control ecosystem stress and local risk, though the work is oceanographic rather than geophysical instrumentation per se.",
+        "geophysics_relevance_zh": "这对沿海灾害与海洋热浪相关的气候影响很重要，因为近岸增温、季节变化以及极端温度阈值会驱动生态压力与局地风险；但其主要是海洋学层面的分析，偏地球物理相关性较间接。",
         "keywords_en": [
-          "coastal",
-          "trends",
-          "water",
-          "stations",
-          "regions"
+          "coastal water temperature",
+          "tide gauges",
+          "seasonal cycle",
+          "extremes",
+          "NOAA CO-OPS"
         ],
         "keywords_zh": [
-          "coastal",
-          "trends",
-          "water",
-          "stations",
-          "regions"
+          "近岸水温",
+          "潮位计",
+          "季节变化",
+          "极端温度",
+          "NOAA CO-OPS"
         ],
-        "topic": "coastal",
+        "topic": "Coastal thermal trends",
         "audience_level": "specialist",
-        "llm_used": false,
-        "source": "abstract"
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano"
       }
     },
     {
@@ -853,48 +881,51 @@
         "doi": "10.31223/X5GF6H",
         "local_pdf_path": "data/pdfs/eartharxiv/Climate/20260518/eartharxiv-12970.pdf",
         "pdf_download_error": null,
-        "markdown_path": null,
+        "markdown_path": "data/markdown/eartharxiv/Climate/20260518/eartharxiv-12970.md",
         "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
       },
       "analysis": {
         "schema_version": "paperradar.analysis.v3",
         "input_version": "markdown-clean-v1",
-        "one_sentence_en": "Anthropogenic global warming has reached a level so high that it is now possible to an- alyze its dynamics and spatial variation.",
-        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "one_sentence_en": "The preprint uses a small-signal lumped thermal impedance framework to attribute region-dependent exponential tropospheric surface warming to three exponentially growing anthropogenic heat sources and quantifies their relative contributions.",
+        "one_sentence_zh": "该预印本用小信号集总热阻抗框架，将大气对流层的区域性指数增温归因于三种指数增长的人为热源并给出其量化贡献。",
         "summary_en": [
-          "Anthropogenic global warming has reached a level so high that it is now possible to an- alyze its dynamics and spatial variation.",
-          "Spatially varying Surface Air Temperature (SAT) anomalies [1] can be well described by exponential functions with increase rates that range from 2.1 to 3.7% per year, depending on the region.",
-          "The Northern Hemisphere has warmed significantly more than the Southern Hemisphere and is also warming more rapidly."
+          "problem: Explain why surface air temperature (SAT) anomalies accelerate and differ by region after industrialization, beyond uniform greenhouse-gas forcing.",
+          "approach: Model hemispheric land and ocean troposphere temperature response with a small-signal lumped thermal impedance (LTI) system driven by effective exponentially increasing heat sources, using SAT and total solar irradiance observations.",
+          "key result: Identifies and quantifies three effective anthropogenic troposphere heat sources—IRTA, AHR, and SITA—whose exponential increases are consistent with the observed SAT-anomaly growth rates and with the tropospheric thermal sensitivity inferred from the 11-year solar cycle."
         ],
         "summary_zh": [
-          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+          "problem: 解释工业化以来地表气温异常为何加速且具有区域差异，而不仅仅是均匀的温室气体作用。",
+          "approach: 用小信号集总热阻抗（LTI）系统表征南北半球陆地与海洋上方对流层对热源的响应，并用SAT与总太阳辐照度观测反演有效指数增长热源。",
+          "key result: 识别并量化三类有效人为对流层热源（IRTA、AHR、SITA），其指数增长与观测到的SAT异常区域增长率相一致，并与由11年太阳周期推得的对流层热敏感度相符。"
         ],
-        "contribution_en": "",
-        "contribution_zh": "",
-        "method_en": "",
-        "method_zh": "",
-        "data_or_region_en": "",
-        "data_or_region_zh": "",
-        "geophysics_relevance_en": "",
-        "geophysics_relevance_zh": "",
+        "contribution_en": "Introduces an efficient, small-signal lumped thermal impedance model linking observed exponential SAT anomaly acceleration to exponentially increasing effective anthropogenic tropospheric heat sources, and quantifies tropospheric thermal sensitivity and the contributions of IRTA, AHR, and SITA using SAT and solar-irradiance constraints.",
+        "contribution_zh": "提出一种高效的小信号集总热阻抗模型，将观测到的SAT异常指数加速与指数增长的有效人为对流层热源联系起来，并通过SAT与太阳辐照度约束量化对流层热敏感度及IRTA、AHR和SITA的贡献。",
+        "method_en": "Builds a phenomenological small-signal lumped thermal impedance (RC/Z-box) representation for hemispheric troposphere volumes (land and oceans) where exponentially increasing heat sources produce delayed exponential SAT changes; estimates effective impedance parameters using SAT anomaly time histories and Total Solar Irradiation and uses solar-cycle response to infer tropospheric thermal sensitivity.",
+        "method_zh": "构建一个表征对流层体的表观小信号集总热阻抗（RC/Z-box）模型：指数增长热源会产生滞后的指数型SAT变化；通过SAT异常时间序列与总太阳辐照度约束来估计有效阻抗参数，并利用11年太阳周期响应反推出对流层热敏感度。",
+        "data_or_region_en": "Continental-scale hemispheric regions split into Northern/Southern Hemisphere land and ocean; uses global/hemispheric SAT anomaly records (with exponential fits) and Total Solar Irradiation (TSI) including solar-cycle behavior; references SAT/SST anomaly datasets from prior literature (details not specified in excerpt).",
+        "data_or_region_zh": "大陆尺度的南北半球区域划分为陆地与海洋；使用全球/半球SAT异常序列（进行指数拟合）以及总太阳辐照度（TSI）及其太阳周期变化；数据集具体来源在摘录中未说明。",
+        "geophysics_relevance_en": "Relevant to physical understanding of climate system heating and energy-budget attribution, but only indirectly related to geophysical sensing topics like seismicity or cryosphere remote sensing; its main value is thermal/energy-system interpretation rather than Earth-observation retrieval.",
+        "geophysics_relevance_zh": "对气候系统的物理加热机理与能量归因具有一定相关性，但与地球物理跟踪主题（如地震性或冰冻圈遥感）属于间接关系；其主要价值在于热/能量系统解释而非观测反演。",
         "keywords_en": [
-          "troposphere",
-          "thermal",
-          "anthropogenic",
-          "global",
-          "warming"
+          "surface air temperature",
+          "tropospheric warming",
+          "lumped thermal impedance",
+          "anthropogenic heat release",
+          "solar irradiation absorption"
         ],
         "keywords_zh": [
-          "troposphere",
-          "thermal",
-          "anthropogenic",
-          "global",
-          "warming"
+          "地表气温",
+          "对流层增暖",
+          "集总热阻抗",
+          "人为热释放",
+          "太阳辐照吸收"
         ],
-        "topic": "troposphere",
+        "topic": "Tropospheric warming modeling",
         "audience_level": "specialist",
-        "llm_used": false,
-        "source": "abstract"
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano"
       }
     },
     {
@@ -941,48 +972,51 @@
         "doi": "10.31223/X5CN24",
         "local_pdf_path": "data/pdfs/eartharxiv/Oceanography-and-Atmospheric-Sciences-and-Meteorology/20260516/eartharxiv-13062.pdf",
         "pdf_download_error": null,
-        "markdown_path": null,
+        "markdown_path": "data/markdown/eartharxiv/Oceanography-and-Atmospheric-Sciences-and-Meteorology/20260516/eartharxiv-13062.md",
         "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
       },
       "analysis": {
         "schema_version": "paperradar.analysis.v3",
         "input_version": "markdown-clean-v1",
-        "one_sentence_en": "The impacts of ocean acidification (OA) on marine communities are a growing concern for coastal upwelling ecosystems, such as the Southern California Bight (Bight).",
-        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "one_sentence_en": "This study uses mitochondrial CO1 eDNA metabarcoding of mesozooplankton collected across four seasons in the Southern California Bight to link specific taxa with aragonite saturation state and propose OA bioindicators.",
+        "one_sentence_zh": "该研究在南加州湾跨四季采集中层浮游动物eDNA，通过CO1代谢组测序将特定类群与文石饱和度关联，并提出海洋酸化生物指示物。",
         "summary_en": [
-          "The impacts of ocean acidification (OA) on marine communities are a growing concern for coastal upwelling ecosystems, such as the Southern California Bight (Bight).",
-          "Successful management of coastal resources in the face of OA requires accurate assessment tools to understand the status and trends of OA impacts on biological communities.",
-          "Current methods often rely on the condition of individual organisms (e.g., shell dissolution) and are resource- and labor-intensive."
+          "problem: Ocean acidification monitoring needs scalable biological indicators beyond labor-intensive organism condition assays.",
+          "approach: Apply DNA metabarcoding of mesozooplankton (>200 µm) using mitochondrial CO1 gene sequencing across 20 sites and four seasons, relating taxa to carbonate chemistry.",
+          "key result: Mesoszooplankton communities were mainly structured by seasonal gradients, and several taxa showed strong associations with aragonite saturation state while pteropods were rare and only detected in winter."
         ],
         "summary_zh": [
-          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+          "problem: 海洋酸化生物监测亟需可扩展的指标，替代费时费力的个体病态/损伤评估。",
+          "approach: 对南加州湾20个站点四季采集的>200 µm中层浮游动物进行CO1线粒体基因DNA代谢组测序，并分析其与碳酸盐化学的对应关系。",
+          "key result: 群落组成主要受季节梯度驱动；部分类群与文石饱和度显著相关，而腹足类（翼足类）极少且仅在冬季出现。"
         ],
-        "contribution_en": "",
-        "contribution_zh": "",
-        "method_en": "",
-        "method_zh": "",
-        "data_or_region_en": "",
-        "data_or_region_zh": "",
-        "geophysics_relevance_en": "",
-        "geophysics_relevance_zh": "",
+        "contribution_en": "Provides a regional case study demonstrating that CO1-based eDNA metabarcoding can identify carbonate-chemistry-associated taxa and assess candidate OA bioindicators (including evaluating pteropods and larval calcifiers) in the Southern California Bight.",
+        "contribution_zh": "通过南加州湾的区域案例研究表明，基于CO1的eDNA代谢组测序可用于识别与碳酸盐化学相关的类群，并评估候选海洋酸化生物指示物（包括对翼足类与钙化幼体的适用性）。",
+        "method_en": "Quarterly field sampling with 200-µm bongo nets for mesozooplankton across 20 sites and four seasons; preservation for DNA; CO1 mitochondrial gene metabarcoding to infer community composition; carbonate chemistry characterized from CTD profiles supported by bottle measurements (pH, total alkalinity) and used to compute aragonite saturation state for correlations with taxa abundance.",
+        "method_zh": "使用200 µm双环bongo网在20个站点跨四季开展季度采样并保存DNA；进行CO1线粒体基因代谢组测序以推断中层浮游动物群落组成；结合pH与总碱度瓶样对CTD碳酸盐参数进行表征并计算文石饱和度，再与类群丰度做关联分析。",
+        "data_or_region_en": "Southern California Bight shelf waters; 80 mesozooplankton samples from 20 locations in spring 2019, summer 2019, fall 2019, and winter 2020 as part of the Bight Regional Monitoring Program (Bight RMP).",
+        "data_or_region_zh": "南加州湾近海陆架海域；来自20个站点的80份中层浮游动物样品，覆盖2019年春/夏/秋与2020年冬季（Bight RMP框架内采集）。",
+        "geophysics_relevance_en": "Relevant to geochemistry–ecosystem coupling for ocean acidification: it proposes practical eDNA-based biological indicators linked to aragonite saturation state, supporting scalable monitoring of OA impacts in a coastal upwelling system.",
+        "geophysics_relevance_zh": "与海洋酸化的地球化学—生态效应密切相关：研究提出了与文石饱和度相关、可扩展的eDNA生物指示思路，用于支持近岸上升流系统中OA影响的规模化监测。",
         "keywords_en": [
-          "bight",
-          "impacts",
-          "communities",
-          "coastal",
-          "methods"
+          "ocean acidification",
+          "eDNA metabarcoding",
+          "COI",
+          "Southern California Bight",
+          "aragonite saturation"
         ],
         "keywords_zh": [
-          "bight",
-          "impacts",
-          "communities",
-          "coastal",
-          "methods"
+          "海洋酸化",
+          "eDNA代谢组测序",
+          "COI",
+          "南加州湾",
+          "文石饱和度"
         ],
-        "topic": "bight",
+        "topic": "OA eDNA bioindicators",
         "audience_level": "specialist",
-        "llm_used": false,
-        "source": "abstract"
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano"
       }
     },
     {
@@ -1017,48 +1051,50 @@
         "doi": "10.31223/X5HF6T",
         "local_pdf_path": "data/pdfs/eartharxiv/Agriculture/20260516/eartharxiv-13061.pdf",
         "pdf_download_error": null,
-        "markdown_path": null,
+        "markdown_path": "data/markdown/eartharxiv/Agriculture/20260516/eartharxiv-13061.md",
         "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
       },
       "analysis": {
         "schema_version": "paperradar.analysis.v3",
         "input_version": "markdown-clean-v1",
-        "one_sentence_en": "Maize productivity in West Africa is severely constrained by recurrent drought and low soil nitrogen availability, which results in strong environmental heterogeneity and complex genotype × environment interactions (G×E).",
-        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "one_sentence_en": "This West Africa maize study evaluated 250 full-sib progenies under managed drought and low nitrogen across multiple Nigerian environments and used mixed-model G×E with BLUP and complementary multi-trait indices to select stress-resilient, stable crosses.",
+        "one_sentence_zh": "该研究在尼日利亚多环境下评估250个玉米全同胞系，结合混合模型G×E、BLUP与多性状指数（MGIDI/MTSI/秩和）筛选出兼具抗旱和低氮稳产的优良家系。",
         "summary_en": [
-          "Maize productivity in West Africa is severely constrained by recurrent drought and low soil nitrogen availability, which results in strong environmental heterogeneity and complex genotype × environment interactions (G×E).",
-          "Identifying breeding materials that combine productivity, stress resilience, and stability therefore requires analytical approaches that integrate multi-trait and multi-environment information.",
-          "In this study, 250 full-sib maize progenies generated using a North Carolina Design I mating scheme were evaluated under managed drought and low-nitrogen conditions across multiple environments in Nigeria to identify superior crosses for population improvement."
+          "problem: Drought and low soil nitrogen create strong genotype × environment effects in West African maize, making it hard to identify progenies that balance yield, resilience, and stability.",
+          "approach: The authors fit linear mixed models to estimate variance components and BLUPs for genotypic performance across managed drought and low-nitrogen trials, then rank progenies using BLUP, MGIDI, MTSI, and a Rank-Sum integration of rankings.",
+          "key result: BLUP-based selection gave the highest mean grain yield (2.86 t/ha), and 21 of 63 progenies selected at 25% intensity were consistently recovered across multiple strategies, indicating robust performance under both productivity and stability criteria."
         ],
         "summary_zh": [
-          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+          "problem: 西非玉米的干旱与土壤低氮导致强烈的基因型×环境互作，使得同时兼顾产量、抗逆性与稳定性的亲本/家系筛选困难。",
+          "approach: 研究者用线性混合模型估计方差成分并获得跨多环境的基因型BLUP，再用BLUP、MGIDI、MTSI以及将各方法排名整合的秩和（Rank-Sum）对家系进行综合排序。",
+          "key result: 基于BLUP的筛选获得最高平均籽粒产量（2.86 t/ha），且在25%筛选强度下，63个入选中有21个家系在多种策略中被一致识别，显示在生产力与稳定性指标上具有稳健表现。"
         ],
-        "contribution_en": "",
-        "contribution_zh": "",
-        "method_en": "",
-        "method_zh": "",
-        "data_or_region_en": "",
-        "data_or_region_zh": "",
-        "geophysics_relevance_en": "",
-        "geophysics_relevance_zh": "",
+        "contribution_en": "The paper provides a practical breeding-selection framework that integrates mixed-model genotype × stress × environment analysis with complementary multi-trait selection indices (MGIDI, MTSI) and an aggregated rank approach to improve identification of drought- and low-nitrogen-resilient maize progenies.",
+        "contribution_zh": "论文提出了一套可操作的育种筛选流程：将混合模型的基因型×压力×环境分析与互补的多性状选择指数（MGIDI、MTSI）以及跨方法的排名整合结合起来，用于更可靠地识别抗旱且耐低氮的玉米优良后代表型/家系。",
+        "method_en": "Field multi-environment trials in Nigeria for 250 North Carolina Design I full-sib maize progenies were analyzed with linear mixed models (REML) to estimate genetic variance components and derive BLUPs; principal component analysis explored trait relationships; superior progenies were selected using BLUP grain-yield predictions plus MGIDI, MTSI, and a Rank-Sum of rankings across the indices.",
+        "method_zh": "在尼日利亚开展多环境田间试验，使用北卡罗来纳设计I获得的250个玉米全同胞家系；采用线性混合模型（REML）估计遗传方差成分并获得基因型BLUP；用主成分分析考察性状关系；再通过籽粒产量BLUP结合MGIDI、MTSI以及各指数排名的秩和（Rank-Sum）进行优良家系筛选。",
+        "data_or_region_en": "Nigeria; five environments spanning managed drought trials at Ikenne, Kadawa, and Ile-Ife and low-nitrogen trials at Mokwa and Ile-Ife, evaluated across multiple seasons under a North Carolina Design I mating scheme with 250 full-sib progenies.",
+        "data_or_region_zh": "尼日利亚；在5个环境中进行评估：旱作压力在Ikenne、Kadawa、Ile-Ife（含灌溉管理旱作与自然干旱形成）；低氮压力在Mokwa与Ile-Ife；配合北卡罗来纳设计I构建的250个全同胞家系，并跨多个季节开展试验。",
+        "geophysics_relevance_en": "Tangential: the study is agricultural breeding for drought/low-nitrogen resilience and does not address geophysical instrumentation or inference, though it uses a genotype × environment statistical framework relevant conceptually to stability analysis.",
+        "geophysics_relevance_zh": "弱相关：该研究属于农业育种（抗旱/耐低氮）而非地球物理观测或反演，但其“基因型×环境互作/稳定性评估”的统计框架在概念上可能与稳定性分析方法有启发。",
         "keywords_en": [
-          "progenies",
-          "selection",
-          "multi-trait",
-          "maize",
-          "genotype"
+          "maize breeding",
+          "drought stress",
+          "low nitrogen",
+          "genotype-by-environment",
+          "MGIDI"
         ],
         "keywords_zh": [
-          "progenies",
-          "selection",
-          "multi-trait",
-          "maize",
-          "genotype"
+          "玉米育种",
+          "干旱胁迫",
+          "基因型×环境互作",
+          "MGIDI"
         ],
-        "topic": "progenies",
+        "topic": "Maize G×E selection",
         "audience_level": "specialist",
-        "llm_used": false,
-        "source": "abstract"
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano"
       }
     },
     {
@@ -1105,96 +1141,58 @@
         "doi": "10.31223/X5N47B",
         "local_pdf_path": "data/pdfs/eartharxiv/Artificial-Intelligence-and-Robotics/20260516/eartharxiv-13060.pdf",
         "pdf_download_error": null,
-        "markdown_path": null,
+        "markdown_path": "data/markdown/eartharxiv/Artificial-Intelligence-and-Robotics/20260516/eartharxiv-13060.md",
         "markdown_parse_error": "Could not import built-in MinerU parser dependencies: No module named 'dotenv'"
       },
       "analysis": {
         "schema_version": "paperradar.analysis.v3",
         "input_version": "markdown-clean-v1",
-        "one_sentence_en": "Glacial-lake outburst floods (GLOFs) are the dominant climate-driven hazard in High Mountain Asia, and reliable lake-extent segmentation is the prerequisite for every downstream early-warning workflow.",
-        "one_sentence_zh": "未配置可用 LLM；当前显示规则摘要。",
+        "one_sentence_en": "CryoSentinel fine-tunes the TerraMind-1.0 large foundation model to segment glacial-lake extents in High Mountain Asia using co-registered Sentinel-1 SAR, Sentinel-2 optical, and Copernicus DEM, achieving strong IoU with leakage-free spatial splits.",
+        "one_sentence_zh": "CryoSentinel 利用 TerraMind-1.0 大模型融合 Sentinel-1 SAR、Sentinel-2 光学与 Copernicus DEM，对中亚高山冰川湖进行泄漏规避的时空分割，验证集IoU达0.9557。",
         "summary_en": [
-          "Glacial-lake outburst floods (GLOFs) are the dominant climate-driven hazard in High Mountain Asia, and reliable lake-extent segmentation is the prerequisite for every downstream early-warning workflow.",
-          "We present CryoSentinel, a multimodal foundation-model semantic segmenter built on the IBM/ESA TerraMind 1.0 Large encoder (1.1 B parameters) with a UperNet decoder, fine-tuned on 5,614 co-registered chips spanning the Tien Shan, Zhetysu Alatau, and Ile Alatau ranges of Central Asia.",
-          "The model jointly ingests Sentinel-1 GRD SAR (VV, VH), Sentinel-2 L2A optical (12 bands), and Copernicus DEM 30 m elevation at 10 m / pixel and is trained under a 17-km-buffered spatial-block-split protocol that rules out lake-level leakage."
+          "Problem: Reliable glacial-lake extent segmentation is a prerequisite for downstream GLOF early-warning but remains difficult to generalize across High Mountain Asia with noisy labels.",
+          "Approach: Fine-tune a TerraMind-1.0 large encoder with a UperNet decoder using co-registered Sentinel-1 (VV/VH), Sentinel-2 (12 bands), and Copernicus DEM, trained with a deterministic spatial-block split and an MNDWI-based label-noise audit.",
+          "Key result: On a held-out spatial test split CryoSentinel reaches test IoU 0.8918 (thr=0.5), and after correcting 7 Kumar-polygon mislabels via MNDWI the label-corrected IoU increases to 0.9082."
         ],
         "summary_zh": [
-          "未配置 LLM_API_KEY；当前显示英文规则摘要。配置 LLM 后将生成中文摘要。"
+          "问题：可靠的冰川湖范围分割是GLOF预警链路的基础，但在高山地区跨区域泛化且监督标签可能噪声很难解决。",
+          "方法：用 TerraMind-1.0 大模型编码器+UperNet 解码器，融合配准的 Sentinel-1（VV/VH）、Sentinel-2（12波段）和 Copernicus DEM；采用确定性的空间区块划分，并用 MNDWI 进行标签噪声审计。",
+          "关键结果：在泄漏规避的空间测试集上，thr=0.5 时测试 IoU 为 0.8918；经 MNDWI 识别并纠正 7 处 Kumar 多边形误标后，标签校正 IoU 提升至 0.9082。"
         ],
-        "contribution_en": "",
-        "contribution_zh": "",
-        "method_en": "",
-        "method_zh": "",
-        "data_or_region_en": "",
-        "data_or_region_zh": "",
-        "geophysics_relevance_en": "",
-        "geophysics_relevance_zh": "",
+        "contribution_en": "The paper introduces CryoSentinel, a multimodal foundation-model (TerraMind-1.0) segmentation system for glacial lakes in High Mountain Asia, with a leakage-free spatial-block splitting protocol and a label-noise audit that improves and validates performance end-to-end.",
+        "contribution_zh": "本文提出 CryoSentinel：用于中亚高山冰川湖分割的多模态基础模型（TerraMind-1.0）方案，并给出泄漏规避的空间区块划分协议与标签噪声审计流程，从而实现可复现的性能改进与验证。",
+        "method_en": "Fine-tune TerraMind-1.0 large encoder with a UperNet decoder for semantic segmentation on 10 m chips using stacked Sentinel-1 GRD (VV/VH), Sentinel-2 L2A (selected 12 bands), and Copernicus DEM; train under a deterministic 17 km buffered spatial-block split and use MNDWI cross-check to audit label noise; evaluate with flip-only test-time augmentation and (for checkpoint selection) threshold tuning on validation.",
+        "method_zh": "使用 UperNet 解码器微调 TerraMind-1.0 大模型编码器，在 10 m 分辨率切片上进行语义分割；输入为叠加的 Sentinel-1 GRD（VV/VH）、Sentinel-2 L2A（选取12波段）和 Copernicus DEM；训练时采用确定性的约17 km带缓冲空间区块划分，并用 MNDWI 交叉校验进行标签噪声审计；评估使用翻转式TTA，并在验证集上调参确定阈值。",
+        "data_or_region_en": "High Mountain Asia study across Central Asia sub-regions: Tien Shan (full), Zhetysu Alatau, and Ile Alatau, using co-registered Sentinel-1/2 and 30 m Copernicus DEM chips labeled from the Kumar & Vijay (PANGAEA) 2016/2022 glacial-lake inventory; training dataset has 5,614 chips in the main finetuning stage and 42,237 chips released overall (ODC-By 1.0).",
+        "data_or_region_zh": "研究区域为中亚高山地带：Tien Shan（全域）、Zhetysu Alatau 与 Ile Alatau；使用配准的 Sentinel-1/2 与 30 m Copernicus DEM 切片，标签来自 Kumar & Vijay（PANGAEA）的2016/2022 冰川湖清单；主要微调阶段使用 5,614 张切片，公开的训练数据集总计 42,237 张（ODC-By 1.0）。",
+        "geophysics_relevance_en": "It directly supports GLOF hazard monitoring by enabling automated, leakage-free glacial-lake extent mapping upstream of early-warning workflows; relevance is strong within cryosphere hazard applications.",
+        "geophysics_relevance_zh": "它直接服务于 GLOF 风险监测，通过为早期预警链路提供自动化、可泛化且规避数据泄漏的冰川湖范围制图；与当前追踪主题相关性很强，属于典型冰冻圈灾害应用。",
         "keywords_en": [
-          "sentinel-",
-          "asia",
-          "test",
-          "cryosentinel",
-          "multimodal"
+          "glacial-lake segmentation",
+          "GLOF",
+          "multimodal foundation model",
+          "Sentinel-1 SAR",
+          "High Mountain Asia"
         ],
         "keywords_zh": [
-          "sentinel-",
-          "asia",
-          "test",
-          "cryosentinel",
-          "multimodal"
+          "冰川湖分割",
+          "GLOF",
+          "多模态基础模型",
+          "Sentinel-1 SAR",
+          "中亚高山"
         ],
-        "topic": "sentinel-",
+        "topic": "Glacial lake segmentation",
         "audience_level": "specialist",
-        "llm_used": false,
-        "source": "abstract"
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano"
       }
     }
   ],
   "trending_keywords": [
     {
-      "keyword": "climate",
-      "normalized": "climate",
-      "score": 3,
-      "paper_count": 3,
-      "paper_ids": [
-        "eartharxiv-13097",
-        "eartharxiv-13125",
-        "eartharxiv-13142"
-      ]
-    },
-    {
-      "keyword": "north",
-      "normalized": "north",
-      "score": 2,
-      "paper_count": 2,
-      "paper_ids": [
-        "eartharxiv-13125",
-        "eartharxiv-13129"
-      ]
-    },
-    {
-      "keyword": "atlantic",
-      "normalized": "atlantic",
-      "score": 2,
-      "paper_count": 2,
-      "paper_ids": [
-        "eartharxiv-13125",
-        "eartharxiv-13129"
-      ]
-    },
-    {
-      "keyword": "coastal",
-      "normalized": "coastal",
-      "score": 2,
-      "paper_count": 2,
-      "paper_ids": [
-        "eartharxiv-13062",
-        "eartharxiv-13085"
-      ]
-    },
-    {
-      "keyword": "alps",
-      "normalized": "alps",
+      "keyword": "Alpine climate",
+      "normalized": "alpine climate",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
@@ -1202,8 +1200,8 @@
       ]
     },
     {
-      "keyword": "european",
-      "normalized": "european",
+      "keyword": "regionalization",
+      "normalized": "regionalization",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
@@ -1211,8 +1209,8 @@
       ]
     },
     {
-      "keyword": "sub-regions",
-      "normalized": "sub-regions",
+      "keyword": "EOF",
+      "normalized": "eof",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
@@ -1220,8 +1218,8 @@
       ]
     },
     {
-      "keyword": "precipitation",
-      "normalized": "precipitation",
+      "keyword": "k-means clustering",
+      "normalized": "k-means clustering",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
@@ -1229,8 +1227,17 @@
       ]
     },
     {
-      "keyword": "forest",
-      "normalized": "forest",
+      "keyword": "extreme precipitation",
+      "normalized": "extreme precipitation",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "eartharxiv-13142"
+      ]
+    },
+    {
+      "keyword": "soil moisture persistence",
+      "normalized": "soil moisture persistence",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
@@ -1238,8 +1245,8 @@
       ]
     },
     {
-      "keyword": "than",
-      "normalized": "than",
+      "keyword": "deforestation edge effects",
+      "normalized": "deforestation edge effects",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
@@ -1247,8 +1254,8 @@
       ]
     },
     {
-      "keyword": "deforestation",
-      "normalized": "deforestation",
+      "keyword": "SMAP",
+      "normalized": "smap",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
@@ -1256,8 +1263,8 @@
       ]
     },
     {
-      "keyword": "edge",
-      "normalized": "edge",
+      "keyword": "Hansen",
+      "normalized": "hansen",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
@@ -1265,12 +1272,39 @@
       ]
     },
     {
-      "keyword": "moisture",
-      "normalized": "moisture",
+      "keyword": "Amazon Basin",
+      "normalized": "amazon basin",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
         "eartharxiv-13141"
+      ]
+    },
+    {
+      "keyword": "bioaerosol",
+      "normalized": "bioaerosol",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "eartharxiv-13139"
+      ]
+    },
+    {
+      "keyword": "giant CCN",
+      "normalized": "giant ccn",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "eartharxiv-13139"
+      ]
+    },
+    {
+      "keyword": "urban rainfall",
+      "normalized": "urban rainfall",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "eartharxiv-13139"
       ]
     },
     {
@@ -1283,8 +1317,8 @@
       ]
     },
     {
-      "keyword": "first",
-      "normalized": "first",
+      "keyword": "intensity partitioning",
+      "normalized": "intensity partitioning",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
@@ -1292,35 +1326,8 @@
       ]
     },
     {
-      "keyword": "urban",
-      "normalized": "urban",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "eartharxiv-13139"
-      ]
-    },
-    {
-      "keyword": "observational",
-      "normalized": "observational",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "eartharxiv-13139"
-      ]
-    },
-    {
-      "keyword": "giant",
-      "normalized": "giant",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "eartharxiv-13139"
-      ]
-    },
-    {
-      "keyword": "teleconnections",
-      "normalized": "teleconnections",
+      "keyword": "ENSO teleconnections",
+      "normalized": "enso teleconnections",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
@@ -1328,8 +1335,8 @@
       ]
     },
     {
-      "keyword": "over",
-      "normalized": "over",
+      "keyword": "seasonal forecasting",
+      "normalized": "seasonal forecasting",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
@@ -1337,8 +1344,35 @@
       ]
     },
     {
-      "keyword": "tropical",
-      "normalized": "tropical",
+      "keyword": "SST predictors",
+      "normalized": "sst predictors",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "eartharxiv-13125"
+      ]
+    },
+    {
+      "keyword": "NN4CAST",
+      "normalized": "nn4cast",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "eartharxiv-13125"
+      ]
+    },
+    {
+      "keyword": "North Atlantic Oscillation",
+      "normalized": "north atlantic oscillation",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "eartharxiv-13125"
+      ]
+    },
+    {
+      "keyword": "tropical cyclone risk",
+      "normalized": "tropical cyclone risk",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
@@ -1346,8 +1380,8 @@
       ]
     },
     {
-      "keyword": "scenarios",
-      "normalized": "scenarios",
+      "keyword": "CHAZ downscaling",
+      "normalized": "chaz downscaling",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
@@ -1355,8 +1389,8 @@
       ]
     },
     {
-      "keyword": "under",
-      "normalized": "under",
+      "keyword": "CMIP6 SSP126/SSP585",
+      "normalized": "cmip6 ssp126/ssp585",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
@@ -1364,12 +1398,21 @@
       ]
     },
     {
-      "keyword": "local",
-      "normalized": "local",
+      "keyword": "North Atlantic landfall",
+      "normalized": "north atlantic landfall",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
-        "eartharxiv-13116"
+        "eartharxiv-13129"
+      ]
+    },
+    {
+      "keyword": "El Niño-like Pacific forcing",
+      "normalized": "el niño-like pacific forcing",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "eartharxiv-13129"
       ]
     },
     {
@@ -1382,8 +1425,8 @@
       ]
     },
     {
-      "keyword": "baseline",
-      "normalized": "baseline",
+      "keyword": "water table depth",
+      "normalized": "water table depth",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
@@ -1391,8 +1434,8 @@
       ]
     },
     {
-      "keyword": "national",
-      "normalized": "national",
+      "keyword": "machine learning",
+      "normalized": "machine learning",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
@@ -1400,8 +1443,8 @@
       ]
     },
     {
-      "keyword": "while",
-      "normalized": "while",
+      "keyword": "LightGBM",
+      "normalized": "lightgbm",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
@@ -1409,23 +1452,13 @@
       ]
     },
     {
-      "keyword": "fault",
-      "normalized": "fault",
+      "keyword": "Denmark",
+      "normalized": "denmark",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
-        "eartharxiv-13119"
-      ]
-    },
-    {
-      "keyword": "backward-migrating",
-      "normalized": "backward-migrating",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "eartharxiv-13119"
+        "eartharxiv-13116"
       ]
     }
-  ],
-  "source": "eartharxiv"
+  ]
 }
