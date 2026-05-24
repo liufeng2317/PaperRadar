@@ -279,18 +279,60 @@ def render_html(digest: dict[str, Any]) -> str:
     const classificationLabel = (source) => source === "eartharxiv" ? "Subjects" : "Categories";
     const keywordsForLang = (analysis, lang) => lang === "zh" ? (analysis.keywords_zh || analysis.keywords_en || []) : (analysis.keywords_en || analysis.keywords_zh || []);
 
-    const searchText = (item) => {
+    const normalizeSearch = (value) => String(value ?? "").toLowerCase().replace(/\\s+/g, " ").trim();
+    const fieldText = (value) => Array.isArray(value) ? value.join(" ") : String(value ?? "");
+    const scoreField = (value, needle, weight) => {
+      const text = normalizeSearch(fieldText(value));
+      if (!needle || !text) return 0;
+      if (text === needle) return weight * 3;
+      if (text.split(/[,;，；|\\s]+/).includes(needle)) return weight * 2;
+      return text.includes(needle) ? weight : 0;
+    };
+    const relevanceScore = (item, rawNeedle) => {
+      const needle = normalizeSearch(rawNeedle);
+      if (!needle) return 0;
       const paper = item.paper || {};
       const analysis = item.analysis || {};
-      return [paper.title, ...(paper.authors || []), ...(paper.categories || []), ...(analysis.keywords_en || []), ...(analysis.keywords_zh || []), analysis.one_sentence_en, analysis.one_sentence_zh, analysis.topic].join(" ").toLowerCase();
+      let score = 0;
+      score += scoreField(paper.title, needle, 120);
+      score += scoreField(analysis.keywords_en, needle, 95);
+      score += scoreField(analysis.keywords_zh, needle, 95);
+      score += scoreField(analysis.topic, needle, 85);
+      score += scoreField(analysis.one_sentence_en, needle, 55);
+      score += scoreField(analysis.one_sentence_zh, needle, 55);
+      score += scoreField(analysis.summary_en, needle, 35);
+      score += scoreField(analysis.summary_zh, needle, 35);
+      score += scoreField(analysis.contribution_en, needle, 32);
+      score += scoreField(analysis.contribution_zh, needle, 32);
+      score += scoreField(analysis.method_en, needle, 28);
+      score += scoreField(analysis.method_zh, needle, 28);
+      score += scoreField(analysis.data_or_region_en, needle, 24);
+      score += scoreField(analysis.data_or_region_zh, needle, 24);
+      score += scoreField(analysis.geophysics_relevance_en, needle, 20);
+      score += scoreField(analysis.geophysics_relevance_zh, needle, 20);
+      score += scoreField(paper.abstract, needle, 18);
+      score += scoreField(paper.authors, needle, 12);
+      score += scoreField(paper.categories, needle, 10);
+      score += scoreField(paper.arxiv_id, needle, 10);
+      score += scoreField(paper.source_id, needle, 10);
+      score += scoreField(paper.doi, needle, 8);
+      return score;
     };
+    const publishedValue = (item) => Date.parse(item?.paper?.published || item?.paper?.updated || "") || 0;
     const matchesFilters = (item) => {
-      const text = searchText(item);
-      const queryOk = !viewState.query || text.includes(viewState.query.toLowerCase());
-      const keywordOk = !viewState.keyword || text.includes(viewState.keyword.toLowerCase());
+      const queryOk = !viewState.query || relevanceScore(item, viewState.query) > 0;
+      const keywordOk = !viewState.keyword || relevanceScore(item, viewState.keyword) > 0;
       return queryOk && keywordOk;
     };
-    const filteredPapers = (source) => (digests.get(source)?.papers || []).filter(matchesFilters);
+    const filteredPapers = (source) => {
+      const papers = (digests.get(source)?.papers || []).filter(matchesFilters);
+      const rankNeedle = viewState.query || viewState.keyword;
+      if (!rankNeedle) return papers;
+      return papers.slice().sort((a, b) => {
+        const scoreDiff = relevanceScore(b, rankNeedle) - relevanceScore(a, rankNeedle);
+        return scoreDiff || (publishedValue(b) - publishedValue(a));
+      });
+    };
 
     const renderSummaryBlock = (summary) => {
       const items = Array.isArray(summary) ? summary : summary ? [summary] : [];
@@ -459,8 +501,8 @@ def render_html(digest: dict[str, Any]) -> str:
       const node = document.getElementById("active-filter");
       if (!node) return;
       const parts = [];
-      if (viewState.query) parts.push(`search: <strong>${escapeHtml(viewState.query)}</strong>`);
-      if (viewState.keyword) parts.push(`keyword: <strong>${escapeHtml(viewState.keyword)}</strong>`);
+      if (viewState.query) parts.push(`search: <strong>${escapeHtml(viewState.query)}</strong> <span data-lang="zh">按相关性排序</span><span data-lang="en">ranked by relevance</span>`);
+      if (viewState.keyword) parts.push(`keyword: <strong>${escapeHtml(viewState.keyword)}</strong> <span data-lang="zh">按相关性排序</span><span data-lang="en">ranked by relevance</span>`);
       node.innerHTML = parts.join(" · ");
     };
     const activate = (source) => {
