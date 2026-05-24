@@ -37,8 +37,10 @@
     .hero { padding: 34px 0 24px; display: grid; gap: 18px; }
     .topbar { display: flex; justify-content: space-between; gap: 16px; align-items: start; }
     h1 { margin: 0; font-size: clamp(2.2rem, 5vw, 4.7rem); line-height: .96; letter-spacing: 0; }
-    .lede { max-width: 880px; margin: 0; color: var(--muted); font-size: 1.04rem; }
-    .scope { max-width: 980px; margin: -4px 0 0; color: var(--ink); font-size: .92rem; }
+    .hero-copy { display: grid; gap: 9px; }
+    .kicker { margin: 0; color: var(--accent); font-size: .82rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+    .lede { max-width: 920px; margin: 0; color: var(--ink); font-size: clamp(1.08rem, 2.1vw, 1.42rem); line-height: 1.38; font-weight: 650; }
+    .scope { max-width: 980px; margin: 0; color: var(--muted); font-size: .94rem; }
     .scope strong { color: var(--accent); }
     .lang-toggle {
       display: inline-flex;
@@ -155,6 +157,12 @@
     .pagination button:disabled { color: var(--muted); cursor: not-allowed; opacity: .55; }
     .pagination.is-hidden { display: none; }
     footer { color: var(--muted); padding: 24px 0; border-top: 1px solid var(--line); }
+    footer .footer-inner { display: grid; gap: 8px; }
+    footer strong { color: var(--ink); }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    footer .credit-line { margin: 0; }
+    footer .license-note { margin: 0; font-size: .86rem; line-height: 1.55; max-width: 880px; }
     @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } .side { position: static; } .dash { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
     @media (max-width: 620px) { .topbar { display: grid; } .lang-toggle { justify-self: start; } .toolbar { grid-template-columns: 1fr; } .source-tabs { grid-template-columns: 1fr; } .paper-head { display: grid; } .paper-actions { justify-content: start; } .detail-grid { grid-template-columns: 1fr; } .pagination { align-items: stretch; flex-direction: column; } }
   </style>
@@ -169,10 +177,14 @@
           <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
         </div>
       </div>
-      <p class="lede" data-lang="zh" id="description-zh">正在加载最新预印本数据...</p>
-      <p class="lede" data-lang="en" id="description-en">Loading latest preprint data...</p>
-      <p class="scope" data-lang="zh" id="scope-zh"></p>
-      <p class="scope" data-lang="en" id="scope-en"></p>
+      <div class="hero-copy">
+        <p class="kicker" data-lang="zh" id="source-kicker-zh">正在加载</p>
+        <p class="kicker" data-lang="en" id="source-kicker-en">Loading</p>
+        <p class="lede" data-lang="zh" id="description-zh">正在加载最新预印本数据...</p>
+        <p class="lede" data-lang="en" id="description-en">Loading latest preprint data...</p>
+        <p class="scope" data-lang="zh" id="scope-zh"></p>
+        <p class="scope" data-lang="en" id="scope-en"></p>
+      </div>
       <div class="dash" aria-label="Digest metrics">
         <div class="metric"><span>Total</span><strong id="metric-total">--</strong><small id="metric-date">--</small></div>
         <div class="metric"><span>arXiv</span><strong id="metric-arxiv">--</strong><small>PaperRadar-Arxiv</small></div>
@@ -202,8 +214,14 @@
     </aside>
   </main>
   <footer>
-    <div class="wrap" data-lang="zh">由 PaperRadar 基于预印本元数据与 LLM 总结生成。</div>
-    <div class="wrap" data-lang="en">Built by PaperRadar from preprint metadata and LLM summaries.</div>
+    <div class="wrap footer-inner" data-lang="zh">
+      <p class="credit-line"><strong>PaperRadar</strong> © 2026 Feng Liu. 基于 arXiv 与 EarthArXiv 预印本元数据、PDF 解析结果和 LLM 辅助摘要生成。</p>
+      <p class="license-note">论文版权与原始内容归作者及对应预印本平台所有；本页面仅提供研究动态索引与自动化摘要，引用和使用时请以原文为准。</p>
+    </div>
+    <div class="wrap footer-inner" data-lang="en">
+      <p class="credit-line"><strong>PaperRadar</strong> © 2026 Feng Liu. Generated from arXiv and EarthArXiv metadata, optional PDF parsing, and LLM-assisted summaries.</p>
+      <p class="license-note">Paper copyrights and source content belong to their authors and respective preprint platforms; this page is an automated research index, so please cite and verify against the original papers.</p>
+    </div>
   </footer>
   <script>
     const PAGE_SIZE = 25;
@@ -318,35 +336,60 @@
       const primary = digests.get("arxiv") || digests.get("eartharxiv");
       if (!primary) return;
       const config = primary.config || {};
-      const descriptions = config.site_description || {};
       const counts = Object.fromEntries(SOURCES.map((source) => [source, (digests.get(source)?.papers || []).length]));
       const allPapers = counts.arxiv + counts.eartharxiv;
       document.title = `${config.site_title || "PaperRadar"} | ${primary.date || ""}`;
       document.getElementById("site-title").textContent = config.site_title || "PaperRadar";
-      document.getElementById("description-zh").textContent = descriptions.zh || "追踪预印本动态，包含双语摘要与关键词趋势。";
-      document.getElementById("description-en").textContent = descriptions.en || "Recent preprints with bilingual notes and keyword trends.";
       document.getElementById("metric-total").textContent = allPapers;
       document.getElementById("metric-arxiv").textContent = counts.arxiv;
       document.getElementById("metric-eartharxiv").textContent = counts.eartharxiv;
       document.getElementById("metric-date").textContent = primary.date || "--";
       document.getElementById("metric-updated").textContent = primary.generated_at ? primary.generated_at.slice(0, 10) : "--";
       document.getElementById("metric-generated").textContent = primary.generated_at || "--";
-      const [scopeZh, scopeEn] = renderScope(config);
+      updateHero(viewState.source || "arxiv");
+    };
+    const updateHero = (source) => {
+      const digest = digests.get(source) || digests.get("arxiv") || digests.get("eartharxiv");
+      if (!digest) return;
+      const config = digest.config || {};
+      const count = (digest.papers || []).length;
+      const topicCount = digest.trending_keywords?.length || 0;
+      const label = sourceLabel(source);
+      document.getElementById("source-kicker-zh").textContent = source === "eartharxiv" ? "EarthArXiv 预印本动态" : "arXiv 预印本动态";
+      document.getElementById("source-kicker-en").textContent = `${label} preprint signal`;
+      document.getElementById("description-zh").textContent = source === "eartharxiv"
+        ? `聚焦 EarthArXiv 地球科学预印本：自动整理 ${count} 篇新近论文，提炼一句话摘要、研究细节与关键词趋势。`
+        : `聚焦 arXiv 配置主题：自动整理 ${count} 篇新近论文，快速看清方法、数据区域、核心贡献和研究趋势。`;
+      document.getElementById("description-en").textContent = source === "eartharxiv"
+        ? `A focused EarthArXiv digest with ${count} recent preprints, concise summaries, research details, and keyword trends.`
+        : `A focused arXiv digest with ${count} recent preprints, surfacing methods, regions, contributions, and keyword trends.`;
+      const [scopeZh, scopeEn] = renderScope(source, config, topicCount);
       document.getElementById("scope-zh").innerHTML = scopeZh;
       document.getElementById("scope-en").innerHTML = scopeEn;
     };
-    const renderScope = (config = {}) => {
+    const renderScope = (source, config = {}, topicCount = 0) => {
       const arxiv = config.arxiv || {};
       const earth = config.eartharxiv || {};
-      const arxivCategories = (arxiv.categories || []).join(", ") || "all configured categories";
-      const arxivTerms = [...(arxiv.extra_terms || []), ...(arxiv.keywords || [])].filter(Boolean);
-      let arxivZh = arxiv.query ? `arXiv query: <strong>${escapeHtml(arxiv.query)}</strong>` : `arXiv categories: <strong>${escapeHtml(arxivCategories)}</strong>`;
-      let arxivEn = arxivZh;
-      if (!arxiv.query && arxivTerms.length) { const terms = arxivTerms.slice(0, 8).join(", ") + (arxivTerms.length > 8 ? " ..." : ""); arxivZh += `; 主题词: ${escapeHtml(terms)}`; arxivEn += `; topic terms: ${escapeHtml(terms)}`; }
-      const partsZh = [arxivZh];
-      const partsEn = [arxivEn];
-      if (earth.enabled) { const subjects = (earth.subjects || []).join(", ") || "all configured subjects"; const earthPart = `EarthArXiv subjects: <strong>${escapeHtml(subjects)}</strong>`; partsZh.push(earthPart); partsEn.push(earthPart); }
-      return [`当前追踪范围: ${partsZh.join(" | ")}`, `Current scope: ${partsEn.join(" | ")}`];
+      if (source === "eartharxiv") {
+        const subjects = (earth.subjects || []).slice(0, 8).join(", ") || "configured EarthArXiv subjects";
+        return [
+          `当前来源: <strong>EarthArXiv</strong> · Subjects: ${escapeHtml(subjects)} · 关键词趋势: ${topicCount}`,
+          `Current source: <strong>EarthArXiv</strong> · Subjects: ${escapeHtml(subjects)} · Keyword trends: ${topicCount}`,
+        ];
+      }
+      const categories = (arxiv.categories || []).join(", ") || "configured arXiv categories";
+      const terms = [...(arxiv.extra_terms || []), ...(arxiv.keywords || [])].filter(Boolean);
+      const topicTerms = terms.slice(0, 8).join(", ") || "configured terms";
+      if (arxiv.query) {
+        return [
+          `当前来源: <strong>arXiv</strong> · Query: ${escapeHtml(arxiv.query)} · 关键词趋势: ${topicCount}`,
+          `Current source: <strong>arXiv</strong> · Query: ${escapeHtml(arxiv.query)} · Keyword trends: ${topicCount}`,
+        ];
+      }
+      return [
+        `当前来源: <strong>arXiv</strong> · Categories: ${escapeHtml(categories)} · 主题词: ${escapeHtml(topicTerms)} · 关键词趋势: ${topicCount}`,
+        `Current source: <strong>arXiv</strong> · Categories: ${escapeHtml(categories)} · Topic terms: ${escapeHtml(topicTerms)} · Keyword trends: ${topicCount}`,
+      ];
     };
     const attachPagination = (panel) => {
       panel.querySelectorAll("[data-page-prev]").forEach((button) => { button.onclick = () => { const source = panel.dataset.sourcePanel; pageState.set(source, Math.max(1, (pageState.get(source) || 1) - 1)); renderPanelPage(panel); }; });
@@ -383,6 +426,7 @@
       document.querySelectorAll("[data-source-tab]").forEach((tab) => tab.setAttribute("aria-selected", String(tab.dataset.sourceTab === source)));
       document.querySelectorAll("[data-source-panel]").forEach((panel) => { const active = panel.dataset.sourcePanel === source; panel.hidden = !active; if (active) renderPanelPage(panel); });
       renderTrends(source);
+      updateHero(source);
       localStorage.setItem("paperradar.source", source);
     };
     const setLanguage = (lang) => { const root = document.documentElement; root.dataset.lang = lang; root.lang = lang === "zh" ? "zh-CN" : "en"; localStorage.setItem("paperradar.lang", lang); document.querySelectorAll("[data-set-lang]").forEach((button) => button.setAttribute("aria-pressed", String(button.dataset.setLang === lang))); };
