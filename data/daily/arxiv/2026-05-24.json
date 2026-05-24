@@ -1,6 +1,6 @@
 {
   "date": "2026-05-24",
-  "generated_at": "2026-05-24T01:58:44.761341+00:00",
+  "generated_at": "2026-05-24T11:20:33.417119+00:00",
   "config": {
     "site_title": "PaperRadar",
     "site_description": {
@@ -147,8 +147,10 @@
           "卫星脆弱性",
           "经济损失"
         ],
-        "updated_at": "2026-05-23T06:51:44.834060+00:00",
-        "cache_hit": true
+        "updated_at": "2026-05-23T19:27:51.199639+00:00",
+        "cache_hit": true,
+        "analysis_quality": "ok",
+        "analysis_warnings": []
       }
     },
     {
@@ -218,8 +220,12 @@
           "有限元",
           "Dirichlet-to-Neumann"
         ],
-        "updated_at": "2026-05-23T06:51:44.840328+00:00",
-        "cache_hit": true
+        "updated_at": "2026-05-23T19:27:51.205184+00:00",
+        "cache_hit": true,
+        "analysis_quality": "warn",
+        "analysis_warnings": [
+          "keywords_zh_too_few"
+        ]
       }
     },
     {
@@ -290,8 +296,10 @@
           "橄榄石",
           "反应动力学"
         ],
-        "updated_at": "2026-05-23T06:51:44.851145+00:00",
-        "cache_hit": true
+        "updated_at": "2026-05-23T19:27:51.230108+00:00",
+        "cache_hit": true,
+        "analysis_quality": "ok",
+        "analysis_warnings": []
       }
     },
     {
@@ -361,8 +369,10 @@
           "地震目录",
           "尾部风险"
         ],
-        "updated_at": "2026-05-23T06:51:44.864291+00:00",
-        "cache_hit": true
+        "updated_at": "2026-05-23T19:27:51.287531+00:00",
+        "cache_hit": true,
+        "analysis_quality": "ok",
+        "analysis_warnings": []
       }
     },
     {
@@ -431,8 +441,12 @@
           "边界层",
           "地球流体动力学"
         ],
-        "updated_at": "2026-05-23T06:51:44.873859+00:00",
-        "cache_hit": true
+        "updated_at": "2026-05-23T19:27:51.295977+00:00",
+        "cache_hit": true,
+        "analysis_quality": "warn",
+        "analysis_warnings": [
+          "keywords_zh_too_few"
+        ]
       }
     },
     {
@@ -502,8 +516,10 @@
           "多小波",
           "入口边界条件"
         ],
-        "updated_at": "2026-05-23T06:51:44.881918+00:00",
-        "cache_hit": true
+        "updated_at": "2026-05-23T19:27:51.303394+00:00",
+        "cache_hit": true,
+        "analysis_quality": "ok",
+        "analysis_warnings": []
       }
     },
     {
@@ -577,8 +593,10 @@
           "TanDEM-X",
           "Landsat"
         ],
-        "updated_at": "2026-05-23T06:51:44.887282+00:00",
-        "cache_hit": true
+        "updated_at": "2026-05-23T19:27:51.308912+00:00",
+        "cache_hit": true,
+        "analysis_quality": "ok",
+        "analysis_warnings": []
       }
     },
     {
@@ -649,8 +667,10 @@
           "Darcy产能",
           "云端仿真"
         ],
-        "updated_at": "2026-05-23T06:51:44.896524+00:00",
-        "cache_hit": true
+        "updated_at": "2026-05-23T19:27:51.319461+00:00",
+        "cache_hit": true,
+        "analysis_quality": "ok",
+        "analysis_warnings": []
       }
     },
     {
@@ -722,8 +742,10 @@
           "OSIRIS-REx再入",
           "大气传播"
         ],
-        "updated_at": "2026-05-23T06:51:44.912837+00:00",
-        "cache_hit": true
+        "updated_at": "2026-05-23T19:27:51.331019+00:00",
+        "cache_hit": true,
+        "analysis_quality": "ok",
+        "analysis_warnings": []
       }
     },
     {
@@ -796,8 +818,10 @@
           "OpenGL 环形缓冲",
           "有状态分块处理"
         ],
-        "updated_at": "2026-05-23T06:51:44.920185+00:00",
-        "cache_hit": true
+        "updated_at": "2026-05-23T19:27:51.341806+00:00",
+        "cache_hit": true,
+        "analysis_quality": "ok",
+        "analysis_warnings": []
       }
     },
     {
@@ -870,8 +894,10 @@
           "正-无标签学习",
           "卫星海洋波浪"
         ],
-        "updated_at": "2026-05-23T06:51:44.927159+00:00",
-        "cache_hit": true
+        "updated_at": "2026-05-23T19:27:51.348163+00:00",
+        "cache_hit": true,
+        "analysis_quality": "ok",
+        "analysis_warnings": []
       }
     },
     {
@@ -942,8 +968,10 @@
           "有理近似",
           "TEM电导率"
         ],
-        "updated_at": "2026-05-23T06:51:44.937032+00:00",
-        "cache_hit": true
+        "updated_at": "2026-05-23T19:27:51.359078+00:00",
+        "cache_hit": true,
+        "analysis_quality": "ok",
+        "analysis_warnings": []
       }
     },
     {
@@ -1016,8 +1044,10 @@
           "CO新星",
           "星际尘埃"
         ],
-        "updated_at": "2026-05-23T06:51:44.947083+00:00",
-        "cache_hit": true
+        "updated_at": "2026-05-23T19:27:51.368023+00:00",
+        "cache_hit": true,
+        "analysis_quality": "ok",
+        "analysis_warnings": []
       }
     },
     {
@@ -1092,8 +1122,10 @@
           "赤道电喷流EEJ",
           "CSES电场"
         ],
-        "updated_at": "2026-05-23T06:51:44.953028+00:00",
-        "cache_hit": true
+        "updated_at": "2026-05-23T19:27:51.377345+00:00",
+        "cache_hit": true,
+        "analysis_quality": "ok",
+        "analysis_warnings": []
       }
     },
     {
@@ -1167,8 +1199,10 @@
           "费米LAT",
           "暴发星系核"
         ],
-        "updated_at": "2026-05-23T06:51:44.961454+00:00",
-        "cache_hit": true
+        "updated_at": "2026-05-23T19:27:51.384413+00:00",
+        "cache_hit": true,
+        "analysis_quality": "ok",
+        "analysis_warnings": []
       }
     },
     {
@@ -1240,8 +1274,12 @@
           "慢磁声学波",
           "声学共振腔"
         ],
-        "updated_at": "2026-05-23T06:51:44.967509+00:00",
-        "cache_hit": true
+        "updated_at": "2026-05-23T19:27:51.389726+00:00",
+        "cache_hit": true,
+        "analysis_quality": "warn",
+        "analysis_warnings": [
+          "keywords_zh_too_few"
+        ]
       }
     },
     {
@@ -1314,8 +1352,10 @@
           "土壤含水率保持曲线",
           "UNSODA"
         ],
-        "updated_at": "2026-05-23T06:51:44.975635+00:00",
-        "cache_hit": true
+        "updated_at": "2026-05-23T19:27:51.400727+00:00",
+        "cache_hit": true,
+        "analysis_quality": "ok",
+        "analysis_warnings": []
       }
     },
     {
@@ -1384,8 +1424,10 @@
           "地平面拾取",
           "能登地震"
         ],
-        "updated_at": "2026-05-23T06:51:44.992357+00:00",
-        "cache_hit": true
+        "updated_at": "2026-05-23T19:27:51.436680+00:00",
+        "cache_hit": true,
+        "analysis_quality": "ok",
+        "analysis_warnings": []
       }
     },
     {
@@ -1453,8 +1495,10 @@
           "傅里叶神经算子",
           "Utah FORGE"
         ],
-        "updated_at": "2026-05-23T06:51:44.998188+00:00",
-        "cache_hit": true
+        "updated_at": "2026-05-23T19:27:51.442635+00:00",
+        "cache_hit": true,
+        "analysis_quality": "ok",
+        "analysis_warnings": []
       }
     },
     {
@@ -1529,584 +1573,10 @@
           "仿真在环",
           "CREST/EF5"
         ],
-        "updated_at": "2026-05-23T06:51:45.005555+00:00",
-        "cache_hit": true
-      }
-    },
-    {
-      "paper": {
-        "arxiv_id": "2605.17081v1",
-        "title": "Analyzing the role of tensile and hybrid fractures on the max-imum relief topography",
-        "authors": [
-          "Julien Gargani"
-        ],
-        "abstract": "Slope stability description through mechanical laws has important implication for Earth morphology understanding and risk assessment. Previous researches have showed that shear, tensile, and hybrid fractures can be observed experimentally and in the field, but their descriptions by a single equation is still an open debate. Fracture envelope able to describe contemporaneously these three fracture modes differ signif-icantly from the Mohr-Coulomb law. Despite the need to apply such a law at all scales, from the laboratory to the mountain range, the fracture criterion that characterizes all types of fractures is rarely used in geotechnical engineering and geological investiga-tions. In order to analyze the stability thresholds of large-scale relief, the current work examines the effects of considering the Griffith criterion with a variable rock traction instead of the Mohr-Coulomb law using a modelling approach. The difference esti-mated on maximum relief using these two different rupture criterions could be of the same order than the one caused by geological phenomena, such as with or without seismic activity, or from the one caused by the destabilization processes (tilting vs. landslide). When compared to the modified Griffith criterion, the Mohr-Coulomb law tends to overestimate the maximum escarpment height. The results are examined in relation to the Carrara marbles, which serve as a case study for the theoretical frame-work.",
-        "published": "2026-05-16T16:57:20Z",
-        "updated": "2026-05-16T16:57:20Z",
-        "categories": [
-          "physics.geo-ph"
-        ],
-        "pdf_url": "https://arxiv.org/pdf/2605.17081v1",
-        "abs_url": "http://arxiv.org/abs/2605.17081v1",
-        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260516/2605.17081v1.pdf",
-        "pdf_download_error": null,
-        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260516/2605.17081v1.md",
-        "markdown_parse_error": null
-      },
-      "analysis": {
-        "schema_version": "paperradar.analysis.v3",
-        "input_version": "markdown-clean-v1",
-        "one_sentence_en": "This paper models large-scale slope/rock-tilting stability using the Griffith failure criterion with variable rock traction and shows it predicts different maximum escarpment heights than the commonly used Mohr–Coulomb law, especially in tensile and hybrid fracture domains.",
-        "one_sentence_zh": "本文用可变岩体牵引的Griffith破坏准则对大尺度坡体/岩块倾倒稳定性建模，发现其对最大崖壁高度的预测与Mohr–Coulomb准则显著不同，尤其在张性与混合裂隙领域。",
-        "summary_en": [
-          "problem: Whether using a single conventional failure law (Mohr–Coulomb) is adequate to predict large-scale stability when tensile and hybrid fractures are important.",
-          "approach: Compare maximum relief/escarpment heights from rock-tilting equilibrium calculations using Mohr–Coulomb versus a Griffith criterion with traction fitted to experimental fracture-envelope behavior (Carrara marbles), including variable traction.",
-          "key result: Mohr–Coulomb tends to overestimate maximum escarpment height compared with the modified Griffith criterion, and differences can be comparable to those produced by geological factors such as seismicity, water/pore pressure, and destabilization mode."
-        ],
-        "summary_zh": [
-          "problem: 当张性与混合裂隙主导时，传统单一破坏准则（Mohr–Coulomb）能否可靠预测大尺度稳定性。",
-          "approach: 在岩块倾倒的力学平衡框架下，分别用Mohr–Coulomb与带可变牵引的Griffith准则计算最大地形起伏/崖壁高度，并用Carrara大理石实验得到的破裂包络来约束牵引。",
-          "key result: 相比改进的Griffith准则，Mohr–Coulomb倾向于高估最大崖壁高度；该差异幅度可与地质过程（如地震活动、水/孔隙压力及失稳方式差异）带来的影响量级相当。"
-        ],
-        "contribution_en": "The study provides a scale-bridging stability modeling framework that replaces Mohr–Coulomb with a traction-dependent Griffith criterion, quantifies how tensile/hybrid fracture mechanics alters predicted maximum relief, and validates the theoretical setup using Carrara marble fracture-envelope data.",
-        "contribution_zh": "研究提出了跨尺度的稳定性建模框架：用牵引依赖的Griffith准则替代Mohr–Coulomb，定量评估张性/混合裂隙力学对最大地形起伏预测的影响，并以Carrara大理石的破裂包络实验数据支撑理论实现。",
-        "method_en": "Rock-block tilting stability is computed from moment balance, converting fracture mechanics failure criteria (Mohr–Coulomb with friction/cohesion, or Griffith with traction T) into a maximum block height (relief/escarpment) threshold; for Griffith, traction T is not assumed constant but derived as a function fitted from experimental tensile/hybrid fracture envelopes (Ramsey & Chester data for Carrara marbles), and the resulting traction-dependent failure condition is solved numerically.",
-        "method_zh": "基于岩块倾倒的力矩平衡，结合破坏准则将断裂力学参数转换为最大地形起伏/崖壁高度的稳定阈值；其中Mohr–Coulomb采用摩擦与黏聚力，Griffith则不把牵引T当作常数，而是从实验张性/混合裂隙破裂包络拟合得到T(σn,τ等依赖关系)，再对牵引相关的稳定条件进行数值求解。",
-        "data_or_region_en": "Carrara marbles from laboratory fracture experiments (Ramsey & Chester, 2004) used to calibrate variable rock traction; study region is not specified beyond this theoretical case study.",
-        "data_or_region_zh": "用来校准可变岩体牵引的是Carrara大理石的实验室断裂实验数据（Ramsey & Chester, 2004）；文中未具体给出研究区域（除该理论案例外）。",
-        "geophysics_relevance_en": "Relevant to large-scale slope stability and geomorphology because it shows that tensile and hybrid fracture mechanics can materially change predicted maximum relief, impacting hazard assessment beyond what Mohr–Coulomb would suggest; relevance to direct remote sensing/typical geophysics workflows is tangential.",
-        "geophysics_relevance_zh": "对大尺度坡体稳定与地貌演化很有启发，因为研究表明张性与混合裂隙力学会显著改变最大地形起伏预测，从而影响危险性评估；但与遥感/常见地球物理观测反演流程的直接关联较弱，属于间接相关。",
-        "llm_used": true,
-        "source": "markdown",
-        "model": "gpt-5.4-nano",
-        "topic": "Rock fracture stability",
-        "audience_level": "specialist",
-        "keywords_en": [
-          "slope stability",
-          "rock tilting",
-          "Griffith criterion",
-          "Mohr-Coulomb",
-          "Carrara marble"
-        ],
-        "keywords_zh": [
-          "坡体稳定",
-          "岩块倾倒",
-          "Griffith准则",
-          "Mohr-Coulomb",
-          "Carrara大理石"
-        ],
-        "updated_at": "2026-05-21T23:30:43.472370+00:00",
-        "cache_hit": true
-      }
-    },
-    {
-      "paper": {
-        "arxiv_id": "2605.16966v1",
-        "title": "Harnessing AI for Inverse Partial Differential Equation Problems: Past, Present, and Prospects",
-        "authors": [
-          "Zhentao Tan",
-          "Yuze Hao",
-          "Boyi Zou",
-          "Mingsheng Long",
-          "Yi Yang",
-          "Gang Bao"
-        ],
-        "abstract": "Solving inverse partial differential equation (PDE) problems is a fundamental topic in scientific research due to its broad significance across a wide range of real-world applications. Inverse PDE problems arise across medical imaging, geophysics, materials science, and aerodynamics, where the goal is to infer hidden causes, design structures, or control physical states. In this paper, we provide a comprehensive review of recent advances in solving inverse PDE problems using artificial intelligence (AI). We first introduce the basic formulation, key challenges, and traditional numerical foundations of inverse PDE problems, and then organize it into three major categories: inverse problems, inverse design, and control problems. For each category, we further present a methodological paradigms, and review representative state-of-the-art approaches from recent years. We then summarize representative applications across scientific and industrial domains, including mechanical systems, aerodynamic problems, thermal systems, full-waveform inversion, system identification, and medical imaging. Finally, we discuss open challenges and future prospects, such as physics-informed architectures, limited real-world data, uncertainty quantification, and inverse foundation models. This survey aims to provide the first unified and systematic perspective on AI for inverse PDE problems, demonstrating how modern learning-based methods are reshaping inverse problems, inverse design, and control problems in PDE-governed systems.",
-        "published": "2026-05-16T12:41:36Z",
-        "updated": "2026-05-16T12:41:36Z",
-        "categories": [
-          "cs.AI"
-        ],
-        "pdf_url": "https://arxiv.org/pdf/2605.16966v1",
-        "abs_url": "http://arxiv.org/abs/2605.16966v1",
-        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260516/2605.16966v1.pdf",
-        "pdf_download_error": null,
-        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260516/2605.16966v1.md",
-        "markdown_parse_error": null
-      },
-      "analysis": {
-        "schema_version": "paperradar.analysis.v3",
-        "input_version": "markdown-clean-v1",
-        "one_sentence_en": "This survey systematically reviews how AI techniques are used to tackle inverse partial differential equation problems across inverse recovery, inverse design, and PDE control, summarizing key paradigms, challenges, and applications.",
-        "one_sentence_zh": "本文系统综述了人工智能如何用于求解逆偏微分方程问题，包括逆向求解、逆向设计和PDE控制，并总结方法范式、挑战与应用前景。",
-        "summary_en": [
-          "problem: Inverse PDE problems are ill-posed and computationally demanding because they require inferring hidden causes or decisions from incomplete, noisy observations under PDE constraints.",
-          "approach: The paper organizes AI-based solutions into three categories (inverse problems, inverse design, control) and reviews representative paradigms such as data-driven mappings, PDE-constrained learning, surrogate approaches, generative modeling, and sequential/control strategies.",
-          "key result: It provides a unified, systematic perspective on AI for inverse PDE problems and identifies open challenges such as physics-informed architectures, limited real-world data, uncertainty quantification, and inverse foundation models."
-        ],
-        "summary_zh": [
-          "problem: 逆向PDE问题往往不适定且计算成本高，需要在PDE约束下从不完整、含噪观测中推断隐藏原因或决策。",
-          "approach: 论文将AI解法按三类任务（逆向求解、逆向设计、控制）进行归纳，并综述数据驱动映射、PDE约束学习、代理/替代模型、生成式建模以及序列决策/控制等范式。",
-          "key result: 它给出了AI用于逆向PDE问题的统一系统视角，并指出物理约束架构、真实数据稀缺、不确定性量化与逆向基础模型等未解决挑战。"
-        ],
-        "contribution_en": "A unified taxonomy and comprehensive survey of AI approaches for inverse PDE problems, covering inverse recovery, inverse design, and PDE control, alongside major application areas and future research directions.",
-        "contribution_zh": "提出并梳理了面向逆向PDE问题的统一分类框架，系统综述AI在逆向求解、逆向设计与PDE控制中的关键思路、典型应用及未来研究方向。",
-        "method_en": "Literature survey that structures AI solutions for inverse PDEs into three task classes and reviews methodological paradigms including data-driven inverse mappings, PDE-constrained learning, surrogate/neural-operator style approaches, generative models, and sequential/control-oriented strategies.",
-        "method_zh": "文献综述方法：将逆向PDE的AI解法按三类任务划分，并归纳评述数据驱动逆映射、PDE约束学习、代理/神经算子式方法、生成式模型以及面向序列决策与控制的策略等范式。",
-        "data_or_region_en": "Not specified.",
-        "data_or_region_zh": "未说明。",
-        "geophysics_relevance_en": "Geophysics is explicitly listed as a key application domain (e.g., inferring subsurface properties from seismic responses), but this work is a cross-domain survey rather than a new geophysical algorithm.",
-        "geophysics_relevance_zh": "地球物理被明确作为重要应用领域（如由地震响应推断地下性质），但本文是跨领域综述而非针对地球物理的新增算法。",
-        "llm_used": true,
-        "source": "markdown",
-        "model": "gpt-5.4-nano",
-        "topic": "AI for inverse PDEs",
-        "audience_level": "specialist",
-        "keywords_en": [
-          "inverse problems",
-          "inverse design",
-          "PDE control",
-          "physics-informed AI",
-          "geophysical inversion"
-        ],
-        "keywords_zh": [
-          "逆问题",
-          "逆向设计",
-          "PDE控制",
-          "物理约束AI",
-          "地球物理反演"
-        ],
-        "updated_at": "2026-05-21T23:30:43.480629+00:00",
-        "cache_hit": true
-      }
-    },
-    {
-      "paper": {
-        "arxiv_id": "2605.16783v1",
-        "title": "Pretrain-to-alignment learning paradigm to improve geophysical AI applicability under scarce field labels and synthetic-to-field gaps: A case study of relative geologic time estimation in global shelf-edge clinothems",
-        "authors": [
-          "Hui Gao",
-          "Xinming Wu",
-          "Jiarun Yang",
-          "Zhixiang Gao",
-          "Yimin Dou"
-        ],
-        "abstract": "Artificial intelligence (AI) has been increasingly applied to various geophysical scenarios, yet its practical deployment remains limited by scarce field labels, pronounced synthetic-to-field domain gaps, and insufficient physical consistency under complex and variable field conditions. To address these challenges, we propose a pretrain-to-alignment learning paradigm that systematically integrates self-supervised pretraining, synthetic supervision, prior-driven refinement, and domain-adaptation fine-tuning into a unified progressive learning workflow. In this paradigm, geophysical AI models are developed through sequential stages that progressively build field-relevant representations, task-specific mapping capability, field consistency, and target-specific adaptability. We validate this paradigm using cross-survey relative geologic time (RGT) estimation in global shelf-edge clinothems as a representative case study. Results from 3,000 field datasets spanning multiple sedimentary basins demonstrate that the proposed paradigm achieves accurate, robust, and well-generalized performance across diverse field surveys, while significantly improving fine-scale stratigraphic and structural details. More broadly, this study provides a practical methodological reference for a broader range of geophysical AI tasks, such as interpretation, regression, and inversion problems.",
-        "published": "2026-05-16T03:34:51Z",
-        "updated": "2026-05-16T03:34:51Z",
-        "categories": [
-          "physics.geo-ph"
-        ],
-        "pdf_url": "https://arxiv.org/pdf/2605.16783v1",
-        "abs_url": "http://arxiv.org/abs/2605.16783v1",
-        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260516/2605.16783v1.pdf",
-        "pdf_download_error": null,
-        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260516/2605.16783v1.md",
-        "markdown_parse_error": null
-      },
-      "analysis": {
-        "schema_version": "paperradar.analysis.v3",
-        "input_version": "markdown-clean-v1",
-        "one_sentence_en": "The paper proposes a progressive pretrain-to-alignment learning workflow that combines field self-supervised pretraining, synthetic supervision, geological-prior refinement, and light target-sample fine-tuning to improve cross-survey relative geologic time estimation from global shelf-edge clinothems.",
-        "one_sentence_zh": "论文提出一种从预训练到对齐的渐进式学习流程，结合野外自监督预训练、合成监督、地质先验约束精炼和轻量目标样本微调，用于提升全球陆架边缘楔体中的跨测线相对地质年代估计。",
-        "summary_en": [
-          "problem: Geophysical AI for relative geologic time estimation struggles with scarce field labels, synthetic-to-field domain gaps, and insufficient physical consistency across surveys.",
-          "approach: Build models via a progressive workflow: self-supervised pretraining on unlabeled field seismic, supervised training on labeled synthetic data, prior-driven refinement using label-independent geological constraints, and lightweight domain-adaptation fine-tuning per target sample.",
-          "key result: On a hybrid benchmark with 3,000 unlabeled field samples and 4,000 labeled synthetic samples from multiple shelf-edge clinothem basins, the paradigm achieves accurate, robust, and well-generalized cross-survey RGT predictions with improved fine-scale stratigraphic/structural detail."
-        ],
-        "summary_zh": [
-          "problem: 用于相对地质年代估计的地球物理AI面临野外标注稀缺、合成到野外域差距以及跨测线物理一致性不足等问题。",
-          "approach: 采用渐进式流程：用未标注野外地震做自监督预训练；用带标签合成数据做监督学习；通过不依赖标签的地质先验约束进行精炼；再对目标样本进行轻量域适应微调。",
-          "key result: 在包含3,000个未标注野外样本与4,000个带标签合成样本、覆盖多个陆架边缘楔体盆地的混合基准上，该范式在跨测线RGT预测中实现准确、稳健且泛化良好的表现，并提升了细尺度层序与结构细节。"
-        ],
-        "contribution_en": "Introduces and validates a unified pretrain-to-alignment paradigm that systematically integrates self-supervised representation learning, synthetic supervision, label-independent geological-prior refinement, and sample-level domain adaptation to bridge synthetic-to-field gaps for cross-survey RGT regression.",
-        "contribution_zh": "提出并验证了一个统一的“从预训练到对齐”范式：将自监督表征学习、合成监督、无需标签的地质先验精炼以及样本级域适应系统性地结合起来，用于弥合合成到野外的域差距并提升跨测线RGT回归能力。",
-        "method_en": "Use (1) continued self-supervised pretraining of a seismic foundation transformer via MAE-style masked reconstruction on unlabeled field seismic, (2) supervised RGT regression on labeled synthetic seismic with a constrained derivative-to-integrated vertical RGT output, (3) prior-driven refinement on unlabeled field data using label-independent constraints derived from seismic structural orientations and other regularizers, and (4) lightweight per-target domain-adaptation fine-tuning using objectives from label-independent priors.",
-        "method_zh": "方法包括：(1) 对现成地震基础模型进行基于MAE掩膜重建的自监督续预训练，用未标注野外地震学习楔体相关表征；(2) 在带标签合成地震上做监督RGT回归，采用受约束的“导数场预测+竖向积分”以保证地质合理性；(3) 在未标注野外数据上通过基于地震结构走向等标签无关约束进行先验驱动精炼；(4) 对每个目标样本进行轻量化域适应微调，进一步提升部署可靠性。",
-        "data_or_region_en": "Global shelf-edge clinothem benchmark: 3,000 unlabeled field seismic samples from multiple sedimentary basins (North Sea, Taranaki, Northern Carnarvon, Beaufort–Mackenzie) and 4,000 labeled synthetic seismic samples generated by geological and geophysical forward modeling; cross-survey evaluation across the basins.",
-        "data_or_region_zh": "全球陆架边缘楔体基准：来自多个沉积盆地的3,000个未标注野外地震样本（北海、塔拉纳基、北卡纳文、博福特–马更些），以及通过地质与地球物理正演生成的4,000个带标签合成地震样本；在各盆地间进行跨测线评估。",
-        "geophysics_relevance_en": "This is directly relevant to trustworthy geophysical AI deployment under label scarcity and domain gaps, showcasing how to enforce geologic consistency and cross-survey generalization for stratigraphic time estimation; relevance is methodological and application-specific to RGT.",
-        "geophysics_relevance_zh": "该工作与“标签稀缺与合成/野外域差距下的可靠地球物理AI部署”高度相关，展示了如何通过地质一致性约束提升跨测线泛化与分层时间估计的可信度；但其展示的关键任务是RGT，因此属于方法论与任务定向的直接相关。",
-        "llm_used": true,
-        "source": "markdown",
-        "model": "gpt-5.4-nano",
-        "topic": "pretrain-to-alignment RGT",
-        "audience_level": "specialist",
-        "keywords_en": [
-          "relative geologic time",
-          "shelf-edge clinothems",
-          "seismic foundation model",
-          "synthetic-to-field domain gap",
-          "geological prior refinement"
-        ],
-        "keywords_zh": [
-          "相对地质年代",
-          "陆架边缘楔体",
-          "地震基础模型",
-          "合成到野外域差距",
-          "地质先验精炼"
-        ],
-        "updated_at": "2026-05-21T23:30:43.485576+00:00",
-        "cache_hit": true
-      }
-    },
-    {
-      "paper": {
-        "arxiv_id": "2605.16717v1",
-        "title": "Radial-Component Predominant-Mode Inversion of Rayleigh Waves: Application to DAS-based Site Characterization",
-        "authors": [
-          "Mrinal Bhaumik",
-          "Brady R. Cox"
-        ],
-        "abstract": "Distributed Acoustic Sensing (DAS) has emerged as a transformative technology for near-surface site characterization. When a vertical source is activated along the fiber, DAS measures only the in-line (radial) component of Rayleigh-wave motion. Dispersion data extracted from radial-component waveforms may differ from those obtained from vertical-component measurements, particularly under complex stratigraphic conditions. Hence, a component-consistent forward problem is desired when inverting radial-component DAS dispersion data to retrieve accurate shear wave velocity (Vs) profiles. This study presents a radial-component predominant-mode (RCPM) inversion framework designed for DAS-based surface-wave analysis that explicitly accounts for source-receiver directivity and modal sensitivity of the Rayleigh-wave radial component. The proposed approach matches measured dominant radial dispersion trends with the theoretical mode exhibiting the maximum modal participation. As a result, the RCPM framework eliminates the need for explicit modal indexing, provides a component-consistent interpretation of radial-component dispersion data, and substantially reduces reliance on subjective analyst-driven modal interpretations. The RCPM approach is systematically evaluated using three synthetic ground models and two field DAS datasets. The synthetic results demonstrate that modal energy distribution differs significantly between vertical and radial components in the presence of strong velocity contrasts and velocity reversals, and that conventional inversion approaches may misinterpret modal behavior, resulting in less accurate Vs profiles. In contrast, the RCPM method consistently captures the correct modal response and yields reliable Vs profiles. Application to two field DAS datasets further demonstrates good agreement between the inverted Vs profiles and independent invasive borehole measurements.",
-        "published": "2026-05-16T00:04:03Z",
-        "updated": "2026-05-16T00:04:03Z",
-        "categories": [
-          "physics.geo-ph",
-          "cs.SD"
-        ],
-        "pdf_url": "https://arxiv.org/pdf/2605.16717v1",
-        "abs_url": "http://arxiv.org/abs/2605.16717v1",
-        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260516/2605.16717v1.pdf",
-        "pdf_download_error": null,
-        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260516/2605.16717v1.md",
-        "markdown_parse_error": null
-      },
-      "analysis": {
-        "schema_version": "paperradar.analysis.v3",
-        "input_version": "markdown-clean-v1",
-        "one_sentence_en": "The paper introduces a radial-component predominant-mode inversion that accounts for how DAS records only Rayleigh-wave radial motion, improving Vs profiling versus conventional modal-indexing approaches.",
-        "one_sentence_zh": "本文提出一种径向分量主导模反演框架，考虑DAS只记录瑞利波径向运动的物理特性，从而在Vs反演中优于传统需要手动模态编号的方法。",
-        "summary_en": [
-          "problem: DAS-based Rayleigh-wave dispersion inferred from radial motion can exhibit different modal behavior than vertical-component dispersion, making conventional inversion ambiguous and error-prone.",
-          "approach: Develop a radial-component predominant-mode (RCPM) forward-consistent inversion that selects, for each frequency, the theoretically most participating Rayleigh mode in the radial component and matches dominant radial dispersion trends.",
-          "key result: In synthetic tests and two field DAS datasets, RCPM avoids manual modal indexing, captures correct modal response under complex stratigraphy, and produces Vs profiles consistent with independent borehole/cone-penetration measurements."
-        ],
-        "summary_zh": [
-          "problem: DAS提取的瑞利波径向分量色散在复杂地层中会与纵向分量的模态行为不同，导致常规反演模态识别困难且易产生偏差。",
-          "approach: 提出径向分量主导模（RCPM）反演，在每个频率上依据径向分量的理论模态参与度选择主导模，并拟合径向主导色散趋势。",
-          "key result: 通过三类合成模型与两套野外DAS数据验证，RCPM无需手动模态编号，能在复杂地层中捕获正确模态响应，并与钻孔/锥贯入试验给出的Vs结果一致。"
-        ],
-        "contribution_en": "A component-consistent, amplitude-informed predominant-mode inversion framework tailored to DAS radial-component Rayleigh-wave dispersion, explicitly incorporating source-receiver directivity and modal sensitivity to reduce modal-indexing ambiguity and improve Vs recovery.",
-        "contribution_zh": "提出一种面向DAS径向分量瑞利波色散的分量一致、幅度信息主导模反演框架，显式考虑源-接收方向性与径向分量模态敏感性，从而降低模态编号歧义并提升Vs反演可靠性。",
-        "method_en": "Compute theoretical Rayleigh-wave modal shapes and surface amplitudes for vertical and radial components using a transfer/thin-layer style eigenvalue formulation, define the predominant radial mode at each frequency from the product of vertical and radial modal amplitudes for a vertical-source/radial-receiver (V–R) setup, then invert radial-component dispersion targets with global optimization (differential evolution) by matching dominant radial dispersion trajectories.",
-        "method_zh": "采用薄层/特征值求解框架计算分层介质中瑞利波纵向与径向分量的模态形状及自由面幅度；在垂直源-径向接收（V–R）假设下，用纵向与径向模态幅度的乘积定义每个频率的径向主导模；随后用差分进化等全局优化，将RCPM预测的径向主导色散轨迹与DAS径向分量色散目标进行匹配以反演Vs。",
-        "data_or_region_en": "Evaluated with three synthetic layered ground models (monotonic Vs increase, a low-velocity layer, and a high-velocity layer) and two field DAS datasets; field targets are compared against independent invasive measurements including borehole and cone penetration test data.",
-        "data_or_region_zh": "用三种合成地层模型（Vs随深度单调增、含低速层LVL、含高速层HVL）以及两套野外DAS数据评估；野外反演结果与钻孔及锥贯入试验等独立侵入式测量进行对比验证。",
-        "geophysics_relevance_en": "Directly relevant to DAS-based near-surface imaging because it resolves a key physical mismatch: DAS radial-component recording leads to different Rayleigh modal dominance than vertical geophones, affecting Vs inversion.",
-        "geophysics_relevance_zh": "与DAS近地表成像高度相关，因为它解决了关键物理不匹配：DAS只能记录径向分量，导致瑞利波模态优势与传统纵向地震计不同，从而影响Vs反演。",
-        "llm_used": true,
-        "source": "markdown",
-        "model": "gpt-5.4-nano",
-        "topic": "DAS Rayleigh inversion",
-        "audience_level": "specialist",
-        "keywords_en": [
-          "Distributed Acoustic Sensing",
-          "Rayleigh waves",
-          "predominant mode",
-          "radial component",
-          "shear-wave velocity inversion"
-        ],
-        "keywords_zh": [
-          "分布式光纤振动传感",
-          "瑞利波",
-          "主导模态",
-          "径向分量",
-          "剪切波速度反演"
-        ],
-        "updated_at": "2026-05-21T23:30:43.493246+00:00",
-        "cache_hit": true
-      }
-    },
-    {
-      "paper": {
-        "arxiv_id": "2605.16711v1",
-        "title": "Stress state, subsidence, and faulting in the Wilmington Oil Field, California: a multiphase flow-geomechanics modeling assessment (1936-2020)",
-        "authors": [
-          "Lluís Saló-Salgado",
-          "Josimar A. Silva",
-          "Andreas Plesch",
-          "Franklin D. Wolfe",
-          "John H. Shaw",
-          "Ruben Juanes"
-        ],
-        "abstract": "Nearly a century of oil production in the Wilmington Oil Field, Los Angeles Basin, California, has modified the stress state, caused nearly 9 m of ground surface subsidence, and been associated with earthquakes that sheared wells. This offers a unique opportunity to elucidate the processes that govern these phenomena: Since the 1930s, approximately 2.5 billion barrels of oil have been produced, accompanied by water injection volumes roughly an order of magnitude larger. Combined with extensive structural and geophysical constraints, this history allows us to interrogate the long-term geomechanical impacts of reservoir operations. Here, we assess (i) how the initial stress state, typically uncertain in the shallow crust ($<5$ km depth), influences subsidence and uplift, and (ii) how production and injection operations affect fault stability. Our numerical model, calibrated with published measurements of reservoir pressures and surface displacements, incorporates a detailed representation of fault surfaces within and around the field, well-level production and injection schedules, and an elastoplastic constitutive framework. Model results show that the previously assumed stress regime in the field (reverse faulting) needs to be reassessed$\\unicode{x2014}$the best match to the ground deformation data is achieved when the sedimentary section is initialized with low deviatoric stress (i.e., not critically stressed). This suggests significant variation in the stress state with depth, including a likely change in the stress regime. DCFF values suggest minor destabilization on reservoir faults and larger changes on sub-horizontal bedding planes; both could explain the faulting that led to sheared wells and seismicity between 1947 and 1961.",
-        "published": "2026-05-15T23:48:13Z",
-        "updated": "2026-05-15T23:48:13Z",
-        "categories": [
-          "physics.geo-ph"
-        ],
-        "pdf_url": "https://arxiv.org/pdf/2605.16711v1",
-        "abs_url": "http://arxiv.org/abs/2605.16711v1",
-        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260515/2605.16711v1.pdf",
-        "pdf_download_error": null,
-        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260515/2605.16711v1.md",
-        "markdown_parse_error": null
-      },
-      "analysis": {
-        "schema_version": "paperradar.analysis.v3",
-        "input_version": "markdown-clean-v1",
-        "one_sentence_en": "A 3D coupled multiphase flow–geomechanics model of the Wilmington Oil Field reproduces long-term subsidence and explains historical well-shearing by revising the initial stress regime and identifying which shallow layers were most destabilized by production and injection.",
-        "one_sentence_zh": "本文建立了威尔明顿油田的三维耦合多相流-地应力模型，重现长期地表沉降并通过修正初始应力制度，解释历史井筒剪切的层位失稳机制。",
-        "summary_en": [
-          "problem: Long-term oil production and water injection in Wilmington caused substantial subsidence and triggered faulting that damaged wells, yet the controlling initial stress state and destabilized fault planes remain uncertain.",
-          "approach: The authors build a calibrated 3D elastoplastic, fault-aware coupled flow–geomechanics model using reservoir pressure history, surface leveling displacements, and detailed production/injection schedules to test stress-regime assumptions and quantify stability changes on faults and bedding planes.",
-          "key result: The best fit to surface deformation is obtained when the sedimentary section starts from low deviatoric stress rather than a critically stressed reverse-faulting regime, with calculated instability changes greatest on shallow sub-horizontal bedding planes (and smaller effects on reservoir faults), consistent with documented well shearing and 1947–1961 seismicity."
-        ],
-        "summary_zh": [
-          "problem: 威尔明顿油田的长期采油与注水导致显著沉降并引发断层活动/井筒破坏，但初始应力状态与真正失稳的断层或层面尚不清楚。",
-          "approach: 作者构建包含精细断层几何的三维弹塑性耦合流-地应力模型，用已发布的储层压力与地表高程沉降数据校准，并结合逐井的采注排程，检验不同初始应力制度并计算断层与层面稳定性变化。",
-          "key result: 地表形变的最佳拟合表明沉积地层应从低偏应力（非临界受压）初始化，且失稳变化在浅部近水平层理面最强、在储层断层较弱，这与1947–1961年的井筒剪切和地震活动相吻合。"
-        ],
-        "contribution_en": "Provides a calibrated, elastoplastic 3D coupled flow–geomechanics assessment that reconciles nearly century-scale subsidence with fault-stability evolution, demonstrating that the initially assumed reverse-faulting stress regime is unlikely and identifying shallow sub-horizontal interfaces as key slip candidates.",
-        "contribution_zh": "给出一个可校准的三维弹塑性耦合流-地应力评估，将近百年尺度的沉降与断层稳定性演化统一起来，表明先前认为的逆冲型初始应力制度不太可能，并指出浅部近水平层间界面是主要的滑移失稳候选。",
-        "method_en": "A 3D coupled multiphase flow–geomechanics model with detailed fault surfaces (including faults within and around the field), well-by-well production and injection schedules, elastoplastic constitutive behavior, calibrated to published reservoir pressures and surface leveling (subsidence/rebound) measurements; stability changes are computed for faults and sub-horizontal bedding planes.",
-        "method_zh": "建立包含场内及周边精细断层面的三维多相流-地应力耦合模型，输入逐井生产与注水排程，并采用弹塑性本构；用已发布的储层压力和地表水准沉降/回弹观测进行校准，随后评估断层与浅部近水平层理面的稳定性变化。",
-        "data_or_region_en": "Wilmington Oil Field in the Los Angeles Basin, California, using published reservoir pressure history, historical surface leveling subsidence/rebound measurements, and detailed well-level production and waterflooding schedules (1936–2020 timeframe).",
-        "data_or_region_zh": "美国加州洛杉矶盆地的威尔明顿油田；数据包括已发布的储层压力历史、历史地表水准沉降与回弹观测，以及逐井生产与水驱注入的详细排程（覆盖1936–2020）。",
-        "geophysics_relevance_en": "Directly relevant to induced seismicity and subsurface energy safety because it quantitatively links reservoir operations to stress-state evolution, ground deformation, and which interfaces are most prone to slip under uncertain shallow initial stresses.",
-        "geophysics_relevance_zh": "与诱发地震及地下能源开发安全直接相关：本文定量联系储层作业引起的应力演化、地表形变以及在浅部初始应力不确定条件下最易发生滑移的界面，从而有助于风险机理理解。",
-        "llm_used": true,
-        "source": "markdown",
-        "model": "gpt-5.4-nano",
-        "topic": "Induced faulting by production",
-        "audience_level": "specialist",
-        "keywords_en": [
-          "stress state",
-          "subsidence",
-          "fault slip",
-          "coupled flow-geomechanics",
-          "Wilmington Oil Field"
-        ],
-        "keywords_zh": [
-          "应力状态",
-          "地表沉降",
-          "断层滑移",
-          "耦合流-地应力",
-          "威尔明顿油田"
-        ],
-        "updated_at": "2026-05-21T23:30:43.500486+00:00",
-        "cache_hit": true
-      }
-    },
-    {
-      "paper": {
-        "arxiv_id": "2605.16665v1",
-        "title": "In-context learning enables continental-scale subsurface temperature prediction from sparse local observations",
-        "authors": [
-          "Daniel O'Malley",
-          "Christopher W. Johnson",
-          "Javier E. Santos",
-          "Pablo Lara",
-          "Sandro Malusà",
-          "Bharat Srikishan",
-          "John Kath",
-          "Arnab Mazumder",
-          "Mohamed Mehana",
-          "David Coblentz",
-          "Nathan DeBardeleben",
-          "Earl Lawrence",
-          "Hari Viswanathan"
-        ],
-        "abstract": "Continental-scale knowledge of subsurface temperature is limited by the cost and sparsity of borehole measurements, but such information is essential for geothermal resource assessment and for understanding heat transport in the shallow crust. The thermal field reflects the interaction between lithology, crustal structure, radiogenic heat production, and advective fluid flow, sometimes producing sharp anomalies that are smoothed by conventional interpolation or difficult to capture with physical models. Here we introduce In-Context Earth, a transformer-based model that uses sparse local borehole observations as geological context to predict continuous temperature-at-depth fields with calibrated uncertainty. In the contiguous United States, the model achieves a mean absolute error of 4.7 °C, outperforming the physics-informed Stanford Thermal Model, a model based on AlphaEarth embeddings, the multimodal Transparent Earth model, and universal kriging, while resolving sharper thermal gradients in geothermal provinces. Its uncertainty estimates are well calibrated, with a Kolmogorov-Smirnov statistic of 2.5%. Without finetuning, the model adapts to Alberta, Australia, and the United Kingdom (UK) using only 20 local observations at inference time, maintaining high accuracy in geologically distinct test regions with a mean absolute error of 2.2 °C in Alberta, 6.2 °C in Australia, and 5.4 °C in the UK. Interpretability analyses show that the model learns internal representations of subsurface properties it never observes during training, including seismic velocities, geochemistry, and crustal structure, and uses these representations in physically consistent ways. More broadly, this work shows that in-context learning can use sparse borehole observations for continental-scale subsurface characterization, without requiring dense measurements or region-specific retraining.",
-        "published": "2026-05-15T22:03:34Z",
-        "updated": "2026-05-15T22:03:34Z",
-        "categories": [
-          "cs.LG",
-          "physics.geo-ph"
-        ],
-        "pdf_url": "https://arxiv.org/pdf/2605.16665v1",
-        "abs_url": "http://arxiv.org/abs/2605.16665v1",
-        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260515/2605.16665v1.pdf",
-        "pdf_download_error": null,
-        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260515/2605.16665v1.md",
-        "markdown_parse_error": null
-      },
-      "analysis": {
-        "schema_version": "paperradar.analysis.v3",
-        "input_version": "markdown-clean-v1",
-        "one_sentence_en": "In-Context Earth uses an encoder-only transformer with in-context conditioning on sparse borehole temperatures to predict continental-scale temperature-at-depth fields with calibrated uncertainty and strong cross-continent generalization.",
-        "one_sentence_zh": "In-Context Earth 使用编码器式变压器，把稀疏钻孔温度作为上下文进行条件学习，生成大陆尺度的温度-深度连续场，并给出良好校准的不确定性与跨地区泛化能力。",
-        "summary_en": [
-          "problem: Subsurface temperature mapping is limited by costly, sparse borehole measurements, leading to oversmoothed gradients and unreliable uncertainty in geothermal assessments.",
-          "approach: Introduce In-Context Earth, a transformer that performs in-context learning from a variable set of local borehole observations, predicting binned depth-dependent temperatures as a probabilistic classification task with multiscale spatial encodings and Earth-tailored augmentation.",
-          "key result: On the contiguous US dataset, it achieves 4.7 °C MAE and better resolves sharp geothermal gradients than several baselines, with well-calibrated uncertainty (KS statistic 2.5%); without finetuning it adapts to Alberta, Australia, and the UK using only 20 local observations at inference."
-        ],
-        "summary_zh": [
-          "problem: 地下温度制图受昂贵且稀疏的钻孔观测限制，传统插值常使温度梯度被抹平且不确定性不可靠，从而影响地热评估。",
-          "approach: 提出 In-Context Earth，采用变压器从若干局部钻孔作为上下文进行条件学习，使用多尺度空间编码与面向地球的数据增强，把温度预测改为分箱的概率分类任务并输出校准不确定性。",
-          "key result: 在相邻美国数据上达到 4.7 °C MAE，且对地热省的尖锐温度梯度刻画更优、置信度校准良好（KS 指标 2.5%）；无需微调即可在推理时仅用每个新区域 20 个局部观测适配到阿尔伯塔、澳大利亚和英国。"
-        ],
-        "contribution_en": "The paper demonstrates a transformer-based in-context learning framework that turns sparse borehole temperature observations into continuous continental temperature-at-depth predictions with calibrated uncertainty, and shows interpretability evidence that learned representations align with physically meaningful subsurface properties.",
-        "contribution_zh": "论文提出了一种基于变压器的上下文学习框架：把稀疏钻孔温度观测转化为大陆尺度连续温度-深度预测，并给出校准良好的不确定性；同时通过可解释性分析给出证据表明模型内部表征与物理上有意义的地下性质一致。",
-        "method_en": "Train an encoder-only transformer on contiguous US borehole temperature measurements using multiscale spatial encodings and Earth-tailored augmentation that masks absolute lat/lon; at inference, condition on a variable number of nearby borehole context tokens and predict the target temperature distribution across depth-dependent binned intervals to obtain calibrated uncertainty.",
-        "method_zh": "在相邻美国钻孔温度数据上训练编码器式变压器，使用多尺度空间编码，并通过面向地球的数据增强（掩蔽绝对经纬度，仅保留相对位置）；推理时用若干邻近钻孔作为上下文条件，预测目标深度分箱温度的概率分布，从而得到校准的不确定性。",
-        "data_or_region_en": "Contiguous United States borehole temperature compilation (360k temperatures) for training and validation; generalization tests on Alberta (Canada), Australia, and the United Kingdom (using only 20 local observations at inference).",
-        "data_or_region_zh": "训练与验证使用相邻美国的钻孔温度汇编（约 36 万条温度）；并在阿尔伯塔（加拿大）、澳大利亚和英国进行泛化测试（推理时每个区域仅用 20 个局部观测）。",
-        "geophysics_relevance_en": "Directly relevant to geothermal resource assessment and subsurface heat-transport characterization from sparse borehole data; also provides uncertainty-calibrated maps and interpretability linking temperature to subsurface properties, which is valuable for geoscience decision-making.",
-        "geophysics_relevance_zh": "与地热资源评估及利用稀疏钻孔刻画地下热输运过程高度相关；其输出带校准不确定性的温度场，并给出与地下性质相关的可解释性证据，有助于地球科学决策。",
-        "llm_used": true,
-        "source": "markdown",
-        "model": "gpt-5.4-nano",
-        "topic": "In-context geothermal forecasting",
-        "audience_level": "specialist",
-        "keywords_en": [
-          "geothermal",
-          "subsurface temperature",
-          "borehole",
-          "in-context learning",
-          "transformer"
-        ],
-        "keywords_zh": [
-          "地下温度",
-          "上下文学习",
-          "变压器"
-        ],
-        "updated_at": "2026-05-21T23:30:43.504874+00:00",
-        "cache_hit": true
-      }
-    },
-    {
-      "paper": {
-        "arxiv_id": "2605.15752v1",
-        "title": "Forecasting megaelectron-volt electron flux in the Earth's outer radiation belt using supervised machine learning algorithms and a timeseries foundation model",
-        "authors": [
-          "Rungployphan Kieokaew",
-          "Ryad Guezzi",
-          "François Ginisty",
-          "Hadrien Mariaccia"
-        ],
-        "abstract": "Accurate forecasting of megaelectron-volt (MeV) electrons in the outer Earth's radiation belt, which can pose significant risks to satellites, is essential for risk mitigation and spacecraft operations. We develop a machine-learning-based pipeline for forecasting 1-MeV electron flux variations, focusing first on a 6-hour forecast horizon. Using precipitating electrons measured by POES NOAA-15, near 1-MeV electron flux measured by GOES, solar wind measurements near L1, and geomagnetic activity indices as inputs in 2013-2023, we train algorithms including linear regression, 1-D convolutional and long short-term memory neural networks, and Transformer-Encoder to forecast 1-MeV electron flux in McIlwain's L-shells between 2.8 and 6.0 with 0.1 bin resolution. Particularly, we exploit the timeseries foundation model TimesFM for (1) a zero-shot prediction and (2) a hybrid application involving the ridge regression on the past dynamic covariates combined with the TimesFM inference on the residuals. Using data from January-June 2024 as an out-of-sample test, we find that the hybrid application of TimesFM, named TimesFM+Cov, yields the best results with an average R2 of 0.9 across L-shells, compared to an average R2 under 0.78 for all other models. The R2 of TimesFM+Cov remains above 0.9 for L-shells between 2.8 and 4.7 and drops to 0.77 at L=6.0, indicating improvements of 12% at the lowest L-shell and 48% at the highest L-shell compared to our second-best models. Our work offers an alternative perspective on how a pretrained foundation model could be adapted for space weather forecasting.",
-        "published": "2026-05-15T09:13:02Z",
-        "updated": "2026-05-15T09:13:02Z",
-        "categories": [
-          "astro-ph.IM",
-          "astro-ph.EP"
-        ],
-        "pdf_url": "https://arxiv.org/pdf/2605.15752v1",
-        "abs_url": "http://arxiv.org/abs/2605.15752v1",
-        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260515/2605.15752v1.pdf",
-        "pdf_download_error": null,
-        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260515/2605.15752v1.md",
-        "markdown_parse_error": null
-      },
-      "analysis": {
-        "schema_version": "paperradar.analysis.v3",
-        "input_version": "markdown-clean-v1",
-        "one_sentence_en": "The study builds supervised ML and a TimesFM-based time-series foundation adaptation to forecast 1 MeV outer-belt electron flux variations from 6-hour lead using POES/GOES/solar-wind/geomagnetic inputs, achieving strong cross-L performance.",
-        "one_sentence_zh": "该研究构建监督学习及基于 TimesFM 的时间序列基础模型改造，用 POES/GOES/太阳风与地磁数据预测 6 小时前的外辐射带 1 MeV 电子通量变化，效果在多个 L 上较强。",
-        "summary_en": [
-          "problem: Need accurate, near-real-time forecasts of 1-MeV electron flux in the Earth's outer radiation belt to mitigate satellite charging and operational risk.",
-          "approach: Train per-L supervised models using POES NOAA-15 precipitating electron fluxes, near-1 MeV GOES flux, upstream solar wind/IMF from L1, and geomagnetic indices, and adapt the pretrained TimesFM via zero-shot and a hybrid residual approach (TimesFM+Cov).",
-          "key result: On Jan–Jun 2024 out-of-sample tests, TimesFM+Cov achieves the best average skill (average R2 ≈ 0.9) across L=2.8–6.0, outperforming other models (average R2 < 0.78) and maintaining >0.9 for L up to 4.7."
-        ],
-        "summary_zh": [
-          "problem: 需要对地球外辐射带 1 MeV 电子通量进行更准确的近实时预测，以降低卫星充放电等风险。",
-          "approach: 针对每个 L 单独训练监督模型，输入来自 POES NOAA-15 的低能沉降电子、GOES 近 1 MeV 电子通量、L1 处太阳风/IMF 以及地磁指数，并将预训练 TimesFM 用于零样本预测与残差混合方案（TimesFM+Cov）。",
-          "key result: 在 2024 年 1–6 月的样本外测试中，TimesFM+Cov 在 L=2.8–6.0 的平均预测能力最好（平均 R2 约 0.9），明显优于其他模型（平均 R2 < 0.78），且在 L≤4.7 时保持 R2>0.9。"
-        ],
-        "contribution_en": "Introduces a space-weather forecasting pipeline that adapts a time-series foundation model (TimesFM) for outer radiation belt electron-flux prediction, showing that a hybrid residual-based TimesFM+Cov strategy substantially improves forecast skill versus standard supervised baselines.",
-        "contribution_zh": "提出用于外辐射带电子通量预测的空间天气预报流程，并将时间序列基础模型 TimesFM 进行残差混合改造（TimesFM+Cov）；结果表明其预测能力显著优于常规监督学习基线。",
-        "method_en": "Per-McIlwain L value (2.8–6.0, 0.1 step), supervised regression models are trained on multivariate past sequences of POES NOAA-15 electron fluxes and magnetic local time plus merged near-1 MeV GOES flux, solar wind/IMF from upstream near L1 (OMNI), and geomagnetic indices; TimesFM is evaluated both as a zero-shot forecaster and in a hybrid scheme that applies ridge regression to dynamic covariates and then uses TimesFM inference on residuals (TimesFM+Cov) for 6-hour ahead forecasts.",
-        "method_zh": "针对每个 McIlwain L（2.8–6.0，步长 0.1）分别训练监督回归模型，输入为 POES NOAA-15 的电子通量时间序列及对应的磁地方时，再加上融合的近 1 MeV GOES 电子通量、L1 附近上游太阳风/IMF（OMNI）以及地磁指数；同时评估 TimesFM 的零样本预测能力，以及“对动态协变量先做岭回归、再对残差使用 TimesFM 推断”的混合方案（TimesFM+Cov），用于 6 小时超前预报。",
-        "data_or_region_en": "Outer radiation belt electron forecasting for McIlwain L-shells 2.8–6.0 (0.1 resolution) using POES NOAA-15 (SEM-2/MEPED), merged GOES electron measurements, upstream solar wind/IMF near L1 from OMNI (ACE/Wind sources), and geomagnetic indices (Dst, Kp); trained on 2013–2023 and tested out-of-sample on Jan–Jun 2024.",
-        "data_or_region_zh": "外辐射带预测区域为 McIlwain L-shell 2.8–6.0（0.1 分辨率）；观测数据来自 POES NOAA-15（SEM-2/MEPED）与融合的 GOES 电子测量，太阳风/IMF 来自 L1 附近 OMNI（ACE/Wind 多源）以及地磁指数（Dst、Kp）；训练使用 2013–2023，样本外测试为 2024 年 1–6 月。",
-        "geophysics_relevance_en": "This is directly relevant to space-weather risk mitigation for satellite operations because it forecasts MeV-class outer radiation belt electron fluxes using operationally motivated inputs and a novel foundation-model adaptation.",
-        "geophysics_relevance_zh": "该工作与空间天气预警/风险缓解高度相关，因为它面向卫星运行需求预测 MeV 级外辐射带电子通量，并采用了更贴近业务的输入与基础模型改造思路。",
-        "llm_used": true,
-        "source": "markdown",
-        "model": "gpt-5.4-nano",
-        "topic": "outer-belt electron forecasting",
-        "audience_level": "specialist",
-        "keywords_en": [
-          "radiation-belt electrons",
-          "MeV forecasting",
-          "space weather",
-          "TimesFM",
-          "POES GOES"
-        ],
-        "keywords_zh": [
-          "辐射带电子",
-          "MeV 预报",
-          "空间天气",
-          "TimesFM",
-          "POES GOES"
-        ],
-        "updated_at": "2026-05-21T23:30:43.514856+00:00",
-        "cache_hit": true
-      }
-    },
-    {
-      "paper": {
-        "arxiv_id": "2605.15549v1",
-        "title": "CTF4Nuclear: Common Task Framework for Nuclear Fission and Fusion Models",
-        "authors": [
-          "Stefano Riva",
-          "Carolina Introini",
-          "Antonio Cammi",
-          "Dean Price",
-          "Alexey Yermakov",
-          "Yue Zhao",
-          "Philippe M. Wyder",
-          "Judah Goldfeder",
-          "Jan Williams",
-          "Amy Sara Rude",
-          "Matteo Tomasetto",
-          "Joe Germany",
-          "Joseph Bakarji",
-          "Georg Maierhofer",
-          "Miles Cranmer",
-          "J. Nathan Kutz"
-        ],
-        "abstract": "The demand for clean energy is ever increasing, with new nuclear technologies presenting a complementary solution to renewable energies. However, designing and operating these systems is exceptionally difficult, given the complexity of the physical phenomena that interact to form the system dynamics. While high-fidelity simulations help to understand the non-linear, multi-physics interactions within a reactor, they are computationally expensive and rarely suitable for real-time applications. Furthermore, model-based approaches are inherently sensitive to simplifying assumptions required to derive their governing equations and parameters, leading to inevitable discrepancies with real-world measurements. In contrast, Machine Learning (ML) methods have the potential to generate reliable surrogate models which may be able to quickly predict the system's behaviour. However, the number of data-driven methods that can potentially be used for this task is large and diverse. In a safety-critical setting such as nuclear engineering, a fair comparison of different ML methods, and a clear understanding of their advantages and limitations, is of paramount importance. To address this, we introduce a Common Task Framework (CTF) for ML in nuclear engineering, building upon previous efforts in dynamical systems and seismology. This CTF considers a curated set of datasets from different nuclear and nuclear-adjacent systems. The CTF evaluates the performance of a method on 12 established metrics, alongside a new paradigm focused on system monitoring from sparse measurements only. We illustrate the framework by benchmarking standard ML baselines against these datasets, revealing current method limitations. Our vision is to replace ad hoc comparisons with standardized evaluations on hidden test sets, raising the bar for rigour and reproducibility in scientific ML for the nuclear industry.",
-        "published": "2026-05-15T02:42:26Z",
-        "updated": "2026-05-15T02:42:26Z",
-        "categories": [
-          "cs.LG",
-          "cs.AI",
-          "cs.CE"
-        ],
-        "pdf_url": "https://arxiv.org/pdf/2605.15549v1",
-        "abs_url": "http://arxiv.org/abs/2605.15549v1",
-        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260515/2605.15549v1.pdf",
-        "pdf_download_error": null,
-        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260515/2605.15549v1.md",
-        "markdown_parse_error": null
-      },
-      "analysis": {
-        "schema_version": "paperradar.analysis.v3",
-        "input_version": "markdown-clean-v1",
-        "one_sentence_en": "CTF4Nuclear proposes a common-task benchmark and withheld-test evaluation framework for machine-learning surrogates and sparse-sensor state estimation across multiple nuclear fission and fusion datasets, quantifying current limitations via 12+ metrics.",
-        "one_sentence_zh": "CTF4Nuclear提出面向核裂变与聚变的通用任务基准与隐藏测试集评测框架，用于评估机器学习替代模型和稀疏传感器状态反演，并用多指标揭示现有方法局限。",
-        "summary_en": [
-          "Problem: Nuclear ML needs fair, reproducible comparisons and real-time-capable surrogate/state-estimation tools despite expensive physics models and sparse/noisy observability constraints.",
-          "Approach: Create an open common task framework with diverse curated fission/fusion datasets and evaluate methods using twelve established metrics plus a new sparse-measurement monitoring paradigm.",
-          "Key result: The benchmark standardizes multi-metric evaluation on hidden test sets and demonstrates method limitations on the included nuclear and nuclear-adjacent systems, without claiming a single best method."
-        ],
-        "summary_zh": [
-          "问题：核工程场景下，亟需可复现的公平比较与适用于实时的ML替代模型/状态估计，但高保真物理模型昂贵且观测稀疏噪声大。",
-          "方法：构建开放的通用任务框架，汇集多样的核裂变/聚变数据集，并通过十二项既有指标加上仅基于稀疏测量的系统监测新任务范式来评测。",
-          "关键结果：该基准用隐藏测试集与多指标标准化评测，并在所含多种核相关系统上展示了现有方法的不足（未给出唯一通用最优结论）。"
-        ],
-        "contribution_en": "The paper’s main contribution is introducing CTF4Nuclear, an open common-task framework with a curated, cross-physics benchmark suite and standardized, withheld-test, multi-metric evaluation—including a novel sparse-sensor reconstruction/monitoring task—for ML surrogates and state estimation in nuclear fission and fusion.",
-        "contribution_zh": "论文的主要贡献是提出CTF4Nuclear：一个开放的通用任务框架，包含跨物理过程的精选基准数据集，并通过包含隐藏测试集与多指标的标准化评测（还新增仅基于稀疏传感器的重建/监测任务）来评估核裂变与聚变中的ML替代模型与状态估计。",
-        "method_en": "A common-task benchmark workflow that trains ML models on curated nuclear/fusion datasets and evaluates them on a hidden test set using 12 established spatiotemporal metrics (forecasting, noise robustness, limited data, parametric generalization) plus a sparse-measurement system monitoring task that reconstructs physically unobservable fields from partial sensor readings.",
-        "method_zh": "一种通用任务基准评测流程：在精选的核/聚变数据上训练ML模型，并在隐藏测试集上用12项时空预测相关指标评估（预测、噪声鲁棒性、有限数据、参数泛化），同时加入仅依赖稀疏传感器观测的系统监测任务，用于从部分测量重建不可直接观测的物理场变量。",
-        "data_or_region_en": "Five nuclear/fusion-relevant systems/datasets: Molten Salt Fast Reactor (EVOL geometry; OpenFOAM multi-physics), Heat-Pipe MicroReactor (transient neutronics/thermal response), MHD lead-lithium channel flow (fusion coolant channel), DYNASTY experimental facility modeled with RELAP5 (thermo-hydraulics natural circulation), and TRIGA Mark II research reactor (250 kW multi-physics transients); specific regions are not emphasized.",
-        "data_or_region_zh": "5类核/聚变相关数据集：熔盐快堆（EVOL几何；OpenFOAM多物理）、热管微反应堆（瞬态中子学/热响应）、MHD铅-锂通道流（聚变冷却剂通道）、DYNASTY实验装置（用RELAP5建模的热工水力自然对流）、以及TRIGA Mark II研究反应堆（250 kW多物理瞬态）；文中不强调具体地理区域。",
-        "geophysics_relevance_en": "Tangential relevance: the tracked geophysics theme is not directly addressed, but the work adapts dynamical-systems and sparse-sensor reconstruction benchmarking ideas (previously used in seismology) to nuclear engineering.",
-        "geophysics_relevance_zh": "弱相关：与地球物理追踪主题并非直接对口，但借鉴了动力系统与稀疏传感器重建的基准思想（前期用于地震学），迁移到核工程场景。",
-        "llm_used": true,
-        "source": "markdown",
-        "model": "gpt-5.4-nano",
-        "topic": "Nuclear ML Benchmarking",
-        "audience_level": "specialist",
-        "keywords_en": [
-          "nuclear engineering",
-          "surrogate modeling",
-          "state estimation",
-          "sparse sensors",
-          "benchmark framework"
-        ],
-        "keywords_zh": [
-          "核工程",
-          "替代模型",
-          "状态估计",
-          "稀疏传感器",
-          "基准框架"
-        ],
-        "updated_at": "2026-05-21T23:30:43.518517+00:00",
-        "cache_hit": true
+        "updated_at": "2026-05-23T19:27:51.447665+00:00",
+        "cache_hit": true,
+        "analysis_quality": "ok",
+        "analysis_warnings": []
       }
     }
   ],
@@ -2114,10 +1584,9 @@
     {
       "keyword": "Distributed acoustic sensing",
       "normalized": "distributed acoustic sensing",
-      "score": 3,
-      "paper_count": 3,
+      "score": 2,
+      "paper_count": 2,
       "paper_ids": [
-        "2605.16717v1",
         "2605.18375v1",
         "2605.20132v1"
       ]
