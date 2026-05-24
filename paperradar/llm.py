@@ -38,6 +38,22 @@ STOPWORDS = {
     "with",
 }
 
+GENERIC_KEYWORDS = {
+    "approach",
+    "data",
+    "dataset",
+    "datasets",
+    "framework",
+    "learning",
+    "method",
+    "methods",
+    "model",
+    "models",
+    "result",
+    "results",
+    "study",
+}
+
 BAD_KEYWORDS = {
     "alpha",
     "beta",
@@ -211,6 +227,8 @@ def _fallback_enrichment(
         "audience_level": "specialist",
         "llm_used": False,
         "source": "markdown" if markdown_excerpt else "abstract",
+        "analysis_quality": "warn",
+        "analysis_warnings": ["llm_fallback"],
     }
 
 
@@ -222,7 +240,7 @@ def _normalize_enrichment(
 ) -> dict[str, Any]:
     keywords_en = _coerce_keywords(raw.get("keywords_en"), keywords_per_paper)
     keywords_zh = _coerce_keywords(raw.get("keywords_zh"), keywords_per_paper)
-    return {
+    enriched = {
         "schema_version": ANALYSIS_SCHEMA_VERSION,
         "input_version": ANALYSIS_INPUT_VERSION,
         "one_sentence_en": str(raw.get("one_sentence_en", "")).strip(),
@@ -245,6 +263,53 @@ def _normalize_enrichment(
         "source": source,
         "model": model,
     }
+    warnings = _analysis_quality_warnings(enriched, keywords_per_paper)
+    enriched["analysis_quality"] = "warn" if warnings else "ok"
+    enriched["analysis_warnings"] = warnings
+    return enriched
+
+
+def ensure_analysis_quality(analysis: dict[str, Any], keywords_per_paper: int) -> dict[str, Any]:
+    enriched = dict(analysis)
+    if "analysis_quality" in enriched and "analysis_warnings" in enriched:
+        return enriched
+    warnings = _analysis_quality_warnings(enriched, keywords_per_paper)
+    enriched["analysis_quality"] = "warn" if warnings else "ok"
+    enriched["analysis_warnings"] = warnings
+    return enriched
+
+
+def _analysis_quality_warnings(analysis: dict[str, Any], keywords_per_paper: int) -> list[str]:
+    warnings: list[str] = []
+    if analysis.get("llm_used") is not True:
+        warnings.append("llm_fallback")
+    if not _has_cjk(analysis.get("one_sentence_zh", "")):
+        warnings.append("one_sentence_zh_not_chinese")
+    if not any(_has_cjk(item) for item in analysis.get("summary_zh", [])):
+        warnings.append("summary_zh_not_chinese")
+    if len(str(analysis.get("one_sentence_en", "")).split()) > 45:
+        warnings.append("one_sentence_en_too_long")
+    if len(str(analysis.get("one_sentence_zh", ""))) > 120:
+        warnings.append("one_sentence_zh_too_long")
+    if len(analysis.get("summary_en", [])) != 3:
+        warnings.append("summary_en_not_3_items")
+    if len(analysis.get("summary_zh", [])) != 3:
+        warnings.append("summary_zh_not_3_items")
+    if len(analysis.get("keywords_en", [])) < keywords_per_paper:
+        warnings.append("keywords_en_too_few")
+    if len(analysis.get("keywords_zh", [])) < keywords_per_paper:
+        warnings.append("keywords_zh_too_few")
+    generic_hits = [
+        keyword for keyword in [*analysis.get("keywords_en", []), *analysis.get("keywords_zh", [])]
+        if str(keyword).strip().lower() in GENERIC_KEYWORDS
+    ]
+    if generic_hits:
+        warnings.append("generic_keywords")
+    return warnings
+
+
+def _has_cjk(value: Any) -> bool:
+    return bool(re.search(r"[\u4e00-\u9fff]", str(value or "")))
 
 
 def _coerce_keywords(value: Any, limit: int) -> list[str]:
@@ -257,7 +322,8 @@ def _coerce_keywords(value: Any, limit: int) -> list[str]:
     cleaned = []
     for item in items:
         keyword = _clean_keyword(str(item))
-        if keyword and keyword.lower() not in {k.lower() for k in cleaned}:
+        lower = keyword.lower()
+        if keyword and lower not in GENERIC_KEYWORDS and lower not in {k.lower() for k in cleaned}:
             cleaned.append(keyword)
     return cleaned[:limit]
 
@@ -275,7 +341,7 @@ def _coerce_string_list(value: Any, limit: int) -> list[str]:
 
 def _extract_keywords(text: str, limit: int) -> list[str]:
     tokens = re.findall(r"[A-Za-z][A-Za-z-]{3,}", text.lower())
-    counts = Counter(token for token in tokens if token not in STOPWORDS and token not in BAD_KEYWORDS)
+    counts = Counter(token for token in tokens if token not in STOPWORDS and token not in BAD_KEYWORDS and token not in GENERIC_KEYWORDS)
     return [word for word, _ in counts.most_common(limit)]
 
 
@@ -286,6 +352,10 @@ def _clean_keyword(value: str) -> str:
         return ""
     if re.search(r"\\|[{}^_=]", keyword):
         return ""
+    if _has_cjk(keyword):
+        if len(keyword) < 2:
+            return ""
+        return keyword
     if len(keyword) < 3:
         return ""
     return keyword

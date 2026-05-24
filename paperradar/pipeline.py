@@ -8,7 +8,7 @@ from typing import Any
 from paperradar.arxiv_client import Paper, download_pdf, fetch_recent_papers
 from paperradar.config import SiteConfig, load_config, to_jsonable
 from paperradar.eartharxiv_client import fetch_eartharxiv_papers
-from paperradar.llm import enrich_paper
+from paperradar.llm import enrich_paper, ensure_analysis_quality
 from paperradar.pdf_parse import parse_pdf_to_markdown, read_markdown_excerpt
 from paperradar.query import build_arxiv_query
 from paperradar.registry import (
@@ -270,6 +270,7 @@ def reanalyze_digest(
             paper,
             f"llm done used={analysis.get('llm_used')} topic={analysis.get('topic')}",
         )
+        analysis = ensure_analysis_quality(analysis, config.keywords_per_paper)
         update_analysis_status(registry_entry, analysis)
         enriched_papers.append({"paper": paper_data, "analysis": analysis})
 
@@ -399,6 +400,7 @@ def build_digest(
         else:
             analysis["cache_hit"] = True
             _log_stage(paper, f"llm cache source={analysis_source} topic={analysis.get('topic')}")
+        analysis = ensure_analysis_quality(analysis, config.keywords_per_paper)
         update_analysis_status(registry_entry, analysis)
         enriched_papers.append(
             {

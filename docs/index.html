@@ -345,9 +345,30 @@
       }).join("");
       return body ? `<div class="detail-section"><p class="detail-section-title" data-lang="zh">研究要点</p><p class="detail-section-title" data-lang="en">Research details</p><div class="detail-grid">${body}</div></div>` : "";
     };
-    const renderClassBadges = (paper = {}) => {
+    const configuredClassifications = (source) => {
+      const digest = digests.get(source) || digests.get("arxiv") || digests.get("eartharxiv");
+      const config = digest?.config || {};
+      return source === "eartharxiv" ? (config.eartharxiv?.subjects || []) : (config.arxiv?.categories || []);
+    };
+    const prioritizedCategories = (paper = {}) => {
       const source = paper.source || "arxiv";
       const categories = Array.isArray(paper.categories) ? paper.categories.filter(Boolean) : [];
+      const configured = configuredClassifications(source).map((item) => String(item).toLowerCase());
+      const seen = new Set();
+      const addUnique = (items) => items.filter((item) => {
+        const key = String(item).toLowerCase();
+        if (!key || seen.has(key)) return false;
+        seen.add(key);
+        return true;
+      });
+      const preferred = addUnique(categories.filter((category) => configured.some((needle) => String(category).toLowerCase() === needle)));
+      const secondary = addUnique(categories.filter((category) => configured.some((needle) => String(category).toLowerCase().includes(needle) || needle.includes(String(category).toLowerCase()))));
+      const rest = addUnique(categories);
+      return [...preferred, ...secondary, ...rest];
+    };
+    const renderClassBadges = (paper = {}) => {
+      const source = paper.source || "arxiv";
+      const categories = prioritizedCategories(paper);
       const visible = categories.slice(0, 3).map((category) => `<span class="class-badge">${escapeHtml(category)}</span>`).join("");
       const more = categories.length > 3 ? `<span class="class-badge">+${categories.length - 3}</span>` : "";
       return `<div class="paper-badges"><span class="source-badge ${source}">${sourceLabel(source)}</span><span class="class-badge" data-lang="zh">${classificationLabelZh(source)}</span><span class="class-badge" data-lang="en">${classificationLabel(source)}</span>${visible}${more}</div>`;

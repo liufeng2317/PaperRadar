@@ -115,6 +115,8 @@ def update_analysis_status(entry: dict[str, Any], analysis: dict[str, Any]) -> N
         "model": analysis.get("model", ""),
         "topic": analysis.get("topic"),
         "audience_level": analysis.get("audience_level", ""),
+        "analysis_quality": analysis.get("analysis_quality", ""),
+        "analysis_warnings": analysis.get("analysis_warnings", []),
         "keywords_en": analysis.get("keywords_en", []),
         "keywords_zh": analysis.get("keywords_zh", []),
         "updated_at": _now(),

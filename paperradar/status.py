@@ -33,6 +33,15 @@ def build_failure_report(digest: dict[str, Any]) -> dict[str, Any]:
                     "error": str(analysis.get("llm_error") or "LLM was not used; fallback summary generated"),
                 }
             )
+        quality_warnings = analysis.get("analysis_warnings") or []
+        if quality_warnings:
+            failures.append(
+                {
+                    **base,
+                    "stage": "analysis_quality",
+                    "error": ", ".join(str(item) for item in quality_warnings),
+                }
+            )
     by_stage = Counter(item["stage"] for item in failures)
     by_source = Counter(item["source"] for item in failures)
     return {
