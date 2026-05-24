@@ -169,8 +169,12 @@ def _read_arxiv_url(url: str, polite_delay_seconds: float, retries: int, disable
                 ) from exc
             raise RuntimeError(f"arXiv API returned HTTP {exc.code}.") from exc
         except (TimeoutError, socket.timeout, URLError) as exc:
+            if attempt < retries:
+                continue
             raise RuntimeError(
-                "Could not reach the arXiv API. Check network/proxy settings and try again."
+                "Could not reach the arXiv API after retries. "
+                "Check network/proxy settings and try again. "
+                f"Last error: {exc}"
             ) from exc
 
     raise RuntimeError("Could not read from the arXiv API.")
