@@ -36,7 +36,11 @@
     .wrap { width: min(1180px, calc(100% - 32px)); margin: 0 auto; }
     .hero { padding: 34px 0 24px; display: grid; gap: 18px; }
     .topbar { display: flex; justify-content: space-between; gap: 16px; align-items: start; }
+    .brand-lockup { display: grid; gap: 10px; min-width: 0; }
     h1 { margin: 0; font-size: clamp(2.2rem, 5vw, 4.7rem); line-height: .96; letter-spacing: 0; }
+    .source-mark { width: fit-content; display: inline-flex; align-items: center; gap: 8px; border: 1px solid color-mix(in srgb, var(--arxiv) 28%, var(--line)); border-radius: 999px; padding: 6px 10px; color: var(--arxiv); background: var(--arxiv-soft); font-size: .82rem; font-weight: 850; }
+    .source-mark::before { content: ""; width: 8px; height: 8px; border-radius: 999px; background: currentColor; }
+    html[data-source="eartharxiv"] .source-mark { border-color: color-mix(in srgb, var(--earth) 32%, var(--line)); color: var(--earth); background: var(--earth-soft); }
     .hero-copy { display: grid; gap: 9px; }
     .kicker { margin: 0; color: var(--accent); font-size: .82rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
     .lede { max-width: 920px; margin: 0; color: var(--ink); font-size: clamp(1.08rem, 2.1vw, 1.42rem); line-height: 1.38; font-weight: 650; }
@@ -119,8 +123,11 @@
     .panel-title span { color: var(--muted); font-size: .88rem; }
     .empty-source, .load-error { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 20px; color: var(--muted); }
     .load-error { color: var(--danger); border-color: color-mix(in srgb, var(--danger) 30%, var(--line)); }
-    .source-badge { display: inline-flex; align-items: center; border-radius: 999px; padding: 2px 8px; border: 1px solid color-mix(in srgb, var(--arxiv) 34%, var(--line)); color: var(--arxiv); background: var(--arxiv-soft); font-size: .75rem; font-weight: 800; }
+    .paper-badges { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 8px; }
+    .source-badge, .class-badge { display: inline-flex; align-items: center; border-radius: 999px; padding: 2px 8px; font-size: .75rem; font-weight: 800; line-height: 1.55; }
+    .source-badge { border: 1px solid color-mix(in srgb, var(--arxiv) 34%, var(--line)); color: var(--arxiv); background: var(--arxiv-soft); }
     .source-badge.eartharxiv { border-color: color-mix(in srgb, var(--earth) 36%, var(--line)); color: var(--earth); background: var(--earth-soft); }
+    .class-badge { border: 1px solid var(--soft-line); color: var(--muted); background: var(--panel-soft); font-weight: 700; }
     .paper { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 16px; margin-bottom: 12px; box-shadow: 0 1px 2px rgb(20 32 51 / .04); }
     .paper:hover { border-color: color-mix(in srgb, var(--accent) 28%, var(--line)); }
     .paper-head { display: flex; justify-content: space-between; gap: 14px; align-items: start; }
@@ -134,9 +141,11 @@
     .one-line strong { font-weight: 650; }
     details { margin-top: 12px; border-top: 1px solid var(--soft-line); padding-top: 11px; }
     summary { width: fit-content; color: var(--accent); cursor: pointer; font-weight: 700; font-size: .9rem; }
-    .summary { display: grid; gap: 8px; margin: 12px 0; }
+    .detail-section { margin-top: 12px; }
+    .detail-section-title { margin: 0 0 7px; color: var(--muted); font-size: .76rem; font-weight: 850; letter-spacing: .04em; text-transform: uppercase; }
+    .summary { display: grid; gap: 8px; margin: 0; }
     .summary ul { margin: 0; padding-left: 1.1rem; }
-    .detail-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 12px; }
+    .detail-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 0; }
     .detail-item { background: var(--panel-soft); border: 1px solid var(--soft-line); border-radius: 8px; padding: 10px; font-size: .9rem; }
     .detail-item strong { display: block; margin-bottom: 3px; color: var(--ink); }
     .paper.is-hidden { display: none; }
@@ -164,14 +173,44 @@
     footer .credit-line { margin: 0; }
     footer .license-note { margin: 0; font-size: .86rem; line-height: 1.55; max-width: 880px; }
     @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } .side { position: static; } .dash { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-    @media (max-width: 620px) { .topbar { display: grid; } .lang-toggle { justify-self: start; } .toolbar { grid-template-columns: 1fr; } .source-tabs { grid-template-columns: 1fr; } .paper-head { display: grid; } .paper-actions { justify-content: start; } .detail-grid { grid-template-columns: 1fr; } .pagination { align-items: stretch; flex-direction: column; } }
+    @media (max-width: 620px) {
+      .wrap { width: min(100% - 22px, 1180px); }
+      .hero { padding: 24px 0 18px; gap: 14px; }
+      .topbar { display: grid; gap: 12px; }
+      .lang-toggle { justify-self: start; }
+      h1 { font-size: clamp(2.05rem, 13vw, 3.2rem); }
+      .lede { font-size: 1.04rem; }
+      .scope { font-size: .86rem; }
+      .dash { gap: 8px; }
+      .metric { padding: 10px; }
+      main { padding-top: 16px; }
+      .toolbar { grid-template-columns: 1fr; }
+      .source-tabs { grid-template-columns: 1fr; gap: 7px; margin-bottom: 12px; }
+      .source-tabs button { padding: 10px 11px; }
+      .panel-title { align-items: start; }
+      .paper { padding: 12px; margin-bottom: 9px; }
+      .paper-head { display: grid; gap: 8px; }
+      .paper h3 { font-size: 1rem; margin-bottom: 7px; }
+      .paper-actions { justify-content: start; flex-wrap: wrap; }
+      .authors { font-size: .82rem; margin-bottom: 7px; }
+      .one-line { font-size: .94rem; margin: 8px 0; }
+      .keywords { gap: 5px; margin-top: 8px; }
+      .keywords button, .keywords span { font-size: .78rem; padding: 2px 7px; }
+      details { margin-top: 10px; padding-top: 9px; }
+      .detail-grid { grid-template-columns: 1fr; }
+      .side { padding: 13px; }
+      .pagination { align-items: stretch; flex-direction: column; }
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="wrap hero">
       <div class="topbar">
-        <h1 id="site-title">PaperRadar</h1>
+        <div class="brand-lockup">
+          <h1 id="site-title">PaperRadar</h1>
+          <span class="source-mark" id="source-mark">Loading source</span>
+        </div>
         <div class="lang-toggle" role="group" aria-label="Language">
           <button type="button" data-set-lang="zh" aria-pressed="true">中文</button>
           <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
@@ -235,6 +274,7 @@
     const compactSentence = (value, maxChars = 260) => { const text = String(value ?? "").replace(/\s+/g, " ").trim(); return text.length <= maxChars ? text : `${text.slice(0, maxChars - 1).trim()}...`; };
     const sourceLabel = (source) => source === "eartharxiv" ? "EarthArXiv" : "arXiv";
     const classificationLabel = (source) => source === "eartharxiv" ? "Subjects" : "Categories";
+    const classificationLabelZh = (source) => source === "eartharxiv" ? "Subjects" : "Categories";
     const keywordsForLang = (analysis, lang) => lang === "zh" ? (analysis.keywords_zh || analysis.keywords_en || []) : (analysis.keywords_en || analysis.keywords_zh || []);
 
     const normalizeSearch = (value) => String(value ?? "").toLowerCase().replace(/\s+/g, " ").trim();
@@ -299,10 +339,18 @@
     };
     const renderAnalysisDetails = (analysis = {}) => {
       const rows = [["主要贡献", "Contribution", analysis.contribution_zh, analysis.contribution_en], ["方法", "Method", analysis.method_zh, analysis.method_en], ["数据/区域", "Data/region", analysis.data_or_region_zh, analysis.data_or_region_en], ["相关性", "Relevance", analysis.geophysics_relevance_zh, analysis.geophysics_relevance_en]];
-      return `<div class="detail-grid">${rows.map(([labelZh, labelEn, valueZh, valueEn]) => {
+      const body = rows.map(([labelZh, labelEn, valueZh, valueEn]) => {
         if (!valueZh && !valueEn) return "";
         return `<div class="detail-item"><strong data-lang="zh">${labelZh}</strong><strong data-lang="en">${labelEn}</strong><span data-lang="zh">${escapeHtml(valueZh || valueEn || "")}</span><span data-lang="en">${escapeHtml(valueEn || valueZh || "")}</span></div>`;
-      }).join("")}</div>`;
+      }).join("");
+      return body ? `<div class="detail-section"><p class="detail-section-title" data-lang="zh">研究要点</p><p class="detail-section-title" data-lang="en">Research details</p><div class="detail-grid">${body}</div></div>` : "";
+    };
+    const renderClassBadges = (paper = {}) => {
+      const source = paper.source || "arxiv";
+      const categories = Array.isArray(paper.categories) ? paper.categories.filter(Boolean) : [];
+      const visible = categories.slice(0, 3).map((category) => `<span class="class-badge">${escapeHtml(category)}</span>`).join("");
+      const more = categories.length > 3 ? `<span class="class-badge">+${categories.length - 3}</span>` : "";
+      return `<div class="paper-badges"><span class="source-badge ${source}">${sourceLabel(source)}</span><span class="class-badge" data-lang="zh">${classificationLabelZh(source)}</span><span class="class-badge" data-lang="en">${classificationLabel(source)}</span>${visible}${more}</div>`;
     };
     const renderActions = (paper = {}) => {
       const links = [];
@@ -318,26 +366,29 @@
       const authors = Array.isArray(paper.authors) ? paper.authors : [];
       let authorText = authors.slice(0, 6).join(", ");
       if (authors.length > 6) authorText += " et al.";
-      const categories = Array.isArray(paper.categories) ? paper.categories.join(", ") : "";
       const actions = renderActions(paper);
       return `
         <article class="paper" data-page-item data-index="${index + 1}">
           <div class="paper-head">
             <div>
+              ${renderClassBadges(paper)}
               <h3><a href="${escapeHtml(paper.abs_url || paper.pdf_url || "#")}">${escapeHtml(paper.title || "Untitled")}</a></h3>
-              <p class="authors"><span class="source-badge ${source}">${sourceLabel(source)}</span> ${escapeHtml(String(paper.published || "").slice(0, 10))} · ${classificationLabel(source)}: ${escapeHtml(categories)}</p>
+              <p class="authors">${escapeHtml(String(paper.published || "").slice(0, 10))} · ${escapeHtml(authorText)}</p>
             </div>
             <div class="paper-actions">${actions}</div>
           </div>
-          <p class="authors">${escapeHtml(authorText)}</p>
           <p class="one-line" data-lang="zh"><strong>${escapeHtml(compactSentence(analysis.one_sentence_zh || analysis.one_sentence_en || ""))}</strong></p>
           <p class="one-line" data-lang="en"><strong>${escapeHtml(compactSentence(analysis.one_sentence_en || analysis.one_sentence_zh || ""))}</strong></p>
           <div class="keywords" data-lang="zh">${renderKeywords(keywordsForLang(analysis, "zh"))}</div>
           <div class="keywords" data-lang="en">${renderKeywords(keywordsForLang(analysis, "en"))}</div>
           <details>
             <summary><span data-lang="zh">展开详细总结</span><span data-lang="en">Show details</span></summary>
-            <div class="summary" data-lang="zh">${renderSummaryBlock(analysis.summary_zh || analysis.summary_en)}</div>
-            <div class="summary" data-lang="en">${renderSummaryBlock(analysis.summary_en || analysis.summary_zh)}</div>
+            <div class="detail-section">
+              <p class="detail-section-title" data-lang="zh">摘要要点</p>
+              <p class="detail-section-title" data-lang="en">Summary</p>
+              <div class="summary" data-lang="zh">${renderSummaryBlock(analysis.summary_zh || analysis.summary_en)}</div>
+              <div class="summary" data-lang="en">${renderSummaryBlock(analysis.summary_en || analysis.summary_zh)}</div>
+            </div>
             ${renderAnalysisDetails(analysis)}
           </details>
         </article>`;
@@ -397,6 +448,9 @@
       const count = (digest.papers || []).length;
       const topicCount = digest.trending_keywords?.length || 0;
       const label = sourceLabel(source);
+      document.documentElement.dataset.source = source;
+      const mark = document.getElementById("source-mark");
+      if (mark) mark.textContent = source === "eartharxiv" ? "PaperRadar-EarthArXiv" : "PaperRadar-Arxiv";
       document.getElementById("source-kicker-zh").textContent = source === "eartharxiv" ? "EarthArXiv 预印本动态" : "arXiv 预印本动态";
       document.getElementById("source-kicker-en").textContent = `${label} preprint signal`;
       document.getElementById("description-zh").textContent = source === "eartharxiv"
