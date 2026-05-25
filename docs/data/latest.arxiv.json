@@ -1,6 +1,6 @@
 {
   "date": "2026-05-25",
-  "generated_at": "2026-05-24T19:23:08.514349+00:00",
+  "generated_at": "2026-05-25T03:35:54.044674+00:00",
   "config": {
     "site_title": "PaperRadar",
     "site_description": {
@@ -78,6 +78,513 @@
   "papers": [
     {
       "paper": {
+        "arxiv_id": "2605.23494v1",
+        "title": "Integrating b-Value and Background Seismicity Rate for Spatial Earthquake Forecasting in the Alborz Region, Northern Iran",
+        "authors": [
+          "Muhammed Hossein Mousavi",
+          "Hamzeh Mohammadigheymasi",
+          "Parva Sadeghi Alavijeh",
+          "Marjan Tourani"
+        ],
+        "abstract": "In this study, we evaluate the spatial forecasting skill of the $b$-value and background seismicity rate $μ$ across the Alborz region using a homogenized catalog of 23,961 earthquakes ($M \\geq 1.5$) recorded by the Iranian Seismological Center between 2006 and 2024. Forecast performance for $M \\geq 4.0$ and $M \\geq 4.5$ is assessed using Molchan error diagrams, probability gain, probability difference, and the modified area skill score. The results show that $μ$ provides a consistently strong spatial signal, with Molchan curves well below the random baseline and probability gains of 5--6 at low alarm rates, reflecting the persistent clustering of seismicity along major Alborz faults. The $b$-value exhibits limited skill at lower magnitudes but improves steadily with increasing magnitude; its skill score becomes positive above $M \\approx 5.3$, indicating that $b$-value anomalies begin to capture meaningful stress concentrations only for larger events. Spatial patterns reveal low $b$ zones along active reverse and strike-slip structures and high $μ$ zones following long-term seismicity clusters, underscoring their complementary physical roles. Retrospective testing confirms this complementarity: the combined $b$--$μ$ forecast achieves detection rates of 0.81--0.83 at spatial alarm rates of 0.43 and 0.36 for $M \\geq 4.0$ and $M \\geq 4.5$, respectively, representing the most efficient forecast configuration among all tested models. These findings demonstrate that integrating stress-state and tectonic-loading indicators yields a more efficient and physically grounded framework for operational earthquake forecasting in the Alborz region.",
+        "published": "2026-05-22T11:00:15Z",
+        "updated": "2026-05-22T11:00:15Z",
+        "categories": [
+          "physics.geo-ph"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2605.23494v1",
+        "abs_url": "http://arxiv.org/abs/2605.23494v1",
+        "source": "arxiv",
+        "source_id": "",
+        "doi": "",
+        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260522/2605.23494v1.pdf",
+        "pdf_download_error": null,
+        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260522/2605.23494v1.md",
+        "markdown_parse_error": null
+      },
+      "analysis": {
+        "schema_version": "paperradar.analysis.v3",
+        "input_version": "markdown-clean-v1",
+        "one_sentence_en": "Using a homogenized Iranian earthquake catalog, the study finds that background seismicity rate μ consistently forecasts where moderate-to-large earthquakes will cluster in the Alborz, while b-value adds useful skill only for larger magnitudes, and their combination is most efficient.",
+        "one_sentence_zh": "基于伊朗阿尔博兹地区同一化地震目录，该研究发现背景地震率μ能稳定刻画中到大地震的空间聚集，而b值仅在更大震级才提供有效增益，二者联合预测最有效。",
+        "summary_en": [
+          "problem: Improve operational intermediate- to long-term spatial earthquake forecasting in the tectonically complex Alborz region using physically interpretable indicators.",
+          "approach: Estimate spatial b-value and ETAS-derived background seismicity rate μ from a declustered, homogenized earthquake catalog, then evaluate individual and joint alarm maps with Molchan error diagrams, probability gain/difference, and area skill scores.",
+          "key result: μ alone shows consistently strong spatial forecasting skill for M≥4.0 and M≥4.5, b-value becomes positively skillful above about M≈5.3, and the combined b–μ forecast achieves detection rates around 0.81–0.83 at low spatial alarm rates (0.43 and 0.36)."
+        ],
+        "summary_zh": [
+          "problem: 在构造复杂的阿尔博兹地区提升具物理可解释性的中长期空间地震预测能力。",
+          "approach: 从同一化并去簇后的地震目录估算空间b值与ETAS背景地震率μ，基于Molchan误差图以及概率增益/差与修正面积技能评分评估单独与联合预警图的效果。",
+          "key result: 对M≥4.0与M≥4.5，背景地震率μ具持续的强空间预测能力；b值在约M≈5.3以上才出现正技能，而b–μ联合预报在空间报警率0.43与0.36时的探测率约为0.81–0.83。"
+        ],
+        "contribution_en": "Provides a spatial forecasting framework for the Alborz region that integrates stress-structure sensitivity (b-value) and tectonic-loading persistence (background seismicity rate μ), showing measurable synergy and identifying magnitude-dependent usefulness of each indicator.",
+        "contribution_zh": "提出面向阿尔博兹地区的空间预测框架，将应力-结构敏感性（b值）与构造加载持续性（背景地震率μ）进行整合，展示二者的互补协同，并揭示各指标的震级依赖有效性。",
+        "method_en": "Homogenize local magnitudes to moment magnitude, estimate spatial b-value with a hierarchical space–time point-process spline (HIST-PPM) approach using maximum-likelihood b estimation with magnitude completeness handling, estimate spatial μ via ETAS declustering followed by variable-bandwidth Gaussian kernel reconstruction, then convert b and μ maps into alarm cells and score them using Molchan error diagrams, probability gain/difference, and modified area skill score; joint alarms require both low-b and high-μ criteria.",
+        "method_zh": "将地方震级统一转换为矩震级；用HIST-PPM样条框架估算并空间化b值（结合最大似然估计与完备度处理），用ETAS去簇得到背景过程并以变带宽高斯核重建空间μ；随后将b与μ栅格转化为预警区域，并用Molchan误差图、概率增益/差与修正面积技能评分进行评估；联合预警同时满足低b与高μ条件。",
+        "data_or_region_en": "Alborz Fold-Thrust Belt, northern Iran; homogenized IRSC earthquake catalog of 23,961 events with M≥1.5 from 2006 to 2024.",
+        "data_or_region_zh": "伊朗北部阿尔博兹褶冲带；IRSC同一化地震目录，共23,961次事件（M≥1.5），时间范围为2006年至2024年。",
+        "geophysics_relevance_en": "Relevant to physics-based earthquake forecasting because it tests complementary stress- and loading-related observables (b-value and declustered background rate) and quantifies how their synergy improves spatial alarm efficiency.",
+        "geophysics_relevance_zh": "与物理驱动地震预测密切相关：该研究检验了与应力状态和构造加载相关的互补观测量（b值与去簇背景地震率），并量化了二者协同如何提升空间预警效率。",
+        "keywords_en": [
+          "earthquake forecasting",
+          "b-value",
+          "background seismicity rate",
+          "ETAS declustering",
+          "Alborz faults"
+        ],
+        "keywords_zh": [
+          "地震预测",
+          "b值",
+          "背景地震率",
+          "ETAS去簇",
+          "阿尔博兹断层"
+        ],
+        "topic": "Spatial earthquake forecasting",
+        "audience_level": "specialist",
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "analysis_quality": "ok",
+        "analysis_warnings": []
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2605.23394v1",
+        "title": "Spatial dealiasing of classical geomagnetic survey data through use of a microfabricated wearable quantum magnetometer",
+        "authors": [
+          "Stirling Scholes",
+          "Alissa Forsythe",
+          "Courtney Dyer",
+          "Amy Gilligan",
+          "Karen Lythgoe",
+          "Jenny Jenkins",
+          "Marcin Mrozowski",
+          "Jack-Andrew Smith",
+          "Stuart Ingleby"
+        ],
+        "abstract": "Geomagnetic surveys provide insight into the subsurface for a range of applications, from fundamental understanding of geological processes, to mineral exploration and locating unexploded ordnance. A persistent challenge in performing such geomagnetic surveys is the joint problem of anthropogenic noise rejection and spatial aliasing, where the limited bandwidth (< 10 Hz) of traditional surveying instruments introduces artefacts into the surveyed field. Optically Pumped Magnetometers (OPMs) exploit quantum mechanical effects to achieve highly sensitive and stable magnetic field measurements at comparatively high bandwidths. Recent advances in manufacturing have enabled OPMs to be packaged in compact and lightweight systems (approx. 1kg), that are ideal for geomagnetic surveying. Here, we show how an OPM can directly contribute to the reduction of spatial aliasing in traditional PPM data. We carry both a PPM and OPM over a 20 km long transect across the Highland Boundary Fault (HBF) in Scotland. We leverage the continuous acquisition of the OPM sampling at 90 Hz, equivalent to every approx. 1 cm at walking pace (1 m/s) versus every approx. 200 m for our PPM (which had to be stationary for measurements) to reject magnetic noise and identify new small-scale (< 200 m) geological structures. Further, we discuss the logistical advantages of the hybrid survey in terms of portability, survey delivery, data density, and data quality.",
+        "published": "2026-05-22T09:03:07Z",
+        "updated": "2026-05-22T09:03:07Z",
+        "categories": [
+          "physics.atom-ph"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2605.23394v1",
+        "abs_url": "http://arxiv.org/abs/2605.23394v1",
+        "source": "arxiv",
+        "source_id": "",
+        "doi": "",
+        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260522/2605.23394v1.pdf",
+        "pdf_download_error": null,
+        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260522/2605.23394v1.md",
+        "markdown_parse_error": null
+      },
+      "analysis": {
+        "schema_version": "paperradar.analysis.v3",
+        "input_version": "markdown-clean-v1",
+        "one_sentence_en": "A hybrid geomagnetic survey pairing a continuously sampled wearable optical magnetometer with a stationary proton-precession magnetometer reduces spatial aliasing and helps distinguish anthropogenic noise, revealing new small-scale structures across Scotland’s Highland Boundary Fault.",
+        "one_sentence_zh": "该研究将可穿戴光泵磁强计与普顿进动磁强计结合用于地磁测量，通过连续高采样率降低空间混叠并识别人为噪声，在苏格兰高地边界断层沿线发现更小尺度地质结构。",
+        "summary_en": [
+          "problem: Classical geomagnetic surveys face coupled anthropogenic noise contamination and spatial aliasing from limited bandwidth/measurement cadence.",
+          "approach: Perform a 20 km transect survey with both a continuously sampling 90 Hz optical pumped magnetometer and a conventional proton precession magnetometer, then use local OPM variability in moving windows to flag PPM outliers and guide forward modeling of small-scale anomalies.",
+          "key result: The hybrid sensor workflow rejects anthropogenic-clutter-degraded PPM points and enables resolution and forward modeling of geological anomalies smaller than about 200 m, which would be obscured or misinterpreted with PPM sampling alone."
+        ],
+        "summary_zh": [
+          "problem: 经典地磁测量同时受到人为磁扰的影响，并因传统仪器带宽/采样率有限而产生空间混叠伪影。",
+          "approach: 在苏格兰高地边界断层附近沿约20 km测线同步采集高频连续的90 Hz光泵磁强计数据与便携式普顿进动磁强计数据，并利用光泵在以20 m为中心的局部窗口内的标准差来识别并剔除受噪声污染的普顿进动测点，进而对小尺度异常做前向建模。",
+          "key result: 该混合测量流程能更可靠地剔除人为噪声导致的异常测点，并支持对约200 m以下尺度的地质异常进行建模与解释，这是仅靠普顿进动采样难以实现的。"
+        ],
+        "contribution_en": "Demonstrates a practical hybrid geomagnetic surveying strategy that uses a wearable microfabricated optical magnetometer’s continuous high-rate sampling to de-alias classical proton-precession survey data and to robustly separate anthropogenic noise from small-scale geological signals for subsequent forward modeling.",
+        "contribution_zh": "提出并验证一种实用的混合地磁测量策略：利用可穿戴微机电器件光泵磁强计的连续高采样率，对经典普顿进动测量数据进行空间去混叠，并通过局部噪声度量可靠地区分人为噪声与小尺度地质信号，从而支持后续前向建模解释。",
+        "method_en": "Two-sensor transect survey: a wearable microfabricated double-resonance optically pumped magnetometer sampled continuously at 90 Hz while a consumer off-the-shelf proton precession magnetometer provided absolute total-field measurements at discrete locations (stationary sampling). OPM data were windowed (20 m around each PPM point) to compute local standard deviation for outlier/noise flagging; then selected small-scale anomalies were forward-modeled using geometrical susceptibilities with non-unique solution sets.",
+        "method_zh": "双传感器测线：可穿戴微机电双共振光泵磁强计以90 Hz连续采样，而消费级/商用普顿进动磁强计在离散位置进行驻点测量以获得绝对总场强。随后以每个PPM点为中心取20 m局部窗口，计算OPM的局部标准差来标记异常/受噪点污染的PPM测点，并对选定的小尺度异常进行几何体磁化率约束下的前向建模（给出不唯一解集）。",
+        "data_or_region_en": "A ~20 km NW–SE ground transect across the Highland Boundary Fault near Blairgowrie, Scotland, using both OPM and PPM in overlapping segments; historical BGS aeromagnetic data were used for qualitative comparison.",
+        "data_or_region_zh": "在苏格兰布莱尔高里附近跨越高地边界断层的约20 km NW–SE地面测线，OPM与PPM在重叠路段同步采集；并用英国地质调查局BGS的历史航磁数据进行定性对比（用于叠加参考）。",
+        "geophysics_relevance_en": "Directly relevant to geomagnetic target detection because it addresses the practical aliasing/noise bottleneck in land surveys and improves resolvable small-scale anomaly mapping; it is not about seismicity/earthquake physics.",
+        "geophysics_relevance_zh": "与地磁目标探测高度相关，因为它针对陆地地磁测量中的关键瓶颈（空间混叠与人为噪声）进行工程化解决，提升小尺度异常的可分辨与解释能力；但不涉及地震或地震学物理。",
+        "keywords_en": [
+          "geomagnetic survey",
+          "spatial aliasing",
+          "optically pumped magnetometer",
+          "proton precession magnetometer",
+          "Highland Boundary Fault"
+        ],
+        "keywords_zh": [
+          "地磁测量",
+          "空间混叠",
+          "光泵磁强计",
+          "普顿进动磁强计",
+          "高地边界断层"
+        ],
+        "topic": "Geomagnetic de-aliasing",
+        "audience_level": "specialist",
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "analysis_quality": "ok",
+        "analysis_warnings": []
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2605.23289v1",
+        "title": "Local well-posedness for a moving rigid region in Surface Quasi-Geostrophic equations",
+        "authors": [
+          "Ludovic Godard-Cadillac",
+          "Arnab Roy"
+        ],
+        "abstract": "We introduce and analyze a class of Surface Quasi-Geostrophic (SQG) equations in the presence of moving rigid obstacles. The model is motivated both by vortex-wave type asymptotics for singular structures in active scalar equations and by geophysical phenomena exhibiting rigid-like coherent regions, such as cyclone eyes or long-lived atmospheric dust clouds. We consider the critical SQG equation in a time-dependent exterior domain generated by a prescribed rigid motion and reconstruct the velocity through a nonlocal elliptic formulation adapted to impermeability constraints. The active scalar is assumed to remain constant inside the rigid region and in a neighborhood of its boundary, yielding a plateau structure compatible with the transport dynamics. For a single moving obstacle, we establish local well-posedness of classical solutions in Sobolev spaces $H^k$, $k\\geq 4$ together with uniqueness, local stability, and a blow-up criterion. The analysis relies on a reformulation in adapted coordinates reducing the problem to a fixed domain, combined with integral representations for the fractional elliptic operator, regularization procedures, and a nonlinear fixed-point argument. A central difficulty comes from the critical singularity of the SQG Biot-Savart kernel in the case $s=\\frac{1}{2}$, for which the velocity reconstruction near the moving boundary requires commutator estimates. We further prove propagation of the plateau property and derive a priori estimates controlling both the support of the scalar gradient and the Sobolev norm of the solution. This work provides, to our knowledge, the first well-posedness theory for SQG equations with moving rigid obstacles and constitutes a first step toward the rigorous derivation of point-vortex type dynamics from shrinking rigid bodies in SQG flows.",
+        "published": "2026-05-22T07:01:48Z",
+        "updated": "2026-05-22T07:01:48Z",
+        "categories": [
+          "math.AP"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2605.23289v1",
+        "abs_url": "http://arxiv.org/abs/2605.23289v1",
+        "source": "arxiv",
+        "source_id": "",
+        "doi": "",
+        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260522/2605.23289v1.pdf",
+        "pdf_download_error": null,
+        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260522/2605.23289v1.md",
+        "markdown_parse_error": null
+      },
+      "analysis": {
+        "schema_version": "paperradar.analysis.v3",
+        "input_version": "markdown-clean-v1",
+        "one_sentence_en": "This paper proves local well-posedness for the critical Surface Quasi-Geostrophic (SQG) equation on a time-dependent exterior domain with a prescribed moving rigid obstacle, assuming a plateau (constant) active-scalar near the obstacle boundary.",
+        "one_sentence_zh": "本文在假设刚体附近活跃标量满足“平台结构”(常值)的前提下，证明了临界SQG方程在随时间变化的外部域、带已知运动刚体障碍时的局部良定性。",
+        "summary_en": [
+          "problem: Establish a rigorous SQG well-posedness theory when the domain boundary is a moving rigid obstacle, despite the critical singular Biot–Savart velocity law.",
+          "approach: Reformulate SQG in adapted coordinates to fix the domain, reconstruct velocity using a nonlocal fractional elliptic representation enforcing impermeability, and use regularization plus a fixed-point/iteration scheme under a plateau assumption.",
+          "key result: For a single moving obstacle and plateau initial data in Sobolev spaces H^k (k≥4), prove uniqueness, local stability, and a blow-up criterion stating breakdown can only occur via divergence of the Sobolev norm."
+        ],
+        "summary_zh": [
+          "problem: 当自由边界由运动刚体障碍给出且速度核具有临界奇性时，需要建立SQG方程的严格良定性理论。",
+          "approach: 通过适应性坐标把问题转到固定域，利用满足不可穿透约束的分数阶椭圆非局部表示重建速度，并在“平台结构”假设下结合算子正则化与迭代-不动点论证。",
+          "key result: 对单个运动刚体且满足平台初值条件的情形（H^k, k≥4），给出解的存在唯一、局部稳定性以及用Sobolev范数发散刻画的爆破准则。"
+        ],
+        "contribution_en": "The main contribution is the first well-posedness framework for the critical SQG equation posed in a time-dependent exterior domain with moving rigid obstacles, including uniqueness, local stability, plateau propagation, and a Sobolev-norm blow-up criterion.",
+        "contribution_zh": "本文的主要贡献是：首次给出临界SQG方程在具有运动刚体障碍的时间相关外部域中适用的良定性理论框架，并包含唯一性、局部稳定性、平台结构的传播以及由Sobolev范数控制的爆破准则。",
+        "method_en": "Prescribed rigid motion defines a time-dependent exterior domain; assuming the active scalar is constant inside the rigid region and in a neighborhood of its boundary (plateau), the authors reconstruct the divergence-free velocity via a fractional elliptic/nonlocal stream-function formulation enforcing impermeability, reformulate in adapted coordinates to work on a fixed domain, and prove existence/uniqueness/stability using regularized singular integral representations, iterative schemes, fixed-point arguments, and Sobolev energy estimates.",
+        "method_zh": "刚体的运动被预先给定，从而产生随时间变化的外部流体域；在假设活跃标量于刚体内部及其边界邻域保持常值（平台结构）后，作者通过满足不可穿透约束的分数阶椭圆/非局部流函数表示重建满足散度约束的速度场；再用适应性坐标把问题转到固定域，并结合对奇异积分的正则化、迭代方案-不动点论证以及Sobolev能量估计证明存在性、唯一性与稳定性。",
+        "data_or_region_en": "Not specified (mathematical PDE analysis; obstacle motion and domain geometry are prescribed, with no observational dataset or physical grid).",
+        "data_or_region_zh": "未说明（纯数学PDE分析；刚体运动与几何由预设给出，无观测数据集或数值网格）。",
+        "geophysics_relevance_en": "SQG is a proxy for geophysical active-scalar dynamics; this work clarifies mathematically how coherent “rigid-like” regions could be handled in SQG flows, a step toward rigorous derivations of point-vortex-type dynamics from shrinking rigid bodies.",
+        "geophysics_relevance_zh": "SQG可视为地球物理主动标量动力学的理论模型；本文从数学上处理了“类刚体”相干区域在SQG流中的可解性问题，有助于朝着从收缩刚体严格推导点涡/涡动力学的方向迈进。",
+        "keywords_en": [
+          "Surface Quasi-Geostrophic",
+          "moving obstacle",
+          "fractional Biot-Savart",
+          "impermeability",
+          "plateau property"
+        ],
+        "keywords_zh": [
+          "SQG方程",
+          "运动障碍",
+          "分数阶Biot-Savart",
+          "不可穿透",
+          "平台结构"
+        ],
+        "topic": "SQG moving obstacle",
+        "audience_level": "specialist",
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "analysis_quality": "ok",
+        "analysis_warnings": []
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2605.23277v1",
+        "title": "Differentiating Eulerian and Lagrangian Tendencies in the Ocean Interior via a Dynamical Overturning Decomposition",
+        "authors": [
+          "Lei Han"
+        ],
+        "abstract": "Repeat observations provide essential constraints on long-term changes in the ocean interior, such as warming and cooling trends. However, attributing these Eulerian signals to either reversible isopycnal heaving or irreversible diabatic transformations remains a fundamental challenge. This ambiguity arises not only from limited velocity observations, but also from the lack of a diagnostic framework capable of explicitly disentangling Lagrangian transformation from Eulerian variability. Recognizing that Eulerian and Lagrangian tendencies can be represented through distinct perspectives of the overturning circulations, we apply a dynamical overturning decomposition to state-of-the-art reanalysis products in the Atlantic, Indo-Pacific, and South China Sea to investigate their long-term behavior. The utility of this framework is supported by strong correlations between independently derived kinematic and thermodynamic indices, indicating a tight coupling between advective and isopycnal-heaving transports. Our analysis reveals distinct dynamical regimes in which similar Eulerian tendencies arise from fundamentally different Lagrangian processes. In particular, we identify (i) previously undiagnosed diapycnal downwelling, despite its prediction by bottom-intensified turbulent dissipation, (ii) coexistence of apparent Eulerian upwelling and diapycnal downwelling, (iii) an Atlantic sub-overturning cell linked to intermediate water-mass formation, and (iv) cases where Eulerian densification masks Lagrangian lightening. These results demonstrate that Eulerian trends alone can be misleading indicators of reversible and irreversible behaviors. By explicitly separating adiabatic heaving from diabatic processes, this framework offers a physically consistent diagnostic for interpreting interior ocean changes and establishes a dynamical basis for assessing the reversibility of such changes.",
+        "published": "2026-05-22T06:31:53Z",
+        "updated": "2026-05-22T06:31:53Z",
+        "categories": [
+          "physics.geo-ph"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2605.23277v1",
+        "abs_url": "http://arxiv.org/abs/2605.23277v1",
+        "source": "arxiv",
+        "source_id": "",
+        "doi": "",
+        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260522/2605.23277v1.pdf",
+        "pdf_download_error": null,
+        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260522/2605.23277v1.md",
+        "markdown_parse_error": null
+      },
+      "analysis": {
+        "schema_version": "paperradar.analysis.v3",
+        "input_version": "markdown-clean-v1",
+        "one_sentence_en": "The paper builds a dynamical overturning decomposition that separates adiabatic isopycnal heaving from diabatic cross-isopycnal transformation to diagnose how similar Eulerian temperature/density trends can reflect different Lagrangian processes in ocean reanalyses.",
+        "one_sentence_zh": "本文提出动力学翻转分解，将等密面平流的可逆起伏与跨等密面绝热/非绝热转化分离，从而揭示相似的欧拉位势密度趋势可能对应不同的拉格朗日过程。",
+        "summary_en": [
+          "problem: Eulerian interior ocean trends (e.g., warming/cooling or densification/lightening) are ambiguous about whether they arise from reversible isopycnal heaving or irreversible diabatic water-mass transformation.",
+          "approach: Apply a dynamical overturning decomposition to reanalysis fields, computing advective (Eulerian), sloshing (isopycnal-displacement), and diapycnal (Eulerian minus sloshing) tendencies.",
+          "key result: Across the Atlantic, Indo-Pacific, and South China Sea, the same Eulerian tendency can arise from distinct Lagrangian mechanisms, including diapycnal downwelling, apparent upwelling coexisting with diapycnal downwelling, and cases where Eulerian densification hides Lagrangian lightening."
+        ],
+        "summary_zh": [
+          "problem: 海洋内部欧拉趋势（如温度/密度的变化）可能既来自可逆的等密面起伏，也可能来自不可逆的非绝热水团转化，但两者难以区分。",
+          "approach: 在重分析数据上使用动力学翻转分解，分别计算平流（欧拉）、摇摆（等密面位移）以及通过欧拉减摇摆得到的跨等密面（非绝热）倾向。",
+          "key result: 在大西洋、印度-太平洋和南海中，相似的欧拉倾向对应不同的拉格朗日机制，包括先前未诊断的跨等密面下沉、欧拉上涌与跨等密面下沉并存，以及欧拉增密掩盖拉格朗日变轻等情形。"
+        ],
+        "contribution_en": "Introduces and validates a physically consistent diagnostic framework that disentangles Eulerian variability from Lagrangian transformation by decomposing overturning into advective, isopycnal-sloshing (adiabatic) and diapycnal (diabatic) components using density-space overturning.",
+        "contribution_zh": "提出并验证了一种物理一致的诊断框架，通过将翻转环流分解为平流（欧拉）、等密面摇摆（绝热）与跨等密面分量（非绝热），用密度坐标对翻转进行分解，从而把欧拉变化与拉格朗日转化清晰区分开来。",
+        "method_en": "Compute advective (Eulerian) and sloshing (from isopycnal depth time evolution) MOC streamfunctions from monthly reanalysis velocity/thermodynamic fields, then define the diapycnal component as their difference to quantify irreversible cross-isopycnal water-mass transformation.",
+        "method_zh": "基于月尺度重分析场计算平流（欧拉）MOC流函数以及由等密面深度随时间演化得到的摇摆（isopycnal-displacement）MOC流函数，并将两者差定义为跨等密面分量以定量不可逆的跨等密面水团转化。",
+        "data_or_region_en": "Atlantic Ocean and Indo-Pacific Ocean using ECCO v4r3 (1992–2015 monthly, ~1° horizontal, 50 levels); South China Sea using GLORYS12v1 (1993–2024 monthly, 1/12° horizontal, 50 levels).",
+        "data_or_region_zh": "大西洋与印度-太平洋：ECCO v4r3（1992–2015年，月尺度，约1°水平分辨率，50层）；南海：GLORYS12v1（1993–2024年，月尺度，1/12°水平分辨率，50层）。",
+        "geophysics_relevance_en": "This matters because tracking long-term ocean heat uptake and storage requires knowing whether observed interior temperature/density changes are truly irreversible (diabatic transformation) or mainly reversible (isopycnal heaving); the framework directly addresses this ambiguity.",
+        "geophysics_relevance_zh": "这对当前追踪主题很重要，因为评估海洋长期吸热与储热需要判断观测到的内部温度/密度变化是不可逆的（非绝热水团转化）还是主要由可逆过程（等密面起伏）造成；该框架正是为解决这种歧义而设计的。",
+        "keywords_en": [
+          "ocean interior",
+          "Eulerian vs Lagrangian",
+          "overturning circulation",
+          "isopycnal heaving",
+          "diapycnal transformation"
+        ],
+        "keywords_zh": [
+          "海洋内部",
+          "欧拉-拉格朗日区分",
+          "翻转环流",
+          "等密面起伏",
+          "跨等密面转化"
+        ],
+        "topic": "Ocean overturning decomposition",
+        "audience_level": "specialist",
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "analysis_quality": "ok",
+        "analysis_warnings": []
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2605.23233v1",
+        "title": "Global uniform regularity and vanishing vertical viscosity limit for the compressible Navier--Stokes equations in the half-space",
+        "authors": [
+          "Jincheng Gao",
+          "Lianyun Peng",
+          "Jiahong Wu",
+          "Zheng-an Yao"
+        ],
+        "abstract": "In geophysical flows such as large-scale ocean dynamics, the vertical viscosity is often much smaller than the horizontal viscosity. This anisotropy makes it natural to ask whether solutions of the full anisotropic compressible Navier--Stokes equations converge, as the vertical viscosity coefficient $\\varepsilon \\to 0$, to solutions of a horizontally dissipative limit system, and whether this limit can be justified globally in time. Prior work has answered this question locally in time or in the incompressible setting. We resolve this problem for the three-dimensional compressible Navier--Stokes equations in the upper half-space with the Navier slip boundary condition. This paper establishes two main results for small perturbations of a constant equilibrium state. First, we prove the existence of a unique global-in-time solution whose conormal Sobolev norm remains uniformly bounded for all $t \\ge 0$ and all $\\varepsilon \\in (0,1)$. Second, we justify the global vanishing vertical viscosity limit. More precisely, we show that the solutions converge to a global solution of the horizontally dissipative compressible Navier--Stokes system. This provides the first rigorous justification of the anisotropic viscosity limit for compressible flows on an infinite time interval.",
+        "published": "2026-05-22T04:49:21Z",
+        "updated": "2026-05-22T04:49:21Z",
+        "categories": [
+          "math.AP"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2605.23233v1",
+        "abs_url": "http://arxiv.org/abs/2605.23233v1",
+        "source": "arxiv",
+        "source_id": "",
+        "doi": "",
+        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260522/2605.23233v1.pdf",
+        "pdf_download_error": null,
+        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260522/2605.23233v1.md",
+        "markdown_parse_error": null
+      },
+      "analysis": {
+        "schema_version": "paperradar.analysis.v3",
+        "input_version": "markdown-clean-v1",
+        "one_sentence_en": "For 3D compressible Navier–Stokes flow in a half-space with Navier slip boundaries, the authors prove global-in-time uniform regularity and that solutions converge as vertical viscosity vanishes to a horizontally dissipative limit system, for small perturbations.",
+        "one_sentence_zh": "作者在半空间的三维可压缩Navier–Stokes方程（Navier滑移边界）中证明垂向黏性趋于零时的全时间一致正则性，并证明小扰动解收敛到仅水平耗散的极限系统。",
+        "summary_en": [
+          "Problem: Whether compressible anisotropic Navier–Stokes solutions converge globally in time to a horizontally dissipative system as vertical viscosity goes to zero.",
+          "Approach: Analyze 3D compressible Navier–Stokes in the upper half-space with Navier slip boundary conditions using conormal Sobolev estimates and a two-tier energy method to obtain uniform bounds and convergence.",
+          "Key result: Prove existence and uniqueness of a global-in-time solution with conormal Sobolev norms uniformly bounded for all time and all vertical viscosity coefficients in (0,1), and justify global vanishing vertical viscosity convergence to the horizontally dissipative limit system for small perturbations."
+        ],
+        "summary_zh": [
+          "问题：当垂向黏性趋于零时，可压缩各向异性Navier–Stokes解能否在全时间范围内收敛到仅水平耗散的极限系统。",
+          "方法：在上半空间并采用Navier滑移边界，利用锥正则（conormal）Sobolev估计与“两层能量方法”获得一致先验估计并证明收敛。",
+          "关键结果：对常数平衡态的小扰动，证明全时间存在唯一解，且其conormal Sobolev范数对所有时间与ε∈(0,1)保持一致有界，并证明其全局收敛到水平耗散的可压缩极限系统。"
+        ],
+        "contribution_en": "The paper provides the first rigorous global-in-time justification of the anisotropic (vanishing vertical viscosity) limit for compressible Navier–Stokes flows in an unbounded half-space with Navier slip boundary conditions, establishing uniform global regularity and convergence to a horizontally dissipative system for small perturbations.",
+        "contribution_zh": "该论文首次在无限时间区间内严格论证可压缩Navier–Stokes的各向异性极限（垂向黏性消失），在具有Navier滑移边界的半空间环境下给出一致的全局正则性与向水平耗散极限系统的收敛性，并适用于常数平衡态的小扰动。",
+        "method_en": "Global well-posedness and convergence are shown via uniform conormal Sobolev energy estimates (including tangential/vertical derivative control) and a two-tier energy method, together with the Navier slip boundary condition in the upper half-space.",
+        "method_zh": "通过在上半空间采用Navier滑移边界，使用以锥正则Sobolev范数为核心的统一能量估计（包含切向/垂向导数控制等），并结合“两层能量方法”来证明全局良定性及垂向黏性消失的收敛。",
+        "data_or_region_en": "Upper half-space (unbounded 3D domain) for the compressible Navier–Stokes equations with Navier slip boundary conditions; small perturbations of a constant equilibrium state.",
+        "data_or_region_zh": "上半空间（无界三维域）上的可压缩Navier–Stokes方程，边界采用Navier滑移条件；研究常数平衡态的小扰动。",
+        "geophysics_relevance_en": "This is mathematically rigorous evidence supporting a common geophysical modeling assumption for ocean-like flows where vertical viscosity is much smaller than horizontal viscosity, but it is not applied to specific observational datasets.",
+        "geophysics_relevance_zh": "这为海洋类地球流体中“垂向黏性远小于水平黏性”的常见建模假设提供了严格的数学支撑，但并未直接面向具体观测数据应用。",
+        "keywords_en": [
+          "compressible Navier–Stokes",
+          "vanishing viscosity limit",
+          "conormal Sobolev",
+          "Navier slip boundary",
+          "anisotropic dissipation"
+        ],
+        "keywords_zh": [
+          "可压缩Navier–Stokes",
+          "黏性消失极限",
+          "锥正则Sobolev",
+          "Navier滑移边界",
+          "各向异性耗散"
+        ],
+        "topic": "Anisotropic viscosity limit",
+        "audience_level": "specialist",
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "analysis_quality": "ok",
+        "analysis_warnings": []
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2605.23166v1",
+        "title": "Free surfaces in turbulence -- A unified framework from water surfaces to elastic solids",
+        "authors": [
+          "Giulio Foggi Rota",
+          "Andrea Mazzino",
+          "Marco Edoardo Rosti"
+        ],
+        "abstract": "What do the ocean surface and a swaying flag have in common? Both are deformable surfaces exhibiting chaotic motion when exposed to turbulent flows. Whether such motion is primarily driven by flow turbulence or by nonlinear dynamics intrinsic to the surface remains debated. Surface waves can interact nonlinearly and transfer energy across scales through the cascade of wave turbulence, a behaviour observed at interfaces between otherwise quiescent fluids and in controlled laboratory experiments. They can as well induce turbulent motions in the neighbouring fluids (wave-induced-turbulence), provided the local Reynolds number is large enough. Realistic environments, however, are more complex and typically involve the simultaneous presence of wave turbulence and wave-induced-turbulence with turbulence-induced-waves, the dynamic relevance of which remains unclear. Here we develop a theoretical framework describing the response of a deformable surface to pressure fluctuations generated by a turbulent flow, and validate it using numerical simulations of the air-water interface in quasi-realistic conditions, complemented by simulations of a deformable rubber layer. Our linear theory, which excludes nonlinear wave-wave interactions, predicts distinct dynamical regimes depending on whether intrinsic surface dynamics emerge or whether the interface is enslaved by flow turbulence. Remarkably, although our fully resolved and nonlinear simulations do not inhibit the onset of wave turbulence, we do not observe it. Instead, we find strong agreement with theoretical predictions in both regimes. We find notable agreement between our predictions and aerial surveys of the ocean surface, highlighting the need for further measurements to distinguish among wave turbulence and turbulence-induced-waves.",
+        "published": "2026-05-22T02:34:28Z",
+        "updated": "2026-05-22T02:34:28Z",
+        "categories": [
+          "physics.flu-dyn",
+          "physics.geo-ph"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2605.23166v1",
+        "abs_url": "http://arxiv.org/abs/2605.23166v1",
+        "source": "arxiv",
+        "source_id": "",
+        "doi": "",
+        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260522/2605.23166v1.pdf",
+        "pdf_download_error": null,
+        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260522/2605.23166v1.md",
+        "markdown_parse_error": null
+      },
+      "analysis": {
+        "schema_version": "paperradar.analysis.v3",
+        "input_version": "markdown-clean-v1",
+        "one_sentence_en": "The authors build and test a unified linear theory for how turbulent pressure fluctuations drive deformable free surfaces, identifying distinct “intrinsic” versus “enslaved” response regimes validated by multiphase simulations and ocean surveys.",
+        "one_sentence_zh": "作者建立并验证了描述湍流压力涨落驱动可变形自由界面的统一线性理论，区分“本征主导”与“被湍流牵制”的响应机制，并用多相仿真及海表测量支持。",
+        "summary_en": [
+          "problem: Determine when chaotic surface motion is governed by intrinsic surface wave turbulence versus by turbulent forcing that enslaves the interface (including wave-induced turbulence).",
+          "approach: Develop a linear forced-damped oscillator framework for each interface Fourier mode, validate it with fully resolved nonlinear air-water simulations and deformable rubber-layer simulations, and compare with aerial ocean-surface surveys.",
+          "key result: The linear theory predicts two dynamical regimes and matches detailed simulations in both, while fully nonlinear simulations do not show the expected wave-turbulence onset even though wave turbulence is not suppressed in principle."
+        ],
+        "summary_zh": [
+          "problem: 判断自由界面的混沌运动何时主要由界面本征波动（波湍流）主导，何时由湍流压力涨落牵制界面（包括波诱导湍流）。",
+          "approach: 为界面每个傅里叶模建立线性受迫-耗散框架，使用全分辨率非线性气-水多相仿真与可变形橡胶层仿真进行验证，并与无人机/空中观测的海表数据对比。",
+          "key result: 理论区分两种动力学响应并能同时解释两类仿真结果；尽管波湍流并未被人为抑制，全非线性仿真中却未观察到其起始。"
+        ],
+        "contribution_en": "A unified, mode-resolved linear framework that classifies turbulent free-surface motion into intrinsic-dynamics and turbulence-enslaved regimes, and demonstrates agreement with high-fidelity nonlinear multiphase simulations and ocean surface observations (with implications for separating wave turbulence from turbulence-induced waves).",
+        "contribution_zh": "提出一种统一、按模态划分的线性理论框架，将自由界面在湍流中的运动分为“本征动力学”和“湍流牵制”两类，并证明其与高保真多相非线性仿真及海表观测相一致，为区分波湍流与湍流诱导波提供了依据。",
+        "method_en": "Linear forced-damped oscillator theory for deformable interfaces driven by fluctuating turbulent pressure jump, validated using fully resolved nonlinear volume-of-fluid air-water simulations (VOF, surface tension as interface body force) and additional deformable hyperelastic rubber-layer simulations under turbulent forcing, with comparisons to aerial ocean-surface surveys.",
+        "method_zh": "将可变形界面在湍流产生的压力跳跃涨落驱动下，按模态建模为受迫-耗散线性振子；通过全分辨率非线性VOF气-水多相仿真（用体积分数表征界面并以界面体力处理表面张力）及可变形超弹性橡胶层在湍流驱动下的补充仿真进行验证，并与空中海表测量对比。",
+        "data_or_region_en": "Numerical studies: air-water interface in quasi-realistic turbulent conditions (bulk Reynolds ~2.1×10^5) and a deformable hyperelastic rubber layer; observational comparison: aerial surveys of the ocean surface. Specific survey location/ dataset not specified in the excerpt.",
+        "data_or_region_zh": "数值研究：在准真实湍流条件下的气-水界面（给出流动雷诺数约2.1×10^5）以及可变形超弹性橡胶层；观测对比：空中海表测量。摘要摘录未说明具体调查海域或数据集。",
+        "geophysics_relevance_en": "This is relevant to geophysical free-surface turbulence and air–sea interaction because it offers a framework to distinguish wave-turbulence versus turbulence-induced waves using spectral signatures, but the work is primarily fluid-mechanics/physics rather than direct geophysical inversion.",
+        "geophysics_relevance_zh": "该工作与地球物理海气相互作用中的自由面湍流相关，因为它提出了用谱特征区分波湍流与湍流诱导波的框架；但整体更偏流体力学基础研究，对地球物理反演的直接性较弱，属于较强物理相关。",
+        "keywords_en": [
+          "free surface",
+          "turbulence",
+          "wave-induced turbulence",
+          "volume-of-fluid",
+          "ocean surface"
+        ],
+        "keywords_zh": [
+          "自由表面",
+          "湍流",
+          "波诱导湍流",
+          "VOF方法",
+          "海表面"
+        ],
+        "topic": "Turbulence free surfaces",
+        "audience_level": "specialist",
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "analysis_quality": "ok",
+        "analysis_warnings": []
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2605.23053v1",
+        "title": "A Comparative Multi-Hazard Risk Assessment of the US High-Voltage Transmission Network",
+        "authors": [
+          "D. Bor",
+          "E. J. Oughton",
+          "R. S. Weigel",
+          "R. Yang",
+          "T. Clower",
+          "A. Newman",
+          "A. R. Valle"
+        ],
+        "abstract": "Modern economies depend critically on high-voltage power transmission networks. Yet this infrastructure is routinely disrupted by natural hazards ranging from earthquakes and floods to tornadoes and geomagnetic storms. Risk assessments have historically addressed hazards in isolation, leaving no common basis for comparing economic impacts across the full hazard portfolio. This study addresses this gap by developing an integrated framework linking hazard characterization, fragility modeling, and macroeconomic impact propagation. The framework is applied consistently across nine primary hazards and one compound freezing rain and wind gust hazard. Using national hazard datasets and a US high-voltage transmission network of over 13,000 line segments and 10,000 substations, we derive failure probabilities, expected damage, affected population, and downstream economic output losses. Among individual hazards, tropical cyclone wind produces the largest expected daily damage at $137 M/day, followed by lightning at $87 M/day, earthquake at $47 M/day, flood at $46 M/day, tornado at $42 M/day, and landslide at $34 M/day. Downstream economic output losses are largest for tornado at $4.93 B/day, followed by flood at $3.59 B/day and earthquake at $3.02 B/day. A 250-year geomagnetic storm produces $2.07 B/day, placing space weather within the range of major terrestrial hazards. The compound freezing rain and wind gust scenario produces the largest stress-test disruption, affecting 237.4 M people and yielding a modeled downstream output loss of $85.16 B/day. These results should be interpreted as first-order bounding estimates, with the compound scenario representing an upper-bound stress test. Overall, the framework establishes a consistent baseline for prioritizing investments in transmission network resilience.",
+        "published": "2026-05-21T21:36:17Z",
+        "updated": "2026-05-21T21:36:17Z",
+        "categories": [
+          "econ.EM"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2605.23053v1",
+        "abs_url": "http://arxiv.org/abs/2605.23053v1",
+        "source": "arxiv",
+        "source_id": "",
+        "doi": "",
+        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260521/2605.23053v1.pdf",
+        "pdf_download_error": null,
+        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260521/2605.23053v1.md",
+        "markdown_parse_error": null
+      },
+      "analysis": {
+        "schema_version": "paperradar.analysis.v3",
+        "input_version": "markdown-clean-v1",
+        "one_sentence_en": "The paper develops a unified hazard-to-economics framework to compare damage and macroeconomic losses from multiple natural hazards plus a compound freezing-rain/wind scenario on the US high-voltage transmission network.",
+        "one_sentence_zh": "该论文提出统一的“灾害—脆弱性—经济影响”框架，用于对美国高压输电网在多种自然灾害及复合冻雨/大风情景下的损失进行可比评估。",
+        "summary_en": [
+          "problem: Cross-hazard comparison of how different hazards disrupt and economically impact the US high-voltage transmission network is inconsistent across prior studies.",
+          "approach: Couple consistent national hazard characterization with fragility-based damage estimation on a shared grid asset representation, then propagate outages to sectoral macroeconomic output using an input–output model.",
+          "key result: The compound freezing rain plus wind gust scenario yields the largest stress-test disruption, while tornado dominates modeled downstream output loss among individual terrestrial hazards; a 250-year geomagnetic storm produces losses comparable to major terrestrial hazards."
+        ],
+        "summary_zh": [
+          "problem: 以往研究对不同灾害造成的输电网破坏及经济影响缺乏统一口径，难以进行跨灾害风险比较。",
+          "approach: 在共享的输电网资产表示上，统一进行全国尺度灾害表征与脆弱性—损伤估计，并用投入产出经济模型将停电影响向部门产出进行传播。",
+          "key result: 复合冻雨与大风情景在压力测试中造成最大扰动；在单一陆上灾害中龙卷风带来的下游产出损失最大，而250年级别的地磁风暴损失与主要陆上灾害同量级。"
+        ],
+        "contribution_en": "A consistent, integrated multi-hazard risk assessment workflow that links hazard characterization, fragility-based grid failure/damage, affected population, and macroeconomic output propagation for the same US transmission network across terrestrial hazards and space weather.",
+        "contribution_zh": "构建了一个一致的多灾害风险评估流程：将灾害表征、基于脆弱性的输电网失效/损伤、受影响人口与宏观经济产出传播联系起来，并在同一美国输电网络上同时评估陆上灾害与空间天气。",
+        "method_en": "Unified pipeline: sample hazard intensity layers over transmission network assets, convert intensities to expected damage ratios via hazard-specific fragility functions to identify failed substations, estimate affected population, and propagate direct disruption to sectoral economic output using a population-weighted Leontief input–output model.",
+        "method_zh": "统一流程：在输电网络资产上采样各灾害强度层，使用各自的脆弱性函数把强度映射为期望损伤比并据此判定失效变电站，估算受影响人口，并用以人口加权的Leontief投入产出模型将直接扰动传播到部门经济产出。",
+        "data_or_region_en": "United States; national hazard datasets combined with a US high-voltage transmission network (~13,000 line segments, ~10,000 substations) built from HIFLD line data and OpenStreetMap substations.",
+        "data_or_region_zh": "美国；使用全国尺度灾害数据集，并基于HIFLD输电线路数据与OpenStreetMap变电站构建的美国高压输电网络（约13,000条线路片段、约10,000个变电站）。",
+        "geophysics_relevance_en": "Relevant to comparing earthquake and other geophysical hazards in a common resilience/economic framework, but the main focus is power-system risk across many hazards rather than new geophysical measurements or earthquake physics.",
+        "geophysics_relevance_zh": "与在统一框架下比较地震等地球物理灾害的韧性/经济影响有关；但论文重点是电力系统多灾种风险评估，而非新的地球物理观测或地震机理研究，因此相关性属中等偏应用。",
+        "keywords_en": [
+          "power transmission",
+          "multi-hazard risk",
+          "fragility modeling",
+          "input-output economics",
+          "space weather"
+        ],
+        "keywords_zh": [
+          "电力输电网",
+          "多灾种风险评估",
+          "脆弱性建模",
+          "投入产出经济",
+          "空间天气"
+        ],
+        "topic": "multi-hazard power risk",
+        "audience_level": "specialist",
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "analysis_quality": "ok",
+        "analysis_warnings": []
+      }
+    },
+    {
+      "paper": {
         "arxiv_id": "2605.22576v1",
         "title": "C-SWIM: A Coupled Space Weather Impact Model for Satellite Fleet Vulnerability and Economic Loss Under a 1-in-100-Year Solar Energetic Particle Event",
         "authors": [
@@ -150,7 +657,7 @@
           "卫星脆弱性",
           "经济损失"
         ],
-        "updated_at": "2026-05-24T11:20:33.191650+00:00",
+        "updated_at": "2026-05-24T19:23:08.264373+00:00",
         "cache_hit": true
       }
     },
@@ -226,7 +733,7 @@
           "有限元",
           "Dirichlet-to-Neumann"
         ],
-        "updated_at": "2026-05-24T11:20:33.207268+00:00",
+        "updated_at": "2026-05-24T19:23:08.270018+00:00",
         "cache_hit": true
       }
     },
@@ -301,7 +808,7 @@
           "橄榄石",
           "反应动力学"
         ],
-        "updated_at": "2026-05-24T11:20:33.266461+00:00",
+        "updated_at": "2026-05-24T19:23:08.287800+00:00",
         "cache_hit": true
       }
     },
@@ -375,7 +882,7 @@
           "地震目录",
           "尾部风险"
         ],
-        "updated_at": "2026-05-24T11:20:33.274631+00:00",
+        "updated_at": "2026-05-24T19:23:08.346057+00:00",
         "cache_hit": true
       }
     },
@@ -450,7 +957,7 @@
           "边界层",
           "地球流体动力学"
         ],
-        "updated_at": "2026-05-24T11:20:33.286018+00:00",
+        "updated_at": "2026-05-24T19:23:08.364030+00:00",
         "cache_hit": true
       }
     },
@@ -524,7 +1031,7 @@
           "多小波",
           "入口边界条件"
         ],
-        "updated_at": "2026-05-24T11:20:33.293766+00:00",
+        "updated_at": "2026-05-24T19:23:08.370794+00:00",
         "cache_hit": true
       }
     },
@@ -602,7 +1109,7 @@
           "TanDEM-X",
           "Landsat"
         ],
-        "updated_at": "2026-05-24T11:20:33.300019+00:00",
+        "updated_at": "2026-05-24T19:23:08.376371+00:00",
         "cache_hit": true
       }
     },
@@ -677,7 +1184,7 @@
           "Darcy产能",
           "云端仿真"
         ],
-        "updated_at": "2026-05-24T11:20:33.308493+00:00",
+        "updated_at": "2026-05-24T19:23:08.387671+00:00",
         "cache_hit": true
       }
     },
@@ -753,7 +1260,7 @@
           "OSIRIS-REx再入",
           "大气传播"
         ],
-        "updated_at": "2026-05-24T11:20:33.320739+00:00",
+        "updated_at": "2026-05-24T19:23:08.399796+00:00",
         "cache_hit": true
       }
     },
@@ -830,7 +1337,7 @@
           "OpenGL 环形缓冲",
           "有状态分块处理"
         ],
-        "updated_at": "2026-05-24T11:20:33.327953+00:00",
+        "updated_at": "2026-05-24T19:23:08.406360+00:00",
         "cache_hit": true
       }
     },
@@ -907,7 +1414,7 @@
           "正-无标签学习",
           "卫星海洋波浪"
         ],
-        "updated_at": "2026-05-24T11:20:33.334540+00:00",
+        "updated_at": "2026-05-24T19:23:08.412329+00:00",
         "cache_hit": true
       }
     },
@@ -982,7 +1489,7 @@
           "有理近似",
           "TEM电导率"
         ],
-        "updated_at": "2026-05-24T11:20:33.341661+00:00",
+        "updated_at": "2026-05-24T19:23:08.423289+00:00",
         "cache_hit": true
       }
     },
@@ -1059,7 +1566,7 @@
           "CO新星",
           "星际尘埃"
         ],
-        "updated_at": "2026-05-24T11:20:33.350174+00:00",
+        "updated_at": "2026-05-24T19:23:08.439917+00:00",
         "cache_hit": true
       }
     },
@@ -1138,7 +1645,7 @@
           "赤道电喷流EEJ",
           "CSES电场"
         ],
-        "updated_at": "2026-05-24T11:20:33.355408+00:00",
+        "updated_at": "2026-05-24T19:23:08.445988+00:00",
         "cache_hit": true
       }
     },
@@ -1216,7 +1723,7 @@
           "费米LAT",
           "暴发星系核"
         ],
-        "updated_at": "2026-05-24T11:20:33.365797+00:00",
+        "updated_at": "2026-05-24T19:23:08.452411+00:00",
         "cache_hit": true
       }
     },
@@ -1294,7 +1801,7 @@
           "慢磁声学波",
           "声学共振腔"
         ],
-        "updated_at": "2026-05-24T11:20:33.371888+00:00",
+        "updated_at": "2026-05-24T19:23:08.457715+00:00",
         "cache_hit": true
       }
     },
@@ -1371,7 +1878,7 @@
           "土壤含水率保持曲线",
           "UNSODA"
         ],
-        "updated_at": "2026-05-24T11:20:33.379372+00:00",
+        "updated_at": "2026-05-24T19:23:08.468882+00:00",
         "cache_hit": true
       }
     },
@@ -1444,7 +1951,7 @@
           "地平面拾取",
           "能登地震"
         ],
-        "updated_at": "2026-05-24T11:20:33.405718+00:00",
+        "updated_at": "2026-05-24T19:23:08.496778+00:00",
         "cache_hit": true
       }
     },
@@ -1516,7 +2023,7 @@
           "傅里叶神经算子",
           "Utah FORGE"
         ],
-        "updated_at": "2026-05-24T11:20:33.411887+00:00",
+        "updated_at": "2026-05-24T19:23:08.506543+00:00",
         "cache_hit": true
       }
     },
@@ -1595,7 +2102,7 @@
           "仿真在环",
           "CREST/EF5"
         ],
-        "updated_at": "2026-05-24T11:20:33.417097+00:00",
+        "updated_at": "2026-05-24T19:23:08.514330+00:00",
         "cache_hit": true
       }
     }
@@ -1612,264 +2119,264 @@
       ]
     },
     {
-      "keyword": "solar energetic particles",
-      "normalized": "solar energetic particles",
+      "keyword": "earthquake forecasting",
+      "normalized": "earthquake forecasting",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
-        "2605.22576v1"
+        "2605.23494v1"
       ]
     },
     {
-      "keyword": "geomagnetic cutoff rigidity",
-      "normalized": "geomagnetic cutoff rigidity",
+      "keyword": "b-value",
+      "normalized": "b-value",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
-        "2605.22576v1"
+        "2605.23494v1"
       ]
     },
     {
-      "keyword": "radiation dose transport",
-      "normalized": "radiation dose transport",
+      "keyword": "background seismicity rate",
+      "normalized": "background seismicity rate",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
-        "2605.22576v1"
+        "2605.23494v1"
       ]
     },
     {
-      "keyword": "satellite vulnerability",
-      "normalized": "satellite vulnerability",
+      "keyword": "ETAS declustering",
+      "normalized": "etas declustering",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
-        "2605.22576v1"
+        "2605.23494v1"
       ]
     },
     {
-      "keyword": "economic loss",
-      "normalized": "economic loss",
+      "keyword": "Alborz faults",
+      "normalized": "alborz faults",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
-        "2605.22576v1"
+        "2605.23494v1"
       ]
     },
     {
-      "keyword": "ice shelves",
-      "normalized": "ice shelves",
+      "keyword": "geomagnetic survey",
+      "normalized": "geomagnetic survey",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
-        "2605.22042v1"
+        "2605.23394v1"
       ]
     },
     {
-      "keyword": "hydroelasticity",
-      "normalized": "hydroelasticity",
+      "keyword": "spatial aliasing",
+      "normalized": "spatial aliasing",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
-        "2605.22042v1"
+        "2605.23394v1"
       ]
     },
     {
-      "keyword": "long ocean waves",
-      "normalized": "long ocean waves",
+      "keyword": "optically pumped magnetometer",
+      "normalized": "optically pumped magnetometer",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
-        "2605.22042v1"
+        "2605.23394v1"
       ]
     },
     {
-      "keyword": "finite elements",
-      "normalized": "finite elements",
+      "keyword": "proton precession magnetometer",
+      "normalized": "proton precession magnetometer",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
-        "2605.22042v1"
+        "2605.23394v1"
       ]
     },
     {
-      "keyword": "Dirichlet-to-Neumann",
-      "normalized": "dirichlet-to-neumann",
+      "keyword": "Highland Boundary Fault",
+      "normalized": "highland boundary fault",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
-        "2605.22042v1"
+        "2605.23394v1"
       ]
     },
     {
-      "keyword": "geologic hydrogen",
-      "normalized": "geologic hydrogen",
+      "keyword": "Surface Quasi-Geostrophic",
+      "normalized": "surface quasi-geostrophic",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
-        "2605.21790v1"
+        "2605.23289v1"
       ]
     },
     {
-      "keyword": "serpentinization",
-      "normalized": "serpentinization",
+      "keyword": "moving obstacle",
+      "normalized": "moving obstacle",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
-        "2605.21790v1"
+        "2605.23289v1"
       ]
     },
     {
-      "keyword": "microwave heating",
-      "normalized": "microwave heating",
+      "keyword": "fractional Biot-Savart",
+      "normalized": "fractional biot-savart",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
-        "2605.21790v1"
+        "2605.23289v1"
       ]
     },
     {
-      "keyword": "olivine",
-      "normalized": "olivine",
+      "keyword": "impermeability",
+      "normalized": "impermeability",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
-        "2605.21790v1"
+        "2605.23289v1"
       ]
     },
     {
-      "keyword": "reaction kinetics",
-      "normalized": "reaction kinetics",
+      "keyword": "plateau property",
+      "normalized": "plateau property",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
-        "2605.21790v1"
+        "2605.23289v1"
       ]
     },
     {
-      "keyword": "seismicity",
-      "normalized": "seismicity",
+      "keyword": "ocean interior",
+      "normalized": "ocean interior",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
-        "2605.21437v1"
+        "2605.23277v1"
       ]
     },
     {
-      "keyword": "probabilistic forecasting",
-      "normalized": "probabilistic forecasting",
+      "keyword": "Eulerian vs Lagrangian",
+      "normalized": "eulerian vs lagrangian",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
-        "2605.21437v1"
+        "2605.23277v1"
       ]
     },
     {
-      "keyword": "negative binomial regression",
-      "normalized": "negative binomial regression",
+      "keyword": "overturning circulation",
+      "normalized": "overturning circulation",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
-        "2605.21437v1"
+        "2605.23277v1"
       ]
     },
     {
-      "keyword": "earthquake catalogs",
-      "normalized": "earthquake catalogs",
+      "keyword": "isopycnal heaving",
+      "normalized": "isopycnal heaving",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
-        "2605.21437v1"
+        "2605.23277v1"
       ]
     },
     {
-      "keyword": "tail risk",
-      "normalized": "tail risk",
+      "keyword": "diapycnal transformation",
+      "normalized": "diapycnal transformation",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
-        "2605.21437v1"
+        "2605.23277v1"
       ]
     },
     {
-      "keyword": "angular momentum density",
-      "normalized": "angular momentum density",
+      "keyword": "compressible Navier–Stokes",
+      "normalized": "compressible navier–stokes",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
-        "2605.21191v1"
+        "2605.23233v1"
       ]
     },
     {
-      "keyword": "fluid torque balance",
-      "normalized": "fluid torque balance",
+      "keyword": "vanishing viscosity limit",
+      "normalized": "vanishing viscosity limit",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
-        "2605.21191v1"
+        "2605.23233v1"
       ]
     },
     {
-      "keyword": "vorticity",
-      "normalized": "vorticity",
+      "keyword": "conormal Sobolev",
+      "normalized": "conormal sobolev",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
-        "2605.21191v1"
+        "2605.23233v1"
       ]
     },
     {
-      "keyword": "boundary layers",
-      "normalized": "boundary layers",
+      "keyword": "Navier slip boundary",
+      "normalized": "navier slip boundary",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
-        "2605.21191v1"
+        "2605.23233v1"
       ]
     },
     {
-      "keyword": "geophysical fluid dynamics",
-      "normalized": "geophysical fluid dynamics",
+      "keyword": "anisotropic dissipation",
+      "normalized": "anisotropic dissipation",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
-        "2605.21191v1"
+        "2605.23233v1"
       ]
     },
     {
-      "keyword": "Buckley–Leverett",
-      "normalized": "buckley–leverett",
+      "keyword": "free surface",
+      "normalized": "free surface",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
-        "2605.21030v1"
+        "2605.23166v1"
       ]
     },
     {
-      "keyword": "multiphase flow",
-      "normalized": "multiphase flow",
+      "keyword": "turbulence",
+      "normalized": "turbulence",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
-        "2605.21030v1"
+        "2605.23166v1"
       ]
     },
     {
-      "keyword": "shock capturing",
-      "normalized": "shock capturing",
+      "keyword": "wave-induced turbulence",
+      "normalized": "wave-induced turbulence",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
-        "2605.21030v1"
+        "2605.23166v1"
       ]
     },
     {
-      "keyword": "multiwavelet",
-      "normalized": "multiwavelet",
+      "keyword": "volume-of-fluid",
+      "normalized": "volume-of-fluid",
       "score": 1,
       "paper_count": 1,
       "paper_ids": [
-        "2605.21030v1"
+        "2605.23166v1"
       ]
     }
   ],
