@@ -1,6 +1,6 @@
 {
   "date": "2026-05-25",
-  "generated_at": "2026-05-25T03:35:54.044674+00:00",
+  "generated_at": "2026-05-25T11:20:27.279440+00:00",
   "config": {
     "site_title": "PaperRadar",
     "site_description": {
@@ -125,6 +125,14 @@
         "data_or_region_zh": "伊朗北部阿尔博兹褶冲带；IRSC同一化地震目录，共23,961次事件（M≥1.5），时间范围为2006年至2024年。",
         "geophysics_relevance_en": "Relevant to physics-based earthquake forecasting because it tests complementary stress- and loading-related observables (b-value and declustered background rate) and quantifies how their synergy improves spatial alarm efficiency.",
         "geophysics_relevance_zh": "与物理驱动地震预测密切相关：该研究检验了与应力状态和构造加载相关的互补观测量（b值与去簇背景地震率），并量化了二者协同如何提升空间预警效率。",
+        "llm_used": true,
+        "llm_error": "",
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "topic": "Spatial earthquake forecasting",
+        "audience_level": "specialist",
+        "analysis_quality": "ok",
+        "analysis_warnings": [],
         "keywords_en": [
           "earthquake forecasting",
           "b-value",
@@ -139,13 +147,8 @@
           "ETAS去簇",
           "阿尔博兹断层"
         ],
-        "topic": "Spatial earthquake forecasting",
-        "audience_level": "specialist",
-        "llm_used": true,
-        "source": "markdown",
-        "model": "gpt-5.4-nano",
-        "analysis_quality": "ok",
-        "analysis_warnings": []
+        "updated_at": "2026-05-25T03:24:04.543113+00:00",
+        "cache_hit": true
       }
     },
     {
@@ -202,6 +205,14 @@
         "data_or_region_zh": "在苏格兰布莱尔高里附近跨越高地边界断层的约20 km NW–SE地面测线，OPM与PPM在重叠路段同步采集；并用英国地质调查局BGS的历史航磁数据进行定性对比（用于叠加参考）。",
         "geophysics_relevance_en": "Directly relevant to geomagnetic target detection because it addresses the practical aliasing/noise bottleneck in land surveys and improves resolvable small-scale anomaly mapping; it is not about seismicity/earthquake physics.",
         "geophysics_relevance_zh": "与地磁目标探测高度相关，因为它针对陆地地磁测量中的关键瓶颈（空间混叠与人为噪声）进行工程化解决，提升小尺度异常的可分辨与解释能力；但不涉及地震或地震学物理。",
+        "llm_used": true,
+        "llm_error": "",
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "topic": "Geomagnetic de-aliasing",
+        "audience_level": "specialist",
+        "analysis_quality": "ok",
+        "analysis_warnings": [],
         "keywords_en": [
           "geomagnetic survey",
           "spatial aliasing",
@@ -216,13 +227,8 @@
           "普顿进动磁强计",
           "高地边界断层"
         ],
-        "topic": "Geomagnetic de-aliasing",
-        "audience_level": "specialist",
-        "llm_used": true,
-        "source": "markdown",
-        "model": "gpt-5.4-nano",
-        "analysis_quality": "ok",
-        "analysis_warnings": []
+        "updated_at": "2026-05-25T03:25:19.579486+00:00",
+        "cache_hit": true
       }
     },
     {
@@ -272,6 +278,14 @@
         "data_or_region_zh": "未说明（纯数学PDE分析；刚体运动与几何由预设给出，无观测数据集或数值网格）。",
         "geophysics_relevance_en": "SQG is a proxy for geophysical active-scalar dynamics; this work clarifies mathematically how coherent “rigid-like” regions could be handled in SQG flows, a step toward rigorous derivations of point-vortex-type dynamics from shrinking rigid bodies.",
         "geophysics_relevance_zh": "SQG可视为地球物理主动标量动力学的理论模型；本文从数学上处理了“类刚体”相干区域在SQG流中的可解性问题，有助于朝着从收缩刚体严格推导点涡/涡动力学的方向迈进。",
+        "llm_used": true,
+        "llm_error": "",
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "topic": "SQG moving obstacle",
+        "audience_level": "specialist",
+        "analysis_quality": "ok",
+        "analysis_warnings": [],
         "keywords_en": [
           "Surface Quasi-Geostrophic",
           "moving obstacle",
@@ -286,13 +300,8 @@
           "不可穿透",
           "平台结构"
         ],
-        "topic": "SQG moving obstacle",
-        "audience_level": "specialist",
-        "llm_used": true,
-        "source": "markdown",
-        "model": "gpt-5.4-nano",
-        "analysis_quality": "ok",
-        "analysis_warnings": []
+        "updated_at": "2026-05-25T03:26:46.939157+00:00",
+        "cache_hit": true
       }
     },
     {
@@ -341,6 +350,14 @@
         "data_or_region_zh": "大西洋与印度-太平洋：ECCO v4r3（1992–2015年，月尺度，约1°水平分辨率，50层）；南海：GLORYS12v1（1993–2024年，月尺度，1/12°水平分辨率，50层）。",
         "geophysics_relevance_en": "This matters because tracking long-term ocean heat uptake and storage requires knowing whether observed interior temperature/density changes are truly irreversible (diabatic transformation) or mainly reversible (isopycnal heaving); the framework directly addresses this ambiguity.",
         "geophysics_relevance_zh": "这对当前追踪主题很重要，因为评估海洋长期吸热与储热需要判断观测到的内部温度/密度变化是不可逆的（非绝热水团转化）还是主要由可逆过程（等密面起伏）造成；该框架正是为解决这种歧义而设计的。",
+        "llm_used": true,
+        "llm_error": "",
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "topic": "Ocean overturning decomposition",
+        "audience_level": "specialist",
+        "analysis_quality": "ok",
+        "analysis_warnings": [],
         "keywords_en": [
           "ocean interior",
           "Eulerian vs Lagrangian",
@@ -355,13 +372,8 @@
           "等密面起伏",
           "跨等密面转化"
         ],
-        "topic": "Ocean overturning decomposition",
-        "audience_level": "specialist",
-        "llm_used": true,
-        "source": "markdown",
-        "model": "gpt-5.4-nano",
-        "analysis_quality": "ok",
-        "analysis_warnings": []
+        "updated_at": "2026-05-25T03:28:19.007201+00:00",
+        "cache_hit": true
       }
     },
     {
@@ -413,6 +425,14 @@
         "data_or_region_zh": "上半空间（无界三维域）上的可压缩Navier–Stokes方程，边界采用Navier滑移条件；研究常数平衡态的小扰动。",
         "geophysics_relevance_en": "This is mathematically rigorous evidence supporting a common geophysical modeling assumption for ocean-like flows where vertical viscosity is much smaller than horizontal viscosity, but it is not applied to specific observational datasets.",
         "geophysics_relevance_zh": "这为海洋类地球流体中“垂向黏性远小于水平黏性”的常见建模假设提供了严格的数学支撑，但并未直接面向具体观测数据应用。",
+        "llm_used": true,
+        "llm_error": "",
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "topic": "Anisotropic viscosity limit",
+        "audience_level": "specialist",
+        "analysis_quality": "ok",
+        "analysis_warnings": [],
         "keywords_en": [
           "compressible Navier–Stokes",
           "vanishing viscosity limit",
@@ -427,13 +447,8 @@
           "Navier滑移边界",
           "各向异性耗散"
         ],
-        "topic": "Anisotropic viscosity limit",
-        "audience_level": "specialist",
-        "llm_used": true,
-        "source": "markdown",
-        "model": "gpt-5.4-nano",
-        "analysis_quality": "ok",
-        "analysis_warnings": []
+        "updated_at": "2026-05-25T03:30:04.737995+00:00",
+        "cache_hit": true
       }
     },
     {
@@ -485,6 +500,14 @@
         "data_or_region_zh": "数值研究：在准真实湍流条件下的气-水界面（给出流动雷诺数约2.1×10^5）以及可变形超弹性橡胶层；观测对比：空中海表测量。摘要摘录未说明具体调查海域或数据集。",
         "geophysics_relevance_en": "This is relevant to geophysical free-surface turbulence and air–sea interaction because it offers a framework to distinguish wave-turbulence versus turbulence-induced waves using spectral signatures, but the work is primarily fluid-mechanics/physics rather than direct geophysical inversion.",
         "geophysics_relevance_zh": "该工作与地球物理海气相互作用中的自由面湍流相关，因为它提出了用谱特征区分波湍流与湍流诱导波的框架；但整体更偏流体力学基础研究，对地球物理反演的直接性较弱，属于较强物理相关。",
+        "llm_used": true,
+        "llm_error": "",
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "topic": "Turbulence free surfaces",
+        "audience_level": "specialist",
+        "analysis_quality": "ok",
+        "analysis_warnings": [],
         "keywords_en": [
           "free surface",
           "turbulence",
@@ -499,13 +522,8 @@
           "VOF方法",
           "海表面"
         ],
-        "topic": "Turbulence free surfaces",
-        "audience_level": "specialist",
-        "llm_used": true,
-        "source": "markdown",
-        "model": "gpt-5.4-nano",
-        "analysis_quality": "ok",
-        "analysis_warnings": []
+        "updated_at": "2026-05-25T03:33:26.221051+00:00",
+        "cache_hit": true
       }
     },
     {
@@ -560,6 +578,14 @@
         "data_or_region_zh": "美国；使用全国尺度灾害数据集，并基于HIFLD输电线路数据与OpenStreetMap变电站构建的美国高压输电网络（约13,000条线路片段、约10,000个变电站）。",
         "geophysics_relevance_en": "Relevant to comparing earthquake and other geophysical hazards in a common resilience/economic framework, but the main focus is power-system risk across many hazards rather than new geophysical measurements or earthquake physics.",
         "geophysics_relevance_zh": "与在统一框架下比较地震等地球物理灾害的韧性/经济影响有关；但论文重点是电力系统多灾种风险评估，而非新的地球物理观测或地震机理研究，因此相关性属中等偏应用。",
+        "llm_used": true,
+        "llm_error": "",
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "topic": "multi-hazard power risk",
+        "audience_level": "specialist",
+        "analysis_quality": "ok",
+        "analysis_warnings": [],
         "keywords_en": [
           "power transmission",
           "multi-hazard risk",
@@ -574,13 +600,8 @@
           "投入产出经济",
           "空间天气"
         ],
-        "topic": "multi-hazard power risk",
-        "audience_level": "specialist",
-        "llm_used": true,
-        "source": "markdown",
-        "model": "gpt-5.4-nano",
-        "analysis_quality": "ok",
-        "analysis_warnings": []
+        "updated_at": "2026-05-25T03:35:53.791556+00:00",
+        "cache_hit": true
       }
     },
     {
@@ -657,7 +678,7 @@
           "卫星脆弱性",
           "经济损失"
         ],
-        "updated_at": "2026-05-24T19:23:08.264373+00:00",
+        "updated_at": "2026-05-25T03:35:53.803795+00:00",
         "cache_hit": true
       }
     },
@@ -733,7 +754,7 @@
           "有限元",
           "Dirichlet-to-Neumann"
         ],
-        "updated_at": "2026-05-24T19:23:08.270018+00:00",
+        "updated_at": "2026-05-25T03:35:53.833225+00:00",
         "cache_hit": true
       }
     },
@@ -808,7 +829,7 @@
           "橄榄石",
           "反应动力学"
         ],
-        "updated_at": "2026-05-24T19:23:08.287800+00:00",
+        "updated_at": "2026-05-25T03:35:53.895121+00:00",
         "cache_hit": true
       }
     },
@@ -882,7 +903,7 @@
           "地震目录",
           "尾部风险"
         ],
-        "updated_at": "2026-05-24T19:23:08.346057+00:00",
+        "updated_at": "2026-05-25T03:35:53.903129+00:00",
         "cache_hit": true
       }
     },
@@ -957,7 +978,7 @@
           "边界层",
           "地球流体动力学"
         ],
-        "updated_at": "2026-05-24T19:23:08.364030+00:00",
+        "updated_at": "2026-05-25T03:35:53.913505+00:00",
         "cache_hit": true
       }
     },
@@ -1031,7 +1052,7 @@
           "多小波",
           "入口边界条件"
         ],
-        "updated_at": "2026-05-24T19:23:08.370794+00:00",
+        "updated_at": "2026-05-25T03:35:53.920834+00:00",
         "cache_hit": true
       }
     },
@@ -1109,7 +1130,7 @@
           "TanDEM-X",
           "Landsat"
         ],
-        "updated_at": "2026-05-24T19:23:08.376371+00:00",
+        "updated_at": "2026-05-25T03:35:53.927586+00:00",
         "cache_hit": true
       }
     },
@@ -1184,7 +1205,7 @@
           "Darcy产能",
           "云端仿真"
         ],
-        "updated_at": "2026-05-24T19:23:08.387671+00:00",
+        "updated_at": "2026-05-25T03:35:53.936447+00:00",
         "cache_hit": true
       }
     },
@@ -1260,7 +1281,7 @@
           "OSIRIS-REx再入",
           "大气传播"
         ],
-        "updated_at": "2026-05-24T19:23:08.399796+00:00",
+        "updated_at": "2026-05-25T03:35:53.950232+00:00",
         "cache_hit": true
       }
     },
@@ -1337,7 +1358,7 @@
           "OpenGL 环形缓冲",
           "有状态分块处理"
         ],
-        "updated_at": "2026-05-24T19:23:08.406360+00:00",
+        "updated_at": "2026-05-25T03:35:53.956772+00:00",
         "cache_hit": true
       }
     },
@@ -1414,7 +1435,7 @@
           "正-无标签学习",
           "卫星海洋波浪"
         ],
-        "updated_at": "2026-05-24T19:23:08.412329+00:00",
+        "updated_at": "2026-05-25T03:35:53.963340+00:00",
         "cache_hit": true
       }
     },
@@ -1489,7 +1510,7 @@
           "有理近似",
           "TEM电导率"
         ],
-        "updated_at": "2026-05-24T19:23:08.423289+00:00",
+        "updated_at": "2026-05-25T03:35:53.969813+00:00",
         "cache_hit": true
       }
     },
@@ -1566,7 +1587,7 @@
           "CO新星",
           "星际尘埃"
         ],
-        "updated_at": "2026-05-24T19:23:08.439917+00:00",
+        "updated_at": "2026-05-25T03:35:53.978410+00:00",
         "cache_hit": true
       }
     },
@@ -1645,7 +1666,7 @@
           "赤道电喷流EEJ",
           "CSES电场"
         ],
-        "updated_at": "2026-05-24T19:23:08.445988+00:00",
+        "updated_at": "2026-05-25T03:35:53.984008+00:00",
         "cache_hit": true
       }
     },
@@ -1723,7 +1744,7 @@
           "费米LAT",
           "暴发星系核"
         ],
-        "updated_at": "2026-05-24T19:23:08.452411+00:00",
+        "updated_at": "2026-05-25T03:35:53.992737+00:00",
         "cache_hit": true
       }
     },
@@ -1801,7 +1822,7 @@
           "慢磁声学波",
           "声学共振腔"
         ],
-        "updated_at": "2026-05-24T19:23:08.457715+00:00",
+        "updated_at": "2026-05-25T03:35:53.998546+00:00",
         "cache_hit": true
       }
     },
@@ -1878,7 +1899,7 @@
           "土壤含水率保持曲线",
           "UNSODA"
         ],
-        "updated_at": "2026-05-24T19:23:08.468882+00:00",
+        "updated_at": "2026-05-25T03:35:54.005158+00:00",
         "cache_hit": true
       }
     },
@@ -1951,7 +1972,7 @@
           "地平面拾取",
           "能登地震"
         ],
-        "updated_at": "2026-05-24T19:23:08.496778+00:00",
+        "updated_at": "2026-05-25T03:35:54.032290+00:00",
         "cache_hit": true
       }
     },
@@ -2023,7 +2044,7 @@
           "傅里叶神经算子",
           "Utah FORGE"
         ],
-        "updated_at": "2026-05-24T19:23:08.506543+00:00",
+        "updated_at": "2026-05-25T03:35:54.039584+00:00",
         "cache_hit": true
       }
     },
@@ -2102,7 +2123,7 @@
           "仿真在环",
           "CREST/EF5"
         ],
-        "updated_at": "2026-05-24T19:23:08.514330+00:00",
+        "updated_at": "2026-05-25T03:35:54.044634+00:00",
         "cache_hit": true
       }
     }

@@ -1,6 +1,6 @@
 {
   "date": "2026-05-25",
-  "generated_at": "2026-05-25T03:35:54.044674+00:00",
+  "generated_at": "2026-05-25T11:20:27.279440+00:00",
   "config": {
     "site_title": "PaperRadar",
     "site_description": {
@@ -91,8 +91,8 @@
           "Song, Hajoon"
         ],
         "abstract": "Phytoplankton communities, key regulators of marine ecosystems and the global carbon cycle, are susceptible to sea surface temperature variability, such as marine heatwaves (MHWs). However, their trait-dependent responses and the resulting compositional shifts during MHWs remain poorly understood. Here, using an advanced global ocean–biogeochemical model that resolves 310 phytoplankton trait types, we show that MHWs act as trait-selective disturbances. Decreases in biomass during MHWs, particularly in the equatorial Pacific and Indian Ocean, are generally accompanied by significant diversity loss and an enhanced dominance of small, warm-preferring types. However, short and strong heatwaves in the Pacific can promote elevated diversity. These contrasting patterns are shaped by the interplay between heatwave characteristics and background environmental conditions. Such restructuring in phytoplankton communities may have cascading effects on the food web and the biological carbon pump, highlighting the need to account for diverse traits when assessing climatic impacts on phytoplankton communities.",
-        "published": "2026-05-24T21:00:00Z",
-        "updated": "2026-05-24T21:00:40Z",
+        "published": "2026-05-24T15:00:00Z",
+        "updated": "2026-05-24T15:00:40Z",
         "categories": [
           "Biodiversity",
           "Biogeochemistry",
@@ -160,7 +160,7 @@
           "全球生物地球化学模型",
           "赤道太平洋"
         ],
-        "updated_at": "2026-05-24T19:23:08.063911+00:00",
+        "updated_at": "2026-05-25T03:20:26.183267+00:00",
         "cache_hit": true
       }
     },
@@ -172,8 +172,8 @@
           "Bin Shahid, Ali"
         ],
         "abstract": "Large subarctic rivers deliver most of their dissolved nutrients during the spring freshet, in approximate phase with the ice-edge diatom bloom that those nutrients support. Hydroelectric regulation flattens the river hydrograph, holding back the freshet and raising winter discharge, and in doing so it redistributes nutrient delivery in time. Across twenty subarctic rivers spanning the Arctic Ocean and Bothnian Bay drainages, classified by basin-cumulative Degree of Regulation (DOR), we test whether regulation shifts the delivery of dissolved silica out of phase with the shelf-specific diatom bloom window. Using the Global Aggregation of Stream Silica dataset (Jankowski et al., 2025) and the Arctic Great Rivers Observatory record, we estimate seasonal silica flux with a LOADEST-style concentration-discharge rating and map delivery onto receiving-shelf bloom climatology for eight shelves (Kara, Laptev, East Siberian, Beaufort, Bering/Chukchi, Bothnian Bay, Bothnian Sea, Gulf of Finland). Regulated rivers deliver 24.8 percent of annual silica during the open-water bloom window against 35.8 percent for controls, a synchrony gap of -11.0 percentage points that remains negative under every combination of plus-or-minus 15-day perturbations of the bloom window (49 of 49 negative, range -7.3 to -13.8 pp). The synchrony loss scales monotonically with DOR across the panel (Spearman rho = -0.80; OLS slope -0.284 per unit DOR, R-squared = 0.59, t = -5.05, two-sided p = 0.00008 from Student-t with n = 20 rivers spanning DOR 0 to 0.63), and leave-one-out cross-validation preserves a negative slope in 20 of 20 fits (slope range -0.310 to -0.250, all p less than 0.001). A placebo difference-in-differences design argues against the climate-only counterfactual on the cleanest available natural experiment: post-Krasnoyarsk Yenisei shifted winter discharge fraction by 4.96 percentage points more than the unregulated Lena (95 percent CI 4.21 to 5.72, p less than 0.0001) under identical Siberian climate. Within Yenisei, the year-by-year differential winter discharge fraction tracks the cumulative basin reservoir-filling curve across 73 years (r = +0.82), converting the binary causal test into a continuous-dose trajectory. The expanded twenty-river panel reproduces the original six-river ArcticGRO result independently (gap -10.0 vs -9.2 pp on the same six rivers using GlASS data), with multiple high-DOR anchors (Yenisei, Lulealven, Indalsalven, Skellefte, Oulujoki, Kymijoki, Angermanalven) replacing the single-river leverage of the original analysis. The contribution is the reframing of regulated-river nutrient alteration from a winter-enhancement story to a measurable loss of synchrony between SiO2 delivery and biological demand on the receiving shelves, robust across the Arctic Ocean and Bothnian Bay drainages.",
-        "published": "2026-05-24T00:38:00Z",
-        "updated": "2026-05-24T00:38:09Z",
+        "published": "2026-05-23T18:38:00Z",
+        "updated": "2026-05-23T18:38:09Z",
         "categories": [
           "Earth Sciences",
           "Hydrology",
@@ -195,9 +195,9 @@
         "source": "eartharxiv",
         "source_id": "13160",
         "doi": "10.31223/X5M20P",
-        "local_pdf_path": "data/pdfs/eartharxiv/Earth-Sciences/20260524/eartharxiv-13160.pdf",
+        "local_pdf_path": "data/pdfs/eartharxiv/Earth-Sciences/20260523/eartharxiv-13160.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/eartharxiv/Earth-Sciences/20260524/eartharxiv-13160.md",
+        "markdown_path": "data/markdown/eartharxiv/Earth-Sciences/20260523/eartharxiv-13160.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -245,7 +245,7 @@
           "硅藻生长",
           "ArcticGRO"
         ],
-        "updated_at": "2026-05-24T19:23:08.098762+00:00",
+        "updated_at": "2026-05-25T03:20:26.225901+00:00",
         "cache_hit": true
       }
     },
@@ -266,8 +266,8 @@
           "Chen, Kai"
         ],
         "abstract": "Ground-level ozone (O3) pollution has declined in the U.S., yet the progress has stalled in recent years, coinciding with increasing wildfire smoke. Using ensemble machine learning models trained on surface observations, we develop a gridded daily smoke O3 dataset across the contiguous U.S. from 2006-2023. We estimate that wildfire smoke placed an additional 29 million people each year in areas exceeding the federal O3 standard, a 74% increase over a no-smoke baseline. Smoke has offset 36% of the reduction in the O3 nonattainment population and 62% of the improvement in population-weighted O3 concentrations over 2006-2023. Smoke ozone follows spatial-temporal patterns distinct from smoke PM2.5. Wildfire smoke is increasingly eroding the O3 health benefits achieved through decades of emission controls, posing a growing challenge for air quality management in a changing climate.",
-        "published": "2026-05-23T21:49:00Z",
-        "updated": "2026-05-23T21:49:40Z",
+        "published": "2026-05-23T15:49:00Z",
+        "updated": "2026-05-23T15:49:40Z",
         "categories": [
           "Atmospheric Sciences",
           "Climate",
@@ -332,7 +332,7 @@
           "集成机器学习",
           "EPA AirData"
         ],
-        "updated_at": "2026-05-24T19:23:08.135724+00:00",
+        "updated_at": "2026-05-25T03:20:26.240797+00:00",
         "cache_hit": true
       }
     },
@@ -344,8 +344,8 @@
           "Wong, Shannon T."
         ],
         "abstract": "Snow megadunes cover 5×105 km2 of the East Antarctic plateau, biasing surface mass balance estimates and overprinting ice-core signals—yet their 2–5 km wavelength has lacked a quantitative selection mechanism for two decades. We first falsify the standard formula λ∗ = 2πU0/N through a calibration-free spatial test: eight REMA 2 m tiles across two independent locations at 81.5–82.0°S show no organised 2–5 km signal while the formula predicts 4–5 km megadunes at every tile (p < 10−8). We then derive the correct mechanism: finite inversion depth Hinv and saltation saturation length Lsat produce a dispersion peak shifting > 60% with Hinv, vanishing below HinvN1/U0 < π/2. Leave-oneout ERA5 cross-validation gives RMSE= 0.17 km with perfect rank ordering across all sectors (Spearman ρ = 1.00, p = 0.042), versus ρ = 0.80 for the single-scale formula, which mis-ranks sectors driven by Hinv variation—a quantity immune to ERA5 calibration multipliers. A fifth independent site extends validation 1500 km beyond the nearest calibration anchor.",
-        "published": "2026-05-23T21:48:00Z",
-        "updated": "2026-05-23T21:48:55Z",
+        "published": "2026-05-23T15:48:00Z",
+        "updated": "2026-05-23T15:48:55Z",
         "categories": [
           "Applied Statistics",
           "Categorical Data Analysis",
@@ -443,7 +443,7 @@
           "REMA高程拼图",
           "ERA5验证"
         ],
-        "updated_at": "2026-05-24T19:23:08.154135+00:00",
+        "updated_at": "2026-05-25T03:20:26.260743+00:00",
         "cache_hit": true
       }
     },
@@ -457,8 +457,8 @@
           "Agier, Lydiane"
         ],
         "abstract": "General support for climate action is widely expressed within academia and public research, with surveys consistently reporting exceptionally high levels of awareness and concern about the climate crisis. Yet, the implementation of mitigation policies in universities and research institutions remains limited. Drawing on a national survey of 4,688 academics and research personnel in France, we examine this apparent paradox and find that more than half express attitudinal barriers to climate action, including reluctance toward the inclusion of academia in mitigation efforts, opposition to institutional mitigation policies, and inconsistencies between stated support for mitigation and willingness to adopt corresponding changes in individual research practices. Higher perceived costs of academic mitigation actions—particularly their potential impacts on competitiveness and scientific visibility—are consistently associated with these barriers, along with lower agreement with degrowth as a response to environmental challenges. Such barriers are also more prevalent among senior male scientists with higher levels of mobility, particularly in physics, chemistry, and medical and health sciences. Academia provides a critical context to examine how climate inaction can persist in the near absence of climate denial. Our findings suggest that moving from stated commitments to effective action requires addressing how climate policies interact with academic hierarchies and dominant models of productivity and recognition—an issue with direct implications for the design of mitigation policies within research institutions.",
-        "published": "2026-05-23T21:47:00Z",
-        "updated": "2026-05-23T21:47:02Z",
+        "published": "2026-05-23T15:47:00Z",
+        "updated": "2026-05-23T15:47:02Z",
         "categories": [
           "Higher Education",
           "Academic carbon footprint",
@@ -521,7 +521,7 @@
           "去增长",
           "问卷调查"
         ],
-        "updated_at": "2026-05-24T19:23:08.162872+00:00",
+        "updated_at": "2026-05-25T03:20:26.268331+00:00",
         "cache_hit": true
       }
     },
@@ -534,8 +534,8 @@
           "Camargo, Chico"
         ],
         "abstract": "Climate contrarian discourse permeates a wide range of media outlets, including popular entertainment television shows and films. This study identifies and quantifies the frequency of these views within a large global corpus of entertainment scripts derived from film and television subtitles (N = 223,782). Additionally, drawing on a discourse studies perspective, we evaluate the performance of a Large Language Model (LLM) designed to detect and classify climate contrarian claims. Our findings reveal that climate change is occasionally referenced in entertainment films and TV shows, and contrarian views are a minority; most mentions contain a pro-climate orientation, followed by incidental references that remain ambiguous regarding a clear view, reflecting a growing willingness to engage with the topic. In general, pro-climate views significantly outweigh contrarian views, which are rarely isolated; they mostly appear alongside pro-climate claims, are disqualified, mocked, or sarcastically expressed. This research contributes to understanding the presence and discursive nature of climate change views in mainstream entertainment media and begins to examine how entertainment content reflects possible beliefs and attitudes. We encourage further research into how entertainment media creatives perceive and decide whether to include these representations, as well as their motivations and the potential implications of the visibility of climate-related themes in popular culture.",
-        "published": "2026-05-23T21:42:00Z",
-        "updated": "2026-05-23T21:41:57Z",
+        "published": "2026-05-23T15:42:00Z",
+        "updated": "2026-05-23T15:41:57Z",
         "categories": [
           "Environmental Studies",
           "climate discourse",
@@ -602,7 +602,7 @@
           "大语言模型",
           "影视字幕"
         ],
-        "updated_at": "2026-05-24T19:23:08.181393+00:00",
+        "updated_at": "2026-05-25T03:20:26.281719+00:00",
         "cache_hit": true
       }
     },
@@ -619,8 +619,8 @@
           "Zardi, Dino"
         ],
         "abstract": "The European Alps exhibit a complex geomorphology and undergo the influences of different climate regimes, resulting in high spatial variability of climatic variables and their changes. To provide a detailed analysis of climate regions and climatic changes occurring at a sub-regional scale during the 1961-2020 period, we exploited an updated regionalization of the European Alps that benefits from EEAR-Clim, a new observational daily dataset permitting a robust analysis of local-scale climate features. The regionalization of the European Alps identifies five sub-regions exhibiting distinct climate features: North-West, North-East, South-West, Central-South, South \\& South-East (S\\&SE). The analysis of average climate conditions highlighted Central-South and S\\&SE as the sub-regions experiencing the warmest temperatures and the highest monthly precipitation totals, mostly in spring and autumn, though characterized by a pronounced variability among stations. Conversely, colder temperatures and moderate yet frequent precipitations occurs in northern Alps. Trends of air temperature and precipitation over these sub-regions highlights uneven warming in the Alpine region. North-East, South-West and S\\&SE were identified as the fastest warming sub-regions, with increases over 1961-2020 reaching +2.0°C for minimum temperature, +2.8°C (SW) and +2.4°C (NE and S\\&SE) for maximum temperature, respectively. Despite the high spatial and temporal variability of precipitation over the European Alps, the S\\&SE sub-region exhibits drying conditions in spring and summer compared to the other regions. Trends in extreme precipitation are more statistically significant compared to changes in mean values, resulting in an increased frequency since 1961 of very extreme rainfall events, mostly in the southern Alps (+18 days). The new regionalization of the European Alps presented here is expected to support a range of climate related applications including impact studies. Moreover, it demonstrates the importance of considering variations in both average climate conditions and ongoing trends across different parts of the Alps, helping to identify areas most vulnerable to the effects of climate change.",
-        "published": "2026-05-22T21:33:00Z",
-        "updated": "2026-05-22T21:33:13Z",
+        "published": "2026-05-22T15:33:00Z",
+        "updated": "2026-05-22T15:33:13Z",
         "categories": [
           "Atmospheric Sciences",
           "Climate",
@@ -695,7 +695,7 @@
           "k-means聚类",
           "极端降水"
         ],
-        "updated_at": "2026-05-24T19:23:08.187197+00:00",
+        "updated_at": "2026-05-25T03:20:26.286652+00:00",
         "cache_hit": true
       }
     },
@@ -707,8 +707,8 @@
           "Bin Shahid, Ali"
         ],
         "abstract": "Deforestation in the Amazon basin degrades not only the cleared land but also the hydrological function of adjacent intact forest. Here we combine 10 years of SMAP Level 4 root-zone soil moisture (9 km, 2015 to 2024) with Hansen Global Forest Change data (30 m) to quantify how proximity to deforestation edges affects soil moisture persistence in intact forest across the Amazon basin. We classify 32,011 intact forest cells into six distance bins ranging from edge-adjacent (0 to 9 km) to deep interior (greater than 144 km) and compute post-wet-season dry-down rates and e-folding residence times for each bin. We find a continuous, monotonic gradient: forest within 9 km of a substantial clearing (1 km squared or larger) dries eight times faster than forest more than 144 km from any edge (dry-down rate negative 0.024 versus negative 0.003 cubic metres per cubic metre per month; one-way ANOVA F equals 25.3, p less than 0.000001). The e-folding moisture residence time increases from 13.6 months at the edge to 56.8 months in the deep interior (Spearman rho equals 1.000 across all bins). In a complementary analysis with seven clearing-size bins, we show that the size of the nearest clearing independently predicts neighbor dry-down: forest adjacent to clearings exceeding 1000 km squared dries 46 percent faster than forest adjacent to clearings of 1 to 3 km squared (p equals 0.0004). A critical threshold emerges at approximately 10 km squared, where the largest single step in residence time occurs (17 percent reduction); below this size, effects are moderate, while above it, degradation saturates near the severe levels characteristic of the arc of deforestation. These results demonstrate that deforestation degrades the water-holding capacity of intact forest over distances two orders of magnitude greater than the 100 to 300 m microclimate edge effects documented by the Biological Dynamics of Forest Fragments Project. The findings imply that a restored forest patch must be large enough for its core to lie more than 70 km from any degraded boundary, setting a minimum viable diameter of approximately 150 km for hydrological self-sufficiency. This constraint has direct implications for the design of large-scale restoration programs in the Amazon.",
-        "published": "2026-05-22T19:07:00Z",
-        "updated": "2026-05-22T19:07:53Z",
+        "published": "2026-05-22T13:07:00Z",
+        "updated": "2026-05-22T13:07:53Z",
         "categories": [
           "Atmospheric Sciences",
           "Environmental Monitoring",
@@ -778,7 +778,7 @@
           "Hansen",
           "亚马逊流域"
         ],
-        "updated_at": "2026-05-24T19:23:08.192421+00:00",
+        "updated_at": "2026-05-25T03:20:26.295925+00:00",
         "cache_hit": true
       }
     },
@@ -790,8 +790,8 @@
           "Bin Shahid, Ali"
         ],
         "abstract": "Modeling studies predict that biological aerosol, specifically pollen acting as giant cloud condensation nuclei (GCCN), can modify precipitation character by initiating collision-coalescence and warm rain in shallow cloud (Steiner et al., 2015; Wozniak et al., 2018; Paukert et al., 2025). No observational study has tested this prediction. We exploit a natural experiment, the removal of ~29,000 paper mulberry (Broussonetia papyrifera) trees from Islamabad, Pakistan, whose pollen (30,000–50,000 grains/m³, 3–4× the modeled effect threshold) dominated the March aerosol budget, to provide the first observational evidence that biological GCCN control the rainfall intensity distribution. We derive discriminating predictions from four competing mechanisms: (H1) giant CCN loss, (H2) evapotranspiration decline, (H3) urban heat island intensification, and (H4) anthropogenic fine-aerosol increase. These four mechanisms predict different responses in the rainfall intensity distribution, a distinction not previously exploited in the urban precipitation literature. Six tests applied to the 23-year PMD pollen record (2003–2025) and 43 years of CHIRPS daily precipitation (1981–2023) yield unambiguous results: pollen correlates specifically with light rain days (0.2–5 mm; r=+0.507, p=0.014) but not with heavy rain days (>20 mm; p=0.169), total precipitation (p=0.595), or mean rain intensity (p=0.760). The effect is confined to the March pollen season, tracks year-to-year pollen variability including a natural dip (2013–2016) and recovery (2017–2023) uncorrelated with canopy area or urbanization, and is absent from the adjacent control city (Rawalpindi, 15 km, same synoptic forcing). The giant CCN hypothesis (H1) passes all six tests. Evapotranspiration, urban heat, and aerosol shift hypotheses each fail multiple tests. This constitutes the first observational validation of modeled bioaerosol-precipitation interactions, the first use of intensity partitioning to discriminate aerosol mechanisms in an urban setting, and the first resolution of the bidirectional pollen-rain confound that has obscured the giant-CCN signal in aerobiological data.",
-        "published": "2026-05-22T19:00:00Z",
-        "updated": "2026-05-22T19:00:11Z",
+        "published": "2026-05-22T13:00:00Z",
+        "updated": "2026-05-22T13:00:11Z",
         "categories": [
           "Atmospheric Sciences",
           "Earth Sciences",
@@ -861,7 +861,7 @@
           "城市降雨",
           "强度分档"
         ],
-        "updated_at": "2026-05-24T19:23:08.201544+00:00",
+        "updated_at": "2026-05-25T03:20:26.304377+00:00",
         "cache_hit": true
       }
     },
@@ -877,8 +877,8 @@
           "A. Balmaseda, Magdalena"
         ],
         "abstract": "Seasonal predictability over the North Atlantic-European (NAE) sector is strongly modulated by the background climate state, particularly in early winter. In this season, different ENSO teleconnections have been reported before and after the 1990s. However, these studies rely on linear analysis, and the reasons for this lack of stationarity and its implications for seasonal forecasting have not yet been fully assessed. Here, we evaluate the non-stationarity of early winter ENSO teleconnections over the NAE using a non-linear framework, the Neural Network forecast application (NN4CAST). The NN4CAST model predicts November-December sea level pressure anomalies from October sea surface temperature anomalies. The neural network achieves skill comparable to the ECMWF SEAS5 dynamical system, and even exceeds it in certain regions like the NAE, despite relying only on October SST predictors. The model detects a period with significant improvement in skill over the North Atlantic Oscillation centres of action during 1970-1990s, specially for the Iceland region, whereas for the East Atlanticn pattern, the improvement comes in recent decades, namely 1990-2020s. These changes in predictability might be driven by an intensification of the Rossby wave source over Southeast Asia as well as a southward displacement of the North Atlantic jet stream during the latter period. Our results highlight the value of explainable artificial intelligence for identifying state-dependent sources of seasonal predictability and for bridging data-driven approaches with physical understanding of climate teleconnections.",
-        "published": "2026-05-22T15:59:00Z",
-        "updated": "2026-05-22T15:59:19Z",
+        "published": "2026-05-22T09:59:00Z",
+        "updated": "2026-05-22T09:59:19Z",
         "categories": [
           "Atmospheric Sciences",
           "Climate",
@@ -944,7 +944,7 @@
           "NN4CAST",
           "北大西洋涛动"
         ],
-        "updated_at": "2026-05-24T19:23:08.208652+00:00",
+        "updated_at": "2026-05-25T03:20:26.312174+00:00",
         "cache_hit": true
       }
     },
@@ -962,8 +962,8 @@
           "Drinka, Radovan"
         ],
         "abstract": "We analyze North Atlantic Tropical Cyclone (TC) activity using the Columbia HAZard (CHAZ) model to downscale 12 models from CMIP6 under the SSP1-2.6 and SSP5-8.5 scenarios --- those with the least and greatest anthropogenic forcing respectively. TC frequency increases along the Southeastern U.S. and declines along the Gulf under both SSPs. Greater TC frequency is not projected in the highest-warming scenario (SSP5-8.5) than in the lowest-warming scenario (SSP1-2.6) in the North Atlantic basin, even though it is in the global mean. These patterns remain broadly consistent over the 21st century, with stronger changes under higher-emission scenarios. The response appears driven primarily by El Niño-like shifts in the tropical Pacific mean state that influence Atlantic potential intensity and vertical wind shear. These results suggest that regional TC activity is more sensitive to the pattern of surface warming than to its global mean, and highlight the importance of the tropical Pacific in particular.",
-        "published": "2026-05-22T15:54:00Z",
-        "updated": "2026-05-22T15:54:27Z",
+        "published": "2026-05-22T09:54:00Z",
+        "updated": "2026-05-22T09:54:27Z",
         "categories": [
           "Physical Sciences and Mathematics",
           "tropical cyclones",
@@ -1025,7 +1025,7 @@
           "北大西洋落地",
           "类厄尔尼诺太平洋强迫"
         ],
-        "updated_at": "2026-05-24T19:23:08.224758+00:00",
+        "updated_at": "2026-05-25T03:20:26.347976+00:00",
         "cache_hit": true
       }
     },
@@ -1039,8 +1039,8 @@
           "Troldborg, Lars"
         ],
         "abstract": "This method article presents a local refinement framework for a national-scale, machine learning-based groundwater model that predicts typical summer and winter water table depth at 10 × 10 m resolution at national scale of Denmark. While the existing baseline model provides high-resolution national coverage and is suitable for screening purposes, its accuracy remains insufficient for local groundwater management applications. The proposed method integrates new groundwater observations into the existing training dataset and retrains the baseline model to enhance local fidelity while preserving large-scale consistency. The approach is demonstrated for a 212 km² case study area using 100 synthetic groundwater observations. Cross-validation results show consistent improvements in mean error, mean absolute error, and root mean squared error compared to the baseline model, particularly when increased weights are assigned to new observations. The refined models produce improved precision in areas with new observations while maintaining baseline behaviour elsewhere, demonstrating its suitability for combining national datasets with local monitoring networks for improved decision support in climate adaptation, nature conservation and other applications.",
-        "published": "2026-05-21T21:38:00Z",
-        "updated": "2026-05-21T21:38:52Z",
+        "published": "2026-05-21T15:38:00Z",
+        "updated": "2026-05-21T15:38:52Z",
         "categories": [
           "Planetary Hydrology",
           "Water Resource Management"
@@ -1101,7 +1101,7 @@
           "机器学习",
           "LightGBM"
         ],
-        "updated_at": "2026-05-24T19:23:08.241566+00:00",
+        "updated_at": "2026-05-25T03:33:26.245453+00:00",
         "cache_hit": true
       }
     },
@@ -1114,8 +1114,8 @@
           "Yoshizawa, Kazunori"
         ],
         "abstract": "The Mw 7.7 Myanmar earthquake of 28 March 2025 ruptured the Sagaing Fault system over ~450 km and exhibited complex rupture behavior, including intermittent supershear propagation and backward-migrating high-frequency (HF) P-wave radiation. We image the rupture evolution using multi-frequency teleseismic P-wave back-projection (BP) (0.05–0.5, 0.1–1.0, and 0.3–2.0 Hz) and compare the results with near-fault strong-motion data recorded at Nay Pyi Taw (NPT). Our BP results reveal two key features: (1) two distinct episodes of backward-migrating HF radiation initiated at the Sagaing–Meiktila and Meiktila–NPT fault junctions, with apparent migration speeds of 6.0–6.5 km/s, and (2) a pronounced HF radiator concentrated on a short splay-fault branch adjacent to the NPT segment. These HF radiators are preferentially located near the edges of high slip-rate patches in a P-wave slip model. The near-field displacement record at NPT shows a negative pulse following the quasi-static offset, likely representing a stopping phase generated by abrupt rupture arrest. Our results suggest that spatial variations in fault geometry, including segment junctions and fault branching, played an important role in rupture deceleration and termination, generating backward-migrating stopping-phase radiation.",
-        "published": "2026-05-21T07:18:00Z",
-        "updated": "2026-05-21T07:18:20Z",
+        "published": "2026-05-21T01:18:00Z",
+        "updated": "2026-05-21T01:18:20Z",
         "categories": [
           "Earth Sciences",
           "Geophysics and Seismology",
@@ -1181,7 +1181,7 @@
           "断层几何",
           "远场P波"
         ],
-        "updated_at": "2026-05-24T19:23:08.276825+00:00",
+        "updated_at": "2026-05-25T03:35:53.820821+00:00",
         "cache_hit": true
       }
     },
@@ -1196,8 +1196,8 @@
           "Abbas, Yasir"
         ],
         "abstract": "Climate change constitutes a compound existential risk for Pakistan — a nation responsible for less than one percent of global greenhouse-gas emissions yet consistently ranked among the ten most climate-vulnerable states on earth (Germanwatch, 2021). Escalating heatwaves, intensifying monsoon floods, accelerating glacial retreat, chronic smog, and advancing desertification are not future projections for Pakistan: they are present, documented, and accumulating realities that claim lives, destroy crops, and destabilise livelihoods year after year. To assess community-level perceptions, lived impacts, and policy priorities, the PIEAS SAI Research Initiative administered a bilingual (English / Roman Urdu) structured survey instrument from 1 to 16 May 2026. A total of 1,149 valid, anonymised responses were obtained across all seven administrative regions: Punjab (37.5%), Khyber Pakhtunkhwa (25.8%), Islamabad Capital Territory (21.1%), Sindh (7.0%), Azad Jammu and Kashmir (3.5%), Gilgit-Baltistan (2.3%), and Balochistan (2.7%). The sample comprised 852 general-public respondents and 297 domain professionals from engineering, natural sciences, and academia. Principal findings indicate that 90.6% of general-public respondents rated their climate-change awareness as Critical or Serious. Disruption to rainfall patterns ranked highest among six impact dimensions on a five-point Likert scale (mean = 3.91; SD = 1.1), followed by extreme heat-wave intensity (mean = 3.76; SD = 1.1) and agricultural stress (mean = 3.70; SD = 1.1). An aggregate 68.8% reported direct household or livelihood damage attributable to climate events. Afforestation and ecosystem restoration dominated government-priority preferences (65.1%), with water-resource management second (20.9%). This report documents the full survey findings, integrates triangulated secondary evidence for underrepresented regions, develops a thematic qualitative analysis, critically evaluates the limitations of community-preferred conventional solutions, and situates the survey evidence within the PIEAS SAI Research Initiative's broader scientific inquiry into Stratospheric Aerosol Injection (SAI) as a near-term, temporary geoengineering supplement — not replacement — to conventional emissions-reduction pathways",
-        "published": "2026-05-21T00:46:00Z",
-        "updated": "2026-05-21T00:46:35Z",
+        "published": "2026-05-20T18:46:00Z",
+        "updated": "2026-05-20T18:46:35Z",
         "categories": [
           "Physical Sciences and Mathematics",
           "Climate Change Pakistan",
@@ -1212,9 +1212,9 @@
         "source": "eartharxiv",
         "source_id": "13097",
         "doi": "10.31223/X55X9P",
-        "local_pdf_path": "data/pdfs/eartharxiv/Physical-Sciences-and-Mathematics/20260521/eartharxiv-13097.pdf",
+        "local_pdf_path": "data/pdfs/eartharxiv/Physical-Sciences-and-Mathematics/20260520/eartharxiv-13097.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/eartharxiv/Physical-Sciences-and-Mathematics/20260521/eartharxiv-13097.md",
+        "markdown_path": "data/markdown/eartharxiv/Physical-Sciences-and-Mathematics/20260520/eartharxiv-13097.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -1262,7 +1262,7 @@
           "巴基斯坦",
           "气候政策优先级"
         ],
-        "updated_at": "2026-05-24T19:23:08.297495+00:00",
+        "updated_at": "2026-05-25T03:35:53.848031+00:00",
         "cache_hit": true
       }
     },
@@ -1280,8 +1280,8 @@
           "Truffer, Martin"
         ],
         "abstract": "Quantifying the input mass from snow accumulation on rapidly changing glaciers is critical to establishing baseline states and predicting responses to climate change. Some of the largest glaciers in the world are located in the St. Elias Mountains in Southeast Alaska and Southwest Yukon; however, the input mass to these glaciers is poorly constrained. Here we used airborne radar sounding combined with in situ measurements of snow properties, and satellite imagery from Landsat 8/9 and Sentinel 1, to estimate the winter mass balance on the Bering, Hubbard, Kaskawulsh, Logan, Seward, Walsh, and Yahtse glaciers. Along-track snow water equivalent measurements for the winter accumulation period range from 0 to 3 m in 2018, 0.2 to 3.4 m in 2021, and 1.1 to 3.3 m in 2023. On-glacier measurements from the Seward and Kaskawulsh glaciers provided a mean seasonal snow density of 438 ± 22 kg m-3 which leads to a real dielectric permittivity of 1.86 ± 0.12, similar to values from other Alaskan glaciers. We observed that the maritime glaciers Yahtse, Bering, Hubbard, and Seward receive significantly more accumulation than the more inland glaciers.",
-        "published": "2026-05-21T00:42:00Z",
-        "updated": "2026-05-21T00:42:32Z",
+        "published": "2026-05-20T18:42:00Z",
+        "updated": "2026-05-20T18:42:32Z",
         "categories": [
           "Glaciology",
           "Ground-penetrating radar",
@@ -1294,9 +1294,9 @@
         "source": "eartharxiv",
         "source_id": "13106",
         "doi": "10.31223/X5FF4F",
-        "local_pdf_path": "data/pdfs/eartharxiv/Glaciology/20260521/eartharxiv-13106.pdf",
+        "local_pdf_path": "data/pdfs/eartharxiv/Glaciology/20260520/eartharxiv-13106.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/eartharxiv/Glaciology/20260521/eartharxiv-13106.md",
+        "markdown_path": "data/markdown/eartharxiv/Glaciology/20260520/eartharxiv-13106.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -1344,7 +1344,7 @@
           "雪密度标定",
           "育康山脉"
         ],
-        "updated_at": "2026-05-24T19:23:08.315271+00:00",
+        "updated_at": "2026-05-25T03:35:53.865579+00:00",
         "cache_hit": true
       }
     },
@@ -1359,8 +1359,8 @@
           "Zervas, Chris"
         ],
         "abstract": "Coastal regions are complex environments. They lie at the confluence of physical oceanic, atmospheric, and land-based processes, and continue to undergo significant change due to both natural and human-driven factors. Although it is well known that ocean sea surface temperatures (SSTs) have increased over the past several decades, extending these trends and patterns to coastal waters is nontrivial. We evaluated a new quality-controlled dataset of coastal water temperature collected at NOAA Center for Operational Oceanographic Products and Services (CO-OPS) water level monitoring stations. Water temperature (WT) records were analyzed at 95 stations extending from the mid-1990s to 2023 and representing all the major US coastal regions. Seasonal cycle metrics, linear trends, daily distributions, and extreme percentile thresholds were computed at each site. Seasonal cycles and peak times of year tracked well with solar heating and consistently tracked behind air temperature by a few days to a few weeks. US East Coast and Great Lakes regions have a much stronger seasonal cycle and larger range (up to 25℃) than West Coast and Island regions (as low as 3℃). The great majority of stations experience warming over this time period, with statistically significant trends at 56 of 95 stations, averaging approximately 0.5 ℃/decade. Many of these locations are also experiencing sea level rise, most notably in the Southeast and Gulf regions. Although geographic patterns exist, variations are found in extreme threshold temperatures and trends station to station and between bay systems and the open coast, highlighting the need for continuous in situ monitoring along the coast. This study provides baseline statistics of long-term near shore coastal WT data and supports informed future planning and decision-making in this dynamic environment.",
-        "published": "2026-05-21T00:33:00Z",
-        "updated": "2026-05-21T00:33:28Z",
+        "published": "2026-05-20T18:33:00Z",
+        "updated": "2026-05-20T18:33:28Z",
         "categories": [
           "Oceanography and Atmospheric Sciences and Meteorology",
           "Physical Sciences and Mathematics",
@@ -1378,9 +1378,9 @@
         "source": "eartharxiv",
         "source_id": "13085",
         "doi": "10.31223/X5TR1T",
-        "local_pdf_path": "data/pdfs/eartharxiv/Oceanography-and-Atmospheric-Sciences-and-Meteorology/20260521/eartharxiv-13085.pdf",
+        "local_pdf_path": "data/pdfs/eartharxiv/Oceanography-and-Atmospheric-Sciences-and-Meteorology/20260520/eartharxiv-13085.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/eartharxiv/Oceanography-and-Atmospheric-Sciences-and-Meteorology/20260521/eartharxiv-13085.md",
+        "markdown_path": "data/markdown/eartharxiv/Oceanography-and-Atmospheric-Sciences-and-Meteorology/20260520/eartharxiv-13085.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -1428,7 +1428,7 @@
           "极端温度",
           "NOAA CO-OPS"
         ],
-        "updated_at": "2026-05-24T19:23:08.335082+00:00",
+        "updated_at": "2026-05-25T03:35:53.884274+00:00",
         "cache_hit": true
       }
     },
@@ -1443,8 +1443,8 @@
           "Van Houdt, Jan"
         ],
         "abstract": "Anthropogenic global warming has reached a level so high that it is now possible to an- alyze its dynamics and spatial variation. Spatially varying Surface Air Temperature (SAT) anomalies [1] can be well described by exponential functions with increase rates that range from 2.1 to 3.7% per year, depending on the region. The Northern Hemisphere has warmed significantly more than the Southern Hemisphere and is also warming more rapidly. In this work, small-signal, lumped thermal impedance (LTI) modeling of the Earth thermal system is introduced as an efficient method to model the temporal and spatial variation of SAT across the globe at continental scale since the industrial revolution. SAT is, in first-order, determined by the warming of the troposphere as a consequence of energy sources dissipating heat in it. Due to its small thermal capacity, it has a high sensitivity to these sources. The thermal sensitivity of the troposphere is estimated to be 5.4±0.9K per W/m2 of dissi- pated energy. This value is derived from the troposphere’s thermal response to the 11-year solar cycle. The spatially varied increase of 2.1 to 3.7% per year of SAT-anomaly cannot be simply explained by global uniform warming by uniformly distributed greenhouse gases (GHGs), dominated by CO2, of which the concentration increases at a rate of only 1.9% per year. Within the framework of a small-signal LTI-model for the troposphere volumes above the Northern and Southern Hemisphere’s oceans and land masses, respectively, three effective small-signal anthropogenic troposphere heat sources are identified and quantified consistent with the observed region-dependent exponential increase in SAT. These are: (i) IRTA: Infrared Radiation Absorption in the Troposphere determined by GHG-emission and quantified from the Southern Hemisphere ocean SAT-evolution; (ii) AHR: Anthropogenic Heat Release which directly heats the troposphere, independently derived from global primary energy consumption data; (iii) SITA: Solar Irradiation Absorption in the Troposphere increasing rapidly (>3% per year) attributed to increasing levels of short-lived Anthropogenic Chemicals Emission (ACE). This heat source is quantified by fitting the impedance model equations to the continental SAT-evolutions since 1990. It amounts to an increase of close to +0.2% in solar irradiation absorption over the Northern Hemisphere’s land. The global average increase in SITA coincides with the increase in OH-anomaly since 1990, consistent with the hypothesized chemical origin of SITA-warming [2]. The presented LTI-model quantifies the accelerating and spatially varying global warming as a result of exponentially increasing anthropogenic heat sources (IRTA, AHR, SITA) that cause a region-dependent exponentially increasing SAT since the industrial revolution. The results are derived within a small-signal, lumped linear thermal impedance framework and are bounded by the LTI-model structure, its linearization, and the estimations of the effective impedance parameters derived from SAT and Total Solar Irradiation measurements.",
-        "published": "2026-05-19T05:16:00Z",
-        "updated": "2026-05-19T05:16:54Z",
+        "published": "2026-05-18T23:16:00Z",
+        "updated": "2026-05-18T23:16:54Z",
         "categories": [
           "Climate",
           "Oceanography and Atmospheric Sciences and Meteorology",
@@ -1463,9 +1463,9 @@
         "source": "eartharxiv",
         "source_id": "12970",
         "doi": "10.31223/X5GF6H",
-        "local_pdf_path": "data/pdfs/eartharxiv/Climate/20260519/eartharxiv-12970.pdf",
+        "local_pdf_path": "data/pdfs/eartharxiv/Climate/20260518/eartharxiv-12970.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/eartharxiv/Climate/20260519/eartharxiv-12970.md",
+        "markdown_path": "data/markdown/eartharxiv/Climate/20260518/eartharxiv-12970.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -1513,7 +1513,7 @@
           "人为热释放",
           "太阳辐照吸收"
         ],
-        "updated_at": "2026-05-24T19:23:08.487587+00:00",
+        "updated_at": "2026-05-25T03:35:54.018661+00:00",
         "cache_hit": true
       }
     }

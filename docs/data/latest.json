@@ -1,6 +1,6 @@
 {
   "date": "2026-05-25",
-  "generated_at": "2026-05-25T03:35:54.044674+00:00",
+  "generated_at": "2026-05-25T11:20:27.279440+00:00",
   "config": {
     "site_title": "PaperRadar",
     "site_description": {
@@ -91,8 +91,8 @@
           "Song, Hajoon"
         ],
         "abstract": "Phytoplankton communities, key regulators of marine ecosystems and the global carbon cycle, are susceptible to sea surface temperature variability, such as marine heatwaves (MHWs). However, their trait-dependent responses and the resulting compositional shifts during MHWs remain poorly understood. Here, using an advanced global ocean–biogeochemical model that resolves 310 phytoplankton trait types, we show that MHWs act as trait-selective disturbances. Decreases in biomass during MHWs, particularly in the equatorial Pacific and Indian Ocean, are generally accompanied by significant diversity loss and an enhanced dominance of small, warm-preferring types. However, short and strong heatwaves in the Pacific can promote elevated diversity. These contrasting patterns are shaped by the interplay between heatwave characteristics and background environmental conditions. Such restructuring in phytoplankton communities may have cascading effects on the food web and the biological carbon pump, highlighting the need to account for diverse traits when assessing climatic impacts on phytoplankton communities.",
-        "published": "2026-05-24T21:00:00Z",
-        "updated": "2026-05-24T21:00:40Z",
+        "published": "2026-05-24T15:00:00Z",
+        "updated": "2026-05-24T15:00:40Z",
         "categories": [
           "Biodiversity",
           "Biogeochemistry",
@@ -160,7 +160,7 @@
           "全球生物地球化学模型",
           "赤道太平洋"
         ],
-        "updated_at": "2026-05-24T19:23:08.063911+00:00",
+        "updated_at": "2026-05-25T03:20:26.183267+00:00",
         "cache_hit": true
       }
     },
@@ -172,8 +172,8 @@
           "Bin Shahid, Ali"
         ],
         "abstract": "Large subarctic rivers deliver most of their dissolved nutrients during the spring freshet, in approximate phase with the ice-edge diatom bloom that those nutrients support. Hydroelectric regulation flattens the river hydrograph, holding back the freshet and raising winter discharge, and in doing so it redistributes nutrient delivery in time. Across twenty subarctic rivers spanning the Arctic Ocean and Bothnian Bay drainages, classified by basin-cumulative Degree of Regulation (DOR), we test whether regulation shifts the delivery of dissolved silica out of phase with the shelf-specific diatom bloom window. Using the Global Aggregation of Stream Silica dataset (Jankowski et al., 2025) and the Arctic Great Rivers Observatory record, we estimate seasonal silica flux with a LOADEST-style concentration-discharge rating and map delivery onto receiving-shelf bloom climatology for eight shelves (Kara, Laptev, East Siberian, Beaufort, Bering/Chukchi, Bothnian Bay, Bothnian Sea, Gulf of Finland). Regulated rivers deliver 24.8 percent of annual silica during the open-water bloom window against 35.8 percent for controls, a synchrony gap of -11.0 percentage points that remains negative under every combination of plus-or-minus 15-day perturbations of the bloom window (49 of 49 negative, range -7.3 to -13.8 pp). The synchrony loss scales monotonically with DOR across the panel (Spearman rho = -0.80; OLS slope -0.284 per unit DOR, R-squared = 0.59, t = -5.05, two-sided p = 0.00008 from Student-t with n = 20 rivers spanning DOR 0 to 0.63), and leave-one-out cross-validation preserves a negative slope in 20 of 20 fits (slope range -0.310 to -0.250, all p less than 0.001). A placebo difference-in-differences design argues against the climate-only counterfactual on the cleanest available natural experiment: post-Krasnoyarsk Yenisei shifted winter discharge fraction by 4.96 percentage points more than the unregulated Lena (95 percent CI 4.21 to 5.72, p less than 0.0001) under identical Siberian climate. Within Yenisei, the year-by-year differential winter discharge fraction tracks the cumulative basin reservoir-filling curve across 73 years (r = +0.82), converting the binary causal test into a continuous-dose trajectory. The expanded twenty-river panel reproduces the original six-river ArcticGRO result independently (gap -10.0 vs -9.2 pp on the same six rivers using GlASS data), with multiple high-DOR anchors (Yenisei, Lulealven, Indalsalven, Skellefte, Oulujoki, Kymijoki, Angermanalven) replacing the single-river leverage of the original analysis. The contribution is the reframing of regulated-river nutrient alteration from a winter-enhancement story to a measurable loss of synchrony between SiO2 delivery and biological demand on the receiving shelves, robust across the Arctic Ocean and Bothnian Bay drainages.",
-        "published": "2026-05-24T00:38:00Z",
-        "updated": "2026-05-24T00:38:09Z",
+        "published": "2026-05-23T18:38:00Z",
+        "updated": "2026-05-23T18:38:09Z",
         "categories": [
           "Earth Sciences",
           "Hydrology",
@@ -195,9 +195,9 @@
         "source": "eartharxiv",
         "source_id": "13160",
         "doi": "10.31223/X5M20P",
-        "local_pdf_path": "data/pdfs/eartharxiv/Earth-Sciences/20260524/eartharxiv-13160.pdf",
+        "local_pdf_path": "data/pdfs/eartharxiv/Earth-Sciences/20260523/eartharxiv-13160.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/eartharxiv/Earth-Sciences/20260524/eartharxiv-13160.md",
+        "markdown_path": "data/markdown/eartharxiv/Earth-Sciences/20260523/eartharxiv-13160.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -245,7 +245,7 @@
           "硅藻生长",
           "ArcticGRO"
         ],
-        "updated_at": "2026-05-24T19:23:08.098762+00:00",
+        "updated_at": "2026-05-25T03:20:26.225901+00:00",
         "cache_hit": true
       }
     },
@@ -266,8 +266,8 @@
           "Chen, Kai"
         ],
         "abstract": "Ground-level ozone (O3) pollution has declined in the U.S., yet the progress has stalled in recent years, coinciding with increasing wildfire smoke. Using ensemble machine learning models trained on surface observations, we develop a gridded daily smoke O3 dataset across the contiguous U.S. from 2006-2023. We estimate that wildfire smoke placed an additional 29 million people each year in areas exceeding the federal O3 standard, a 74% increase over a no-smoke baseline. Smoke has offset 36% of the reduction in the O3 nonattainment population and 62% of the improvement in population-weighted O3 concentrations over 2006-2023. Smoke ozone follows spatial-temporal patterns distinct from smoke PM2.5. Wildfire smoke is increasingly eroding the O3 health benefits achieved through decades of emission controls, posing a growing challenge for air quality management in a changing climate.",
-        "published": "2026-05-23T21:49:00Z",
-        "updated": "2026-05-23T21:49:40Z",
+        "published": "2026-05-23T15:49:00Z",
+        "updated": "2026-05-23T15:49:40Z",
         "categories": [
           "Atmospheric Sciences",
           "Climate",
@@ -332,7 +332,7 @@
           "集成机器学习",
           "EPA AirData"
         ],
-        "updated_at": "2026-05-24T19:23:08.135724+00:00",
+        "updated_at": "2026-05-25T03:20:26.240797+00:00",
         "cache_hit": true
       }
     },
@@ -344,8 +344,8 @@
           "Wong, Shannon T."
         ],
         "abstract": "Snow megadunes cover 5×105 km2 of the East Antarctic plateau, biasing surface mass balance estimates and overprinting ice-core signals—yet their 2–5 km wavelength has lacked a quantitative selection mechanism for two decades. We first falsify the standard formula λ∗ = 2πU0/N through a calibration-free spatial test: eight REMA 2 m tiles across two independent locations at 81.5–82.0°S show no organised 2–5 km signal while the formula predicts 4–5 km megadunes at every tile (p < 10−8). We then derive the correct mechanism: finite inversion depth Hinv and saltation saturation length Lsat produce a dispersion peak shifting > 60% with Hinv, vanishing below HinvN1/U0 < π/2. Leave-oneout ERA5 cross-validation gives RMSE= 0.17 km with perfect rank ordering across all sectors (Spearman ρ = 1.00, p = 0.042), versus ρ = 0.80 for the single-scale formula, which mis-ranks sectors driven by Hinv variation—a quantity immune to ERA5 calibration multipliers. A fifth independent site extends validation 1500 km beyond the nearest calibration anchor.",
-        "published": "2026-05-23T21:48:00Z",
-        "updated": "2026-05-23T21:48:55Z",
+        "published": "2026-05-23T15:48:00Z",
+        "updated": "2026-05-23T15:48:55Z",
         "categories": [
           "Applied Statistics",
           "Categorical Data Analysis",
@@ -443,7 +443,7 @@
           "REMA高程拼图",
           "ERA5验证"
         ],
-        "updated_at": "2026-05-24T19:23:08.154135+00:00",
+        "updated_at": "2026-05-25T03:20:26.260743+00:00",
         "cache_hit": true
       }
     },
@@ -457,8 +457,8 @@
           "Agier, Lydiane"
         ],
         "abstract": "General support for climate action is widely expressed within academia and public research, with surveys consistently reporting exceptionally high levels of awareness and concern about the climate crisis. Yet, the implementation of mitigation policies in universities and research institutions remains limited. Drawing on a national survey of 4,688 academics and research personnel in France, we examine this apparent paradox and find that more than half express attitudinal barriers to climate action, including reluctance toward the inclusion of academia in mitigation efforts, opposition to institutional mitigation policies, and inconsistencies between stated support for mitigation and willingness to adopt corresponding changes in individual research practices. Higher perceived costs of academic mitigation actions—particularly their potential impacts on competitiveness and scientific visibility—are consistently associated with these barriers, along with lower agreement with degrowth as a response to environmental challenges. Such barriers are also more prevalent among senior male scientists with higher levels of mobility, particularly in physics, chemistry, and medical and health sciences. Academia provides a critical context to examine how climate inaction can persist in the near absence of climate denial. Our findings suggest that moving from stated commitments to effective action requires addressing how climate policies interact with academic hierarchies and dominant models of productivity and recognition—an issue with direct implications for the design of mitigation policies within research institutions.",
-        "published": "2026-05-23T21:47:00Z",
-        "updated": "2026-05-23T21:47:02Z",
+        "published": "2026-05-23T15:47:00Z",
+        "updated": "2026-05-23T15:47:02Z",
         "categories": [
           "Higher Education",
           "Academic carbon footprint",
@@ -521,7 +521,7 @@
           "去增长",
           "问卷调查"
         ],
-        "updated_at": "2026-05-24T19:23:08.162872+00:00",
+        "updated_at": "2026-05-25T03:20:26.268331+00:00",
         "cache_hit": true
       }
     },
@@ -534,8 +534,8 @@
           "Camargo, Chico"
         ],
         "abstract": "Climate contrarian discourse permeates a wide range of media outlets, including popular entertainment television shows and films. This study identifies and quantifies the frequency of these views within a large global corpus of entertainment scripts derived from film and television subtitles (N = 223,782). Additionally, drawing on a discourse studies perspective, we evaluate the performance of a Large Language Model (LLM) designed to detect and classify climate contrarian claims. Our findings reveal that climate change is occasionally referenced in entertainment films and TV shows, and contrarian views are a minority; most mentions contain a pro-climate orientation, followed by incidental references that remain ambiguous regarding a clear view, reflecting a growing willingness to engage with the topic. In general, pro-climate views significantly outweigh contrarian views, which are rarely isolated; they mostly appear alongside pro-climate claims, are disqualified, mocked, or sarcastically expressed. This research contributes to understanding the presence and discursive nature of climate change views in mainstream entertainment media and begins to examine how entertainment content reflects possible beliefs and attitudes. We encourage further research into how entertainment media creatives perceive and decide whether to include these representations, as well as their motivations and the potential implications of the visibility of climate-related themes in popular culture.",
-        "published": "2026-05-23T21:42:00Z",
-        "updated": "2026-05-23T21:41:57Z",
+        "published": "2026-05-23T15:42:00Z",
+        "updated": "2026-05-23T15:41:57Z",
         "categories": [
           "Environmental Studies",
           "climate discourse",
@@ -602,7 +602,7 @@
           "大语言模型",
           "影视字幕"
         ],
-        "updated_at": "2026-05-24T19:23:08.181393+00:00",
+        "updated_at": "2026-05-25T03:20:26.281719+00:00",
         "cache_hit": true
       }
     },
@@ -619,8 +619,8 @@
           "Zardi, Dino"
         ],
         "abstract": "The European Alps exhibit a complex geomorphology and undergo the influences of different climate regimes, resulting in high spatial variability of climatic variables and their changes. To provide a detailed analysis of climate regions and climatic changes occurring at a sub-regional scale during the 1961-2020 period, we exploited an updated regionalization of the European Alps that benefits from EEAR-Clim, a new observational daily dataset permitting a robust analysis of local-scale climate features. The regionalization of the European Alps identifies five sub-regions exhibiting distinct climate features: North-West, North-East, South-West, Central-South, South \\& South-East (S\\&SE). The analysis of average climate conditions highlighted Central-South and S\\&SE as the sub-regions experiencing the warmest temperatures and the highest monthly precipitation totals, mostly in spring and autumn, though characterized by a pronounced variability among stations. Conversely, colder temperatures and moderate yet frequent precipitations occurs in northern Alps. Trends of air temperature and precipitation over these sub-regions highlights uneven warming in the Alpine region. North-East, South-West and S\\&SE were identified as the fastest warming sub-regions, with increases over 1961-2020 reaching +2.0°C for minimum temperature, +2.8°C (SW) and +2.4°C (NE and S\\&SE) for maximum temperature, respectively. Despite the high spatial and temporal variability of precipitation over the European Alps, the S\\&SE sub-region exhibits drying conditions in spring and summer compared to the other regions. Trends in extreme precipitation are more statistically significant compared to changes in mean values, resulting in an increased frequency since 1961 of very extreme rainfall events, mostly in the southern Alps (+18 days). The new regionalization of the European Alps presented here is expected to support a range of climate related applications including impact studies. Moreover, it demonstrates the importance of considering variations in both average climate conditions and ongoing trends across different parts of the Alps, helping to identify areas most vulnerable to the effects of climate change.",
-        "published": "2026-05-22T21:33:00Z",
-        "updated": "2026-05-22T21:33:13Z",
+        "published": "2026-05-22T15:33:00Z",
+        "updated": "2026-05-22T15:33:13Z",
         "categories": [
           "Atmospheric Sciences",
           "Climate",
@@ -695,7 +695,7 @@
           "k-means聚类",
           "极端降水"
         ],
-        "updated_at": "2026-05-24T19:23:08.187197+00:00",
+        "updated_at": "2026-05-25T03:20:26.286652+00:00",
         "cache_hit": true
       }
     },
@@ -707,8 +707,8 @@
           "Bin Shahid, Ali"
         ],
         "abstract": "Deforestation in the Amazon basin degrades not only the cleared land but also the hydrological function of adjacent intact forest. Here we combine 10 years of SMAP Level 4 root-zone soil moisture (9 km, 2015 to 2024) with Hansen Global Forest Change data (30 m) to quantify how proximity to deforestation edges affects soil moisture persistence in intact forest across the Amazon basin. We classify 32,011 intact forest cells into six distance bins ranging from edge-adjacent (0 to 9 km) to deep interior (greater than 144 km) and compute post-wet-season dry-down rates and e-folding residence times for each bin. We find a continuous, monotonic gradient: forest within 9 km of a substantial clearing (1 km squared or larger) dries eight times faster than forest more than 144 km from any edge (dry-down rate negative 0.024 versus negative 0.003 cubic metres per cubic metre per month; one-way ANOVA F equals 25.3, p less than 0.000001). The e-folding moisture residence time increases from 13.6 months at the edge to 56.8 months in the deep interior (Spearman rho equals 1.000 across all bins). In a complementary analysis with seven clearing-size bins, we show that the size of the nearest clearing independently predicts neighbor dry-down: forest adjacent to clearings exceeding 1000 km squared dries 46 percent faster than forest adjacent to clearings of 1 to 3 km squared (p equals 0.0004). A critical threshold emerges at approximately 10 km squared, where the largest single step in residence time occurs (17 percent reduction); below this size, effects are moderate, while above it, degradation saturates near the severe levels characteristic of the arc of deforestation. These results demonstrate that deforestation degrades the water-holding capacity of intact forest over distances two orders of magnitude greater than the 100 to 300 m microclimate edge effects documented by the Biological Dynamics of Forest Fragments Project. The findings imply that a restored forest patch must be large enough for its core to lie more than 70 km from any degraded boundary, setting a minimum viable diameter of approximately 150 km for hydrological self-sufficiency. This constraint has direct implications for the design of large-scale restoration programs in the Amazon.",
-        "published": "2026-05-22T19:07:00Z",
-        "updated": "2026-05-22T19:07:53Z",
+        "published": "2026-05-22T13:07:00Z",
+        "updated": "2026-05-22T13:07:53Z",
         "categories": [
           "Atmospheric Sciences",
           "Environmental Monitoring",
@@ -778,7 +778,7 @@
           "Hansen",
           "亚马逊流域"
         ],
-        "updated_at": "2026-05-24T19:23:08.192421+00:00",
+        "updated_at": "2026-05-25T03:20:26.295925+00:00",
         "cache_hit": true
       }
     },
@@ -790,8 +790,8 @@
           "Bin Shahid, Ali"
         ],
         "abstract": "Modeling studies predict that biological aerosol, specifically pollen acting as giant cloud condensation nuclei (GCCN), can modify precipitation character by initiating collision-coalescence and warm rain in shallow cloud (Steiner et al., 2015; Wozniak et al., 2018; Paukert et al., 2025). No observational study has tested this prediction. We exploit a natural experiment, the removal of ~29,000 paper mulberry (Broussonetia papyrifera) trees from Islamabad, Pakistan, whose pollen (30,000–50,000 grains/m³, 3–4× the modeled effect threshold) dominated the March aerosol budget, to provide the first observational evidence that biological GCCN control the rainfall intensity distribution. We derive discriminating predictions from four competing mechanisms: (H1) giant CCN loss, (H2) evapotranspiration decline, (H3) urban heat island intensification, and (H4) anthropogenic fine-aerosol increase. These four mechanisms predict different responses in the rainfall intensity distribution, a distinction not previously exploited in the urban precipitation literature. Six tests applied to the 23-year PMD pollen record (2003–2025) and 43 years of CHIRPS daily precipitation (1981–2023) yield unambiguous results: pollen correlates specifically with light rain days (0.2–5 mm; r=+0.507, p=0.014) but not with heavy rain days (>20 mm; p=0.169), total precipitation (p=0.595), or mean rain intensity (p=0.760). The effect is confined to the March pollen season, tracks year-to-year pollen variability including a natural dip (2013–2016) and recovery (2017–2023) uncorrelated with canopy area or urbanization, and is absent from the adjacent control city (Rawalpindi, 15 km, same synoptic forcing). The giant CCN hypothesis (H1) passes all six tests. Evapotranspiration, urban heat, and aerosol shift hypotheses each fail multiple tests. This constitutes the first observational validation of modeled bioaerosol-precipitation interactions, the first use of intensity partitioning to discriminate aerosol mechanisms in an urban setting, and the first resolution of the bidirectional pollen-rain confound that has obscured the giant-CCN signal in aerobiological data.",
-        "published": "2026-05-22T19:00:00Z",
-        "updated": "2026-05-22T19:00:11Z",
+        "published": "2026-05-22T13:00:00Z",
+        "updated": "2026-05-22T13:00:11Z",
         "categories": [
           "Atmospheric Sciences",
           "Earth Sciences",
@@ -861,7 +861,82 @@
           "城市降雨",
           "强度分档"
         ],
-        "updated_at": "2026-05-24T19:23:08.201544+00:00",
+        "updated_at": "2026-05-25T03:20:26.304377+00:00",
+        "cache_hit": true
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2605.23494v1",
+        "title": "Integrating b-Value and Background Seismicity Rate for Spatial Earthquake Forecasting in the Alborz Region, Northern Iran",
+        "authors": [
+          "Muhammed Hossein Mousavi",
+          "Hamzeh Mohammadigheymasi",
+          "Parva Sadeghi Alavijeh",
+          "Marjan Tourani"
+        ],
+        "abstract": "In this study, we evaluate the spatial forecasting skill of the $b$-value and background seismicity rate $μ$ across the Alborz region using a homogenized catalog of 23,961 earthquakes ($M \\geq 1.5$) recorded by the Iranian Seismological Center between 2006 and 2024. Forecast performance for $M \\geq 4.0$ and $M \\geq 4.5$ is assessed using Molchan error diagrams, probability gain, probability difference, and the modified area skill score. The results show that $μ$ provides a consistently strong spatial signal, with Molchan curves well below the random baseline and probability gains of 5--6 at low alarm rates, reflecting the persistent clustering of seismicity along major Alborz faults. The $b$-value exhibits limited skill at lower magnitudes but improves steadily with increasing magnitude; its skill score becomes positive above $M \\approx 5.3$, indicating that $b$-value anomalies begin to capture meaningful stress concentrations only for larger events. Spatial patterns reveal low $b$ zones along active reverse and strike-slip structures and high $μ$ zones following long-term seismicity clusters, underscoring their complementary physical roles. Retrospective testing confirms this complementarity: the combined $b$--$μ$ forecast achieves detection rates of 0.81--0.83 at spatial alarm rates of 0.43 and 0.36 for $M \\geq 4.0$ and $M \\geq 4.5$, respectively, representing the most efficient forecast configuration among all tested models. These findings demonstrate that integrating stress-state and tectonic-loading indicators yields a more efficient and physically grounded framework for operational earthquake forecasting in the Alborz region.",
+        "published": "2026-05-22T11:00:15Z",
+        "updated": "2026-05-22T11:00:15Z",
+        "categories": [
+          "physics.geo-ph"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2605.23494v1",
+        "abs_url": "http://arxiv.org/abs/2605.23494v1",
+        "source": "arxiv",
+        "source_id": "",
+        "doi": "",
+        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260522/2605.23494v1.pdf",
+        "pdf_download_error": null,
+        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260522/2605.23494v1.md",
+        "markdown_parse_error": null
+      },
+      "analysis": {
+        "schema_version": "paperradar.analysis.v3",
+        "input_version": "markdown-clean-v1",
+        "one_sentence_en": "Using a homogenized Iranian earthquake catalog, the study finds that background seismicity rate μ consistently forecasts where moderate-to-large earthquakes will cluster in the Alborz, while b-value adds useful skill only for larger magnitudes, and their combination is most efficient.",
+        "one_sentence_zh": "基于伊朗阿尔博兹地区同一化地震目录，该研究发现背景地震率μ能稳定刻画中到大地震的空间聚集，而b值仅在更大震级才提供有效增益，二者联合预测最有效。",
+        "summary_en": [
+          "problem: Improve operational intermediate- to long-term spatial earthquake forecasting in the tectonically complex Alborz region using physically interpretable indicators.",
+          "approach: Estimate spatial b-value and ETAS-derived background seismicity rate μ from a declustered, homogenized earthquake catalog, then evaluate individual and joint alarm maps with Molchan error diagrams, probability gain/difference, and area skill scores.",
+          "key result: μ alone shows consistently strong spatial forecasting skill for M≥4.0 and M≥4.5, b-value becomes positively skillful above about M≈5.3, and the combined b–μ forecast achieves detection rates around 0.81–0.83 at low spatial alarm rates (0.43 and 0.36)."
+        ],
+        "summary_zh": [
+          "problem: 在构造复杂的阿尔博兹地区提升具物理可解释性的中长期空间地震预测能力。",
+          "approach: 从同一化并去簇后的地震目录估算空间b值与ETAS背景地震率μ，基于Molchan误差图以及概率增益/差与修正面积技能评分评估单独与联合预警图的效果。",
+          "key result: 对M≥4.0与M≥4.5，背景地震率μ具持续的强空间预测能力；b值在约M≈5.3以上才出现正技能，而b–μ联合预报在空间报警率0.43与0.36时的探测率约为0.81–0.83。"
+        ],
+        "contribution_en": "Provides a spatial forecasting framework for the Alborz region that integrates stress-structure sensitivity (b-value) and tectonic-loading persistence (background seismicity rate μ), showing measurable synergy and identifying magnitude-dependent usefulness of each indicator.",
+        "contribution_zh": "提出面向阿尔博兹地区的空间预测框架，将应力-结构敏感性（b值）与构造加载持续性（背景地震率μ）进行整合，展示二者的互补协同，并揭示各指标的震级依赖有效性。",
+        "method_en": "Homogenize local magnitudes to moment magnitude, estimate spatial b-value with a hierarchical space–time point-process spline (HIST-PPM) approach using maximum-likelihood b estimation with magnitude completeness handling, estimate spatial μ via ETAS declustering followed by variable-bandwidth Gaussian kernel reconstruction, then convert b and μ maps into alarm cells and score them using Molchan error diagrams, probability gain/difference, and modified area skill score; joint alarms require both low-b and high-μ criteria.",
+        "method_zh": "将地方震级统一转换为矩震级；用HIST-PPM样条框架估算并空间化b值（结合最大似然估计与完备度处理），用ETAS去簇得到背景过程并以变带宽高斯核重建空间μ；随后将b与μ栅格转化为预警区域，并用Molchan误差图、概率增益/差与修正面积技能评分进行评估；联合预警同时满足低b与高μ条件。",
+        "data_or_region_en": "Alborz Fold-Thrust Belt, northern Iran; homogenized IRSC earthquake catalog of 23,961 events with M≥1.5 from 2006 to 2024.",
+        "data_or_region_zh": "伊朗北部阿尔博兹褶冲带；IRSC同一化地震目录，共23,961次事件（M≥1.5），时间范围为2006年至2024年。",
+        "geophysics_relevance_en": "Relevant to physics-based earthquake forecasting because it tests complementary stress- and loading-related observables (b-value and declustered background rate) and quantifies how their synergy improves spatial alarm efficiency.",
+        "geophysics_relevance_zh": "与物理驱动地震预测密切相关：该研究检验了与应力状态和构造加载相关的互补观测量（b值与去簇背景地震率），并量化了二者协同如何提升空间预警效率。",
+        "llm_used": true,
+        "llm_error": "",
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "topic": "Spatial earthquake forecasting",
+        "audience_level": "specialist",
+        "analysis_quality": "ok",
+        "analysis_warnings": [],
+        "keywords_en": [
+          "earthquake forecasting",
+          "b-value",
+          "background seismicity rate",
+          "ETAS declustering",
+          "Alborz faults"
+        ],
+        "keywords_zh": [
+          "地震预测",
+          "b值",
+          "背景地震率",
+          "ETAS去簇",
+          "阿尔博兹断层"
+        ],
+        "updated_at": "2026-05-25T03:24:04.543113+00:00",
         "cache_hit": true
       }
     },
@@ -877,8 +952,8 @@
           "A. Balmaseda, Magdalena"
         ],
         "abstract": "Seasonal predictability over the North Atlantic-European (NAE) sector is strongly modulated by the background climate state, particularly in early winter. In this season, different ENSO teleconnections have been reported before and after the 1990s. However, these studies rely on linear analysis, and the reasons for this lack of stationarity and its implications for seasonal forecasting have not yet been fully assessed. Here, we evaluate the non-stationarity of early winter ENSO teleconnections over the NAE using a non-linear framework, the Neural Network forecast application (NN4CAST). The NN4CAST model predicts November-December sea level pressure anomalies from October sea surface temperature anomalies. The neural network achieves skill comparable to the ECMWF SEAS5 dynamical system, and even exceeds it in certain regions like the NAE, despite relying only on October SST predictors. The model detects a period with significant improvement in skill over the North Atlantic Oscillation centres of action during 1970-1990s, specially for the Iceland region, whereas for the East Atlanticn pattern, the improvement comes in recent decades, namely 1990-2020s. These changes in predictability might be driven by an intensification of the Rossby wave source over Southeast Asia as well as a southward displacement of the North Atlantic jet stream during the latter period. Our results highlight the value of explainable artificial intelligence for identifying state-dependent sources of seasonal predictability and for bridging data-driven approaches with physical understanding of climate teleconnections.",
-        "published": "2026-05-22T15:59:00Z",
-        "updated": "2026-05-22T15:59:19Z",
+        "published": "2026-05-22T09:59:00Z",
+        "updated": "2026-05-22T09:59:19Z",
         "categories": [
           "Atmospheric Sciences",
           "Climate",
@@ -944,7 +1019,7 @@
           "NN4CAST",
           "北大西洋涛动"
         ],
-        "updated_at": "2026-05-24T19:23:08.208652+00:00",
+        "updated_at": "2026-05-25T03:20:26.312174+00:00",
         "cache_hit": true
       }
     },
@@ -962,8 +1037,8 @@
           "Drinka, Radovan"
         ],
         "abstract": "We analyze North Atlantic Tropical Cyclone (TC) activity using the Columbia HAZard (CHAZ) model to downscale 12 models from CMIP6 under the SSP1-2.6 and SSP5-8.5 scenarios --- those with the least and greatest anthropogenic forcing respectively. TC frequency increases along the Southeastern U.S. and declines along the Gulf under both SSPs. Greater TC frequency is not projected in the highest-warming scenario (SSP5-8.5) than in the lowest-warming scenario (SSP1-2.6) in the North Atlantic basin, even though it is in the global mean. These patterns remain broadly consistent over the 21st century, with stronger changes under higher-emission scenarios. The response appears driven primarily by El Niño-like shifts in the tropical Pacific mean state that influence Atlantic potential intensity and vertical wind shear. These results suggest that regional TC activity is more sensitive to the pattern of surface warming than to its global mean, and highlight the importance of the tropical Pacific in particular.",
-        "published": "2026-05-22T15:54:00Z",
-        "updated": "2026-05-22T15:54:27Z",
+        "published": "2026-05-22T09:54:00Z",
+        "updated": "2026-05-22T09:54:27Z",
         "categories": [
           "Physical Sciences and Mathematics",
           "tropical cyclones",
@@ -1025,80 +1100,8 @@
           "北大西洋落地",
           "类厄尔尼诺太平洋强迫"
         ],
-        "updated_at": "2026-05-24T19:23:08.224758+00:00",
+        "updated_at": "2026-05-25T03:20:26.347976+00:00",
         "cache_hit": true
-      }
-    },
-    {
-      "paper": {
-        "arxiv_id": "2605.23494v1",
-        "title": "Integrating b-Value and Background Seismicity Rate for Spatial Earthquake Forecasting in the Alborz Region, Northern Iran",
-        "authors": [
-          "Muhammed Hossein Mousavi",
-          "Hamzeh Mohammadigheymasi",
-          "Parva Sadeghi Alavijeh",
-          "Marjan Tourani"
-        ],
-        "abstract": "In this study, we evaluate the spatial forecasting skill of the $b$-value and background seismicity rate $μ$ across the Alborz region using a homogenized catalog of 23,961 earthquakes ($M \\geq 1.5$) recorded by the Iranian Seismological Center between 2006 and 2024. Forecast performance for $M \\geq 4.0$ and $M \\geq 4.5$ is assessed using Molchan error diagrams, probability gain, probability difference, and the modified area skill score. The results show that $μ$ provides a consistently strong spatial signal, with Molchan curves well below the random baseline and probability gains of 5--6 at low alarm rates, reflecting the persistent clustering of seismicity along major Alborz faults. The $b$-value exhibits limited skill at lower magnitudes but improves steadily with increasing magnitude; its skill score becomes positive above $M \\approx 5.3$, indicating that $b$-value anomalies begin to capture meaningful stress concentrations only for larger events. Spatial patterns reveal low $b$ zones along active reverse and strike-slip structures and high $μ$ zones following long-term seismicity clusters, underscoring their complementary physical roles. Retrospective testing confirms this complementarity: the combined $b$--$μ$ forecast achieves detection rates of 0.81--0.83 at spatial alarm rates of 0.43 and 0.36 for $M \\geq 4.0$ and $M \\geq 4.5$, respectively, representing the most efficient forecast configuration among all tested models. These findings demonstrate that integrating stress-state and tectonic-loading indicators yields a more efficient and physically grounded framework for operational earthquake forecasting in the Alborz region.",
-        "published": "2026-05-22T11:00:15Z",
-        "updated": "2026-05-22T11:00:15Z",
-        "categories": [
-          "physics.geo-ph"
-        ],
-        "pdf_url": "https://arxiv.org/pdf/2605.23494v1",
-        "abs_url": "http://arxiv.org/abs/2605.23494v1",
-        "source": "arxiv",
-        "source_id": "",
-        "doi": "",
-        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260522/2605.23494v1.pdf",
-        "pdf_download_error": null,
-        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260522/2605.23494v1.md",
-        "markdown_parse_error": null
-      },
-      "analysis": {
-        "schema_version": "paperradar.analysis.v3",
-        "input_version": "markdown-clean-v1",
-        "one_sentence_en": "Using a homogenized Iranian earthquake catalog, the study finds that background seismicity rate μ consistently forecasts where moderate-to-large earthquakes will cluster in the Alborz, while b-value adds useful skill only for larger magnitudes, and their combination is most efficient.",
-        "one_sentence_zh": "基于伊朗阿尔博兹地区同一化地震目录，该研究发现背景地震率μ能稳定刻画中到大地震的空间聚集，而b值仅在更大震级才提供有效增益，二者联合预测最有效。",
-        "summary_en": [
-          "problem: Improve operational intermediate- to long-term spatial earthquake forecasting in the tectonically complex Alborz region using physically interpretable indicators.",
-          "approach: Estimate spatial b-value and ETAS-derived background seismicity rate μ from a declustered, homogenized earthquake catalog, then evaluate individual and joint alarm maps with Molchan error diagrams, probability gain/difference, and area skill scores.",
-          "key result: μ alone shows consistently strong spatial forecasting skill for M≥4.0 and M≥4.5, b-value becomes positively skillful above about M≈5.3, and the combined b–μ forecast achieves detection rates around 0.81–0.83 at low spatial alarm rates (0.43 and 0.36)."
-        ],
-        "summary_zh": [
-          "problem: 在构造复杂的阿尔博兹地区提升具物理可解释性的中长期空间地震预测能力。",
-          "approach: 从同一化并去簇后的地震目录估算空间b值与ETAS背景地震率μ，基于Molchan误差图以及概率增益/差与修正面积技能评分评估单独与联合预警图的效果。",
-          "key result: 对M≥4.0与M≥4.5，背景地震率μ具持续的强空间预测能力；b值在约M≈5.3以上才出现正技能，而b–μ联合预报在空间报警率0.43与0.36时的探测率约为0.81–0.83。"
-        ],
-        "contribution_en": "Provides a spatial forecasting framework for the Alborz region that integrates stress-structure sensitivity (b-value) and tectonic-loading persistence (background seismicity rate μ), showing measurable synergy and identifying magnitude-dependent usefulness of each indicator.",
-        "contribution_zh": "提出面向阿尔博兹地区的空间预测框架，将应力-结构敏感性（b值）与构造加载持续性（背景地震率μ）进行整合，展示二者的互补协同，并揭示各指标的震级依赖有效性。",
-        "method_en": "Homogenize local magnitudes to moment magnitude, estimate spatial b-value with a hierarchical space–time point-process spline (HIST-PPM) approach using maximum-likelihood b estimation with magnitude completeness handling, estimate spatial μ via ETAS declustering followed by variable-bandwidth Gaussian kernel reconstruction, then convert b and μ maps into alarm cells and score them using Molchan error diagrams, probability gain/difference, and modified area skill score; joint alarms require both low-b and high-μ criteria.",
-        "method_zh": "将地方震级统一转换为矩震级；用HIST-PPM样条框架估算并空间化b值（结合最大似然估计与完备度处理），用ETAS去簇得到背景过程并以变带宽高斯核重建空间μ；随后将b与μ栅格转化为预警区域，并用Molchan误差图、概率增益/差与修正面积技能评分进行评估；联合预警同时满足低b与高μ条件。",
-        "data_or_region_en": "Alborz Fold-Thrust Belt, northern Iran; homogenized IRSC earthquake catalog of 23,961 events with M≥1.5 from 2006 to 2024.",
-        "data_or_region_zh": "伊朗北部阿尔博兹褶冲带；IRSC同一化地震目录，共23,961次事件（M≥1.5），时间范围为2006年至2024年。",
-        "geophysics_relevance_en": "Relevant to physics-based earthquake forecasting because it tests complementary stress- and loading-related observables (b-value and declustered background rate) and quantifies how their synergy improves spatial alarm efficiency.",
-        "geophysics_relevance_zh": "与物理驱动地震预测密切相关：该研究检验了与应力状态和构造加载相关的互补观测量（b值与去簇背景地震率），并量化了二者协同如何提升空间预警效率。",
-        "keywords_en": [
-          "earthquake forecasting",
-          "b-value",
-          "background seismicity rate",
-          "ETAS declustering",
-          "Alborz faults"
-        ],
-        "keywords_zh": [
-          "地震预测",
-          "b值",
-          "背景地震率",
-          "ETAS去簇",
-          "阿尔博兹断层"
-        ],
-        "topic": "Spatial earthquake forecasting",
-        "audience_level": "specialist",
-        "llm_used": true,
-        "source": "markdown",
-        "model": "gpt-5.4-nano",
-        "analysis_quality": "ok",
-        "analysis_warnings": []
       }
     },
     {
@@ -1155,6 +1158,14 @@
         "data_or_region_zh": "在苏格兰布莱尔高里附近跨越高地边界断层的约20 km NW–SE地面测线，OPM与PPM在重叠路段同步采集；并用英国地质调查局BGS的历史航磁数据进行定性对比（用于叠加参考）。",
         "geophysics_relevance_en": "Directly relevant to geomagnetic target detection because it addresses the practical aliasing/noise bottleneck in land surveys and improves resolvable small-scale anomaly mapping; it is not about seismicity/earthquake physics.",
         "geophysics_relevance_zh": "与地磁目标探测高度相关，因为它针对陆地地磁测量中的关键瓶颈（空间混叠与人为噪声）进行工程化解决，提升小尺度异常的可分辨与解释能力；但不涉及地震或地震学物理。",
+        "llm_used": true,
+        "llm_error": "",
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "topic": "Geomagnetic de-aliasing",
+        "audience_level": "specialist",
+        "analysis_quality": "ok",
+        "analysis_warnings": [],
         "keywords_en": [
           "geomagnetic survey",
           "spatial aliasing",
@@ -1169,13 +1180,8 @@
           "普顿进动磁强计",
           "高地边界断层"
         ],
-        "topic": "Geomagnetic de-aliasing",
-        "audience_level": "specialist",
-        "llm_used": true,
-        "source": "markdown",
-        "model": "gpt-5.4-nano",
-        "analysis_quality": "ok",
-        "analysis_warnings": []
+        "updated_at": "2026-05-25T03:25:19.579486+00:00",
+        "cache_hit": true
       }
     },
     {
@@ -1225,6 +1231,14 @@
         "data_or_region_zh": "未说明（纯数学PDE分析；刚体运动与几何由预设给出，无观测数据集或数值网格）。",
         "geophysics_relevance_en": "SQG is a proxy for geophysical active-scalar dynamics; this work clarifies mathematically how coherent “rigid-like” regions could be handled in SQG flows, a step toward rigorous derivations of point-vortex-type dynamics from shrinking rigid bodies.",
         "geophysics_relevance_zh": "SQG可视为地球物理主动标量动力学的理论模型；本文从数学上处理了“类刚体”相干区域在SQG流中的可解性问题，有助于朝着从收缩刚体严格推导点涡/涡动力学的方向迈进。",
+        "llm_used": true,
+        "llm_error": "",
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "topic": "SQG moving obstacle",
+        "audience_level": "specialist",
+        "analysis_quality": "ok",
+        "analysis_warnings": [],
         "keywords_en": [
           "Surface Quasi-Geostrophic",
           "moving obstacle",
@@ -1239,13 +1253,8 @@
           "不可穿透",
           "平台结构"
         ],
-        "topic": "SQG moving obstacle",
-        "audience_level": "specialist",
-        "llm_used": true,
-        "source": "markdown",
-        "model": "gpt-5.4-nano",
-        "analysis_quality": "ok",
-        "analysis_warnings": []
+        "updated_at": "2026-05-25T03:26:46.939157+00:00",
+        "cache_hit": true
       }
     },
     {
@@ -1294,6 +1303,14 @@
         "data_or_region_zh": "大西洋与印度-太平洋：ECCO v4r3（1992–2015年，月尺度，约1°水平分辨率，50层）；南海：GLORYS12v1（1993–2024年，月尺度，1/12°水平分辨率，50层）。",
         "geophysics_relevance_en": "This matters because tracking long-term ocean heat uptake and storage requires knowing whether observed interior temperature/density changes are truly irreversible (diabatic transformation) or mainly reversible (isopycnal heaving); the framework directly addresses this ambiguity.",
         "geophysics_relevance_zh": "这对当前追踪主题很重要，因为评估海洋长期吸热与储热需要判断观测到的内部温度/密度变化是不可逆的（非绝热水团转化）还是主要由可逆过程（等密面起伏）造成；该框架正是为解决这种歧义而设计的。",
+        "llm_used": true,
+        "llm_error": "",
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "topic": "Ocean overturning decomposition",
+        "audience_level": "specialist",
+        "analysis_quality": "ok",
+        "analysis_warnings": [],
         "keywords_en": [
           "ocean interior",
           "Eulerian vs Lagrangian",
@@ -1308,13 +1325,8 @@
           "等密面起伏",
           "跨等密面转化"
         ],
-        "topic": "Ocean overturning decomposition",
-        "audience_level": "specialist",
-        "llm_used": true,
-        "source": "markdown",
-        "model": "gpt-5.4-nano",
-        "analysis_quality": "ok",
-        "analysis_warnings": []
+        "updated_at": "2026-05-25T03:28:19.007201+00:00",
+        "cache_hit": true
       }
     },
     {
@@ -1366,6 +1378,14 @@
         "data_or_region_zh": "上半空间（无界三维域）上的可压缩Navier–Stokes方程，边界采用Navier滑移条件；研究常数平衡态的小扰动。",
         "geophysics_relevance_en": "This is mathematically rigorous evidence supporting a common geophysical modeling assumption for ocean-like flows where vertical viscosity is much smaller than horizontal viscosity, but it is not applied to specific observational datasets.",
         "geophysics_relevance_zh": "这为海洋类地球流体中“垂向黏性远小于水平黏性”的常见建模假设提供了严格的数学支撑，但并未直接面向具体观测数据应用。",
+        "llm_used": true,
+        "llm_error": "",
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "topic": "Anisotropic viscosity limit",
+        "audience_level": "specialist",
+        "analysis_quality": "ok",
+        "analysis_warnings": [],
         "keywords_en": [
           "compressible Navier–Stokes",
           "vanishing viscosity limit",
@@ -1380,13 +1400,8 @@
           "Navier滑移边界",
           "各向异性耗散"
         ],
-        "topic": "Anisotropic viscosity limit",
-        "audience_level": "specialist",
-        "llm_used": true,
-        "source": "markdown",
-        "model": "gpt-5.4-nano",
-        "analysis_quality": "ok",
-        "analysis_warnings": []
+        "updated_at": "2026-05-25T03:30:04.737995+00:00",
+        "cache_hit": true
       }
     },
     {
@@ -1438,6 +1453,14 @@
         "data_or_region_zh": "数值研究：在准真实湍流条件下的气-水界面（给出流动雷诺数约2.1×10^5）以及可变形超弹性橡胶层；观测对比：空中海表测量。摘要摘录未说明具体调查海域或数据集。",
         "geophysics_relevance_en": "This is relevant to geophysical free-surface turbulence and air–sea interaction because it offers a framework to distinguish wave-turbulence versus turbulence-induced waves using spectral signatures, but the work is primarily fluid-mechanics/physics rather than direct geophysical inversion.",
         "geophysics_relevance_zh": "该工作与地球物理海气相互作用中的自由面湍流相关，因为它提出了用谱特征区分波湍流与湍流诱导波的框架；但整体更偏流体力学基础研究，对地球物理反演的直接性较弱，属于较强物理相关。",
+        "llm_used": true,
+        "llm_error": "",
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "topic": "Turbulence free surfaces",
+        "audience_level": "specialist",
+        "analysis_quality": "ok",
+        "analysis_warnings": [],
         "keywords_en": [
           "free surface",
           "turbulence",
@@ -1452,13 +1475,86 @@
           "VOF方法",
           "海表面"
         ],
-        "topic": "Turbulence free surfaces",
-        "audience_level": "specialist",
+        "updated_at": "2026-05-25T03:33:26.221051+00:00",
+        "cache_hit": true
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2605.23053v1",
+        "title": "A Comparative Multi-Hazard Risk Assessment of the US High-Voltage Transmission Network",
+        "authors": [
+          "D. Bor",
+          "E. J. Oughton",
+          "R. S. Weigel",
+          "R. Yang",
+          "T. Clower",
+          "A. Newman",
+          "A. R. Valle"
+        ],
+        "abstract": "Modern economies depend critically on high-voltage power transmission networks. Yet this infrastructure is routinely disrupted by natural hazards ranging from earthquakes and floods to tornadoes and geomagnetic storms. Risk assessments have historically addressed hazards in isolation, leaving no common basis for comparing economic impacts across the full hazard portfolio. This study addresses this gap by developing an integrated framework linking hazard characterization, fragility modeling, and macroeconomic impact propagation. The framework is applied consistently across nine primary hazards and one compound freezing rain and wind gust hazard. Using national hazard datasets and a US high-voltage transmission network of over 13,000 line segments and 10,000 substations, we derive failure probabilities, expected damage, affected population, and downstream economic output losses. Among individual hazards, tropical cyclone wind produces the largest expected daily damage at $137 M/day, followed by lightning at $87 M/day, earthquake at $47 M/day, flood at $46 M/day, tornado at $42 M/day, and landslide at $34 M/day. Downstream economic output losses are largest for tornado at $4.93 B/day, followed by flood at $3.59 B/day and earthquake at $3.02 B/day. A 250-year geomagnetic storm produces $2.07 B/day, placing space weather within the range of major terrestrial hazards. The compound freezing rain and wind gust scenario produces the largest stress-test disruption, affecting 237.4 M people and yielding a modeled downstream output loss of $85.16 B/day. These results should be interpreted as first-order bounding estimates, with the compound scenario representing an upper-bound stress test. Overall, the framework establishes a consistent baseline for prioritizing investments in transmission network resilience.",
+        "published": "2026-05-21T21:36:17Z",
+        "updated": "2026-05-21T21:36:17Z",
+        "categories": [
+          "econ.EM"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2605.23053v1",
+        "abs_url": "http://arxiv.org/abs/2605.23053v1",
+        "source": "arxiv",
+        "source_id": "",
+        "doi": "",
+        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260521/2605.23053v1.pdf",
+        "pdf_download_error": null,
+        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260521/2605.23053v1.md",
+        "markdown_parse_error": null
+      },
+      "analysis": {
+        "schema_version": "paperradar.analysis.v3",
+        "input_version": "markdown-clean-v1",
+        "one_sentence_en": "The paper develops a unified hazard-to-economics framework to compare damage and macroeconomic losses from multiple natural hazards plus a compound freezing-rain/wind scenario on the US high-voltage transmission network.",
+        "one_sentence_zh": "该论文提出统一的“灾害—脆弱性—经济影响”框架，用于对美国高压输电网在多种自然灾害及复合冻雨/大风情景下的损失进行可比评估。",
+        "summary_en": [
+          "problem: Cross-hazard comparison of how different hazards disrupt and economically impact the US high-voltage transmission network is inconsistent across prior studies.",
+          "approach: Couple consistent national hazard characterization with fragility-based damage estimation on a shared grid asset representation, then propagate outages to sectoral macroeconomic output using an input–output model.",
+          "key result: The compound freezing rain plus wind gust scenario yields the largest stress-test disruption, while tornado dominates modeled downstream output loss among individual terrestrial hazards; a 250-year geomagnetic storm produces losses comparable to major terrestrial hazards."
+        ],
+        "summary_zh": [
+          "problem: 以往研究对不同灾害造成的输电网破坏及经济影响缺乏统一口径，难以进行跨灾害风险比较。",
+          "approach: 在共享的输电网资产表示上，统一进行全国尺度灾害表征与脆弱性—损伤估计，并用投入产出经济模型将停电影响向部门产出进行传播。",
+          "key result: 复合冻雨与大风情景在压力测试中造成最大扰动；在单一陆上灾害中龙卷风带来的下游产出损失最大，而250年级别的地磁风暴损失与主要陆上灾害同量级。"
+        ],
+        "contribution_en": "A consistent, integrated multi-hazard risk assessment workflow that links hazard characterization, fragility-based grid failure/damage, affected population, and macroeconomic output propagation for the same US transmission network across terrestrial hazards and space weather.",
+        "contribution_zh": "构建了一个一致的多灾害风险评估流程：将灾害表征、基于脆弱性的输电网失效/损伤、受影响人口与宏观经济产出传播联系起来，并在同一美国输电网络上同时评估陆上灾害与空间天气。",
+        "method_en": "Unified pipeline: sample hazard intensity layers over transmission network assets, convert intensities to expected damage ratios via hazard-specific fragility functions to identify failed substations, estimate affected population, and propagate direct disruption to sectoral economic output using a population-weighted Leontief input–output model.",
+        "method_zh": "统一流程：在输电网络资产上采样各灾害强度层，使用各自的脆弱性函数把强度映射为期望损伤比并据此判定失效变电站，估算受影响人口，并用以人口加权的Leontief投入产出模型将直接扰动传播到部门经济产出。",
+        "data_or_region_en": "United States; national hazard datasets combined with a US high-voltage transmission network (~13,000 line segments, ~10,000 substations) built from HIFLD line data and OpenStreetMap substations.",
+        "data_or_region_zh": "美国；使用全国尺度灾害数据集，并基于HIFLD输电线路数据与OpenStreetMap变电站构建的美国高压输电网络（约13,000条线路片段、约10,000个变电站）。",
+        "geophysics_relevance_en": "Relevant to comparing earthquake and other geophysical hazards in a common resilience/economic framework, but the main focus is power-system risk across many hazards rather than new geophysical measurements or earthquake physics.",
+        "geophysics_relevance_zh": "与在统一框架下比较地震等地球物理灾害的韧性/经济影响有关；但论文重点是电力系统多灾种风险评估，而非新的地球物理观测或地震机理研究，因此相关性属中等偏应用。",
         "llm_used": true,
+        "llm_error": "",
         "source": "markdown",
         "model": "gpt-5.4-nano",
+        "topic": "multi-hazard power risk",
+        "audience_level": "specialist",
         "analysis_quality": "ok",
-        "analysis_warnings": []
+        "analysis_warnings": [],
+        "keywords_en": [
+          "power transmission",
+          "multi-hazard risk",
+          "fragility modeling",
+          "input-output economics",
+          "space weather"
+        ],
+        "keywords_zh": [
+          "电力输电网",
+          "多灾种风险评估",
+          "脆弱性建模",
+          "投入产出经济",
+          "空间天气"
+        ],
+        "updated_at": "2026-05-25T03:35:53.791556+00:00",
+        "cache_hit": true
       }
     },
     {
@@ -1471,8 +1567,8 @@
           "Troldborg, Lars"
         ],
         "abstract": "This method article presents a local refinement framework for a national-scale, machine learning-based groundwater model that predicts typical summer and winter water table depth at 10 × 10 m resolution at national scale of Denmark. While the existing baseline model provides high-resolution national coverage and is suitable for screening purposes, its accuracy remains insufficient for local groundwater management applications. The proposed method integrates new groundwater observations into the existing training dataset and retrains the baseline model to enhance local fidelity while preserving large-scale consistency. The approach is demonstrated for a 212 km² case study area using 100 synthetic groundwater observations. Cross-validation results show consistent improvements in mean error, mean absolute error, and root mean squared error compared to the baseline model, particularly when increased weights are assigned to new observations. The refined models produce improved precision in areas with new observations while maintaining baseline behaviour elsewhere, demonstrating its suitability for combining national datasets with local monitoring networks for improved decision support in climate adaptation, nature conservation and other applications.",
-        "published": "2026-05-21T21:38:00Z",
-        "updated": "2026-05-21T21:38:52Z",
+        "published": "2026-05-21T15:38:00Z",
+        "updated": "2026-05-21T15:38:52Z",
         "categories": [
           "Planetary Hydrology",
           "Water Resource Management"
@@ -1533,83 +1629,8 @@
           "机器学习",
           "LightGBM"
         ],
-        "updated_at": "2026-05-24T19:23:08.241566+00:00",
+        "updated_at": "2026-05-25T03:33:26.245453+00:00",
         "cache_hit": true
-      }
-    },
-    {
-      "paper": {
-        "arxiv_id": "2605.23053v1",
-        "title": "A Comparative Multi-Hazard Risk Assessment of the US High-Voltage Transmission Network",
-        "authors": [
-          "D. Bor",
-          "E. J. Oughton",
-          "R. S. Weigel",
-          "R. Yang",
-          "T. Clower",
-          "A. Newman",
-          "A. R. Valle"
-        ],
-        "abstract": "Modern economies depend critically on high-voltage power transmission networks. Yet this infrastructure is routinely disrupted by natural hazards ranging from earthquakes and floods to tornadoes and geomagnetic storms. Risk assessments have historically addressed hazards in isolation, leaving no common basis for comparing economic impacts across the full hazard portfolio. This study addresses this gap by developing an integrated framework linking hazard characterization, fragility modeling, and macroeconomic impact propagation. The framework is applied consistently across nine primary hazards and one compound freezing rain and wind gust hazard. Using national hazard datasets and a US high-voltage transmission network of over 13,000 line segments and 10,000 substations, we derive failure probabilities, expected damage, affected population, and downstream economic output losses. Among individual hazards, tropical cyclone wind produces the largest expected daily damage at $137 M/day, followed by lightning at $87 M/day, earthquake at $47 M/day, flood at $46 M/day, tornado at $42 M/day, and landslide at $34 M/day. Downstream economic output losses are largest for tornado at $4.93 B/day, followed by flood at $3.59 B/day and earthquake at $3.02 B/day. A 250-year geomagnetic storm produces $2.07 B/day, placing space weather within the range of major terrestrial hazards. The compound freezing rain and wind gust scenario produces the largest stress-test disruption, affecting 237.4 M people and yielding a modeled downstream output loss of $85.16 B/day. These results should be interpreted as first-order bounding estimates, with the compound scenario representing an upper-bound stress test. Overall, the framework establishes a consistent baseline for prioritizing investments in transmission network resilience.",
-        "published": "2026-05-21T21:36:17Z",
-        "updated": "2026-05-21T21:36:17Z",
-        "categories": [
-          "econ.EM"
-        ],
-        "pdf_url": "https://arxiv.org/pdf/2605.23053v1",
-        "abs_url": "http://arxiv.org/abs/2605.23053v1",
-        "source": "arxiv",
-        "source_id": "",
-        "doi": "",
-        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260521/2605.23053v1.pdf",
-        "pdf_download_error": null,
-        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260521/2605.23053v1.md",
-        "markdown_parse_error": null
-      },
-      "analysis": {
-        "schema_version": "paperradar.analysis.v3",
-        "input_version": "markdown-clean-v1",
-        "one_sentence_en": "The paper develops a unified hazard-to-economics framework to compare damage and macroeconomic losses from multiple natural hazards plus a compound freezing-rain/wind scenario on the US high-voltage transmission network.",
-        "one_sentence_zh": "该论文提出统一的“灾害—脆弱性—经济影响”框架，用于对美国高压输电网在多种自然灾害及复合冻雨/大风情景下的损失进行可比评估。",
-        "summary_en": [
-          "problem: Cross-hazard comparison of how different hazards disrupt and economically impact the US high-voltage transmission network is inconsistent across prior studies.",
-          "approach: Couple consistent national hazard characterization with fragility-based damage estimation on a shared grid asset representation, then propagate outages to sectoral macroeconomic output using an input–output model.",
-          "key result: The compound freezing rain plus wind gust scenario yields the largest stress-test disruption, while tornado dominates modeled downstream output loss among individual terrestrial hazards; a 250-year geomagnetic storm produces losses comparable to major terrestrial hazards."
-        ],
-        "summary_zh": [
-          "problem: 以往研究对不同灾害造成的输电网破坏及经济影响缺乏统一口径，难以进行跨灾害风险比较。",
-          "approach: 在共享的输电网资产表示上，统一进行全国尺度灾害表征与脆弱性—损伤估计，并用投入产出经济模型将停电影响向部门产出进行传播。",
-          "key result: 复合冻雨与大风情景在压力测试中造成最大扰动；在单一陆上灾害中龙卷风带来的下游产出损失最大，而250年级别的地磁风暴损失与主要陆上灾害同量级。"
-        ],
-        "contribution_en": "A consistent, integrated multi-hazard risk assessment workflow that links hazard characterization, fragility-based grid failure/damage, affected population, and macroeconomic output propagation for the same US transmission network across terrestrial hazards and space weather.",
-        "contribution_zh": "构建了一个一致的多灾害风险评估流程：将灾害表征、基于脆弱性的输电网失效/损伤、受影响人口与宏观经济产出传播联系起来，并在同一美国输电网络上同时评估陆上灾害与空间天气。",
-        "method_en": "Unified pipeline: sample hazard intensity layers over transmission network assets, convert intensities to expected damage ratios via hazard-specific fragility functions to identify failed substations, estimate affected population, and propagate direct disruption to sectoral economic output using a population-weighted Leontief input–output model.",
-        "method_zh": "统一流程：在输电网络资产上采样各灾害强度层，使用各自的脆弱性函数把强度映射为期望损伤比并据此判定失效变电站，估算受影响人口，并用以人口加权的Leontief投入产出模型将直接扰动传播到部门经济产出。",
-        "data_or_region_en": "United States; national hazard datasets combined with a US high-voltage transmission network (~13,000 line segments, ~10,000 substations) built from HIFLD line data and OpenStreetMap substations.",
-        "data_or_region_zh": "美国；使用全国尺度灾害数据集，并基于HIFLD输电线路数据与OpenStreetMap变电站构建的美国高压输电网络（约13,000条线路片段、约10,000个变电站）。",
-        "geophysics_relevance_en": "Relevant to comparing earthquake and other geophysical hazards in a common resilience/economic framework, but the main focus is power-system risk across many hazards rather than new geophysical measurements or earthquake physics.",
-        "geophysics_relevance_zh": "与在统一框架下比较地震等地球物理灾害的韧性/经济影响有关；但论文重点是电力系统多灾种风险评估，而非新的地球物理观测或地震机理研究，因此相关性属中等偏应用。",
-        "keywords_en": [
-          "power transmission",
-          "multi-hazard risk",
-          "fragility modeling",
-          "input-output economics",
-          "space weather"
-        ],
-        "keywords_zh": [
-          "电力输电网",
-          "多灾种风险评估",
-          "脆弱性建模",
-          "投入产出经济",
-          "空间天气"
-        ],
-        "topic": "multi-hazard power risk",
-        "audience_level": "specialist",
-        "llm_used": true,
-        "source": "markdown",
-        "model": "gpt-5.4-nano",
-        "analysis_quality": "ok",
-        "analysis_warnings": []
       }
     },
     {
@@ -1686,87 +1707,7 @@
           "卫星脆弱性",
           "经济损失"
         ],
-        "updated_at": "2026-05-24T19:23:08.264373+00:00",
-        "cache_hit": true
-      }
-    },
-    {
-      "paper": {
-        "arxiv_id": "eartharxiv-13119",
-        "title": "Role of Fault Geometry in Generating Backward-migrating P-wave Radiation During the 2025 Mw 7.7 Myanmar Earthquake",
-        "authors": [
-          "Tarumi, Kotaro",
-          "Yoshizawa, Kazunori"
-        ],
-        "abstract": "The Mw 7.7 Myanmar earthquake of 28 March 2025 ruptured the Sagaing Fault system over ~450 km and exhibited complex rupture behavior, including intermittent supershear propagation and backward-migrating high-frequency (HF) P-wave radiation. We image the rupture evolution using multi-frequency teleseismic P-wave back-projection (BP) (0.05–0.5, 0.1–1.0, and 0.3–2.0 Hz) and compare the results with near-fault strong-motion data recorded at Nay Pyi Taw (NPT). Our BP results reveal two key features: (1) two distinct episodes of backward-migrating HF radiation initiated at the Sagaing–Meiktila and Meiktila–NPT fault junctions, with apparent migration speeds of 6.0–6.5 km/s, and (2) a pronounced HF radiator concentrated on a short splay-fault branch adjacent to the NPT segment. These HF radiators are preferentially located near the edges of high slip-rate patches in a P-wave slip model. The near-field displacement record at NPT shows a negative pulse following the quasi-static offset, likely representing a stopping phase generated by abrupt rupture arrest. Our results suggest that spatial variations in fault geometry, including segment junctions and fault branching, played an important role in rupture deceleration and termination, generating backward-migrating stopping-phase radiation.",
-        "published": "2026-05-21T07:18:00Z",
-        "updated": "2026-05-21T07:18:20Z",
-        "categories": [
-          "Earth Sciences",
-          "Geophysics and Seismology",
-          "Myanmar earthquake",
-          "Back projection",
-          "High-frequency radiation",
-          "Stopping phase",
-          "Supershear rupture",
-          "Fault geometry"
-        ],
-        "pdf_url": "https://eartharxiv.org/repository/object/13119/download/23238/",
-        "abs_url": "https://eartharxiv.org/repository/view/13119/",
-        "source": "eartharxiv",
-        "source_id": "13119",
-        "doi": "10.31223/X5278G",
-        "local_pdf_path": "data/pdfs/eartharxiv/Earth-Sciences/20260521/eartharxiv-13119.pdf",
-        "pdf_download_error": null,
-        "markdown_path": "data/markdown/eartharxiv/Earth-Sciences/20260521/eartharxiv-13119.md",
-        "markdown_parse_error": null
-      },
-      "analysis": {
-        "schema_version": "paperradar.analysis.v3",
-        "input_version": "markdown-clean-v1",
-        "one_sentence_en": "Using multi-frequency teleseismic P-wave back-projection and comparison to near-field motions for the 2025 Mw 7.7 Myanmar event, the authors show backward-migrating high-frequency P-wave stopping-phase signals governed by fault geometry.",
-        "one_sentence_zh": "基于多频远场P波反投影并对比近场记录，该研究表明2025年缅甸Mw7.7地震的向后迁移高频P波“停止相”与断层几何控制的破裂减速终止有关。",
-        "summary_en": [
-          "Problem: What physical source mechanism produces observed backward-migrating high-frequency P-wave radiation during the 2025 Mw 7.7 Myanmar earthquake?",
-          "Approach: Perform multi-frequency teleseismic P-wave back-projection (0.05–0.5, 0.1–1.0, 0.3–2.0 Hz) with LQT component rotation, cross-correlation-based station selection, and compare radiation sites to a P-wave slip model and Nay Pyi Taw strong-motion displacements.",
-          "Key result: Two backward-migrating high-frequency P-wave episodes originate at Sagaing–Meiktila and Meiktila–NPT junctions, plus an enhanced radiator on an NPT-adjacent splay fault branch, consistent with stopping-phase radiation linked to rupture arrest at fault bends/branching."
-        ],
-        "summary_zh": [
-          "问题：2025年缅甸Mw 7.7地震中观测到的向后迁移高频P波究竟对应怎样的破裂物理机制？",
-          "方法：对不同频带（0.05–0.5、0.1–1.0、0.3–2.0 Hz）进行基于LQT分量旋转的远场P波反投影，采用互相关一致性筛选台站，并将辐射成像与P波滑移模型及内比都（Nay Pyi Taw, NPT）近场强震位移对比。",
-          "关键结果：向后迁移高频P波出现两次主要事件，起自Sagaing–Meiktila与Meiktila–NPT断层连接处；同时在靠近NPT的短分支（splay fault）上存在更强辐射，并与断层弯折/分叉诱发的停止相（停止阶段）有关。"
-        ],
-        "contribution_en": "The paper provides an earthquake-specific physical interpretation of backward-migrating high-frequency P-wave radiation by linking back-projected radiation episodes to segment junctions and branching features, and validating the interpretation with near-field evidence of a stopping phase.",
-        "contribution_zh": "该文针对具体地震给出了对向后迁移高频P波辐射的物理解释：通过反投影结果将辐射事件定位到分段连接与分叉几何，并用NPT近场位移中停止相的证据支持该解释。",
-        "method_en": "Multi-frequency teleseismic P-wave back-projection using LQT component rotation on three-component waveforms, with cross-correlation-based selection and lag-time corrections per frequency band; radiation power maps are then compared to a P-wave slip model (from prior PDTI work) and to Nay Pyi Taw near-fault strong-motion displacement pulses to identify a stopping phase.",
-        "method_zh": "将三分量远场波形旋转到LQT坐标并进行多频P波反投影；通过互相关一致性筛选台站、按频带进行到时扰动的滞后修正来堆叠成像辐射功率分布；再与既有P波滑移模型（PDTI获得）以及NPT近场强震位移中的脉冲特征对比，以识别停止相。",
-        "data_or_region_en": "Rupture region along the Sagaing Fault system, Myanmar (~450 km rupture; segments Sagaing, Meiktila, Nay Pyi Taw, Pyu, plus an NPT-adjacent splay branch); teleseismic P-wave recordings from EarthScope and near-fault strong motion/displacement at Nay Pyi Taw (NPT).",
-        "data_or_region_zh": "缅甸萨加因断层系统的破裂区（约450 km，包含Sagaing、Meiktila、Nay Pyi Taw、Pyu等分段及靠近NPT的短分支）；数据包括EarthScope的远场P波记录，以及Nay Pyi Taw（NPT）的近场强震位移。",
-        "geophysics_relevance_en": "This directly advances understanding of how fault geometry and rupture arrest can generate backward-migrating high-frequency stopping-phase radiation, which is important for interpreting complex rupture kinematics from seismic waveforms.",
-        "geophysics_relevance_zh": "这项工作直接说明了断层几何与破裂停止如何产生向后迁移的高频停止相辐射，对从地震波形解释复杂破裂运动学具有重要意义。",
-        "llm_used": true,
-        "llm_error": "",
-        "source": "markdown",
-        "model": "gpt-5.4-nano",
-        "topic": "Fault geometry stopping phase",
-        "audience_level": "specialist",
-        "analysis_quality": "ok",
-        "analysis_warnings": [],
-        "keywords_en": [
-          "back-projection",
-          "backward-migrating radiation",
-          "stopping phase",
-          "fault geometry",
-          "teleseismic P-waves"
-        ],
-        "keywords_zh": [
-          "反投影",
-          "向后迁移辐射",
-          "停止相",
-          "断层几何",
-          "远场P波"
-        ],
-        "updated_at": "2026-05-24T19:23:08.276825+00:00",
+        "updated_at": "2026-05-25T03:35:53.803795+00:00",
         "cache_hit": true
       }
     },
@@ -1842,254 +1783,87 @@
           "有限元",
           "Dirichlet-to-Neumann"
         ],
-        "updated_at": "2026-05-24T19:23:08.270018+00:00",
+        "updated_at": "2026-05-25T03:35:53.833225+00:00",
         "cache_hit": true
       }
     },
     {
       "paper": {
-        "arxiv_id": "eartharxiv-13097",
-        "title": "Climate Change Perceptions and Policy Priorities in Pakistan: A Community Survey Analysis and Stratospheric Aerosol Injection Perspective",
+        "arxiv_id": "eartharxiv-13119",
+        "title": "Role of Fault Geometry in Generating Backward-migrating P-wave Radiation During the 2025 Mw 7.7 Myanmar Earthquake",
         "authors": [
-          "TANOLI. ABDUL HASEEB",
-          "Arfeen. Shams ul",
-          "Anwar, Zeeshan",
-          "Abbas, Yasir"
+          "Tarumi, Kotaro",
+          "Yoshizawa, Kazunori"
         ],
-        "abstract": "Climate change constitutes a compound existential risk for Pakistan — a nation responsible for less than one percent of global greenhouse-gas emissions yet consistently ranked among the ten most climate-vulnerable states on earth (Germanwatch, 2021). Escalating heatwaves, intensifying monsoon floods, accelerating glacial retreat, chronic smog, and advancing desertification are not future projections for Pakistan: they are present, documented, and accumulating realities that claim lives, destroy crops, and destabilise livelihoods year after year. To assess community-level perceptions, lived impacts, and policy priorities, the PIEAS SAI Research Initiative administered a bilingual (English / Roman Urdu) structured survey instrument from 1 to 16 May 2026. A total of 1,149 valid, anonymised responses were obtained across all seven administrative regions: Punjab (37.5%), Khyber Pakhtunkhwa (25.8%), Islamabad Capital Territory (21.1%), Sindh (7.0%), Azad Jammu and Kashmir (3.5%), Gilgit-Baltistan (2.3%), and Balochistan (2.7%). The sample comprised 852 general-public respondents and 297 domain professionals from engineering, natural sciences, and academia. Principal findings indicate that 90.6% of general-public respondents rated their climate-change awareness as Critical or Serious. Disruption to rainfall patterns ranked highest among six impact dimensions on a five-point Likert scale (mean = 3.91; SD = 1.1), followed by extreme heat-wave intensity (mean = 3.76; SD = 1.1) and agricultural stress (mean = 3.70; SD = 1.1). An aggregate 68.8% reported direct household or livelihood damage attributable to climate events. Afforestation and ecosystem restoration dominated government-priority preferences (65.1%), with water-resource management second (20.9%). This report documents the full survey findings, integrates triangulated secondary evidence for underrepresented regions, develops a thematic qualitative analysis, critically evaluates the limitations of community-preferred conventional solutions, and situates the survey evidence within the PIEAS SAI Research Initiative's broader scientific inquiry into Stratospheric Aerosol Injection (SAI) as a near-term, temporary geoengineering supplement — not replacement — to conventional emissions-reduction pathways",
-        "published": "2026-05-21T00:46:00Z",
-        "updated": "2026-05-21T00:46:35Z",
+        "abstract": "The Mw 7.7 Myanmar earthquake of 28 March 2025 ruptured the Sagaing Fault system over ~450 km and exhibited complex rupture behavior, including intermittent supershear propagation and backward-migrating high-frequency (HF) P-wave radiation. We image the rupture evolution using multi-frequency teleseismic P-wave back-projection (BP) (0.05–0.5, 0.1–1.0, and 0.3–2.0 Hz) and compare the results with near-fault strong-motion data recorded at Nay Pyi Taw (NPT). Our BP results reveal two key features: (1) two distinct episodes of backward-migrating HF radiation initiated at the Sagaing–Meiktila and Meiktila–NPT fault junctions, with apparent migration speeds of 6.0–6.5 km/s, and (2) a pronounced HF radiator concentrated on a short splay-fault branch adjacent to the NPT segment. These HF radiators are preferentially located near the edges of high slip-rate patches in a P-wave slip model. The near-field displacement record at NPT shows a negative pulse following the quasi-static offset, likely representing a stopping phase generated by abrupt rupture arrest. Our results suggest that spatial variations in fault geometry, including segment junctions and fault branching, played an important role in rupture deceleration and termination, generating backward-migrating stopping-phase radiation.",
+        "published": "2026-05-21T01:18:00Z",
+        "updated": "2026-05-21T01:18:20Z",
         "categories": [
-          "Physical Sciences and Mathematics",
-          "Climate Change Pakistan",
-          "Solar Geoengineering Climate Policy Climate Perception Community Survey Climate Adaptation Climate Governance Geoengineering PIEAS",
-          "Stratospheric Aerosol Injection",
-          "Solar Geoengineering Climate Policy",
-          "PIEAS",
-          "Geoengineering PIEAS"
+          "Earth Sciences",
+          "Geophysics and Seismology",
+          "Myanmar earthquake",
+          "Back projection",
+          "High-frequency radiation",
+          "Stopping phase",
+          "Supershear rupture",
+          "Fault geometry"
         ],
-        "pdf_url": "https://eartharxiv.org/repository/object/13097/download/23209/",
-        "abs_url": "https://eartharxiv.org/repository/view/13097/",
+        "pdf_url": "https://eartharxiv.org/repository/object/13119/download/23238/",
+        "abs_url": "https://eartharxiv.org/repository/view/13119/",
         "source": "eartharxiv",
-        "source_id": "13097",
-        "doi": "10.31223/X55X9P",
-        "local_pdf_path": "data/pdfs/eartharxiv/Physical-Sciences-and-Mathematics/20260521/eartharxiv-13097.pdf",
+        "source_id": "13119",
+        "doi": "10.31223/X5278G",
+        "local_pdf_path": "data/pdfs/eartharxiv/Earth-Sciences/20260521/eartharxiv-13119.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/eartharxiv/Physical-Sciences-and-Mathematics/20260521/eartharxiv-13097.md",
+        "markdown_path": "data/markdown/eartharxiv/Earth-Sciences/20260521/eartharxiv-13119.md",
         "markdown_parse_error": null
       },
       "analysis": {
         "schema_version": "paperradar.analysis.v3",
         "input_version": "markdown-clean-v1",
-        "one_sentence_en": "A PIEAS community survey across Pakistan (N=1,149) finds very high climate-change awareness and identifies rainfall disruption as the top perceived impact, informing preference and feasibility discussions for stratospheric aerosol injection as a supplementary measure.",
-        "one_sentence_zh": "PIEAS对巴基斯坦开展的社区调查(N=1,149)显示高水平气候变化认知，认为降雨格局紊乱影响最突出，并用于讨论平流层气溶胶注入作为补充干预的可行性。",
+        "one_sentence_en": "Using multi-frequency teleseismic P-wave back-projection and comparison to near-field motions for the 2025 Mw 7.7 Myanmar event, the authors show backward-migrating high-frequency P-wave stopping-phase signals governed by fault geometry.",
+        "one_sentence_zh": "基于多频远场P波反投影并对比近场记录，该研究表明2025年缅甸Mw7.7地震的向后迁移高频P波“停止相”与断层几何控制的破裂减速终止有关。",
         "summary_en": [
-          "problem: Pakistan faces severe climate-vulnerability, but community-perceived impacts and policy priorities—especially regarding solar geoengineering supplements like SAI—are insufficiently documented.",
-          "approach: The PIEAS SAI Research Initiative ran a bilingual structured web survey (1–16 May 2026) with mixed-methods Likert and open-text items plus secondary-evidence triangulation for underrepresented regions.",
-          "key result: Most general-public respondents rated their climate awareness as Critical/Serious, and rainfall-pattern disruption ranked highest among perceived impacts; government-priority preferences favored afforestation/ecosystem restoration."
+          "Problem: What physical source mechanism produces observed backward-migrating high-frequency P-wave radiation during the 2025 Mw 7.7 Myanmar earthquake?",
+          "Approach: Perform multi-frequency teleseismic P-wave back-projection (0.05–0.5, 0.1–1.0, 0.3–2.0 Hz) with LQT component rotation, cross-correlation-based station selection, and compare radiation sites to a P-wave slip model and Nay Pyi Taw strong-motion displacements.",
+          "Key result: Two backward-migrating high-frequency P-wave episodes originate at Sagaing–Meiktila and Meiktila–NPT junctions, plus an enhanced radiator on an NPT-adjacent splay fault branch, consistent with stopping-phase radiation linked to rupture arrest at fault bends/branching."
         ],
         "summary_zh": [
-          "problem: 巴基斯坦气候风险很高，但在平流层气溶胶注入(SAI)等“补充型”太阳辐射地球工程议题上，社区对影响与政策优先级的认知与偏好证据不足。",
-          "approach: PIEAS在2026年5月1日至16日开展双语网络结构化问卷，结合Likert量表与开放文本，并对样本稀缺地区进行二手证据三角验证。",
-          "key result: 大多数公众将自身气候认知评为严重/关键，认为降雨格局紊乱是最主要的感知影响；政府优先项偏向造林与生态修复。"
+          "问题：2025年缅甸Mw 7.7地震中观测到的向后迁移高频P波究竟对应怎样的破裂物理机制？",
+          "方法：对不同频带（0.05–0.5、0.1–1.0、0.3–2.0 Hz）进行基于LQT分量旋转的远场P波反投影，采用互相关一致性筛选台站，并将辐射成像与P波滑移模型及内比都（Nay Pyi Taw, NPT）近场强震位移对比。",
+          "关键结果：向后迁移高频P波出现两次主要事件，起自Sagaing–Meiktila与Meiktila–NPT断层连接处；同时在靠近NPT的短分支（splay fault）上存在更强辐射，并与断层弯折/分叉诱发的停止相（停止阶段）有关。"
         ],
-        "contribution_en": "Provides a nationwide, community-level characterization of perceived climate impacts, self-reported damages, and policy preferences in Pakistan, explicitly situating the evidence within a feasibility-oriented context for SAI as a non-replacement supplementary intervention.",
-        "contribution_zh": "给出了巴基斯坦社区层面的气候认知、感知影响、自报损失与政策偏好全貌，并将这些证据置于以可行性为导向的SAI讨论框架中，强调其作为补充而非替代减排路径。",
-        "method_en": "Bilingual (English/Roman Urdu) web-hosted structured survey with separate general-public and professional modules, using Likert-scale impact ranking and open-text narratives, plus secondary-data triangulation for underrepresented regions.",
-        "method_zh": "通过双语(英文/罗马乌尔都语)线上结构化问卷开展研究，设置公众与专业人员模块，使用Likert量表进行影响排序并结合开放文本叙述；对样本稀缺地区引入二手数据进行三角验证。",
-        "data_or_region_en": "Pakistan; bilingual web survey conducted 1–16 May 2026 across seven administrative regions (Punjab, Khyber Pakhtunkhwa, Islamabad Capital Territory, Sindh, Azad Jammu and Kashmir, Gilgit-Baltistan, Balochistan), N=1,149 with secondary evidence from agencies/literature for underrepresented regions.",
-        "data_or_region_zh": "巴基斯坦；2026年5月1日至16日覆盖七个行政区域的双语线上问卷（旁遮普、开伯尔-普赫图赫瓦、伊斯兰堡首都辖区、信德、阿扎德查谟和克什米尔、吉尔吉特-巴尔蒂斯坦、俾路支斯坦），有效样本N=1,149；对样本稀缺地区补充机构与文献的二手证据。",
-        "geophysics_relevance_en": "Relevance is tangential: the paper is mainly climate-societal perception and governance research, but it includes an explicit SAI feasibility context that could inform geoengineering governance discussions rather than providing geophysical measurements or models.",
-        "geophysics_relevance_zh": "相关性较弱：论文主要是气候社会认知与治理研究，并非地球物理观测或模型；但其对SAI可行性与治理讨论提供了社会证据背景。",
+        "contribution_en": "The paper provides an earthquake-specific physical interpretation of backward-migrating high-frequency P-wave radiation by linking back-projected radiation episodes to segment junctions and branching features, and validating the interpretation with near-field evidence of a stopping phase.",
+        "contribution_zh": "该文针对具体地震给出了对向后迁移高频P波辐射的物理解释：通过反投影结果将辐射事件定位到分段连接与分叉几何，并用NPT近场位移中停止相的证据支持该解释。",
+        "method_en": "Multi-frequency teleseismic P-wave back-projection using LQT component rotation on three-component waveforms, with cross-correlation-based selection and lag-time corrections per frequency band; radiation power maps are then compared to a P-wave slip model (from prior PDTI work) and to Nay Pyi Taw near-fault strong-motion displacement pulses to identify a stopping phase.",
+        "method_zh": "将三分量远场波形旋转到LQT坐标并进行多频P波反投影；通过互相关一致性筛选台站、按频带进行到时扰动的滞后修正来堆叠成像辐射功率分布；再与既有P波滑移模型（PDTI获得）以及NPT近场强震位移中的脉冲特征对比，以识别停止相。",
+        "data_or_region_en": "Rupture region along the Sagaing Fault system, Myanmar (~450 km rupture; segments Sagaing, Meiktila, Nay Pyi Taw, Pyu, plus an NPT-adjacent splay branch); teleseismic P-wave recordings from EarthScope and near-fault strong motion/displacement at Nay Pyi Taw (NPT).",
+        "data_or_region_zh": "缅甸萨加因断层系统的破裂区（约450 km，包含Sagaing、Meiktila、Nay Pyi Taw、Pyu等分段及靠近NPT的短分支）；数据包括EarthScope的远场P波记录，以及Nay Pyi Taw（NPT）的近场强震位移。",
+        "geophysics_relevance_en": "This directly advances understanding of how fault geometry and rupture arrest can generate backward-migrating high-frequency stopping-phase radiation, which is important for interpreting complex rupture kinematics from seismic waveforms.",
+        "geophysics_relevance_zh": "这项工作直接说明了断层几何与破裂停止如何产生向后迁移的高频停止相辐射，对从地震波形解释复杂破裂运动学具有重要意义。",
         "llm_used": true,
         "llm_error": "",
         "source": "markdown",
         "model": "gpt-5.4-nano",
-        "topic": "Climate perception survey",
+        "topic": "Fault geometry stopping phase",
         "audience_level": "specialist",
         "analysis_quality": "ok",
         "analysis_warnings": [],
         "keywords_en": [
-          "climate perception",
-          "SAI",
-          "stratospheric aerosol injection",
-          "Pakistan",
-          "climate policy priorities"
+          "back-projection",
+          "backward-migrating radiation",
+          "stopping phase",
+          "fault geometry",
+          "teleseismic P-waves"
         ],
         "keywords_zh": [
-          "气候认知",
-          "SAI",
-          "平流层气溶胶注入",
-          "巴基斯坦",
-          "气候政策优先级"
+          "反投影",
+          "向后迁移辐射",
+          "停止相",
+          "断层几何",
+          "远场P波"
         ],
-        "updated_at": "2026-05-24T19:23:08.297495+00:00",
-        "cache_hit": true
-      }
-    },
-    {
-      "paper": {
-        "arxiv_id": "eartharxiv-13106",
-        "title": "Snow water equivalent estimates from airborne radar in the St. Elias Mountains",
-        "authors": [
-          "Daniel, Michael",
-          "Holt. John W",
-          "Mannello, Mikaila",
-          "Li, Jilu",
-          "Rodriguez-Morales, Fernando",
-          "Brinkerhoff, Douglas",
-          "Truffer, Martin"
-        ],
-        "abstract": "Quantifying the input mass from snow accumulation on rapidly changing glaciers is critical to establishing baseline states and predicting responses to climate change. Some of the largest glaciers in the world are located in the St. Elias Mountains in Southeast Alaska and Southwest Yukon; however, the input mass to these glaciers is poorly constrained. Here we used airborne radar sounding combined with in situ measurements of snow properties, and satellite imagery from Landsat 8/9 and Sentinel 1, to estimate the winter mass balance on the Bering, Hubbard, Kaskawulsh, Logan, Seward, Walsh, and Yahtse glaciers. Along-track snow water equivalent measurements for the winter accumulation period range from 0 to 3 m in 2018, 0.2 to 3.4 m in 2021, and 1.1 to 3.3 m in 2023. On-glacier measurements from the Seward and Kaskawulsh glaciers provided a mean seasonal snow density of 438 ± 22 kg m-3 which leads to a real dielectric permittivity of 1.86 ± 0.12, similar to values from other Alaskan glaciers. We observed that the maritime glaciers Yahtse, Bering, Hubbard, and Seward receive significantly more accumulation than the more inland glaciers.",
-        "published": "2026-05-21T00:42:00Z",
-        "updated": "2026-05-21T00:42:32Z",
-        "categories": [
-          "Glaciology",
-          "Ground-penetrating radar",
-          "Accumulation",
-          "Remote Sensing",
-          "Snow"
-        ],
-        "pdf_url": "https://eartharxiv.org/repository/object/13106/download/23215/",
-        "abs_url": "https://eartharxiv.org/repository/view/13106/",
-        "source": "eartharxiv",
-        "source_id": "13106",
-        "doi": "10.31223/X5FF4F",
-        "local_pdf_path": "data/pdfs/eartharxiv/Glaciology/20260521/eartharxiv-13106.pdf",
-        "pdf_download_error": null,
-        "markdown_path": "data/markdown/eartharxiv/Glaciology/20260521/eartharxiv-13106.md",
-        "markdown_parse_error": null
-      },
-      "analysis": {
-        "schema_version": "paperradar.analysis.v3",
-        "input_version": "markdown-clean-v1",
-        "one_sentence_en": "Using airborne radar sounding calibrated by snow density measurements and combined with Landsat and Sentinel imagery, the study estimates winter snow water equivalent and input mass for seven St. Elias Mountains glaciers in 2018, 2021, and 2023.",
-        "one_sentence_zh": "研究结合机载雷达测冰/雪、现场雪密度标定以及Landsat与Sentinel影像，估算了2018、2021和2023年育康山脉7座冰川的冬季雪水当量与增冰输入质量。",
-        "summary_en": [
-          "problem: Winter snow accumulation mass input to major St. Elias Mountains glaciers is poorly constrained, limiting baseline and climate-response assessments.",
-          "approach: The authors derive glacier-average winter SWE from airborne FMCW radar stratigraphy calibrated with in situ snow density, constrain accumulation to elevations above the equilibrium line, and aggregate within elevation bins using Landsat-derived snowline/ELA and Sentinel-1 melt context.",
-          "key result: Along-track SWE for winter accumulation spans 0–3 m (2018), 0.2–3.4 m (2021), and 1.1–3.3 m (2023), with inferred mean seasonal snow density 438 ± 22 kg m−3 (real permittivity 1.86 ± 0.12) and higher accumulation on maritime glaciers than more inland ones."
-        ],
-        "summary_zh": [
-          "problem: 育康山脉多座大型冰川的冬季积雪增冰输入质量约束不足，影响基线状态与气候响应评估。",
-          "approach: 作者利用经现场雪密度标定的FMCW机载雷达反射层位反演冬季雪水当量（SWE），仅统计高于平衡线高程的积累，并结合Landsat确定积雪线/ELA、用Sentinel-1辅助理解融化对穿透与分层解释的影响后按高程分带汇总。",
-          "key result: 冬季沿航向SWE范围为2018年0–3 m、2021年0.2–3.4 m、2023年1.1–3.3 m；Seward与Kaskawulsh的季节平均雪密度为438 ± 22 kg m−3（对应实介电常数1.86 ± 0.12），且海洋性冰川的积累显著高于更内陆的冰川。"
-        ],
-        "contribution_en": "Provides a multi-source workflow to convert airborne FMCW radar stratigraphy into glacier-average winter SWE and maximum input mass for multiple St. Elias Mountains glaciers, validated via crossovers and comparisons to surface GPR and snow cores, and characterizes maritime-to-inland accumulation contrasts.",
-        "contribution_zh": "提出一套将经雪密度标定的FMCW机载雷达分层结果转化为育康山脉多座冰川冬季雪水当量与最大输入质量的多源流程，并通过雷达轨迹交叉一致性以及与地表GPR/雪芯的对比进行验证，同时揭示海洋性到内陆的积累差异。",
-        "method_en": "Airborne FMCW radar sounding (Operation IceBridge 2018/2021; separate 2023 Cessna 206 acquisition) interpreted with a radar analysis utility to pick the last summer snow surface; snow depth converted to SWE using in situ snow density to set radar wave speed/real permittivity; accumulation aggregated above Landsat-derived equilibrium line altitude using elevation bins/hypsometry from RGI; verification via radar crossover analysis, radar–surface GPR comparisons, and proximity comparisons to snow cores; Sentinel-1 reflectivity analyzed to assess melt effects on radar penetration and stratigraphy.",
-        "method_zh": "使用FMCW机载雷达探测（2018/2021来自NASA Operation IceBridge；2023为另一机型Cessna 206采集），结合开源雷达分析工具人工拾取“上一个夏季雪面”反射界面；通过现场雪密度估计雷达波速/实介电常数，将雪深换算为SWE；用Landsat反演的平衡线高程限制统计范围，并基于RGI高程分带与面积加权汇总高于ELA的积累；通过雷达交叉一致性、与地表耦合GPR的对比以及与邻近雪芯的对比进行验证；同时分析Sentinel-1反射率以评估融化对雷达穿透与分层解释的影响。",
-        "data_or_region_en": "St. Elias Mountains, Southeast Alaska and Southwest Yukon: seven glaciers (Bering, Hubbard, Kaskawulsh, Logan, Seward, Walsh, Yahtse); airborne radar campaigns in 2018, 2021, and 2023 plus snow density/core sites on Seward (2018/2023) and Kaskawulsh (2018) and surface-coupled GPR on Seward (2023); Landsat 8/9 and Sentinel-1 for equilibrium line/snowline and melt context.",
-        "data_or_region_zh": "育康山脉（美国阿拉斯加东南部与加拿大西南育空）：研究7座冰川（Bering、Hubbard、Kaskawulsh、Logan、Seward、Walsh、Yahtse）；机载雷达于2018、2021、2023年开展，并在Seward（2018/2023）与Kaskawulsh（2018）布设雪密度/取芯点；2023年在Seward采集地表耦合GPR；使用Landsat 8/9与Sentinel-1用于确定平衡线/积雪线并提供融化背景信息。",
-        "geophysics_relevance_en": "Strong relevance to glacier cryosphere mass-balance tracking because it delivers quantitative winter SWE and mass input estimates from radar sounding, a key step toward monitoring baseline states under climate change.",
-        "geophysics_relevance_zh": "与当前追踪的冰川圈层/质量平衡监测高度相关，因为它把雷达探测转化为冬季SWE与质量输入的定量估计，是刻画气候变化下基线状态的重要步骤。",
-        "llm_used": true,
-        "llm_error": "",
-        "source": "markdown",
-        "model": "gpt-5.4-nano",
-        "topic": "Glacier SWE radar",
-        "audience_level": "specialist",
-        "analysis_quality": "ok",
-        "analysis_warnings": [],
-        "keywords_en": [
-          "snow water equivalent",
-          "airborne radar sounding",
-          "FMCW radar",
-          "grounding snow density",
-          "St. Elias Mountains"
-        ],
-        "keywords_zh": [
-          "雪水当量",
-          "机载雷达探测",
-          "FMCW雷达",
-          "雪密度标定",
-          "育康山脉"
-        ],
-        "updated_at": "2026-05-24T19:23:08.315271+00:00",
-        "cache_hit": true
-      }
-    },
-    {
-      "paper": {
-        "arxiv_id": "eartharxiv-13085",
-        "title": "Seasonality and Trends in Coastal Water Temperatures from NOAA Water Level Monitoring Stations along US Coasts",
-        "authors": [
-          "Callahan. John A",
-          "Armos, Bailey",
-          "Jima, Tigist",
-          "Zervas, Chris"
-        ],
-        "abstract": "Coastal regions are complex environments. They lie at the confluence of physical oceanic, atmospheric, and land-based processes, and continue to undergo significant change due to both natural and human-driven factors. Although it is well known that ocean sea surface temperatures (SSTs) have increased over the past several decades, extending these trends and patterns to coastal waters is nontrivial. We evaluated a new quality-controlled dataset of coastal water temperature collected at NOAA Center for Operational Oceanographic Products and Services (CO-OPS) water level monitoring stations. Water temperature (WT) records were analyzed at 95 stations extending from the mid-1990s to 2023 and representing all the major US coastal regions. Seasonal cycle metrics, linear trends, daily distributions, and extreme percentile thresholds were computed at each site. Seasonal cycles and peak times of year tracked well with solar heating and consistently tracked behind air temperature by a few days to a few weeks. US East Coast and Great Lakes regions have a much stronger seasonal cycle and larger range (up to 25℃) than West Coast and Island regions (as low as 3℃). The great majority of stations experience warming over this time period, with statistically significant trends at 56 of 95 stations, averaging approximately 0.5 ℃/decade. Many of these locations are also experiencing sea level rise, most notably in the Southeast and Gulf regions. Although geographic patterns exist, variations are found in extreme threshold temperatures and trends station to station and between bay systems and the open coast, highlighting the need for continuous in situ monitoring along the coast. This study provides baseline statistics of long-term near shore coastal WT data and supports informed future planning and decision-making in this dynamic environment.",
-        "published": "2026-05-21T00:33:00Z",
-        "updated": "2026-05-21T00:33:28Z",
-        "categories": [
-          "Oceanography and Atmospheric Sciences and Meteorology",
-          "Physical Sciences and Mathematics",
-          "water temperature",
-          "coastal hazards",
-          "seasonal cycle",
-          "trends",
-          "extremes",
-          "marine heatwaves",
-          "tide gauges",
-          "environmental monitoring"
-        ],
-        "pdf_url": "https://eartharxiv.org/repository/object/13085/download/23177/",
-        "abs_url": "https://eartharxiv.org/repository/view/13085/",
-        "source": "eartharxiv",
-        "source_id": "13085",
-        "doi": "10.31223/X5TR1T",
-        "local_pdf_path": "data/pdfs/eartharxiv/Oceanography-and-Atmospheric-Sciences-and-Meteorology/20260521/eartharxiv-13085.pdf",
-        "pdf_download_error": null,
-        "markdown_path": "data/markdown/eartharxiv/Oceanography-and-Atmospheric-Sciences-and-Meteorology/20260521/eartharxiv-13085.md",
-        "markdown_parse_error": null
-      },
-      "analysis": {
-        "schema_version": "paperradar.analysis.v3",
-        "input_version": "markdown-clean-v1",
-        "one_sentence_en": "The study builds a quality-controlled record of near-shore coastal water temperatures from 95 NOAA CO-OPS stations across US coasts and quantifies seasonality, extremes, and long-term warming trends through 2023.",
-        "one_sentence_zh": "该研究基于NOAA CO-OPS的95个沿美国海岸站点构建近岸海水温度质控数据集，并分析季节性、极端阈值与1990年代至2023年的长期变暖趋势。",
-        "summary_en": [
-          "problem: Extending known open-ocean SST warming patterns to highly variable near-shore coastal waters is difficult due to sparse, station-level observations.",
-          "approach: Use a newly quality-controlled NOAA CO-OPS coastal water-temperature dataset from 95 monitoring stations to compute seasonal cycle metrics, daily distributions and percentile-based extremes, and station-specific linear trends, with additional comparisons to OISST and marine heatwave statistics.",
-          "key result: Most stations show warming from the mid-1990s to 2023, with statistically significant trends at 56/95 stations (~0.5 °C per decade on average), stronger seasonal cycles on the US East Coast and Great Lakes, and strong station-to-station variability in extreme thresholds."
-        ],
-        "summary_zh": [
-          "problem: 将已知的海表温度增暖格局外推到高度受局地影响的近岸海水温度并不容易，因为相关长期原位观测不足。",
-          "approach: 利用NOAA CO-OPS新质控的近岸水温数据（95个站点）计算季节循环指标、基于日分布的极端分位阈值，以及各站的线性趋势，并结合与OISST及关键地区的海洋热浪频次评估进行补充。",
-          "key result: 1990年代中期至2023年间多数站点呈现增暖（56/95站点趋势显著，平均约0.5 ℃/十年）；东海岸与五大湖季节性更强，而极端阈值在站点与湾区/外海之间存在显著差异。"
-        ],
-        "contribution_en": "Provides a baseline, quality-controlled long-term near-shore coastal water temperature dataset and station-wise statistics (seasonality, daily extremes, and trends) for planning and assessment of coastal thermal change and extremes.",
-        "contribution_zh": "构建并提供长期近岸海水温度的质控基线数据集，给出站点级季节性、日分布极端阈值与增温趋势统计，用于支持沿海热变化与极端事件的评估与规划。",
-        "method_en": "Quality-controlled daily mean water temperature time series from NOAA CO-OPS stations are analyzed to compute daily/montly climatologies and seasonality lags via correlations with station air temperature, estimate daily extremes using KDE-based empirical distributions (90/95/99 percentiles), and derive station-specific long-term warming using linear trends on monthly anomalies with attention to serial correlation and seasonality (ARIMA-based handling).",
-        "method_zh": "基于NOAA CO-OPS站点的质控日均水温序列，先计算逐日/逐月气候态并与气温进行相关分析以确定相位滞后；再用核密度估计的经验分布估计日极端阈值（90/95/99分位）；最后在考虑序列相关与季节性的前提下，对月异常进行站点特异的线性增温趋势估计（采用ARIMA框架处理）。",
-        "data_or_region_en": "NOAA CO-OPS water level monitoring stations along US coasts; 95 stations with daily mean water temperatures spanning at least ~20 years (mid-1990s to 2023), covering US East Coast, Gulf, West Coast, Great Lakes, Alaska, and islands.",
-        "data_or_region_zh": "美国沿海NOAA CO-OPS水位监测站；95个站点的日均水温序列覆盖约20年以上（约1990年代中期至2023年），覆盖美国东海岸、墨西哥湾、南/西海岸、五大湖、阿拉斯加以及岛屿地区。",
-        "geophysics_relevance_en": "This matters for coastal hazard and marine-heatwave-related climate impacts because near-shore warming, seasonality shifts, and extreme-temperature thresholds control ecosystem stress and local risk, though the work is oceanographic rather than geophysical instrumentation per se.",
-        "geophysics_relevance_zh": "这对沿海灾害与海洋热浪相关的气候影响很重要，因为近岸增温、季节变化以及极端温度阈值会驱动生态压力与局地风险；但其主要是海洋学层面的分析，偏地球物理相关性较间接。",
-        "llm_used": true,
-        "llm_error": "",
-        "source": "markdown",
-        "model": "gpt-5.4-nano",
-        "topic": "Coastal thermal trends",
-        "audience_level": "specialist",
-        "analysis_quality": "ok",
-        "analysis_warnings": [],
-        "keywords_en": [
-          "coastal water temperature",
-          "tide gauges",
-          "seasonal cycle",
-          "extremes",
-          "NOAA CO-OPS"
-        ],
-        "keywords_zh": [
-          "近岸水温",
-          "潮位计",
-          "季节变化",
-          "极端温度",
-          "NOAA CO-OPS"
-        ],
-        "updated_at": "2026-05-24T19:23:08.335082+00:00",
+        "updated_at": "2026-05-25T03:35:53.820821+00:00",
         "cache_hit": true
       }
     },
@@ -2164,7 +1938,254 @@
           "橄榄石",
           "反应动力学"
         ],
-        "updated_at": "2026-05-24T19:23:08.287800+00:00",
+        "updated_at": "2026-05-25T03:35:53.895121+00:00",
+        "cache_hit": true
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "eartharxiv-13097",
+        "title": "Climate Change Perceptions and Policy Priorities in Pakistan: A Community Survey Analysis and Stratospheric Aerosol Injection Perspective",
+        "authors": [
+          "TANOLI. ABDUL HASEEB",
+          "Arfeen. Shams ul",
+          "Anwar, Zeeshan",
+          "Abbas, Yasir"
+        ],
+        "abstract": "Climate change constitutes a compound existential risk for Pakistan — a nation responsible for less than one percent of global greenhouse-gas emissions yet consistently ranked among the ten most climate-vulnerable states on earth (Germanwatch, 2021). Escalating heatwaves, intensifying monsoon floods, accelerating glacial retreat, chronic smog, and advancing desertification are not future projections for Pakistan: they are present, documented, and accumulating realities that claim lives, destroy crops, and destabilise livelihoods year after year. To assess community-level perceptions, lived impacts, and policy priorities, the PIEAS SAI Research Initiative administered a bilingual (English / Roman Urdu) structured survey instrument from 1 to 16 May 2026. A total of 1,149 valid, anonymised responses were obtained across all seven administrative regions: Punjab (37.5%), Khyber Pakhtunkhwa (25.8%), Islamabad Capital Territory (21.1%), Sindh (7.0%), Azad Jammu and Kashmir (3.5%), Gilgit-Baltistan (2.3%), and Balochistan (2.7%). The sample comprised 852 general-public respondents and 297 domain professionals from engineering, natural sciences, and academia. Principal findings indicate that 90.6% of general-public respondents rated their climate-change awareness as Critical or Serious. Disruption to rainfall patterns ranked highest among six impact dimensions on a five-point Likert scale (mean = 3.91; SD = 1.1), followed by extreme heat-wave intensity (mean = 3.76; SD = 1.1) and agricultural stress (mean = 3.70; SD = 1.1). An aggregate 68.8% reported direct household or livelihood damage attributable to climate events. Afforestation and ecosystem restoration dominated government-priority preferences (65.1%), with water-resource management second (20.9%). This report documents the full survey findings, integrates triangulated secondary evidence for underrepresented regions, develops a thematic qualitative analysis, critically evaluates the limitations of community-preferred conventional solutions, and situates the survey evidence within the PIEAS SAI Research Initiative's broader scientific inquiry into Stratospheric Aerosol Injection (SAI) as a near-term, temporary geoengineering supplement — not replacement — to conventional emissions-reduction pathways",
+        "published": "2026-05-20T18:46:00Z",
+        "updated": "2026-05-20T18:46:35Z",
+        "categories": [
+          "Physical Sciences and Mathematics",
+          "Climate Change Pakistan",
+          "Solar Geoengineering Climate Policy Climate Perception Community Survey Climate Adaptation Climate Governance Geoengineering PIEAS",
+          "Stratospheric Aerosol Injection",
+          "Solar Geoengineering Climate Policy",
+          "PIEAS",
+          "Geoengineering PIEAS"
+        ],
+        "pdf_url": "https://eartharxiv.org/repository/object/13097/download/23209/",
+        "abs_url": "https://eartharxiv.org/repository/view/13097/",
+        "source": "eartharxiv",
+        "source_id": "13097",
+        "doi": "10.31223/X55X9P",
+        "local_pdf_path": "data/pdfs/eartharxiv/Physical-Sciences-and-Mathematics/20260520/eartharxiv-13097.pdf",
+        "pdf_download_error": null,
+        "markdown_path": "data/markdown/eartharxiv/Physical-Sciences-and-Mathematics/20260520/eartharxiv-13097.md",
+        "markdown_parse_error": null
+      },
+      "analysis": {
+        "schema_version": "paperradar.analysis.v3",
+        "input_version": "markdown-clean-v1",
+        "one_sentence_en": "A PIEAS community survey across Pakistan (N=1,149) finds very high climate-change awareness and identifies rainfall disruption as the top perceived impact, informing preference and feasibility discussions for stratospheric aerosol injection as a supplementary measure.",
+        "one_sentence_zh": "PIEAS对巴基斯坦开展的社区调查(N=1,149)显示高水平气候变化认知，认为降雨格局紊乱影响最突出，并用于讨论平流层气溶胶注入作为补充干预的可行性。",
+        "summary_en": [
+          "problem: Pakistan faces severe climate-vulnerability, but community-perceived impacts and policy priorities—especially regarding solar geoengineering supplements like SAI—are insufficiently documented.",
+          "approach: The PIEAS SAI Research Initiative ran a bilingual structured web survey (1–16 May 2026) with mixed-methods Likert and open-text items plus secondary-evidence triangulation for underrepresented regions.",
+          "key result: Most general-public respondents rated their climate awareness as Critical/Serious, and rainfall-pattern disruption ranked highest among perceived impacts; government-priority preferences favored afforestation/ecosystem restoration."
+        ],
+        "summary_zh": [
+          "problem: 巴基斯坦气候风险很高，但在平流层气溶胶注入(SAI)等“补充型”太阳辐射地球工程议题上，社区对影响与政策优先级的认知与偏好证据不足。",
+          "approach: PIEAS在2026年5月1日至16日开展双语网络结构化问卷，结合Likert量表与开放文本，并对样本稀缺地区进行二手证据三角验证。",
+          "key result: 大多数公众将自身气候认知评为严重/关键，认为降雨格局紊乱是最主要的感知影响；政府优先项偏向造林与生态修复。"
+        ],
+        "contribution_en": "Provides a nationwide, community-level characterization of perceived climate impacts, self-reported damages, and policy preferences in Pakistan, explicitly situating the evidence within a feasibility-oriented context for SAI as a non-replacement supplementary intervention.",
+        "contribution_zh": "给出了巴基斯坦社区层面的气候认知、感知影响、自报损失与政策偏好全貌，并将这些证据置于以可行性为导向的SAI讨论框架中，强调其作为补充而非替代减排路径。",
+        "method_en": "Bilingual (English/Roman Urdu) web-hosted structured survey with separate general-public and professional modules, using Likert-scale impact ranking and open-text narratives, plus secondary-data triangulation for underrepresented regions.",
+        "method_zh": "通过双语(英文/罗马乌尔都语)线上结构化问卷开展研究，设置公众与专业人员模块，使用Likert量表进行影响排序并结合开放文本叙述；对样本稀缺地区引入二手数据进行三角验证。",
+        "data_or_region_en": "Pakistan; bilingual web survey conducted 1–16 May 2026 across seven administrative regions (Punjab, Khyber Pakhtunkhwa, Islamabad Capital Territory, Sindh, Azad Jammu and Kashmir, Gilgit-Baltistan, Balochistan), N=1,149 with secondary evidence from agencies/literature for underrepresented regions.",
+        "data_or_region_zh": "巴基斯坦；2026年5月1日至16日覆盖七个行政区域的双语线上问卷（旁遮普、开伯尔-普赫图赫瓦、伊斯兰堡首都辖区、信德、阿扎德查谟和克什米尔、吉尔吉特-巴尔蒂斯坦、俾路支斯坦），有效样本N=1,149；对样本稀缺地区补充机构与文献的二手证据。",
+        "geophysics_relevance_en": "Relevance is tangential: the paper is mainly climate-societal perception and governance research, but it includes an explicit SAI feasibility context that could inform geoengineering governance discussions rather than providing geophysical measurements or models.",
+        "geophysics_relevance_zh": "相关性较弱：论文主要是气候社会认知与治理研究，并非地球物理观测或模型；但其对SAI可行性与治理讨论提供了社会证据背景。",
+        "llm_used": true,
+        "llm_error": "",
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "topic": "Climate perception survey",
+        "audience_level": "specialist",
+        "analysis_quality": "ok",
+        "analysis_warnings": [],
+        "keywords_en": [
+          "climate perception",
+          "SAI",
+          "stratospheric aerosol injection",
+          "Pakistan",
+          "climate policy priorities"
+        ],
+        "keywords_zh": [
+          "气候认知",
+          "SAI",
+          "平流层气溶胶注入",
+          "巴基斯坦",
+          "气候政策优先级"
+        ],
+        "updated_at": "2026-05-25T03:35:53.848031+00:00",
+        "cache_hit": true
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "eartharxiv-13106",
+        "title": "Snow water equivalent estimates from airborne radar in the St. Elias Mountains",
+        "authors": [
+          "Daniel, Michael",
+          "Holt. John W",
+          "Mannello, Mikaila",
+          "Li, Jilu",
+          "Rodriguez-Morales, Fernando",
+          "Brinkerhoff, Douglas",
+          "Truffer, Martin"
+        ],
+        "abstract": "Quantifying the input mass from snow accumulation on rapidly changing glaciers is critical to establishing baseline states and predicting responses to climate change. Some of the largest glaciers in the world are located in the St. Elias Mountains in Southeast Alaska and Southwest Yukon; however, the input mass to these glaciers is poorly constrained. Here we used airborne radar sounding combined with in situ measurements of snow properties, and satellite imagery from Landsat 8/9 and Sentinel 1, to estimate the winter mass balance on the Bering, Hubbard, Kaskawulsh, Logan, Seward, Walsh, and Yahtse glaciers. Along-track snow water equivalent measurements for the winter accumulation period range from 0 to 3 m in 2018, 0.2 to 3.4 m in 2021, and 1.1 to 3.3 m in 2023. On-glacier measurements from the Seward and Kaskawulsh glaciers provided a mean seasonal snow density of 438 ± 22 kg m-3 which leads to a real dielectric permittivity of 1.86 ± 0.12, similar to values from other Alaskan glaciers. We observed that the maritime glaciers Yahtse, Bering, Hubbard, and Seward receive significantly more accumulation than the more inland glaciers.",
+        "published": "2026-05-20T18:42:00Z",
+        "updated": "2026-05-20T18:42:32Z",
+        "categories": [
+          "Glaciology",
+          "Ground-penetrating radar",
+          "Accumulation",
+          "Remote Sensing",
+          "Snow"
+        ],
+        "pdf_url": "https://eartharxiv.org/repository/object/13106/download/23215/",
+        "abs_url": "https://eartharxiv.org/repository/view/13106/",
+        "source": "eartharxiv",
+        "source_id": "13106",
+        "doi": "10.31223/X5FF4F",
+        "local_pdf_path": "data/pdfs/eartharxiv/Glaciology/20260520/eartharxiv-13106.pdf",
+        "pdf_download_error": null,
+        "markdown_path": "data/markdown/eartharxiv/Glaciology/20260520/eartharxiv-13106.md",
+        "markdown_parse_error": null
+      },
+      "analysis": {
+        "schema_version": "paperradar.analysis.v3",
+        "input_version": "markdown-clean-v1",
+        "one_sentence_en": "Using airborne radar sounding calibrated by snow density measurements and combined with Landsat and Sentinel imagery, the study estimates winter snow water equivalent and input mass for seven St. Elias Mountains glaciers in 2018, 2021, and 2023.",
+        "one_sentence_zh": "研究结合机载雷达测冰/雪、现场雪密度标定以及Landsat与Sentinel影像，估算了2018、2021和2023年育康山脉7座冰川的冬季雪水当量与增冰输入质量。",
+        "summary_en": [
+          "problem: Winter snow accumulation mass input to major St. Elias Mountains glaciers is poorly constrained, limiting baseline and climate-response assessments.",
+          "approach: The authors derive glacier-average winter SWE from airborne FMCW radar stratigraphy calibrated with in situ snow density, constrain accumulation to elevations above the equilibrium line, and aggregate within elevation bins using Landsat-derived snowline/ELA and Sentinel-1 melt context.",
+          "key result: Along-track SWE for winter accumulation spans 0–3 m (2018), 0.2–3.4 m (2021), and 1.1–3.3 m (2023), with inferred mean seasonal snow density 438 ± 22 kg m−3 (real permittivity 1.86 ± 0.12) and higher accumulation on maritime glaciers than more inland ones."
+        ],
+        "summary_zh": [
+          "problem: 育康山脉多座大型冰川的冬季积雪增冰输入质量约束不足，影响基线状态与气候响应评估。",
+          "approach: 作者利用经现场雪密度标定的FMCW机载雷达反射层位反演冬季雪水当量（SWE），仅统计高于平衡线高程的积累，并结合Landsat确定积雪线/ELA、用Sentinel-1辅助理解融化对穿透与分层解释的影响后按高程分带汇总。",
+          "key result: 冬季沿航向SWE范围为2018年0–3 m、2021年0.2–3.4 m、2023年1.1–3.3 m；Seward与Kaskawulsh的季节平均雪密度为438 ± 22 kg m−3（对应实介电常数1.86 ± 0.12），且海洋性冰川的积累显著高于更内陆的冰川。"
+        ],
+        "contribution_en": "Provides a multi-source workflow to convert airborne FMCW radar stratigraphy into glacier-average winter SWE and maximum input mass for multiple St. Elias Mountains glaciers, validated via crossovers and comparisons to surface GPR and snow cores, and characterizes maritime-to-inland accumulation contrasts.",
+        "contribution_zh": "提出一套将经雪密度标定的FMCW机载雷达分层结果转化为育康山脉多座冰川冬季雪水当量与最大输入质量的多源流程，并通过雷达轨迹交叉一致性以及与地表GPR/雪芯的对比进行验证，同时揭示海洋性到内陆的积累差异。",
+        "method_en": "Airborne FMCW radar sounding (Operation IceBridge 2018/2021; separate 2023 Cessna 206 acquisition) interpreted with a radar analysis utility to pick the last summer snow surface; snow depth converted to SWE using in situ snow density to set radar wave speed/real permittivity; accumulation aggregated above Landsat-derived equilibrium line altitude using elevation bins/hypsometry from RGI; verification via radar crossover analysis, radar–surface GPR comparisons, and proximity comparisons to snow cores; Sentinel-1 reflectivity analyzed to assess melt effects on radar penetration and stratigraphy.",
+        "method_zh": "使用FMCW机载雷达探测（2018/2021来自NASA Operation IceBridge；2023为另一机型Cessna 206采集），结合开源雷达分析工具人工拾取“上一个夏季雪面”反射界面；通过现场雪密度估计雷达波速/实介电常数，将雪深换算为SWE；用Landsat反演的平衡线高程限制统计范围，并基于RGI高程分带与面积加权汇总高于ELA的积累；通过雷达交叉一致性、与地表耦合GPR的对比以及与邻近雪芯的对比进行验证；同时分析Sentinel-1反射率以评估融化对雷达穿透与分层解释的影响。",
+        "data_or_region_en": "St. Elias Mountains, Southeast Alaska and Southwest Yukon: seven glaciers (Bering, Hubbard, Kaskawulsh, Logan, Seward, Walsh, Yahtse); airborne radar campaigns in 2018, 2021, and 2023 plus snow density/core sites on Seward (2018/2023) and Kaskawulsh (2018) and surface-coupled GPR on Seward (2023); Landsat 8/9 and Sentinel-1 for equilibrium line/snowline and melt context.",
+        "data_or_region_zh": "育康山脉（美国阿拉斯加东南部与加拿大西南育空）：研究7座冰川（Bering、Hubbard、Kaskawulsh、Logan、Seward、Walsh、Yahtse）；机载雷达于2018、2021、2023年开展，并在Seward（2018/2023）与Kaskawulsh（2018）布设雪密度/取芯点；2023年在Seward采集地表耦合GPR；使用Landsat 8/9与Sentinel-1用于确定平衡线/积雪线并提供融化背景信息。",
+        "geophysics_relevance_en": "Strong relevance to glacier cryosphere mass-balance tracking because it delivers quantitative winter SWE and mass input estimates from radar sounding, a key step toward monitoring baseline states under climate change.",
+        "geophysics_relevance_zh": "与当前追踪的冰川圈层/质量平衡监测高度相关，因为它把雷达探测转化为冬季SWE与质量输入的定量估计，是刻画气候变化下基线状态的重要步骤。",
+        "llm_used": true,
+        "llm_error": "",
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "topic": "Glacier SWE radar",
+        "audience_level": "specialist",
+        "analysis_quality": "ok",
+        "analysis_warnings": [],
+        "keywords_en": [
+          "snow water equivalent",
+          "airborne radar sounding",
+          "FMCW radar",
+          "grounding snow density",
+          "St. Elias Mountains"
+        ],
+        "keywords_zh": [
+          "雪水当量",
+          "机载雷达探测",
+          "FMCW雷达",
+          "雪密度标定",
+          "育康山脉"
+        ],
+        "updated_at": "2026-05-25T03:35:53.865579+00:00",
+        "cache_hit": true
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "eartharxiv-13085",
+        "title": "Seasonality and Trends in Coastal Water Temperatures from NOAA Water Level Monitoring Stations along US Coasts",
+        "authors": [
+          "Callahan. John A",
+          "Armos, Bailey",
+          "Jima, Tigist",
+          "Zervas, Chris"
+        ],
+        "abstract": "Coastal regions are complex environments. They lie at the confluence of physical oceanic, atmospheric, and land-based processes, and continue to undergo significant change due to both natural and human-driven factors. Although it is well known that ocean sea surface temperatures (SSTs) have increased over the past several decades, extending these trends and patterns to coastal waters is nontrivial. We evaluated a new quality-controlled dataset of coastal water temperature collected at NOAA Center for Operational Oceanographic Products and Services (CO-OPS) water level monitoring stations. Water temperature (WT) records were analyzed at 95 stations extending from the mid-1990s to 2023 and representing all the major US coastal regions. Seasonal cycle metrics, linear trends, daily distributions, and extreme percentile thresholds were computed at each site. Seasonal cycles and peak times of year tracked well with solar heating and consistently tracked behind air temperature by a few days to a few weeks. US East Coast and Great Lakes regions have a much stronger seasonal cycle and larger range (up to 25℃) than West Coast and Island regions (as low as 3℃). The great majority of stations experience warming over this time period, with statistically significant trends at 56 of 95 stations, averaging approximately 0.5 ℃/decade. Many of these locations are also experiencing sea level rise, most notably in the Southeast and Gulf regions. Although geographic patterns exist, variations are found in extreme threshold temperatures and trends station to station and between bay systems and the open coast, highlighting the need for continuous in situ monitoring along the coast. This study provides baseline statistics of long-term near shore coastal WT data and supports informed future planning and decision-making in this dynamic environment.",
+        "published": "2026-05-20T18:33:00Z",
+        "updated": "2026-05-20T18:33:28Z",
+        "categories": [
+          "Oceanography and Atmospheric Sciences and Meteorology",
+          "Physical Sciences and Mathematics",
+          "water temperature",
+          "coastal hazards",
+          "seasonal cycle",
+          "trends",
+          "extremes",
+          "marine heatwaves",
+          "tide gauges",
+          "environmental monitoring"
+        ],
+        "pdf_url": "https://eartharxiv.org/repository/object/13085/download/23177/",
+        "abs_url": "https://eartharxiv.org/repository/view/13085/",
+        "source": "eartharxiv",
+        "source_id": "13085",
+        "doi": "10.31223/X5TR1T",
+        "local_pdf_path": "data/pdfs/eartharxiv/Oceanography-and-Atmospheric-Sciences-and-Meteorology/20260520/eartharxiv-13085.pdf",
+        "pdf_download_error": null,
+        "markdown_path": "data/markdown/eartharxiv/Oceanography-and-Atmospheric-Sciences-and-Meteorology/20260520/eartharxiv-13085.md",
+        "markdown_parse_error": null
+      },
+      "analysis": {
+        "schema_version": "paperradar.analysis.v3",
+        "input_version": "markdown-clean-v1",
+        "one_sentence_en": "The study builds a quality-controlled record of near-shore coastal water temperatures from 95 NOAA CO-OPS stations across US coasts and quantifies seasonality, extremes, and long-term warming trends through 2023.",
+        "one_sentence_zh": "该研究基于NOAA CO-OPS的95个沿美国海岸站点构建近岸海水温度质控数据集，并分析季节性、极端阈值与1990年代至2023年的长期变暖趋势。",
+        "summary_en": [
+          "problem: Extending known open-ocean SST warming patterns to highly variable near-shore coastal waters is difficult due to sparse, station-level observations.",
+          "approach: Use a newly quality-controlled NOAA CO-OPS coastal water-temperature dataset from 95 monitoring stations to compute seasonal cycle metrics, daily distributions and percentile-based extremes, and station-specific linear trends, with additional comparisons to OISST and marine heatwave statistics.",
+          "key result: Most stations show warming from the mid-1990s to 2023, with statistically significant trends at 56/95 stations (~0.5 °C per decade on average), stronger seasonal cycles on the US East Coast and Great Lakes, and strong station-to-station variability in extreme thresholds."
+        ],
+        "summary_zh": [
+          "problem: 将已知的海表温度增暖格局外推到高度受局地影响的近岸海水温度并不容易，因为相关长期原位观测不足。",
+          "approach: 利用NOAA CO-OPS新质控的近岸水温数据（95个站点）计算季节循环指标、基于日分布的极端分位阈值，以及各站的线性趋势，并结合与OISST及关键地区的海洋热浪频次评估进行补充。",
+          "key result: 1990年代中期至2023年间多数站点呈现增暖（56/95站点趋势显著，平均约0.5 ℃/十年）；东海岸与五大湖季节性更强，而极端阈值在站点与湾区/外海之间存在显著差异。"
+        ],
+        "contribution_en": "Provides a baseline, quality-controlled long-term near-shore coastal water temperature dataset and station-wise statistics (seasonality, daily extremes, and trends) for planning and assessment of coastal thermal change and extremes.",
+        "contribution_zh": "构建并提供长期近岸海水温度的质控基线数据集，给出站点级季节性、日分布极端阈值与增温趋势统计，用于支持沿海热变化与极端事件的评估与规划。",
+        "method_en": "Quality-controlled daily mean water temperature time series from NOAA CO-OPS stations are analyzed to compute daily/montly climatologies and seasonality lags via correlations with station air temperature, estimate daily extremes using KDE-based empirical distributions (90/95/99 percentiles), and derive station-specific long-term warming using linear trends on monthly anomalies with attention to serial correlation and seasonality (ARIMA-based handling).",
+        "method_zh": "基于NOAA CO-OPS站点的质控日均水温序列，先计算逐日/逐月气候态并与气温进行相关分析以确定相位滞后；再用核密度估计的经验分布估计日极端阈值（90/95/99分位）；最后在考虑序列相关与季节性的前提下，对月异常进行站点特异的线性增温趋势估计（采用ARIMA框架处理）。",
+        "data_or_region_en": "NOAA CO-OPS water level monitoring stations along US coasts; 95 stations with daily mean water temperatures spanning at least ~20 years (mid-1990s to 2023), covering US East Coast, Gulf, West Coast, Great Lakes, Alaska, and islands.",
+        "data_or_region_zh": "美国沿海NOAA CO-OPS水位监测站；95个站点的日均水温序列覆盖约20年以上（约1990年代中期至2023年），覆盖美国东海岸、墨西哥湾、南/西海岸、五大湖、阿拉斯加以及岛屿地区。",
+        "geophysics_relevance_en": "This matters for coastal hazard and marine-heatwave-related climate impacts because near-shore warming, seasonality shifts, and extreme-temperature thresholds control ecosystem stress and local risk, though the work is oceanographic rather than geophysical instrumentation per se.",
+        "geophysics_relevance_zh": "这对沿海灾害与海洋热浪相关的气候影响很重要，因为近岸增温、季节变化以及极端温度阈值会驱动生态压力与局地风险；但其主要是海洋学层面的分析，偏地球物理相关性较间接。",
+        "llm_used": true,
+        "llm_error": "",
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "topic": "Coastal thermal trends",
+        "audience_level": "specialist",
+        "analysis_quality": "ok",
+        "analysis_warnings": [],
+        "keywords_en": [
+          "coastal water temperature",
+          "tide gauges",
+          "seasonal cycle",
+          "extremes",
+          "NOAA CO-OPS"
+        ],
+        "keywords_zh": [
+          "近岸水温",
+          "潮位计",
+          "季节变化",
+          "极端温度",
+          "NOAA CO-OPS"
+        ],
+        "updated_at": "2026-05-25T03:35:53.884274+00:00",
         "cache_hit": true
       }
     },
@@ -2238,7 +2259,7 @@
           "地震目录",
           "尾部风险"
         ],
-        "updated_at": "2026-05-24T19:23:08.346057+00:00",
+        "updated_at": "2026-05-25T03:35:53.903129+00:00",
         "cache_hit": true
       }
     },
@@ -2313,7 +2334,7 @@
           "边界层",
           "地球流体动力学"
         ],
-        "updated_at": "2026-05-24T19:23:08.364030+00:00",
+        "updated_at": "2026-05-25T03:35:53.913505+00:00",
         "cache_hit": true
       }
     },
@@ -2387,7 +2408,7 @@
           "多小波",
           "入口边界条件"
         ],
-        "updated_at": "2026-05-24T19:23:08.370794+00:00",
+        "updated_at": "2026-05-25T03:35:53.920834+00:00",
         "cache_hit": true
       }
     },
@@ -2465,7 +2486,7 @@
           "TanDEM-X",
           "Landsat"
         ],
-        "updated_at": "2026-05-24T19:23:08.376371+00:00",
+        "updated_at": "2026-05-25T03:35:53.927586+00:00",
         "cache_hit": true
       }
     },
@@ -2540,7 +2561,7 @@
           "Darcy产能",
           "云端仿真"
         ],
-        "updated_at": "2026-05-24T19:23:08.387671+00:00",
+        "updated_at": "2026-05-25T03:35:53.936447+00:00",
         "cache_hit": true
       }
     },
@@ -2616,7 +2637,7 @@
           "OSIRIS-REx再入",
           "大气传播"
         ],
-        "updated_at": "2026-05-24T19:23:08.399796+00:00",
+        "updated_at": "2026-05-25T03:35:53.950232+00:00",
         "cache_hit": true
       }
     },
@@ -2693,7 +2714,7 @@
           "OpenGL 环形缓冲",
           "有状态分块处理"
         ],
-        "updated_at": "2026-05-24T19:23:08.406360+00:00",
+        "updated_at": "2026-05-25T03:35:53.956772+00:00",
         "cache_hit": true
       }
     },
@@ -2770,7 +2791,7 @@
           "正-无标签学习",
           "卫星海洋波浪"
         ],
-        "updated_at": "2026-05-24T19:23:08.412329+00:00",
+        "updated_at": "2026-05-25T03:35:53.963340+00:00",
         "cache_hit": true
       }
     },
@@ -2845,7 +2866,7 @@
           "有理近似",
           "TEM电导率"
         ],
-        "updated_at": "2026-05-24T19:23:08.423289+00:00",
+        "updated_at": "2026-05-25T03:35:53.969813+00:00",
         "cache_hit": true
       }
     },
@@ -2922,7 +2943,7 @@
           "CO新星",
           "星际尘埃"
         ],
-        "updated_at": "2026-05-24T19:23:08.439917+00:00",
+        "updated_at": "2026-05-25T03:35:53.978410+00:00",
         "cache_hit": true
       }
     },
@@ -3001,7 +3022,7 @@
           "赤道电喷流EEJ",
           "CSES电场"
         ],
-        "updated_at": "2026-05-24T19:23:08.445988+00:00",
+        "updated_at": "2026-05-25T03:35:53.984008+00:00",
         "cache_hit": true
       }
     },
@@ -3079,7 +3100,7 @@
           "费米LAT",
           "暴发星系核"
         ],
-        "updated_at": "2026-05-24T19:23:08.452411+00:00",
+        "updated_at": "2026-05-25T03:35:53.992737+00:00",
         "cache_hit": true
       }
     },
@@ -3157,7 +3178,7 @@
           "慢磁声学波",
           "声学共振腔"
         ],
-        "updated_at": "2026-05-24T19:23:08.457715+00:00",
+        "updated_at": "2026-05-25T03:35:53.998546+00:00",
         "cache_hit": true
       }
     },
@@ -3234,7 +3255,7 @@
           "土壤含水率保持曲线",
           "UNSODA"
         ],
-        "updated_at": "2026-05-24T19:23:08.468882+00:00",
+        "updated_at": "2026-05-25T03:35:54.005158+00:00",
         "cache_hit": true
       }
     },
@@ -3249,8 +3270,8 @@
           "Van Houdt, Jan"
         ],
         "abstract": "Anthropogenic global warming has reached a level so high that it is now possible to an- alyze its dynamics and spatial variation. Spatially varying Surface Air Temperature (SAT) anomalies [1] can be well described by exponential functions with increase rates that range from 2.1 to 3.7% per year, depending on the region. The Northern Hemisphere has warmed significantly more than the Southern Hemisphere and is also warming more rapidly. In this work, small-signal, lumped thermal impedance (LTI) modeling of the Earth thermal system is introduced as an efficient method to model the temporal and spatial variation of SAT across the globe at continental scale since the industrial revolution. SAT is, in first-order, determined by the warming of the troposphere as a consequence of energy sources dissipating heat in it. Due to its small thermal capacity, it has a high sensitivity to these sources. The thermal sensitivity of the troposphere is estimated to be 5.4±0.9K per W/m2 of dissi- pated energy. This value is derived from the troposphere’s thermal response to the 11-year solar cycle. The spatially varied increase of 2.1 to 3.7% per year of SAT-anomaly cannot be simply explained by global uniform warming by uniformly distributed greenhouse gases (GHGs), dominated by CO2, of which the concentration increases at a rate of only 1.9% per year. Within the framework of a small-signal LTI-model for the troposphere volumes above the Northern and Southern Hemisphere’s oceans and land masses, respectively, three effective small-signal anthropogenic troposphere heat sources are identified and quantified consistent with the observed region-dependent exponential increase in SAT. These are: (i) IRTA: Infrared Radiation Absorption in the Troposphere determined by GHG-emission and quantified from the Southern Hemisphere ocean SAT-evolution; (ii) AHR: Anthropogenic Heat Release which directly heats the troposphere, independently derived from global primary energy consumption data; (iii) SITA: Solar Irradiation Absorption in the Troposphere increasing rapidly (>3% per year) attributed to increasing levels of short-lived Anthropogenic Chemicals Emission (ACE). This heat source is quantified by fitting the impedance model equations to the continental SAT-evolutions since 1990. It amounts to an increase of close to +0.2% in solar irradiation absorption over the Northern Hemisphere’s land. The global average increase in SITA coincides with the increase in OH-anomaly since 1990, consistent with the hypothesized chemical origin of SITA-warming [2]. The presented LTI-model quantifies the accelerating and spatially varying global warming as a result of exponentially increasing anthropogenic heat sources (IRTA, AHR, SITA) that cause a region-dependent exponentially increasing SAT since the industrial revolution. The results are derived within a small-signal, lumped linear thermal impedance framework and are bounded by the LTI-model structure, its linearization, and the estimations of the effective impedance parameters derived from SAT and Total Solar Irradiation measurements.",
-        "published": "2026-05-19T05:16:00Z",
-        "updated": "2026-05-19T05:16:54Z",
+        "published": "2026-05-18T23:16:00Z",
+        "updated": "2026-05-18T23:16:54Z",
         "categories": [
           "Climate",
           "Oceanography and Atmospheric Sciences and Meteorology",
@@ -3269,9 +3290,9 @@
         "source": "eartharxiv",
         "source_id": "12970",
         "doi": "10.31223/X5GF6H",
-        "local_pdf_path": "data/pdfs/eartharxiv/Climate/20260519/eartharxiv-12970.pdf",
+        "local_pdf_path": "data/pdfs/eartharxiv/Climate/20260518/eartharxiv-12970.pdf",
         "pdf_download_error": null,
-        "markdown_path": "data/markdown/eartharxiv/Climate/20260519/eartharxiv-12970.md",
+        "markdown_path": "data/markdown/eartharxiv/Climate/20260518/eartharxiv-12970.md",
         "markdown_parse_error": null
       },
       "analysis": {
@@ -3319,7 +3340,7 @@
           "人为热释放",
           "太阳辐照吸收"
         ],
-        "updated_at": "2026-05-24T19:23:08.487587+00:00",
+        "updated_at": "2026-05-25T03:35:54.018661+00:00",
         "cache_hit": true
       }
     },
@@ -3392,7 +3413,7 @@
           "地平面拾取",
           "能登地震"
         ],
-        "updated_at": "2026-05-24T19:23:08.496778+00:00",
+        "updated_at": "2026-05-25T03:35:54.032290+00:00",
         "cache_hit": true
       }
     },
@@ -3464,7 +3485,7 @@
           "傅里叶神经算子",
           "Utah FORGE"
         ],
-        "updated_at": "2026-05-24T19:23:08.506543+00:00",
+        "updated_at": "2026-05-25T03:35:54.039584+00:00",
         "cache_hit": true
       }
     },
@@ -3543,7 +3564,7 @@
           "仿真在环",
           "CREST/EF5"
         ],
-        "updated_at": "2026-05-24T19:23:08.514330+00:00",
+        "updated_at": "2026-05-25T03:35:54.044634+00:00",
         "cache_hit": true
       }
     }
