@@ -1,6 +1,6 @@
 {
   "date": "2026-05-26",
-  "generated_at": "2026-05-25T19:29:21.203111+00:00",
+  "generated_at": "2026-05-26T11:26:52.821415+00:00",
   "config": {
     "site_title": "PaperRadar",
     "site_description": {
@@ -78,6 +78,299 @@
   "papers": [
     {
       "paper": {
+        "arxiv_id": "2605.25161v1",
+        "title": "FMSIM: A Multimodal Flow Matching Framework for Conditional Geomodeling",
+        "authors": [
+          "Jiayuan Huang",
+          "Suihong Song",
+          "Tapan Mukerji"
+        ],
+        "abstract": "Subsurface geomodeling plays a critical role in reservoir characterization, uncertainty quantification, and subsurface flow prediction. However, integrating heterogeneous sources of geological information, including conceptual geological descriptions, sparse well observations, and spatial prior constraints, remains a significant challenge for traditional geostatistical and data-driven geomodeling approaches. In this study, we present FMSIM, a multi-modal conditional flow matching framework for subsurface facies model generation. FMSIM utilizes a deep learning formulation to learn a velocity field that transports samples from a simple prior distribution to a complex geological facies distribution. Global geological semantic information is incorporated through a learned semantic representation framework and a learned prior model, while local hard constraints are enforced via an iterative projection strategy during sampling to ensure 100% fidelity to well observations. Additionally, a temporal guidance gating mechanism is introduced to regulate the influence of spatial probability maps, balancing large-scale trend alignment with fine-scale geological variability. Benefiting from the framework design, the model enables efficient and stable training with a simple loss function. The framework's fully convolutional architecture also demonstrates promising generalization to moderately larger grid sizes not seen during training without retraining. Results on a synthetic fluvial channel dataset indicate that FMSIM captures complex non-stationary geological features and produces geologically consistent realizations under multi-modal conditioning. This approach offers a flexible tool for incorporating conceptual geological knowledge, sparse observational data, and spatial priors into probabilistic subsurface geomodeling workflows.",
+        "published": "2026-05-24T16:37:15Z",
+        "updated": "2026-05-24T16:37:15Z",
+        "categories": [
+          "physics.geo-ph"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2605.25161v1",
+        "abs_url": "http://arxiv.org/abs/2605.25161v1",
+        "source": "arxiv",
+        "source_id": "",
+        "doi": "",
+        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260524/2605.25161v1.pdf",
+        "pdf_download_error": null,
+        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260524/2605.25161v1.md",
+        "markdown_parse_error": null
+      },
+      "analysis": {
+        "schema_version": "paperradar.analysis.v3",
+        "input_version": "markdown-clean-v1",
+        "one_sentence_en": "FMSIM is a multimodal flow-matching framework that generates conditioned subsurface facies realizations by combining text-derived semantics, sparse well constraints, and spatial probability priors with exact well fidelity via iterative projection.",
+        "one_sentence_zh": "FMSIM通过流匹配生成模型融合文本语义、稀疏井约束与空间概率先验，并利用迭代投影在采样阶段实现井点100%一致的地质相带实现。",
+        "summary_en": [
+          "problem: Integrating heterogeneous geological information (global conceptual descriptions, sparse well observations, and spatial priors) into probabilistic facies generation while preserving realism and data consistency is difficult.",
+          "approach: FMSIM trains a U-Net-based conditional flow-matching velocity model using CLIP-style text-image semantics, a learned embedding prior, soft spatial probability conditioning, and an iterative hard-constraint projection with temporal gating during sampling.",
+          "key result: On a synthetic fluvial channel facies dataset, FMSIM produces geologically consistent multimodal realizations that capture complex non-stationary channel structures and generalizes to moderately larger grids without retraining."
+        ],
+        "summary_zh": [
+          "problem: 将不同类型地质信息（全局概念描述、稀疏井观测、空间先验）统一到概率化相带生成中，同时兼顾地质真实感与数据一致性很难。",
+          "approach: FMSIM用基于CLIP的文本-图像语义编码与学习先验来提供全局语义，用井点与概率图等空间约束进行条件注入，并在采样时采用迭代硬约束投影与时间门控实现可控且精确的条件满足。",
+          "key result: 在合成河流-渠道相带数据集上，FMSIM能生成多模态且地质一致的实现，捕捉复杂非平稳渠道结构，并在不重训的情况下对训练未见的更大网格尺寸表现出可用泛化。"
+        ],
+        "contribution_en": "The paper proposes FMSIM, a unified multimodal conditional flow-matching framework for subsurface facies modeling that combines semantic text guidance, sparse well conditioning with exact fidelity via iterative projection, and spatial probability priors using temporal gating, enabling efficient training and controllable probabilistic generation.",
+        "contribution_zh": "该论文提出FMSIM：一种统一的多模态条件流匹配框架，用于地下相带建模，将文本语义引导、通过迭代投影实现井点精确一致的稀疏条件，以及带时间门控的空间概率先验整合到同一生成流程中，实现高效训练与可控的概率化生成。",
+        "method_en": "Train a U-Net-based velocity-field predictor under conditional flow matching; encode text via CLIP-style text-image alignment and a transformer prior that maps text embeddings to image-embedding distributions; inject spatial conditioning (well facies, well masks, facies probability maps) by channel-wise concatenation; during sampling, enforce wells with iterative projection/injection and regulate probability-map influence with a temporal guidance gating schedule.",
+        "method_zh": "训练用于条件流匹配的U-Net速度场预测器；通过CLIP风格的文本-图像对齐对文本进行编码，并用Transformer先验将文本嵌入映射到图像嵌入分布；将空间条件（井相、井掩膜、相概率图）以通道拼接形式注入；采样时通过迭代投影/井点注入实现井点硬约束一致性，并用时间门控调节概率图的引导强度。",
+        "data_or_region_en": "Synthetic fluvial channel facies dataset; grid-size generalization is tested on moderately larger grids than those used in training (exact sizes not specified).",
+        "data_or_region_zh": "合成河流-渠道相带数据集；在训练未覆盖的更大网格（“中等幅度”更大）上测试了泛化能力（具体网格尺寸未说明）。",
+        "geophysics_relevance_en": "Directly relevant to probabilistic subsurface geomodeling for reservoir and flow prediction because it targets facies generation under mixed semantic (conceptual) and physical (well/priors) constraints; however, it is demonstrated on synthetic data, so field validation remains to be seen.",
+        "geophysics_relevance_zh": "与当前的地下地质/相带概率建模追踪主题高度相关，因其面向“语义概念+物理约束（井点与先验概率）”的混合条件生成；但目前主要在合成数据上验证，现场适用性仍需进一步评估。",
+        "keywords_en": [
+          "subsurface geomodeling",
+          "conditional flow matching",
+          "facies modeling",
+          "well conditioning",
+          "CLIP"
+        ],
+        "keywords_zh": [
+          "地下地质建模",
+          "条件流匹配",
+          "相带建模",
+          "井点条件",
+          "CLIP"
+        ],
+        "topic": "Conditional facies generation",
+        "audience_level": "specialist",
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "analysis_quality": "ok",
+        "analysis_warnings": []
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2605.25074v1",
+        "title": "Recovery of directional wave spectrum from sparse data with compressed sensing",
+        "authors": [
+          "Qingyu Jiang",
+          "Henrik Kalisch",
+          "Michel Benoit",
+          "Karoline Holand",
+          "Patrick Sprenger"
+        ],
+        "abstract": "Compressed sensing provides an efficient framework for reconstructing wave signals from reduced measurements. For multi-channel buoy data, the three displacement components exhibit intrinsic correlations, as wave motion contributes simultaneously to all directions according to linear wave theory. Meanwhile, conventional compressed sensing methods based on $\\ell_1$-shrinkage tend to underestimate signal energy when sparsity is not strictly satisfied, leading to biased spectral estimation. This paper introduces a group sparsity constraint to promote physically consistent sparse representations across channels. An energy constraint is proposed in the form of a soft lower bound, enabling an isotropic rescaling of the recovered spectrum while preserving its sparse structure. Considering a large volume of buoy data, we demonstrate through a series of experiments that the proposed approach enables compression by retaining a subset of original measurements.",
+        "published": "2026-05-24T13:38:42Z",
+        "updated": "2026-05-24T13:38:42Z",
+        "categories": [
+          "physics.geo-ph"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2605.25074v1",
+        "abs_url": "http://arxiv.org/abs/2605.25074v1",
+        "source": "arxiv",
+        "source_id": "",
+        "doi": "",
+        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260524/2605.25074v1.pdf",
+        "pdf_download_error": null,
+        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260524/2605.25074v1.md",
+        "markdown_parse_error": null
+      },
+      "analysis": {
+        "schema_version": "paperradar.analysis.v3",
+        "input_version": "markdown-clean-v1",
+        "one_sentence_en": "The paper reconstructs directional ocean-wave spectra from sparsely sampled multi-component buoy measurements using compressed sensing with group sparsity across displacement channels and an energy-preserving correction to reduce spectral bias.",
+        "one_sentence_zh": "该论文通过带通道间组稀疏约束的压缩感知与能量校正，从稀疏采样的多分量浮标观测中重建定向海浪谱，并减轻传统方法的能量低估偏差。",
+        "summary_en": [
+          "problem: Directional wave spectrum estimation from reduced multi-component buoy measurements is biased by standard ℓ1-based compressed sensing when sparsity is not strictly satisfied.",
+          "approach: Introduce a physically consistent compressed-sensing framework with group sparsity across the three displacement components and a soft lower-bound energy constraint solved via an ADMM scheme.",
+          "key result: Experiments on Bideford Bay buoy data show the proposed framework enables directional spectrum reconstruction from a subset of measurements while preserving essential spectral structure and correcting systematic energy underestimation."
+        ],
+        "summary_zh": [
+          "problem: 在稀疏或不可严格稀疏的情况下，基于ℓ1的压缩感知会导致从多分量浮标稀疏观测重建定向海浪谱出现能量低估偏差。",
+          "approach: 构建融入物理一致性的压缩感知框架，引入跨三分量的组稀疏约束，并用软下界的能量约束配合ADMM求解。",
+          "key result: 基于Bideford Bay浮标数据的实验表明，该方法能在仅保留部分测量的条件下重建定向海浪谱，并保持主要谱结构且纠正系统性能量低估。"
+        ],
+        "contribution_en": "A physics-informed compressed-sensing reconstruction framework for multi-component directional wave spectra that enforces cross-channel structured sparsity and corrects ℓ1-induced energy bias via a soft energy lower bound within an ADMM optimization scheme.",
+        "contribution_zh": "提出一种面向多分量定向海浪谱的物理约束压缩感知重建框架：通过跨通道的结构化组稀疏刻画三分量一致性，并用软能量下界在ADMM框架下校正传统ℓ1重建导致的能量低估偏差。",
+        "method_en": "Formulate sparse recovery of Fourier-domain wave spectral coefficients from partial multi-channel buoy measurements using a compressed sensing model solved by ADMM: apply element-wise sparsity plus frequency-support group sparsity across channels in the sparse step, then apply an isotropic energy-rescaling step using a soft lower-bound constraint while preserving coefficient direction.",
+        "method_zh": "将多通道浮标在部分采样条件下的观测建模为傅里叶域谱系数的压缩感知重建问题，并用ADMM求解：在稀疏步骤中施加元素级稀疏与跨通道的频率组稀疏，在能量校正步骤中使用软下界能量约束进行各向同性能量重标定，从而保持系数的方向结构不变。",
+        "data_or_region_en": "Bideford Bay buoy data (UK; not further specified in the excerpt).",
+        "data_or_region_zh": "Bideford Bay浮标数据（英国；在该摘要摘录中未进一步说明）。",
+        "geophysics_relevance_en": "For the tracked topic of reconstructing wave directional spectra from limited measurements, the work is directly relevant because it targets bias-free compressed-sensing spectral recovery from sparse buoy recordings and demonstrates practical measurement compression.",
+        "geophysics_relevance_zh": "对当前追踪主题（在观测受限时重建波浪定向谱）而言，该论文高度相关，因为它直接面向浮标稀疏记录的偏差校正谱重建，并通过实验展示了可实现的测量压缩。",
+        "keywords_en": [
+          "directional wave spectrum",
+          "compressed sensing",
+          "group sparsity",
+          "wave buoy",
+          "ADMM"
+        ],
+        "keywords_zh": [
+          "定向海浪谱",
+          "压缩感知",
+          "组稀疏",
+          "波浪浮标",
+          "ADMM"
+        ],
+        "topic": "Directional spectra reconstruction",
+        "audience_level": "specialist",
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "analysis_quality": "ok",
+        "analysis_warnings": []
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2605.24748v1",
+        "title": "Deep Learning-Enabled Prediction of Geoeffective CMEs Using SOHO and SDO Observations",
+        "authors": [
+          "Zhaoxin Yan",
+          "Jason T. L. Wang",
+          "Haimin Wang",
+          "Harim Lee",
+          "Ju Jing",
+          "Yan Xu",
+          "Chunhui Xu",
+          "Vasyl Yurchyshyn"
+        ],
+        "abstract": "Understanding and forecasting the geoeffectiveness of a coronal mass ejection (CME) is crucial for protecting infrastructure in the near-Earth space environment and on Earth. In this study, we present a novel fusion model to forecast the geoeffectiveness of CME events. Our model combines convolutional neural networks for feature learning and a prediction network for feature fusion and event classification. The model is trained by observations from instruments including the Large Angle Spectroscopic Coronagraph (LASCO) on board the Solar and Heliospheric Observatory (SOHO) and the Atmospheric Imaging Assembly (AIA) and Helioseismic and Magnetic Imager (HMI) on board the Solar Dynamics Observatory (SDO). The trained model is then used to predict whether an Earth-reaching CME will cause a geomagnetic storm and/or the probability that the CME will cause such a storm. Experimental results based on a five-fold cross validation scheme demonstrate the good performance of our fusion model, achieving a mean true skill statistic (TSS) score of 0.703 when the model is used as a deterministic prediction tool, and a mean Brier score of 0.095 when the model is used as a probabilistic forecasting tool, where a TSS score of 1 or a Brier score of 0 indicates perfect performance. This work contributes to forecasting the causal relationship between Earth-directed CMEs and geomagnetic storms in solar-terrestrial interactions.",
+        "published": "2026-05-23T21:54:58Z",
+        "updated": "2026-05-23T21:54:58Z",
+        "categories": [
+          "astro-ph.SR",
+          "cs.LG"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2605.24748v1",
+        "abs_url": "http://arxiv.org/abs/2605.24748v1",
+        "source": "arxiv",
+        "source_id": "",
+        "doi": "",
+        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260523/2605.24748v1.pdf",
+        "pdf_download_error": null,
+        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260523/2605.24748v1.md",
+        "markdown_parse_error": null
+      },
+      "analysis": {
+        "schema_version": "paperradar.analysis.v3",
+        "input_version": "markdown-clean-v1",
+        "one_sentence_en": "The paper introduces a multimodal deep fusion model that learns from SOHO/LASCO and SDO/AIA-HMI observations to predict whether Earth-directed CMEs will cause geomagnetic storms, either deterministically or probabilistically.",
+        "one_sentence_zh": "该研究提出一种多模态深度融合模型，利用SOHO/LASCO与SDO/AIA-HMI观测来预测指向地球的CMEs是否会引发地磁风暴，并支持确定性与概率性预报。",
+        "summary_en": [
+          "problem: Forecast the geoeffectiveness of Earth-directed CMEs and their likelihood of triggering geomagnetic storms.",
+          "approach: Train a multimodal fusion network that extracts visual features from LASCO C2, AIA 193/211 Å, and HMI magnetograms, then fuses features for binary classification and storm probability.",
+          "key result: Using 5-fold cross-validation on 164 Earth-reaching CME events (RC list, 2011–2024), the model attains mean TSS=0.703 for deterministic prediction and mean Brier=0.095 for probabilistic forecasting."
+        ],
+        "summary_zh": [
+          "problem: 预测指向地球的CMEs的地球效应，以及其诱发地磁风暴的可能性。",
+          "approach: 构建多模态融合网络，从LASCO C2、AIA 193/211 Å与HMI磁图中提取特征并进行融合，输出是否地球有效与地磁风暴概率。",
+          "key result: 在RC列表的164个指向地球CMEs（2011–2024）上进行5折交叉验证，确定性预测平均TSS=0.703，概率性预报平均Brier=0.095。"
+        ],
+        "contribution_en": "A multimodal deep-learning fusion framework combining ResNet50, EfficientNet-B0, and a vision transformer to predict CME geoeffectiveness from coupled SOHO and SDO remote-sensing observations, with both deterministic and calibrated probabilistic outputs.",
+        "contribution_zh": "提出一种多模态深度学习融合框架，将ResNet50、EfficientNet-B0与视觉Transformer结合起来，仅基于SOHO与SDO的遥感观测来预测CME地球有效性，并给出确定性与概率性两类输出。",
+        "method_en": "Event-based fusion: aggregate time windows of LASCO C2 (base-difference), AIA 193 Å/211 Å images, and HMI line-of-sight magnetograms; encode each data type with a pair of CNNs (ResNet50 and EfficientNet-B0) via transfer learning; fuse CNN features with an attention/ensemble module; apply a vision transformer and an MLP with sigmoid output to produce geoeffectiveness probability, using a tuned threshold for deterministic classification and probability score for probabilistic forecasting.",
+        "method_zh": "基于事件的融合：对每个CME事件截取LASCO C2（使用差分处理）、AIA 193/211 Å图像以及HMI视线磁图的时间窗；分别用成对CNN（ResNet50与EfficientNet-B0，经迁移学习微调）提取各模态特征；通过注意力/集成模块融合特征；再接入视觉Transformer与MLP（sigmoid输出）得到地球有效性概率；用验证集调参阈值实现确定性分类，并直接使用概率用于概率性预报。",
+        "data_or_region_en": "Earth-directed CME events from the Richardson & Cane (RC) list (2011–2024); 164 events with recorded LASCO observing times and corresponding Dst values, using SOHO/LASCO C2, SDO/AIA 193 Å & 211 Å, and SDO/HMI observations; storm defined as Dst < −50 nT.",
+        "data_or_region_zh": "使用Richardson & Cane（RC）列表中的指向地球CME事件（2011–2024）；共164个带LASCO观测时间且有对应Dst值的事件，并调用SOHO/LASCO C2、SDO/AIA 193 Å/211 Å与SDO/HMI观测；将地磁风暴定义为Dst < −50 nT。",
+        "geophysics_relevance_en": "This is directly relevant to space-weather forecasting because it targets the solar-to-terrestrial causal link between Earth-directed CMEs and geomagnetic storms using remote-sensing solar observations.",
+        "geophysics_relevance_zh": "该工作与空间天气预报高度相关，因为它直接面向太阳-地球耦合中“指向地球的CMEs→地磁风暴”的因果关系，并仅利用太阳遥感观测进行预测。",
+        "keywords_en": [
+          "geoeffective CMEs",
+          "geomagnetic storms",
+          "multimodal fusion",
+          "SOHO LASCO",
+          "SDO AIA HMI"
+        ],
+        "keywords_zh": [
+          "地球有效CMEs",
+          "地磁风暴",
+          "多模态融合",
+          "SOHO/LASCO",
+          "SDO/AIA-HMI"
+        ],
+        "topic": "CME geoeffectiveness forecasting",
+        "audience_level": "specialist",
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "analysis_quality": "ok",
+        "analysis_warnings": []
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2605.24284v1",
+        "title": "Scalable Gaussian Process for Learning Non-Ergodic Ground Motion Model from Physics-Based Simulations with Application to Power Infrastructure Assessment",
+        "authors": [
+          "Jinyan Zhao",
+          "Grigorios Lavrentiadis",
+          "Domniki Asimaki"
+        ],
+        "abstract": "This study presents the development and application of a scalable non-ergodic ground motion model (NGMM) for the Los Angeles area. The NGMM is trained and validated on physics-based simulated ground-motion data from a recent Statewide California Earthquake Center (SCEC) CyberShake study. The NGMM is formulated as a Gaussian Process (GP) regression model, where the prior median is defined as the ASK14 ergodic ground-motion model and the posterior median is obtained by learning the non-ergodic effects embedded in the training data. These non-ergodic effects include systematic site and path effects, which are represented in the GP using Matérn and specialized covariance kernels that explicitly characterize path vectors. Implementing the NGMM requires hyperparameter tuning and inference on large datasets (on the order of one million data points or more), posing significant computational challenges for conventional GP approaches. To address this scalability issue, this paper presents a suite of computational strategies, including sparse Cholesky inversion, parallel computing, GPU acceleration, and stochastic gradient descent minimization. Despite these advances, the full CyberShake dataset (on the order of hundreds of millions of data points) remains computationally prohibitive. Therefore, aleatory variability is modeled separately using a mixed-effects formulation to represent within-event and between-event variability. The developed NGMM has two primary applications: interpolation of partially observed ground-motion fields and predictive modeling for ground motions in unobserved earthquake scenarios. Validation results on independent datasets demonstrate accurate performance in both applications. A case study of power transmission network assessment in an Mw 6.7 Puente Hill scenario further demonstrated that the developed NGMM closely reproduces physics-based simulation results.",
+        "published": "2026-05-22T23:33:19Z",
+        "updated": "2026-05-22T23:33:19Z",
+        "categories": [
+          "stat.AP",
+          "physics.geo-ph"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2605.24284v1",
+        "abs_url": "http://arxiv.org/abs/2605.24284v1",
+        "source": "arxiv",
+        "source_id": "",
+        "doi": "",
+        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260522/2605.24284v1.pdf",
+        "pdf_download_error": null,
+        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260522/2605.24284v1.md",
+        "markdown_parse_error": null
+      },
+      "analysis": {
+        "schema_version": "paperradar.analysis.v3",
+        "input_version": "markdown-clean-v1",
+        "one_sentence_en": "The authors develop a scalable non-ergodic Gaussian-process ground-motion model trained on large SCEC CyberShake simulations for Los Angeles, enabling accurate interpolation and unobserved-scenario prediction while reproducing physics-based results for power-network risk assessments.",
+        "one_sentence_zh": "作者利用SCEC CyberShake超大规模模拟数据为洛杉矶构建可扩展的非遍历高斯过程地震动模型，用于场地与路径的非遍历效应学习，并实现插值与未观测情景预测及电力基础设施评估。",
+        "summary_en": [
+          "problem: Conventional ergodic ground-motion models neglect repeatable regional site/path effects, and GP-based non-ergodic NGMMs become computationally infeasible on very large physics-based simulation datasets.",
+          "approach: Train a GP NGMM using an ASK14 ergodic backbone as the prior median, learn systematic non-ergodic effects with Matérn and path-vector covariance kernels, and use scalable GP inference (sparse Cholesky, parallel/GPU, stochastic gradient optimization) plus a mixed-effects decomposition to separate aleatory variability.",
+          "key result: Validations on independent datasets show accurate interpolation and unobserved-scenario prediction, and a Puente Hills case study demonstrates close reproduction of CyberShake-based power transmission network performance with substantially reduced computational cost, highlighting large bias when non-ergodic effects are ignored."
+        ],
+        "summary_zh": [
+          "problem: 遍历性（ergodic）地震动模型忽略可重复的区域场地/路径效应，而基于高斯过程的非遍历NGMM在超大规模物理仿真数据上计算代价过高。",
+          "approach: 以ASK14作为遍历性骨干模型的先验中位数，用Matérn与显式刻画路径向量的协方差核学习系统性非遍历效应；结合稀疏Cholesky、并行/GPU以及随机梯度优化的可扩展推断，并用混合效应分解将“固有（aleatory）”变异分开处理。",
+          "key result: 在独立数据集上的验证表明其能准确完成部分观测场地场插值与未纳入情景的预测；在Mw 6.7 Puente Hills电力输电网络案例中，该模型能以显著更低计算成本逼真复现CyberShake结果，并表明忽略非遍历效应会导致损伤估计偏差。"
+        ],
+        "contribution_en": "Introduces a scalable non-ergodic Gaussian-process ground-motion model that learns repeatable site and path effects from massive physics-based CyberShake simulations, combining advanced scalable GP inference with an aleatory-variability mixed-effects decomposition to enable practical interpolation and surrogate prediction.",
+        "contribution_zh": "提出一种可扩展的非遍历高斯过程地震动模型：从海量CyberShake物理仿真中学习可重复的场地与路径效应，并通过可行的可扩展GP推断与混合效应分解相结合，使插值与未观测情景的代理预测具备可计算性与精度。",
+        "method_en": "Gaussian Process regression for NGMM using an ASK14 ergodic ground-motion model as the GP prior median; systematic non-ergodic effects represented via Matérn and specialized covariance kernels that depend on path vectors; scalable training/inference using sparse Cholesky inversion, parallel computing, GPU acceleration, and stochastic gradient descent; aleatory variability handled separately via a mixed-effects formulation (within-event vs between-event), enabling training on scenario-level collocation summaries and treating primary/secondary aleatory components.",
+        "method_zh": "用高斯过程回归构建NGMM：以ASK14遍历性地震动模型作为先验中位数，采用Matérn及依赖路径向量的专用协方差核刻画系统性非遍历场地/路径效应；通过稀疏Cholesky、并行计算、GPU加速与随机梯度下降实现大规模训练与推断；并用混合效应将“固有变异”分别建模（区分事件内/事件间），从而将主要/次要固有分量分开并在更小的情景级汇总数据上训练。",
+        "data_or_region_en": "Los Angeles / Southern California area; physics-based ground-motion data from SCEC CyberShake Study 22.12 (PSA at 2.0 s extracted from simulations at 335 sites), based on a UCERF2-derived rupture catalog with many rupture variations (final dataset reported as 206.7 million records from 8,358 scenarios).",
+        "data_or_region_zh": "洛杉矶/南加州区域；SCEC CyberShake研究22.12的物理仿真地震动数据（从335个台站模拟中提取2.0 s周期的PSA），基于UCERF2衍生断层破裂情景并包含大量破裂变体（文中给出最终数据集为206.7百万条记录、8,358个情景）。",
+        "geophysics_relevance_en": "This is directly relevant to non-ergodic ground-motion modeling and regional site/path effects, but its contribution is largely methodological scalability and engineering assessment use rather than new ground-motion physics.",
+        "geophysics_relevance_zh": "与非遍历地震动建模以及区域场地/路径可重复效应高度相关；但其核心创新更偏向于大规模建模与工程评估的实现，而非提出新的地震动物理机理。",
+        "keywords_en": [
+          "non-ergodic ground motion",
+          "Gaussian Process",
+          "CyberShake",
+          "ASK14",
+          "power infrastructure assessment"
+        ],
+        "keywords_zh": [
+          "非遍历地震动",
+          "高斯过程",
+          "CyberShake",
+          "ASK14",
+          "电力基础设施评估"
+        ],
+        "topic": "Scalable non-ergodic NGMM",
+        "audience_level": "specialist",
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "analysis_quality": "ok",
+        "analysis_warnings": []
+      }
+    },
+    {
+      "paper": {
         "arxiv_id": "2605.23494v1",
         "title": "Integrating b-Value and Background Seismicity Rate for Spatial Earthquake Forecasting in the Alborz Region, Northern Iran",
         "authors": [
@@ -147,7 +440,7 @@
           "ETAS去簇",
           "阿尔博兹断层"
         ],
-        "updated_at": "2026-05-25T11:20:26.903324+00:00",
+        "updated_at": "2026-05-25T19:29:20.917684+00:00",
         "cache_hit": true
       }
     },
@@ -227,7 +520,7 @@
           "普顿进动磁强计",
           "高地边界断层"
         ],
-        "updated_at": "2026-05-25T11:20:26.937850+00:00",
+        "updated_at": "2026-05-25T19:29:20.933583+00:00",
         "cache_hit": true
       }
     },
@@ -300,7 +593,7 @@
           "不可穿透",
           "平台结构"
         ],
-        "updated_at": "2026-05-25T11:20:26.952200+00:00",
+        "updated_at": "2026-05-25T19:29:20.967934+00:00",
         "cache_hit": true
       }
     },
@@ -372,7 +665,7 @@
           "等密面起伏",
           "跨等密面转化"
         ],
-        "updated_at": "2026-05-25T11:20:26.960860+00:00",
+        "updated_at": "2026-05-25T19:29:20.975238+00:00",
         "cache_hit": true
       }
     },
@@ -447,7 +740,7 @@
           "Navier滑移边界",
           "各向异性耗散"
         ],
-        "updated_at": "2026-05-25T11:20:26.971824+00:00",
+        "updated_at": "2026-05-25T19:29:20.980251+00:00",
         "cache_hit": true
       }
     },
@@ -522,7 +815,7 @@
           "VOF方法",
           "海表面"
         ],
-        "updated_at": "2026-05-25T11:20:26.981175+00:00",
+        "updated_at": "2026-05-25T19:29:20.989709+00:00",
         "cache_hit": true
       }
     },
@@ -600,7 +893,7 @@
           "投入产出经济",
           "空间天气"
         ],
-        "updated_at": "2026-05-25T11:20:26.997784+00:00",
+        "updated_at": "2026-05-25T19:29:20.999990+00:00",
         "cache_hit": true
       }
     },
@@ -678,7 +971,7 @@
           "卫星脆弱性",
           "经济损失"
         ],
-        "updated_at": "2026-05-25T11:20:27.016422+00:00",
+        "updated_at": "2026-05-25T19:29:21.006533+00:00",
         "cache_hit": true
       }
     },
@@ -754,7 +1047,7 @@
           "有限元",
           "Dirichlet-to-Neumann"
         ],
-        "updated_at": "2026-05-25T11:20:27.022377+00:00",
+        "updated_at": "2026-05-25T19:29:21.031409+00:00",
         "cache_hit": true
       }
     },
@@ -829,7 +1122,7 @@
           "橄榄石",
           "反应动力学"
         ],
-        "updated_at": "2026-05-25T11:20:27.037037+00:00",
+        "updated_at": "2026-05-25T19:29:21.055291+00:00",
         "cache_hit": true
       }
     },
@@ -903,7 +1196,7 @@
           "地震目录",
           "尾部风险"
         ],
-        "updated_at": "2026-05-25T11:20:27.091153+00:00",
+        "updated_at": "2026-05-25T19:29:21.067068+00:00",
         "cache_hit": true
       }
     },
@@ -978,7 +1271,7 @@
           "边界层",
           "地球流体动力学"
         ],
-        "updated_at": "2026-05-25T11:20:27.133088+00:00",
+        "updated_at": "2026-05-25T19:29:21.113744+00:00",
         "cache_hit": true
       }
     },
@@ -1052,7 +1345,7 @@
           "多小波",
           "入口边界条件"
         ],
-        "updated_at": "2026-05-25T11:20:27.140183+00:00",
+        "updated_at": "2026-05-25T19:29:21.120889+00:00",
         "cache_hit": true
       }
     },
@@ -1130,7 +1423,7 @@
           "TanDEM-X",
           "Landsat"
         ],
-        "updated_at": "2026-05-25T11:20:27.153426+00:00",
+        "updated_at": "2026-05-25T19:29:21.126457+00:00",
         "cache_hit": true
       }
     },
@@ -1205,7 +1498,7 @@
           "Darcy产能",
           "云端仿真"
         ],
-        "updated_at": "2026-05-25T11:20:27.163061+00:00",
+        "updated_at": "2026-05-25T19:29:21.134891+00:00",
         "cache_hit": true
       }
     },
@@ -1281,7 +1574,7 @@
           "OSIRIS-REx再入",
           "大气传播"
         ],
-        "updated_at": "2026-05-25T11:20:27.175456+00:00",
+        "updated_at": "2026-05-25T19:29:21.146772+00:00",
         "cache_hit": true
       }
     },
@@ -1358,7 +1651,7 @@
           "OpenGL 环形缓冲",
           "有状态分块处理"
         ],
-        "updated_at": "2026-05-25T11:20:27.182226+00:00",
+        "updated_at": "2026-05-25T19:29:21.153139+00:00",
         "cache_hit": true
       }
     },
@@ -1435,7 +1728,7 @@
           "正-无标签学习",
           "卫星海洋波浪"
         ],
-        "updated_at": "2026-05-25T11:20:27.191579+00:00",
+        "updated_at": "2026-05-25T19:29:21.159095+00:00",
         "cache_hit": true
       }
     },
@@ -1510,7 +1803,7 @@
           "有理近似",
           "TEM电导率"
         ],
-        "updated_at": "2026-05-25T11:20:27.201922+00:00",
+        "updated_at": "2026-05-25T19:29:21.168037+00:00",
         "cache_hit": true
       }
     },
@@ -1587,7 +1880,7 @@
           "CO新星",
           "星际尘埃"
         ],
-        "updated_at": "2026-05-25T11:20:27.211332+00:00",
+        "updated_at": "2026-05-25T19:29:21.177785+00:00",
         "cache_hit": true
       }
     },
@@ -1666,7 +1959,7 @@
           "赤道电喷流EEJ",
           "CSES电场"
         ],
-        "updated_at": "2026-05-25T11:20:27.219427+00:00",
+        "updated_at": "2026-05-25T19:29:21.183072+00:00",
         "cache_hit": true
       }
     },
@@ -1744,7 +2037,7 @@
           "费米LAT",
           "暴发星系核"
         ],
-        "updated_at": "2026-05-25T11:20:27.225826+00:00",
+        "updated_at": "2026-05-25T19:29:21.190821+00:00",
         "cache_hit": true
       }
     },
@@ -1822,7 +2115,7 @@
           "慢磁声学波",
           "声学共振腔"
         ],
-        "updated_at": "2026-05-25T11:20:27.231084+00:00",
+        "updated_at": "2026-05-25T19:29:21.196197+00:00",
         "cache_hit": true
       }
     },
@@ -1899,12 +2192,192 @@
           "土壤含水率保持曲线",
           "UNSODA"
         ],
-        "updated_at": "2026-05-25T11:20:27.241969+00:00",
+        "updated_at": "2026-05-25T19:29:21.203086+00:00",
         "cache_hit": true
       }
     }
   ],
   "trending_keywords": [
+    {
+      "keyword": "subsurface geomodeling",
+      "normalized": "subsurface geomodeling",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.25161v1"
+      ]
+    },
+    {
+      "keyword": "conditional flow matching",
+      "normalized": "conditional flow matching",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.25161v1"
+      ]
+    },
+    {
+      "keyword": "facies modeling",
+      "normalized": "facies modeling",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.25161v1"
+      ]
+    },
+    {
+      "keyword": "well conditioning",
+      "normalized": "well conditioning",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.25161v1"
+      ]
+    },
+    {
+      "keyword": "CLIP",
+      "normalized": "clip",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.25161v1"
+      ]
+    },
+    {
+      "keyword": "directional wave spectrum",
+      "normalized": "directional wave spectrum",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.25074v1"
+      ]
+    },
+    {
+      "keyword": "compressed sensing",
+      "normalized": "compressed sensing",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.25074v1"
+      ]
+    },
+    {
+      "keyword": "group sparsity",
+      "normalized": "group sparsity",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.25074v1"
+      ]
+    },
+    {
+      "keyword": "wave buoy",
+      "normalized": "wave buoy",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.25074v1"
+      ]
+    },
+    {
+      "keyword": "ADMM",
+      "normalized": "admm",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.25074v1"
+      ]
+    },
+    {
+      "keyword": "geoeffective CMEs",
+      "normalized": "geoeffective cmes",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.24748v1"
+      ]
+    },
+    {
+      "keyword": "geomagnetic storms",
+      "normalized": "geomagnetic storms",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.24748v1"
+      ]
+    },
+    {
+      "keyword": "multimodal fusion",
+      "normalized": "multimodal fusion",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.24748v1"
+      ]
+    },
+    {
+      "keyword": "SOHO LASCO",
+      "normalized": "soho lasco",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.24748v1"
+      ]
+    },
+    {
+      "keyword": "SDO AIA HMI",
+      "normalized": "sdo aia hmi",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.24748v1"
+      ]
+    },
+    {
+      "keyword": "non-ergodic ground motion",
+      "normalized": "non-ergodic ground motion",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.24284v1"
+      ]
+    },
+    {
+      "keyword": "Gaussian Process",
+      "normalized": "gaussian process",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.24284v1"
+      ]
+    },
+    {
+      "keyword": "CyberShake",
+      "normalized": "cybershake",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.24284v1"
+      ]
+    },
+    {
+      "keyword": "ASK14",
+      "normalized": "ask14",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.24284v1"
+      ]
+    },
+    {
+      "keyword": "power infrastructure assessment",
+      "normalized": "power infrastructure assessment",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.24284v1"
+      ]
+    },
     {
       "keyword": "earthquake forecasting",
       "normalized": "earthquake forecasting",
@@ -1993,186 +2466,6 @@
       "paper_count": 1,
       "paper_ids": [
         "2605.23394v1"
-      ]
-    },
-    {
-      "keyword": "Surface Quasi-Geostrophic",
-      "normalized": "surface quasi-geostrophic",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.23289v1"
-      ]
-    },
-    {
-      "keyword": "moving obstacle",
-      "normalized": "moving obstacle",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.23289v1"
-      ]
-    },
-    {
-      "keyword": "fractional Biot-Savart",
-      "normalized": "fractional biot-savart",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.23289v1"
-      ]
-    },
-    {
-      "keyword": "impermeability",
-      "normalized": "impermeability",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.23289v1"
-      ]
-    },
-    {
-      "keyword": "plateau property",
-      "normalized": "plateau property",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.23289v1"
-      ]
-    },
-    {
-      "keyword": "ocean interior",
-      "normalized": "ocean interior",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.23277v1"
-      ]
-    },
-    {
-      "keyword": "Eulerian vs Lagrangian",
-      "normalized": "eulerian vs lagrangian",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.23277v1"
-      ]
-    },
-    {
-      "keyword": "overturning circulation",
-      "normalized": "overturning circulation",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.23277v1"
-      ]
-    },
-    {
-      "keyword": "isopycnal heaving",
-      "normalized": "isopycnal heaving",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.23277v1"
-      ]
-    },
-    {
-      "keyword": "diapycnal transformation",
-      "normalized": "diapycnal transformation",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.23277v1"
-      ]
-    },
-    {
-      "keyword": "compressible Navier–Stokes",
-      "normalized": "compressible navier–stokes",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.23233v1"
-      ]
-    },
-    {
-      "keyword": "vanishing viscosity limit",
-      "normalized": "vanishing viscosity limit",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.23233v1"
-      ]
-    },
-    {
-      "keyword": "conormal Sobolev",
-      "normalized": "conormal sobolev",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.23233v1"
-      ]
-    },
-    {
-      "keyword": "Navier slip boundary",
-      "normalized": "navier slip boundary",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.23233v1"
-      ]
-    },
-    {
-      "keyword": "anisotropic dissipation",
-      "normalized": "anisotropic dissipation",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.23233v1"
-      ]
-    },
-    {
-      "keyword": "free surface",
-      "normalized": "free surface",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.23166v1"
-      ]
-    },
-    {
-      "keyword": "turbulence",
-      "normalized": "turbulence",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.23166v1"
-      ]
-    },
-    {
-      "keyword": "wave-induced turbulence",
-      "normalized": "wave-induced turbulence",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.23166v1"
-      ]
-    },
-    {
-      "keyword": "volume-of-fluid",
-      "normalized": "volume-of-fluid",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.23166v1"
-      ]
-    },
-    {
-      "keyword": "ocean surface",
-      "normalized": "ocean surface",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.23166v1"
       ]
     }
   ],
