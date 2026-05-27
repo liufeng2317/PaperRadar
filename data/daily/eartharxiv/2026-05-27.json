@@ -1,6 +1,6 @@
 {
   "date": "2026-05-27",
-  "generated_at": "2026-05-26T19:20:21.331920+00:00",
+  "generated_at": "2026-05-27T11:32:26.081630+00:00",
   "config": {
     "site_title": "PaperRadar",
     "site_description": {
@@ -76,6 +76,82 @@
   },
   "query": "((cat:physics.geo-ph) OR (all:geophysics) OR (all:seismology) OR (all:geodesy) OR (all:geodynamics) OR (all:geomagnetism)) AND (submittedDate:[202605200000 TO 202605272359])",
   "papers": [
+    {
+      "paper": {
+        "arxiv_id": "eartharxiv-13176",
+        "title": "Forecasting Lives Lost to Climate Change",
+        "authors": [
+          "Howard. Nigel Peter",
+          "Newman, Peter"
+        ],
+        "abstract": "This review synthesises empirical evidence linking global mean surface temperature to climate mortality through undernourishment, heat, extreme events, conflict, and disease, and introduces an exploratory precautionary metric: cumulative climate-related deaths per cumulative megatonne of greenhouse gas emissions (CO₂-e), intended to support policy evaluation under deep uncertainty. Using observed CO₂-driven warming relationships and globally available population vulnerability data, we estimate that continued business-as-usual emissions would impose very large, geographically concentrated mortality burdens this century, with risks escalating nonlinearly beyond 2 °C. While uncertainty remains substantial, especially for undernourishment and conflict pathways, the direction and scale of risk are robust, providing a broad exploratory framework for approximating climate-related mortality. Expressing mortality per Mt CO₂-e allows the metric to be applied across all greenhouse gases and policy contexts. The resulting estimates should be interpreted as scenario-based approximations contingent on the assumptions and historical relationships used in the model. The results imply that treating climate change primarily as an economic externality understates its consequences, and that precautionary policy assessment should explicitly account for human lives at risk or saved due to decarbonization. (Full derivation provided in Supplementary Information S3).",
+        "published": "2026-05-26T19:44:00Z",
+        "updated": "2026-05-26T19:44:31Z",
+        "categories": [
+          "Physical Sciences and Mathematics",
+          "climate mortality",
+          "food security",
+          "conflict",
+          "disaster risk",
+          "emissions",
+          "policy metric"
+        ],
+        "pdf_url": "https://eartharxiv.org/repository/object/13176/download/23317/",
+        "abs_url": "https://eartharxiv.org/repository/view/13176/",
+        "source": "eartharxiv",
+        "source_id": "13176",
+        "doi": "10.31223/X5TJ58",
+        "local_pdf_path": "data/pdfs/eartharxiv/Physical-Sciences-and-Mathematics/20260526/eartharxiv-13176.pdf",
+        "pdf_download_error": null,
+        "markdown_path": "data/markdown/eartharxiv/Physical-Sciences-and-Mathematics/20260526/eartharxiv-13176.md",
+        "markdown_parse_error": null
+      },
+      "analysis": {
+        "schema_version": "paperradar.analysis.v3",
+        "input_version": "markdown-clean-v1",
+        "one_sentence_en": "The paper reviews evidence that global warming can increase climate-related mortality and proposes an exploratory metric that estimates cumulative lives lost per cumulative CO₂-equivalent emissions under multiple emissions scenarios.",
+        "one_sentence_zh": "本文综述全球变暖通过营养不良、极端事件、冲突与疾病等途径增加气候相关死亡的证据，并提出一种在不同排放情景下估算“累计死亡/累计CO₂当量排放”的保守性探索指标。",
+        "summary_en": [
+          "problem: Quantifying how many lives are lost (or saved) from climate change in a policy-relevant way, with uncertainty, is not yet standard in climate assessments.",
+          "approach: The authors synthesize empirical temperature- and CO₂-driven relationships and vulnerability data, then forecast multiple mortality pathways under emissions scenarios and normalize them into a deaths-per-cumulative-CO₂-e metric.",
+          "key result: Across pathways, business-as-usual emissions imply very large, geographically concentrated mortality burdens this century with nonlinear risk escalation beyond 2°C, while uncertainty is substantial but risk direction and scale are reported as robust."
+        ],
+        "summary_zh": [
+          "problem: 以政策可用的方式、在不确定性下量化气候变化导致的死亡（或减免死亡）仍缺乏通用指标。",
+          "approach: 作者整合基于历史观测的温度/CO₂关系与人群脆弱性数据，在多种排放情景下外推多种死亡通道，并将累计死亡归一到“累计CO₂当量排放对应的死亡数”。",
+          "key result: 文中估计若继续“商业照常”排放，本世纪将出现巨大的、地区高度集中的死亡负担，且在超过2°C后风险以非线性方式上升；尽管在营养不良与冲突等路径上不确定性很大，但风险方向与规模被认为较稳健。"
+        ],
+        "contribution_en": "Introduces an exploratory, precautionary framework and a mortality-emissions metric that expresses cumulative climate-related deaths per cumulative CO₂-equivalent emitted, intended to support policy evaluation under deep uncertainty.",
+        "contribution_zh": "提出一种用于深度不确定性下政策评估的探索性、保守框架，并给出“累计气候相关死亡/累计CO₂当量排放”的死亡—排放指标。",
+        "method_en": "A scenario-based synthesis using observed CO₂-driven warming links to global mean surface temperature, then to mortality via multiple empirically correlated pathways (notably undernourishment/conflict, and disaster categories from EM-DAT), with population vulnerability inputs and four emissions trajectories; outcomes are accumulated over time and normalized by cumulative CO₂-e emissions to form a deaths-per-megatonne metric.",
+        "method_zh": "基于情景的综合方法：用观测到的CO₂驱动增温关系推算全球平均地表温度，再通过若干经验相关的死亡通道（重点为营养不良/冲突，以及基于EM-DAT的灾害类别）把温度与死亡联系起来，并结合人口脆弱性输入；对各情景在长时间尺度累积死亡后，再用累计CO₂当量排放归一，形成“每百万吨（CO₂-e）对应死亡数”的指标。",
+        "data_or_region_en": "Global analysis using globally available population vulnerability projections (UN forecasts) and international historical datasets including EM-DAT; specific regions are handled via latitude/economic conditions for undernourishment/conflict when regional data exist, otherwise via imputed regional factors; region details otherwise not fully specified.",
+        "data_or_region_zh": "全球尺度分析，使用联合国人口预测等全球可获得的人口脆弱性资料，以及包含EM-DAT在内的国际历史数据；对营养不良/冲突以纬度与经济条件构建区域因素（有区域数据时进行拟合/外推，缺失时用推断因素），其余区域细节未充分说明。",
+        "geophysics_relevance_en": "Relevance is tangential to geophysics tracking: the work is mainly a climate-mortality and policy-metric synthesis rather than a geophysical observation/inversion problem (e.g., no seismic/cryosphere/infrastructure measurement focus).",
+        "geophysics_relevance_zh": "与当前追踪主题的关联较弱：该工作主要是气候—死亡与政策指标的综合评估，而非面向地球物理观测/反演问题（例如不聚焦地震/冰冻圈/基础设施等测量）。",
+        "keywords_en": [
+          "climate mortality",
+          "precautionary metric",
+          "emissions scenarios",
+          "undernourishment",
+          "EM-DAT"
+        ],
+        "keywords_zh": [
+          "气候死亡",
+          "保守性指标",
+          "排放情景",
+          "营养不良",
+          "EM-DAT"
+        ],
+        "topic": "Climate mortality metric",
+        "audience_level": "specialist",
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "analysis_quality": "ok",
+        "analysis_warnings": []
+      }
+    },
     {
       "paper": {
         "arxiv_id": "eartharxiv-13173",
@@ -162,7 +238,7 @@
           "Storegga海啸",
           "设得兰海湾"
         ],
-        "updated_at": "2026-05-26T11:20:45.403526+00:00",
+        "updated_at": "2026-05-26T19:20:20.945210+00:00",
         "cache_hit": true
       }
     },
@@ -250,7 +326,7 @@
           "全球生物地球化学模型",
           "赤道太平洋"
         ],
-        "updated_at": "2026-05-26T11:20:45.418114+00:00",
+        "updated_at": "2026-05-26T19:20:20.993699+00:00",
         "cache_hit": true
       }
     },
@@ -335,7 +411,7 @@
           "硅藻生长",
           "ArcticGRO"
         ],
-        "updated_at": "2026-05-26T11:24:14.132970+00:00",
+        "updated_at": "2026-05-26T19:20:21.024533+00:00",
         "cache_hit": true
       }
     },
@@ -422,7 +498,7 @@
           "集成机器学习",
           "EPA AirData"
         ],
-        "updated_at": "2026-05-26T11:25:25.995372+00:00",
+        "updated_at": "2026-05-26T19:20:21.039945+00:00",
         "cache_hit": true
       }
     },
@@ -533,7 +609,7 @@
           "REMA高程拼图",
           "ERA5验证"
         ],
-        "updated_at": "2026-05-26T11:25:26.008113+00:00",
+        "updated_at": "2026-05-26T19:20:21.054174+00:00",
         "cache_hit": true
       }
     },
@@ -611,7 +687,7 @@
           "去增长",
           "问卷调查"
         ],
-        "updated_at": "2026-05-26T11:25:26.017055+00:00",
+        "updated_at": "2026-05-26T19:20:21.063153+00:00",
         "cache_hit": true
       }
     },
@@ -692,7 +768,7 @@
           "大语言模型",
           "影视字幕"
         ],
-        "updated_at": "2026-05-26T11:25:26.029737+00:00",
+        "updated_at": "2026-05-26T19:20:21.076022+00:00",
         "cache_hit": true
       }
     },
@@ -785,7 +861,7 @@
           "k-means聚类",
           "极端降水"
         ],
-        "updated_at": "2026-05-26T11:26:52.463949+00:00",
+        "updated_at": "2026-05-26T19:20:21.100743+00:00",
         "cache_hit": true
       }
     },
@@ -868,7 +944,7 @@
           "Hansen",
           "亚马逊流域"
         ],
-        "updated_at": "2026-05-26T11:26:52.469532+00:00",
+        "updated_at": "2026-05-26T19:20:21.105520+00:00",
         "cache_hit": true
       }
     },
@@ -951,7 +1027,7 @@
           "城市降雨",
           "强度分档"
         ],
-        "updated_at": "2026-05-26T11:26:52.477677+00:00",
+        "updated_at": "2026-05-26T19:20:21.121611+00:00",
         "cache_hit": true
       }
     },
@@ -1034,7 +1110,7 @@
           "NN4CAST",
           "北大西洋涛动"
         ],
-        "updated_at": "2026-05-26T11:26:52.487790+00:00",
+        "updated_at": "2026-05-26T19:20:21.140219+00:00",
         "cache_hit": true
       }
     },
@@ -1115,7 +1191,7 @@
           "北大西洋落地",
           "类厄尔尼诺太平洋强迫"
         ],
-        "updated_at": "2026-05-26T11:26:52.505305+00:00",
+        "updated_at": "2026-05-26T19:20:21.156372+00:00",
         "cache_hit": true
       }
     },
@@ -1191,7 +1267,7 @@
           "机器学习",
           "LightGBM"
         ],
-        "updated_at": "2026-05-26T11:26:52.613216+00:00",
+        "updated_at": "2026-05-26T19:20:21.219781+00:00",
         "cache_hit": true
       }
     },
@@ -1271,7 +1347,7 @@
           "断层几何",
           "远场P波"
         ],
-        "updated_at": "2026-05-26T11:26:52.639434+00:00",
+        "updated_at": "2026-05-26T19:20:21.233989+00:00",
         "cache_hit": true
       }
     },
@@ -1352,7 +1428,7 @@
           "巴基斯坦",
           "气候政策优先级"
         ],
-        "updated_at": "2026-05-26T11:26:52.658758+00:00",
+        "updated_at": "2026-05-26T19:20:21.262646+00:00",
         "cache_hit": true
       }
     },
@@ -1434,7 +1510,7 @@
           "雪密度标定",
           "育康山脉"
         ],
-        "updated_at": "2026-05-26T11:26:52.675827+00:00",
+        "updated_at": "2026-05-26T19:20:21.278284+00:00",
         "cache_hit": true
       }
     },
@@ -1518,12 +1594,57 @@
           "极端温度",
           "NOAA CO-OPS"
         ],
-        "updated_at": "2026-05-26T11:26:52.696061+00:00",
+        "updated_at": "2026-05-26T19:20:21.297124+00:00",
         "cache_hit": true
       }
     }
   ],
   "trending_keywords": [
+    {
+      "keyword": "climate mortality",
+      "normalized": "climate mortality",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "eartharxiv-13176"
+      ]
+    },
+    {
+      "keyword": "precautionary metric",
+      "normalized": "precautionary metric",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "eartharxiv-13176"
+      ]
+    },
+    {
+      "keyword": "emissions scenarios",
+      "normalized": "emissions scenarios",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "eartharxiv-13176"
+      ]
+    },
+    {
+      "keyword": "undernourishment",
+      "normalized": "undernourishment",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "eartharxiv-13176"
+      ]
+    },
+    {
+      "keyword": "EM-DAT",
+      "normalized": "em-dat",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "eartharxiv-13176"
+      ]
+    },
     {
       "keyword": "post-glacial stratigraphy",
       "normalized": "post-glacial stratigraphy",
@@ -1747,51 +1868,6 @@
       "paper_count": 1,
       "paper_ids": [
         "eartharxiv-13157"
-      ]
-    },
-    {
-      "keyword": "climate mitigation",
-      "normalized": "climate mitigation",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "eartharxiv-13149"
-      ]
-    },
-    {
-      "keyword": "academic carbon footprint",
-      "normalized": "academic carbon footprint",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "eartharxiv-13149"
-      ]
-    },
-    {
-      "keyword": "attitudinal barriers",
-      "normalized": "attitudinal barriers",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "eartharxiv-13149"
-      ]
-    },
-    {
-      "keyword": "degrowth",
-      "normalized": "degrowth",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "eartharxiv-13149"
-      ]
-    },
-    {
-      "keyword": "survey",
-      "normalized": "survey",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "eartharxiv-13149"
       ]
     }
   ],

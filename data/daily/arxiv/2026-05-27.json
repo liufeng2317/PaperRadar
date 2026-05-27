@@ -1,6 +1,6 @@
 {
   "date": "2026-05-27",
-  "generated_at": "2026-05-26T19:20:21.331920+00:00",
+  "generated_at": "2026-05-27T11:32:26.081630+00:00",
   "config": {
     "site_title": "PaperRadar",
     "site_description": {
@@ -78,6 +78,234 @@
   "papers": [
     {
       "paper": {
+        "arxiv_id": "2605.26988v1",
+        "title": "Unveiling magma plumbing systems for volcanic eruptions and crustal accretion via active-seismic matrix imaging",
+        "authors": [
+          "Baptiste Hériard-Dubreuil",
+          "Milena Marjanović",
+          "Arnaud Burtin",
+          "Alexandre Aubry"
+        ],
+        "abstract": "Submarine eruptions, accounting for over 80% of Earth's volcanic activity, primarily occur along mid-ocean ridges, where shallow magmatic systems are accessible to high-resolution imaging. Yet, their remoteness often leaves them undetected. Recent seismic studies at the East Pacific Rise (EPR) 9°50'N-one of the most dynamic ridge segments, imaged the detailed architecture of the shallowest magma lens, but no data-constrained model yet explains how magma accumulates, migrates, or triggers eruptions. Similarly, the formation of oceanic crust remains poorly understood. While 2-D seismic data reveal only a few vertically stacked, transient magma lenses, our study applies matrix imaging, a novel technique in controlled-source seismology, to map the inner structure of on- and off-axis magma reservoirs. We uncover a conical on-axis reservoir and interconnected magma-rich zones throughout the crust. Combined with ophiolite evidence, these findings reveal that magma channels dominate the first 3 km for lower crust formation, while in situ crystallization prevails in the final 1 km, resolving a long-standing debate.",
+        "published": "2026-05-26T13:12:09Z",
+        "updated": "2026-05-26T13:12:09Z",
+        "categories": [
+          "physics.geo-ph",
+          "eess.IV",
+          "physics.app-ph"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2605.26988v1",
+        "abs_url": "http://arxiv.org/abs/2605.26988v1",
+        "source": "arxiv",
+        "source_id": "",
+        "doi": "",
+        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260526/2605.26988v1.pdf",
+        "pdf_download_error": null,
+        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260526/2605.26988v1.md",
+        "markdown_parse_error": null
+      },
+      "analysis": {
+        "schema_version": "paperradar.analysis.v3",
+        "input_version": "markdown-clean-v1",
+        "one_sentence_en": "Using controlled-source active seismology with 3D matrix imaging, the authors map connected magma-rich regions beneath the East Pacific Rise, showing an on-axis conical reservoir and distinct upper, lower-crustal, and near-Moho domains.",
+        "one_sentence_zh": "作者用3D矩阵成像处理主动源海底地震数据，揭示东太平洋海岭下方连通的富岩浆结构，包括轴向锥形储库及分层的下地壳与莫霍附近域。",
+        "summary_en": [
+          "Problem: Conventional 2D seismic images capture only vertically stacked, transient magma lenses yet cannot explain magma accumulation, migration, eruption triggers, and oceanic crust formation at depth.",
+          "Approach: Apply 3D active-source matrix imaging (reflection-matrix redatuming with adaptive focusing using an FWI-based velocity model) to the EPR 9°50′N multichannel seismic dataset to obtain depth-resolved 3D reflectivity of magma reservoirs.",
+          "Key result: The imaging reveals an on-axis conical magma reservoir with interconnected magma-rich zones, including distinct sub-axial accumulation levels (SUBA1, SUBA2) and a deeper randomly distributed anomaly zone to Moho, supporting magma-channels dominance in the first ~3 km and in-situ crystallization near the final ~1 km."
+        ],
+        "summary_zh": [
+          "问题：传统2D地震成像只能看到零散、短暂的垂向岩浆透镜，难以解释岩浆在深部的聚集、迁移、触发喷发以及海洋地壳的形成过程。",
+          "方法：对EPR 9°50′N的三维多道地震资料进行3D主动源矩阵成像，基于FWI速度模型进行反射矩阵测深（redatuming）与自适应聚焦，输出深度分辨的3D反射率体。",
+          "关键结果：成像得到轴向锥形岩浆储库及贯通的富岩浆区域，识别出SUBA1、SUBA2等不同深度层级的异常以及到莫霍的更深随机异常带，表明下地壳首~3 km以岩浆通道主导、末~1 km以原位结晶为主。"
+        ],
+        "contribution_en": "This study demonstrates, for the first time, data-constrained 3D matrix imaging of active controlled-source seismic data to resolve the connectivity and depth-dependent architecture of an ocean-ridge magma plumbing system.",
+        "contribution_zh": "该研究首次将数据约束的3D矩阵成像应用于主动源控源地震数据，解析海洋中脊岩浆输运系统的连通性与深度分布构型。",
+        "method_en": "3D active-source matrix imaging using reflection-matrix redatuming to synthesize virtual sources/receivers at depth, with adaptive focusing to compensate phase errors from velocity-model mismatch; an FWI-derived shallow-to-mid crust velocity model is used with constant extrapolation deeper.",
+        "method_zh": "采用反射矩阵测深（在深度处合成虚拟震源/检波器）的3D主动源矩阵成像，并通过自适应聚焦补偿由速度模型不匹配引起的相位误差；使用来自FWI的浅层至中深度速度模型并向更深处做常值外推。",
+        "data_or_region_en": "East Pacific Rise (EPR) 9°50′N multichannel seismic reflection dataset from controlled-source active marine seismology; study resolves magma plumbing structures down to ~6 km below the seafloor.",
+        "data_or_region_zh": "东太平洋海岭（EPR）9°50′N的控源三维多道海上地震反射资料；深度成像覆盖海底下约~6 km的岩浆输运结构。",
+        "geophysics_relevance_en": "Directly relevant to imaging subsurface magma plumbing and crustal accretion using seismic reflection and advanced imaging, informing how connected magma reservoirs relate to eruption processes; it is not only methodological but also geological/tectonic interpretation.",
+        "geophysics_relevance_zh": "与利用地震反射与高阶成像研究地下岩浆通道与地壳增生高度相关；不仅展示方法可行性，还给出关于连通岩浆储库如何联系喷发过程的地质解释。",
+        "keywords_en": [
+          "matrix imaging",
+          "active seismic",
+          "magma plumbing",
+          "East Pacific Rise",
+          "oceanic crust"
+        ],
+        "keywords_zh": [
+          "矩阵成像",
+          "主动地震",
+          "岩浆输运",
+          "东太平洋海岭",
+          "海洋地壳"
+        ],
+        "topic": "Magma plumbing imaging",
+        "audience_level": "specialist",
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "analysis_quality": "ok",
+        "analysis_warnings": []
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2605.26871v1",
+        "title": "The upper mantle of Europe and Western Asia: Exposing potentials and limits of regional full-waveform inversion",
+        "authors": [
+          "C. J. Schiller",
+          "S. D. Keating",
+          "S. Noe",
+          "S. Thrastarson",
+          "D. -P. van Herwaarden",
+          "C. Boehm",
+          "A. J. Rodgers",
+          "P. Barrera-Lopez",
+          "P. Marty",
+          "A. Fichtner"
+        ],
+        "abstract": "We present EUWA310, a seismic velocity model obtained by full seismic waveform inversion (FWI) model of the upper mantle beneath Europe and Western Asia. Inferred via 310 quasi-Newton updates from more than 260$\\,$000 three-component seismograms at 18 s minimum period. It increases the number of iterations and the amount of data by an order of magnitude, compared to previous FWI studies in the region. The data include recordings from two dense regional arrays: IberArray on the Iberian Peninsula and in Northern Africa, and AlpArray in the wider Alpine region. The construction of EUWA310 became computationally tractable through the use of dynamic mini-batch optimization and the adoption of wavefield-adaptive spectral-element meshes from the global to regional scales. We also demonstrate that EUWA310 may be used to reduce uncertainties of moment tensor estimates by inverting waveforms with decreasing minimum period until an optimal minimum period of 22 s, below which no additional improvements is achieved. This limit is connected to the termination of the FWI at 18 s period, which did not result from limited computational resources, but from failure to explain data at even shorter periods. Since other continental-scale arrays -- such as USArray or ChinaArray -- are comparable in density and coverage, this observation suggests that we may have reached the regime where data coverage instead of compute power is the main bottleneck in regional FWI.",
+        "published": "2026-05-26T11:29:13Z",
+        "updated": "2026-05-26T11:29:13Z",
+        "categories": [
+          "physics.geo-ph"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2605.26871v1",
+        "abs_url": "http://arxiv.org/abs/2605.26871v1",
+        "source": "arxiv",
+        "source_id": "",
+        "doi": "",
+        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260526/2605.26871v1.pdf",
+        "pdf_download_error": null,
+        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260526/2605.26871v1.md",
+        "markdown_parse_error": null
+      },
+      "analysis": {
+        "schema_version": "paperradar.analysis.v3",
+        "input_version": "markdown-clean-v1",
+        "one_sentence_en": "The paper builds EUWA310, a continental-scale upper-mantle velocity model from large-scale full-waveform inversion, and shows its practical limit and benefits for earthquake moment-tensor uncertainty reduction using dense European/North African array data.",
+        "one_sentence_zh": "本文构建EUWA310上地幔速度模型，并利用欧洲/北非稠密阵列的全波形反演数据评估其分辨能力上限及其对地震力矩张量不确定度的改进效果。",
+        "summary_en": [
+          "problem: Regional full-waveform inversion (FWI) at continental scale is constrained by computational cost and by how well shorter-period data can be explained given data coverage.",
+          "approach: EUWA310 is produced with 310 quasi-Newton FWI updates using spectral-element forward/adjoint modeling with wavefield-adaptive meshes, dynamic mini-batches, and multiscale period staging from 50 s down to 18 s; it is validated on held-out events and tested for moment-tensor uncertainty reduction by progressively decreasing the minimum period.",
+          "key result: Model building to 18 s is computationally feasible, but improvement saturates below an optimal ~22 s minimum period for moment-tensor uncertainty, indicating the key limitation is the ability to fit even shorter-period waveforms rather than compute power, likely driven by data coverage."
+        ],
+        "summary_zh": [
+          "problem: 区域尺度的全波形反演在大陆尺度应用中，既受计算成本限制，也取决于短周期数据能否被可靠解释（与数据覆盖有关）。",
+          "approach: 通过带波场自适应网格的谱元前向与伴随计算、动态小批量选源以及多尺度频段（50 s逐步到18 s）阶段式反演，进行310次拟牛顿更新得到EUWA310；用未参与反演的事件做泛化验证，并通过逐步降低最小周期来评估对地震力矩张量不确定度的影响。",
+          "key result: 建模到18 s在计算上可行，但力矩张量不确定度的改善在最优~22 s最小周期后趋于饱和，表明限制来自更短周期波形拟合能力而非算力，可能主要由数据覆盖不足导致。"
+        ],
+        "contribution_en": "EUWA310 provides a state-of-the-art, continent-scale upper-mantle FWI velocity model for Europe and Western Asia using orders-of-magnitude larger waveform coverage, together with a frequency-dependent assessment of moment-tensor resolvability that identifies a data-coverage-limited regime for regional FWI.",
+        "contribution_zh": "该研究给出了欧洲与西亚部分地区上地幔的高水平大陆尺度全波形反演速度模型EUWA310，并对不同频段下力矩张量可分辨性/不确定度改善进行了评估，指出区域FWI进入“以数据覆盖为主瓶颈”的限制区间。",
+        "method_en": "Spectral-element forward and adjoint wavefield simulations with wavefield-adaptive meshes from global to regional scales, combined with dynamic mini-batch optimization (quasi-random source subsets), multiscale FWI staging from 50 s to 18 s, time-frequency phase misfit for inversion windows, L2 complete-seismogram misfit for validation, and L-BFGS trust-region updates of selected Earth parameters.",
+        "method_zh": "采用谱元法进行前向与伴随波场模拟，并使用波场自适应网格（从全球到区域尺度的网格生成与吸收边界处理）；结合动态小批量优化（随机选取源集合的准随机子集）与多尺度FWI分阶段策略（50 s到18 s）；反演使用基于时间-频率窗口的相位不相似度，验证采用完整波形的L2不相似度，并用带置信域的L-BFGS进行模型更新。",
+        "data_or_region_en": "Europe and Western Asia (plus parts of the northern Mid-Atlantic ridge, Greenland/Iceland/Jan Mayen, Middle East, Caucasus, West-Central Asia, Hindu Kush, and parts of the Himalayas) using GCMT Mw~5.2–6.7 earthquakes recorded by 7,431 three-component stations (163 events, 261,085 unique source-receiver pairs) including IberArray and AlpArray; validation uses 17 held-out events.",
+        "data_or_region_zh": "研究区域为欧洲与西亚（并覆盖大西洋中脊北段、格陵兰/冰岛/扬-马延、西亚、外高加索、西中亚、兴都库什以及喜马拉雅部分地区）；数据来自GCMT Mw约5.2–6.7地震在7,431个三分量台站记录（163个事件、261,085对唯一源-受体组合），并包含IberArray与AlpArray；用17个未参与反演的事件进行验证。",
+        "geophysics_relevance_en": "This is highly relevant to seismic velocity-modeling by FWI and to practical limits for using short-period waveforms in regional continental studies, and it directly tests earthquake moment-tensor uncertainty improvement and the bottleneck shift toward data coverage.",
+        "geophysics_relevance_zh": "这对利用全波形反演构建地震速度模型及理解区域大陆尺度短周期数据的实际使用上限非常相关；文中还直接验证了力矩张量不确定度的改进，并指出瓶颈可能从算力转向数据覆盖。",
+        "keywords_en": [
+          "full-waveform inversion",
+          "wavefield-adaptive meshes",
+          "spectral-element",
+          "IberArray",
+          "AlpArray"
+        ],
+        "keywords_zh": [
+          "全波形反演",
+          "波场自适应网格",
+          "谱元法",
+          "IberArray",
+          "AlpArray"
+        ],
+        "topic": "Regional FWI limits",
+        "audience_level": "specialist",
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "analysis_quality": "ok",
+        "analysis_warnings": []
+      }
+    },
+    {
+      "paper": {
+        "arxiv_id": "2605.26320v1",
+        "title": "MULTISEISMO: A Multimodal Seismic Dataset and Model for Cross-Modal Seismic Understanding",
+        "authors": [
+          "Sai Munikoti",
+          "Ian Stewart",
+          "Chengping Chai",
+          "Lisa Linville",
+          "Scott Vasquez",
+          "Sameera Horawalavithana",
+          "Karl Pazdernik"
+        ],
+        "abstract": "The application of generalist multimodal models (GMMs) to specialized scientific domains remains limited due to the scarcity of comprehensive domain-specific datasets that integrate multiple data modalities beyond text and images. In seismology, understanding earthquake phenomena requires the synthesis of timeseries waveform data, geographical imagery, and contextual metadata, a multimodal integration absent in existing seismic datasets. We present MultiSeismo, a large scale structured multimodal seismic dataset, comprising over 16K seismic events spanning 13 years (2010 to 2023) across diverse geographical regions. Each event data integrates waveform recordings from global station networks, intensity maps, population exposure visualizations, and a comprehensive textual description within a standardized JSON format. We additionally develop MISCE, a multimodal instruction set on top of raw data to enable supervised training and evaluation of GMMs on seismic reasoning tasks ranging from basic information retrieval to complex cross modal analysis. We leverage MISCE to finetune an existing multimodal model (Unified IO 2) enhanced with a specialized timeseries encoder, which yields SeisModal, the first domain specific multimodal model for comprehensive seismic analysis. Evaluation of state of the art multimodal models on MultiSeismo reveals significant challenges, particularly with time-series data processing for general purpose models, while demonstrating SeisModal's superior performance on seismic multimodal reasoning tasks. These results prove that MultiSeismo provides a rigorous benchmark for future multimodal research in seismology and validate the success of our domain specific architectural adaptations.",
+        "published": "2026-05-25T20:35:48Z",
+        "updated": "2026-05-25T20:35:48Z",
+        "categories": [
+          "cs.LG",
+          "cs.CL"
+        ],
+        "pdf_url": "https://arxiv.org/pdf/2605.26320v1",
+        "abs_url": "http://arxiv.org/abs/2605.26320v1",
+        "source": "arxiv",
+        "source_id": "",
+        "doi": "",
+        "local_pdf_path": "data/pdfs/arxiv/physics.geo-ph/20260525/2605.26320v1.pdf",
+        "pdf_download_error": null,
+        "markdown_path": "data/markdown/arxiv/physics.geo-ph/20260525/2605.26320v1.md",
+        "markdown_parse_error": null
+      },
+      "analysis": {
+        "schema_version": "paperradar.analysis.v3",
+        "input_version": "markdown-clean-v1",
+        "one_sentence_en": "MultiSeismo compiles global earthquakes into a structured multimodal dataset and trains a domain-adapted multimodal model, SeisModal, that outperforms general-purpose models on cross-modal seismic reasoning tasks.",
+        "one_sentence_zh": "MultiSeismo将全球地震整合为结构化多模态数据集，并训练领域自适应模型SeisModal，在跨模态地震推理任务上优于通用多模态模型。",
+        "summary_en": [
+          "problem: Existing seismology datasets and models are mostly unimodal, limiting multimodal AI that jointly reasons over waveforms, spatial intensity/impact imagery, and contextual text/metadata.",
+          "approach: Build the MultiSeismo dataset by curating waveforms plus ShakeMap-derived intensity and population exposure images and rich text fields from NEIC/USGS into standardized JSON, then create MISCE instructions to train and evaluate multimodal models, fine-tuning Unified-IO 2 into SeisModal with a specialized time-series encoder.",
+          "key result: Evaluation on MultiSeismo shows general-purpose multimodal models struggle, especially on time-series handling, while SeisModal achieves better performance on seismic multimodal reasoning tasks, establishing a benchmark for future research."
+        ],
+        "summary_zh": [
+          "problem: 现有地震数据集与模型多为单模态，难以支持同时理解波形、空间震强/影响影像以及文本与元数据的多模态推理。",
+          "approach: 从NEIC/USGS系统爬取并清洗波形、ShakeMap震强与人口暴露影像以及多字段文本，统一封装为结构化JSON；再提出MISCE指令集用于训练/评测多模态模型，并在Unified-IO 2基础上通过带专用时间序列编码器的微调得到SeisModal。",
+          "key result: 在MultiSeismo上的评测表明通用多模态模型在时间序列处理上困难较大，而SeisModal在地震多模态推理任务上表现更好，形成未来研究的基准。"
+        ],
+        "contribution_en": "A large-scale, structured multimodal earthquake benchmark (MultiSeismo) with standardized JSON event samples combining global station waveforms, ShakeMap intensity and population exposure imagery, and contextual text/metadata, plus a domain-adapted multimodal model (SeisModal) and an instruction set (MISCE) for supervised seismic reasoning evaluation.",
+        "contribution_zh": "提出大规模结构化地震多模态基准（MultiSeismo），将全球台站波形、ShakeMap震强与人口暴露影像以及上下文文本/元数据统一到标准JSON事件样本中；并给出指令集MISCE与领域自适应多模态模型SeisModal用于监督式地震推理评测。",
+        "method_en": "Curate earthquake events (M≥2.5) from USGS NEIC/ShakeMap archives, download waveform recordings via IRIS/Obspy, scrape and clean supporting text from multiple event pages, extract intensity and population exposure images, store per-event multimodal packages in standardized JSON, then train/evaluate generalist multimodal models using MISCE instructions and fine-tune Unified-IO 2 with a specialized time-series encoder to produce SeisModal.",
+        "method_zh": "从USGS NEIC/ShakeMap归档按M≥2.5采集地震事件，通过IRIS/Obspy下载波形记录；从多个事件页面抓取并清洗文本信息，提取震强与人口暴露影像；将每个事件的多模态内容封装为标准JSON，再用MISCE指令集训练/评测多模态模型，并在Unified-IO 2上微调加入专用时间序列编码器得到SeisModal。",
+        "data_or_region_en": "Global earthquake events from 2010–2023 (over 16K events) compiled from USGS NEIC/ShakeMap with waveform recordings from global station networks; dataset intended for worldwide spatial coverage.",
+        "data_or_region_zh": "全球地震事件，时间范围2010–2023，超过1.6万例；数据来自USGS NEIC/ShakeMap，并结合来自全球台网的波形记录，覆盖全球空间分布。",
+        "geophysics_relevance_en": "Directly relevant to multimodal AI for seismic event understanding because it provides waveform+context+impact imagery in one benchmark and tests cross-modal seismic reasoning, while revealing where generalist models fail.",
+        "geophysics_relevance_zh": "与地震多模态理解高度相关：该工作把波形、上下文与影响影像统一到同一基准中，并测试跨模态地震推理，同时揭示通用模型的关键不足。",
+        "keywords_en": [
+          "earthquake",
+          "multimodal learning",
+          "seismic waveforms",
+          "ShakeMap",
+          "time-series encoder"
+        ],
+        "keywords_zh": [
+          "地震",
+          "多模态学习",
+          "地震波形",
+          "ShakeMap",
+          "时间序列编码器"
+        ],
+        "topic": "Multimodal seismic benchmark",
+        "audience_level": "specialist",
+        "llm_used": true,
+        "source": "markdown",
+        "model": "gpt-5.4-nano",
+        "analysis_quality": "ok",
+        "analysis_warnings": []
+      }
+    },
+    {
+      "paper": {
         "arxiv_id": "2605.25161v1",
         "title": "FMSIM: A Multimodal Flow Matching Framework for Conditional Geomodeling",
         "authors": [
@@ -146,7 +374,7 @@
           "井点条件",
           "CLIP"
         ],
-        "updated_at": "2026-05-26T11:22:49.089096+00:00",
+        "updated_at": "2026-05-26T19:20:20.973241+00:00",
         "cache_hit": true
       }
     },
@@ -222,7 +450,7 @@
           "波浪浮标",
           "ADMM"
         ],
-        "updated_at": "2026-05-26T11:24:14.111769+00:00",
+        "updated_at": "2026-05-26T19:20:20.981269+00:00",
         "cache_hit": true
       }
     },
@@ -302,7 +530,7 @@
           "SOHO/LASCO",
           "SDO/AIA-HMI"
         ],
-        "updated_at": "2026-05-26T11:25:25.975985+00:00",
+        "updated_at": "2026-05-26T19:20:21.011681+00:00",
         "cache_hit": true
       }
     },
@@ -377,7 +605,7 @@
           "ASK14",
           "电力基础设施评估"
         ],
-        "updated_at": "2026-05-26T11:26:52.449670+00:00",
+        "updated_at": "2026-05-26T19:20:21.094286+00:00",
         "cache_hit": true
       }
     },
@@ -452,7 +680,7 @@
           "ETAS去簇",
           "阿尔博兹断层"
         ],
-        "updated_at": "2026-05-26T11:26:52.513905+00:00",
+        "updated_at": "2026-05-26T19:20:21.111506+00:00",
         "cache_hit": true
       }
     },
@@ -532,7 +760,7 @@
           "普顿进动磁强计",
           "高地边界断层"
         ],
-        "updated_at": "2026-05-26T11:26:52.524872+00:00",
+        "updated_at": "2026-05-26T19:20:21.133074+00:00",
         "cache_hit": true
       }
     },
@@ -605,7 +833,7 @@
           "不可穿透",
           "平台结构"
         ],
-        "updated_at": "2026-05-26T11:26:52.541547+00:00",
+        "updated_at": "2026-05-26T19:20:21.165382+00:00",
         "cache_hit": true
       }
     },
@@ -677,7 +905,7 @@
           "等密面起伏",
           "跨等密面转化"
         ],
-        "updated_at": "2026-05-26T11:26:52.551616+00:00",
+        "updated_at": "2026-05-26T19:20:21.172967+00:00",
         "cache_hit": true
       }
     },
@@ -752,7 +980,7 @@
           "Navier滑移边界",
           "各向异性耗散"
         ],
-        "updated_at": "2026-05-26T11:26:52.562558+00:00",
+        "updated_at": "2026-05-26T19:20:21.178532+00:00",
         "cache_hit": true
       }
     },
@@ -827,7 +1055,7 @@
           "VOF方法",
           "海表面"
         ],
-        "updated_at": "2026-05-26T11:26:52.574385+00:00",
+        "updated_at": "2026-05-26T19:20:21.185317+00:00",
         "cache_hit": true
       }
     },
@@ -905,7 +1133,7 @@
           "投入产出经济",
           "空间天气"
         ],
-        "updated_at": "2026-05-26T11:26:52.593970+00:00",
+        "updated_at": "2026-05-26T19:20:21.195017+00:00",
         "cache_hit": true
       }
     },
@@ -983,7 +1211,7 @@
           "卫星脆弱性",
           "经济损失"
         ],
-        "updated_at": "2026-05-26T11:26:52.620856+00:00",
+        "updated_at": "2026-05-26T19:20:21.201506+00:00",
         "cache_hit": true
       }
     },
@@ -1059,7 +1287,7 @@
           "有限元",
           "Dirichlet-to-Neumann"
         ],
-        "updated_at": "2026-05-26T11:26:52.626227+00:00",
+        "updated_at": "2026-05-26T19:20:21.224689+00:00",
         "cache_hit": true
       }
     },
@@ -1134,7 +1362,7 @@
           "橄榄石",
           "反应动力学"
         ],
-        "updated_at": "2026-05-26T11:26:52.648760+00:00",
+        "updated_at": "2026-05-26T19:20:21.240863+00:00",
         "cache_hit": true
       }
     },
@@ -1208,7 +1436,7 @@
           "地震目录",
           "尾部风险"
         ],
-        "updated_at": "2026-05-26T11:26:52.706099+00:00",
+        "updated_at": "2026-05-26T19:20:21.252747+00:00",
         "cache_hit": true
       }
     },
@@ -1283,7 +1511,7 @@
           "边界层",
           "地球流体动力学"
         ],
-        "updated_at": "2026-05-26T11:26:52.714850+00:00",
+        "updated_at": "2026-05-26T19:20:21.306000+00:00",
         "cache_hit": true
       }
     },
@@ -1357,7 +1585,7 @@
           "多小波",
           "入口边界条件"
         ],
-        "updated_at": "2026-05-26T11:26:52.728386+00:00",
+        "updated_at": "2026-05-26T19:20:21.312937+00:00",
         "cache_hit": true
       }
     },
@@ -1435,7 +1663,7 @@
           "TanDEM-X",
           "Landsat"
         ],
-        "updated_at": "2026-05-26T11:26:52.736212+00:00",
+        "updated_at": "2026-05-26T19:20:21.320173+00:00",
         "cache_hit": true
       }
     },
@@ -1510,12 +1738,147 @@
           "Darcy产能",
           "云端仿真"
         ],
-        "updated_at": "2026-05-26T11:26:52.748795+00:00",
+        "updated_at": "2026-05-26T19:20:21.331898+00:00",
         "cache_hit": true
       }
     }
   ],
   "trending_keywords": [
+    {
+      "keyword": "matrix imaging",
+      "normalized": "matrix imaging",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.26988v1"
+      ]
+    },
+    {
+      "keyword": "active seismic",
+      "normalized": "active seismic",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.26988v1"
+      ]
+    },
+    {
+      "keyword": "magma plumbing",
+      "normalized": "magma plumbing",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.26988v1"
+      ]
+    },
+    {
+      "keyword": "East Pacific Rise",
+      "normalized": "east pacific rise",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.26988v1"
+      ]
+    },
+    {
+      "keyword": "oceanic crust",
+      "normalized": "oceanic crust",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.26988v1"
+      ]
+    },
+    {
+      "keyword": "full-waveform inversion",
+      "normalized": "full-waveform inversion",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.26871v1"
+      ]
+    },
+    {
+      "keyword": "wavefield-adaptive meshes",
+      "normalized": "wavefield-adaptive meshes",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.26871v1"
+      ]
+    },
+    {
+      "keyword": "spectral-element",
+      "normalized": "spectral-element",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.26871v1"
+      ]
+    },
+    {
+      "keyword": "IberArray",
+      "normalized": "iberarray",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.26871v1"
+      ]
+    },
+    {
+      "keyword": "AlpArray",
+      "normalized": "alparray",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.26871v1"
+      ]
+    },
+    {
+      "keyword": "earthquake",
+      "normalized": "earthquake",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.26320v1"
+      ]
+    },
+    {
+      "keyword": "multimodal learning",
+      "normalized": "multimodal learning",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.26320v1"
+      ]
+    },
+    {
+      "keyword": "seismic waveforms",
+      "normalized": "seismic waveforms",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.26320v1"
+      ]
+    },
+    {
+      "keyword": "ShakeMap",
+      "normalized": "shakemap",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.26320v1"
+      ]
+    },
+    {
+      "keyword": "time-series encoder",
+      "normalized": "time-series encoder",
+      "score": 1,
+      "paper_count": 1,
+      "paper_ids": [
+        "2605.26320v1"
+      ]
+    },
     {
       "keyword": "subsurface geomodeling",
       "normalized": "subsurface geomodeling",
@@ -1649,141 +2012,6 @@
       "paper_count": 1,
       "paper_ids": [
         "2605.24748v1"
-      ]
-    },
-    {
-      "keyword": "non-ergodic ground motion",
-      "normalized": "non-ergodic ground motion",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.24284v1"
-      ]
-    },
-    {
-      "keyword": "Gaussian Process",
-      "normalized": "gaussian process",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.24284v1"
-      ]
-    },
-    {
-      "keyword": "CyberShake",
-      "normalized": "cybershake",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.24284v1"
-      ]
-    },
-    {
-      "keyword": "ASK14",
-      "normalized": "ask14",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.24284v1"
-      ]
-    },
-    {
-      "keyword": "power infrastructure assessment",
-      "normalized": "power infrastructure assessment",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.24284v1"
-      ]
-    },
-    {
-      "keyword": "earthquake forecasting",
-      "normalized": "earthquake forecasting",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.23494v1"
-      ]
-    },
-    {
-      "keyword": "b-value",
-      "normalized": "b-value",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.23494v1"
-      ]
-    },
-    {
-      "keyword": "background seismicity rate",
-      "normalized": "background seismicity rate",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.23494v1"
-      ]
-    },
-    {
-      "keyword": "ETAS declustering",
-      "normalized": "etas declustering",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.23494v1"
-      ]
-    },
-    {
-      "keyword": "Alborz faults",
-      "normalized": "alborz faults",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.23494v1"
-      ]
-    },
-    {
-      "keyword": "geomagnetic survey",
-      "normalized": "geomagnetic survey",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.23394v1"
-      ]
-    },
-    {
-      "keyword": "spatial aliasing",
-      "normalized": "spatial aliasing",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.23394v1"
-      ]
-    },
-    {
-      "keyword": "optically pumped magnetometer",
-      "normalized": "optically pumped magnetometer",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.23394v1"
-      ]
-    },
-    {
-      "keyword": "proton precession magnetometer",
-      "normalized": "proton precession magnetometer",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.23394v1"
-      ]
-    },
-    {
-      "keyword": "Highland Boundary Fault",
-      "normalized": "highland boundary fault",
-      "score": 1,
-      "paper_count": 1,
-      "paper_ids": [
-        "2605.23394v1"
       ]
     }
   ],
