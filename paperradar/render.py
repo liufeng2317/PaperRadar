@@ -517,11 +517,11 @@ def render_html(digest: dict[str, Any]) -> str:
       document.getElementById("source-kicker-zh").textContent = source === "eartharxiv" ? "EarthArXiv 预印本动态" : "arXiv 预印本动态";
       document.getElementById("source-kicker-en").textContent = `${label} preprint signal`;
       document.getElementById("description-zh").textContent = source === "eartharxiv"
-        ? `聚焦 EarthArXiv 地球科学预印本：自动整理 ${count} 篇新近论文，提炼一句话摘要、研究细节与关键词趋势。`
-        : `聚焦 arXiv 配置主题：自动整理 ${count} 篇新近论文，快速看清方法、数据区域、核心贡献和研究趋势。`;
+        ? `聚焦 EarthArXiv 地球科学预印本：自动整理 ${count} 篇历史论文，提炼一句话摘要、研究细节与关键词趋势。`
+        : `聚焦 arXiv 配置主题：自动整理 ${count} 篇历史论文，快速看清方法、数据区域、核心贡献和研究趋势。`;
       document.getElementById("description-en").textContent = source === "eartharxiv"
-        ? `A focused EarthArXiv digest with ${count} recent preprints, concise summaries, research details, and keyword trends.`
-        : `A focused arXiv digest with ${count} recent preprints, surfacing methods, regions, contributions, and keyword trends.`;
+        ? `A focused EarthArXiv archive with ${count} preprints, concise summaries, research details, and keyword trends.`
+        : `A focused arXiv archive with ${count} preprints, surfacing methods, regions, contributions, and keyword trends.`;
       const [scopeZh, scopeEn] = renderScope(source, config, topicCount);
       document.getElementById("scope-zh").innerHTML = scopeZh;
       document.getElementById("scope-en").innerHTML = scopeEn;

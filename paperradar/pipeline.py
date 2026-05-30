@@ -109,7 +109,7 @@ def aggregate_local_digests(
     config = load_config(config_path)
     today = date or dt.date.today()
     window_days = config.public_lookback_days if lookback_days is None else lookback_days
-    cutoff = today - dt.timedelta(days=window_days)
+    cutoff = today - dt.timedelta(days=window_days) if window_days and window_days > 0 else None
     papers_by_id: dict[str, dict[str, Any]] = {}
 
     for path in _iter_daily_json_files(data_dir):
@@ -129,7 +129,7 @@ def aggregate_local_digests(
                 ).date()
             except ValueError:
                 continue
-            if published_date < cutoff:
+            if cutoff and published_date < cutoff:
                 continue
             item = _refresh_local_paths(item, config)
             previous = papers_by_id.get(arxiv_id)
@@ -150,7 +150,6 @@ def aggregate_local_digests(
         "trending_keywords": rank_keywords(papers, top_n=config.trending_top_n),
         "source": "local_daily_aggregate",
     }
-    write_source_digests(digest, data_dir=data_dir)
     write_outputs(digest, docs_dir=docs_dir)
     return digest
 
@@ -504,6 +503,9 @@ def _paper_from_dict(data: dict[str, Any]) -> Paper | None:
         categories=list(data["categories"]),
         pdf_url=data["pdf_url"],
         abs_url=data["abs_url"],
+        source=data.get("source", "arxiv") or "arxiv",
+        source_id=data.get("source_id", "") or "",
+        doi=data.get("doi", "") or "",
     )
 
 

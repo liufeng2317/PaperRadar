@@ -1,8 +1,8 @@
 {
   "site_title": "PaperRadar",
   "site_description": {
-    "en": "Recent preprints from configured arXiv and EarthArXiv topics, summarized from abstracts without requiring MinerU.",
-    "zh": "追踪自定义 arXiv 与 EarthArXiv 主题预印本，无需 MinerU，基于摘要生成双语总结与关键词趋势。"
+    "en": "Preprints from configured arXiv and EarthArXiv topics, summarized from abstracts without requiring MinerU.",
+    "zh": "追踪自定义 arXiv 与 EarthArXiv 主题预印本历史记录，无需 MinerU，基于摘要生成双语总结与关键词趋势。"
   },
   "arxiv": {
     "query": "",
@@ -51,7 +51,7 @@
   ],
   "keywords_per_paper": 5,
   "trending_top_n": 30,
-  "public_lookback_days": 60,
+  "public_lookback_days": 0,
   "eartharxiv": {
     "enabled": true,
     "base_url": "https://eartharxiv.org/api/oai/",
